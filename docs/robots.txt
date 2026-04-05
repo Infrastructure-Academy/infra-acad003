@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+Disallow: /api/*
+Sitemap: https://infra-acad-kuqzaex2.manus.space/sitemap.xml

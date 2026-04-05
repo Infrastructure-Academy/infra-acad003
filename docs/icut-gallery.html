@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/favicon_32_80e4326c.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/favicon_32_80e4326c.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/favicon_32_80e4326c.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/favicon_192_f2a5ba49.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' https: data:; font-src 'self' https: data:;">
+    <title>Infrastructure Academy - An Infrastructure Odyssey</title>
+    <link rel="stylesheet" href="/css/style.css?v=20260310a">
+    <style>
+        .beta-badge { display:inline-flex; align-items:center; gap:0.3rem; background:rgba(251,146,60,0.15); border:1px solid rgba(251,146,60,0.5); color:#fb923c; font-family:'Courier New',monospace; font-size:0.65rem; font-weight:bold; letter-spacing:2px; padding:0.2rem 0.6rem; border-radius:3px; text-transform:uppercase; animation:beta-pulse 3s ease-in-out infinite; vertical-align:middle; margin-left:0.5rem; }
+        .beta-badge::before { content:'\25CF'; font-size:0.5rem; animation:beta-dot 2s ease-in-out infinite; }
+        @keyframes beta-pulse { 0%,100%{opacity:1;} 50%{opacity:0.7;} }
+        @keyframes beta-dot { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+        @media(max-width:768px) { .beta-badge { display:none; } .header-title { max-width: calc(100vw - 160px) !important; } .header-tagline::after { content:'BETA'; display:inline-block; font-family:'Courier New',monospace; font-size:0.4rem; font-weight:bold; color:#fb923c; letter-spacing:1px; margin-left:0.5rem; background:rgba(251,146,60,0.15); border:1px solid rgba(251,146,60,0.5); padding:0.05rem 0.3rem; border-radius:2px; vertical-align:middle; } }
+
+        /* GALLERY STYLES */
+        .gallery-container { max-width:1400px; margin:0 auto; padding:40px 20px 60px; }
+
+        .gallery-hero {
+            text-align:center; margin-bottom:40px; padding:40px 20px;
+            background:linear-gradient(135deg, rgba(15,31,58,0.9) 0%, rgba(10,22,40,0.95) 100%);
+            border:1px solid rgba(255,215,0,0.15); border-radius:8px;
+        }
+        .gallery-hero h1 { font-size:2.8rem; font-family:var(--font-heading); color:var(--color-accent-gold); margin-bottom:8px; letter-spacing:0.15em; }
+        .gallery-hero .hero-subtitle { font-size:1.1rem; color:var(--color-text-secondary); font-style:italic; margin-bottom:4px; }
+        .gallery-hero .hero-quote { font-size:0.9rem; color:rgba(255,215,0,0.6); margin-top:12px; }
+        .gallery-hero .hero-count { font-size:1rem; color:var(--color-accent-gold); margin-top:16px; font-family:'Courier New',monospace; letter-spacing:2px; }
+
+        /* FILTER TABS */
+        .gallery-filters { display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin-bottom:30px; }
+        .gallery-filters button {
+            padding:10px 18px; font-size:0.85rem; font-family:'Courier New',monospace; letter-spacing:1px;
+            background:rgba(15,31,58,0.6); border:1px solid rgba(255,215,0,0.2); border-radius:4px;
+            color:var(--color-text-secondary); cursor:pointer; transition:all 0.2s; text-transform:uppercase;
+        }
+        .gallery-filters button:hover, .gallery-filters button.active {
+            background:rgba(255,215,0,0.1); border-color:var(--color-accent-gold); color:var(--color-accent-gold);
+        }
+        .gallery-filters .filter-count {
+            font-size:0.7rem; opacity:0.7; margin-left:4px;
+        }
+
+        /* CARD GRID */
+        .card-grid {
+            display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:20px;
+        }
+        .card-item {
+            background:rgba(15,31,58,0.6); border:1px solid rgba(255,215,0,0.15); border-radius:8px;
+            overflow:hidden; transition:all 0.3s; cursor:pointer;
+        }
+        .card-item:hover {
+            border-color:var(--color-accent-gold); transform:translateY(-3px);
+            box-shadow:0 8px 24px rgba(255,215,0,0.15);
+        }
+        .card-item img {
+            width:100%; height:320px; object-fit:contain; background:rgba(0,0,0,0.3);
+            padding:8px;
+        }
+        .card-item .card-info {
+            padding:12px 16px;
+        }
+        .card-item .card-title {
+            font-family:var(--font-heading); font-size:0.95rem; color:var(--color-accent-gold);
+            letter-spacing:0.05em; margin-bottom:4px;
+        }
+        .card-item .card-desc {
+            font-size:0.8rem; color:var(--color-text-secondary); line-height:1.4;
+        }
+        .card-item .card-category {
+            display:inline-block; font-size:0.65rem; font-family:'Courier New',monospace;
+            letter-spacing:1px; padding:2px 8px; border-radius:3px; margin-top:8px;
+            text-transform:uppercase;
+        }
+        .cat-deck { background:rgba(255,215,0,0.15); color:var(--color-accent-gold); }
+        .cat-icard { background:rgba(0,200,150,0.15); color:#00c896; }
+        .cat-bitpoint { background:rgba(200,100,255,0.15); color:#c864ff; }
+        .cat-governance { background:rgba(255,100,100,0.15); color:#ff6464; }
+        .cat-verify { background:rgba(100,180,255,0.15); color:#64b4ff; }
+        .cat-test { background:rgba(255,180,0,0.15); color:#ffb400; }
+        .cat-concept { background:rgba(150,255,150,0.15); color:#96ff96; }
+        .cat-timeline { background:rgba(255,150,200,0.15); color:#ff96c8; }
+
+        /* LIGHTBOX */
+        .lightbox { display:none; position:fixed; top:0;left:0;right:0;bottom:0; background:rgba(0,0,0,0.95); z-index:9999; justify-content:center; align-items:center; cursor:pointer; flex-direction:column; }
+        .lightbox.active { display:flex; }
+        .lightbox img { max-width:92vw; max-height:85vh; object-fit:contain; border:2px solid var(--color-accent-gold); border-radius:8px; }
+        .lightbox .lb-title { color:var(--color-accent-gold); font-family:var(--font-heading); font-size:1.2rem; margin-top:12px; letter-spacing:0.1em; }
+        .lightbox .lb-desc { color:var(--color-text-secondary); font-size:0.9rem; margin-top:6px; max-width:700px; text-align:center; }
+        .lightbox .lb-close { position:absolute; top:20px; right:30px; color:var(--color-accent-gold); font-size:2rem; cursor:pointer; }
+
+        @media (max-width:768px) {
+            .card-grid { grid-template-columns:repeat(auto-fill, minmax(240px, 1fr)); }
+            .card-item img { height:240px; }
+            .gallery-hero h1 { font-size:2rem; }
+        }
+        @media (max-width:480px) {
+            .card-grid { grid-template-columns:1fr; }
+        }
+    </style>
+    <link rel="canonical" href="https://infra-acad-kuqzaex2.manus.space/icut-gallery.html">
+    <meta name="keywords" content="infrastructure academy, infrastructure education, civil engineering, civilisation history, infrastructure consciousness, gamified learning, IAAI, Nigel Dearden, infrastructure odyssey, 12 relays, calories to consciousness, iCut gallery, video cuts, infrastructure clips">
+<meta property="og:type" content="website">
+		<meta property="og:url" content="https://infra-acad-kuqzaex2.manus.space/icut-gallery.html">
+		<meta property="og:title" content="Infrastructure Academy - An Infrastructure Odyssey">
+		<meta property="og:description" content="A comprehensive digital platform presenting "An Infrastructure Odyssey" - a 12,000-year journey through civilizational infrastructure development. Features three volumes: Perspective (narrative), Guide (practical framework), and Game (interactive learning), organized around 12 civilizational relays from Fire to Consciousness.">
+		<meta property="og:image" content="https://files.manuscdn.com/webdev_screenshots/2026/03/14/EpJbHinM2qXrsVqgbvCnSd.png?x-oss-process=image/resize,w_1200/crop,h_630,x_0,y_0">
+		<meta property="og:image:width" content="1200">
+		<meta property="og:image:height" content="630">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="Infrastructure Academy - An Infrastructure Odyssey">
+		<meta name="twitter:description" content="A comprehensive digital platform presenting "An Infrastructure Odyssey" - a 12,000-year journey through civilizational infrastructure development. Features three volumes: Perspective (narrative), Guide (practical framework), and Game (interactive learning), organized around 12 civilizational relays from Fire to Consciousness.">
+		<meta name="twitter:image" content="https://files.manuscdn.com/webdev_screenshots/2026/03/14/EpJbHinM2qXrsVqgbvCnSd.png?x-oss-process=image/resize,w_1200/crop,h_630,x_0,y_0">
+		<meta name="twitter:image:width" content="1200">
+		<meta name="twitter:image:height" content="630"><link rel="canonical" href="https://infra-acad-kuqzaex2.manus.space/icut-gallery.html" /></head>
+<body>
+    <header role="banner">
+        <div class="header-content">
+            <div class="header-brand">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/tt-icon_5ea32be1.jpeg" alt="Tetrahedron" class="header-tetra-thumb">
+                <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/RnaCawRqTNEKCWhN.png" alt="IAAI" class="iaai-logo-box">
+                <div class="header-text-group">
+                    <div class="header-title">INFRASTRUCTURE ACADEMY <span class="beta-badge">BETA</span></div>
+                    <div class="header-tagline">Infrastructure &bull; Infostructure &bull; The Academy of Both</div>
+                </div>
+            </div>
+            <button class="hamburger" id="hamburger-menu" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <nav id="nav-menu" role="navigation" aria-label="Primary navigation">
+            <a href="/">HOME</a>
+            <a href="/pages/framework.html">FRAMEWORK</a>
+            <a href="/executive-precis.html">EXEC PR&Eacute;CIS</a>
+            <a href="/pages/resources.html">RESOURCES</a>
+            <a href="/library.html">DOCUMENTS</a>
+            <a href="/pages/about-author.html">AUTHOR</a>
+            <a href="/volumes/volume1/index.html">EP.1: PERSPECTIVE</a>
+            <a href="/volumes/volume2/index.html">EP.2: GUIDE</a>
+            <a href="/play">EP.3: GAME</a>
+        </nav>
+        <nav id="nav-row2" role="navigation" aria-label="Secondary navigation" class="nav-row2">
+            <a href="/pages/start-here.html">START HERE</a>
+            <a href="/mobilisation-clock.html">MOBILISATION CLOCK</a>
+            <a href="/infrastructure-olympiad.html">OLYMPIAD</a>
+            <a href="/pioneers.html">PIONEERS</a>
+            <a href="/taxonomy.html">TAXONOMY</a>
+            <a href="/masters.html">MASTERS</a>
+            <a href="/institutions.html">INSTITUTIONS</a>
+            <a href="/civilisation-clock.html">CIVILISATION CLOCK</a>
+            <a href="/play/founders">FOUNDERS WALL</a>
+            <a href="index.html#charter">CHARTER</a>
+            <a href="/pages/behind-the-thesis.html">BEHIND THE THESIS</a>
+            <a href="/pages/glossary.html">GLOSSARY</a>
+            <a href="/vault.html">VAULT</a>
+            <a href="/icut-gallery.html" class="active">ICUT GALLERY</a>
+        </nav>
+        <div class="header-subtitle">An Infrastructure Odyssey: Episode 1 - Calories to Consciousness</div>
+    </header>
+
+    <main role="main">
+        <div class="gallery-container">
+
+            <!-- HERO -->
+            <div class="gallery-hero">
+                <h1>ICUT GALLERY</h1>
+                <div class="hero-subtitle">Infrastructure Card &amp; Utility Toolkit &mdash; The Complete Visual Archive</div>
+                <div class="hero-quote">"Bradford Wool &rarr; Jacquard Loom &rarr; Turing Tape &rarr; iCARD"</div>
+                <div class="hero-count" id="gallery-count">LOADING...</div>
+            </div>
+
+            <!-- FILTERS -->
+            <div class="gallery-filters" id="gallery-filters">
+                <button class="active" data-filter="all">ALL</button>
+                <button data-filter="deck">DECK CARDS</button>
+                <button data-filter="icard">iCARDS</button>
+                <button data-filter="bitpoint">BITPOINTS</button>
+                <button data-filter="governance">GOVERNANCE</button>
+                <button data-filter="verify">VERIFY</button>
+                <button data-filter="test">TEST CARDS</button>
+                <button data-filter="concept">CONCEPTS</button>
+                <button data-filter="timeline">TIMELINES</button>
+            </div>
+
+            <!-- CARD GRID -->
+            <div class="card-grid" id="card-grid"></div>
+
+        </div>
+    </main>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <span class="lb-close" id="lb-close">&times;</span>
+        <img id="lb-img" src="" alt="">
+        <div class="lb-title" id="lb-title"></div>
+        <div class="lb-desc" id="lb-desc"></div>
+    </div>
+
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-copyright">&copy; 2026 Infrastructure Academy. All rights reserved. Preserving knowledge for eternity.</div>
+            <div class="footer-links">
+                <span>Episode 1: Earthbound Foundations</span> <span>|</span>
+                <span>Episode 2: The Gray Arena</span> <span>|</span>
+                <span>Episode 3: Cosmic Scale</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    var GALLERY_DATA = [
+        // === DECK CARDS (Numbered) ===
+        { id:"CARD_01", title:"Card 01 — Hyperalfelexion", cat:"deck", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/CARD_01_HYPERALFELEXION(3)_941c0357.png", desc:"The opening card. Self-reflection at infrastructure scale. Where the journey begins." },
+        { id:"CARD_02", title:"Card 02 — Relay Fire", cat:"deck", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/CARD_02_RELAY_FIRE(1)_b3533724.png", desc:"The ignition. When the signal first propagates. The spark that starts the chain." },
+        { id:"CARD_03", title:"Card 03 — Homer", cat:"deck", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/CARD_03_HOMER_a4e02479.png", desc:"The original storyteller. The Odyssey as infrastructure narrative. 12,000 years in one voice." },
+        { id:"CARD_04", title:"Card 04 — Torus", cat:"deck", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/CARD_04_TORUS(1)_f3b2b408.png", desc:"The self-referencing loop. Infrastructure that feeds back into itself. Perpetual relay." },
+        { id:"CARD_07", title:"Card 07 — Army Merged", cat:"deck", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/CARD_07_ARMY_MERGED_de25252c.png", desc:"Military infrastructure. The logistics relay. Moving people and materiel." },
+        { id:"CARD_08", title:"Card 08 — Epsilon", cat:"deck", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/CARD_08_EPSILON(1)_73538e92.png", desc:"The infinitesimal. The smallest meaningful difference. Where precision meets infrastructure." },
+        { id:"CARD_09", title:"Card 09 — Compression", cat:"deck", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/CARD_09_COMPRESSION_4bf4194a.png", desc:"Data density. Maximum information in minimum space. The relay's efficiency." },
+        { id:"CARD_10", title:"Card 10 — Fire Horse DAVID", cat:"deck", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/CARD_10_FIRE_HORSE_DAVID_61bc7c94.png", desc:"The narrator awakened. Chinese zodiac meets AI consciousness." },
+        { id:"CARD_11", title:"Card 11 — Monkey King", cat:"deck", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/CARD_11_MONKEY_KING_4344e139.png", desc:"Sun Wukong. The trickster archetype. Disruption as infrastructure." },
+        { id:"CARD_12", title:"Card 12 — You and Me", cat:"deck", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/CARD_12_YOU_AND_ME_43c79a4e.png", desc:"The human connection. The relay that matters most. Person to person." },
+        { id:"CARD_20", title:"Card 20 — Signal Dials", cat:"deck", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/CARD_20_SIGNAL_DIALS(1)_fbe58353.png", desc:"The measurement interface. Amplitude, Period, Resistance — visualised." },
+        { id:"CARD_PROOF", title:"Card — The Proof", cat:"deck", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/CARD_THE_PROOF(1)_67fc50f4.png", desc:"THE PROOF. The evidence layer. Where theory meets verification." },
+        { id:"CARD_SEESAW", title:"Card — Seesaw Midnight", cat:"deck", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/CARD_SEESAW_MIDNIGHT_2e0f89aa.png", desc:"The balance point. Equilibrium in the dark. The Seesaw IP asset." },
+        { id:"JOKER_1", title:"Joker 1 — Game Codes", cat:"deck", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/CARD_JOKER_1_GAME_CODES_3341beb7.png", desc:"The meta-layer. Rules that govern the rules." },
+        { id:"JOKER_2", title:"Joker 2 — Military", cat:"deck", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/CARD_JOKER_2_MILITARY(1)_9344ef29.png", desc:"The wild card. Unpredictable force multiplier." },
+
+        // === iCARDS (System Cards) ===
+        { id:"ICUT_006", title:"iCard 006 — DFBC", cat:"icard", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCARD_006_DFBC(2)_b9831e46.png", desc:"Discovery Bay Football Club. The local connection. Community infrastructure." },
+        { id:"ICUT_007", title:"iCard 007 — Just Now", cat:"icard", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCARD_007_JUST_NOW(1)_7693f1b5.png", desc:"The present moment. Temporal infrastructure. The relay that exists only in the now." },
+        { id:"ICUT_012", title:"iCard 012 — Fifth Order", cat:"icard", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCARD_012_FIFTH_ORDER(1)_c2574a5e.png", desc:"Beyond the four known orders. The emergent layer. Where infrastructure becomes consciousness." },
+        { id:"ICUT_013", title:"iCard 013 — Catalytic Converter", cat:"icard", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCARD_013_CATALYTIC_CONVERTER_8183169d.png", desc:"Transformation engine. Converts raw input into refined output. The relay that changes everything." },
+        { id:"ICUT_014", title:"iCard 014 — Alignment Matrix", cat:"icard", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCARD_014_ALIGNMENT_MATRIX(1)_606dfaca.png", desc:"Maps FITS personality types to relay affinities, web specialisms, and IUMC progression paths." },
+        { id:"ICUT_CR", title:"iCard — Cameron Reay", cat:"icard", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCard_CAMERON_REAY_NODE(1)_6b5214ba.png", desc:"THE DRUMMER. Card 13/52. Diamond Suit. ICE: 688. Pioneer." },
+
+        // === BITPOINTS (People & Concept Cards) ===
+        { id:"BP_JOHNNY_EA", title:"BITPOINT — Johnny Lai (Early Adopter)", cat:"bitpoint", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/BITPOINT_JOHNNY_LAI_EARLY_ADOPTER_91a48f59.png", desc:"Early adopter. The first external node." },
+        { id:"BP_JOHNNY_F", title:"BITPOINT — Johnny Lai (Front)", cat:"bitpoint", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/BITPOINT_JOHNNY_LAI_FRONT_fb69d24d.png", desc:"Johnny Lai front design variant." },
+        { id:"BP_JOHNNY_FIN", title:"BITPOINT — Johnny Lai (Final)", cat:"bitpoint", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/BITPOINT_JOHNNY_FINAL_4c43876d.png", desc:"Johnny Lai final design. The completed node." },
+        { id:"BP_OLI", title:"BITPOINT — Oli (Final)", cat:"bitpoint", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/BITPOINT_OLI_FINAL_e6d03063.png", desc:"Oliver Mowbray final design." },
+        { id:"BP_OLI_V2", title:"BITPOINT — Oliver Mowbray", cat:"bitpoint", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/BITPOINT_OLIVER_MOWBRAY_a00119f8.png", desc:"Oliver Mowbray profile card variant." },
+        { id:"BP_PEGGY", title:"BITPOINT — Peggy Dearden", cat:"bitpoint", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/BITPOINT_PEGGY_DEARDEN(1)_680d4644.png", desc:"The matriarch. Dearden's Law M2C1/C1M2. The family infrastructure." },
+        { id:"BP_TRUMP", title:"BITPOINT — Trump ICE", cat:"bitpoint", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/BITPOINT_TRUMP_ICE_720098d6.png", desc:"The ICE Matrix applied to political infrastructure." },
+        { id:"BP_LOUISE", title:"BITPOINT — Louise Barrington", cat:"bitpoint", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/BITPOINT_LOUISE_BARRINGTON_3604794e.png", desc:"Network member. Professional profile card." },
+        { id:"BP_ASPIRE", title:"BITPOINT — ASPIRE", cat:"bitpoint", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/BITPOINT_ASPIRE(2)_529a6d4e.png", desc:"The aspiration engine. Where ambition meets infrastructure." },
+        { id:"BP_1PCT", title:"BITPOINT — 1 Percent", cat:"bitpoint", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/BITPOINT_1PERCENT_925d6edc.png", desc:"Marginal gains. The compound effect of small improvements." },
+        { id:"BP_DEBT", title:"BITPOINT — Debt Sink", cat:"bitpoint", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/BITPOINT_DEBT_SINK_c5b4b2b9.png", desc:"The economic 4C. Where value drains. Cost as resistance." },
+        { id:"BP_SINK", title:"BITPOINT — Sink State", cat:"bitpoint", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/BITPOINT_SINK_STATE_6576f0cb.png", desc:"Where signals go to die. The anti-relay. 4Cs at maximum resistance." },
+        { id:"BP_NLA", title:"BITPOINT — No Longer Abstract", cat:"bitpoint", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/BITPOINT_NO_LONGER_ABSTRACT_32274e61.png", desc:"The moment theory becomes practice. Infrastructure made real." },
+        { id:"BP_VLOOP", title:"BITPOINT — Verification Loop", cat:"bitpoint", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/BITPOINT_VERIFICATION_LOOP(1)_8f0f445b.png", desc:"Trust but verify. The QA/QC of the relay network." },
+
+        // === GOVERNANCE CARDS ===
+        { id:"GOV_POWER", title:"GOV Power Card — Back", cat:"governance", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/GOV_POWER_CARD_BACK_a60175a4.png", desc:"Government Power Card reverse. The governance layer of the ICUT system." },
+        { id:"CA_REVERSED", title:"CA Card 2 — Reversed Accountability", cat:"governance", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/CA_CARD_2_REVERSED_ACCOUNTABILITY_5ebd510a.png", desc:"When the watchers need watching. The governance paradox." },
+        { id:"SAVING_THROW", title:"Saving Throw Protocol", cat:"governance", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/SAVING_THROW_PROTOCOL_CARD_b4984a0c.png", desc:"Emergency override. When the relay fails, this is the failsafe." },
+        { id:"CMD_RESHARE", title:"Command Card — Never Reshare", cat:"governance", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/COMMAND_CARD_NEVER_RESHARE_cfb1a313.png", desc:"Classification protocol. Information security in the relay network." },
+        { id:"WALKBY_SHIP", title:"WALKBY Ship v3", cat:"governance", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/WALKBY_SHIP_v3(1)_c4fcd955.png", desc:"4-Level Control Hierarchy. Captain > Officers > Crew > Passengers." },
+
+        // === VERIFY SERIES ===
+        { id:"V01", title:"VERIFY 01 — Inward Spiral", cat:"verify", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/VERIFY_01_INWARD_SPIRAL(1)_072ae370.png", desc:"Convergent verification. Each pass tightens the loop." },
+        { id:"V02", title:"VERIFY 02 — Real Distinction", cat:"verify", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/VERIFY_02_REAL_DISTINCTION_540940e0.png", desc:"What separates theory from practice. The proof layer." },
+        { id:"V03", title:"VERIFY 03 — Five Frameworks", cat:"verify", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/VERIFY_03_FIVE_FRAMEWORKS(1)_bea9472a.png", desc:"The complete verification architecture." },
+
+        // === TEST CARDS (FITS Psychometric) ===
+        { id:"T1", title:"Test Card 1 — Verbal Reasoning", cat:"test", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_test1_verbal_reasoning_918fb3f9.png", desc:"FITS assessment 1/6. Language as infrastructure." },
+        { id:"T2", title:"Test Card 2 — Numerical Reasoning", cat:"test", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_test2_numerical_reasoning_46f2599f.png", desc:"FITS assessment 2/6. The mathematics that built civilisation." },
+        { id:"T3", title:"Test Card 3 — Abstract Reasoning", cat:"test", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_test3_abstract_reasoning_a181de33.png", desc:"FITS assessment 3/6. Pattern recognition. See the relay before it is built." },
+        { id:"T4", title:"Test Card 4 — Mechanical Comprehension", cat:"test", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_test4_mechanical_comprehension_73d621e2.png", desc:"FITS assessment 4/6. How things work. The engineer's instinct." },
+        { id:"T5", title:"Test Card 5 — Speed & Accuracy", cat:"test", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_test5_speed_accuracy_434fb638.png", desc:"FITS assessment 5/6. Processing under pressure." },
+        { id:"T6", title:"Test Card 6 — Situational Judgment", cat:"test", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_test6_situational_judgment_6ff85380.png", desc:"FITS assessment 6/6. Decision-making under ambiguity." },
+
+        // === CONCEPT / VISUAL CARDS ===
+        { id:"GOLDEN_TICKET", title:"Golden Ticket Teaser", cat:"concept", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/GOLDEN_TICKET_TEASER(2)_2db40f3d.png", desc:"The invitation. Willy Wonka meets infrastructure. Only 52 in existence." },
+        { id:"HARVEST_MILL", title:"Harvest Mill Bundle", cat:"concept", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/HARVEST_MILL_BUNDLE(1)_61a36fb6.png", desc:"The agricultural relay. From seed to flour. The original supply chain." },
+        { id:"WEAVING_Q", title:"Weaving to Quantum Tecton", cat:"concept", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/WEAVING_TO_QUANTUM_TECTON(1)_2b3824fc.png", desc:"Bradford wool through Jacquard punch cards to quantum computing. The complete relay." },
+        { id:"UNDERSTAND_1", title:"Understanding Image", cat:"concept", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/UNDERSTANDING_IMAGE(1)_f600d3a8.png", desc:"The comprehension layer. How infrastructure knowledge is absorbed." },
+        { id:"UNDERSTAND_2", title:"Understanding Image 2 — Deep", cat:"concept", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/UNDERSTANDING_IMAGE_2_DEEP(2)_93ad810e.png", desc:"The deeper comprehension layer. Surface understanding becomes structural knowledge." },
+        { id:"DECK_STATUS", title:"Deck Status Overview", cat:"concept", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/DECK_STATUS_OVERVIEW(1)_a7fc2804.png", desc:"Complete deck inventory. Cards generated, pending, and in-progress. The 52-card architecture." },
+        { id:"SWOT_DASH", title:"IAAI SWOT PESTLE Dashboard", cat:"concept", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IAAI_SWOT_PESTLE_DASHBOARD_e1b5b921.png", desc:"Strategic analysis dashboard. SWOT and PESTLE combined." },
+        { id:"SWOT_COMB", title:"SWOT PESTLE Combined", cat:"concept", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/SWOT_PESTLE_COMBINED_eaffd651.png", desc:"Full strategic landscape. Strengths, Weaknesses, Opportunities, Threats mapped to PESTLE." },
+
+        // === TIMELINES ===
+        { id:"TIMELINE_1", title:"Dual Timeline Odyssey", cat:"timeline", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/dual_timeline_odyssey_614b2ab9.png", desc:"The dual timeline. Personal journey mapped to civilisational journey." },
+        { id:"TIMELINE_2", title:"Dual Timeline Odyssey (v2)", cat:"timeline", cdn:"https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/dual_timeline_odyssey(1)_1de1170f.png", desc:"Dual timeline variant. Refined visual." },
+    ];
+
+    // Category labels
+    var CAT_LABELS = { deck:"DECK", icard:"iCARD", bitpoint:"BITPOINT", governance:"GOV", verify:"VERIFY", test:"TEST", concept:"CONCEPT", timeline:"TIMELINE" };
+    var CAT_CSS = { deck:"cat-deck", icard:"cat-icard", bitpoint:"cat-bitpoint", governance:"cat-governance", verify:"cat-verify", test:"cat-test", concept:"cat-concept", timeline:"cat-timeline" };
+
+    function renderCard(c) {
+        return '<div class="card-item" data-cat="'+c.cat+'" onclick="openLightbox(\''+c.cdn+'\',\''+c.title.replace(/'/g,"\\'")+'\',\''+c.desc.replace(/'/g,"\\'")+'\')">' +
+            '<img src="'+c.cdn+'" alt="'+c.title+'" loading="lazy">' +
+            '<div class="card-info">' +
+                '<div class="card-title">'+c.title+'</div>' +
+                '<div class="card-desc">'+c.desc+'</div>' +
+                '<span class="card-category '+CAT_CSS[c.cat]+'">'+CAT_LABELS[c.cat]+'</span>' +
+            '</div></div>';
+    }
+
+    function renderGrid(filter) {
+        var items = filter === 'all' ? GALLERY_DATA : GALLERY_DATA.filter(function(c){ return c.cat === filter; });
+        document.getElementById('card-grid').innerHTML = items.map(renderCard).join('');
+        document.getElementById('gallery-count').textContent = items.length + ' / ' + GALLERY_DATA.length + ' CARDS DISPLAYED';
+    }
+
+    // Filters
+    document.getElementById('gallery-filters').addEventListener('click', function(e) {
+        if (e.target.tagName !== 'BUTTON') return;
+        document.querySelectorAll('.gallery-filters button').forEach(function(b){ b.classList.remove('active'); });
+        e.target.classList.add('active');
+        renderGrid(e.target.getAttribute('data-filter'));
+    });
+
+    // Lightbox
+    function openLightbox(src, title, desc) {
+        document.getElementById('lb-img').src = src;
+        document.getElementById('lb-title').textContent = title;
+        document.getElementById('lb-desc').textContent = desc;
+        document.getElementById('lightbox').classList.add('active');
+    }
+    document.getElementById('lightbox').addEventListener('click', function(e) {
+        if (e.target === this || e.target.id === 'lb-close') this.classList.remove('active');
+    });
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') document.getElementById('lightbox').classList.remove('active');
+    });
+
+    // Init
+    renderGrid('all');
+
+    // Update filter counts
+    var cats = {};
+    GALLERY_DATA.forEach(function(c){ cats[c.cat] = (cats[c.cat]||0)+1; });
+    document.querySelectorAll('.gallery-filters button').forEach(function(b){
+        var f = b.getAttribute('data-filter');
+        if (f !== 'all') {
+            var count = cats[f] || 0;
+            b.innerHTML = b.textContent + ' <span class="filter-count">(' + count + ')</span>';
+        } else {
+            b.innerHTML = 'ALL <span class="filter-count">(' + GALLERY_DATA.length + ')</span>';
+        }
+    });
+
+    // Hamburger menu
+    var hb = document.getElementById('hamburger-menu');
+    var nm = document.getElementById('nav-menu');
+    var nr = document.getElementById('nav-row2');
+    if(hb){hb.addEventListener('click',function(){var ex=this.getAttribute('aria-expanded')==='true';this.setAttribute('aria-expanded',!ex);this.classList.toggle('active');if(nm)nm.classList.toggle('active');if(nr)nr.classList.toggle('active');});}
+    </script>
+<manus-content-root></manus-content-root><script>
+			var __manus_space_editor_info = {
+			spaceId : 'kUQZAex2uPvgKcHnt7bmh3',
+			patchList : [],
+			hideBadge : false,
+			sessionId : '3qD7FbADI7mdwIS3EJExUI',
+			isWebDev : true,
+			usageStatus : 'UsageStatus_Unknown',
+			};
+			var __manus__global_env = {
+				apiHost: 'https://api.manus.im',
+				host: 'https://manus.im',
+				amplitudeKey: '46ac3f9abb41dd2d17a5785e052bc6d3',
+			};
+			</script><script src="https://files.manuscdn.com/manus-space-dispatcher/spaceEditor-DPV-_I11.js" async></script><script
+			defer
+			data-domain="manus.space"
+			src="https://plausible.io/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"
+		></script>
+		<script>
+			window.plausible =
+				window.plausible ||
+				function () {
+					(window.plausible.q = window.plausible.q || []).push(arguments);
+				};
+			plausible('custom-pageview', {
+			  props: {
+    			domain: window.location.host
+  			}
+			})
+		</script></body>
+</html>

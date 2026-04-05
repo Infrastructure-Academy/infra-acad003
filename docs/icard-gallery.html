@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Infrastructure Academy - An Infrastructure Odyssey</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { background: #0a1628; color: #ffffff; font-family: Georgia, 'Times New Roman', serif; min-height: 100vh; }
+    .header { text-align: center; padding: 40px 20px 20px; border-bottom: 2px solid #ffd700; margin-bottom: 30px; }
+    .header h1 { color: #ffd700; font-size: 2.2rem; margin-bottom: 8px; }
+    .header p { color: #cccccc; font-size: 1rem; }
+    .header .domain { color: #ffd700; font-size: 0.9rem; margin-top: 8px; }
+    .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 24px; padding: 0 30px 40px; max-width: 1400px; margin: 0 auto; }
+    .card { background: #0f1f3a; border: 1px solid #1a3055; border-radius: 8px; overflow: hidden; transition: transform 0.2s; cursor: pointer; }
+    .card:hover { transform: scale(1.02); border-color: #ffd700; }
+    .card img { width: 100%; height: auto; display: block; }
+    .card-info { padding: 12px 16px; }
+    .card-info h3 { color: #ffd700; font-size: 0.95rem; margin-bottom: 4px; }
+    .card-info .meta { color: #888; font-size: 0.8rem; }
+    .card-info .type { display: inline-block; background: #1a3055; color: #ffd700; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; margin-top: 6px; }
+    .footer { text-align: center; padding: 20px; border-top: 1px solid #1a3055; color: #666; font-size: 0.8rem; }
+    .footer a { color: #ffd700; text-decoration: none; }
+    .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.9); z-index: 1000; justify-content: center; align-items: center; }
+    .modal.active { display: flex; }
+    .modal img { max-width: 90vw; max-height: 90vh; object-fit: contain; }
+    .modal-close { position: fixed; top: 20px; right: 30px; color: #ffd700; font-size: 2rem; cursor: pointer; z-index: 1001; }
+  </style>
+    <link rel="canonical" href="https://infra-acad-kuqzaex2.manus.space/icard-gallery.html">
+    <meta name="keywords" content="infrastructure academy, infrastructure education, civil engineering, civilisation history, infrastructure consciousness, gamified learning, IAAI, Nigel Dearden, infrastructure odyssey, 12 relays, calories to consciousness, iCard gallery, visual cards, infrastructure cards, knowledge cards">
+<meta property="og:type" content="website">
+		<meta property="og:url" content="https://infra-acad-kuqzaex2.manus.space/icard-gallery.html">
+		<meta property="og:title" content="Infrastructure Academy - An Infrastructure Odyssey">
+		<meta property="og:description" content="A comprehensive digital platform presenting "An Infrastructure Odyssey" - a 12,000-year journey through civilizational infrastructure development. Features three volumes: Perspective (narrative), Guide (practical framework), and Game (interactive learning), organized around 12 civilizational relays from Fire to Consciousness.">
+		<meta property="og:image" content="https://files.manuscdn.com/webdev_screenshots/2026/03/14/EpJbHinM2qXrsVqgbvCnSd.png?x-oss-process=image/resize,w_1200/crop,h_630,x_0,y_0">
+		<meta property="og:image:width" content="1200">
+		<meta property="og:image:height" content="630">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="Infrastructure Academy - An Infrastructure Odyssey">
+		<meta name="twitter:description" content="A comprehensive digital platform presenting "An Infrastructure Odyssey" - a 12,000-year journey through civilizational infrastructure development. Features three volumes: Perspective (narrative), Guide (practical framework), and Game (interactive learning), organized around 12 civilizational relays from Fire to Consciousness.">
+		<meta name="twitter:image" content="https://files.manuscdn.com/webdev_screenshots/2026/03/14/EpJbHinM2qXrsVqgbvCnSd.png?x-oss-process=image/resize,w_1200/crop,h_630,x_0,y_0">
+		<meta name="twitter:image:width" content="1200">
+		<meta name="twitter:image:height" content="630"><link rel="canonical" href="https://infra-acad-kuqzaex2.manus.space/icard-gallery.html" /></head>
+<body>
+  <div class="header">
+    <h1>iCard Gallery</h1>
+    <p>All iCards generated during the iAAi Beta Test — Unis12 Review Process</p>
+    <p class="domain">www.infrastructure-academy.com/icard-gallery.html</p>
+  </div>
+
+  <div class="gallery" id="gallery"></div>
+
+  <div class="modal" id="modal" onclick="closeModal()">
+    <span class="modal-close" onclick="closeModal()">&times;</span>
+    <img id="modal-img" src="" alt="Full size iCard">
+  </div>
+
+  <!-- BUY THE DECK CTA -->
+  <div style="background:linear-gradient(135deg, #0d1f3c 0%, #1a0a2e 100%); padding:2.5rem 1.5rem; text-align:center; border-top:2px solid #ffd700; margin-top:2rem;">
+    <h2 style="color:#ffd700; font-family:Georgia,serif; font-size:1.5rem; margin-bottom:0.75rem;">IP &amp; Equations Register &mdash; BETA Deck</h2>
+    <p style="color:#e0e0e0; max-width:500px; margin:0 auto 1rem; font-size:0.85rem;">56 collectible cards &bull; 38 equations &bull; 15 IP assets &bull; US$29.95</p>
+    <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+      <a href="finance-admin.html" style="display:inline-block; background:#ffd700; color:#0a1628; padding:0.6rem 1.5rem; font-weight:bold; text-decoration:none; font-size:0.85rem;">View Full Deck</a>
+      <a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IAAI_IP_Equations_Register_Deck_56_Cards_BETA_17393da4.pdf" target="_blank" style="display:inline-block; background:transparent; color:#ffd700; padding:0.6rem 1.5rem; font-weight:bold; text-decoration:none; font-size:0.85rem; border:2px solid #ffd700;">Download PDF</a>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>N₁ (ALAN/Nigel) + N₂ (DAVID/Manus) | <a href="https://www.infrastructure-academy.com">www.infrastructure-academy.com</a> | March 2026</p>
+    <p style="margin-top: 8px;">iCard = Internal infographic snapshot (process tool) | BitPoint = Collectible knowledge currency (product, 52-card set, Block 353)</p>
+  </div>
+
+  <script>
+    const cards = [
+      { id: "iCard_1", title: "Review Findings — Unis12 Round 1", date: "2026-03-06", type: "iCard", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCard_1_Review_Findings_89cb7076.png" },
+      { id: "iCard_2", title: "Next Steps — What Happens Now", date: "2026-03-06", type: "iCard", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCard_2_Next_Steps_696bed97.png" },
+      { id: "iCard_3", title: "Score Interpretation — Grading Rosetta Stone", date: "2026-03-06", type: "iCard", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCard_3_Score_Interpretation_41767507.png" },
+      { id: "iCard_4", title: "Round 2 Delta — Focused Audit Results", date: "2026-03-06", type: "iCard", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCard_4_Round2_Delta_2f97d07f.png" },
+      { id: "iCard_5", title: "Papers Return Brief — All Documents", date: "2026-03-06", type: "iCard", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCard_5_Papers_ReturnBrief_cc42c46b.png" },
+      { id: "iCard_ICUT", title: "ICUT Audit Observation — F Grade", date: "2026-03-06", type: "iCard — ICUT", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCard_ICUT_Identity_Failure_v2_420fb784.png" },
+      { id: "iCard_RB1", title: "Return Brief — Data Vault Live", date: "2026-03-06", type: "Return Brief", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCard_RB_DataVault_Live_1730a5f7.png" },
+      { id: "iCard_RB2", title: "Return Brief — Master Index", date: "2026-03-06", type: "Return Brief", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCard_RB_MasterIndex_f2c5e149.png" },
+      { id: "iCard_4ECL_BR", title: "4ECL Business Registration", date: "2026-03-10", type: "iCard — Corporate", url: "/icard-4ecl-br.html", isPage: true },
+      { id: "iCard_BookSales", title: "Book Sales Adoption Strategy", date: "2026-03-10", type: "iCard — Revenue", url: "/icard-book-sales-strategy.html", isPage: true },
+      { id: "iCard_Khanh", title: "Khanh Huynh (K) — Team Member Profile", date: "2026-03-11", type: "iCard — Team", url: "/icard-khanh-huynh.html", isPage: true },
+      { id: "iCard_HTetra", title: "Henry's 3 WhatsApp Groups — The First H-Tetra", date: "2026-03-11", type: "iCard — Structural Event", url: "/icard-h-tetra.html", isPage: true },
+      { id: "iCard_Equinox", title: "The Engineer's Equinox — Personal SCADA System", date: "2026-03-08", type: "iCard — SCADA", url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/tuuEtknNYpXPMZjb.png" },
+      { id: "iCard_PiDay_34", title: "Pi Day 2026 — The Day the PIN Dropped (3:4)", date: "2026-03-14", type: "iCard — Pi Day", url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/XckwDPWpRUPZCoEd.png" },
+      { id: "iCard_PiDay_43", title: "Pi Day 2026 — The Day the PIN Dropped (4:3)", date: "2026-03-14", type: "iCard — Pi Day", url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/VVMIlshUTKnagGhH.png" }
+    ];
+
+    const gallery = document.getElementById('gallery');
+    cards.forEach(card => {
+      const div = document.createElement('div');
+      div.className = 'card';
+      div.onclick = () => card.isPage ? window.location.href = card.url : openModal(card.url);
+      div.innerHTML = card.isPage ? `
+        <div style="padding:40px 20px;text-align:center;background:#0f1f3a;min-height:180px;display:flex;flex-direction:column;justify-content:center;align-items:center;">
+          <div style="color:#ffd700;font-size:2rem;margin-bottom:8px;">→</div>
+          <div style="color:#ffd700;font-size:1rem;font-weight:bold;">${card.title}</div>
+          <div style="color:#888;font-size:0.8rem;margin-top:6px;">Click to view iCard page</div>
+        </div>` + `
+        <div class="card-info">
+          <h3>${card.title}</h3>
+          <span class="meta">${card.date}</span>
+          <span class="type">${card.type}</span>
+        </div>
+      ` : `
+        <img src="${card.url}" alt="${card.title}" loading="lazy">
+        <div class="card-info">
+          <h3>${card.title}</h3>
+          <span class="meta">${card.date}</span>
+          <span class="type">${card.type}</span>
+        </div>
+      `;
+      gallery.appendChild(div);
+    });
+
+    function openModal(url) {
+      document.getElementById('modal-img').src = url;
+      document.getElementById('modal').classList.add('active');
+    }
+    function closeModal() {
+      document.getElementById('modal').classList.remove('active');
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  </script>
+<manus-content-root></manus-content-root><script>
+			var __manus_space_editor_info = {
+			spaceId : 'kUQZAex2uPvgKcHnt7bmh3',
+			patchList : [],
+			hideBadge : false,
+			sessionId : '3qD7FbADI7mdwIS3EJExUI',
+			isWebDev : true,
+			usageStatus : 'UsageStatus_Unknown',
+			};
+			var __manus__global_env = {
+				apiHost: 'https://api.manus.im',
+				host: 'https://manus.im',
+				amplitudeKey: '46ac3f9abb41dd2d17a5785e052bc6d3',
+			};
+			</script><script src="https://files.manuscdn.com/manus-space-dispatcher/spaceEditor-DPV-_I11.js" async></script><script
+			defer
+			data-domain="manus.space"
+			src="https://plausible.io/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"
+		></script>
+		<script>
+			window.plausible =
+				window.plausible ||
+				function () {
+					(window.plausible.q = window.plausible.q || []).push(arguments);
+				};
+			plausible('custom-pageview', {
+			  props: {
+    			domain: window.location.host
+  			}
+			})
+		</script></body>
+</html>

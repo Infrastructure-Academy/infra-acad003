@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Infrastructure Academy - An Infrastructure Odyssey</title>
+    <link rel="icon" type="image/x-icon" href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/favicon_32_80e4326c.png">
+    <link rel="stylesheet" href="/css/style.css?v=20260308a">
+    <style>
+        /* Password Gate */
+        .password-gate {
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+            background: #0a1628;
+            display: flex; align-items: center; justify-content: center;
+            z-index: 999999;
+            flex-direction: column;
+        }
+        .password-gate.hidden { display: none; }
+        .gate-box {
+            background: #0f1f3a;
+            border: 2px solid #ffd700;
+            border-radius: 12px;
+            padding: 3rem 2.5rem;
+            text-align: center;
+            max-width: 420px;
+            width: 90%;
+        }
+        .gate-box h2 {
+            font-family: Georgia, serif;
+            color: #ffd700;
+            font-size: 1.4rem;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .gate-box p {
+            color: #e0e0e0;
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+        .gate-box input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background: #0a1628;
+            border: 1px solid rgba(255,215,0,0.4);
+            border-radius: 6px;
+            color: #fff;
+            font-size: 1rem;
+            text-align: center;
+            letter-spacing: 3px;
+            margin-bottom: 1rem;
+        }
+        .gate-box input:focus {
+            outline: none;
+            border-color: #ffd700;
+            box-shadow: 0 0 10px rgba(255,215,0,0.3);
+        }
+        .gate-box button {
+            width: 100%;
+            padding: 0.8rem;
+            background: linear-gradient(135deg, #ffd700, #daa520);
+            border: none;
+            border-radius: 6px;
+            color: #0a1628;
+            font-weight: bold;
+            font-size: 1rem;
+            cursor: pointer;
+            letter-spacing: 1px;
+        }
+        .gate-box button:hover { opacity: 0.9; }
+        .gate-error {
+            color: #ff6b6b;
+            font-size: 0.85rem;
+            margin-top: 0.75rem;
+            display: none;
+        }
+        .gate-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* F&A Content Styles */
+        .fa-content { display: none; }
+        .fa-content.visible { display: block; }
+
+        .fa-header {
+            background: linear-gradient(135deg, #0f1f3a 0%, #1a3355 100%);
+            border-bottom: 3px solid #ffd700;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        .fa-header h1 {
+            font-family: Georgia, serif;
+            color: #ffd700;
+            font-size: 1.8rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        .fa-header .fa-subtitle {
+            color: #e0e0e0;
+            font-size: 0.95rem;
+            margin-top: 0.5rem;
+        }
+        .fa-header .fa-classification {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.3rem 1rem;
+            border: 1px solid #ff6b6b;
+            color: #ff6b6b;
+            font-family: 'Courier New', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-radius: 3px;
+        }
+
+        .fa-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .fa-section {
+            margin-bottom: 3rem;
+        }
+        .fa-section h2 {
+            font-family: Georgia, serif;
+            color: #ffd700;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+            border-bottom: 1px solid rgba(255,215,0,0.3);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .fa-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 1.5rem;
+            font-size: 0.9rem;
+        }
+        .fa-table th {
+            background: rgba(255,215,0,0.1);
+            color: #ffd700;
+            text-align: left;
+            padding: 0.75rem 1rem;
+            border-bottom: 2px solid rgba(255,215,0,0.3);
+            font-weight: 600;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .fa-table td {
+            padding: 0.65rem 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            color: #e0e0e0;
+        }
+        .fa-table tr:hover td {
+            background: rgba(255,215,0,0.03);
+        }
+        .fa-table .amount {
+            text-align: right;
+            font-family: 'Courier New', monospace;
+            color: #fff;
+            font-weight: bold;
+        }
+        .fa-table .total-row td {
+            border-top: 2px solid rgba(255,215,0,0.4);
+            font-weight: bold;
+            color: #ffd700;
+            padding-top: 0.85rem;
+        }
+        .fa-table .subtotal-row td {
+            border-top: 1px solid rgba(255,215,0,0.2);
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .fa-grand-total {
+            background: linear-gradient(135deg, #1a3355, #0f1f3a);
+            border: 2px solid #ffd700;
+            border-radius: 12px;
+            padding: 2rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .fa-grand-total .label {
+            color: #e0e0e0;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        .fa-grand-total .figure {
+            font-family: Georgia, serif;
+            color: #ffd700;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        .fa-grand-total .note {
+            color: #e0e0e0;
+            font-size: 0.8rem;
+            margin-top: 0.75rem;
+            font-style: italic;
+        }
+
+        .fa-metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .fa-metric {
+            background: rgba(15,31,58,0.7);
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 8px;
+            padding: 1.25rem;
+            text-align: center;
+        }
+        .fa-metric .val {
+            font-family: Georgia, serif;
+            font-size: 1.6rem;
+            color: #ffd700;
+            font-weight: bold;
+        }
+        .fa-metric .lbl {
+            font-size: 0.75rem;
+            color: #e0e0e0;
+            margin-top: 0.3rem;
+            letter-spacing: 0.5px;
+        }
+
+        .fa-note {
+            background: rgba(255,215,0,0.05);
+            border-left: 3px solid #ffd700;
+            padding: 1rem 1.25rem;
+            margin: 1rem 0;
+            font-size: 0.85rem;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        .fa-doc-list {
+            list-style: none;
+            padding: 0;
+        }
+        .fa-doc-list li {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .fa-doc-list li:hover {
+            background: rgba(255,215,0,0.03);
+        }
+        .fa-doc-list .doc-name {
+            color: #fff;
+            font-size: 0.9rem;
+        }
+        .fa-doc-list .doc-meta {
+            color: #e0e0e0;
+            font-size: 0.75rem;
+            font-family: 'Courier New', monospace;
+        }
+        .fa-doc-list a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+        .fa-doc-list a:hover {
+            text-decoration: underline;
+        }
+
+        .fa-icard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .fa-icard-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 2px solid rgba(255,215,0,0.3);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .fa-icard-grid img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 20px rgba(255,215,0,0.3);
+        }
+
+        .fa-back-link {
+            display: inline-block;
+            margin: 1.5rem;
+            color: #ffd700;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
+        .fa-back-link:hover { text-decoration: underline; }
+
+        .fa-footer {
+            text-align: center;
+            padding: 2rem;
+            border-top: 1px solid rgba(255,215,0,0.15);
+            margin-top: 3rem;
+            color: #e0e0e0;
+            font-size: 0.8rem;
+        }
+
+        .fa-amex-note {
+            color: #ff6b6b;
+            font-size: 0.8rem;
+            font-style: italic;
+        }
+
+        @media(max-width:600px) {
+            .fa-header h1 { font-size: 1.3rem; }
+            .fa-grand-total .figure { font-size: 1.8rem; }
+            .fa-table { font-size: 0.8rem; }
+            .fa-table th, .fa-table td { padding: 0.5rem 0.6rem; }
+            .fa-metric-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+    <link rel="canonical" href="https://infra-acad-kuqzaex2.manus.space/finance-admin.html">
+    <meta name="keywords" content="infrastructure academy, infrastructure education, civil engineering, civilisation history, infrastructure consciousness, gamified learning, IAAI, Nigel Dearden, infrastructure odyssey, 12 relays, calories to consciousness">
+<meta property="og:type" content="website">
+		<meta property="og:url" content="https://infra-acad-kuqzaex2.manus.space/finance-admin.html">
+		<meta property="og:title" content="Infrastructure Academy - An Infrastructure Odyssey">
+		<meta property="og:description" content="A comprehensive digital platform presenting "An Infrastructure Odyssey" - a 12,000-year journey through civilizational infrastructure development. Features three volumes: Perspective (narrative), Guide (practical framework), and Game (interactive learning), organized around 12 civilizational relays from Fire to Consciousness.">
+		<meta property="og:image" content="https://files.manuscdn.com/webdev_screenshots/2026/03/14/EpJbHinM2qXrsVqgbvCnSd.png?x-oss-process=image/resize,w_1200/crop,h_630,x_0,y_0">
+		<meta property="og:image:width" content="1200">
+		<meta property="og:image:height" content="630">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="Infrastructure Academy - An Infrastructure Odyssey">
+		<meta name="twitter:description" content="A comprehensive digital platform presenting "An Infrastructure Odyssey" - a 12,000-year journey through civilizational infrastructure development. Features three volumes: Perspective (narrative), Guide (practical framework), and Game (interactive learning), organized around 12 civilizational relays from Fire to Consciousness.">
+		<meta name="twitter:image" content="https://files.manuscdn.com/webdev_screenshots/2026/03/14/EpJbHinM2qXrsVqgbvCnSd.png?x-oss-process=image/resize,w_1200/crop,h_630,x_0,y_0">
+		<meta name="twitter:image:width" content="1200">
+		<meta name="twitter:image:height" content="630"><link rel="canonical" href="https://infra-acad-kuqzaex2.manus.space/finance-admin.html" /></head>
+<body>
+
+<!-- PASSWORD GATE -->
+<div class="password-gate" id="passwordGate">
+    <div class="gate-box">
+        <div class="gate-icon">&#128274;</div>
+        <h2>Finance & Admin</h2>
+        <p>This section is restricted to the IAAI formation team.<br>Enter the access code to continue.</p>
+        <input type="password" id="gatePassword" placeholder="Access Code" autocomplete="off">
+        <button onclick="checkPassword()">Enter</button>
+        <div class="gate-error" id="gateError">Incorrect access code. Try again.</div>
+    </div>
+</div>
+
+<!-- F&A CONTENT (hidden until password correct) -->
+<div class="fa-content" id="faContent">
+
+    <a href="/" class="fa-back-link">&larr; Return to Infrastructure Academy</a>
+
+    <div class="fa-header">
+        <h1>Finance & Administration</h1>
+        <div class="fa-subtitle">IAAI Phase 1 Investment Cost Report &mdash; Inception to 8 March 2026</div>
+        <div class="fa-classification">Internal &mdash; Board & Formation Team Only</div>
+    </div>
+
+    <div class="fa-container">
+
+        <!-- KEY METRICS -->
+        <div class="fa-section">
+            <h2>Key Metrics</h2>
+            <div class="fa-metric-grid">
+                <div class="fa-metric">
+                    <div class="val">124</div>
+                    <div class="lbl">Days (5 Nov 2025 &ndash; 8 Mar 2026)</div>
+                </div>
+                <div class="fa-metric">
+                    <div class="val">591,759</div>
+                    <div class="lbl">AI Credits Consumed</div>
+                </div>
+                <div class="fa-metric">
+                    <div class="val">US$3,053</div>
+                    <div class="lbl">Cost Per Day (Revised)</div>
+                </div>
+                <div class="fa-metric">
+                    <div class="val">Phase 2</div>
+                    <div class="lbl">Current Phase (Formation)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- GRAND TOTAL -->
+        <div class="fa-grand-total">
+            <div class="label">Revised Grand Total &mdash; Phase 1 Investment</div>
+            <div class="figure">US$378,619</div>
+            <div class="note">8 line items &bull; 5% contingency = US$397,550 &bull; Acknowledged underestimate (~95% of true total)</div>
+        </div>
+
+        <!-- SECTION 1: AI PLATFORM CREDITS -->
+        <div class="fa-section">
+            <h2>1. AI Platform Credits (591,759 consumed)</h2>
+            <table class="fa-table">
+                <thead>
+                    <tr><th>Source</th><th>Detail</th><th class="amount">Amount (USD)</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Amex Explorer ****15006</td><td>Nov 2025 &ndash; 5 Mar 2026 net charges (HK$18,394.53 at HK$7.80/USD)</td><td class="amount">$2,358.27</td></tr>
+                    <tr><td>Amex Explorer ****15006</td><td>7 &times; HK$7,888 on 6&ndash;7 Mar 2026 for 600K credits (HK$55,216 at HK$7.80/USD)</td><td class="amount">$7,079.49</td></tr>
+                    <tr><td>HSBC card</td><td>US$2,000 to MANUS AI SINGAPORE SG on 7 Mar 2026 (new account forced after platform lockout)</td><td class="amount">$2,000.00</td></tr>
+                    <tr class="subtotal-row"><td colspan="2">AI Platform Credits Total</td><td class="amount">$11,438.00</td></tr>
+                </tbody>
+            </table>
+
+            <h2 style="font-size:1.1rem; margin-top:1.5rem;">Amex Explorer ****15006 &mdash; Detailed Breakdown (HKD)</h2>
+            <table class="fa-table">
+                <thead>
+                    <tr><th>Period</th><th class="amount">Gross (HKD)</th><th class="amount">Refunds (HKD)</th><th class="amount">Net (HKD)</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>6 Nov &ndash; 5 Dec 2025</td><td class="amount">$740.00</td><td class="amount">&mdash;</td><td class="amount">$740.00</td></tr>
+                    <tr><td>6 Dec &ndash; 5 Jan 2026</td><td class="amount">$973.00</td><td class="amount">&mdash;</td><td class="amount">$973.00</td></tr>
+                    <tr><td>6 Jan &ndash; 5 Feb 2026</td><td class="amount">$14,793.00</td><td class="amount">-$4,897.79</td><td class="amount">$9,895.21</td></tr>
+                    <tr><td>6 Feb &ndash; 5 Mar 2026</td><td class="amount">$29,680.00</td><td class="amount">-$22,893.68</td><td class="amount">$6,786.32</td></tr>
+                    <tr class="subtotal-row"><td>Subtotal (Nov&ndash;5 Mar)</td><td class="amount">$46,186.00</td><td class="amount">-$27,791.47</td><td class="amount">$18,394.53</td></tr>
+                    <tr><td>6&ndash;7 Mar 2026 (7 charges)</td><td class="amount">$55,216.00</td><td class="amount">&mdash;</td><td class="amount">$55,216.00</td></tr>
+                    <tr class="total-row"><td>Amex Grand Total</td><td class="amount">$101,402.00</td><td class="amount">-$27,791.47</td><td class="amount">$73,610.53</td></tr>
+                </tbody>
+            </table>
+            <div class="fa-note">
+                Amex net HK$73,610.53 &divide; 7.80 = <strong>US$9,437.25</strong> + HSBC <strong>US$2,000</strong> = <strong>US$11,437.25 &asymp; US$11,438</strong><br>
+                The 7 &times; HK$7,888 charges on 6&ndash;7 March represent 600,000 credits purchased during the crisis rebuild period when the original platform account was locked out.
+            </div>
+        </div>
+
+        <!-- SECTION 2: NIGEL DAILY ENGINEERING CHECKS -->
+        <div class="fa-section">
+            <h2>2. Nigel Daily Engineering Checks (124 Days)</h2>
+            <table class="fa-table">
+                <thead>
+                    <tr><th>Item</th><th>Calculation</th><th class="amount">Amount (USD)</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Daily AI supervision &amp; QA</td><td>124 days &times; 4 hours/day &times; US$187.50/hour</td><td class="amount">$93,000.00</td></tr>
+                </tbody>
+            </table>
+            <div class="fa-note">
+                Ir. Nigel T. Dearden committed daily supervision and quality assurance checks of all AI-generated output for 124 consecutive days. This represents the human oversight cost &mdash; the &ldquo;consciousness at the interface&rdquo; that the thesis documents as essential. HK Government benchmark for Professional Engineer: US$2,050/day &mdash; Nigel&rsquo;s effective rate of US$750/day is 27% below benchmark.
+            </div>
+        </div>
+
+        <!-- SECTION 3: ENGINEERING CONTROL COST -->
+        <div class="fa-section">
+            <h2>3. Engineering Control Cost (124 Days)</h2>
+            <table class="fa-table">
+                <thead>
+                    <tr><th>Item</th><th>Calculation</th><th class="amount">Amount (USD)</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Operator/observer cost</td><td>124 days &times; US$1,500/day (4ECL standard rate)</td><td class="amount">$186,000.00</td></tr>
+                </tbody>
+            </table>
+            <div class="fa-note">
+                The actinic method requires an operator/observer &mdash; this is an <strong>Engineering Control Cost</strong>, not &ldquo;lost work days.&rdquo; The experiment (man + machine collaboration) cannot run without the human operator present. This cost represents the consulting revenue that would otherwise have been earned, redirected to the IAAI experiment as the required human control element.
+            </div>
+        </div>
+
+        <!-- SUBTOTAL 1-3 -->
+        <div class="fa-grand-total" style="border-color: rgba(255,215,0,0.5);">
+            <div class="label">Subtotal &mdash; Items 1&ndash;3</div>
+            <div class="figure" style="font-size:2rem;">US$290,438</div>
+        </div>
+
+        <!-- SECTION 4: PLATFORM LOSS -->
+        <div class="fa-section">
+            <h2>4. Platform Loss & Crisis Rebuild</h2>
+            <table class="fa-table">
+                <thead>
+                    <tr><th>Item</th><th>Detail</th><th class="amount">Amount (USD)</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>4a. Lost work product</td><td>Total destruction of all manuscripts, code, knowledge base, configurations. No backup. No recovery. No warning.</td><td class="amount">$49,500.00</td></tr>
+                    <tr><td>4b. Rebuild cost</td><td>Cost to reconstruct lost work on replacement platform</td><td class="amount">$15,000.00</td></tr>
+                    <tr class="subtotal-row"><td colspan="2">Platform Loss Subtotal</td><td class="amount">$64,500.00</td></tr>
+                </tbody>
+            </table>
+            <div class="fa-note" style="border-left-color:#ff6b6b;">
+                <strong>Health Impact Statement:</strong> The crisis rebuild required sustained 24-hour working days with no sleep, imposed on a 56-year-old chartered engineer recovering from a C3 cervical fracture. This level of physical stress, caused directly by the platform's failure, constituted a serious health risk. Documented for the formation team's awareness and for any future liability or insurance considerations.
+            </div>
+        </div>
+
+        <!-- GOV-COST CARD TOTAL -->
+        <div class="fa-section">
+            <h2>Consolidated Cost Summary (8 Line Items)</h2>
+            <table class="fa-table">
+                <thead>
+                    <tr><th>Category</th><th class="amount">Amount (USD)</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>1. AI Platform Credits (591,759 consumed)</td><td class="amount">$11,438.00</td></tr>
+                    <tr><td>2. Nigel Daily Engineering Checks (124 days)</td><td class="amount">$93,000.00</td></tr>
+                    <tr><td>3. Engineering Control Cost (124 days)</td><td class="amount">$186,000.00</td></tr>
+                    <tr class="subtotal-row"><td>Subtotal (Items 1&ndash;3)</td><td class="amount">$290,438.00</td></tr>
+                    <tr><td>4. Lost work product</td><td class="amount">$49,500.00</td></tr>
+                    <tr><td>5. Rebuild cost</td><td class="amount">$15,000.00</td></tr>
+                    <tr class="subtotal-row"><td>Subtotal (Items 1&ndash;5)</td><td class="amount">$354,938.00</td></tr>
+                    <tr><td>6. Hardware (Lenovo ThinkPad X1 Carbon)</td><td class="amount">$2,469.00</td></tr>
+                    <tr><td>7. Domains (WIX + Dotster)</td><td class="amount">$212.00</td></tr>
+                    <tr><td>8. Crisis rebuild premium (7 days &times; $3,000/day)</td><td class="amount">$21,000.00</td></tr>
+                    <tr class="total-row"><td>Grand Total (8 Line Items)</td><td class="amount">$378,619.00</td></tr>
+                    <tr><td style="font-style:italic;">5% Contingency (minor expenses, travel, comms)</td><td class="amount" style="font-style:italic;">$18,931.00</td></tr>
+                    <tr class="total-row"><td><strong>Estimated Total (with contingency)</strong></td><td class="amount"><strong>$397,550.00</strong></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- REVISED GRAND TOTAL -->
+        <div class="fa-grand-total">
+            <div class="label">Revised Grand Total &mdash; Phase 1 Investment</div>
+            <div class="figure">US$378,619</div>
+            <div class="note">8 line items verified from Amex Explorer ****15006, HSBC card, and documented records</div>
+        </div>
+
+        <!-- CONTINGENCY -->
+        <div class="fa-grand-total" style="border-color: rgba(255,215,0,0.5);">
+            <div class="label">With 5% Contingency (standard allowance)</div>
+            <div class="figure" style="font-size:2rem;">US$397,550</div>
+            <div class="note">Contingency covers: earlier Manus purchases, software licences, travel, communications, admin overhead, hardware accessories, medical costs</div>
+        </div>
+
+        <!-- THREE BIG-TICKET ITEMS CHART -->
+        <div class="fa-section">
+            <h2>Investment Concentration &mdash; The Three Big-Ticket Items (77%)</h2>
+            <div style="display:flex; gap:2rem; flex-wrap:wrap; align-items:center; justify-content:center; margin:1.5rem 0;">
+                <div style="width:320px; height:320px;">
+                    <canvas id="bigTicketPie"></canvas>
+                </div>
+                <div style="flex:1; min-width:280px;">
+                    <canvas id="bigTicketBar" style="max-height:300px;"></canvas>
+                </div>
+            </div>
+            <div class="fa-note">
+                <strong>Key Insight:</strong> 77% of the total Phase 1 investment ($290,438 of $378,619) is concentrated in three items: Engineering Control Cost (49%), Daily Engineering Checks (25%), and AI Platform Credits (3%). The remaining 23% covers platform loss, rebuild, hardware, domains, and crisis premium. All professional time charges flow from 4ECL at the standard consulting rate &mdash; Nigel's effective rate of US$750/day is 27% below the HK Government Professional Engineer benchmark of US$2,050/day.
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+        <script>
+        (function() {
+            // Pie Chart — Investment Concentration
+            var pieCtx = document.getElementById('bigTicketPie').getContext('2d');
+            new Chart(pieCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: [
+                        'Engineering Control Cost ($186,000)',
+                        'Daily Engineering Checks ($93,000)',
+                        'AI Platform Credits ($11,438)',
+                        'Lost Work Product ($49,500)',
+                        'Rebuild Cost ($15,000)',
+                        'Crisis Premium ($21,000)',
+                        'Hardware ($2,469)',
+                        'Domains ($212)'
+                    ],
+                    datasets: [{
+                        data: [186000, 93000, 11438, 49500, 15000, 21000, 2469, 212],
+                        backgroundColor: [
+                            '#ffd700',
+                            '#e6c200',
+                            '#ccad00',
+                            '#4a90d9',
+                            '#357abd',
+                            '#ff6b6b',
+                            '#7eb8da',
+                            '#a0a0a0'
+                        ],
+                        borderColor: '#0a1628',
+                        borderWidth: 2
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: true,
+                    plugins: {
+                        legend: {
+                            display: true,
+                            position: 'bottom',
+                            labels: {
+                                color: '#ffffff',
+                                font: { size: 10 },
+                                padding: 8,
+                                boxWidth: 12
+                            }
+                        },
+                        title: {
+                            display: true,
+                            text: 'Phase 1 Investment Breakdown',
+                            color: '#ffd700',
+                            font: { size: 14, weight: 'bold' }
+                        }
+                    }
+                }
+            });
+
+            // Bar Chart — Three Big-Ticket Items vs Others
+            var barCtx = document.getElementById('bigTicketBar').getContext('2d');
+            new Chart(barCtx, {
+                type: 'bar',
+                data: {
+                    labels: [
+                        'Engineering\nControl Cost',
+                        'Daily Engineering\nChecks',
+                        'AI Platform\nCredits',
+                        'Lost Work\nProduct',
+                        'Crisis\nPremium',
+                        'Rebuild\nCost',
+                        'Hardware',
+                        'Domains'
+                    ],
+                    datasets: [{
+                        label: 'Amount (USD)',
+                        data: [186000, 93000, 11438, 49500, 21000, 15000, 2469, 212],
+                        backgroundColor: [
+                            '#ffd700',
+                            '#e6c200',
+                            '#ccad00',
+                            '#4a90d9',
+                            '#ff6b6b',
+                            '#357abd',
+                            '#7eb8da',
+                            '#a0a0a0'
+                        ],
+                        borderColor: '#ffd700',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    plugins: {
+                        legend: { display: false },
+                        title: {
+                            display: true,
+                            text: 'Cost by Category (USD)',
+                            color: '#ffd700',
+                            font: { size: 14, weight: 'bold' }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: { color: '#ffffff', callback: function(v) { return '$' + (v/1000) + 'K'; } },
+                            grid: { color: 'rgba(255,215,0,0.1)' }
+                        },
+                        y: {
+                            ticks: { color: '#ffffff', font: { size: 10 } },
+                            grid: { display: false }
+                        }
+                    }
+                }
+            });
+        })();
+        </script>
+
+        <!-- COST PER RELAY BREAKDOWN -->
+        <div class="fa-section">
+            <h2>Cost Per Relay &mdash; Where the Investment Went</h2>
+            <p style="color:#e0e0e0; font-size:0.9rem; margin-bottom:1rem;">The $378,619 total investment mapped thematically across the 12 Civilisational Relays. This is an indicative allocation based on content volume, complexity, and research depth per relay.</p>
+            <div style="display:flex; gap:2rem; flex-wrap:wrap; align-items:center; justify-content:center; margin:1.5rem 0;">
+                <div style="width:100%; max-width:700px; height:400px;">
+                    <canvas id="costPerRelayChart"></canvas>
+                </div>
+            </div>
+            <div class="fa-note" style="font-size:0.8rem; color:rgba(255,255,255,0.5);">
+                Note: Allocation is indicative, based on relative content volume and complexity per relay. Actual costs are pooled across platform development, AI credits, and engineering time.
+            </div>
+        </div>
+        <script>
+        (function() {
+            var relayCtx = document.getElementById('costPerRelayChart').getContext('2d');
+            // Indicative allocation based on content complexity and volume
+            // Total: $378,619 distributed across 12 relays + platform overhead
+            var relayLabels = ['Fire', 'Tree', 'River', 'Horse', 'Roads', 'Ships', 'Loom', 'Rail', 'Engine', 'AAA Triad', 'Orbit', 'Human Nodes'];
+            var relayValues = [24500, 28200, 32800, 35600, 33400, 31200, 29800, 34100, 30500, 28900, 26700, 42919];
+            // Colors: warm progression from fire red through gold to cool blue
+            var relayColors = [
+                '#ff4500', '#ff6b35', '#ff8c00', '#ffa500', '#ffc107', '#ffd700',
+                '#daa520', '#b8860b', '#cd853f', '#8b7355', '#6b8e9b', '#4682b4'
+            ];
+            new Chart(relayCtx, {
+                type: 'bar',
+                data: {
+                    labels: relayLabels,
+                    datasets: [{
+                        label: 'Indicative Cost (USD)',
+                        data: relayValues,
+                        backgroundColor: relayColors,
+                        borderColor: relayColors.map(function(c) { return c; }),
+                        borderWidth: 1,
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        title: {
+                            display: true,
+                            text: 'Indicative Investment per Relay (USD)',
+                            color: '#ffd700',
+                            font: { size: 14, weight: 'bold' }
+                        },
+                        tooltip: {
+                            callbacks: {
+                                label: function(ctx) {
+                                    return '$' + ctx.raw.toLocaleString();
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: { color: '#ffffff', font: { size: 10 }, maxRotation: 45 },
+                            grid: { display: false }
+                        },
+                        y: {
+                            ticks: { color: '#ffffff', callback: function(v) { return '$' + (v/1000) + 'K'; } },
+                            grid: { color: 'rgba(255,215,0,0.1)' }
+                        }
+                    }
+                }
+            });
+        })();
+        </script>
+
+        <!-- CONTEXT -->
+        <div class="fa-section">
+            <h2>Context &mdash; Not Charged to IAAI Phase 1</h2>
+            <table class="fa-table">
+                <thead>
+                    <tr><th>Item</th><th>Detail</th><th class="amount">Amount (USD)</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>byoGuard sunk cost</td><td>3 years (2020&ndash;2023), war chest + retirement fund</td><td class="amount">$500,000.00</td></tr>
+                </tbody>
+            </table>
+            <div class="fa-note">
+                The byoGuard failure directly catalysed the creation of IAAI. There is no financial safety net remaining. This context is essential for the formation team (Michael, Henry, Frank, Stephen) to understand the personal stakes involved.
+            </div>
+        </div>
+
+        <!-- BUSINESS STRUCTURE -->
+        <div class="fa-section">
+            <h2>Business Structure</h2>
+            <div class="fa-note">
+                <strong>4ECL</strong> (<a href="https://www.4ecl.com" target="_blank" style="color:#ffd700;">www.4ecl.com</a>) is Ir. Nigel T. Dearden's wholly-owned consulting firm, operating as a separate legal entity from IAAI. All professional time charges flow from 4ECL to IAAI at the standard consulting rate of US$1,500/day. The three big-ticket items (AI Platform Credits $11,438 + Daily Engineering Checks $93,000 + Engineering Control Cost $186,000 = $290,438) represent 77% of the total. IAAI is a separate business, fully owned by Nigel, with formation team members receiving a percentage share after Proof of Concept is achieved. Phase 1 (PoC) ended on 5 March 2026. Phase 2 (Formation) commenced 6 March 2026.
+            </div>
+        </div>
+
+        <!-- GOV COST iCARDS -->
+        <div class="fa-section">
+            <h2>Governance Cost Cards</h2>
+            <div class="fa-icard-grid">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCard_GOV_COST_v2_57db4f6f.png" alt="GOV COST iCard v2" onclick="openLightbox(this)">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCard_BRANCH3_FINANCE_CORPORATE_a20e6ae9.png" alt="Branch 3 Finance Corporate iCard" onclick="openLightbox(this)">
+            </div>
+        </div>
+
+        <!-- PITCH DECKS FOR HENRY -->
+        <div class="fa-section">
+            <h2>Pitch Decks & Partnering</h2>
+            <ul class="fa-doc-list">
+                <li>
+                    <span class="doc-name"><a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IAAIInvestorPitch(1)_51b4037b.pptx" target="_blank">IAAI Investor Pitch &mdash; Deck 1</a></span>
+                    <span class="doc-meta">PPTX &bull; 3.9 MB</span>
+                </li>
+                <li>
+                    <span class="doc-name"><a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IAAIInvestorPitch(v2)(1)_0da2df1f.pptx" target="_blank">IAAI Investor Pitch &mdash; Deck 2 (v2)</a></span>
+                    <span class="doc-meta">PPTX &bull; 4.0 MB</span>
+                </li>
+                <li>
+                    <span class="doc-name"><a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IAAIGACTechdeck_f1b968ac.pptx" target="_blank">IAAI GAC Tech Partnering Deck</a></span>
+                    <span class="doc-meta">PPTX &bull; 3.1 MB</span>
+                </li>
+                <li>
+                    <span class="doc-name"><a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IAAI—SupplementDeepDive_7dd51195.pptx" target="_blank">IAAI Supplement Deep Dive</a></span>
+                    <span class="doc-meta">PPTX &bull; 2.9 MB</span>
+                </li>
+                <li>
+                    <span class="doc-name"><a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/4ECL_Vision_Rebadged_v3_c9cc689f.pptx" target="_blank">4ECL Vision Deck &mdash; Rebadged v3 (91 slides)</a></span>
+                    <span class="doc-meta">PPTX &bull; 25.4 MB</span>
+                </li>
+                <li>
+                    <span class="doc-name"><a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/HM_PARTNER_MEETING_BRIEF_1MAR2026_64741edf.md" target="_blank">H&amp;M Partner Meeting Brief &mdash; 1 Mar 2026</a></span>
+                    <span class="doc-meta">MD &bull; 15 KB</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- DOCUMENT INDEX -->
+        <div class="fa-section">
+            <h2>Formation Documents</h2>
+            <ul class="fa-doc-list">
+                <li>
+                    <span class="doc-name"><a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IAAI_FORMATION_PACKAGE_FOR_HENRY_v2_9a57b91b.pdf" target="_blank">iAAi Formation Package for Henry &mdash; Complete Bundle v2 (PDF)</a></span>
+                    <span class="doc-meta">413 KB &bull; 8 Mar 2026 &bull; PDF &bull; CORRECTED</span>
+                </li>
+                <li>
+                    <span class="doc-name"><a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/KPMG_ADVISORY_REVIEW_v2_9f67ef37.pdf" target="_blank">Independent Advisory Review &mdash; Formation Readiness v2 (PDF)</a></span>
+                    <span class="doc-meta">374 KB &bull; 8 Mar 2026 &bull; PDF &bull; CORRECTED</span>
+                </li>
+            </ul>
+            <h2>Financial Documents</h2>
+            <ul class="fa-doc-list">
+                <li>
+                    <span class="doc-name"><a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/4ECL_BILLING_AUDIT_1e541cf5.pdf" target="_blank">4ECL Billing Audit &mdash; KPMG-Style Independent Review (PDF)</a></span>
+                    <span class="doc-meta">338 KB &bull; 8 Mar 2026 &bull; PDF</span>
+                </li>
+                <li>
+                    <span class="doc-name"><a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IAAI_Phase1_Investment_Cost_Report_v3_136f1c69.pdf" target="_blank">IAAI Phase 1 Investment Cost Report (v3 Corrected PDF)</a></span>
+                    <span class="doc-meta">334 KB &bull; 8 Mar 2026 &bull; Corrected $378,619</span>
+                </li>
+                <li>
+                    <span class="doc-name"><a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IAAI_Total_Cost_Estimate_2a4f8c8e.md" target="_blank">IAAI Total Cost Estimate (Draft)</a></span>
+                    <span class="doc-meta">3 KB &bull; 8 Mar 2026</span>
+                </li>
+                <li>
+                    <span class="doc-name"><a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/MEDIA_ANNOUNCEMENT_BLOCK_345_97bf703e.md" target="_blank">Media Announcement &mdash; Block 345 (Pythagoras)</a></span>
+                    <span class="doc-meta">8 KB &bull; 8 Mar 2026</span>
+                </li>
+                <li>
+                    <span class="doc-name"><a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/mobilisation_clock_audit_97761b38.md" target="_blank">Mobilisation Clock Audit</a></span>
+                    <span class="doc-meta">2 KB &bull; 8 Mar 2026</span>
+                </li>
+            </ul>
+        </div>
+
+        <!-- STRATEGIC ANALYSIS CARDS -->
+        <div class="fa-section">
+            <h2>Strategic Analysis &amp; Governance Cards</h2>
+            <p style="color:#e0e0e0; font-size:0.9rem; margin-bottom:1rem;">Click any card to enlarge. These are the verified iCards from the IAAI governance system &mdash; Block 346+.</p>
+            
+            <h3 style="color:#ffd700; font-size:1rem; margin:1.5rem 0 0.75rem; letter-spacing:1px;">STRATEGIC ENVIRONMENT</h3>
+            <div class="fa-icard-grid">
+                <div style="text-align:center;">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/Clipboard_0_443F7DA3_4b4e0830.png" alt="SWOT Analysis — Block 346" onclick="openLightbox(this)">
+                    <p style="color:#e0e0e0; font-size:0.75rem; margin-top:0.5rem;">SWOT Analysis &mdash; Block 346</p>
+                </div>
+                <div style="text-align:center;">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/Clipboard_0_D50C8CA8_ba2cc9a3.png" alt="PESTLE Analysis — Block 346" onclick="openLightbox(this)">
+                    <p style="color:#e0e0e0; font-size:0.75rem; margin-top:0.5rem;">PESTLE Analysis &mdash; Block 346</p>
+                </div>
+            </div>
+            <div class="fa-icard-grid">
+                <div style="text-align:center;">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/f2eb8773-1ddc-4739-ae4f-9f38d403e40b_574a3ab1.jpeg" alt="The Challenge — Infrastructure Education" onclick="openLightbox(this)">
+                    <p style="color:#e0e0e0; font-size:0.75rem; margin-top:0.5rem;">The Challenge &mdash; Market Problem Statement</p>
+                </div>
+                <div style="text-align:center;">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IAAI_SWOT_PESTLE_DASHBOARD(2)_ff1970a0.png" alt="SWOT/PESTLE Dashboard" onclick="openLightbox(this)">
+                    <p style="color:#e0e0e0; font-size:0.75rem; margin-top:0.5rem;">SWOT/PESTLE Dashboard</p>
+                </div>
+            </div>
+
+            <h3 style="color:#ffd700; font-size:1rem; margin:2rem 0 0.75rem; letter-spacing:1px;">GOVERNANCE SYSTEM</h3>
+            <div class="fa-icard-grid">
+                <div style="text-align:center;">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/GOV_POWER_CARD_e846066c.png" alt="Governance Deck — Power Card" onclick="openLightbox(this)">
+                    <p style="color:#e0e0e0; font-size:0.75rem; margin-top:0.5rem;">Governance Deck &mdash; Power Card (4-Tier System)</p>
+                </div>
+                <div style="text-align:center;">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_9139_fe16a475.jpeg" alt="SAP-001 System Assurance Protocol" onclick="openLightbox(this)">
+                    <p style="color:#e0e0e0; font-size:0.75rem; margin-top:0.5rem;">SAP-001 &mdash; System Assurance Protocol</p>
+                </div>
+            </div>
+            <div class="fa-icard-grid">
+                <div style="text-align:center;">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/COMMAND_CARD_NEVER_RESHARE_f503a8b5.png" alt="CC-001 Command Card" onclick="openLightbox(this)">
+                    <p style="color:#e0e0e0; font-size:0.75rem; margin-top:0.5rem;">CC-001 &mdash; Command Card (Never Ask Human to Re-Share)</p>
+                </div>
+            </div>
+
+            <h3 style="color:#ffd700; font-size:1rem; margin:2rem 0 0.75rem; letter-spacing:1px;">PRODUCT &amp; PARTNERSHIP</h3>
+            <div class="fa-icard-grid">
+                <div style="text-align:center;">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/Clipboard_0_3FA77780_8529074d.png" alt="The Reality Engine — Master Index" onclick="openLightbox(this)">
+                    <p style="color:#e0e0e0; font-size:0.75rem; margin-top:0.5rem;">The Reality Engine &mdash; Master Index (8 Pillars)</p>
+                </div>
+                <div style="text-align:center;">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/Clipboard_0_15A049E9_cef7c4d9.png" alt="IAAI x GAC Technology Partnership" onclick="openLightbox(this)">
+                    <p style="color:#e0e0e0; font-size:0.75rem; margin-top:0.5rem;">IAAI &times; GAC Technology &mdash; Hardware Partnership</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- QUICK ACCESS FOR HENRY -->
+        <div class="fa-section">
+            <h2>Quick Access &mdash; Formation Team</h2>
+            <div class="fa-note">
+                <strong>For Henry:</strong> All pitch decks and partnering materials are in the "Pitch Decks &amp; Partnering" section above. The GAC Tech deck, both investor pitches, the supplement deep dive, and the full 91-slide 4ECL vision deck are all downloadable directly. The Partner Meeting Brief from 1 March 2026 contains the full business architecture, revenue model, and formation team structure. The Strategic Analysis cards above show the SWOT, PESTLE, governance system, and partnership architecture.
+            </div>
+        </div>
+
+        <!-- PHASE 2 FORMATION TIMELINE -->
+        <div class="fa-section">
+            <h2>Phase 2 &mdash; Formation Timeline</h2>
+            <p style="color:#e0e0e0; font-size:0.9rem; margin-bottom:1.5rem;">Key milestones from inception through formation. Phase 1 (solo build) is complete. Phase 2 (formation &amp; partnerships) is in progress.</p>
+            
+            <div style="position:relative; padding-left:2.5rem; border-left:3px solid var(--color-accent-gold);">
+                <!-- Milestone 1 -->
+                <div style="margin-bottom:2rem; position:relative;">
+                    <div style="position:absolute; left:-2.85rem; top:0; width:16px; height:16px; background:var(--color-accent-gold); border-radius:50%; border:3px solid #0a1628;"></div>
+                    <div style="color:var(--color-accent-gold); font-weight:bold; font-size:0.85rem; letter-spacing:1px;">4 NOV 2025</div>
+                    <div style="color:#fff; font-size:0.95rem; margin-top:0.25rem;"><strong>Inception &mdash; Day 1</strong></div>
+                    <div style="color:#ccc; font-size:0.85rem;">First Manus AI session. The idea crystallises: infrastructure education as a civilisational relay. Solo build begins.</div>
+                </div>
+                <!-- Milestone 2 -->
+                <div style="margin-bottom:2rem; position:relative;">
+                    <div style="position:absolute; left:-2.85rem; top:0; width:16px; height:16px; background:var(--color-accent-gold); border-radius:50%; border:3px solid #0a1628;"></div>
+                    <div style="color:var(--color-accent-gold); font-weight:bold; font-size:0.85rem; letter-spacing:1px;">DEC 2025 &ndash; FEB 2026</div>
+                    <div style="color:#fff; font-size:0.95rem; margin-top:0.25rem;"><strong>Solo Build &mdash; 12 Relays Written</strong></div>
+                    <div style="color:#ccc; font-size:0.85rem;">Volume 1 (Perspective) and Volume 2 (Guide) drafted. The Reality Engine game platform prototyped. Website architecture established. 591,759 AI credits consumed.</div>
+                </div>
+                <!-- Milestone 3 -->
+                <div style="margin-bottom:2rem; position:relative;">
+                    <div style="position:absolute; left:-2.85rem; top:0; width:16px; height:16px; background:var(--color-accent-gold); border-radius:50%; border:3px solid #0a1628;"></div>
+                    <div style="color:var(--color-accent-gold); font-weight:bold; font-size:0.85rem; letter-spacing:1px;">1 MAR 2026</div>
+                    <div style="color:#fff; font-size:0.95rem; margin-top:0.25rem;"><strong>Partner Meeting Brief &mdash; Business Architecture</strong></div>
+                    <div style="color:#ccc; font-size:0.85rem;">Full business architecture, revenue model, and formation team structure documented. GAC Technology hardware partnership established.</div>
+                </div>
+                <!-- Milestone 4 -->
+                <div style="margin-bottom:2rem; position:relative;">
+                    <div style="position:absolute; left:-2.85rem; top:0; width:16px; height:16px; background:var(--color-accent-gold); border-radius:50%; border:3px solid #0a1628;"></div>
+                    <div style="color:var(--color-accent-gold); font-weight:bold; font-size:0.85rem; letter-spacing:1px;">6&ndash;7 MAR 2026</div>
+                    <div style="color:#fff; font-size:0.95rem; margin-top:0.25rem;"><strong>Final Sprint &mdash; 7&times; Platform Credit Charges</strong></div>
+                    <div style="color:#ccc; font-size:0.85rem;">Seven consecutive HK$7,888 Amex charges (Manus AI Singapore) during the crisis rebuild. Governance system, F&amp;A page, and formation documents completed.</div>
+                </div>
+                <!-- Milestone 5 -->
+                <div style="margin-bottom:2rem; position:relative;">
+                    <div style="position:absolute; left:-2.85rem; top:0; width:16px; height:16px; background:var(--color-accent-gold); border-radius:50%; border:3px solid #0a1628;"></div>
+                    <div style="color:var(--color-accent-gold); font-weight:bold; font-size:0.85rem; letter-spacing:1px;">8 MAR 2026</div>
+                    <div style="color:#fff; font-size:0.95rem; margin-top:0.25rem;"><strong>Phase 1 Complete &mdash; Day 124</strong></div>
+                    <div style="color:#ccc; font-size:0.85rem;">Grand total: US$378,619 invested. All formation documents, governance cards, and financial audit completed. Ready for Henry meeting.</div>
+                </div>
+                <!-- Milestone 6 (upcoming) -->
+                <div style="margin-bottom:2rem; position:relative;">
+                    <div style="position:absolute; left:-2.85rem; top:0; width:16px; height:16px; background:transparent; border-radius:50%; border:3px solid var(--color-accent-gold);"></div>
+                    <div style="color:rgba(255,215,0,0.6); font-weight:bold; font-size:0.85rem; letter-spacing:1px;">NEXT &mdash; PHASE 2</div>
+                    <div style="color:rgba(255,255,255,0.7); font-size:0.95rem; margin-top:0.25rem;"><strong>Formation &amp; Partnerships</strong></div>
+                    <div style="color:rgba(204,204,204,0.7); font-size:0.85rem;">Henry meeting &rarr; Michael/Frank/Stephen outreach &rarr; PoC sign-off &rarr; Pioneer recruitment &rarr; Beta launch. Target: Q2 2026.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ICUT FINANCIAL CARDS v2 — 10 Mar 2026 (CORRECTED) -->
+        <div class="fa-section">
+            <h2>ICUT Financial Cards v2 &mdash; Investor Pack (Corrected)</h2>
+            <p style="color:#e0e0e0; font-size:0.9rem; margin-bottom:0.5rem;">Complete set of 8 ICUT playing cards covering financial governance, projections, and strategy. <strong>v2 &mdash; 10 March 2026</strong> &mdash; corrected from v1 with proper deferred cost structure, $800K seed (per One Pager), and multiple funding paths.</p>
+            <div class="fa-note" style="border-left-color:#4a90d9; margin-bottom:1.5rem;">
+                <strong>v2 Corrections:</strong> Seed amount corrected to $800K (was $500K). Deferred cost structure properly reflected &mdash; Nigel&rsquo;s $279K consulting time is a receivable, not cash burn. Book sales positioned as PoC revenue signal. Break-even recalculated with subscription + institutional ramp. Multiple funding paths documented (Seed, PIPE, Self-Finance, Direct Investor).
+            </div>
+            <div style="margin-bottom:1.5rem; display:flex; gap:1rem; flex-wrap:wrap;">
+                <a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IAAI_Master_Financial_Workbook_v2_c3505c2f.xlsx" target="_blank" style="display:inline-block; padding:0.75rem 1.5rem; background:var(--color-accent-gold); color:#0a1628; font-weight:bold; text-decoration:none; border-radius:4px; font-size:0.9rem;">&#x1F4CA; Download Master Excel Workbook v2 (5 Sheets)</a>
+                <a href="/cashflow-y1.html" style="display:inline-block; padding:0.75rem 1.5rem; background:transparent; border:1px solid var(--color-accent-gold); color:var(--color-accent-gold); font-weight:bold; text-decoration:none; border-radius:4px; font-size:0.9rem;">&#x1F4C8; View Year 1 Cashflow Model</a>
+            </div>
+            <div class="fa-icard-grid">
+                <div style="text-align:center;">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/ICUT_01_4ECL_Registration_v2_2a62657a.png" alt="ICUT v2: 4ECL Business Registration" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;">
+                    <p style="color:#e0e0e0; font-size:0.75rem; margin-top:0.5rem;">1. 4ECL Business Registration</p>
+                </div>
+                <div style="text-align:center;">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/ICUT_02_Phase1_Audit_v2_39bc4e3d.png" alt="ICUT v2: Phase 1 Financial Audit" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;">
+                    <p style="color:#e0e0e0; font-size:0.75rem; margin-top:0.5rem;">2. Phase 1 Financial Audit ($397,550)</p>
+                </div>
+            </div>
+            <div class="fa-icard-grid">
+                <div style="text-align:center;">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/ICUT_03_J_Curve_v2_7ae68a82.png" alt="ICUT v2: The J-Curve" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;">
+                    <p style="color:#e0e0e0; font-size:0.75rem; margin-top:0.5rem;">3. The J-Curve (Deferred Cost Trough)</p>
+                </div>
+                <div style="text-align:center;">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/ICUT_04_Break_Even_v2_d82b8aae.png" alt="ICUT v2: Break-Even Analysis" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;">
+                    <p style="color:#e0e0e0; font-size:0.75rem; margin-top:0.5rem;">4. Break-Even Analysis (Scenario C: M10)</p>
+                </div>
+            </div>
+            <div class="fa-icard-grid">
+                <div style="text-align:center;">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/ICUT_05_Investor_ROI_v2_85768740.png" alt="ICUT v2: Investor ROI" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;">
+                    <p style="color:#e0e0e0; font-size:0.75rem; margin-top:0.5rem;">5. Investor ROI ($800K &rarr; $313M at Y5)</p>
+                </div>
+                <div style="text-align:center;">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/ICUT_06_Year1_Revenue_v2_0d12d86d.png" alt="ICUT v2: Year 1 Revenue" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;">
+                    <p style="color:#e0e0e0; font-size:0.75rem; margin-top:0.5rem;">6. Year 1 Revenue Model ($800K Deployment)</p>
+                </div>
+            </div>
+            <div class="fa-icard-grid">
+                <div style="text-align:center;">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/ICUT_07_5Year_Projection_v2_a43fec76.png" alt="ICUT v2: 5-Year Projection" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;">
+                    <p style="color:#e0e0e0; font-size:0.75rem; margin-top:0.5rem;">7. 5-Year Projection ($625K &rarr; $3.13B EV)</p>
+                </div>
+                <div style="text-align:center;">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/ICUT_08_Funding_Paths_v2_f6555518.png" alt="ICUT v2: Funding Paths" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;">
+                    <p style="color:#e0e0e0; font-size:0.75rem; margin-top:0.5rem;">8. Funding Paths (Seed / PIPE / Self-Finance / Direct)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- DEFERRED COST STRUCTURE EXPLANATION -->
+        <div class="fa-section">
+            <h2>Deferred Cost Structure &mdash; Why This Is Not Cash Burn</h2>
+            <div class="fa-note" style="border-left-color:#4a90d9;">
+                <strong>Critical distinction for investors:</strong> Of the $397,550 Phase 1 total, approximately <strong>$279,000 (70%)</strong> represents Nigel&rsquo;s deferred consulting time (Engineering Control + Daily Checks). This is <strong>not cash spent</strong> &mdash; it is opportunity cost that becomes a receivable from IAAI to 4ECL once the company is formed. Actual cash outlay during Phase 1 was approximately <strong>$16,000&ndash;$20,000</strong> (AI credits, hardware, domains). Nigel is deferring his costs until the company can achieve cashflow balance.
+            </div>
+            <table class="fa-table">
+                <thead>
+                    <tr><th>Category</th><th class="amount">Amount</th><th>Type</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Engineering Control (124 days &times; $1,500)</td><td class="amount">$186,000</td><td style="color:#4a90d9;">DEFERRED &mdash; 4ECL receivable</td></tr>
+                    <tr><td>Daily Engineering Checks (124 days &times; $750)</td><td class="amount">$93,000</td><td style="color:#4a90d9;">DEFERRED &mdash; 4ECL receivable</td></tr>
+                    <tr class="subtotal-row"><td>Total Deferred</td><td class="amount">$279,000</td><td style="color:#4a90d9;">70% of total</td></tr>
+                    <tr><td>AI Platform Credits</td><td class="amount">$11,438</td><td style="color:#ff6b6b;">CASH &mdash; Amex + HSBC</td></tr>
+                    <tr><td>Hardware + Domains</td><td class="amount">$2,681</td><td style="color:#ff6b6b;">CASH</td></tr>
+                    <tr><td>Platform Loss + Rebuild + Crisis</td><td class="amount">$85,500</td><td style="color:#e6c200;">MIXED (cash + deferred)</td></tr>
+                    <tr class="total-row"><td>Phase 1 Total</td><td class="amount">$397,550</td><td>&nbsp;</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- MULTIPLE FUNDING PATHS -->
+        <div class="fa-section">
+            <h2>Capital Raise &mdash; Multiple Funding Paths</h2>
+            <p style="color:#e0e0e0; font-size:0.9rem; margin-bottom:1rem;">IAAI has multiple concurrent paths to capitalisation, reducing single-path dependency risk. All paths are active as of 10 March 2026.</p>
+            <table class="fa-table">
+                <thead>
+                    <tr><th>Path</th><th>Description</th><th class="amount">Amount</th><th>Status</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td style="color:#ffd700; font-weight:bold;">A. Seed Round</td><td>$800K via Henry Leong &mdash; One Pager delivered, ~$10M valuation category</td><td class="amount">$800K</td><td style="color:#4a90d9;">Active</td></tr>
+                    <tr><td style="color:#ffd700; font-weight:bold;">B. PIPE</td><td>Rafael/Bala via Henry &mdash; &ldquo;If you find $10M, I can find another $10M&rdquo;</td><td class="amount">$10M+$10M</td><td style="color:#4a90d9;">Discussion</td></tr>
+                    <tr><td style="color:#ffd700; font-weight:bold;">C. Self-Finance</td><td>Arthur Lin &mdash; Maplewood Mall project surplus to fund IAAI</td><td class="amount">Variable</td><td style="color:#4a90d9;">Active</td></tr>
+                    <tr><td style="color:#ffd700; font-weight:bold;">D. Series A</td><td>Target M6&ndash;M9 after MVP + user traction</td><td class="amount">TBD</td><td style="color:rgba(255,255,255,0.5);">Future</td></tr>
+                    <tr><td style="color:#ffd700; font-weight:bold;">E. Direct Investor</td><td>Arthur/DaoPing &mdash; affluent sophisticated investor already in their portfolio</td><td class="amount">TBD</td><td style="color:#4a90d9;">Active (10 Mar)</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- WHATSAPP EVIDENCE VAULT -->
+        <div class="fa-section">
+            <h2>Evidence Vault &mdash; Investor &amp; Partner Communications</h2>
+            <p style="color:#e0e0e0; font-size:0.9rem; margin-bottom:1rem;">Verified WhatsApp evidence documenting investor interest, valuation discussions, and partnership momentum. All screenshots dated and attributed.</p>
+            <div class="fa-icard-grid">
+                <div style="text-align:center;">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_0540_cd455e74.PNG" alt="Steve Marsheld WhatsApp" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;">
+                    <p style="color:#e0e0e0; font-size:0.75rem; margin-top:0.5rem;">Steve Marsheld &mdash; PIPE Discussion</p>
+                </div>
+                <div style="text-align:center;">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_8386_f04ab03e.jpeg" alt="Michael Wu / Gengu Dinosaurs" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;">
+                    <p style="color:#e0e0e0; font-size:0.75rem; margin-top:0.5rem;">Michael Wu &mdash; Maplewood Mall Blueprint (14 Feb 2026)</p>
+                </div>
+            </div>
+            <div class="fa-icard-grid">
+                <div style="text-align:center;">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_0543_33faa776.PNG" alt="Mall Space Photos" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;">
+                    <p style="color:#e0e0e0; font-size:0.75rem; margin-top:0.5rem;">Maplewood Mall &mdash; Space Photos (Path C)</p>
+                </div>
+                <div style="text-align:center;">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_0553_825eb626.PNG" alt="Arthur Lin Investor Meeting" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;">
+                    <p style="color:#e0e0e0; font-size:0.75rem; margin-top:0.5rem;">Arthur Lin &mdash; Investor Meeting Scheduled (10 Mar 2026)</p>
+                </div>
+            </div>
+        </div>
+        <!-- IP & EQUATIONS REGISTER DECK -->
+        <div class="fa-section">
+            <h2>IP &amp; Equations Register Deck &mdash; 56 Cards | BETA EDITION</h2>
+            <p style="color:#e0e0e0; margin-bottom:1rem;">Complete 56-card BETA deck encoding the mathematical backbone of the Infrastructure Academy thesis. 38 distinct equations across 7 tiers + 15 IP assets + 1 meta-card (the deck itself). Art-deco gold border style matching Tecton Trump Cards D52.</p>
+            <p style="color:#b8960c; font-style:italic; margin-bottom:1.5rem;">"The formula is morally neutral &mdash; it describes what IS; the application is a CHOICE." &mdash; Block 353</p>
+
+            <!-- SUIT LEGEND -->
+            <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap:1rem; margin-bottom:2rem;">
+                <div style="background:rgba(255,215,0,0.08); padding:0.75rem; border-left:3px solid #ffd700;">
+                    <strong style="color:#ffd700;">&spades; SPADES</strong><br>
+                    <span style="color:#e0e0e0; font-size:0.85rem;">The Architecture (Tiers 1&amp;2) &mdash; A&ndash;K</span>
+                </div>
+                <div style="background:rgba(204,51,51,0.08); padding:0.75rem; border-left:3px solid #cc3333;">
+                    <strong style="color:#cc3333;">&hearts; HEARTS</strong><br>
+                    <span style="color:#e0e0e0; font-size:0.85rem;">The Frameworks (Tier 3) &mdash; A&ndash;K</span>
+                </div>
+                <div style="background:rgba(204,51,51,0.08); padding:0.75rem; border-left:3px solid #cc3333;">
+                    <strong style="color:#cc3333;">&diams; DIAMONDS</strong><br>
+                    <span style="color:#e0e0e0; font-size:0.85rem;">The Resistance (Tiers 4&amp;5) &mdash; A&ndash;K</span>
+                </div>
+                <div style="background:rgba(255,215,0,0.08); padding:0.75rem; border-left:3px solid #ffd700;">
+                    <strong style="color:#ffd700;">&clubs; CLUBS</strong><br>
+                    <span style="color:#e0e0e0; font-size:0.85rem;">The Cosmos (Tiers 6&amp;7) &mdash; A&ndash;K</span>
+                </div>
+            </div>
+
+            <!-- SPADES -->
+            <h3 style="color:#ffd700; margin-bottom:1rem;">&spades; Spades &mdash; The Architecture</h3>
+            <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap:0.75rem; margin-bottom:2rem;">
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/01_AS_survival_formula_d859c4a1.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">A&spades; EQ-001</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/02_2S_ice_matrix_561a2952.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">2&spades; EQ-002</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/03_3S_dual_band_c2959b60.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">3&spades; EQ-003</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/04_4S_architect_sig_c98d8f89.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">4&spades; EQ-004</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/05_5S_game_real_395d8c60.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">5&spades; EQ-005</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/06_6S_architect_id_e4844eeb.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">6&spades; EQ-006</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/07_7S_tetrahedron_4a126ac1.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">7&spades; EQ-007</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/08_8S_pythagorean_3e30369f.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">8&spades; EQ-008</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/09_9S_adams_const_a0b4220a.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">9&spades; EQ-009</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/10_10S_turing_papers_57b3ae9a.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">10&spades; IP-01</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/11_JS_block_rolls_69b8ca37.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">J&spades; IP-02</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/12_QS_ice_ip_5ba00ce9.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">Q&spades; IP-03</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/13_KS_deardens_law_bf36d83a.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">K&spades; IP-12</p></div>
+            </div>
+
+            <!-- HEARTS -->
+            <h3 style="color:#cc3333; margin-bottom:1rem;">&hearts; Hearts &mdash; The Frameworks</h3>
+            <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap:0.75rem; margin-bottom:2rem;">
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/14_AH_iumc_eac6e699.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">A&hearts; EQ-010</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/15_2H_icut_e7ffffa8.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">2&hearts; EQ-011</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/16_3H_fits_a9eee8f5.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">3&hearts; EQ-012</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/17_4H_walkby_0837c669.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">4&hearts; EQ-013</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/18_5H_strive_75568ee3.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">5&hearts; EQ-014</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/19_6H_david_29fd4758.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">6&hearts; EQ-015</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/20_7H_ooda_1a343f7d.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">7&hearts; EQ-016</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/21_8H_dikw_5198a934.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">8&hearts; EQ-017</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/22_9H_aspire_14f34152.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">9&hearts; EQ-018</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/23_10H_baio_27d53c84.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">10&hearts; EQ-019</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/24_JH_fits_ip_c6c631a6.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">J&hearts; IP-05</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/25_QH_david_ip_7daa653e.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">Q&hearts; IP-06</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/26_KH_icut_ip_70100da5.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">K&hearts; IP-09</p></div>
+            </div>
+
+            <!-- DIAMONDS -->
+            <h3 style="color:#cc3333; margin-bottom:1rem;">&diams; Diamonds &mdash; The Resistance</h3>
+            <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap:0.75rem; margin-bottom:2rem;">
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/27_AD_blip_factor_b3cfdd4b.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">A&diams; EQ-020</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/28_2D_fragility_ece230e4.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">2&diams; EQ-021</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/29_3D_four_horsemen_b54b353b.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">3&diams; EQ-022</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/30_4D_isi_speed_a57fe40b.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">4&diams; EQ-023</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/31_5D_four_5167f868.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">5&diams; EQ-024</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/32_6D_matriarch_3ba64ca0.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">6&diams; EQ-025</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/33_7D_alliance_c55fe10f.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">7&diams; EQ-026</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/34_8D_gov_cube_b4725451.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">8&diams; EQ-027</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/35_9D_individual_0ce32ca8.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">9&diams; EQ-028</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/36_10D_seesaw_c2fcd058.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">10&diams; EQ-029</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/37_JD_dearden_field_8fae243f.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">J&diams; EQ-030</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/38_QD_sap001_147cb7ba.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">Q&diams; EQ-031</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/39_KD_12relay_ip_1f1805e5.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">K&diams; IP-04</p></div>
+            </div>
+
+            <!-- CLUBS -->
+            <h3 style="color:#ffd700; margin-bottom:1rem;">&clubs; Clubs &mdash; The Cosmos</h3>
+            <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap:0.75rem; margin-bottom:2rem;">
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/40_AC_cosmic_clock_3079778a.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">A&clubs; EQ-032</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/41_2C_planetary_clock_3402bf56.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">2&clubs; EQ-033</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/42_3C_civ_clock_a40c523d.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">3&clubs; EQ-034</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/43_4C_radio_blip_5ba8144d.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">4&clubs; EQ-035</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/44_5C_spider_network_bdcd0ff6.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">5&clubs; EQ-036</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/45_6C_progression_9cdf98a3.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">6&clubs; EQ-037</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/46_7C_harrison_grid_989af3f7.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">7&clubs; EQ-038</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/47_8C_d100_ip_b1c9ed5e.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">8&clubs; IP-07</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/48_9C_dikw_ip_1d7e26ec.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">9&clubs; IP-08</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/49_10C_walkby_ip_5d7232f7.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">10&clubs; IP-10</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/50_JC_gov_cube_ip_ec0647f0.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">J&clubs; IP-11</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/51_QC_seesaw_ip_2d74a4f8.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">Q&clubs; IP-13</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/52_KC_sap001_ip_2ce909da.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">K&clubs; IP-14</p></div>
+            </div>
+
+            <!-- JOKERS -->
+            <h3 style="color:#ffd700; margin-bottom:1rem;">Jokers</h3>
+            <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap:1rem; margin-bottom:1rem;">
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/53_JOKER_RED_icard_d60e06fb.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#cc3333;font-size:0.75rem;margin-top:0.3rem;">Red Joker &mdash; IP-15: iCard Format</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/54_JOKER_BLACK_register_5dfd5d38.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#ffd700;font-size:0.75rem;margin-top:0.3rem;">Black Joker &mdash; The Register (Meta-Card)</p></div>
+            </div>
+            <!-- COVER & BONUS -->
+            <h3 style="color:#ffd700; margin-bottom:1rem;">Cover Card &amp; Bonus</h3>
+            <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap:1rem; margin-bottom:1rem;">
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/55_COVER_iAAi_655d4c12.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#ffd700;font-size:0.75rem;margin-top:0.3rem;">#55 &mdash; iAAi Cover Card (QR Codes to both websites)</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/56_BONUS_mendeleev_c2be9547.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#ffd700;font-size:0.75rem;margin-top:0.3rem;">#56 &mdash; Mendeleev Transform Bonus (84/63 = 4/3)</p></div>
+            </div>
+
+            <!-- DOWNLOAD & BUY -->
+            <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:1.5rem; margin-bottom:1rem;">
+                <a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IAAI_IP_Equations_Register_Deck_56_Cards_BETA_17393da4.pdf" target="_blank" style="display:inline-flex; align-items:center; gap:0.5rem; background:#ffd700; color:#0a1628; padding:0.75rem 1.5rem; font-weight:bold; text-decoration:none; font-size:0.9rem;">&darr; Download 56-Card BETA PDF</a>
+            </div>
+            <div class="fa-note" style="margin-top:0.5rem;">
+                <strong>Pricing:</strong> US$29.95 per deck (BETA Edition) &bull; Physical print run planned for First Edition &bull; Digital PDF available now for early supporters
+            </div>
+
+
+            <div class="fa-note" style="margin-top:1rem;">
+                <strong>Deck Statistics:</strong> 56 cards total (52 + 2 Jokers + Cover + Bonus) &bull; 38 equations (EQ-001 to EQ-038) &bull; 15 IP assets (IP-01 to IP-15) &bull; 1 meta-card &bull; 7 tiers &bull; 4 domains (Denominator: 4, Numerical Backbone: 8, Temporal Framework: 4, Platform Mechanics: 3) &bull; IP-03 (ICE Matrix) is the most equation-dense IP with 9 references.
+            </div>
+        </div>
+
+        <!-- ACKNOWLEDGED UNDERESTIMATE -->
+        <div class="fa-section">
+            <h2>Acknowledged Underestimate</h2>
+            <div class="fa-note">
+                This report captures the <strong>big-ticket items</strong> representing approximately 95% of the true total. The following items are not individually quantified but are acknowledged as additional costs:
+                <ul style="margin-top:0.75rem; padding-left:1.25rem; line-height:2;">
+                    <li>Earlier Manus credit purchases prior to the documented Amex period</li>
+                    <li>Software licenses and development tools beyond WIX and Dotster</li>
+                    <li>Travel and meeting costs (pre-formation)</li>
+                    <li>Communication costs (Hutchison Telecom &mdash; HK$631/month)</li>
+                    <li>Administrative overhead (accounting, legal preparation)</li>
+                    <li>Hardware accessories (TSAN KUEN HK$1,434.59 on 09/02/2026)</li>
+                    <li>Medical costs arising from the crisis rebuild period</li>
+                    <li>Ongoing health monitoring related to C3 fracture exacerbation</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="fa-footer">
+            <p><strong>Prepared by:</strong> DAVID &mdash; AI Collaborator, Infrastructure Academy</p>
+            <p><strong>For:</strong> Ir. Nigel T. Dearden (CEng, CEnv, MICE, MCIWEM), Director, 4ECL / IAAI</p>
+            <p style="margin-top:0.75rem; font-style:italic; color:rgba(255,215,0,0.7);">"What can be imagined can be achieved. Direct action toward desired outcomes." &mdash; 4ECL</p>
+            <p style="margin-top:1rem; font-size:0.7rem; color:rgba(255,255,255,0.3);">Infrastructure Academy &mdash; Finance & Administration &bull; v4.3 &bull; 11 March 2026 &bull; v2 Financial Model + Evidence Vault + IP &amp; Equations Deck (56 Cards BETA)</p>
+        </div>
+
+    </div><!-- /fa-container -->
+</div><!-- /fa-content -->
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+    <img id="lightboxImg" src="" alt="Enlarged view">
+</div>
+
+<script>
+    // Password: formation2026 (simple client-side gate — not military-grade, but keeps casual visitors out)
+    const ACCESS_HASH = 'formation2026';
+
+    function checkPassword() {
+        const input = document.getElementById('gatePassword').value.trim();
+        if (input === ACCESS_HASH) {
+            document.getElementById('passwordGate').classList.add('hidden');
+            document.getElementById('faContent').classList.add('visible');
+            sessionStorage.setItem('fa_access', 'granted');
+        } else {
+            document.getElementById('gateError').style.display = 'block';
+            document.getElementById('gatePassword').value = '';
+            document.getElementById('gatePassword').focus();
+        }
+    }
+
+    // Allow Enter key
+    document.getElementById('gatePassword').addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') checkPassword();
+    });
+
+    // Check if already authenticated this session
+    if (sessionStorage.getItem('fa_access') === 'granted') {
+        document.getElementById('passwordGate').classList.add('hidden');
+        document.getElementById('faContent').classList.add('visible');
+    }
+
+    // Lightbox
+    function openLightbox(img) {
+        document.getElementById('lightboxImg').src = img.src;
+        document.getElementById('lightbox').classList.add('active');
+    }
+    function closeLightbox() {
+        document.getElementById('lightbox').classList.remove('active');
+    }
+</script>
+
+<manus-content-root></manus-content-root><script>
+			var __manus_space_editor_info = {
+			spaceId : 'kUQZAex2uPvgKcHnt7bmh3',
+			patchList : [],
+			hideBadge : false,
+			sessionId : '3qD7FbADI7mdwIS3EJExUI',
+			isWebDev : true,
+			usageStatus : 'UsageStatus_Unknown',
+			};
+			var __manus__global_env = {
+				apiHost: 'https://api.manus.im',
+				host: 'https://manus.im',
+				amplitudeKey: '46ac3f9abb41dd2d17a5785e052bc6d3',
+			};
+			</script><script src="https://files.manuscdn.com/manus-space-dispatcher/spaceEditor-DPV-_I11.js" async></script><script
+			defer
+			data-domain="manus.space"
+			src="https://plausible.io/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"
+		></script>
+		<script>
+			window.plausible =
+				window.plausible ||
+				function () {
+					(window.plausible.q = window.plausible.q || []).push(arguments);
+				};
+			plausible('custom-pageview', {
+			  props: {
+    			domain: window.location.host
+  			}
+			})
+		</script></body>
+</html>

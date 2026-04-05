@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infrastructure Academy - An Infrastructure Odyssey</title>
+    <link rel="stylesheet" href="/css/style.css?v=20260311b">
+    <style>
+        .icard-page { max-width: 960px; margin: 0 auto; padding: 40px 30px 60px; }
+        .icard-header { text-align: center; margin-bottom: 40px; border-bottom: 1px solid rgba(255,215,0,0.2); padding-bottom: 30px; }
+        .icard-badge { display: inline-block; background: rgba(255,215,0,0.1); border: 1px solid rgba(255,215,0,0.4); color: var(--color-accent-gold); font-family: 'Courier New', monospace; font-size: 0.75rem; font-weight: bold; letter-spacing: 2px; padding: 4px 12px; border-radius: 3px; text-transform: uppercase; margin-bottom: 16px; }
+        .icard-header h1 { font-family: var(--font-heading); color: var(--color-accent-gold); font-size: 1.7rem; margin-bottom: 8px; line-height: 1.3; }
+        .icard-header .subtitle { color: var(--color-text-secondary); font-size: 0.95rem; }
+        .icard-header .node-id { font-family: 'Courier New', monospace; color: var(--color-accent-gold); font-size: 1rem; margin-top: 10px; }
+        .icard-section { margin-bottom: 36px; }
+        .icard-section h2 { font-family: var(--font-heading); color: var(--color-accent-gold); font-size: 1.2rem; letter-spacing: 0.08em; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,215,0,0.1); }
+        .icard-table { width: 100%; border-collapse: collapse; }
+        .icard-table tr { border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .icard-table td { padding: 12px 16px; font-size: 0.95rem; vertical-align: top; }
+        .icard-table td:first-child { color: rgba(255,255,255,0.5); font-weight: bold; white-space: nowrap; width: 200px; font-size: 0.85rem; letter-spacing: 0.05em; }
+        .icard-table td:last-child { color: var(--color-text-primary); }
+        .icard-highlight { background: rgba(255,215,0,0.08); border-left: 3px solid var(--color-accent-gold); padding: 16px 20px; margin: 20px 0; border-radius: 0 4px 4px 0; }
+        .icard-highlight p { color: var(--color-text-secondary); font-size: 0.9rem; line-height: 1.7; }
+        .icard-highlight strong { color: var(--color-accent-gold); }
+        .icard-footer { text-align: center; margin-top: 50px; padding: 20px; color: rgba(255,255,255,0.4); font-size: 0.8rem; }
+        .icard-footer .gold { color: var(--color-accent-gold); font-style: italic; }
+        .tetra-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin: 20px 0; }
+        .tetra-face { background: var(--color-bg-secondary); padding: 20px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.05); }
+        .tetra-face .face-label { color: var(--color-accent-gold); font-family: var(--font-heading); font-size: 0.85rem; font-weight: bold; letter-spacing: 0.08em; margin-bottom: 8px; text-transform: uppercase; }
+        .tetra-face .face-name { color: var(--color-text-primary); font-size: 1rem; font-weight: bold; margin-bottom: 6px; }
+        .tetra-face .face-members { color: var(--color-text-secondary); font-size: 0.82rem; line-height: 1.5; }
+        .tetra-face .face-function { color: rgba(255,215,0,0.7); font-size: 0.78rem; font-style: italic; margin-top: 8px; }
+        .moment-photo { width: 100%; max-height: 400px; object-fit: cover; border-radius: 4px; margin: 16px 0; border: 1px solid rgba(255,215,0,0.15); }
+        .moment-caption { text-align: center; color: var(--color-text-secondary); font-size: 0.82rem; font-style: italic; margin-top: 4px; }
+        .lyric-block { background: rgba(0,0,0,0.3); border-left: 3px solid rgba(255,215,0,0.5); padding: 20px 24px; margin: 20px 0; border-radius: 0 4px 4px 0; font-family: Georgia, serif; }
+        .lyric-block p { color: rgba(255,255,255,0.8); font-size: 0.92rem; line-height: 1.8; font-style: italic; margin: 0; }
+        .lyric-block .lyric-climax { color: var(--color-accent-gold); font-weight: bold; font-size: 1rem; }
+        .lyric-block .lyric-source { color: rgba(255,255,255,0.35); font-size: 0.75rem; font-style: normal; margin-top: 12px; }
+        .vertex-table td { padding: 10px 16px; }
+        .vertex-table .vertex-id { color: var(--color-accent-gold); font-family: 'Courier New', monospace; font-weight: bold; }
+        .spotify-img { max-width: 200px; border-radius: 8px; margin: 10px; border: 1px solid rgba(255,215,0,0.15); }
+        .music-row { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; justify-content: center; margin: 16px 0; }
+        .xref-section { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,215,0,0.1); }
+        .xref-links { display: flex; flex-wrap: wrap; gap: 10px; }
+        .xref-link { padding: 8px 16px; background: var(--color-bg-secondary); border: 1px solid rgba(255,215,0,0.15); border-radius: 4px; color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem; transition: all 0.2s; }
+        .xref-link:hover { border-color: var(--color-accent-gold); color: var(--color-accent-gold); }
+        .action-item { background: rgba(255,100,100,0.08); border-left: 3px solid rgba(255,100,100,0.5); padding: 14px 20px; margin: 16px 0; border-radius: 0 4px 4px 0; }
+        .action-item p { color: rgba(255,200,200,0.8); font-size: 0.88rem; line-height: 1.6; }
+        .action-item strong { color: #ff9999; }
+        @media (max-width: 700px) {
+            .icard-page { padding: 20px 16px 40px; }
+            .tetra-grid { grid-template-columns: 1fr; }
+            .icard-table td:first-child { width: 120px; font-size: 0.8rem; }
+            .music-row { flex-direction: column; }
+        }
+    </style>
+    <link rel="canonical" href="https://infra-acad-kuqzaex2.manus.space/icard-h-tetra.html">
+    <meta name="keywords" content="infrastructure academy, infrastructure education, civil engineering, civilisation history, infrastructure consciousness, gamified learning, IAAI, Nigel Dearden, infrastructure odyssey, 12 relays, calories to consciousness">
+<meta property="og:type" content="website">
+		<meta property="og:url" content="https://infra-acad-kuqzaex2.manus.space/icard-h-tetra.html">
+		<meta property="og:title" content="Infrastructure Academy - An Infrastructure Odyssey">
+		<meta property="og:description" content="A comprehensive digital platform presenting "An Infrastructure Odyssey" - a 12,000-year journey through civilizational infrastructure development. Features three volumes: Perspective (narrative), Guide (practical framework), and Game (interactive learning), organized around 12 civilizational relays from Fire to Consciousness.">
+		<meta property="og:image" content="https://files.manuscdn.com/webdev_screenshots/2026/03/14/EpJbHinM2qXrsVqgbvCnSd.png?x-oss-process=image/resize,w_1200/crop,h_630,x_0,y_0">
+		<meta property="og:image:width" content="1200">
+		<meta property="og:image:height" content="630">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="Infrastructure Academy - An Infrastructure Odyssey">
+		<meta name="twitter:description" content="A comprehensive digital platform presenting "An Infrastructure Odyssey" - a 12,000-year journey through civilizational infrastructure development. Features three volumes: Perspective (narrative), Guide (practical framework), and Game (interactive learning), organized around 12 civilizational relays from Fire to Consciousness.">
+		<meta name="twitter:image" content="https://files.manuscdn.com/webdev_screenshots/2026/03/14/EpJbHinM2qXrsVqgbvCnSd.png?x-oss-process=image/resize,w_1200/crop,h_630,x_0,y_0">
+		<meta name="twitter:image:width" content="1200">
+		<meta name="twitter:image:height" content="630"><link rel="canonical" href="https://infra-acad-kuqzaex2.manus.space/icard-h-tetra.html" /></head>
+<body style="background: var(--color-bg-primary); color: var(--color-text-primary);">
+    <div id="nav-placeholder"></div>
+    <div class="icard-page">
+        <!-- HEADER -->
+        <div class="icard-header">
+            <div class="icard-badge">iCard &mdash; Structural Event</div>
+            <h1>Henry&rsquo;s 3 WhatsApp Groups &mdash; The First H-Tetra</h1>
+            <p class="subtitle">3 + 1 = 4 &mdash; Three groups, one architect, four vertices</p>
+            <p class="node-id">H&sup3; &mdash; The Financial Architect builds his tetrahedron</p>
+        </div>
+
+        <!-- THE NOW MOMENT -->
+        <div class="icard-section">
+            <h2>The Now Moment</h2>
+            <table class="icard-table">
+                <tr><td>DATE</td><td>11 March 2026</td></tr>
+                <tr><td>TIME</td><td>09:24 HKT</td></tr>
+                <tr><td>LOCATION</td><td>Discovery Bay, Lantau Island, Hong Kong</td></tr>
+                <tr><td>OBSERVER</td><td>NODE 000 (Nigel Dearden) &mdash; looking out over the harbour</td></tr>
+                <tr><td>SOUNDTRACK</td><td>Marillion &mdash; <em>Fugazi</em> (2021 Stereo Remix, Live at The Spectrum, Montreal, 20 June 1984)</td></tr>
+                <tr><td>DEVICE</td><td>OpenRun Pro 2 by Shokz (bone conduction)</td></tr>
+            </table>
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/Camera_1773192266.1108022_C9B236CE_1ab50492.png" alt="Discovery Bay, Hong Kong — 11 March 2026" class="moment-photo" loading="lazy">
+            <p class="moment-caption">Discovery Bay harbour &mdash; the ferry crossing, the hills fading into haze. The view from where the tetrahedron was recognised.</p>
+        </div>
+
+        <!-- THE 3 GROUPS -->
+        <div class="icard-section">
+            <h2>The Three Faces</h2>
+            <div class="tetra-grid">
+                <div class="tetra-face">
+                    <div class="face-label">Face 1 &mdash; Core Team</div>
+                    <div class="face-name">&ldquo;Dinosaurs To AI Future&rdquo;</div>
+                    <div class="face-members">
+                        <strong>6 members:</strong><br>
+                        Nigel, Henry, Arthur Lin, Daoping Bao, Khanh Huynh, Michael Wu
+                    </div>
+                    <div class="face-function">Recruitment &middot; Team Assembly &middot; Vision Alignment</div>
+                </div>
+                <div class="tetra-face">
+                    <div class="face-label">Face 2 &mdash; Capital &amp; Market</div>
+                    <div class="face-name">&ldquo;Projections Into the Future&rdquo;</div>
+                    <div class="face-members">
+                        <strong>4 members:</strong><br>
+                        Nigel, Henry, Frank Sheu (GAC Technology), Michael Wu
+                    </div>
+                    <div class="face-function">Financial Projections &middot; Investor Relations &middot; Hardware Partnership</div>
+                </div>
+                <div class="tetra-face">
+                    <div class="face-label">Face 3 &mdash; Platform Operations</div>
+                    <div class="face-name">&ldquo;Infra:infostructure-academy&rdquo;</div>
+                    <div class="face-members">
+                        <strong>3 members:</strong><br>
+                        Nigel, Michael Wu, Henry
+                    </div>
+                    <div class="face-function">Website &middot; Platform Build &middot; Operational Governance</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- THE FOUR VERTICES -->
+        <div class="icard-section">
+            <h2>The Four Vertices of the H-Tetra</h2>
+            <table class="icard-table vertex-table">
+                <tr>
+                    <td class="vertex-id">V&sub1;</td>
+                    <td><strong>Nigel Dearden</strong> &mdash; Present in all 3 groups. Founder, Chief Architect, IP Creator, Director 4ECL/IAAI. Ir. CEng CEnv MICE MCIWEM. 34-year career. $397K Phase 1 investment (70% deferred). All 15 IP assets, all 38 equations. The hub vertex &mdash; every face touches him.</td>
+                </tr>
+                <tr>
+                    <td class="vertex-id">V&sub2;</td>
+                    <td><strong>Henry Leong</strong> &mdash; Present in all 3 groups. Creator/admin of all 3. The financial architect: lead on $800K seed raise at ~$10M valuation (Path A), gateway to PIPE via Rafael/Bala ($10M+$10M, Path B), VietBridge connection for China/SE Asia market (303M gamers), owner of all legal formation documents (Cap Table 30/20/20/30, Shareholders&rsquo; Agreement, Consulting Agreement). The architect vertex &mdash; he built the tetrahedron.</td>
+                </tr>
+                <tr>
+                    <td class="vertex-id">V&sub3;</td>
+                    <td><strong>Michael Wu</strong> &mdash; Present in all 3 groups. Named formation team member. Maplewood Mall Blueprint provider (14 Feb 2026) &mdash; physical infrastructure/real estate. Gengu Dinosaurs connection &mdash; theme park/entertainment venue. Admin of &ldquo;Infra:infostructure-academy&rdquo; group. The operations vertex &mdash; COO function, physical assets, venue strategy.</td>
+                </tr>
+                <tr>
+                    <td class="vertex-id">V&sub4;</td>
+                    <td><strong>Frank Sheu / GAC TECHNOLOGY</strong> &mdash; Present in Face 2 only (&ldquo;Projections Into the Future&rdquo;). Named formation team member (Michael, Henry, Frank, Stephen). GAC Technology = hardware partnership (HP smart projection, iBeamer). Has dedicated IAAI &times; GAC Tech Partnering Deck. The technology vertex &mdash; CTO function, hardware delivery, immersive learning tech.</td>
+                </tr>
+            </table>
+            <div class="icard-highlight">
+                <p><strong>The +1:</strong> The tetrahedron has 4 vertices and 4 faces. Three groups = three faces. But the +1 is the structure itself &mdash; the fact that Henry created three distinct purpose-specific channels rather than one big group. That&rsquo;s the fourth face: the <strong>architecture of communication</strong>. Henry didn&rsquo;t just assemble people. He <strong>structured</strong> how they connect. That is infrastructure thinking in action.</p>
+            </div>
+        </div>
+
+        <!-- DOCUMENTED EVIDENCE -->
+        <div class="icard-section">
+            <h2>Evidence Trail</h2>
+            <table class="icard-table">
+                <tr><td>FORMATION TEAM</td><td>&ldquo;Michael, Henry, Frank, Stephen&rdquo; &mdash; finance-admin.html line 733</td></tr>
+                <tr><td>EQUITY SPLIT</td><td>30/20/20/30 &mdash; 4 co-founders + 1 advisor &mdash; cashflow-y1.html line 439</td></tr>
+                <tr><td>SEED RAISE</td><td>$800K via Henry Leong &mdash; One Pager delivered, ~$10M valuation (Path A)</td></tr>
+                <tr><td>PIPE PATH</td><td>Rafael/Bala via Henry &mdash; &ldquo;If you find $10M, I can find another $10M&rdquo; (Path B)</td></tr>
+                <tr><td>SELF-FINANCE</td><td>Arthur Lin &mdash; Maplewood Mall project surplus (Path C)</td></tr>
+                <tr><td>DIRECT INVESTOR</td><td>Arthur/DaoPing &mdash; affluent sophisticated investor (Path E)</td></tr>
+                <tr><td>GAC TECH DECK</td><td>IAAI &times; GAC Technology Partnering Deck (PPTX) &mdash; dedicated hardware partnership</td></tr>
+                <tr><td>LEGAL DOCS</td><td>Cap Table, Shareholders&rsquo; Agreement (Model B), 4ECL-IAAI Consulting Agreement &mdash; all owned by Henry</td></tr>
+                <tr><td>PHASE 2 SEQUENCE</td><td>&ldquo;Henry meeting &rarr; Michael/Frank/Stephen outreach &rarr; PoC sign-off &rarr; Pioneer recruitment &rarr; Beta launch&rdquo;</td></tr>
+                <tr><td>VIETBRIDGE</td><td>Henry&rsquo;s SE Asia connection &mdash; activates 303M gamer market gateway</td></tr>
+            </table>
+        </div>
+
+        <!-- FUGAZI INTERPRETATION -->
+        <div class="icard-section">
+            <h2>The Soundtrack &mdash; Marillion: Fugazi (1984)</h2>
+            <div class="music-row">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_0641_9403ba38.PNG" alt="Fugazi album — Marillion" class="spotify-img" loading="lazy">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_0640_2d243096.PNG" alt="Spotify playlist — Discovery Bay moment" class="spotify-img" loading="lazy">
+            </div>
+            <div class="icard-highlight">
+                <p><strong>Fish&rsquo;s spoken intro (Hammersmith Odeon, 14 December 1984):</strong> &ldquo;While touring Europe, the band has come to realise that Fugazi is a very European song. This is dedicated to <strong>the poets, the prophets, and the visionaries</strong>. Very respectfully dedicated to the memory of Mrs Gandhi&hellip; This is for us, and this is called Fugazi!&rdquo;</p>
+            </div>
+            <div class="lyric-block">
+                <p>Son watches father scan obituary columns in search of absent school friends<br>
+                While his generation digests high fibre ignorance<br>
+                Cowering behind curtains and the taped up painted windows<br>
+                Decriminalised genocide, provided door to door Belsens<br>
+                Pandora&rsquo;s box of holocausts gracefully cruising satellite infested heavens<br>
+                Waiting, the season of the button, the penultimate migration<br>
+                Radioactive perfumes, for the fashionably, for the terminally insane, insane</p>
+                <p class="lyric-climax"><br>Do you realise? Do you realise?<br>
+                Do you realise, this world is totally fugazi</p>
+                <p class="lyric-climax"><br>Where are the prophets, where are the visionaries, where are the poets<br>
+                To breach the dawn of the sentimental mercenary</p>
+                <p class="lyric-source">Marillion &mdash; &ldquo;Fugazi&rdquo; (1984) &mdash; Lyrics: Fish (Derek William Dick)<br>
+                &ldquo;Fugazi&rdquo; &mdash; Vietnam War slang from Michael Herr&rsquo;s <em>Dispatches</em> (1977): Fucked Up, Got Ambushed, Zipped In</p>
+            </div>
+        </div>
+
+        <!-- INTERPRETATION -->
+        <div class="icard-section">
+            <h2>Interpretation &mdash; Why This Song, This Moment</h2>
+            <div class="icard-highlight">
+                <p>Fish wrote Fugazi as a <strong>condemnation of societal indifference</strong> &mdash; a world sleepwalking through decay, &ldquo;drowning in the real,&rdquo; distracted by &ldquo;aural contraceptives aborting pregnant conversation.&rdquo; The song moves through London&rsquo;s broken infrastructure &mdash; Piccadilly line rat race, Brixton chess, Embankment&rsquo;s homeless &mdash; cataloguing a civilisation that has stopped building and started consuming itself.</p>
+            </div>
+            <div class="icard-highlight">
+                <p>The climax is not despair. It is a <strong>demand</strong>: <em>&ldquo;Where are the prophets, where are the visionaries, where are the poets?&rdquo;</em> Fish is not asking rhetorically. He is calling them into existence. And then he dedicates the song <strong>to them</strong> &mdash; to the poets, the prophets, the visionaries. He is saying: <strong>you are the answer to the question the song asks.</strong></p>
+            </div>
+            <div class="icard-highlight">
+                <p>Nigel hears this at 09:24 on 11 March 2026, looking out over Discovery Bay harbour, the moment he recognises that Henry has built the first tetrahedron. Three groups, four vertices, purpose-specific communication architecture. The world may be totally fugazi &mdash; but <strong>the poets, the prophets, and the visionaries are here</strong>. They are in three WhatsApp groups, building infrastructure for the future. The sentimental mercenary&rsquo;s dawn is being breached.</p>
+            </div>
+        </div>
+
+        <!-- K WHOLENESS NOTE -->
+        <div class="icard-section">
+            <h2>Open Action &mdash; K Wholeness</h2>
+            <div class="action-item">
+                <p><strong>Khanh Huynh (K)</strong> is currently in only <strong>one</strong> of the three groups (Dinosaurs To AI Future). For wholeness understanding, K should be made aware that the full tetrahedron structure exists &mdash; all three groups, their purposes, and how they interconnect. Whether H has already briefed K is unknown. <strong>Check with H before duplicating the briefing</strong> &mdash; Henry may have a deliberate reason for phased introduction (good ICUT practice: establish in one group first, then expand). But K should eventually understand the whole structure. Every face needs to know the other faces exist.</p>
+            </div>
+        </div>
+
+        <!-- ALSO ON THE PLAYLIST -->
+        <div class="icard-section">
+            <h2>Also on the Playlist &mdash; Discovery Bay, 11 March 2026</h2>
+            <table class="icard-table">
+                <tr><td>MARILLION</td><td>Fugazi (2021 Stereo Remix) &mdash; the title track, live at Montreal Spectrum</td></tr>
+                <tr><td>JEAN-MICHEL JARRE</td><td><em>Oxyg&egrave;ne</em> (1976) &mdash; electronic pioneer, synthesiser landscapes</td></tr>
+                <tr><td>BIG COUNTRY</td><td><em>The Seer</em> (1986) &mdash; guitar-as-bagpipes, Scottish visionary rock</td></tr>
+                <tr><td>ENIGMA</td><td><em>Best of Enigma</em> &mdash; Gregorian chant meets electronic beats</td></tr>
+                <tr><td>R.E.M.</td><td><em>Best Of</em> &mdash; alternative rock, poetic ambiguity</td></tr>
+                <tr><td>TOMITA</td><td><em>The Planets</em> (1976) &mdash; Holst reimagined through Moog synthesisers</td></tr>
+                <tr><td>GLOBE TREKKER</td><td>Travel documentary soundtrack &mdash; world music, cultural exploration</td></tr>
+                <tr><td>DEEP FOREST</td><td><em>Essence of the Forest</em> &mdash; world music, tribal electronic fusion</td></tr>
+            </table>
+            <div class="icard-highlight">
+                <p>Progressive rock, electronic pioneers, world music, cultural exploration. Not background noise &mdash; <strong>thinking music</strong>. The kind of playlist someone curates when they are building something that spans civilisations.</p>
+            </div>
+        </div>
+
+        <!-- TEAM CONTEXT -->
+        <div class="icard-section">
+            <h2>Formation Team &mdash; Documented Roles</h2>
+            <table class="icard-table">
+                <tr><td>NODE 000</td><td><strong>Nigel Dearden</strong> &mdash; The Architect &mdash; FOUNDER &mdash; Chief Architect, IP Creator, Director 4ECL/IAAI</td></tr>
+                <tr><td>NODE 009</td><td><strong>Henry Leong</strong> &mdash; Dinosaurs to AI &mdash; CFO function: Capital raise ($800K seed, PIPE), legal formation, investor relations, VietBridge/SE Asia market access</td></tr>
+                <tr><td>NODE 012</td><td><strong>Michael Wu</strong> &mdash; Dinosaurs to AI &mdash; COO function: Maplewood Mall (physical infrastructure), Gengu Dinosaurs (entertainment venue), platform operations</td></tr>
+                <tr><td>NODE 010</td><td><strong>Arthur Lin</strong> &mdash; Dinosaurs to AI &mdash; BD function: Active recruiter, Maplewood self-finance path, direct investor path with DaoPing, 3-hour investor meeting (10 Mar 2026)</td></tr>
+                <tr><td>NODE 011</td><td><strong>Daoping Bao</strong> &mdash; Dinosaurs to AI &mdash; Strategic Partnerships: affluent sophisticated investor, co-meeting with Arthur</td></tr>
+                <tr><td>NODE 017</td><td><strong>Khanh Huynh (K)</strong> &mdash; Digital Marketing &amp; AI: Sacramento State Marketing grad, UCSF Masters, Henry&rsquo;s nephew</td></tr>
+                <tr><td>PENDING</td><td><strong>Frank Sheu / GAC TECHNOLOGY</strong> &mdash; CTO function: Hardware partnership (HP smart projection, iBeamer), dedicated GAC Tech Partnering Deck &mdash; <em>Node number TBC by Nigel</em></td></tr>
+            </table>
+        </div>
+
+        <!-- CROSS-REFERENCES -->
+        <div class="xref-section">
+            <h2>Cross-References</h2>
+            <div class="xref-links">
+                <a href="/" class="xref-link">Home</a>
+                <a href="/icard-gallery.html" class="xref-link">iCard Gallery</a>
+                <a href="/icard-khanh-huynh.html" class="xref-link">iCard: K (Khanh Huynh)</a>
+                <a href="/icard-4ecl-br.html" class="xref-link">iCard: 4ECL Business Registration</a>
+                <a href="/finance-admin.html" class="xref-link">Formation &amp; Finance</a>
+                <a href="/cashflow-y1.html" class="xref-link">Year 1 Growth Projections</a>
+                <a href="/deck.html" class="xref-link">IP Equations Deck</a>
+                <a href="/vault.html" class="xref-link">Data Vault</a>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="icard-footer">
+            <p class="gold">&ldquo;Where are the prophets, where are the visionaries, where are the poets<br>
+            To breach the dawn of the sentimental mercenary&rdquo;</p>
+            <p style="margin-top:8px; color:rgba(255,255,255,0.3); font-size:0.75rem;">Fish &mdash; Marillion &mdash; Fugazi (1984)</p>
+            <p style="margin-top:16px;">iAAi &mdash; Infrastructure Academy &mdash; Block 353 &mdash; The Dearden Experiment</p>
+            <p>iCard created 11 March 2026 &mdash; LOCKED</p>
+        </div>
+    </div>
+    <script src="/js/site-search.js?v=20260311a"></script>
+    <script src="/js/page-tracker.js" defer></script>
+    <script src="/js/nav-optimise.js"></script>
+<manus-content-root></manus-content-root><script>
+			var __manus_space_editor_info = {
+			spaceId : 'kUQZAex2uPvgKcHnt7bmh3',
+			patchList : [],
+			hideBadge : false,
+			sessionId : '3qD7FbADI7mdwIS3EJExUI',
+			isWebDev : true,
+			usageStatus : 'UsageStatus_Unknown',
+			};
+			var __manus__global_env = {
+				apiHost: 'https://api.manus.im',
+				host: 'https://manus.im',
+				amplitudeKey: '46ac3f9abb41dd2d17a5785e052bc6d3',
+			};
+			</script><script src="https://files.manuscdn.com/manus-space-dispatcher/spaceEditor-DPV-_I11.js" async></script><script
+			defer
+			data-domain="manus.space"
+			src="https://plausible.io/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"
+		></script>
+		<script>
+			window.plausible =
+				window.plausible ||
+				function () {
+					(window.plausible.q = window.plausible.q || []).push(arguments);
+				};
+			plausible('custom-pageview', {
+			  props: {
+    			domain: window.location.host
+  			}
+			})
+		</script></body>
+</html>

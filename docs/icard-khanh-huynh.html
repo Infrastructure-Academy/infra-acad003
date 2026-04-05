@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infrastructure Academy - An Infrastructure Odyssey</title>
+    <link rel="stylesheet" href="/css/style.css?v=20260311a">
+    <style>
+        .icard-page { max-width: 900px; margin: 0 auto; padding: 40px 30px 60px; }
+        .icard-header { text-align: center; margin-bottom: 40px; border-bottom: 1px solid rgba(255,215,0,0.2); padding-bottom: 30px; }
+        .icard-badge { display: inline-block; background: rgba(255,215,0,0.1); border: 1px solid rgba(255,215,0,0.4); color: var(--color-accent-gold); font-family: 'Courier New', monospace; font-size: 0.75rem; font-weight: bold; letter-spacing: 2px; padding: 4px 12px; border-radius: 3px; text-transform: uppercase; margin-bottom: 16px; }
+        .icard-header h1 { font-family: var(--font-heading); color: var(--color-accent-gold); font-size: 1.8rem; margin-bottom: 8px; }
+        .icard-header .subtitle { color: var(--color-text-secondary); font-size: 0.95rem; }
+        .icard-header .node-id { font-family: 'Courier New', monospace; color: var(--color-accent-gold); font-size: 1.1rem; margin-top: 10px; }
+        .icard-section { margin-bottom: 36px; }
+        .icard-section h2 { font-family: var(--font-heading); color: var(--color-accent-gold); font-size: 1.2rem; letter-spacing: 0.08em; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,215,0,0.1); }
+        .icard-table { width: 100%; border-collapse: collapse; }
+        .icard-table tr { border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .icard-table td { padding: 12px 16px; font-size: 0.95rem; vertical-align: top; }
+        .icard-table td:first-child { color: rgba(255,255,255,0.5); font-weight: bold; white-space: nowrap; width: 200px; font-size: 0.85rem; letter-spacing: 0.05em; }
+        .icard-table td:last-child { color: var(--color-text-primary); }
+        .icard-highlight { background: rgba(255,215,0,0.08); border-left: 3px solid var(--color-accent-gold); padding: 16px 20px; margin: 20px 0; border-radius: 0 4px 4px 0; }
+        .icard-highlight p { color: var(--color-text-secondary); font-size: 0.9rem; line-height: 1.7; }
+        .icard-highlight strong { color: var(--color-accent-gold); }
+        .icard-footer { text-align: center; margin-top: 50px; padding: 20px; color: rgba(255,255,255,0.4); font-size: 0.8rem; }
+        .icard-footer .gold { color: var(--color-accent-gold); font-style: italic; }
+        .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 20px 0; }
+        .skill-card { background: var(--color-bg-secondary); padding: 20px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.05); text-align: center; }
+        .skill-card .icon { font-size: 2rem; margin-bottom: 8px; }
+        .skill-card .label { color: var(--color-accent-gold); font-family: var(--font-heading); font-size: 0.9rem; font-weight: bold; letter-spacing: 0.05em; margin-bottom: 4px; }
+        .skill-card .desc { color: var(--color-text-secondary); font-size: 0.8rem; }
+        .xref-section { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,215,0,0.1); }
+        .xref-links { display: flex; flex-wrap: wrap; gap: 10px; }
+        .xref-link { padding: 8px 16px; background: var(--color-bg-secondary); border: 1px solid rgba(255,215,0,0.15); border-radius: 4px; color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem; transition: all 0.2s; }
+        .xref-link:hover { border-color: var(--color-accent-gold); color: var(--color-accent-gold); }
+        .fits-badge { display: inline-block; padding: 3px 10px; border-radius: 3px; font-size: 0.75rem; font-weight: bold; letter-spacing: 1px; margin-right: 6px; }
+        .fits-s { background: rgba(0,191,255,0.15); color: #00bfff; border: 1px solid rgba(0,191,255,0.3); }
+        .fits-t { background: rgba(255,165,0,0.15); color: #ffa500; border: 1px solid rgba(255,165,0,0.3); }
+        @media (max-width: 600px) {
+            .icard-page { padding: 20px 16px 40px; }
+            .skills-grid { grid-template-columns: 1fr; }
+            .icard-table td:first-child { width: 120px; font-size: 0.8rem; }
+        }
+    </style>
+    <link rel="canonical" href="https://infra-acad-kuqzaex2.manus.space/icard-khanh-huynh.html">
+    <meta name="keywords" content="infrastructure academy, infrastructure education, civil engineering, civilisation history, infrastructure consciousness, gamified learning, IAAI, Nigel Dearden, infrastructure odyssey, 12 relays, calories to consciousness">
+<meta property="og:type" content="website">
+		<meta property="og:url" content="https://infra-acad-kuqzaex2.manus.space/icard-khanh-huynh.html">
+		<meta property="og:title" content="Infrastructure Academy - An Infrastructure Odyssey">
+		<meta property="og:description" content="A comprehensive digital platform presenting "An Infrastructure Odyssey" - a 12,000-year journey through civilizational infrastructure development. Features three volumes: Perspective (narrative), Guide (practical framework), and Game (interactive learning), organized around 12 civilizational relays from Fire to Consciousness.">
+		<meta property="og:image" content="https://files.manuscdn.com/webdev_screenshots/2026/03/14/EpJbHinM2qXrsVqgbvCnSd.png?x-oss-process=image/resize,w_1200/crop,h_630,x_0,y_0">
+		<meta property="og:image:width" content="1200">
+		<meta property="og:image:height" content="630">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="Infrastructure Academy - An Infrastructure Odyssey">
+		<meta name="twitter:description" content="A comprehensive digital platform presenting "An Infrastructure Odyssey" - a 12,000-year journey through civilizational infrastructure development. Features three volumes: Perspective (narrative), Guide (practical framework), and Game (interactive learning), organized around 12 civilizational relays from Fire to Consciousness.">
+		<meta name="twitter:image" content="https://files.manuscdn.com/webdev_screenshots/2026/03/14/EpJbHinM2qXrsVqgbvCnSd.png?x-oss-process=image/resize,w_1200/crop,h_630,x_0,y_0">
+		<meta name="twitter:image:width" content="1200">
+		<meta name="twitter:image:height" content="630"><link rel="canonical" href="https://infra-acad-kuqzaex2.manus.space/icard-khanh-huynh.html" /></head>
+<body style="background: var(--color-bg-primary); color: var(--color-text-primary);">
+    <div id="nav-placeholder"></div>
+
+    <div class="icard-page">
+        <!-- HEADER -->
+        <div class="icard-header">
+            <div class="icard-badge">iCard &mdash; Team Member Profile</div>
+            <h1>Khanh Huynh</h1>
+            <p class="subtitle">&ldquo;K&rdquo; &mdash; Marketing, Software &amp; AI</p>
+            <p class="node-id">NODE 017 &mdash; The Digital Strategist</p>
+        </div>
+
+        <!-- PROFILE -->
+        <div class="icard-section">
+            <h2>Profile</h2>
+            <table class="icard-table">
+                <tr><td>NAME</td><td>Khanh Huynh</td></tr>
+                <tr><td>KNOWN AS</td><td><strong style="color:var(--color-accent-gold);">K</strong></td></tr>
+                <tr><td>ROLE</td><td>Digital Marketing &amp; AI Integration</td></tr>
+                <tr><td>EDUCATION</td><td>BA Marketing &mdash; Sacramento State University (2025)</td></tr>
+                <tr><td>CURRENT</td><td>Enrolling Masters &mdash; University of California, San Francisco (UCSF)</td></tr>
+                <tr><td>LOCATION</td><td>Sacramento / San Francisco, California, USA</td></tr>
+                <tr><td>INTRODUCED BY</td><td>Henry Leong (NODE 009) &mdash; Uncle</td></tr>
+                <tr><td>JOINED</td><td>10 March 2026</td></tr>
+                <tr><td>GROUP</td><td>Dinosaurs To AI Future (WhatsApp &mdash; 6 members)</td></tr>
+            </table>
+        </div>
+
+        <!-- SKILLS -->
+        <div class="icard-section">
+            <h2>Core Capabilities</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="icon">📊</div>
+                    <div class="label">MARKETING</div>
+                    <div class="desc">Degree-qualified. Brand strategy, digital campaigns, market research, content creation.</div>
+                </div>
+                <div class="skill-card">
+                    <div class="icon">💻</div>
+                    <div class="label">SOFTWARE</div>
+                    <div class="desc">Technical proficiency in software tools and platforms. Development-adjacent skills.</div>
+                </div>
+                <div class="skill-card">
+                    <div class="icon">🤖</div>
+                    <div class="label">AI</div>
+                    <div class="desc">AI-native generation. Comfortable with AI tools, prompt engineering, and AI-assisted workflows.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SIGNIFICANCE -->
+        <div class="icard-section">
+            <h2>Significance for iAAi</h2>
+            <div class="icard-highlight">
+                <p>K brings a <strong>rare combination of marketing expertise, software literacy, and AI fluency</strong> to the team &mdash; exactly the skill set needed for the <strong>pre-revenue launch phase</strong>. As the youngest team member and a digital native, K represents the bridge between the founding team&rsquo;s deep domain expertise and the next generation of infrastructure thinkers.</p>
+            </div>
+            <div class="icard-highlight">
+                <p><strong>Immediate deployment opportunities:</strong> Card deck launch marketing, social media strategy for both websites, pre-order campaign management, AI-assisted content creation for the book series, and digital product distribution. K&rsquo;s UCSF Masters enrolment also opens academic network connections on the US West Coast.</p>
+            </div>
+        </div>
+
+        <!-- FITS ASSESSMENT -->
+        <div class="icard-section">
+            <h2>Preliminary FITS Profile</h2>
+            <div class="icard-highlight">
+                <p>Based on introduction and background: likely <span class="fits-badge fits-s">STRATEGIST</span> <span class="fits-badge fits-t">THINKER</span> profile &mdash; marketing strategist with technical thinking. Full FITS assessment to be completed via the TRE-GLP platform.</p>
+            </div>
+        </div>
+
+        <!-- TEAM CONTEXT -->
+        <div class="icard-section">
+            <h2>Team Context</h2>
+            <table class="icard-table">
+                <tr><td>NODE 000</td><td><strong>Nigel Dearden</strong> &mdash; The Architect &mdash; FOUNDER</td></tr>
+                <tr><td>NODE 009</td><td><strong>Henry Leong</strong> &mdash; Dinosaurs to AI &mdash; ACTIVATED (K&rsquo;s uncle)</td></tr>
+                <tr><td>NODE 012</td><td><strong>Michael Wu</strong> &mdash; Dinosaurs to AI &mdash; ACTIVATED</td></tr>
+                <tr><td>NODE 010</td><td><strong>Arthur Lin</strong> &mdash; Dinosaurs to AI &mdash; ACTIVATED</td></tr>
+                <tr><td>NODE 011</td><td><strong>Daoping Bao</strong> &mdash; Dinosaurs to AI &mdash; ACTIVATED</td></tr>
+                <tr><td>NODE 017</td><td><strong>Khanh Huynh (K)</strong> &mdash; Digital Marketing &amp; AI Integration</td></tr>
+            </table>
+        </div>
+
+        <!-- CROSS-REFERENCES -->
+        <div class="xref-section">
+            <h2>Cross-References</h2>
+            <div class="xref-links">
+                <a href="/" class="xref-link">Home</a>
+                <a href="/pages/scholars.html" class="xref-link">The Scholars</a>
+                <a href="/icard-gallery.html" class="xref-link">iCard Gallery</a>
+                <a href="/deck.html" class="xref-link">IP Equations Deck</a>
+                <a href="/icard-book-sales-strategy.html" class="xref-link">Book Sales Strategy</a>
+                <a href="/finance-admin.html" class="xref-link">Formation &amp; Finance</a>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="icard-footer">
+            <p class="gold">&ldquo;What can be imagined can be achieved.&rdquo;</p>
+            <p>iAAi &mdash; Infrastructure Academy &mdash; Block 353 &mdash; The Dearden Experiment</p>
+            <p>iCard created 11 March 2026 &mdash; LOCKED</p>
+        </div>
+    </div>
+
+    <script src="/js/site-search.js?v=20260311a"></script>
+    <script src="/js/page-tracker.js" defer></script>
+    <script src="/js/nav-optimise.js"></script>
+<manus-content-root></manus-content-root><script>
+			var __manus_space_editor_info = {
+			spaceId : 'kUQZAex2uPvgKcHnt7bmh3',
+			patchList : [],
+			hideBadge : false,
+			sessionId : '3qD7FbADI7mdwIS3EJExUI',
+			isWebDev : true,
+			usageStatus : 'UsageStatus_Unknown',
+			};
+			var __manus__global_env = {
+				apiHost: 'https://api.manus.im',
+				host: 'https://manus.im',
+				amplitudeKey: '46ac3f9abb41dd2d17a5785e052bc6d3',
+			};
+			</script><script src="https://files.manuscdn.com/manus-space-dispatcher/spaceEditor-DPV-_I11.js" async></script><script
+			defer
+			data-domain="manus.space"
+			src="https://plausible.io/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"
+		></script>
+		<script>
+			window.plausible =
+				window.plausible ||
+				function () {
+					(window.plausible.q = window.plausible.q || []).push(arguments);
+				};
+			plausible('custom-pageview', {
+			  props: {
+    			domain: window.location.host
+  			}
+			})
+		</script></body>
+</html>

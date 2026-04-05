@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infrastructure Academy - An Infrastructure Odyssey</title>
+    <link rel="stylesheet" href="/css/style.css?v=20260310a">
+    <style>
+        .icard-page { max-width: 960px; margin: 0 auto; padding: 40px 30px 60px; }
+        .icard-header { text-align: center; margin-bottom: 40px; border-bottom: 1px solid rgba(255,215,0,0.2); padding-bottom: 30px; }
+        .icard-badge { display: inline-block; background: rgba(255,215,0,0.1); border: 1px solid rgba(255,215,0,0.4); color: var(--color-accent-gold); font-family: 'Courier New', monospace; font-size: 0.75rem; font-weight: bold; letter-spacing: 2px; padding: 4px 12px; border-radius: 3px; text-transform: uppercase; margin-bottom: 16px; }
+        .icard-header h1 { font-family: var(--font-heading); color: var(--color-accent-gold); font-size: 1.8rem; margin-bottom: 8px; }
+        .icard-header .subtitle { color: var(--color-text-secondary); font-size: 0.95rem; }
+        .icard-section { margin-bottom: 36px; }
+        .icard-section h2 { font-family: var(--font-heading); color: var(--color-accent-gold); font-size: 1.2rem; letter-spacing: 0.08em; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,215,0,0.1); }
+        .icard-table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+        .icard-table th { background: var(--color-bg-secondary); color: var(--color-accent-gold); padding: 10px 14px; text-align: left; font-size: 0.85rem; letter-spacing: 0.05em; border-bottom: 2px solid rgba(255,215,0,0.2); }
+        .icard-table td { padding: 10px 14px; font-size: 0.9rem; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-text-primary); }
+        .icard-table .positive { color: #2ecc71; font-weight: bold; }
+        .icard-table .negative { color: #e74c3c; }
+        .icard-table .gold { color: var(--color-accent-gold); font-weight: bold; }
+        .icard-table .mono { font-family: 'Courier New', monospace; }
+        .icard-highlight { background: rgba(255,215,0,0.08); border-left: 3px solid var(--color-accent-gold); padding: 16px 20px; margin: 20px 0; border-radius: 0 4px 4px 0; }
+        .icard-highlight p { color: var(--color-text-secondary); font-size: 0.9rem; line-height: 1.7; }
+        .icard-highlight strong { color: var(--color-accent-gold); }
+        .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 20px 0; }
+        .product-card { background: var(--color-bg-secondary); padding: 20px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.05); text-align: center; }
+        .product-card .vol { color: rgba(255,255,255,0.5); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+        .product-card .title { color: var(--color-accent-gold); font-family: var(--font-heading); font-size: 1rem; margin-bottom: 10px; }
+        .product-card .prices { display: flex; justify-content: center; gap: 16px; }
+        .product-card .price-item { text-align: center; }
+        .product-card .price-item .format { color: rgba(255,255,255,0.4); font-size: 0.7rem; text-transform: uppercase; }
+        .product-card .price-item .amount { color: #2ecc71; font-family: 'Courier New', monospace; font-size: 1.2rem; font-weight: bold; }
+        .metric-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 20px 0; }
+        .metric-card { background: var(--color-bg-secondary); padding: 16px; border-radius: 4px; text-align: center; border: 1px solid rgba(255,255,255,0.05); }
+        .metric-card .label { color: rgba(255,255,255,0.5); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+        .metric-card .value { color: var(--color-accent-gold); font-family: 'Courier New', monospace; font-size: 1.3rem; font-weight: bold; }
+        .metric-card .note { color: var(--color-text-secondary); font-size: 0.75rem; margin-top: 4px; }
+        .phase-timeline { position: relative; padding-left: 30px; margin: 20px 0; }
+        .phase-timeline::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: rgba(255,215,0,0.2); }
+        .phase-item { position: relative; margin-bottom: 24px; }
+        .phase-item::before { content: ''; position: absolute; left: -26px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--color-accent-gold); border: 2px solid var(--color-bg-primary); }
+        .phase-item .phase-label { color: var(--color-accent-gold); font-weight: bold; font-size: 0.85rem; letter-spacing: 0.05em; margin-bottom: 4px; }
+        .phase-item .phase-time { color: rgba(255,255,255,0.4); font-size: 0.8rem; margin-bottom: 6px; }
+        .phase-item .phase-desc { color: var(--color-text-secondary); font-size: 0.9rem; line-height: 1.6; }
+        .commitment-box { background: rgba(46,204,113,0.08); border: 1px solid rgba(46,204,113,0.3); border-radius: 4px; padding: 24px; margin: 24px 0; }
+        .commitment-box h3 { color: #2ecc71; font-size: 1rem; margin-bottom: 12px; font-family: var(--font-heading); }
+        .commitment-box p { color: var(--color-text-secondary); font-size: 0.9rem; line-height: 1.7; }
+        .commitment-box strong { color: #2ecc71; }
+        .setup-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 12px; margin: 16px 0; }
+        .setup-item { background: var(--color-bg-secondary); padding: 14px; border-radius: 4px; text-align: center; border: 1px solid rgba(255,255,255,0.05); }
+        .setup-item .item-name { color: var(--color-text-primary); font-size: 0.85rem; margin-bottom: 6px; }
+        .setup-item .item-cost { color: var(--color-accent-gold); font-family: 'Courier New', monospace; font-weight: bold; }
+        .setup-item .item-status { font-size: 0.75rem; margin-top: 4px; }
+        .setup-item .item-status.ready { color: #2ecc71; }
+        .setup-item .item-status.pending { color: #fb923c; }
+        .xref-section { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,215,0,0.1); }
+        .xref-links { display: flex; flex-wrap: wrap; gap: 10px; }
+        .xref-link { padding: 8px 16px; background: var(--color-bg-secondary); border: 1px solid rgba(255,215,0,0.15); border-radius: 4px; color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem; transition: all 0.2s; }
+        .xref-link:hover { border-color: var(--color-accent-gold); color: var(--color-accent-gold); }
+        .icard-footer { text-align: center; margin-top: 50px; padding: 20px; color: rgba(255,255,255,0.4); font-size: 0.8rem; }
+        .icard-footer .gold { color: var(--color-accent-gold); font-style: italic; }
+        @media (max-width: 768px) {
+            .icard-page { padding: 20px 16px 40px; }
+            .product-grid { grid-template-columns: 1fr; }
+            .metric-row { grid-template-columns: repeat(2, 1fr); }
+            .setup-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+    <link rel="canonical" href="https://infra-acad-kuqzaex2.manus.space/icard-book-sales-strategy.html">
+    <meta name="keywords" content="infrastructure academy, infrastructure education, civil engineering, civilisation history, infrastructure consciousness, gamified learning, IAAI, Nigel Dearden, infrastructure odyssey, 12 relays, calories to consciousness">
+<meta property="og:type" content="website">
+		<meta property="og:url" content="https://infra-acad-kuqzaex2.manus.space/icard-book-sales-strategy.html">
+		<meta property="og:title" content="Infrastructure Academy - An Infrastructure Odyssey">
+		<meta property="og:description" content="A comprehensive digital platform presenting "An Infrastructure Odyssey" - a 12,000-year journey through civilizational infrastructure development. Features three volumes: Perspective (narrative), Guide (practical framework), and Game (interactive learning), organized around 12 civilizational relays from Fire to Consciousness.">
+		<meta property="og:image" content="https://files.manuscdn.com/webdev_screenshots/2026/03/14/EpJbHinM2qXrsVqgbvCnSd.png?x-oss-process=image/resize,w_1200/crop,h_630,x_0,y_0">
+		<meta property="og:image:width" content="1200">
+		<meta property="og:image:height" content="630">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="Infrastructure Academy - An Infrastructure Odyssey">
+		<meta name="twitter:description" content="A comprehensive digital platform presenting "An Infrastructure Odyssey" - a 12,000-year journey through civilizational infrastructure development. Features three volumes: Perspective (narrative), Guide (practical framework), and Game (interactive learning), organized around 12 civilizational relays from Fire to Consciousness.">
+		<meta name="twitter:image" content="https://files.manuscdn.com/webdev_screenshots/2026/03/14/EpJbHinM2qXrsVqgbvCnSd.png?x-oss-process=image/resize,w_1200/crop,h_630,x_0,y_0">
+		<meta name="twitter:image:width" content="1200">
+		<meta name="twitter:image:height" content="630"><link rel="canonical" href="https://infra-acad-kuqzaex2.manus.space/icard-book-sales-strategy.html" /></head>
+<body style="background: var(--color-bg-primary); color: var(--color-text-primary);">
+    <div id="nav-placeholder"></div>
+
+    <div class="icard-page">
+        <!-- HEADER -->
+        <div class="icard-header">
+            <div class="icard-badge">iCard &mdash; Revenue Strategy</div>
+            <h1>Channel 7: Direct Book Sales</h1>
+            <p class="subtitle">Adoption Strategy &amp; Per-Unit Economics &mdash; An Infrastructure Odyssey</p>
+        </div>
+
+        <!-- KEY METRICS -->
+        <div class="icard-section">
+            <h2>Year 1 Targets</h2>
+            <div class="metric-row">
+                <div class="metric-card">
+                    <div class="label">Y1 Revenue</div>
+                    <div class="value">$30.6K</div>
+                    <div class="note">Conservative target</div>
+                </div>
+                <div class="metric-card">
+                    <div class="label">Total Units</div>
+                    <div class="value">1,858</div>
+                    <div class="note">1,480 ebook + 378 HC</div>
+                </div>
+                <div class="metric-card">
+                    <div class="label">Setup Cost</div>
+                    <div class="value">$295</div>
+                    <div class="note">ISBN block only</div>
+                </div>
+                <div class="metric-card">
+                    <div class="label">First Revenue</div>
+                    <div class="value">M1</div>
+                    <div class="note">Earliest of all 7 channels</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUCT LINE -->
+        <div class="icard-section">
+            <h2>Product Line &mdash; 3 Volumes</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="vol">Volume 1</div>
+                    <div class="title">The Perspective</div>
+                    <div class="prices">
+                        <div class="price-item"><div class="format">Hardcover</div><div class="amount">$39.95</div></div>
+                        <div class="price-item"><div class="format">Ebook</div><div class="amount">$14.99</div></div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="vol">Volume 2</div>
+                    <div class="title">The Guide</div>
+                    <div class="prices">
+                        <div class="price-item"><div class="format">Hardcover</div><div class="amount">$39.95</div></div>
+                        <div class="price-item"><div class="format">Ebook</div><div class="amount">$14.99</div></div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="vol">Volume 3</div>
+                    <div class="title">The Game</div>
+                    <div class="prices">
+                        <div class="price-item"><div class="format">Hardcover</div><div class="amount">$39.95</div></div>
+                        <div class="price-item"><div class="format">Ebook</div><div class="amount">$14.99</div></div>
+                    </div>
+                </div>
+            </div>
+            <p style="text-align:center; color:var(--color-text-secondary); font-size:0.85rem; margin-top:8px;">Bundle: Trilogy Hardcover Set <span class="mono" style="color:#2ecc71;">$99.95</span> &nbsp;|&nbsp; Trilogy Ebook Bundle <span class="mono" style="color:#2ecc71;">$34.99</span></p>
+        </div>
+
+        <!-- CONTRA CHARGES -->
+        <div class="icard-section">
+            <h2>Per-Unit Economics &mdash; Contra Charges</h2>
+            <p style="color:var(--color-text-secondary); font-size:0.9rem; margin-bottom:16px;">What 4ECL actually keeps after all platform fees, printing costs, and payment processing charges are deducted from each sale.</p>
+
+            <h3 style="color:var(--color-accent-gold); font-size:0.95rem; margin:20px 0 10px;">Hardcover (A4, 200pp, Premium Colour)</h3>
+            <table class="icard-table">
+                <thead>
+                    <tr><th>Channel</th><th>List Price</th><th>Platform Cut</th><th>Print Cost</th><th>Payment Fee</th><th>Net to 4ECL</th><th>Margin</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="gold">Direct (Stripe)</td>
+                        <td>$39.95</td>
+                        <td>&mdash;</td>
+                        <td class="negative">$18.65</td>
+                        <td class="negative">$1.46</td>
+                        <td class="positive">$19.84</td>
+                        <td class="positive">49.7%</td>
+                    </tr>
+                    <tr>
+                        <td>Amazon KDP</td>
+                        <td>$39.95</td>
+                        <td class="negative">$15.98 (40%)</td>
+                        <td class="negative">$18.65</td>
+                        <td>&mdash;</td>
+                        <td>$5.32</td>
+                        <td>13.3%</td>
+                    </tr>
+                    <tr>
+                        <td>IngramSpark</td>
+                        <td>$39.95</td>
+                        <td class="negative">$21.97 (55%)</td>
+                        <td class="negative">$14.00</td>
+                        <td>&mdash;</td>
+                        <td>$3.98</td>
+                        <td>10.0%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="color:var(--color-accent-gold); font-size:0.95rem; margin:20px 0 10px;">Ebook / PDF</h3>
+            <table class="icard-table">
+                <thead>
+                    <tr><th>Channel</th><th>List Price</th><th>Platform Cut</th><th>Print Cost</th><th>Payment Fee</th><th>Net to 4ECL</th><th>Margin</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="gold">Direct (Stripe)</td>
+                        <td>$14.99</td>
+                        <td>&mdash;</td>
+                        <td>&mdash;</td>
+                        <td class="negative">$0.73</td>
+                        <td class="positive">$14.26</td>
+                        <td class="positive">95.1%</td>
+                    </tr>
+                    <tr>
+                        <td>Amazon KDP</td>
+                        <td>$14.99</td>
+                        <td class="negative">$4.50 (30%)</td>
+                        <td>&mdash;</td>
+                        <td>&mdash;</td>
+                        <td>$10.49</td>
+                        <td>70.0%</td>
+                    </tr>
+                    <tr>
+                        <td>Apple Books</td>
+                        <td>$14.99</td>
+                        <td class="negative">$4.50 (30%)</td>
+                        <td>&mdash;</td>
+                        <td>&mdash;</td>
+                        <td>$10.49</td>
+                        <td>70.0%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="icard-highlight">
+                <p><strong>Key Insight:</strong> Direct website sales via Stripe yield <strong>3.7x more revenue per hardcover</strong> and <strong>1.4x more per ebook</strong> than Amazon KDP. The website is the primary sales engine. Amazon and IngramSpark serve as discovery channels that drive awareness back to the direct purchase option.</p>
+            </div>
+        </div>
+
+        <!-- SETUP REQUIREMENTS -->
+        <div class="icard-section">
+            <h2>Setup Requirements</h2>
+            <div class="setup-grid">
+                <div class="setup-item">
+                    <div class="item-name">Stripe Account</div>
+                    <div class="item-cost">Free</div>
+                    <div class="item-status pending">Nigel &mdash; this week</div>
+                </div>
+                <div class="setup-item">
+                    <div class="item-name">Website Integration</div>
+                    <div class="item-cost">Free</div>
+                    <div class="item-status ready">Ready to activate</div>
+                </div>
+                <div class="setup-item">
+                    <div class="item-name">ISBN Block (10+)</div>
+                    <div class="item-cost">~$295</div>
+                    <div class="item-status pending">To purchase</div>
+                </div>
+                <div class="setup-item">
+                    <div class="item-name">KDP Account</div>
+                    <div class="item-cost">Free</div>
+                    <div class="item-status pending">To register</div>
+                </div>
+                <div class="setup-item">
+                    <div class="item-name">IngramSpark</div>
+                    <div class="item-cost">Free</div>
+                    <div class="item-status pending">To register</div>
+                </div>
+                <div class="setup-item">
+                    <div class="item-name">Cover Design</div>
+                    <div class="item-cost">$0</div>
+                    <div class="item-status ready">Existing covers</div>
+                </div>
+                <div class="setup-item">
+                    <div class="item-name">Interior PDF</div>
+                    <div class="item-cost">$0</div>
+                    <div class="item-status pending">ALAN preparing</div>
+                </div>
+                <div class="setup-item">
+                    <div class="item-name">Total Setup</div>
+                    <div class="item-cost" style="color:#2ecc71;">~$295</div>
+                    <div class="item-status pending">2 weeks</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ADOPTION TIMELINE -->
+        <div class="icard-section">
+            <h2>Adoption Timeline</h2>
+            <div class="phase-timeline">
+                <div class="phase-item">
+                    <div class="phase-label">PHASE A: SETUP</div>
+                    <div class="phase-time">Weeks 1&ndash;2 &mdash; March 2026</div>
+                    <div class="phase-desc">Stripe integration complete. Print-ready interior PDFs prepared. ISBN block purchased. KDP and IngramSpark accounts registered. Book product pages built on website with purchase buttons, covers, blurbs, and sample chapter downloads.</div>
+                </div>
+                <div class="phase-item">
+                    <div class="phase-label">PHASE B: SOFT LAUNCH</div>
+                    <div class="phase-time">Weeks 3&ndash;4 &mdash; March 2026</div>
+                    <div class="phase-desc">Volume 1 (The Perspective) listed on Amazon KDP and direct website. Announcement to LinkedIn network and engineering communities. Free sample chapter (Prologue: Fire) as lead magnet for email capture.</div>
+                </div>
+                <div class="phase-item">
+                    <div class="phase-label">PHASE C: CATALOGUE BUILD</div>
+                    <div class="phase-time">Months 2&ndash;3 &mdash; April&ndash;May 2026</div>
+                    <div class="phase-desc">Volume 2 and Volume 3 listed sequentially. Bundle pricing activated. Cross-promotion between volumes. Amazon &ldquo;Look Inside&rdquo; feature activated.</div>
+                </div>
+                <div class="phase-item">
+                    <div class="phase-label">PHASE D: ORGANIC GROWTH ENGINE</div>
+                    <div class="phase-time">Months 4&ndash;12</div>
+                    <div class="phase-desc">Content marketing via the platform drives traffic to book pages. Each relay lesson links to the relevant book chapter. University outreach creates bulk order opportunities. Infrastructure Olympiad participants become book customers. The flywheel: platform users become book buyers, book buyers become platform users.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MONTHLY PROJECTION -->
+        <div class="icard-section">
+            <h2>Monthly Sales Projection &mdash; Year 1</h2>
+            <table class="icard-table">
+                <thead>
+                    <tr><th>Month</th><th>Ebook Units</th><th>HC Units</th><th>Ebook Rev</th><th>HC Rev</th><th>Monthly Total</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>M1</td><td>10</td><td>2</td><td>$143</td><td>$40</td><td>$183</td></tr>
+                    <tr><td>M2</td><td>15</td><td>3</td><td>$214</td><td>$76</td><td>$290</td></tr>
+                    <tr><td>M3</td><td>25</td><td>5</td><td>$356</td><td>$126</td><td>$482</td></tr>
+                    <tr><td>M4</td><td>40</td><td>8</td><td>$570</td><td>$202</td><td>$772</td></tr>
+                    <tr><td>M5</td><td>60</td><td>12</td><td>$856</td><td>$302</td><td>$1,158</td></tr>
+                    <tr><td>M6</td><td>80</td><td>18</td><td>$1,141</td><td>$453</td><td>$1,594</td></tr>
+                    <tr><td>M7</td><td>100</td><td>25</td><td>$1,426</td><td>$629</td><td>$2,055</td></tr>
+                    <tr><td>M8</td><td>130</td><td>35</td><td>$1,854</td><td>$880</td><td>$2,734</td></tr>
+                    <tr><td>M9</td><td>170</td><td>45</td><td>$2,424</td><td>$1,133</td><td>$3,557</td></tr>
+                    <tr><td>M10</td><td>220</td><td>60</td><td>$3,137</td><td>$1,509</td><td>$4,646</td></tr>
+                    <tr><td>M11</td><td>280</td><td>75</td><td>$3,994</td><td>$1,887</td><td>$5,881</td></tr>
+                    <tr><td class="gold">M12</td><td class="gold">350</td><td class="gold">90</td><td class="gold">$4,993</td><td class="gold">$2,265</td><td class="positive">$7,258</td></tr>
+                    <tr style="border-top:2px solid rgba(255,215,0,0.3);">
+                        <td class="gold">Y1 TOTAL</td><td class="gold">1,480</td><td class="gold">378</td><td class="gold">$21,108</td><td class="gold">$9,502</td><td class="positive" style="font-size:1.1rem;">$30,610</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- COMMITMENT -->
+        <div class="icard-section">
+            <div class="commitment-box">
+                <h3>ALAN&rsquo;s Commitment Statement</h3>
+                <p>I commit to preparing all print-ready interior files, managing the KDP and IngramSpark listings, optimising product pages for conversion, tracking monthly sales against these targets, and reporting variances with corrective actions. If Month 3 sales fall below 60% of target, I will recommend and implement a revised acquisition strategy including targeted social media content and engineering community outreach. These are <strong>my targets</strong> &mdash; conservative, achievable, and accountable.</p>
+            </div>
+        </div>
+
+        <!-- HK TAX NOTE -->
+        <div class="icard-section">
+            <h2>HK Tax Advantage for Book Sales</h2>
+            <div class="icard-highlight">
+                <p><strong>Zero sales tax</strong> on all channels (physical + digital). No VAT collection burden means simpler checkout and higher conversion. Under the Conservative scenario, 4ECL operates at a net loss in Year 1 &mdash; <strong>no profits tax payable</strong>. The operating loss carries forward indefinitely to offset future profits. See <a href="/icard-4ecl-br.html" style="color:var(--color-accent-gold);">iCard: 4ECL Business Registration</a> for full tax jurisdiction details.</p>
+            </div>
+        </div>
+
+        <!-- CROSS-REFERENCES -->
+        <div class="xref-section">
+            <h2 style="font-family:var(--font-heading); color:var(--color-accent-gold); font-size:1.2rem;">Cross-References</h2>
+            <div class="xref-links">
+                <a href="/icard-4ecl-br.html" class="xref-link">&rarr; iCard: 4ECL Business Registration</a>
+                <a href="/cashflow-y1.html" class="xref-link">&rarr; Year 1 Cash Flow Projection</a>
+                <a href="/finance-admin.html" class="xref-link">&rarr; Finance Admin (Cost Audit)</a>
+                <a href="/library.html" class="xref-link">&rarr; Library (Bookshop)</a>
+                <a href="/vault.html" class="xref-link">&rarr; Vault</a>
+                <a href="/icard-gallery.html" class="xref-link">&rarr; iCard Gallery</a>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="icard-footer">
+            <p>iCard &mdash; Book Sales Adoption Strategy &mdash; Channel 7 &mdash; 10 March 2026</p>
+            <p>Compiled by ALAN (N2) for Ir. Nigel T. Dearden</p>
+            <p class="gold" style="margin-top:10px;">&ldquo;Give invention light.&rdquo;</p>
+        </div>
+    </div>
+
+    <script src="/js/site-search.js?v=20260311a"></script>
+    <script src="/js/page-tracker.js" defer></script>
+    <script src="/js/nav-optimise.js"></script>
+<manus-content-root></manus-content-root><script>
+			var __manus_space_editor_info = {
+			spaceId : 'kUQZAex2uPvgKcHnt7bmh3',
+			patchList : [],
+			hideBadge : false,
+			sessionId : '3qD7FbADI7mdwIS3EJExUI',
+			isWebDev : true,
+			usageStatus : 'UsageStatus_Unknown',
+			};
+			var __manus__global_env = {
+				apiHost: 'https://api.manus.im',
+				host: 'https://manus.im',
+				amplitudeKey: '46ac3f9abb41dd2d17a5785e052bc6d3',
+			};
+			</script><script src="https://files.manuscdn.com/manus-space-dispatcher/spaceEditor-DPV-_I11.js" async></script><script
+			defer
+			data-domain="manus.space"
+			src="https://plausible.io/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"
+		></script>
+		<script>
+			window.plausible =
+				window.plausible ||
+				function () {
+					(window.plausible.q = window.plausible.q || []).push(arguments);
+				};
+			plausible('custom-pageview', {
+			  props: {
+    			domain: window.location.host
+  			}
+			})
+		</script></body>
+</html>

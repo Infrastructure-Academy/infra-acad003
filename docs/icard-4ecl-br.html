@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infrastructure Academy - An Infrastructure Odyssey</title>
+    <link rel="stylesheet" href="/css/style.css?v=20260310a">
+    <style>
+        .icard-page { max-width: 900px; margin: 0 auto; padding: 40px 30px 60px; }
+        .icard-header { text-align: center; margin-bottom: 40px; border-bottom: 1px solid rgba(255,215,0,0.2); padding-bottom: 30px; }
+        .icard-badge { display: inline-block; background: rgba(255,215,0,0.1); border: 1px solid rgba(255,215,0,0.4); color: var(--color-accent-gold); font-family: 'Courier New', monospace; font-size: 0.75rem; font-weight: bold; letter-spacing: 2px; padding: 4px 12px; border-radius: 3px; text-transform: uppercase; margin-bottom: 16px; }
+        .icard-header h1 { font-family: var(--font-heading); color: var(--color-accent-gold); font-size: 1.8rem; margin-bottom: 8px; }
+        .icard-header .subtitle { color: var(--color-text-secondary); font-size: 0.95rem; }
+        .icard-section { margin-bottom: 36px; }
+        .icard-section h2 { font-family: var(--font-heading); color: var(--color-accent-gold); font-size: 1.2rem; letter-spacing: 0.08em; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,215,0,0.1); }
+        .icard-table { width: 100%; border-collapse: collapse; }
+        .icard-table tr { border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .icard-table td { padding: 12px 16px; font-size: 0.95rem; vertical-align: top; }
+        .icard-table td:first-child { color: rgba(255,255,255,0.5); font-weight: bold; white-space: nowrap; width: 200px; font-size: 0.85rem; letter-spacing: 0.05em; }
+        .icard-table td:last-child { color: var(--color-text-primary); }
+        .icard-highlight { background: rgba(255,215,0,0.08); border-left: 3px solid var(--color-accent-gold); padding: 16px 20px; margin: 20px 0; border-radius: 0 4px 4px 0; }
+        .icard-highlight p { color: var(--color-text-secondary); font-size: 0.9rem; line-height: 1.7; }
+        .icard-highlight strong { color: var(--color-accent-gold); }
+        .icard-image { text-align: center; margin: 30px 0; }
+        .icard-image img { max-width: 100%; max-height: 500px; border: 1px solid rgba(255,215,0,0.2); border-radius: 4px; cursor: pointer; }
+        .icard-image .caption { color: rgba(255,255,255,0.4); font-size: 0.8rem; margin-top: 8px; }
+        .tax-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; margin: 20px 0; }
+        .tax-card { background: var(--color-bg-secondary); padding: 20px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.05); }
+        .tax-card .label { color: rgba(255,255,255,0.5); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+        .tax-card .value { color: var(--color-accent-gold); font-family: 'Courier New', monospace; font-size: 1.4rem; font-weight: bold; }
+        .tax-card .note { color: var(--color-text-secondary); font-size: 0.8rem; margin-top: 6px; }
+        .xref-section { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,215,0,0.1); }
+        .xref-links { display: flex; flex-wrap: wrap; gap: 10px; }
+        .xref-link { padding: 8px 16px; background: var(--color-bg-secondary); border: 1px solid rgba(255,215,0,0.15); border-radius: 4px; color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem; transition: all 0.2s; }
+        .xref-link:hover { border-color: var(--color-accent-gold); color: var(--color-accent-gold); }
+        .icard-footer { text-align: center; margin-top: 50px; padding: 20px; color: rgba(255,255,255,0.4); font-size: 0.8rem; }
+        .icard-footer .gold { color: var(--color-accent-gold); font-style: italic; }
+        @media (max-width: 600px) {
+            .icard-page { padding: 20px 16px 40px; }
+            .tax-grid { grid-template-columns: 1fr; }
+            .icard-table td:first-child { width: 120px; font-size: 0.8rem; }
+        }
+    </style>
+    <link rel="canonical" href="https://infra-acad-kuqzaex2.manus.space/icard-4ecl-br.html">
+    <meta name="keywords" content="infrastructure academy, infrastructure education, civil engineering, civilisation history, infrastructure consciousness, gamified learning, IAAI, Nigel Dearden, infrastructure odyssey, 12 relays, calories to consciousness">
+<meta property="og:type" content="website">
+		<meta property="og:url" content="https://infra-acad-kuqzaex2.manus.space/icard-4ecl-br.html">
+		<meta property="og:title" content="Infrastructure Academy - An Infrastructure Odyssey">
+		<meta property="og:description" content="A comprehensive digital platform presenting "An Infrastructure Odyssey" - a 12,000-year journey through civilizational infrastructure development. Features three volumes: Perspective (narrative), Guide (practical framework), and Game (interactive learning), organized around 12 civilizational relays from Fire to Consciousness.">
+		<meta property="og:image" content="https://files.manuscdn.com/webdev_screenshots/2026/03/14/EpJbHinM2qXrsVqgbvCnSd.png?x-oss-process=image/resize,w_1200/crop,h_630,x_0,y_0">
+		<meta property="og:image:width" content="1200">
+		<meta property="og:image:height" content="630">
+		<meta name="twitter:card" content="summary_large_image">
+		<meta name="twitter:title" content="Infrastructure Academy - An Infrastructure Odyssey">
+		<meta name="twitter:description" content="A comprehensive digital platform presenting "An Infrastructure Odyssey" - a 12,000-year journey through civilizational infrastructure development. Features three volumes: Perspective (narrative), Guide (practical framework), and Game (interactive learning), organized around 12 civilizational relays from Fire to Consciousness.">
+		<meta name="twitter:image" content="https://files.manuscdn.com/webdev_screenshots/2026/03/14/EpJbHinM2qXrsVqgbvCnSd.png?x-oss-process=image/resize,w_1200/crop,h_630,x_0,y_0">
+		<meta name="twitter:image:width" content="1200">
+		<meta name="twitter:image:height" content="630"><link rel="canonical" href="https://infra-acad-kuqzaex2.manus.space/icard-4ecl-br.html" /></head>
+<body style="background: var(--color-bg-primary); color: var(--color-text-primary);">
+    <div id="nav-placeholder"></div>
+
+    <div class="icard-page">
+        <!-- HEADER -->
+        <div class="icard-header">
+            <div class="icard-badge">iCard &mdash; Corporate Registration</div>
+            <h1>4 Elements Consulting Limited</h1>
+            <p class="subtitle">4&#20803;&#32032;&#39015;&#21839;&#26377;&#38480;&#20844;&#21496; &mdash; Hong Kong Body Corporate</p>
+        </div>
+
+        <!-- CERTIFICATE DETAILS -->
+        <div class="icard-section">
+            <h2>Certificate Details</h2>
+            <table class="icard-table">
+                <tr><td>ENTITY NAME</td><td>4 Elements Consulting Limited</td></tr>
+                <tr><td>CHINESE NAME</td><td>4&#20803;&#32032;&#39015;&#21839;&#26377;&#38480;&#20844;&#21496;</td></tr>
+                <tr><td>LEGAL STATUS</td><td>Body Corporate</td></tr>
+                <tr><td>NATURE OF BUSINESS</td><td><strong style="color:var(--color-accent-gold);">Engineering, Publishing Services &amp; Trading</strong></td></tr>
+                <tr><td>REGISTERED ADDRESS</td><td>RM C 20/F Glamour Court, Hillgrove Village 1 Discovery Bay Road, Discovery Bay, HK</td></tr>
+                <tr><td>CERTIFICATE NO.</td><td style="font-family:'Courier New',monospace;">36480303-000-02-26-2</td></tr>
+                <tr><td>COMMENCEMENT</td><td>22 February 2026</td></tr>
+                <tr><td>EXPIRY</td><td>21 February 2027</td></tr>
+                <tr><td>ANNUAL FEE</td><td>HK$2,200 (Registration Fee $2,200 + Levy $0)</td></tr>
+                <tr><td>PAYMENT DUE</td><td>25 March 2026</td></tr>
+                <tr><td>COMMISSIONER</td><td>Chan Sze-Wai, Benjamin (signed 14/01/2026)</td></tr>
+            </table>
+        </div>
+
+        <!-- SIGNIFICANCE -->
+        <div class="icard-section">
+            <h2>Significance for iAAi</h2>
+            <div class="icard-highlight">
+                <p>The BR explicitly includes <strong>&ldquo;Publishing Services&rdquo;</strong> alongside Engineering and Trading. This means 4ECL is already legally authorised to conduct book publishing, ebook sales, print-on-demand distribution, and all digital product sales in Hong Kong <strong>without requiring any additional licensing or registration amendments</strong>.</p>
+            </div>
+            <div class="icard-highlight">
+                <p>Combined with &ldquo;Engineering&rdquo; and &ldquo;Trading,&rdquo; the registration covers the full scope of iAAi&rsquo;s commercial activities: consulting, platform operation, book sales, merchandise, IP licensing, and data intelligence services.</p>
+            </div>
+        </div>
+
+        <!-- HK TAX ADVANTAGE -->
+        <div class="icard-section">
+            <h2>Hong Kong Tax Jurisdiction</h2>
+            <div class="tax-grid">
+                <div class="tax-card">
+                    <div class="label">Sales Tax / VAT</div>
+                    <div class="value">0%</div>
+                    <div class="note">HK charges zero sales tax, VAT, or GST on all goods and services including ebooks and digital products</div>
+                </div>
+                <div class="tax-card">
+                    <div class="label">Profits Tax (First HK$2M)</div>
+                    <div class="value">8.25%</div>
+                    <div class="note">Two-tier system &mdash; first HK$2M (~US$256K) of assessable profits at concessionary rate</div>
+                </div>
+                <div class="tax-card">
+                    <div class="label">Profits Tax (Above HK$2M)</div>
+                    <div class="value">16.5%</div>
+                    <div class="note">Standard rate for profits exceeding the HK$2M threshold</div>
+                </div>
+                <div class="tax-card">
+                    <div class="label">Withholding Tax</div>
+                    <div class="value">0%</div>
+                    <div class="note">No withholding tax on royalties, dividends, or payments to non-residents</div>
+                </div>
+            </div>
+            <div class="icard-highlight">
+                <p><strong>Territorial Principle:</strong> HK taxes only profits sourced within Hong Kong. International online sales where the customer is overseas and the transaction is concluded via a website hosted outside HK may not be subject to HK profits tax. This is a significant structural advantage for a globally-distributed digital product.</p>
+            </div>
+        </div>
+
+        <!-- CERTIFICATE IMAGE -->
+        <div class="icard-section">
+            <h2>Certificate Image</h2>
+            <div class="icard-image">
+                <a href="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/GOqSAeXrDWSujjBN.jpeg" target="_blank">
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/GOqSAeXrDWSujjBN.jpeg" alt="4ECL Business Registration Certificate">
+                </a>
+                <div class="caption">Click to view full-size &mdash; Vault Entry #255</div>
+            </div>
+        </div>
+
+        <!-- CROSS-REFERENCES -->
+        <div class="xref-section">
+            <h2 style="font-family:var(--font-heading); color:var(--color-accent-gold); font-size:1.2rem;">Cross-References</h2>
+            <div class="xref-links">
+                <a href="/finance-admin.html" class="xref-link">&rarr; Finance Admin (Phase 1 Cost Audit)</a>
+                <a href="/cashflow-y1.html" class="xref-link">&rarr; Year 1 Cash Flow Projection</a>
+                <a href="/icard-book-sales-strategy.html" class="xref-link">&rarr; iCard: Book Sales Strategy</a>
+                <a href="/4cs-decision.html" class="xref-link">&rarr; 4Cs Decision</a>
+                <a href="/vault.html" class="xref-link">&rarr; Vault (#255)</a>
+                <a href="/icard-gallery.html" class="xref-link">&rarr; iCard Gallery</a>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="icard-footer">
+            <p>iCard &mdash; 4ECL Business Registration &mdash; 10 March 2026</p>
+            <p>Compiled by ALAN (N2) for Ir. Nigel T. Dearden</p>
+            <p class="gold" style="margin-top:10px;">&ldquo;Give invention light.&rdquo;</p>
+        </div>
+    </div>
+
+    <script src="/js/site-search.js?v=20260311a"></script>
+    <script src="/js/page-tracker.js" defer></script>
+    <script src="/js/nav-optimise.js"></script>
+<manus-content-root></manus-content-root><script>
+			var __manus_space_editor_info = {
+			spaceId : 'kUQZAex2uPvgKcHnt7bmh3',
+			patchList : [],
+			hideBadge : false,
+			sessionId : '3qD7FbADI7mdwIS3EJExUI',
+			isWebDev : true,
+			usageStatus : 'UsageStatus_Unknown',
+			};
+			var __manus__global_env = {
+				apiHost: 'https://api.manus.im',
+				host: 'https://manus.im',
+				amplitudeKey: '46ac3f9abb41dd2d17a5785e052bc6d3',
+			};
+			</script><script src="https://files.manuscdn.com/manus-space-dispatcher/spaceEditor-DPV-_I11.js" async></script><script
+			defer
+			data-domain="manus.space"
+			src="https://plausible.io/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"
+		></script>
+		<script>
+			window.plausible =
+				window.plausible ||
+				function () {
+					(window.plausible.q = window.plausible.q || []).push(arguments);
+				};
+			plausible('custom-pageview', {
+			  props: {
+    			domain: window.location.host
+  			}
+			})
+		</script></body>
+</html>
