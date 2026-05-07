@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Even Realities G2 Exhibition Integration Brief — Infrastructure Academy</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/favicon_32_80e4326c.png">
+  <style>
+    .brief-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 40px 30px 60px;
+      background: var(--color-bg-primary);
+      color: var(--color-text-primary);
+    }
+    .brief-header {
+      text-align: center;
+      padding: 50px 20px 30px;
+      background: linear-gradient(135deg, #0a1628 0%, #0d1f3c 50%, #0a1628 100%);
+      border-bottom: 2px solid var(--color-accent-gold);
+    }
+    .brief-header h1 {
+      font-family: var(--font-heading);
+      color: var(--color-accent-gold);
+      font-size: 2.2rem;
+      letter-spacing: 2px;
+      margin-bottom: 8px;
+    }
+    .brief-header .subtitle {
+      color: var(--color-text-secondary);
+      font-size: 1.05rem;
+      font-style: italic;
+    }
+    .brief-header .doc-id {
+      color: var(--color-accent-gold-dark);
+      font-family: monospace;
+      font-size: 0.85rem;
+      margin-top: 10px;
+    }
+    .brief-section {
+      margin-bottom: 35px;
+    }
+    .brief-section h2 {
+      font-family: var(--font-heading);
+      color: var(--color-accent-gold);
+      font-size: 1.4rem;
+      letter-spacing: 1.5px;
+      border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+      padding-bottom: 8px;
+      margin-bottom: 16px;
+    }
+    .brief-section h3 {
+      color: var(--color-accent-gold);
+      font-size: 1.05rem;
+      margin-top: 20px;
+      margin-bottom: 8px;
+    }
+    .brief-section p {
+      color: var(--color-text-primary);
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 0.9rem;
+    }
+    .spec-table th {
+      background: rgba(255, 215, 0, 0.08);
+      color: var(--color-accent-gold);
+      padding: 10px 12px;
+      text-align: left;
+      border-bottom: 2px solid var(--color-accent-gold);
+      font-family: var(--font-heading);
+      letter-spacing: 0.5px;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+    }
+    .spec-table td {
+      padding: 10px 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--color-text-primary);
+      vertical-align: top;
+    }
+    .spec-table tr:hover {
+      background: rgba(255, 215, 0, 0.03);
+    }
+    .relay-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0;
+      font-size: 0.88rem;
+    }
+    .relay-table th {
+      background: rgba(255, 215, 0, 0.1);
+      color: var(--color-accent-gold);
+      padding: 10px 12px;
+      text-align: left;
+      border-bottom: 2px solid var(--color-accent-gold);
+      font-family: var(--font-heading);
+      letter-spacing: 0.5px;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+    }
+    .relay-table td {
+      padding: 9px 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--color-text-primary);
+      vertical-align: top;
+    }
+    .relay-table tr:nth-child(even) {
+      background: rgba(255, 215, 0, 0.02);
+    }
+    .relay-table .relay-id {
+      color: var(--color-accent-gold);
+      font-weight: 700;
+      font-family: monospace;
+      white-space: nowrap;
+    }
+    .relay-table .feature-tag {
+      display: inline-block;
+      background: rgba(255, 215, 0, 0.12);
+      color: var(--color-accent-gold);
+      padding: 2px 8px;
+      font-size: 0.75rem;
+      margin: 2px 3px 2px 0;
+      border: 1px solid rgba(255, 215, 0, 0.2);
+      white-space: nowrap;
+    }
+    .callout {
+      background: rgba(255, 215, 0, 0.06);
+      border-left: 3px solid var(--color-accent-gold);
+      padding: 16px 20px;
+      margin: 20px 0;
+      font-style: italic;
+      color: var(--color-text-secondary);
+    }
+    .footer-brief {
+      text-align: center;
+      padding: 30px 20px;
+      border-top: 1px solid rgba(255, 215, 0, 0.2);
+      margin-top: 40px;
+      font-size: 0.85rem;
+      color: var(--color-text-secondary);
+    }
+    .footer-brief strong {
+      color: var(--color-accent-gold);
+    }
+    .back-link {
+      display: inline-block;
+      margin: 20px 0;
+      color: var(--color-accent-gold);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+    .back-link:hover { text-decoration: underline; }
+  </style>
+
+<style id="mobile-quicknav-styles">
+/* ===== MOBILE QUICK-NAV BAR ===== */
+.mobile-quicknav {
+    display: none;
+    width: 100%;
+    background: linear-gradient(180deg, #0d1f3c 0%, #0a1628 100%);
+    border-bottom: 1px solid rgba(255,215,0,0.25);
+    padding: 6px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 6px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+.mobile-quicknav::-webkit-scrollbar { display: none; }
+.mobile-quicknav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 10px;
+    background: rgba(255,215,0,0.08);
+    border: 1px solid rgba(255,215,0,0.35);
+    border-radius: 16px;
+    color: #ffd700;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+.mobile-quicknav a:active {
+    background: rgba(255,215,0,0.25);
+    transform: scale(0.95);
+}
+.mobile-quicknav a.mqn-home {
+    background: #ffd700;
+    color: #0a1628;
+    border-color: #ffd700;
+}
+@media(max-width:768px) {
+    .mobile-quicknav { display: flex; }
+}
+@media(min-width:769px) {
+    .mobile-quicknav { display: none !important; }
+}
+
+/* ===== BACK-TO-TOP FLOATING BUTTON ===== */
+#back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 16px;
+    z-index: 9999;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(10,22,40,0.92);
+    border: 1.5px solid rgba(255,215,0,0.6);
+    color: #ffd700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    transition: all 0.2s;
+}
+#back-to-top-btn:active {
+    transform: scale(0.9);
+    background: rgba(255,215,0,0.2);
+}
+</style>
+
+</head>
+<body>
+    <!-- iAAi Network Bar — NAV-001 · Cross-Site Navigation -->
+    <!-- ═══ iAAi NETWORK BAR ═══ -->
+    <div id="iaai-network-bar" style="display:flex;align-items:center;justify-content:space-around;width:100%;height:36px;background:#0a1628;position:sticky;top:0;z-index:200001;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">
+      <a href="https://www.infrastructure-academy.com" style="text-decoration:none;color:#fff;font-weight:700;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid #DC2626;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#DC2626"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg> ACADEMY</a>
+      <a href="https://realityeng-epdhlkrn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> QUEST</a>
+      <a href="#" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;opacity:0.5;pointer-events:none;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A843"><path d="M6 2v6l-2 2v4l2 2v6h4v-6l2-2v-4L10 8V2H6zm12 0v6l-2 2v4l2 2v6h-4v-6l-2-2v-4l2-2V2h4z"/></svg> XCHANGE</a>
+      <a href="https://nigelmemorial-ucmtq9dn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#16A34A"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg> MEMORIAL</a>
+      <a href="https://xgrowthtrk-2a93yo5z.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#06B6D4"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/></svg> NEWS</a>
+    </div>
+
+
+<!-- INJECTED COMPACT HEADER BAR -->
+<style>
+.compact-header-bar { position:sticky; top:0; z-index:9999; background:#0a1628; border-bottom:2px solid #ffd700; padding:8px 16px; display:flex; align-items:center; justify-content:space-between; gap:12px; font-family:Georgia,'Times New Roman',serif; }
+.compact-header-bar .chb-brand { display:flex; align-items:center; gap:10px; text-decoration:none; color:#ffd700; }
+.compact-header-bar .chb-brand img { width:28px; height:28px; border-radius:4px; }
+.compact-header-bar .chb-title { font-size:0.85rem; font-weight:bold; letter-spacing:1.5px; color:#ffd700; }
+.compact-header-bar .chb-nav { display:flex; align-items:center; gap:12px; }
+.compact-header-bar .chb-nav a { color:#e2e8f0; text-decoration:none; font-size:0.75rem; letter-spacing:1px; padding:4px 10px; border:1px solid rgba(255,215,0,0.2); border-radius:3px; transition:all 0.2s; }
+.compact-header-bar .chb-nav a:hover { background:rgba(255,215,0,0.1); border-color:#ffd700; color:#ffd700; }
+.compact-header-bar .chb-nav a.chb-home { background:rgba(255,215,0,0.15); border-color:#ffd700; color:#ffd700; font-weight:bold; }
+@media(max-width:600px) { .compact-header-bar .chb-nav a:not(.chb-home) { display:none; } .compact-header-bar .chb-title { font-size:0.7rem; } }
+</style>
+
+<div class="compact-header-bar">
+    <a href="/site.html" class="chb-brand">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iAAi-emblem_e0c9c2c1.png" alt="iAAi">
+        <span class="chb-title">INFRASTRUCTURE ACADEMY</span>
+    </a>
+    <div class="chb-nav">
+        <a href="/site.html" class="chb-home">HOME</a>
+        <a href="/pages/framework.html">FRAMEWORK</a>
+        <a href="/library.html">DOCUMENTS</a>
+        <a href="/play">PLAY</a>
+    </div>
+</div>
+    <!-- ===== MOBILE QUICK-NAV BAR — always visible on mobile ===== -->
+    <div class="mobile-quicknav" id="mobile-quicknav">
+        <a href="/site.html" class="mqn-home">&#127968; HOME</a>
+        <a href="/pages/start-here.html">&#128218; START</a>
+        <a href="/volumes/volume1/index.html">&#128214; READ</a>
+        <a href="/pages/framework.html">&#128736; FRAMEWORK</a>
+        <a href="/play">&#127918; PLAY</a>
+        <a href="/pages/movies.html">&#127916; MOVIES</a>
+        <a href="/pages/resources.html">&#128194; RESOURCES</a>
+        <a href="/press.html">&#128240; PRESS</a>
+    </div>
+
+    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <button id="back-to-top-btn" aria-label="Back to top" title="Back to top">&#9650;</button>
+
+<!-- END COMPACT HEADER BAR -->
+
+
+  <div class="brief-header">
+    <h1>EVEN REALITIES G2</h1>
+    <div class="subtitle">Exhibition Integration Brief &mdash; 12 Relay Zones</div>
+    <div class="doc-id">DOC-G2-INT-001 | BLOCK 388 | 16 MARCH 2026</div>
+  </div>
+
+  <div class="brief-container">
+    <a href="/pages/resources.html" class="back-link">&larr; Back to Resources</a>
+
+    <!-- SECTION 1: EXECUTIVE SUMMARY -->
+    <div class="brief-section">
+      <h2>I. EXECUTIVE SUMMARY</h2>
+      <p>This brief maps the <strong>Even Realities G2</strong> smart glasses hardware to each of the <strong>12 exhibition relay zones</strong> in the Infrastructure Academy physical exhibition concept. The G2 represents the lightest display-equipped smart glasses available (approximately 36 grams), featuring micro-LED binocular waveguide optics, BLE 5.4 connectivity, and a two-day battery life. Its privacy-first design (no camera) and prescription lens support make it uniquely suited to museum and exhibition environments where visitor comfort and institutional trust are paramount.</p>
+      <p>The integration model positions the G2 as a <strong>personal heads-up display (HUD)</strong> for exhibition visitors, delivering contextual narration by DAVID (the AI narrator), real-time translation across 29 languages, and teleprompted content overlays as visitors move through the 12 relay zones &mdash; from Fire to Human Nodes.</p>
+    </div>
+
+    <!-- SECTION 2: HARDWARE SPECIFICATIONS -->
+    <div class="brief-section">
+      <h2>II. HARDWARE SPECIFICATIONS</h2>
+      <table class="spec-table">
+        <thead>
+          <tr><th>Parameter</th><th>Specification</th><th>Exhibition Relevance</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Display</strong></td><td>Micro-LED, binocular, green, 640&times;350, 1200 nits</td><td>Readable in bright gallery lighting; green mono reduces eye strain over long visits</td></tr>
+          <tr><td><strong>Field of View</strong></td><td>27.5&deg;</td><td>Sufficient for text overlays and navigation arrows without obstructing artefact viewing</td></tr>
+          <tr><td><strong>Refresh Rate</strong></td><td>60Hz</td><td>Smooth scrolling for DAVID narration text and timeline animations</td></tr>
+          <tr><td><strong>Passthrough</strong></td><td>98%</td><td>Near-invisible lens tint; visitors see exhibits at full fidelity</td></tr>
+          <tr><td><strong>Weight</strong></td><td>~36g (1.26 oz)</td><td>Comfortable for 2&ndash;3 hour exhibition visits; lighter than most prescription frames</td></tr>
+          <tr><td><strong>Battery</strong></td><td>192mAh glasses + 2000mAh case (7&times; charges)</td><td>2-day life exceeds any single-visit duration; case charges between visitor sessions</td></tr>
+          <tr><td><strong>Connectivity</strong></td><td>BLE 5.4</td><td>Low-energy beacon detection for zone-based content triggering</td></tr>
+          <tr><td><strong>IP Rating</strong></td><td>IP65</td><td>Dust/splash resistant; safe for outdoor relay zones (River, Roads, Ships)</td></tr>
+          <tr><td><strong>Microphones</strong></td><td>4&times; array</td><td>Voice commands for DAVID interaction; ambient noise filtering in busy galleries</td></tr>
+          <tr><td><strong>Prescription</strong></td><td>&minus;12 to +12 diopters</td><td>Visitors can use their own prescription lenses; no glasses-over-glasses</td></tr>
+          <tr><td><strong>Frame Styles</strong></td><td>G2 A (panto) / G2 B (rectangular)</td><td>Two aesthetic options for visitor preference</td></tr>
+          <tr><td><strong>Price</strong></td><td>From $599 / &pound;599</td><td>Fleet pricing TBD; comparable to premium audio guide systems at scale</td></tr>
+        </tbody>
+      </table>
+      <p><strong>Source:</strong> <a href="https://support.evenrealities.com/hc/en-us/articles/13499229138959-Specs" target="_blank" style="color:#ffd700;">Even Realities Official Specs</a> | <a href="https://www.tomsguide.com/computing/smart-glasses/even-realities-g2-smart-glasses-review" target="_blank" style="color:#ffd700;">Tom's Guide Review</a> | <a href="https://www.wired.com/review/even-realities-g2/" target="_blank" style="color:#ffd700;">Wired Review</a></p>
+    </div>
+
+    <!-- SECTION 3: G2 FEATURES × EXHIBITION CAPABILITIES -->
+    <div class="brief-section">
+      <h2>III. G2 FEATURES &times; EXHIBITION CAPABILITIES</h2>
+      <table class="spec-table">
+        <thead>
+          <tr><th>G2 Feature</th><th>Exhibition Application</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Teleprompt</strong></td><td>DAVID narration text scrolls in visitor's field of view as they examine artefacts. No audio guide needed &mdash; silent, personal, non-disruptive to other visitors.</td></tr>
+          <tr><td><strong>Translate (29 languages)</strong></td><td>Real-time translation of all exhibition text, DAVID narration, and artefact labels. Eliminates the need for multilingual printed signage. Critical for international venues.</td></tr>
+          <tr><td><strong>Conversate (AI)</strong></td><td>Visitors can ask DAVID questions about what they are seeing. Contextual AI generates talking points based on the current relay zone. &ldquo;What did Sima Qian write about this?&rdquo;</td></tr>
+          <tr><td><strong>Navigation</strong></td><td>Geomagnetic sensor provides turn-by-turn wayfinding between relay zones. Arrows overlay the visitor's view, guiding them through the chronological sequence.</td></tr>
+          <tr><td><strong>Dashboard</strong></td><td>Displays visitor's BitPoints balance, current relay progress (e.g., &ldquo;Relay 7/12&rdquo;), time remaining, and next zone preview.</td></tr>
+          <tr><td><strong>Even R1 Smart Ring</strong></td><td>Discreet control without touching glasses. Visitors tap the ring to advance narration, answer quiz questions, or bookmark artefacts. Biometric data (heart rate) could feed into engagement analytics.</td></tr>
+          <tr><td><strong>BLE 5.4 Beacons</strong></td><td>Each relay zone has BLE beacons that trigger zone-specific content automatically as visitors enter. No manual selection required.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SECTION 4: 12 RELAY ZONE MAPPING -->
+    <div class="brief-section">
+      <h2>IV. 12 RELAY ZONE MAPPING</h2>
+      <p>Each relay zone in the physical exhibition maps to specific G2 features. The table below defines the primary and secondary G2 capabilities activated in each zone, the content type delivered, and the interaction model.</p>
+      <table class="relay-table">
+        <thead>
+          <tr>
+            <th>Relay</th>
+            <th>Zone Theme</th>
+            <th>Primary G2 Feature</th>
+            <th>Content Delivered via HUD</th>
+            <th>Interaction Model</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="relay-id">R1</td>
+            <td><strong>Fire</strong><br>Shelter &amp; Calories</td>
+            <td><span class="feature-tag">Teleprompt</span><span class="feature-tag">Conversate</span></td>
+            <td>DAVID narrates the discovery of fire. Overlay shows caloric energy chain: wood &rarr; flame &rarr; cooked food &rarr; brain growth. Visitor sees artefact (flint tools) with text floating beside it.</td>
+            <td>Ring tap to hear Prometheus myth vs. archaeological record. Quiz: &ldquo;How many calories did cooking unlock?&rdquo;</td>
+          </tr>
+          <tr>
+            <td class="relay-id">R2</td>
+            <td><strong>Tree</strong><br>Agriculture &amp; Settlement</td>
+            <td><span class="feature-tag">Teleprompt</span><span class="feature-tag">Translate</span></td>
+            <td>Timeline overlay: Fertile Crescent &rarr; Yellow River &rarr; Indus Valley. Grain storage calculations scroll as visitor examines seed specimens.</td>
+            <td>Language toggle for Chinese/English/Arabic agricultural terms. Ring swipe to compare East/West farming techniques.</td>
+          </tr>
+          <tr>
+            <td class="relay-id">R3</td>
+            <td><strong>River</strong><br>Water &amp; Irrigation</td>
+            <td><span class="feature-tag">Conversate</span><span class="feature-tag">Dashboard</span></td>
+            <td>Yu the Great flood control narrative. HUD shows water flow diagrams overlaid on physical model of Yellow River delta. Real-time quiz on hydraulic engineering principles.</td>
+            <td>&ldquo;Ask DAVID&rdquo; about modern dam engineering. Dashboard shows BitPoints earned so far.</td>
+          </tr>
+          <tr>
+            <td class="relay-id">R4</td>
+            <td><strong>Horse</strong><br>Stone &amp; Masonry</td>
+            <td><span class="feature-tag">Teleprompt</span><span class="feature-tag">Navigation</span></td>
+            <td>Imhotep's Step Pyramid construction sequence. HUD overlays structural load paths on physical stone column model. Navigation arrows guide to hidden &ldquo;quarry alcove.&rdquo;</td>
+            <td>Ring tap cycles through pyramid cross-sections. Wayfinding to next zone via geomagnetic compass.</td>
+          </tr>
+          <tr>
+            <td class="relay-id">R5</td>
+            <td><strong>Roads</strong><br>Trade &amp; Connection</td>
+            <td><span class="feature-tag">Translate</span><span class="feature-tag">Navigation</span></td>
+            <td>Silk Road trade route map overlaid on floor. HUD translates merchant inscriptions in real-time (Chinese, Persian, Latin). Alexander/Qin Shi Huang/Genghis Khan archetype comparison.</td>
+            <td>Walk the physical Silk Road path; G2 navigation guides the route. Ring tap reveals trade goods at each waypoint.</td>
+          </tr>
+          <tr>
+            <td class="relay-id">R6</td>
+            <td><strong>Ships</strong><br>Maritime &amp; Exploration</td>
+            <td><span class="feature-tag">Teleprompt</span><span class="feature-tag">Conversate</span></td>
+            <td>Zheng He's treasure fleet vs. Columbus comparison. HUD shows ship dimensions overlaid on physical model. DAVID narrates the &ldquo;what if&rdquo; of Chinese maritime dominance.</td>
+            <td>Ask DAVID: &ldquo;Why did China stop exploring?&rdquo; Ring swipe to compare fleet sizes.</td>
+          </tr>
+          <tr>
+            <td class="relay-id">R7</td>
+            <td><strong>Loom</strong><br>Textile &amp; Industry</td>
+            <td><span class="feature-tag">Dashboard</span><span class="feature-tag">Teleprompt</span></td>
+            <td>Warp/weft metaphor visualised: 5 vertical webs &times; 4 perennial threats = civilisational fabric. HUD shows pattern emerging as visitor examines loom replica.</td>
+            <td>Dashboard displays the visitor's &ldquo;civilisational fabric&rdquo; completion percentage. Midpoint progress check.</td>
+          </tr>
+          <tr>
+            <td class="relay-id">R8</td>
+            <td><strong>Rail</strong><br>Networks &amp; Speed</td>
+            <td><span class="feature-tag">Teleprompt</span><span class="feature-tag">Navigation</span></td>
+            <td>Brunel's Great Western Railway timeline. HUD overlays engineering specifications on physical rail section. Zhan Tianyou's Beijing&ndash;Zhangjiakou railway as Eastern counterpart.</td>
+            <td>Navigation guides visitor along a miniature rail track. Ring tap reveals speed records at each era.</td>
+          </tr>
+          <tr>
+            <td class="relay-id">R9</td>
+            <td><strong>Engine</strong><br>Power &amp; Transformation</td>
+            <td><span class="feature-tag">Conversate</span><span class="feature-tag">Translate</span></td>
+            <td>Tesla vs. Edison narrative. HUD shows AC/DC current flow diagrams on physical generator model. Energy conversion equations float beside artefacts.</td>
+            <td>Ask DAVID about modern energy infrastructure. Translate Tesla's Serbian-language notebooks in real-time.</td>
+          </tr>
+          <tr>
+            <td class="relay-id">R10</td>
+            <td><strong>AAA Triad</strong><br>Atom, Algorithm, AI</td>
+            <td><span class="feature-tag">Conversate</span><span class="feature-tag">Dashboard</span></td>
+            <td>Three parallel streams: nuclear (Atom), computing (Algorithm), intelligence (AI). HUD splits into triptych view showing all three timelines simultaneously.</td>
+            <td>Deep DAVID conversation mode: &ldquo;Is AI infrastructure?&rdquo; Dashboard shows knowledge graph connections discovered.</td>
+          </tr>
+          <tr>
+            <td class="relay-id">R11</td>
+            <td><strong>Orbit</strong><br>Space &amp; Satellites</td>
+            <td><span class="feature-tag">Teleprompt</span><span class="feature-tag">Navigation</span></td>
+            <td>Satellite constellation map overlaid on ceiling projection. HUD shows orbital mechanics as visitor stands beneath a suspended satellite model. ISS/Tiangong comparison.</td>
+            <td>Ring tap to &ldquo;launch&rdquo; virtual satellites. Navigation guides to the final zone.</td>
+          </tr>
+          <tr>
+            <td class="relay-id">R12</td>
+            <td><strong>Human Nodes</strong><br>Consciousness &amp; Torus</td>
+            <td><span class="feature-tag">Conversate</span><span class="feature-tag">Dashboard</span><span class="feature-tag">Translate</span></td>
+            <td>The Torus question: &ldquo;Can consciousness-level infrastructure achieve what COVID achieved deliberately and permanently, without catastrophe?&rdquo; Full DAVID dialogue. Final BitPoints tally.</td>
+            <td>Open conversation with DAVID in any of 29 languages. Dashboard shows complete journey stats. Certificate generation via ring confirmation.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- SECTION 5: TECHNICAL ARCHITECTURE -->
+    <div class="brief-section">
+      <h2>V. TECHNICAL ARCHITECTURE</h2>
+      <h3>Content Delivery Pipeline</h3>
+      <p>Exhibition content is served from the Infrastructure Academy platform via BLE beacon triggers. When a visitor wearing the G2 enters a relay zone, the nearest beacon transmits a zone identifier to the companion app (iOS/Android), which fetches the corresponding content package from the platform API. The content is then pushed to the G2 display via BLE 5.4. Latency target: under 500 milliseconds from zone entry to first HUD content.</p>
+      <h3>Even Hub SDK Integration</h3>
+      <p>The <a href="https://evenhub.evenrealities.com/" target="_blank" style="color:#ffd700;">Even Hub SDK</a> provides high-level APIs for custom app development. The Infrastructure Academy companion app would use the SDK to manage display content, handle beacon events, process ring inputs, and synchronise visitor progress with the platform backend. The SDK supports both iOS and Android, with demo source code available on <a href="https://github.com/even-realities" target="_blank" style="color:#ffd700;">GitHub</a>.</p>
+      <h3>Fleet Management</h3>
+      <p>For exhibition deployment, a fleet of G2 units would be managed through a central charging station (each case supports 7 charges). A rotation of 50 units could serve approximately 200 visitors per day, assuming 2-hour average visit duration and 30-minute inter-session charging. The IP65 rating allows for easy sanitisation between visitors.</p>
+    </div>
+
+    <!-- SECTION 6: IMPLEMENTATION PHASES -->
+    <div class="brief-section">
+      <h2>VI. IMPLEMENTATION PHASES</h2>
+      <table class="spec-table">
+        <thead>
+          <tr><th>Phase</th><th>Milestone</th><th>Deliverable</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><strong>Phase 1</strong></td><td>SDK Prototype</td><td>Single-zone demo (Relay 1: Fire) with Teleprompt narration and ring interaction. Proof of concept for BLE beacon triggering.</td></tr>
+          <tr><td><strong>Phase 2</strong></td><td>Content Pipeline</td><td>All 12 relay zones content packages built and tested. DAVID narration scripts for each zone. Translation packs for top 10 languages.</td></tr>
+          <tr><td><strong>Phase 3</strong></td><td>Fleet Deployment</td><td>50-unit fleet with charging infrastructure. Visitor onboarding flow (prescription fitting, tutorial). Staff training programme.</td></tr>
+          <tr><td><strong>Phase 4</strong></td><td>Analytics &amp; Iteration</td><td>Visitor engagement data (time per zone, quiz completion, DAVID interaction frequency). A/B testing of content formats. BitPoints integration with online platform.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="callout">
+      &ldquo;The Web does not just connect machines, it connects people.&rdquo; &mdash; Tim Berners-Lee. The G2 does not just display information; it connects visitors to 12,000 years of civilisation through the most intimate interface possible &mdash; the space between their eyes and the world.
+    </div>
+
+    <div class="footer-brief">
+      <strong>INFRASTRUCTURE ACADEMY &mdash; AN INFRASTRUCTURE ODYSSEY</strong><br>
+      Even Realities G2 Exhibition Integration Brief | DOC-G2-INT-001<br>
+      Block 388 | 16 March 2026 | Prepared for exhibition planning<br>
+      <a href="https://www.evenrealities.com" target="_blank" style="color:#ffd700;">evenrealities.com</a> | <a href="https://evenhub.evenrealities.com" target="_blank" style="color:#ffd700;">Even Hub SDK</a>
+    </div>
+  </div>
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement -->
+
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement (v2 fixed) -->
+<script>
+(function() {
+  try {
+    var sid = sessionStorage.getItem('iaai_sid');
+    if (!sid) {
+      sid = 'ses_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 9);
+      sessionStorage.setItem('iaai_sid', sid);
+    }
+    var data = {
+      path: window.location.pathname + (window.location.hash || ''),
+      pageTitle: document.title || 'Untitled',
+      referrer: document.referrer || '',
+      sessionId: sid
+    };
+    fetch('/api/trpc/analytics.track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ json: data }),
+      credentials: 'include'
+    }).catch(function() {});
+    window.addEventListener('hashchange', function() {
+      var hashData = {
+        path: window.location.pathname + (window.location.hash || ''),
+        pageTitle: document.title || 'Untitled',
+        referrer: window.location.href,
+        sessionId: sid
+      };
+      fetch('/api/trpc/analytics.track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ json: hashData }),
+        credentials: 'include'
+      }).catch(function() {});
+    });
+  } catch(e) {}
+})();
+</script>
+
+    <!-- Mobile table scroll fix -->
+    <script>
+    (function(){
+      if(window.innerWidth > 768) return;
+      document.querySelectorAll('table').forEach(function(t){
+        if(t.parentElement && t.parentElement.classList.contains('table-scroll-wrapper')) return;
+        var w = document.createElement('div');
+        w.className = 'table-scroll-wrapper';
+        t.parentNode.insertBefore(w, t);
+        w.appendChild(t);
+      });
+    })();
+    </script>
+
+
+    <!-- Back-to-Top Button Logic -->
+    <script>
+    (function() {
+        var btn = document.getElementById('back-to-top-btn');
+        if (!btn) return;
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                btn.style.display = 'flex';
+            } else {
+                btn.style.display = 'none';
+            }
+        }, { passive: true });
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    })();
+    </script>
+
+</body>
+</html>

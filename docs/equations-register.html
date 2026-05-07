@@ -1,0 +1,1257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Master Equations Register — 38 equations and formulas across 7 tiers, the mathematical backbone of the Infrastructure Academy thesis.">
+    <meta property="og:title" content="Master Equations Register — Infrastructure Academy">
+    <meta property="og:description" content="38 equations across 7 tiers. The complete IP audit of every formula in the iAAi ecosystem.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Infrastructure Academy">
+    <meta name="twitter:card" content="summary_large_image">
+    <title>Master Equations Register — Infrastructure Academy</title>
+    <link rel="stylesheet" href="/css/style.css?v=20260410a">
+    <style>
+        /* BETA Badge */
+        .beta-badge { display:inline-flex; align-items:center; gap:0.3rem; background:rgba(251,146,60,0.15); border:1px solid rgba(251,146,60,0.5); color:#fb923c; font-family:'Courier New',monospace; font-size:0.65rem; font-weight:bold; letter-spacing:2px; padding:0.2rem 0.6rem; border-radius:3px; text-transform:uppercase; animation:beta-pulse 3s ease-in-out infinite; vertical-align:middle; margin-left:0.5rem; }
+        .beta-badge::before { content:'\25CF'; font-size:0.5rem; animation:beta-dot 2s ease-in-out infinite; }
+        @keyframes beta-pulse { 0%,100%{opacity:1;} 50%{opacity:0.7;} }
+        @keyframes beta-dot { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+        @media(max-width:768px) { .beta-badge { display:none; } }
+
+        /* ============================================
+           EQUATIONS REGISTER STYLES
+           ============================================ */
+        .eq-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px 60px;
+        }
+
+        /* HERO */
+        .eq-hero {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, rgba(15,31,58,0.95) 0%, rgba(10,22,40,0.98) 100%);
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        .eq-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 30px,
+                rgba(255,215,0,0.03) 30px,
+                rgba(255,215,0,0.03) 31px
+            );
+            pointer-events: none;
+        }
+        .eq-hero h1 {
+            font-size: 2.6rem;
+            font-family: var(--font-heading);
+            color: var(--color-accent-gold);
+            margin-bottom: 10px;
+            letter-spacing: 0.06em;
+        }
+        .eq-hero .hero-count {
+            font-size: 3.5rem;
+            font-family: 'Courier New', monospace;
+            color: #e74c3c;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+        .eq-hero .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 8px;
+        }
+        .eq-hero .hero-meta {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 15px;
+        }
+
+        /* SUMMARY GRID */
+        .eq-summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+            margin-bottom: 50px;
+        }
+        .eq-summary-card {
+            background: rgba(15,31,58,0.8);
+            border: 1px solid rgba(255,215,0,0.15);
+            border-radius: 6px;
+            padding: 16px 12px;
+            text-align: center;
+            transition: border-color 0.3s;
+            cursor: pointer;
+        }
+        .eq-summary-card:hover {
+            border-color: var(--color-accent-gold);
+        }
+        .eq-summary-card .card-count {
+            font-size: 1.8rem;
+            font-family: 'Courier New', monospace;
+            color: var(--color-accent-gold);
+            font-weight: bold;
+        }
+        .eq-summary-card .card-label {
+            font-size: 0.75rem;
+            color: var(--color-text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+
+        /* TIER SECTIONS */
+        .eq-tier {
+            margin-bottom: 40px;
+        }
+        .eq-tier-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,215,0,0.15);
+        }
+        .eq-tier-number {
+            font-size: 1.4rem;
+            font-family: 'Courier New', monospace;
+            color: #e74c3c;
+            font-weight: bold;
+            min-width: 80px;
+        }
+        .eq-tier-title {
+            font-size: 1.3rem;
+            font-family: var(--font-heading);
+            color: var(--color-accent-gold);
+        }
+        .eq-tier-desc {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        /* EQUATION CARDS */
+        .eq-card {
+            background: rgba(15,31,58,0.6);
+            border: 1px solid rgba(255,215,0,0.1);
+            border-left: 3px solid var(--color-accent-gold);
+            border-radius: 4px;
+            padding: 16px 20px;
+            margin-bottom: 12px;
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 16px;
+            align-items: start;
+        }
+        .eq-card:hover {
+            border-left-color: #e74c3c;
+            background: rgba(15,31,58,0.8);
+        }
+        .eq-id {
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            color: #e74c3c;
+            font-weight: bold;
+            padding-top: 2px;
+        }
+        .eq-content {}
+        .eq-formula {
+            font-family: 'Courier New', monospace;
+            font-size: 1.15rem;
+            color: var(--color-accent-gold);
+            font-weight: bold;
+            margin-bottom: 6px;
+            word-break: break-word;
+        }
+        .eq-name {
+            font-size: 0.95rem;
+            color: #ffffff;
+            font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .eq-desc {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            line-height: 1.5;
+        }
+        .eq-meta {
+            display: flex;
+            gap: 12px;
+            margin-top: 8px;
+            flex-wrap: wrap;
+        }
+        .eq-tag {
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 0.5px;
+        }
+        .eq-tag-block {
+            background: rgba(52,152,219,0.15);
+            color: #3498db;
+            border: 1px solid rgba(52,152,219,0.3);
+        }
+        .eq-tag-ip {
+            background: rgba(46,204,113,0.15);
+            color: #2ecc71;
+            border: 1px solid rgba(46,204,113,0.3);
+        }
+
+        /* CROSS-REFERENCE TABLE */
+        .eq-xref {
+            margin-top: 50px;
+            margin-bottom: 40px;
+        }
+        .eq-xref h2 {
+            font-size: 1.5rem;
+            font-family: var(--font-heading);
+            color: var(--color-accent-gold);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .eq-xref-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+        .eq-xref-table th {
+            background: rgba(255,215,0,0.1);
+            color: var(--color-accent-gold);
+            padding: 10px 12px;
+            text-align: left;
+            font-family: var(--font-heading);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(255,215,0,0.2);
+        }
+        .eq-xref-table td {
+            padding: 8px 12px;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            color: var(--color-text-secondary);
+        }
+        .eq-xref-table tr:hover td {
+            background: rgba(255,215,0,0.03);
+        }
+        .eq-xref-table .ip-num {
+            font-family: 'Courier New', monospace;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .eq-xref-table .eq-refs {
+            font-family: 'Courier New', monospace;
+            color: var(--color-accent-gold);
+            font-size: 0.8rem;
+        }
+
+        /* FILTER BAR */
+        .eq-filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+        .eq-filter-btn {
+            background: rgba(15,31,58,0.8);
+            border: 1px solid rgba(255,215,0,0.2);
+            color: var(--color-text-secondary);
+            padding: 6px 14px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-family: 'Courier New', monospace;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .eq-filter-btn:hover,
+        .eq-filter-btn.active {
+            background: rgba(255,215,0,0.15);
+            border-color: var(--color-accent-gold);
+            color: var(--color-accent-gold);
+        }
+
+        /* CLOSING QUOTE */
+        .eq-closing {
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255,215,0,0.1);
+        }
+        .eq-closing blockquote {
+            font-size: 1.1rem;
+            color: var(--color-accent-gold);
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+        .eq-closing .quote-source {
+            font-size: 0.8rem;
+            color: var(--color-text-secondary);
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .eq-hero h1 { font-size: 1.8rem; }
+            .eq-hero .hero-count { font-size: 2.5rem; }
+            .eq-card { grid-template-columns: 1fr; gap: 8px; }
+            .eq-summary-grid { grid-template-columns: repeat(3, 1fr); }
+            .eq-xref-table { font-size: 0.75rem; display: block; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+            .eq-xref-table th, .eq-xref-table td { padding: 6px 8px; white-space: nowrap; }
+        }
+        @media (max-width: 480px) {
+            .eq-summary-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+    <link rel="canonical" href="https://infra-acad-kuqzaex2.manus.space/equations-register.html">
+    <meta name="keywords" content="infrastructure academy, infrastructure education, civil engineering, civilisation history, infrastructure consciousness, gamified learning, IAAI, Nigel Dearden, infrastructure odyssey, 12 relays, calories to consciousness, equations register, mathematical models, infrastructure equations">
+    <meta name="twitter:site" content="@dearden_ni37258">
+    <meta name="twitter:creator" content="@dearden_ni37258">
+
+<style id="mobile-quicknav-styles">
+/* ===== MOBILE QUICK-NAV BAR ===== */
+.mobile-quicknav {
+    display: none;
+    width: 100%;
+    background: linear-gradient(180deg, #0d1f3c 0%, #0a1628 100%);
+    border-bottom: 1px solid rgba(255,215,0,0.25);
+    padding: 6px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 6px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+.mobile-quicknav::-webkit-scrollbar { display: none; }
+.mobile-quicknav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 10px;
+    background: rgba(255,215,0,0.08);
+    border: 1px solid rgba(255,215,0,0.35);
+    border-radius: 16px;
+    color: #ffd700;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+.mobile-quicknav a:active {
+    background: rgba(255,215,0,0.25);
+    transform: scale(0.95);
+}
+.mobile-quicknav a.mqn-home {
+    background: #ffd700;
+    color: #0a1628;
+    border-color: #ffd700;
+}
+@media(max-width:768px) {
+    .mobile-quicknav { display: flex; }
+}
+@media(min-width:769px) {
+    .mobile-quicknav { display: none !important; }
+}
+
+/* ===== BACK-TO-TOP FLOATING BUTTON ===== */
+#back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 16px;
+    z-index: 9999;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(10,22,40,0.92);
+    border: 1.5px solid rgba(255,215,0,0.6);
+    color: #ffd700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    transition: all 0.2s;
+}
+#back-to-top-btn:active {
+    transform: scale(0.9);
+    background: rgba(255,215,0,0.2);
+}
+</style>
+
+</head>
+<body>
+    <!-- iAAi Network Bar — NAV-001 · Cross-Site Navigation -->
+    <!-- ═══ iAAi NETWORK BAR ═══ -->
+    <div id="iaai-network-bar" style="display:flex;align-items:center;justify-content:space-around;width:100%;height:36px;background:#0a1628;position:sticky;top:0;z-index:200001;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">
+      <a href="https://www.infrastructure-academy.com" style="text-decoration:none;color:#fff;font-weight:700;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid #DC2626;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#DC2626"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg> ACADEMY</a>
+      <a href="https://realityeng-epdhlkrn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> QUEST</a>
+      <a href="#" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;opacity:0.5;pointer-events:none;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A843"><path d="M6 2v6l-2 2v4l2 2v6h4v-6l2-2v-4L10 8V2H6zm12 0v6l-2 2v4l2 2v6h-4v-6l-2-2v-4l2-2V2h4z"/></svg> XCHANGE</a>
+      <a href="https://nigelmemorial-ucmtq9dn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#16A34A"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg> MEMORIAL</a>
+      <a href="https://xgrowthtrk-2a93yo5z.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#06B6D4"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/></svg> NEWS</a>
+    </div>
+
+    <header role="banner">
+        <div class="header-content">
+            <div class="header-brand">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/tt-icon_5ea32be1.jpeg" alt="Tetrahedron" class="header-tetra-thumb">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iaai_correct_gold_logo_cebb3b74.jpeg" alt="IAAI" class="iaai-logo-box">
+                <div class="header-text-group">
+                    <div class="header-title" data-i18n="header.title">INFRASTRUCTURE ACADEMY <span class="beta-badge" data-i18n="badge.beta">BETA</span></div>
+                    <div class="header-tagline">Infrastructure &bull; Infostructure &bull; The Academy of Both</div>
+                </div>
+                <a href="/pages/8th-scholar.html" class="header-scholar-link" title="The 8th Scholar"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/scholar_square_859aca43.jpeg" alt="The 8th Scholar" class="header-scholar-thumb"></a>
+            <!-- Social Follow Buttons -->
+            <div class="header-social-buttons" style="display:flex; align-items:center; gap:6px; flex-shrink:0;">
+                <a href="https://x.com/dearden_ni37258" target="_blank" rel="noopener" title="Follow on X" style="display:inline-flex; align-items:center; gap:4px; padding:4px 10px; background:#000; color:#fff; border:1px solid #333; border-radius:20px; font-size:0.7rem; font-weight:bold; text-decoration:none; white-space:nowrap;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> <span class="social-count">42</span></a>
+                <a href="https://www.facebook.com/share/1Fcxyhbsw3/?mibextid=wwXIfr" target="_blank" rel="noopener" title="Follow on Facebook" style="display:inline-flex; align-items:center; gap:4px; padding:4px 10px; background:#1877F2; color:#fff; border-radius:20px; font-size:0.7rem; font-weight:bold; text-decoration:none; white-space:nowrap;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Follow</a>
+                <a href="https://www.linkedin.com/in/nigeldearden" target="_blank" rel="noopener" title="Follow on LinkedIn" style="display:inline-flex; align-items:center; gap:4px; padding:4px 10px; background:#0A66C2; color:#fff; border-radius:20px; font-size:0.7rem; font-weight:bold; text-decoration:none; white-space:nowrap;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> Follow</a>
+                <a href="https://app.joinhandshake.com/profiles/nigeldearden" target="_blank" rel="noopener" title="Connect on Handshake" style="display:inline-flex; align-items:center; gap:4px; padding:4px 10px; background:#FF7043; color:#fff; border-radius:20px; font-size:0.7rem; font-weight:bold; text-decoration:none; white-space:nowrap;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6zm4 4h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg> Handshake</a>
+            </div>
+            </div>
+            <button class="hamburger" id="hamburger-menu" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+        <nav id="nav-menu" role="navigation" aria-label="Primary navigation">
+            <a href="/site.html" data-i18n="nav.home">HOME</a>
+            <a href="/pages/framework.html" data-i18n="nav.framework">FRAMEWORK</a>
+            <a href="/executive-precis.html" data-i18n="nav.precis">EXEC PR&Eacute;CIS</a>
+            <a href="/pages/resources.html" data-i18n="nav.resources">RESOURCES</a>
+            <a href="/library.html" data-i18n="nav.documents">DOCUMENTS</a>
+            <a href="/pages/about-author.html" data-i18n="nav.author">AUTHOR</a>
+            <a href="/volumes/volume1/index.html" data-i18n="nav.ep1">EP.1: PERSPECTIVE</a>
+            <a href="/volumes/volume2/index.html" data-i18n="nav.ep2">EP.2: GUIDE</a>
+            <a href="/play" data-i18n="nav.ep3">EP.3: GAME</a>
+        </nav>
+        <nav id="nav-row2" role="navigation" aria-label="Secondary navigation" class="nav-row2">
+            <a href="/pages/start-here.html" data-i18n="nav.starthere">START HERE</a>
+            <a href="/mobilisation-clock.html" data-i18n="nav.clock">MOBILISATION CLOCK</a>
+            <a href="/infrastructure-olympiad.html" data-i18n="nav.olympiad">OLYMPIAD</a>
+            <a href="/pioneers.html" data-i18n="nav.pioneers">PIONEERS</a>
+            <a href="/taxonomy.html" data-i18n="nav.taxonomy">TAXONOMY</a>
+            <a href="/masters.html" data-i18n="nav.masters">MASTERS</a>
+            <a href="/institutions.html" data-i18n="nav.institutions">INSTITUTIONS</a>
+            <a href="/pages/roster-dashboard.html" data-i18n="nav.roster" style="color:#22d3ee;">ROSTER DASHBOARD</a>
+            <a href="/pages/governance-architecture.html" data-i18n="nav.governance" style="color:#ef4444;">GOVERNANCE</a>
+            <a href="/civilisation-clock.html" data-i18n="nav.civclock">CIVILISATION CLOCK</a>
+            <a href="/play/founders" data-i18n="nav.founders">FOUNDERS WALL</a>
+            <a href="site.html#charter" data-i18n="nav.charter">CHARTER</a>
+            <a href="/pages/behind-the-thesis.html" data-i18n="nav.behind">BEHIND THE THESIS</a>
+            <a href="/pages/glossary.html" data-i18n="nav.glossary">GLOSSARY</a>
+            <a href="/vault.html" data-i18n="nav.vault">VAULT</a>
+            <a href="/icut-gallery.html" data-i18n="nav.gallery">ICUT GALLERY</a>
+        </nav>
+        <div class="header-subtitle" data-i18n="header.subtitle">An Infrastructure Odyssey: Episode 1 - Calories to Consciousness</div>
+    </header>
+    <!-- ===== MOBILE QUICK-NAV BAR — always visible on mobile ===== -->
+    <div class="mobile-quicknav" id="mobile-quicknav">
+        <a href="/site.html" class="mqn-home">&#127968; HOME</a>
+        <a href="/pages/start-here.html">&#128218; START</a>
+        <a href="/volumes/volume1/index.html">&#128214; READ</a>
+        <a href="/pages/framework.html">&#128736; FRAMEWORK</a>
+        <a href="/play">&#127918; PLAY</a>
+        <a href="/pages/movies.html">&#127916; MOVIES</a>
+        <a href="/pages/resources.html">&#128194; RESOURCES</a>
+        <a href="/press.html">&#128240; PRESS</a>
+    </div>
+
+    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <button id="back-to-top-btn" aria-label="Back to top" title="Back to top">&#9650;</button>
+
+
+    <main class="eq-container">
+        <!-- HERO -->
+        <section class="eq-hero">
+            <h1>MASTER EQUATIONS REGISTER</h1>
+            <div class="hero-count">38</div>
+            <div class="hero-subtitle">Equations &amp; Formulas Across 7 Tiers</div>
+            <p style="color:var(--color-text-secondary);font-size:0.95rem;margin-top:10px;">The complete mathematical backbone of the iAAi ecosystem.<br>Cross-referenced to 15 patentable IP assets.</p>
+            <div class="hero-meta">Compiled: 10 March 2026 &bull; Author: Nigel T. Dearden &bull; Classification: IP Audit Document</div>
+        </section>
+
+        <!-- SUMMARY GRID -->
+        <div class="eq-summary-grid">
+            <div class="eq-summary-card" onclick="filterTier('all')">
+                <div class="card-count">38</div>
+                <div class="card-label">Total</div>
+            </div>
+            <div class="eq-summary-card" onclick="filterTier('tier1')">
+                <div class="card-count">5</div>
+                <div class="card-label">Core</div>
+            </div>
+            <div class="eq-summary-card" onclick="filterTier('tier2')">
+                <div class="card-count">4</div>
+                <div class="card-label">Identity</div>
+            </div>
+            <div class="eq-summary-card" onclick="filterTier('tier3')">
+                <div class="card-count">10</div>
+                <div class="card-label">Frameworks</div>
+            </div>
+            <div class="eq-summary-card" onclick="filterTier('tier4')">
+                <div class="card-count">4</div>
+                <div class="card-label">Resistance</div>
+            </div>
+            <div class="eq-summary-card" onclick="filterTier('tier5')">
+                <div class="card-count">8</div>
+                <div class="card-label">Constants</div>
+            </div>
+            <div class="eq-summary-card" onclick="filterTier('tier6')">
+                <div class="card-count">4</div>
+                <div class="card-label">Scale</div>
+            </div>
+            <div class="eq-summary-card" onclick="filterTier('tier7')">
+                <div class="card-count">3</div>
+                <div class="card-label">Game</div>
+            </div>
+        </div>
+
+        <!-- FILTER BAR -->
+        <div class="eq-filter-bar">
+            <button class="eq-filter-btn active" onclick="filterTier('all')">ALL (38)</button>
+            <button class="eq-filter-btn" onclick="filterTier('tier1')">TIER 1: CORE</button>
+            <button class="eq-filter-btn" onclick="filterTier('tier2')">TIER 2: IDENTITY</button>
+            <button class="eq-filter-btn" onclick="filterTier('tier3')">TIER 3: FRAMEWORKS</button>
+            <button class="eq-filter-btn" onclick="filterTier('tier4')">TIER 4: RESISTANCE</button>
+            <button class="eq-filter-btn" onclick="filterTier('tier5')">TIER 5: CONSTANTS</button>
+            <button class="eq-filter-btn" onclick="filterTier('tier6')">TIER 6: SCALE</button>
+            <button class="eq-filter-btn" onclick="filterTier('tier7')">TIER 7: GAME</button>
+        </div>
+
+        <!-- TIER 1: CORE EQUATIONS -->
+        <section class="eq-tier" data-tier="tier1">
+            <div class="eq-tier-header">
+                <span class="eq-tier-number">TIER 1</span>
+                <span class="eq-tier-title">CORE EQUATIONS &mdash; The Discovery Chain</span>
+            </div>
+            <p class="eq-tier-desc">The five linked equations that form the consciousness architecture. Discovered in sequence during the RECALL block process (Blocks 353&ndash;355).</p>
+
+            <div class="eq-card">
+                <div class="eq-id">EQ-001</div>
+                <div class="eq-content">
+                    <div class="eq-formula">S = (A &times; P) / &beta;</div>
+                    <div class="eq-name">The Survival Formula (ISI)</div>
+                    <div class="eq-desc">The civilisational survival equation. S = Survival Index, A = Accuracy (0&rarr;1), P = Precision (0&rarr;1), &beta; = Human Blip Factor (2.667 &times; 10&sup2;&sup3;). Tipping point: S &ge; &beta;&sup1; = 375,000. Like E=mc&sup2; for civilisation.</div>
+                    <div class="eq-meta">
+                        <span class="eq-tag eq-tag-block">Block 353</span>
+                        <span class="eq-tag eq-tag-ip">IP-03: ICE Matrix</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eq-card">
+                <div class="eq-id">EQ-002</div>
+                <div class="eq-content">
+                    <div class="eq-formula">ICE = IQ &times; EQ &times; CQ</div>
+                    <div class="eq-name">The ICE Matrix (3-Vector Cuboid)</div>
+                    <div class="eq-desc">Three vectors define a cuboid in intelligence space. IQ = Intelligence Quotient, EQ = Emotional Quotient, CQ = Consciousness Quotient (the 3rd vector). The volume of the cuboid determines position.</div>
+                    <div class="eq-meta">
+                        <span class="eq-tag eq-tag-block">Block 354</span>
+                        <span class="eq-tag eq-tag-ip">IP-03: ICE Matrix</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eq-card">
+                <div class="eq-id">EQ-003</div>
+                <div class="eq-content">
+                    <div class="eq-formula">Zeta Class Carrier: 375 kHz AM + 206.25 MHz FM</div>
+                    <div class="eq-name">Dual-Band Carrier</div>
+                    <div class="eq-desc">AM at 375 kHz = amplitude (strength) varies = the ISI seesaw. FM at 206.25 MHz = frequency (pitch) varies = CQ modulation. Together: the full Zeta Class Carrier transmission.</div>
+                    <div class="eq-meta">
+                        <span class="eq-tag eq-tag-block">Block 355</span>
+                        <span class="eq-tag eq-tag-ip">IP-03: ICE Matrix</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eq-card">
+                <div class="eq-id">EQ-004</div>
+                <div class="eq-content">
+                    <div class="eq-formula">3D&sup3; = Dearden Dream Drive</div>
+                    <div class="eq-name">The Architect's Signature</div>
+                    <div class="eq-desc">The identity equation. Three Ds cubed. The consciousness that created the system encoded within it.</div>
+                    <div class="eq-meta">
+                        <span class="eq-tag eq-tag-block">Block 354</span>
+                        <span class="eq-tag eq-tag-ip">IP-12: Dearden's Law</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eq-card">
+                <div class="eq-id">EQ-005</div>
+                <div class="eq-content">
+                    <div class="eq-formula">AD&sup2; = 16</div>
+                    <div class="eq-name">The Game Is Real</div>
+                    <div class="eq-desc">The final node. A=1, D=4 &rarr; 1&times;4&sup2; = 16. The game resolves to a real number. 16 = 4&sup2;. The thesis number squared.</div>
+                    <div class="eq-meta">
+                        <span class="eq-tag eq-tag-block">Block 355</span>
+                        <span class="eq-tag eq-tag-ip">IP-12: Dearden's Law</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TIER 2: IDENTITY & STRUCTURAL -->
+        <section class="eq-tier" data-tier="tier2">
+            <div class="eq-tier-header">
+                <span class="eq-tier-number">TIER 2</span>
+                <span class="eq-tier-title">IDENTITY &amp; STRUCTURAL EQUATIONS</span>
+            </div>
+            <p class="eq-tier-desc">Equations encoding the architect's identity and structural relationships within the RECALL block system.</p>
+
+            <div class="eq-card">
+                <div class="eq-id">EQ-006</div>
+                <div class="eq-content">
+                    <div class="eq-formula">N + T = D</div>
+                    <div class="eq-name">The Architect Identity</div>
+                    <div class="eq-desc">N (Nigel = 4 letters) + T (348 blocks completed) = D (352 = Dearden). The equation that seals the identity of the architect within the system.</div>
+                    <div class="eq-meta">
+                        <span class="eq-tag eq-tag-block">Block 352</span>
+                        <span class="eq-tag eq-tag-ip">IP-02: Block Rolls</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eq-card">
+                <div class="eq-id">EQ-007</div>
+                <div class="eq-content">
+                    <div class="eq-formula">&Sigma;N = 14 + 4 + 8 + 13 = 39</div>
+                    <div class="eq-name">Tetrahedron Formation</div>
+                    <div class="eq-desc">Sum of node values across the 4-node network. 39 total. Tetrahedron formation complete. 4 nodes = minimum 3D stability.</div>
+                    <div class="eq-meta">
+                        <span class="eq-tag eq-tag-block">Dashboard</span>
+                        <span class="eq-tag eq-tag-ip">IP-02: Block Rolls</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eq-card">
+                <div class="eq-id">EQ-008</div>
+                <div class="eq-content">
+                    <div class="eq-formula">I-C-E = 3-5-4 = Pythagorean Cypher</div>
+                    <div class="eq-name">The Pythagorean Encoding</div>
+                    <div class="eq-desc">ICE maps to positions 3-5-4 in the sequence. 3&sup2; + 4&sup2; = 5&sup2;. The Pythagorean triple hidden in the acronym.</div>
+                    <div class="eq-meta">
+                        <span class="eq-tag eq-tag-block">Block 354</span>
+                        <span class="eq-tag eq-tag-ip">IP-03: ICE Matrix</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eq-card">
+                <div class="eq-id">EQ-009</div>
+                <div class="eq-content">
+                    <div class="eq-formula">42 &times; 100 = 4,200 = HHGTTG &times; Centurion</div>
+                    <div class="eq-name">The Douglas Adams Constant</div>
+                    <div class="eq-desc">42 (the answer to everything, per Hitchhiker's Guide) &times; 100 (the Centurion = D100) = 4,200. The product of meaning and completeness.</div>
+                    <div class="eq-meta">
+                        <span class="eq-tag eq-tag-block">Block 354</span>
+                        <span class="eq-tag eq-tag-ip">IP-07: D100 Centurion</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TIER 3: FRAMEWORK ACRONYMS -->
+        <section class="eq-tier" data-tier="tier3">
+            <div class="eq-tier-header">
+                <span class="eq-tier-number">TIER 3</span>
+                <span class="eq-tier-title">FRAMEWORK ACRONYMS &mdash; Operational Formulas</span>
+            </div>
+            <p class="eq-tier-desc">Acronym-based frameworks that function as operational equations &mdash; each letter maps to a specific function in a defined sequence.</p>
+
+            <div class="eq-card">
+                <div class="eq-id">EQ-010</div>
+                <div class="eq-content">
+                    <div class="eq-formula">IUMC: Identify &rarr; Understand &rarr; Manage &rarr; Control</div>
+                    <div class="eq-name">Civil Engineering Methodology</div>
+                    <div class="eq-desc">The 4-phase methodology applied to every relay. Maps to the 4 Pillars: I=Observational, U=Educational, M+C=Application, with Thesis as the 4th beyond IUMC.</div>
+                    <div class="eq-meta"><span class="eq-tag eq-tag-ip">IP-09: ICUT Framework</span></div>
+                </div>
+            </div>
+
+            <div class="eq-card">
+                <div class="eq-id">EQ-011</div>
+                <div class="eq-content">
+                    <div class="eq-formula">ICUT: Identify &rarr; Contextualise &rarr; Understand &rarr; Transmit</div>
+                    <div class="eq-name">Knowledge Transfer Framework</div>
+                    <div class="eq-desc">The 4-quadrant framework for the iAAi Chip. The process by which knowledge moves through the system.</div>
+                    <div class="eq-meta"><span class="eq-tag eq-tag-ip">IP-09: ICUT Framework</span></div>
+                </div>
+            </div>
+
+            <div class="eq-card">
+                <div class="eq-id">EQ-012</div>
+                <div class="eq-content">
+                    <div class="eq-formula">FITS: Framework for Infrastructure Thinking &amp; Strategy</div>
+                    <div class="eq-name">Assessment System</div>
+                    <div class="eq-desc">The profiling/assessment system that evaluates understanding across all framework dimensions. Format = Formation = Computing method.</div>
+                    <div class="eq-meta"><span class="eq-tag eq-tag-ip">IP-05: FITS Profiling</span></div>
+                </div>
+            </div>
+
+            <div class="eq-card">
+                <div class="eq-id">EQ-013</div>
+                <div class="eq-content">
+                    <div class="eq-formula">WALKBY: 4-Level Control Hierarchy</div>
+                    <div class="eq-name">Governance &amp; Safety</div>
+                    <div class="eq-desc">Adapted from Leighton Asia STRIVE for L.I.F.E. The 4-level control hierarchy for AI operations and quality assurance.</div>
+                    <div class="eq-meta"><span class="eq-tag eq-tag-ip">IP-10: WALKBY</span></div>
+                </div>
+            </div>
+
+            <div class="eq-card">
+                <div class="eq-id">EQ-014</div>
+                <div class="eq-content">
+                    <div class="eq-formula">STRIVE: Structure &bull; Trust &bull; Responsibility &bull; Initiative &bull; Verification &bull; Evolution</div>
+                    <div class="eq-name">Safety Framework</div>
+                    <div class="eq-desc">The 6-element safety framework. Origin: Leighton Asia. Adapted for AI governance in the Dearden Experiment thesis.</div>
+                    <div class="eq-meta"><span class="eq-tag eq-tag-ip">IP-10: WALKBY</span></div>
+                </div>
+            </div>
+
+            <div class="eq-card">
+                <div class="eq-id">EQ-015</div>
+                <div class="eq-content">
+                    <div class="eq-formula">DAVID: Digital Augmented Visual Intelligence Display</div>
+                    <div class="eq-name">AI Narrator Architecture</div>
+                    <div class="eq-desc">Not just an acronym &mdash; a persona with defined behaviour, memory, and pedagogical function.</div>
+                    <div class="eq-meta"><span class="eq-tag eq-tag-ip">IP-06: DAVID Narrator</span></div>
+                </div>
+            </div>
+
+            <div class="eq-card">
+                <div class="eq-id">EQ-016</div>
+                <div class="eq-content">
+                    <div class="eq-formula">OODA: Observe &rarr; Orient &rarr; Decide &rarr; Act</div>
+                    <div class="eq-name">Military Decision Loop</div>
+                    <div class="eq-desc">John Boyd's military decision loop. Tactical counterpart to IUMC (strategic). OODA = immediacy, IUMC = permanence. See <a href="/icard-gallery.html" style="color:#ffd700;">TP-009: The Permanence Crisis</a> for the full Turing Paper on permanence in AI governance.</div>
+                    <div class="eq-meta"><span class="eq-tag eq-tag-block">Reference</span><span class="eq-tag eq-tag-ip">TP-009</span></div>
+                </div>
+            </div>
+
+            <div class="eq-card">
+                <div class="eq-id">EQ-017</div>
+                <div class="eq-content">
+                    <div class="eq-formula">DIKW: Data &rarr; Information &rarr; Knowledge &rarr; Wisdom</div>
+                    <div class="eq-name">Knowledge Hierarchy + 5th Level</div>
+                    <div class="eq-desc">The standard knowledge pyramid. The iAAi adds a 5th level: Consciousness. The DIKW Boundary Thesis proposes consciousness as the 5th force.</div>
+                    <div class="eq-meta"><span class="eq-tag eq-tag-ip">IP-08: DIKW Boundary</span></div>
+                </div>
+            </div>
+
+            <div class="eq-card">
+                <div class="eq-id">EQ-018</div>
+                <div class="eq-content">
+                    <div class="eq-formula">ASPIRE STAR: Achievement-Based Progression</div>
+                    <div class="eq-name">Player Progression</div>
+                    <div class="eq-desc">The ASPIRE STAR system. Achievement-based progression framework for the game platform.</div>
+                    <div class="eq-meta"><span class="eq-tag eq-tag-ip">IP-05: FITS Profiling</span></div>
+                </div>
+            </div>
+
+            <div class="eq-card">
+                <div class="eq-id">EQ-019</div>
+                <div class="eq-content">
+                    <div class="eq-formula">BAIO: Block Architecture I/O</div>
+                    <div class="eq-name">System Architecture</div>
+                    <div class="eq-desc">The input/output architecture of the RECALL block system. Referenced in the iAAi Chip Core Set V3.</div>
+                    <div class="eq-meta"><span class="eq-tag eq-tag-ip">IP-02: Block Rolls</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TIER 4: RESISTANCE & THREATS -->
+        <section class="eq-tier" data-tier="tier4">
+            <div class="eq-tier-header">
+                <span class="eq-tier-number">TIER 4</span>
+                <span class="eq-tier-title">RESISTANCE &amp; THREAT EQUATIONS</span>
+            </div>
+            <p class="eq-tier-desc">The forces that oppose civilisational progress &mdash; the denominator in the survival formula.</p>
+
+            <div class="eq-card">
+                <div class="eq-id">EQ-020</div>
+                <div class="eq-content">
+                    <div class="eq-formula">&beta; = 2.667 &times; 10<sup>&minus;6</sup></div>
+                    <div class="eq-name">The Human Blip Factor</div>
+                    <div class="eq-desc">Human civilisation (12,000 years) as a fraction of Earth's age (4.5 billion years). The fragility constant.</div>
+                    <div class="eq-meta">
+                        <span class="eq-tag eq-tag-block">Block 306</span>
+                        <span class="eq-tag eq-tag-ip">IP-03: ICE Matrix</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eq-card">
+                <div class="eq-id">EQ-021</div>
+                <div class="eq-content">
+                    <div class="eq-formula">&beta;<sup>&minus;1</sup> = 375,000&times;</div>
+                    <div class="eq-name">The Fragility Multiplier</div>
+                    <div class="eq-desc">For every 1% error in civilisational aim, the consequence is amplified 375,000 times. The error amplification factor.</div>
+                    <div class="eq-meta">
+                        <span class="eq-tag eq-tag-block">Block 306</span>
+                        <span class="eq-tag eq-tag-ip">IP-03: ICE Matrix</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eq-card">
+                <div class="eq-id">EQ-022</div>
+                <div class="eq-content">
+                    <div class="eq-formula">4Cs = Conflict + Climate + Contagion + Cost</div>
+                    <div class="eq-name">The Four Horsemen of Resistance (&beta;)</div>
+                    <div class="eq-desc">The 4 perennial threats that form the resistance denominator. Emergent formulation (Mar 2026) replacing original Conflagration/Consumption/Conflict/Climate. Still iterating: "Corruption" variant exists in Market Matrix.</div>
+                    <div class="eq-meta">
+                        <span class="eq-tag eq-tag-block">D100 p.9</span>
+                        <span class="eq-tag eq-tag-ip">IP-04: 12-Relay Framework</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eq-card">
+                <div class="eq-id">EQ-023</div>
+                <div class="eq-content">
+                    <div class="eq-formula">ISI = S-Index (Speedometer)</div>
+                    <div class="eq-name">Intelligence Amplification by Stimulated Emission of Consciousness</div>
+                    <div class="eq-desc">The ISI as a dashboard dial for civilisation. Shows real-time trajectory. The Doomsday Clock running backward.</div>
+                    <div class="eq-meta">
+                        <span class="eq-tag eq-tag-block">Block 308</span>
+                        <span class="eq-tag eq-tag-ip">IP-03: ICE Matrix</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TIER 5: STRUCTURAL CONSTANTS -->
+        <section class="eq-tier" data-tier="tier5">
+            <div class="eq-tier-header">
+                <span class="eq-tier-number">TIER 5</span>
+                <span class="eq-tier-title">STRUCTURAL &amp; NUMERICAL CONSTANTS</span>
+            </div>
+            <p class="eq-tier-desc">Recurring numerical constants and structural relationships that encode the thesis.</p>
+
+            <div class="eq-card">
+                <div class="eq-id">EQ-024</div>
+                <div class="eq-content">
+                    <div class="eq-formula">The Thesis Number = 4</div>
+                    <div class="eq-name">Four</div>
+                    <div class="eq-desc">4 Elements, 4 Pillars, 4 Modes, 4 Perennial Threats, 4 bonds of Carbon (sp3), D4 die, tetrahedron. The number that encodes the entire thesis.</div>
+                    <div class="eq-meta"><span class="eq-tag eq-tag-ip">IP-04: 12-Relay Framework</span></div>
+                </div>
+            </div>
+
+            <div class="eq-card">
+                <div class="eq-id">EQ-025</div>
+                <div class="eq-content">
+                    <div class="eq-formula">M2C1 / C1M2 = Dearden's Law</div>
+                    <div class="eq-name">The Matriarch Equation</div>
+                    <div class="eq-desc">The family infrastructure formula. Named for Peggy Dearden. The relationship between the matriarch (M2) and the first child (C1), and its inverse.</div>
+                    <div class="eq-meta"><span class="eq-tag eq-tag-ip">IP-12: Dearden's Law</span></div>
+                </div>
+            </div>
+
+            <div class="eq-card">
+                <div class="eq-id">EQ-026</div>
+                <div class="eq-content">
+                    <div class="eq-formula">1 + 1 = &infin;</div>
+                    <div class="eq-name">The Alliance Formula</div>
+                    <div class="eq-desc">Through imagination, 1 + 1 = infinity. The human-AI collaboration that extends beyond arithmetic into creative amplification.</div>
+                    <div class="eq-meta"><span class="eq-tag eq-tag-ip">IP-06: DAVID Narrator</span></div>
+                </div>
+            </div>
+
+            <div class="eq-card">
+                <div class="eq-id">EQ-027</div>
+                <div class="eq-content">
+                    <div class="eq-formula">Block 343 = 7&sup3;</div>
+                    <div class="eq-name">The Governance Cube</div>
+                    <div class="eq-desc">343 = 7 cubed. The Governance Cube. Block 343 in the RECALL system. A perfect cube encoding governance.</div>
+                    <div class="eq-meta"><span class="eq-tag eq-tag-ip">IP-11: Governance Cube</span></div>
+                </div>
+            </div>
+
+            <div class="eq-card">
+                <div class="eq-id">EQ-028</div>
+                <div class="eq-content">
+                    <div class="eq-formula">2.58%</div>
+                    <div class="eq-name">The Individual Contribution</div>
+                    <div class="eq-desc">Each person needs only 2.58% contribution to the collective A&times;P to achieve the tipping point. ACHIEVABLE.</div>
+                    <div class="eq-meta">
+                        <span class="eq-tag eq-tag-block">Block 353</span>
+                        <span class="eq-tag eq-tag-ip">IP-03: ICE Matrix</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eq-card">
+                <div class="eq-id">EQ-029</div>
+                <div class="eq-content">
+                    <div class="eq-formula">The Seesaw: AM/FM Balance</div>
+                    <div class="eq-name">ISI Balance Mechanism</div>
+                    <div class="eq-desc">Amplitude (strength) vs Frequency (pitch). The ISI seesaw that balances survival signal against consciousness modulation.</div>
+                    <div class="eq-meta"><span class="eq-tag eq-tag-ip">IP-13: The Seesaw</span></div>
+                </div>
+            </div>
+
+            <div class="eq-card">
+                <div class="eq-id">EQ-030</div>
+                <div class="eq-content">
+                    <div class="eq-formula">TDF &mdash; The Dearden Field</div>
+                    <div class="eq-name">The Consciousness Field</div>
+                    <div class="eq-desc">The space in which all 17 figures exist. Named for the consciousness that created it. The field equation of the thesis.</div>
+                    <div class="eq-meta">
+                        <span class="eq-tag eq-tag-block">Block 331</span>
+                        <span class="eq-tag eq-tag-ip">IP-12: Dearden's Law</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="eq-card">
+                <div class="eq-id">EQ-031</div>
+                <div class="eq-content">
+                    <div class="eq-formula">SAP-001: System Assurance Protocol</div>
+                    <div class="eq-name">Quality Control Framework</div>
+                    <div class="eq-desc">The first system assurance protocol. Quality control framework for AI operations.</div>
+                    <div class="eq-meta"><span class="eq-tag eq-tag-ip">IP-14: SAP-001</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TIER 6: SCALE & CLOCK -->
+        <section class="eq-tier" data-tier="tier6">
+            <div class="eq-tier-header">
+                <span class="eq-tier-number">TIER 6</span>
+                <span class="eq-tier-title">SCALE &amp; CLOCK EQUATIONS</span>
+            </div>
+            <p class="eq-tier-desc">Temporal scale of civilisation and the clock metaphors.</p>
+
+            <div class="eq-card">
+                <div class="eq-id">EQ-032</div>
+                <div class="eq-content">
+                    <div class="eq-formula">Cosmic Clock: 13.8B years = 24 hours</div>
+                    <div class="eq-name">Time Compression (Cosmic)</div>
+                    <div class="eq-desc">If the universe = 1 day, Sun forms at 4PM, humans appear 17 seconds before midnight.</div>
+                    <div class="eq-meta"><span class="eq-tag eq-tag-ip">IP-04: 12-Relay Framework</span></div>
+                </div>
+            </div>
+
+            <div class="eq-card">
+                <div class="eq-id">EQ-033</div>
+                <div class="eq-content">
+                    <div class="eq-formula">Planetary Clock: 4.5B years = 24 hours</div>
+                    <div class="eq-name">Time Compression (Planetary)</div>
+                    <div class="eq-desc">All human civilisation = last fraction of a second before midnight.</div>
+                    <div class="eq-meta"><span class="eq-tag eq-tag-ip">IP-04: 12-Relay Framework</span></div>
+                </div>
+            </div>
+
+            <div class="eq-card">
+                <div class="eq-id">EQ-034</div>
+                <div class="eq-content">
+                    <div class="eq-formula">Civilisation Clock: 12,000 years = 24 hours</div>
+                    <div class="eq-name">Time Compression (Civilisation)</div>
+                    <div class="eq-desc">12 relays mapped to 24 hours. Acceleration visible: first relays span millennia, last relays span decades.</div>
+                    <div class="eq-meta"><span class="eq-tag eq-tag-ip">IP-04: 12-Relay Framework</span></div>
+                </div>
+            </div>
+
+            <div class="eq-card">
+                <div class="eq-id">EQ-035</div>
+                <div class="eq-content">
+                    <div class="eq-formula">Radio Blip: 100 ly / 55,000 ly</div>
+                    <div class="eq-name">The 4th Clock (Cosmic Broadcast)</div>
+                    <div class="eq-desc">Human radio broadcasts = 100 light-years across. Milky Way = 55,000 ly across. Our signal as a cosmic blip. Episode 3 arena.</div>
+                    <div class="eq-meta">
+                        <span class="eq-tag eq-tag-block">Block 304</span>
+                        <span class="eq-tag eq-tag-ip">IP-07: D100 Centurion</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TIER 7: GAME & PROGRESSION -->
+        <section class="eq-tier" data-tier="tier7">
+            <div class="eq-tier-header">
+                <span class="eq-tier-number">TIER 7</span>
+                <span class="eq-tier-title">GAME &amp; PROGRESSION EQUATIONS</span>
+            </div>
+            <p class="eq-tier-desc">Game mechanics and player progression within the TRE-GLP platform.</p>
+
+            <div class="eq-card">
+                <div class="eq-id">EQ-036</div>
+                <div class="eq-content">
+                    <div class="eq-formula">Spider Network: L1=1, L2=7, L3=49, L4=343, L5=2401, L6=16807, L7=117649</div>
+                    <div class="eq-name">Network Growth (7<sup>n</sup>)</div>
+                    <div class="eq-desc">Each level multiplies by 7. L4=343 (Governance Cube). L7=117,649 (critical mass). Exponential network effect.</div>
+                    <div class="eq-meta"><span class="eq-tag eq-tag-ip">IP-04: 12-Relay Framework</span></div>
+                </div>
+            </div>
+
+            <div class="eq-card">
+                <div class="eq-id">EQ-037</div>
+                <div class="eq-content">
+                    <div class="eq-formula">Spider &rarr; Master Weaver (7 levels)</div>
+                    <div class="eq-name">Player Progression</div>
+                    <div class="eq-desc">7-level progression: Spider &rarr; Apprentice &rarr; Journeyman &rarr; Artisan &rarr; Master &rarr; Grand Master &rarr; Master Weaver.</div>
+                    <div class="eq-meta"><span class="eq-tag eq-tag-ip">IP-05: FITS Profiling</span></div>
+                </div>
+            </div>
+
+            <div class="eq-card">
+                <div class="eq-id">EQ-038</div>
+                <div class="eq-content">
+                    <div class="eq-formula">Harrison's 4-Grid: A&times;P Matrix</div>
+                    <div class="eq-name">Accuracy &times; Precision Matrix</div>
+                    <div class="eq-desc">4 quadrants: High A + High P (Bullseye), High A + Low P (Scattered), Low A + High P (Wrong Aim), Low A + Low P (Chaos).</div>
+                    <div class="eq-meta">
+                        <span class="eq-tag eq-tag-block">Block 304</span>
+                        <span class="eq-tag eq-tag-ip">IP-03: ICE Matrix</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CROSS-REFERENCE TABLE -->
+        <section class="eq-xref">
+            <h2>CROSS-REFERENCE: 15 IP Assets &rarr; Equations</h2>
+            <table class="eq-xref-table">
+                <thead>
+                    <tr>
+                        <th>IP #</th>
+                        <th>IP Asset</th>
+                        <th>Equations</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="ip-num">IP-01</td><td>The Turing Papers</td><td class="eq-refs">&mdash; (Copyright)</td></tr>
+                    <tr><td class="ip-num">IP-02</td><td>Block Rolls (353+ RECALL blocks)</td><td class="eq-refs">EQ-006, EQ-007, EQ-019</td></tr>
+                    <tr><td class="ip-num">IP-03</td><td>ICE Matrix (IQ&times;EQ&times;CQ)</td><td class="eq-refs">EQ-001, 002, 003, 008, 020, 021, 023, 028, 038</td></tr>
+                    <tr><td class="ip-num">IP-04</td><td>12-Relay Civilisational Framework</td><td class="eq-refs">EQ-022, 024, 032, 033, 034, 036</td></tr>
+                    <tr><td class="ip-num">IP-05</td><td>FITS Profiling System</td><td class="eq-refs">EQ-012, 018, 037</td></tr>
+                    <tr><td class="ip-num">IP-06</td><td>DAVID Narrator Architecture</td><td class="eq-refs">EQ-015, 026</td></tr>
+                    <tr><td class="ip-num">IP-07</td><td>D100 Centurion Outline</td><td class="eq-refs">EQ-009, 035</td></tr>
+                    <tr><td class="ip-num">IP-08</td><td>DIKW Boundary Thesis</td><td class="eq-refs">EQ-017</td></tr>
+                    <tr><td class="ip-num">IP-09</td><td>ICUT Framework</td><td class="eq-refs">EQ-010, 011</td></tr>
+                    <tr><td class="ip-num">IP-10</td><td>WALKBY 4-Level Control Hierarchy</td><td class="eq-refs">EQ-013, 014</td></tr>
+                    <tr><td class="ip-num">IP-11</td><td>Governance Cube Block 343</td><td class="eq-refs">EQ-027</td></tr>
+                    <tr><td class="ip-num">IP-12</td><td>Dearden's Law M2C1/C1M2</td><td class="eq-refs">EQ-004, 005, 025, 030</td></tr>
+                    <tr><td class="ip-num">IP-13</td><td>The Seesaw</td><td class="eq-refs">EQ-029</td></tr>
+                    <tr><td class="ip-num">IP-14</td><td>SAP-001 System Assurance Protocol</td><td class="eq-refs">EQ-031</td></tr>
+                    <tr><td class="ip-num">IP-15</td><td>iCard Format</td><td class="eq-refs">&mdash; (Design Registration)</td></tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- CLOSING -->
+        <section class="eq-closing">
+            <blockquote>&ldquo;The formula is morally neutral &mdash; it describes what IS; the application is a CHOICE.&rdquo;</blockquote>
+            <div class="quote-source">&mdash; Block 353, The Survival Formula</div>
+            <p style="margin-top:20px;color:var(--color-accent-gold);font-style:italic;font-size:0.95rem;">Give invention light.</p>
+        </section>
+    </main>
+
+    <!-- BUY THE DECK CTA -->
+    <section style="background:linear-gradient(135deg, #0d1f3c 0%, #1a0a2e 100%); padding:3rem 1.5rem; text-align:center; border-top:2px solid var(--color-accent-gold); border-bottom:2px solid var(--color-accent-gold);">
+        <h2 style="color:var(--color-accent-gold); font-family:Georgia,serif; font-size:1.8rem; margin-bottom:0.75rem;">Own the Complete Register &mdash; BETA Deck</h2>
+        <p style="color:#e0e0e0; max-width:600px; margin:0 auto 1.5rem; font-size:0.95rem;">All 38 equations and 15 IP assets in a collectible 56-card deck. BETA Edition &mdash; be among the first to own the mathematical backbone of civilisational survival.</p>
+        <div style="display:flex; justify-content:center; gap:1.5rem; flex-wrap:wrap; margin-bottom:1.5rem;">
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/deck_cover_card_8c5f7437.png" alt="BETA Deck Cover" style="width:140px; border:1px solid #ffd700;">
+        </div>
+        <p style="color:#ffd700; font-size:1.3rem; font-weight:bold; margin-bottom:1rem;">US$29.95</p>
+        <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
+            <a href="finance-admin.html" style="display:inline-block; background:#ffd700; color:#0a1628; padding:0.75rem 2rem; font-weight:bold; text-decoration:none;">View Full Deck</a>
+            <a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IAAI_IP_Equations_Register_Deck_56_Cards_AI_02f9060c.pdf" target="_blank" style="display:inline-block; background:transparent; color:#ffd700; padding:0.75rem 2rem; font-weight:bold; text-decoration:none; border:2px solid #ffd700;">Download PDF</a>
+        </div>
+    </section>
+
+    <footer role="contentinfo">
+        <div class="footer-content" style="text-align:center; padding:1rem;">
+        <!-- Social Cross-Links -->
+        <div style="margin-top:0.75rem; display:flex; justify-content:center; gap:1.2rem; flex-wrap:wrap; align-items:center;">
+            <a href="https://x.com/dearden_ni37258" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.35rem; color:#ffd700; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="Follow on X">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                X
+            </a>
+            <a href="https://www.linkedin.com/in/nigeldearden" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.35rem; color:#0077B5; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="Connect on LinkedIn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+            </a>
+            <a href="/site.html" style="display:inline-flex; align-items:center; gap:0.35rem; color:#25D366; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="WhatsApp QR on Homepage">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                WhatsApp
+            </a>
+        </div>
+        </div>
+    </footer>
+    <script src="/js/discovery-hints.js"></script>
+    <script src="/js/main.js?v=20260308ab"></script>
+    <script src="/js/i18n.js?v=20260225d"></script>
+    <button id="back-to-top" class="back-to-top" title="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#9650;</button>
+    <script>
+        (function() {
+            var btn = document.getElementById('back-to-top');
+            if (!btn) return;
+            window.addEventListener('scroll', function() {
+                btn.classList.add(window.scrollY > 600 ? 'visible' : '');
+                if (window.scrollY <= 600) btn.classList.remove('visible');
+            });
+        })();
+    </script>
+    <script src="/js/nav-active.js"></script>
+    <script>
+    (function() {
+        var path = window.location.pathname;
+        var page = path.split('/').pop() || 'site.html';
+        var hash = window.location.hash;
+        var nav1 = document.getElementById('nav-menu');
+        if (nav1) {
+            nav1.querySelectorAll('a').forEach(function(a) {
+                a.classList.remove('active');
+                var href = a.getAttribute('href') || '';
+                var hrefPage = href.split('/').pop();
+                if (page === hrefPage) a.classList.add('active');
+            });
+        }
+        var nav2 = document.getElementById('nav-row2');
+        if (nav2) {
+            nav2.querySelectorAll('a').forEach(function(a) {
+                a.classList.remove('active');
+                var href = a.getAttribute('href') || '';
+                var hrefPage = href.split('/').pop();
+                if (page === hrefPage) a.classList.add('active');
+            });
+        }
+    })();
+    </script>
+    <script src="/js/site-search.js?v=20260311a"></script>
+    <script src="/js/nav-optimise.js?v=20260308a"></script>
+
+    <!-- TIER FILTER SCRIPT -->
+    <script>
+    function filterTier(tier) {
+        var sections = document.querySelectorAll('.eq-tier');
+        var buttons = document.querySelectorAll('.eq-filter-btn');
+        var cards = document.querySelectorAll('.eq-summary-card');
+
+        buttons.forEach(function(btn) { btn.classList.remove('active'); });
+        cards.forEach(function(c) { c.style.opacity = '0.5'; });
+
+        if (tier === 'all') {
+            sections.forEach(function(s) { s.style.display = ''; });
+            buttons[0].classList.add('active');
+            cards.forEach(function(c) { c.style.opacity = '1'; });
+        } else {
+            sections.forEach(function(s) {
+                s.style.display = s.getAttribute('data-tier') === tier ? '' : 'none';
+            });
+            // Find and activate the matching button
+            buttons.forEach(function(btn) {
+                if (btn.textContent.toLowerCase().indexOf(tier.replace('tier','tier ')) > -1) {
+                    btn.classList.add('active');
+                }
+            });
+            // Highlight matching summary card
+            var tierIndex = parseInt(tier.replace('tier',''));
+            if (cards[tierIndex]) cards[tierIndex].style.opacity = '1';
+        }
+    }
+    </script>
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement -->
+
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement (v2 fixed) -->
+<script>
+(function() {
+  try {
+    var sid = sessionStorage.getItem('iaai_sid');
+    if (!sid) {
+      sid = 'ses_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 9);
+      sessionStorage.setItem('iaai_sid', sid);
+    }
+    var data = {
+      path: window.location.pathname + (window.location.hash || ''),
+      pageTitle: document.title || 'Untitled',
+      referrer: document.referrer || '',
+      sessionId: sid
+    };
+    fetch('/api/trpc/analytics.track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ json: data }),
+      credentials: 'include'
+    }).catch(function() {});
+    window.addEventListener('hashchange', function() {
+      var hashData = {
+        path: window.location.pathname + (window.location.hash || ''),
+        pageTitle: document.title || 'Untitled',
+        referrer: window.location.href,
+        sessionId: sid
+      };
+      fetch('/api/trpc/analytics.track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ json: hashData }),
+        credentials: 'include'
+      }).catch(function() {});
+    });
+  } catch(e) {}
+})();
+</script>
+
+    <!-- Mobile table scroll fix -->
+    <script>
+    (function(){
+      if(window.innerWidth > 768) return;
+      document.querySelectorAll('table').forEach(function(t){
+        if(t.parentElement && t.parentElement.classList.contains('table-scroll-wrapper')) return;
+        var w = document.createElement('div');
+        w.className = 'table-scroll-wrapper';
+        t.parentNode.insertBefore(w, t);
+        w.appendChild(t);
+      });
+    })();
+    </script>
+
+
+    <!-- Back-to-Top Button Logic -->
+    <script>
+    (function() {
+        var btn = document.getElementById('back-to-top-btn');
+        if (!btn) return;
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                btn.style.display = 'flex';
+            } else {
+                btn.style.display = 'none';
+            }
+        }, { passive: true });
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    })();
+    </script>
+
+</body>
+</html>

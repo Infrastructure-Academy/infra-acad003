@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/favicon_32_80e4326c.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Infrastructure Academy — iAAi Governance Architecture. The Four Sites System, Database Control Matrix, Tetrahedral Observer, and Validation Chain. SAP-001 Compliant. IAAI-GOV-003.">
+    <meta name="keywords" content="iAAi, governance, four sites, tetrahedral observer, SAP-001, IAAI-GOV-003, database control matrix, validation chain, infrastructure academy">
+    <title>Governance Architecture — Infrastructure Academy</title>
+    <link rel="stylesheet" href="/css/style.css?v=20260324a">
+    <style>
+        /* BETA Badge — site-wide */
+        .beta-badge { display:inline-flex; align-items:center; gap:0.3rem; background:rgba(251,146,60,0.15); border:1px solid rgba(251,146,60,0.5); color:#fb923c; font-family:'Courier New',monospace; font-size:0.65rem; font-weight:bold; letter-spacing:2px; padding:0.2rem 0.6rem; border-radius:3px; text-transform:uppercase; animation:beta-pulse 3s ease-in-out infinite; vertical-align:middle; margin-left:0.5rem; }
+        .beta-badge::before { content:'\25CF'; font-size:0.5rem; animation:beta-dot 2s ease-in-out infinite; }
+        @keyframes beta-pulse { 0%,100%{opacity:1;} 50%{opacity:0.7;} }
+        @keyframes beta-dot { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+        @media(max-width:768px) { .beta-badge { display:none; } }
+
+        .gov-page { min-height:100vh; background:#050d1a; color:#fff; }
+        .gov-container { max-width:1400px; margin:0 auto; padding:1rem; }
+
+        /* Header */
+        .gov-header { text-align:center; padding:2rem 1rem; border-bottom:2px solid rgba(255,215,0,0.3); margin-bottom:2rem; }
+        .gov-header h1 { font-family:Georgia,serif; font-size:1.8rem; color:#ffd700; letter-spacing:4px; text-transform:uppercase; margin-bottom:0.5rem; }
+        .gov-header .gov-subtitle { font-size:1rem; color:#e0e0e0; font-style:italic; margin-bottom:0.3rem; }
+        .gov-header .gov-ref { font-size:0.75rem; color:#888; font-family:'Courier New',monospace; }
+        .gov-header .gov-warning { display:inline-block; margin-top:0.75rem; background:rgba(239,68,68,0.15); border:1px solid rgba(239,68,68,0.4); color:#ef4444; font-family:'Courier New',monospace; font-size:0.7rem; padding:0.4rem 1rem; letter-spacing:1.5px; text-transform:uppercase; }
+
+        /* Document Cards */
+        .doc-card { background:rgba(10,22,40,0.9); border:1px solid rgba(255,215,0,0.2); margin-bottom:2.5rem; }
+        .doc-card-header { background:rgba(255,215,0,0.08); border-bottom:2px solid rgba(255,215,0,0.3); padding:1rem 1.5rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.5rem; }
+        .doc-card-header h2 { font-family:Georgia,serif; font-size:1.1rem; color:#ffd700; text-transform:uppercase; letter-spacing:2px; margin:0; }
+        .doc-card-ref { font-family:'Courier New',monospace; font-size:0.65rem; color:#888; letter-spacing:1px; }
+        .doc-card-body { padding:1.5rem; }
+        .doc-card-body img { width:100%; border:1px solid rgba(255,215,0,0.15); display:block; }
+        .doc-card-desc { font-size:0.8rem; color:#ccc; line-height:1.6; margin-top:1rem; padding-top:1rem; border-top:1px solid rgba(255,215,0,0.08); }
+        .doc-card-desc strong { color:#ffd700; }
+
+        /* Role Matrix */
+        .role-matrix { width:100%; border-collapse:collapse; margin:1.5rem 0; font-size:0.75rem; }
+        .role-matrix th { background:rgba(255,215,0,0.12); color:#ffd700; font-family:Georgia,serif; text-transform:uppercase; letter-spacing:1.5px; padding:0.6rem; text-align:left; border-bottom:2px solid rgba(255,215,0,0.3); font-size:0.65rem; }
+        .role-matrix td { padding:0.5rem 0.6rem; border-bottom:1px solid rgba(255,215,0,0.08); color:#e0e0e0; }
+        .role-matrix tr:hover { background:rgba(255,215,0,0.04); }
+        .role-matrix .site-name { color:#ffd700; font-weight:bold; font-family:'Courier New',monospace; }
+        .role-matrix .agent-name { color:#60a5fa; }
+        .role-matrix .db-type { color:#4ade80; font-family:'Courier New',monospace; font-weight:bold; }
+
+        /* Sync Protocol */
+        .sync-bar { background:rgba(255,215,0,0.06); border:1px solid rgba(255,215,0,0.2); padding:1rem 1.5rem; text-align:center; margin:1.5rem 0; }
+        .sync-bar .sync-title { font-family:Georgia,serif; color:#ffd700; font-size:0.85rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:0.5rem; }
+        .sync-bar .sync-flow { font-family:'Courier New',monospace; color:#4ade80; font-size:0.9rem; letter-spacing:1px; }
+        .sync-bar .sync-rule { font-size:0.7rem; color:#fb923c; margin-top:0.5rem; font-style:italic; }
+
+        /* Footer nav */
+        .gov-footer { text-align:center; padding:1.5rem; border-top:1px solid rgba(255,215,0,0.15); margin-top:2rem; }
+        .gov-footer a { color:#ffd700; text-decoration:none; font-size:0.75rem; margin:0 0.75rem; }
+        .gov-footer a:hover { text-decoration:underline; }
+        .gov-footer .gov-stamp { display:block; margin-top:1rem; font-family:'Courier New',monospace; font-size:0.6rem; color:#555; letter-spacing:1px; }
+
+        /* iCard Gallery Grid */
+        .section-divider { border-top:2px solid rgba(255,215,0,0.3); margin:3rem 0 2rem; padding-top:2rem; }
+        .section-divider h2 { font-family:Georgia,serif; font-size:1.4rem; color:#ffd700; text-transform:uppercase; letter-spacing:3px; text-align:center; margin-bottom:0.3rem; }
+        .section-divider .section-sub { font-size:0.75rem; color:#888; text-align:center; font-family:'Courier New',monospace; margin-bottom:1.5rem; }
+        .icard-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(320px, 1fr)); gap:1.5rem; margin-bottom:2rem; }
+        .icard-cell { background:rgba(10,22,40,0.9); border:1px solid rgba(255,215,0,0.15); overflow:hidden; }
+        .icard-cell img { width:100%; display:block; border-bottom:1px solid rgba(255,215,0,0.1); }
+        .icard-cell .icard-label { padding:0.5rem 0.75rem; font-size:0.65rem; color:#aaa; font-family:'Courier New',monospace; letter-spacing:0.5px; }
+        .icard-cell .icard-label strong { color:#ffd700; }
+        .evidence-grid { display:grid; grid-template-columns:1fr; gap:2rem; margin-bottom:2rem; }
+        .evidence-item { background:rgba(10,22,40,0.9); border:1px solid rgba(255,215,0,0.15); }
+        .evidence-item img { width:100%; display:block; }
+        .evidence-item .ev-label { padding:0.75rem 1rem; font-size:0.7rem; color:#ccc; }
+        .evidence-item .ev-label strong { color:#ffd700; }
+
+        /* Responsive */
+        @media(max-width:768px) {
+            .gov-header h1 { font-size:1.3rem; letter-spacing:2px; }
+            .doc-card-header { flex-direction:column; text-align:center; }
+            .doc-card-header h2 { font-size:0.9rem; }
+            .role-matrix { display:block; overflow-x:auto; }
+            .icard-grid { grid-template-columns:1fr; }
+            .icard-cell img, .evidence-item img { max-height:400px; width:auto; max-width:100%; margin:0 auto; object-fit:contain; }
+        }
+    </style>
+
+<style id="mobile-quicknav-styles">
+/* ===== MOBILE QUICK-NAV BAR ===== */
+.mobile-quicknav {
+    display: none;
+    width: 100%;
+    background: linear-gradient(180deg, #0d1f3c 0%, #0a1628 100%);
+    border-bottom: 1px solid rgba(255,215,0,0.25);
+    padding: 6px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 6px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+.mobile-quicknav::-webkit-scrollbar { display: none; }
+.mobile-quicknav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 10px;
+    background: rgba(255,215,0,0.08);
+    border: 1px solid rgba(255,215,0,0.35);
+    border-radius: 16px;
+    color: #ffd700;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+.mobile-quicknav a:active {
+    background: rgba(255,215,0,0.25);
+    transform: scale(0.95);
+}
+.mobile-quicknav a.mqn-home {
+    background: #ffd700;
+    color: #0a1628;
+    border-color: #ffd700;
+}
+@media(max-width:768px) {
+    .mobile-quicknav { display: flex; }
+}
+@media(min-width:769px) {
+    .mobile-quicknav { display: none !important; }
+}
+
+/* ===== BACK-TO-TOP FLOATING BUTTON ===== */
+#back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 16px;
+    z-index: 9999;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(10,22,40,0.92);
+    border: 1.5px solid rgba(255,215,0,0.6);
+    color: #ffd700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    transition: all 0.2s;
+}
+#back-to-top-btn:active {
+    transform: scale(0.9);
+    background: rgba(255,215,0,0.2);
+}
+</style>
+
+</head>
+<body>
+    <!-- iAAi Network Bar — NAV-001 · Cross-Site Navigation -->
+    <!-- ═══ iAAi NETWORK BAR ═══ -->
+    <div id="iaai-network-bar" style="display:flex;align-items:center;justify-content:space-around;width:100%;height:36px;background:#0a1628;position:sticky;top:0;z-index:200001;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">
+      <a href="https://www.infrastructure-academy.com" style="text-decoration:none;color:#fff;font-weight:700;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid #DC2626;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#DC2626"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg> ACADEMY</a>
+      <a href="https://realityeng-epdhlkrn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> QUEST</a>
+      <a href="#" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;opacity:0.5;pointer-events:none;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A843"><path d="M6 2v6l-2 2v4l2 2v6h4v-6l2-2v-4L10 8V2H6zm12 0v6l-2 2v4l2 2v6h-4v-6l-2-2v-4l2-2V2h4z"/></svg> XCHANGE</a>
+      <a href="https://nigelmemorial-ucmtq9dn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#16A34A"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg> MEMORIAL</a>
+      <a href="https://xgrowthtrk-2a93yo5z.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#06B6D4"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/></svg> NEWS</a>
+    </div>
+
+    <!-- Shared Header -->
+<!-- INJECTED COMPACT HEADER BAR -->
+<style>
+.compact-header-bar { position:sticky; top:0; z-index:9999; background:#0a1628; border-bottom:2px solid #ffd700; padding:8px 16px; display:flex; align-items:center; justify-content:space-between; gap:12px; font-family:Georgia,'Times New Roman',serif; }
+.compact-header-bar .chb-brand { display:flex; align-items:center; gap:10px; text-decoration:none; color:#ffd700; }
+.compact-header-bar .chb-brand img { width:28px; height:28px; border-radius:4px; }
+.compact-header-bar .chb-title { font-size:0.85rem; font-weight:bold; letter-spacing:1.5px; color:#ffd700; }
+.compact-header-bar .chb-nav { display:flex; align-items:center; gap:12px; }
+.compact-header-bar .chb-nav a { color:#e2e8f0; text-decoration:none; font-size:0.75rem; letter-spacing:1px; padding:4px 10px; border:1px solid rgba(255,215,0,0.2); border-radius:3px; transition:all 0.2s; }
+.compact-header-bar .chb-nav a:hover { background:rgba(255,215,0,0.1); border-color:#ffd700; color:#ffd700; }
+.compact-header-bar .chb-nav a.chb-home { background:rgba(255,215,0,0.15); border-color:#ffd700; color:#ffd700; font-weight:bold; }
+@media(max-width:600px) { .compact-header-bar .chb-nav a:not(.chb-home) { display:none; } .compact-header-bar .chb-title { font-size:0.7rem; } }
+</style>
+<div class="compact-header-bar">
+    <a href="/site.html" class="chb-brand">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iAAi-emblem_e0c9c2c1.png" alt="iAAi">
+        <span class="chb-title">INFRASTRUCTURE ACADEMY</span>
+    </a>
+    <div class="chb-nav">
+        <a href="/site.html" class="chb-home">HOME</a>
+        <a href="/pages/framework.html">FRAMEWORK</a>
+        <a href="/library.html">DOCUMENTS</a>
+        <a href="/play">PLAY</a>
+    </div>
+</div>
+    <!-- ===== MOBILE QUICK-NAV BAR — always visible on mobile ===== -->
+    <div class="mobile-quicknav" id="mobile-quicknav">
+        <a href="/site.html" class="mqn-home">&#127968; HOME</a>
+        <a href="/pages/start-here.html">&#128218; START</a>
+        <a href="/volumes/volume1/index.html">&#128214; READ</a>
+        <a href="/pages/framework.html">&#128736; FRAMEWORK</a>
+        <a href="/play">&#127918; PLAY</a>
+        <a href="/pages/movies.html">&#127916; MOVIES</a>
+        <a href="/pages/resources.html">&#128194; RESOURCES</a>
+        <a href="/press.html">&#128240; PRESS</a>
+    </div>
+
+    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <button id="back-to-top-btn" aria-label="Back to top" title="Back to top">&#9650;</button>
+
+<!-- END COMPACT HEADER BAR -->
+
+    <div class="gov-page">
+        <div class="gov-container">
+
+            <!-- Header -->
+            <div class="gov-header">
+                <h1>Governance Architecture</h1>
+                <div class="gov-subtitle">iAAi 3+1 Construction Governance Model &mdash; The Four Sites System</div>
+                <div class="gov-ref">IAAI-GOV-003 v1.1 &bull; Block 757 &bull; 24 March 2026 &bull; SAP-001 Compliant</div>
+                <div class="gov-warning">&#9888; Legally Shareable Agentic Handoff Document &mdash; All Agents Read Before Acting</div>
+            </div>
+
+            <!-- Quick Reference: Role Matrix -->
+            <div class="sync-bar">
+                <div class="sync-title">Sync Protocol</div>
+                <div class="sync-flow">ACAD PRIMARY &rarr; MEMORIAL MIRROR &rarr; TRE AUDIT &rarr; CHART ROOM OBSERVER</div>
+                <div class="sync-rule">iCard register lives in ACAD. Mirror in MEMORIAL. Audit in TRE. Race in CHART ROOM.</div>
+            </div>
+
+            <table class="role-matrix">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Site</th>
+                        <th>CE Role</th>
+                        <th>Agent</th>
+                        <th>Database</th>
+                        <th>Metallurgy</th>
+                        <th>Primary Function</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><span class="site-name">ACAD</span><br><span style="font-size:0.6rem; color:#888;">infra-acad-kuqzaex2.manus.space</span></td>
+                        <td>Contractor</td>
+                        <td><span class="agent-name">Agent 1 &mdash; Max</span></td>
+                        <td><span class="db-type">PRIMARY DB</span></td>
+                        <td>Hardening</td>
+                        <td>Builds all features, generates iCards, hosts Infrastructure Academy</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><span class="site-name">MEMORIAL</span><br><span style="font-size:0.6rem; color:#888;">nigelmemorial-ucmtq9dn.manus.space</span></td>
+                        <td>Design Team</td>
+                        <td><span class="agent-name">Agent 2 &mdash; David</span></td>
+                        <td><span class="db-type">MIRROR DB</span></td>
+                        <td>Tempering</td>
+                        <td>Designs narrative layer, mirrors iCard register, cross-site storytelling</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><span class="site-name">TRE GAME</span><br><span style="font-size:0.6rem; color:#888;">realityeng-andhlkrn.manus.space</span></td>
+                        <td>Gov Inspector</td>
+                        <td><span class="agent-name">Agent 3 &mdash; Checker</span></td>
+                        <td><span class="db-type">AUDIT DB</span></td>
+                        <td>Quenching</td>
+                        <td>Independent auditing, SAP-001 compliance, no false completion</td>
+                    </tr>
+                    <tr>
+                        <td>+1</td>
+                        <td><span class="site-name">CHART ROOM</span><br><span style="font-size:0.6rem; color:#888;">xgrowthtrk-2a93yo5z.manus.space</span></td>
+                        <td>Client / Observer</td>
+                        <td><span class="agent-name">Nigel &mdash; Kantei</span></td>
+                        <td><span class="db-type">OBSERVER DB</span></td>
+                        <td>Kantei</td>
+                        <td>Watches, accepts or rejects, tracks X + Facebook + LinkedIn, race dashboard</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Document 1: Tetrahedral Observer v1.1 -->
+            <div class="doc-card" id="tetrahedral-observer">
+                <div class="doc-card-header">
+                    <h2>Doc 1 &mdash; The Tetrahedral Observer</h2>
+                    <span class="doc-card-ref">IAAI-GOV-003 v1.1 &bull; B757-BRIDGES-003 &bull; 24 March 2026</span>
+                </div>
+                <div class="doc-card-body">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/gov_tetrahedral_observer_v11_71592423.png" alt="The Tetrahedral Observer — iAAi 3+1 Construction Governance Model">
+                    <div class="doc-card-desc">
+                        <strong>The Tetrahedron is 3+1=4.</strong> Three active agents who cannot self-certify. One observer who accepts or rejects. No false completion. This diagram defines the fundamental governance geometry of the iAAi system: ACAD (Contractor/Hardening), MEMORIAL (Design Team/Tempering), and TRE GAME (Gov Inspector/Quenching) form the three base vertices. The CHART ROOM (Client/Observer/Kantei) sits at the apex, receiving iCards for acceptance or rejection via the icardRegister.sync API. SAP-001 compliant under the Wynn Palace Standard.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Document 2: Four Sites System Architecture -->
+            <div class="doc-card" id="four-sites-architecture">
+                <div class="doc-card-header">
+                    <h2>Doc 2 &mdash; The Four Sites &mdash; System Architecture</h2>
+                    <span class="doc-card-ref">IAAI-GOV-003 v1.0 &bull; Block 757 &bull; 24 March 2026</span>
+                </div>
+                <div class="doc-card-body">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/gov_four_sites_architecture_3c88b630.jpg" alt="The Four Sites — System Architecture">
+                    <div class="doc-card-desc">
+                        <strong>The complete system architecture</strong> showing all four sites, their interconnections, and data flow paths. The Chart Room (Observer +1) sits at the top, receiving iCards for verification from all three agents. Acceptance/Rejection flows back down to each agent. The icardRegister.sync API connects all sites bidirectionally. Each agent has a defined CE construction metaphor: ACAD forges the steel (Hardening), MEMORIAL refines the grain (Tempering), TRE GAME tests the edge (Quenching). This is a legally shareable agentic handoff document.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Document 3: Database and Function Control Matrix -->
+            <div class="doc-card" id="database-control-matrix">
+                <div class="doc-card-header">
+                    <h2>Doc 3 &mdash; Database and Function Control Matrix</h2>
+                    <span class="doc-card-ref">IAAI-GOV-003 v1.0 &bull; Block 757 &bull; 24 March 2026</span>
+                </div>
+                <div class="doc-card-body">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/gov_database_control_matrix_c7742914.jpg" alt="Database and Function Control Matrix">
+                    <div class="doc-card-desc">
+                        <strong>The definitive control matrix</strong> specifying each site's database authority, primary functions, and agentic rules. ACAD writes to PRIMARY DB first &mdash; all iCards originate here. MEMORIAL must sync with ACAD PRIMARY and cannot override ACAD records. TRE GAME must audit independently and cannot self-certify &mdash; breaches reported to OBSERVER. CHART ROOM is the single source of truth for the race. Nigel watches but does not build. Kantei accepts or rejects. All agents report here.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Document 4: The Validation Chain (Five Operational Bridges) -->
+            <div class="doc-card" id="validation-chain">
+                <div class="doc-card-header">
+                    <h2>Doc 4 &mdash; The Validation Chain &mdash; Five Operational Bridges</h2>
+                    <span class="doc-card-ref">ISI DD-025 &bull; Block 363 &bull; infrastructure-academy.com</span>
+                </div>
+                <div class="doc-card-body">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/gov_tetrahedral_observer_bridges_57dba6a3.jpg" alt="The Validation Chain — ISI → HICE → Thesis → Game → Assessment → Olympiad">
+                    <div class="doc-card-desc">
+                        <strong>The Validation Chain: ISI &rarr; HICE &rarr; Thesis &rarr; Game &rarr; Assessment &rarr; Olympiad.</strong> This diagram maps the five operational bridges that connect the intellectual foundation to competitive scaling. At the centre sits the HICE diamond (H = I + C + E: Haptic + Intelligence + Creative + Emotional), measuring the whole human through Convergence Through Conversation &times; Participation &times; Play. The Assessment bridge (R1 + R2 + R3) generates evidence across 23 universities in 6 regions. 127 days, 363 blocks, 91+ pages, 209 tests, 2,645 TODOs complete. N + T = D &mdash; The Dearden Equation. Man + Machine, Not Man vs Machine.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agentic Rules Summary -->
+            <div class="sync-bar" style="margin-top:2rem;">
+                <div class="sync-title">Core Agentic Rules</div>
+                <div style="font-size:0.8rem; color:#e0e0e0; line-height:1.8; margin-top:0.5rem;">
+                    <span style="color:#ffd700;">ACAD:</span> Must write to PRIMARY DB first. All iCards originate here. Cannot self-certify own work.<br>
+                    <span style="color:#ffd700;">MEMORIAL:</span> Must sync with ACAD PRIMARY. Cannot override ACAD records. Narrative must match iCard data.<br>
+                    <span style="color:#ffd700;">TRE GAME:</span> Must audit independently. Cannot self-certify. No false completion permitted.<br>
+                    <span style="color:#ffd700;">CHART ROOM:</span> Nigel watches &mdash; does not build. Kantei accepts or rejects. Single source of truth for race.
+                </div>
+            </div>
+
+            <!-- ═══════════════════════════════════════════════════════ -->
+            <!-- SECTION 5: TURING PAPER iCARD SERIES -->
+            <!-- ═══════════════════════════════════════════════════════ -->
+            <div class="section-divider" id="turing-paper-icards">
+                <h2>Turing Paper iCard Series</h2>
+                <div class="section-sub">ISI DD-025 &bull; The Complete Turing Paper Evidence Chain &bull; TP001&ndash;TP020 + TP047&ndash;TP048</div>
+            </div>
+
+            <!-- Key Findings + Relationships (Summary Cards) -->
+            <div class="icard-grid" style="grid-template-columns:repeat(auto-fill, minmax(400px, 1fr)); margin-bottom:1.5rem;">
+                <div class="icard-cell">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-tp-key-findings-v3_c64a0e2e.png" alt="iCard TP Key Findings v3">
+                    <div class="icard-label"><strong>KEY FINDINGS</strong> &mdash; Turing Paper Summary Card</div>
+                </div>
+                <div class="icard-cell">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-tp-relationships-v3_02e2563f.png" alt="iCard TP Relationships v3">
+                    <div class="icard-label"><strong>RELATIONSHIPS</strong> &mdash; Turing Paper Relationship Map</div>
+                </div>
+            </div>
+
+            <!-- TP001 through TP020 -->
+            <div class="icard-grid">
+                <div class="icard-cell">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-tp001-v2_4a463d77.png" alt="iCard TP001">
+                    <div class="icard-label"><strong>TP001</strong></div>
+                </div>
+                <div class="icard-cell">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-tp002-v2_cb658aad.png" alt="iCard TP002">
+                    <div class="icard-label"><strong>TP002</strong></div>
+                </div>
+                <div class="icard-cell">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-tp003-v2_b088c802.png" alt="iCard TP003">
+                    <div class="icard-label"><strong>TP003</strong></div>
+                </div>
+                <div class="icard-cell">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-tp004-v2_ab4b887c.png" alt="iCard TP004">
+                    <div class="icard-label"><strong>TP004</strong></div>
+                </div>
+                <div class="icard-cell">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-tp005-v2_0b280873.png" alt="iCard TP005">
+                    <div class="icard-label"><strong>TP005</strong></div>
+                </div>
+                <div class="icard-cell">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-tp006-v2_4e37ca5e.png" alt="iCard TP006">
+                    <div class="icard-label"><strong>TP006</strong></div>
+                </div>
+                <div class="icard-cell">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-tp007-v2_f9d7140b.png" alt="iCard TP007">
+                    <div class="icard-label"><strong>TP007</strong></div>
+                </div>
+                <div class="icard-cell">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-tp008-v2_e835967b.png" alt="iCard TP008">
+                    <div class="icard-label"><strong>TP008</strong></div>
+                </div>
+                <div class="icard-cell">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-tp009-v2_077b02e2.png" alt="iCard TP009">
+                    <div class="icard-label"><strong>TP009</strong></div>
+                </div>
+                <div class="icard-cell">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-tp010-v2_3a1b1e05.png" alt="iCard TP010">
+                    <div class="icard-label"><strong>TP010</strong></div>
+                </div>
+                <div class="icard-cell">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-tp011-v2_ee6ea625.png" alt="iCard TP011">
+                    <div class="icard-label"><strong>TP011</strong></div>
+                </div>
+                <div class="icard-cell">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-tp013-v2_3f60d936.png" alt="iCard TP013">
+                    <div class="icard-label"><strong>TP013</strong></div>
+                </div>
+                <div class="icard-cell">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-tp014-v2_d94c05fb.png" alt="iCard TP014">
+                    <div class="icard-label"><strong>TP014</strong></div>
+                </div>
+                <div class="icard-cell">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-tp015-v2_d0ee0977.png" alt="iCard TP015">
+                    <div class="icard-label"><strong>TP015</strong></div>
+                </div>
+                <div class="icard-cell">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-tp016-v2_36dad81d.png" alt="iCard TP016">
+                    <div class="icard-label"><strong>TP016</strong></div>
+                </div>
+                <div class="icard-cell">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-tp017-v2_47edeaf4.png" alt="iCard TP017">
+                    <div class="icard-label"><strong>TP017</strong></div>
+                </div>
+                <div class="icard-cell">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-tp018-v2_e0552fdf.png" alt="iCard TP018">
+                    <div class="icard-label"><strong>TP018</strong></div>
+                </div>
+                <div class="icard-cell">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-tp019-v2_be7a890d.png" alt="iCard TP019">
+                    <div class="icard-label"><strong>TP019</strong></div>
+                </div>
+                <div class="icard-cell">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-tp020-v2_c955c3ea.png" alt="iCard TP020">
+                    <div class="icard-label"><strong>TP020</strong></div>
+                </div>
+                <div class="icard-cell">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-tp047_23b35550.png" alt="iCard TP047">
+                    <div class="icard-label"><strong>TP047</strong></div>
+                </div>
+                <div class="icard-cell">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-tp048_f588afe4.png" alt="iCard TP048">
+                    <div class="icard-label"><strong>TP048</strong></div>
+                </div>
+            </div>
+
+            <!-- ═══════════════════════════════════════════════════════ -->
+            <!-- SECTION 6: SPECIAL iCARDS -->
+            <!-- ═══════════════════════════════════════════════════════ -->
+            <div class="section-divider" id="special-icards">
+                <h2>Special iCards</h2>
+                <div class="section-sub">Breach Report &bull; ISI Methodology &bull; Gemini II &bull; GOV Power Card</div>
+            </div>
+
+            <div class="icard-grid">
+                <div class="icard-cell">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-tp-breach_52ded065.png" alt="iCard TP Breach Report">
+                    <div class="icard-label"><strong>BREACH REPORT</strong> &mdash; Turing Paper Breach Documentation</div>
+                </div>
+                <div class="icard-cell">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-isi-method_a77c6291.png" alt="iCard ISI Methodology">
+                    <div class="icard-label"><strong>ISI METHODOLOGY</strong> &mdash; DD-025 Method Card</div>
+                </div>
+                <div class="icard-cell">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCARD_GEMINI_II_ASKE_a41d9b55.png" alt="iCard Gemini II">
+                    <div class="icard-label"><strong>GEMINI II</strong> &mdash; Agentic Synthesis Knowledge Exchange</div>
+                </div>
+                <div class="icard-cell">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/GOV_POWER_CARD_e846066c.png" alt="GOV Power Card">
+                    <div class="icard-label"><strong>GOV POWER CARD</strong> &mdash; Governance Authority Card</div>
+                </div>
+                <div class="icard-cell">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/GOV_POWER_CARD_BACK_a60175a4.png" alt="GOV Power Card Back">
+                    <div class="icard-label"><strong>GOV POWER CARD (BACK)</strong> &mdash; Reverse Side</div>
+                </div>
+                <div class="icard-cell">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/GOV_POWER_CARD_BLOCK353_af513062.png" alt="GOV Power Card Block 353">
+                    <div class="icard-label"><strong>GOV POWER CARD</strong> &mdash; Block 353 Edition</div>
+                </div>
+            </div>
+
+            <!-- ═══════════════════════════════════════════════════════ -->
+            <!-- SECTION 7: B401 EVIDENCE SCREENSHOTS -->
+            <!-- ═══════════════════════════════════════════════════════ -->
+            <div class="section-divider" id="b401-evidence">
+                <h2>Block 401 Evidence Screenshots</h2>
+                <div class="section-sub">X (Twitter) Activity &bull; Thesis Test &bull; iCard Publication &bull; Following Recovery</div>
+            </div>
+
+            <div class="evidence-grid">
+                <div class="evidence-item">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/DISCOVERY-B401-THESIS-TEST-001_efb02476.png" alt="Discovery B401 — Thesis Test">
+                    <div class="ev-label"><strong>DISCOVERY-B401-THESIS-TEST-001</strong> &mdash; Thesis test discovery evidence on X</div>
+                </div>
+                <div class="evidence-item">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/GRATITUDE-B401-THANK-YOU-X-001_c9e2b7c8.png" alt="Gratitude B401 — Thank You X">
+                    <div class="ev-label"><strong>GRATITUDE-B401-THANK-YOU-X-001</strong> &mdash; Thank you post on X</div>
+                </div>
+                <div class="evidence-item">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/RECOVERY-B401-FOLLOWING-RESTORED-001_27b85e28.png" alt="Recovery B401 — Following Restored">
+                    <div class="ev-label"><strong>RECOVERY-B401-FOLLOWING-RESTORED-001</strong> &mdash; Following count restored after incident</div>
+                </div>
+                <div class="evidence-item">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/PUBLISHED-B401-ICARDS-ON-X-001_bf9b06df.png" alt="Published B401 — iCards on X">
+                    <div class="ev-label"><strong>PUBLISHED-B401-ICARDS-ON-X-001</strong> &mdash; iCards published to X timeline</div>
+                </div>
+                <div class="evidence-item">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/POSTED-B401-RESOLUTION-X-001_974bc255.png" alt="Posted B401 — Resolution on X">
+                    <div class="ev-label"><strong>POSTED-B401-RESOLUTION-X-001</strong> &mdash; Resolution posted to X</div>
+                </div>
+            </div>
+
+            <!-- ═══════════════════════════════════════════════════════ -->
+            <!-- SECTION 8: PERSONAL EVIDENCE -->
+            <!-- ═══════════════════════════════════════════════════════ -->
+            <div class="section-divider" id="personal-evidence">
+                <h2>Personal Evidence &amp; Author Verification</h2>
+                <div class="section-sub">Ir. Nigel T. Dearden CEng &bull; Author &amp; Observer</div>
+            </div>
+
+            <div class="icard-grid" style="grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));">
+                <div class="icard-cell">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_9139_fe16a475.jpeg" alt="Nigel T. Dearden — Author Photo">
+                    <div class="icard-label"><strong>AUTHOR PHOTO</strong> &mdash; Ir. Nigel T. Dearden CEng</div>
+                </div>
+            </div>
+
+            <!-- ═══════════════════════════════════════════════════════ -->
+            <!-- SECTION 9: COMMUNITY CONTRIBUTORS -->
+            <!-- ═══════════════════════════════════════════════════════ -->
+            <div class="section-divider" id="community-contributors">
+                <h2>Community Contributors</h2>
+                <div class="section-sub">External Feedback &bull; LinkedIn Engagement &bull; Platform Development</div>
+            </div>
+
+            <div class="icard-grid" style="grid-template-columns:repeat(auto-fill, minmax(320px, 1fr));">
+                <div class="icard-cell">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-ludvik-001-v2_1cfdea07.png" alt="iCARD-LUDVIK-001 v2 — Welcome Ludvik Thorsteinsson">
+                    <div class="icard-label"><strong>iCARD-LUDVIK-001 v2</strong> &mdash; Welcome: Ludvik Thorsteinsson &bull; Community Contributor &bull; Cross-ref: LI-ENGAGE-DAY13-LT-001 &bull; Block 757 &bull; 24 March 2026</div>
+                </div>
+            </div>
+            <div class="doc-card-desc" style="margin-bottom:2rem;">
+                <strong>Ludvik Thorsteinsson</strong> &mdash; Founder &amp; Principal Procurement Consultant, LTI Consulting / Perx Group, Hong Kong. University of Newcastle-upon-Tyne. 500+ LinkedIn connections.<br><br>
+                <strong>Contribution (24 March 2026):</strong> Identified the historical gap between 500&ndash;1600 AD in the Civilizational Relay timeline. Recommended inclusion of African empires: <strong>Ghana Empire</strong> (iron tool production / metallurgy infrastructure), <strong>Timbuktu</strong> (astronomy and mathematics / knowledge infrastructure), and <strong>Songhai Empire</strong> (taxation and justice / governance infrastructure). These have been incorporated as <strong>Discontinuous Branches</strong> alongside Maya, Aztec, and Mesopotamia/America &mdash; parallel civilizations that developed sophisticated infrastructure independently but did not feed directly into the continuous East-West relay chain.<br><br>
+                <em>&ldquo;I took a closer look at your link, and I like the way you are gamifying and making your craft engaging for those unfamiliar with it.&rdquo;</em> &mdash; Ludvik Thorsteinsson, LinkedIn, 24 Mar 2026
+            </div>
+
+            <!-- Discontinuous Branches — European Gap (DISCBRANCH-002) -->
+            <div class="doc-card" style="margin-bottom:2rem;">
+                <h2>Discontinuous Branches &mdash; European Gap (300&ndash;1600 AD)</h2>
+                <p style="color:#aaa; margin-bottom:1rem;">IAAI-GOV-005-DISCBRANCH-002 &bull; Block 758 &bull; Phase 2 &bull; 24 March 2026</p>
+                <div class="doc-card-img">
+                    <img loading="lazy" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IAAI-GOV-005-DISCBRANCH-002_8d8b4968.png"
+                         alt="IAAI-GOV-005-DISCBRANCH-002 — Discontinuous Branches European Gap"
+                         onclick="openLightbox(this.src)">
+                </div>
+                <div class="doc-card-desc" style="margin-top:1rem;">
+                    <strong>4 branches mapped:</strong> Byzantine Empire (330&ndash;1453 AD), Islamic Golden Age (750&ndash;1258 AD), Viking/Norse (793&ndash;1066 AD), Medieval European Kingdoms (500&ndash;1500 AD).<br>
+                    <strong>Source:</strong> Byzantium Blogger (Powee Celdran) &mdash; byzantium-blogger.blog<br>
+                    <strong>Spotted by:</strong> Ludvik Thorsteinsson (LTI Consulting). <strong>Confirmed by:</strong> Ir. Nigel T. Dearden CEng, Observer.<br>
+                    <strong>Anchored:</strong> relay-tracker.html &mdash; CONFIRMED LIVE on deployed website.
+                </div>
+            </div>
+
+            <!-- The Infill Map — 12,000 Years of Civilisation -->
+            <div class="doc-card" style="margin-bottom:2rem;">
+                <h2>The Infill Map &mdash; 12,000 Years of Civilisation</h2>
+                <p style="color:#aaa; margin-bottom:1rem;">Block 758 &bull; Phase 2 &bull; 24 March 2026 &bull; Discontinuous Branches Filling the Gaps in the Main Relay Chain</p>
+                <div class="doc-card-img">
+                    <img loading="lazy" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/INFILL_TIMELINE_12000_YEARS_632741bd.png"
+                         alt="The Infill Map — 12,000 Years of Civilisation — Discontinuous Branches"
+                         style="width:100%;"
+                         onclick="openLightbox(this.src)">
+                </div>
+                <div class="doc-card-desc" style="margin-top:1rem;">
+                    <strong>Main Relay Chain:</strong> 12 relays (Fire to Torus) shown above the timeline axis in gold.<br>
+                    <strong>Discontinuous Branches below:</strong> West African (green) &bull; European Gap (blue) &bull; Mesoamerican (red) &bull; Ancient Near East (purple).<br>
+                    <strong>THE GAP (476&ndash;1600 AD):</strong> Rome falls to Britain rises &mdash; where the discontinuous branches cluster.<br>
+                    <strong>Data source:</strong> relay-tracker.html + Byzantium Blogger (Powee Celdran).
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="gov-footer">
+                <a href="/mobilisation-clock.html">&#8592; Mobilisation Clock</a>
+                <a href="/pages/roster-dashboard.html">Roster Dashboard</a>
+                <a href="/pages/assessment-results.html">Evidence Pack</a>
+                <a href="/institutions.html">Institutions</a>
+                <a href="/site.html">Home</a>
+                <span class="gov-stamp">IAAI-GOV-003 v1.1 &bull; SAP-001 &bull; Wynn Palace Standard &bull; Per Arya Ad Astra &bull; Ir. Nigel T. Dearden CEng</span>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Shared Header Script -->
+
+    <!-- Mobile table scroll fix -->
+    <script>
+    (function(){
+      if(window.innerWidth > 768) return;
+      document.querySelectorAll('table').forEach(function(t){
+        if(t.parentElement && t.parentElement.classList.contains('table-scroll-wrapper')) return;
+        var w = document.createElement('div');
+        w.className = 'table-scroll-wrapper';
+        t.parentNode.insertBefore(w, t);
+        w.appendChild(t);
+      });
+    })();
+    </script>
+
+
+    <!-- Back-to-Top Button Logic -->
+    <script>
+    (function() {
+        var btn = document.getElementById('back-to-top-btn');
+        if (!btn) return;
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                btn.style.display = 'flex';
+            } else {
+                btn.style.display = 'none';
+            }
+        }, { passive: true });
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    })();
+    </script>
+
+</body>
+</html>

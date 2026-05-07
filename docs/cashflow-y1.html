@@ -1,0 +1,1341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Year 1 Cash Flow Projection — iAAi seed round deployment and revenue ramp. Conservative and aggressive scenarios.">
+    <meta property="og:title" content="Year 1 Cash Flow Projection — Infrastructure Academy">
+    <meta property="og:description" content="$800K seed round deployment across 12 months. 7 revenue channels. Two scenarios: Conservative ($625K revenue) and Aggressive ($15-50M with China Strategy).">
+    <title>Year 1 Cash Flow Projection — Infrastructure Academy</title>
+    <link rel="stylesheet" href="/css/style.css?v=20260310a">
+    <style>
+        /* BETA Badge */
+        .beta-badge { display:inline-flex; align-items:center; gap:0.3rem; background:rgba(251,146,60,0.15); border:1px solid rgba(251,146,60,0.5); color:#fb923c; font-family:'Courier New',monospace; font-size:0.65rem; font-weight:bold; letter-spacing:2px; padding:0.2rem 0.6rem; border-radius:3px; text-transform:uppercase; animation:beta-pulse 3s ease-in-out infinite; vertical-align:middle; margin-left:0.5rem; }
+        .beta-badge::before { content:'\25CF'; font-size:0.5rem; animation:beta-dot 2s ease-in-out infinite; }
+        @keyframes beta-pulse { 0%,100%{opacity:1;} 50%{opacity:0.7;} }
+        @keyframes beta-dot { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+        @media(max-width:768px) { .beta-badge { display:none; } }
+
+        /* ============================================
+           CASH FLOW PROJECTION STYLES
+           ============================================ */
+        .cf-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px 60px;
+        }
+
+        /* HERO */
+        .cf-hero {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, rgba(15,31,58,0.95) 0%, rgba(10,22,40,0.98) 100%);
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        .cf-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 30px,
+                rgba(255,215,0,0.03) 30px,
+                rgba(255,215,0,0.03) 31px
+            );
+            pointer-events: none;
+        }
+        .cf-hero h1 {
+            font-size: 2.4rem;
+            font-family: var(--font-heading);
+            color: var(--color-accent-gold);
+            margin-bottom: 10px;
+            letter-spacing: 0.06em;
+        }
+        .cf-hero .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 15px;
+        }
+        .cf-hero .hero-figures {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .cf-hero .hero-fig {
+            text-align: center;
+        }
+        .cf-hero .hero-fig .fig-number {
+            font-size: 2.2rem;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+        }
+        .cf-hero .hero-fig .fig-label {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-top: 4px;
+        }
+        .cf-hero .hero-meta {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.4);
+            margin-top: 20px;
+        }
+
+        /* SCENARIO TABS */
+        .scenario-tabs {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+        .scenario-tab {
+            padding: 10px 25px;
+            background: rgba(15,31,58,0.6);
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 6px;
+            color: var(--color-text-secondary);
+            cursor: pointer;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+        .scenario-tab:hover {
+            border-color: rgba(255,215,0,0.4);
+        }
+        .scenario-tab.active {
+            background: rgba(255,215,0,0.15);
+            border-color: var(--color-accent-gold);
+            color: var(--color-accent-gold);
+        }
+
+        /* SECTION HEADERS */
+        .cf-section-header {
+            color: var(--color-accent-gold);
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            margin: 40px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,215,0,0.2);
+        }
+
+        /* ASSUMPTION BOX */
+        .assumption-box {
+            background: rgba(15,31,58,0.5);
+            border: 1px solid rgba(255,215,0,0.15);
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        .assumption-box h3 {
+            color: var(--color-accent-gold);
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+        }
+        .assumption-box ul {
+            list-style: none;
+            padding: 0;
+        }
+        .assumption-box ul li {
+            padding: 6px 0 6px 20px;
+            position: relative;
+            color: var(--color-text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.5;
+        }
+        .assumption-box ul li::before {
+            content: '\25B8';
+            position: absolute;
+            left: 0;
+            color: var(--color-accent-gold);
+        }
+
+        /* CASH FLOW TABLE */
+        .cf-table-wrapper {
+            overflow-x: auto;
+            margin: 20px 0;
+            border-radius: 8px;
+            border: 1px solid rgba(255,215,0,0.15);
+        }
+        .cf-table {
+            width: 100%;
+            border-collapse: collapse;
+            min-width: 900px;
+            font-size: 0.8rem;
+        }
+        .cf-table th {
+            background: rgba(255,215,0,0.1);
+            color: var(--color-accent-gold);
+            padding: 10px 8px;
+            text-align: right;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid rgba(255,215,0,0.3);
+            white-space: nowrap;
+        }
+        .cf-table th:first-child {
+            text-align: left;
+            min-width: 160px;
+        }
+        .cf-table td {
+            padding: 8px;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            color: var(--color-text-secondary);
+            text-align: right;
+            font-family: 'Courier New', monospace;
+            font-size: 0.78rem;
+        }
+        .cf-table td:first-child {
+            text-align: left;
+            font-family: inherit;
+            color: #fff;
+            font-weight: 500;
+        }
+        .cf-table tr:hover td {
+            background: rgba(255,215,0,0.03);
+        }
+        .cf-table .row-header {
+            background: rgba(255,215,0,0.05);
+            font-weight: bold;
+        }
+        .cf-table .row-header td {
+            color: var(--color-accent-gold);
+            font-weight: bold;
+            border-top: 1px solid rgba(255,215,0,0.2);
+        }
+        .cf-table .row-total {
+            background: rgba(255,215,0,0.08);
+        }
+        .cf-table .row-total td {
+            color: var(--color-accent-gold);
+            font-weight: bold;
+            border-top: 2px solid rgba(255,215,0,0.3);
+        }
+        .cf-table .negative { color: #e74c3c; }
+        .cf-table .positive { color: #2ecc71; }
+
+        /* SUMMARY CARDS */
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 25px 0;
+        }
+        .summary-card {
+            padding: 20px;
+            background: rgba(15,31,58,0.6);
+            border: 1px solid rgba(255,215,0,0.15);
+            border-radius: 8px;
+            text-align: center;
+        }
+        .summary-card .sc-value {
+            font-size: 1.6rem;
+            font-family: 'Courier New', monospace;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+        .summary-card .sc-label {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.5);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* REVENUE CHANNELS */
+        .channel-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+        .channel-card {
+            padding: 18px;
+            background: rgba(15,31,58,0.5);
+            border: 1px solid rgba(255,215,0,0.12);
+            border-radius: 8px;
+        }
+        .channel-card .ch-name {
+            color: var(--color-accent-gold);
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+        }
+        .channel-card .ch-target {
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+        .channel-card .ch-desc {
+            font-size: 0.8rem;
+            color: var(--color-text-secondary);
+            line-height: 1.5;
+        }
+        .channel-card .ch-timing {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.4);
+            margin-top: 8px;
+            font-style: italic;
+        }
+
+        /* CHART CONTAINER */
+        .chart-container {
+            background: rgba(15,31,58,0.5);
+            border: 1px solid rgba(255,215,0,0.15);
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .chart-container h3 {
+            color: var(--color-accent-gold);
+            font-size: 1rem;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        /* NOTES */
+        .cf-notes {
+            background: rgba(15,31,58,0.3);
+            border-left: 3px solid rgba(255,215,0,0.3);
+            padding: 15px 20px;
+            margin: 20px 0;
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+        .cf-notes strong {
+            color: var(--color-accent-gold);
+        }
+
+        /* CROSS-REFERENCE */
+        .xref-section {
+            margin: 40px 0;
+            padding: 20px;
+            background: rgba(15,31,58,0.3);
+            border: 1px solid rgba(255,215,0,0.1);
+            border-radius: 8px;
+        }
+        .xref-section h3 {
+            color: var(--color-accent-gold);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        .xref-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .xref-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            background: rgba(255,215,0,0.08);
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 4px;
+            color: var(--color-accent-gold);
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+            transition: all 0.2s;
+        }
+        .xref-link:hover {
+            background: rgba(255,215,0,0.15);
+            border-color: rgba(255,215,0,0.4);
+        }
+
+        /* BACK TO TOP */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 44px;
+            height: 44px;
+            background: var(--color-accent-gold);
+            color: var(--color-bg-primary);
+            border: none;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .back-to-top.visible { opacity: 1; }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .cf-hero h1 { font-size: 1.6rem; }
+            .cf-hero .hero-figures { gap: 20px; }
+            .cf-hero .hero-fig .fig-number { font-size: 1.6rem; }
+            .summary-grid { grid-template-columns: repeat(2, 1fr); }
+            .channel-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    <link rel="canonical" href="https://infra-acad-kuqzaex2.manus.space/cashflow-y1.html">
+    <meta name="keywords" content="infrastructure academy, infrastructure education, civil engineering, civilisation history, infrastructure consciousness, gamified learning, IAAI, Nigel Dearden, infrastructure odyssey, 12 relays, calories to consciousness, year one cashflow, financial projections, business model">
+    <meta name="robots" content="noindex, nofollow">
+
+<style id="mobile-quicknav-styles">
+/* ===== MOBILE QUICK-NAV BAR ===== */
+.mobile-quicknav {
+    display: none;
+    width: 100%;
+    background: linear-gradient(180deg, #0d1f3c 0%, #0a1628 100%);
+    border-bottom: 1px solid rgba(255,215,0,0.25);
+    padding: 6px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 6px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+.mobile-quicknav::-webkit-scrollbar { display: none; }
+.mobile-quicknav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 10px;
+    background: rgba(255,215,0,0.08);
+    border: 1px solid rgba(255,215,0,0.35);
+    border-radius: 16px;
+    color: #ffd700;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+.mobile-quicknav a:active {
+    background: rgba(255,215,0,0.25);
+    transform: scale(0.95);
+}
+.mobile-quicknav a.mqn-home {
+    background: #ffd700;
+    color: #0a1628;
+    border-color: #ffd700;
+}
+@media(max-width:768px) {
+    .mobile-quicknav { display: flex; }
+}
+@media(min-width:769px) {
+    .mobile-quicknav { display: none !important; }
+}
+
+/* ===== BACK-TO-TOP FLOATING BUTTON ===== */
+#back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 16px;
+    z-index: 9999;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(10,22,40,0.92);
+    border: 1.5px solid rgba(255,215,0,0.6);
+    color: #ffd700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    transition: all 0.2s;
+}
+#back-to-top-btn:active {
+    transform: scale(0.9);
+    background: rgba(255,215,0,0.2);
+}
+</style>
+
+</head>
+<body>
+    <!-- iAAi Network Bar — NAV-001 · Cross-Site Navigation -->
+    <!-- ═══ iAAi NETWORK BAR ═══ -->
+    <div id="iaai-network-bar" style="display:flex;align-items:center;justify-content:space-around;width:100%;height:36px;background:#0a1628;position:sticky;top:0;z-index:200001;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">
+      <a href="https://www.infrastructure-academy.com" style="text-decoration:none;color:#fff;font-weight:700;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid #DC2626;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#DC2626"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg> ACADEMY</a>
+      <a href="https://realityeng-epdhlkrn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> QUEST</a>
+      <a href="#" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;opacity:0.5;pointer-events:none;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A843"><path d="M6 2v6l-2 2v4l2 2v6h4v-6l2-2v-4L10 8V2H6zm12 0v6l-2 2v4l2 2v6h-4v-6l-2-2v-4l2-2V2h4z"/></svg> XCHANGE</a>
+      <a href="https://nigelmemorial-ucmtq9dn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#16A34A"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg> MEMORIAL</a>
+      <a href="https://xgrowthtrk-2a93yo5z.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#06B6D4"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/></svg> NEWS</a>
+    </div>
+
+
+<!-- INJECTED COMPACT HEADER BAR -->
+<style>
+.compact-header-bar { position:sticky; top:0; z-index:9999; background:#0a1628; border-bottom:2px solid #ffd700; padding:8px 16px; display:flex; align-items:center; justify-content:space-between; gap:12px; font-family:Georgia,'Times New Roman',serif; }
+.compact-header-bar .chb-brand { display:flex; align-items:center; gap:10px; text-decoration:none; color:#ffd700; }
+.compact-header-bar .chb-brand img { width:28px; height:28px; border-radius:4px; }
+.compact-header-bar .chb-title { font-size:0.85rem; font-weight:bold; letter-spacing:1.5px; color:#ffd700; }
+.compact-header-bar .chb-nav { display:flex; align-items:center; gap:12px; }
+.compact-header-bar .chb-nav a { color:#e2e8f0; text-decoration:none; font-size:0.75rem; letter-spacing:1px; padding:4px 10px; border:1px solid rgba(255,215,0,0.2); border-radius:3px; transition:all 0.2s; }
+.compact-header-bar .chb-nav a:hover { background:rgba(255,215,0,0.1); border-color:#ffd700; color:#ffd700; }
+.compact-header-bar .chb-nav a.chb-home { background:rgba(255,215,0,0.15); border-color:#ffd700; color:#ffd700; font-weight:bold; }
+@media(max-width:600px) { .compact-header-bar .chb-nav a:not(.chb-home) { display:none; } .compact-header-bar .chb-title { font-size:0.7rem; } }
+</style>
+
+<div class="compact-header-bar">
+    <a href="/site.html" class="chb-brand">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iAAi-emblem_e0c9c2c1.png" alt="iAAi">
+        <span class="chb-title">INFRASTRUCTURE ACADEMY</span>
+    </a>
+    <div class="chb-nav">
+        <a href="/site.html" class="chb-home">HOME</a>
+        <a href="/pages/framework.html">FRAMEWORK</a>
+        <a href="/library.html">DOCUMENTS</a>
+        <a href="/play">PLAY</a>
+    </div>
+</div>
+    <!-- ===== MOBILE QUICK-NAV BAR — always visible on mobile ===== -->
+    <div class="mobile-quicknav" id="mobile-quicknav">
+        <a href="/site.html" class="mqn-home">&#127968; HOME</a>
+        <a href="/pages/start-here.html">&#128218; START</a>
+        <a href="/volumes/volume1/index.html">&#128214; READ</a>
+        <a href="/pages/framework.html">&#128736; FRAMEWORK</a>
+        <a href="/play">&#127918; PLAY</a>
+        <a href="/pages/movies.html">&#127916; MOVIES</a>
+        <a href="/pages/resources.html">&#128194; RESOURCES</a>
+        <a href="/press.html">&#128240; PRESS</a>
+    </div>
+
+    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <button id="back-to-top-btn" aria-label="Back to top" title="Back to top">&#9650;</button>
+
+<!-- END COMPACT HEADER BAR -->
+
+
+    <!-- NAV PLACEHOLDER -->
+    <div id="nav-placeholder"></div>
+
+    <div class="cf-container">
+        <!-- HERO -->
+        <div class="cf-hero">
+            <h1>YEAR 1 CASH FLOW PROJECTION <span class="beta-badge">DRAFT</span></h1>
+            <div class="hero-subtitle">iAAi Seed Round Deployment &amp; Revenue Ramp &mdash; 12-Month Horizon</div>
+            <div class="hero-figures">
+                <div class="hero-fig">
+                    <div class="fig-number" style="color:#2ecc71;">$800K</div>
+                    <div class="fig-label">Seed Round</div>
+                </div>
+                <div class="hero-fig">
+                    <div class="fig-number" style="color:var(--color-accent-gold);">7</div>
+                    <div class="fig-label">Revenue Channels</div>
+                </div>
+                <div class="hero-fig">
+                    <div class="fig-number" style="color:#e74c3c;">90</div>
+                    <div class="fig-label">Days to Deploy</div>
+                </div>
+                <div class="hero-fig">
+                    <div class="fig-number" style="color:var(--color-accent-gold);">$625K</div>
+                    <div class="fig-label">Y1 Revenue (Conservative)</div>
+                </div>
+            </div>
+            <div class="hero-meta">Source: IAAI Brief v6, Formation Package for Henry v2, Investor Pitch v1+v2 &bull; Cross-referenced 10 March 2026</div>
+        </div>
+
+        <!-- SCENARIO TABS -->
+        <div class="scenario-tabs">
+            <div class="scenario-tab active" onclick="showScenario('conservative')">Conservative (Base)</div>
+            <div class="scenario-tab" onclick="showScenario('aggressive')">Aggressive (China Strategy)</div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- CONSERVATIVE SCENARIO -->
+        <!-- ============================================ -->
+        <div id="scenario-conservative" class="scenario-content">
+
+            <h2 class="cf-section-header">Scenario A: Conservative (Base Case)</h2>
+
+            <div class="assumption-box">
+                <h3>Key Assumptions</h3>
+                <ul>
+                    <li><strong>Seed round:</strong> $800,000 deployed over 12 months (One Pager: M1-3 $150K, M4-6 $200K, M7-9 $250K, M10-12 $200K)</li>
+                    <li><strong>Revenue start:</strong> Month 1 (book sales as PoC), platform revenue from M4</li>
+                    <li><strong>Year 1 revenue target:</strong> $625,000 (One Pager / corrected model)</li>
+                    <li><strong>Year 3 revenue target:</strong> $3,130,000 (5-year projection model)</li>
+                    <li><strong>Team:</strong> 4 co-founders + 1 advisor (30/20/20/30 equity split)</li>
+                    <li><strong>Burn rate:</strong> ~$45K/month post-deployment (team + infrastructure + marketing)</li>
+                    <li><strong>Phase 1 deferred cost:</strong> $397,550 (70% deferred consulting &mdash; 4ECL receivable, not cash burn)</li>
+                    <li><strong>Book sales:</strong> Revenue from M1 &mdash; PoC signal, not the business model. Shows revenue-generating status to investors.</li>
+                    <li><strong>Market:</strong> EdTech $219B&rarr;$760B (13% CAGR), Gamification $3B&rarr;$41B (26% CAGR)</li>
+                </ul>
+            </div>
+
+            <!-- SUMMARY CARDS -->
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <div class="sc-value" style="color:#2ecc71;">$800,000</div>
+                    <div class="sc-label">Total Inflow (Seed)</div>
+                </div>
+                <div class="summary-card">
+                    <div class="sc-value" style="color:#e74c3c;">$540,000</div>
+                    <div class="sc-label">Total Outflow (Y1)</div>
+                </div>
+                <div class="summary-card">
+                    <div class="sc-value" style="color:var(--color-accent-gold);">$625,000</div>
+                    <div class="sc-label">Revenue (Y1)</div>
+                </div>
+                <div class="summary-card">
+                    <div class="sc-value" style="color:#2ecc71;">$885,000</div>
+                    <div class="sc-label">Cash at Year End</div>
+                </div>
+                <div class="summary-card">
+                    <div class="sc-value" style="color:var(--color-accent-gold);">19+</div>
+                    <div class="sc-label">Months Runway</div>
+                </div>
+            </div>
+
+            <!-- USE OF FUNDS -->
+            <h2 class="cf-section-header">Use of Funds &mdash; $800K over 12 Months (One Pager Allocation)</h2>
+            <div class="cf-table-wrapper">
+                <table class="cf-table">
+                    <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Amount</th>
+                            <th>% of Seed</th>
+                            <th>Timeline</th>
+                            <th>Notes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="row-header"><td colspan="5">Q1: Knowledge Transfer &amp; Foundation (M1&ndash;M3)</td></tr>
+                        <tr>
+                            <td>Platform Development</td>
+                            <td>$60,000</td>
+                            <td>7.5%</td>
+                            <td>M1&ndash;M3</td>
+                            <td>Production hardening, mobile apps, API layer</td>
+                        </tr>
+                        <tr>
+                            <td>AI Infrastructure (DAVID)</td>
+                            <td>$40,000</td>
+                            <td>5%</td>
+                            <td>M1&ndash;M3</td>
+                            <td>DAVID scaling, LLM credits, compute</td>
+                        </tr>
+                        <tr>
+                            <td>Team &amp; Operations</td>
+                            <td>$30,000</td>
+                            <td>3.75%</td>
+                            <td>M1&ndash;M3</td>
+                            <td>Founder stipends, legal setup, accounting</td>
+                        </tr>
+                        <tr>
+                            <td>Content &amp; Localisation</td>
+                            <td>$20,000</td>
+                            <td>2.5%</td>
+                            <td>M1&ndash;M3</td>
+                            <td>Chinese + Korean language blocks, content QA</td>
+                        </tr>
+                        <tr class="subtotal-row"><td>Q1 Subtotal</td><td>$150,000</td><td>18.75%</td><td></td><td></td></tr>
+
+                        <tr class="row-header"><td colspan="5">Q2: MVP Launch &amp; 1K Users (M4&ndash;M6)</td></tr>
+                        <tr>
+                            <td>Platform Development</td>
+                            <td>$80,000</td>
+                            <td>10%</td>
+                            <td>M4&ndash;M6</td>
+                            <td>MVP feature completion, gamification engine, TRE-GLP</td>
+                        </tr>
+                        <tr>
+                            <td>Marketing &amp; User Acquisition</td>
+                            <td>$50,000</td>
+                            <td>6.25%</td>
+                            <td>M4&ndash;M6</td>
+                            <td>Digital marketing, university outreach, launch events</td>
+                        </tr>
+                        <tr>
+                            <td>Team &amp; Operations</td>
+                            <td>$40,000</td>
+                            <td>5%</td>
+                            <td>M4&ndash;M6</td>
+                            <td>Key hires, expanded operations</td>
+                        </tr>
+                        <tr>
+                            <td>Content &amp; Localisation</td>
+                            <td>$30,000</td>
+                            <td>3.75%</td>
+                            <td>M4&ndash;M6</td>
+                            <td>Additional language blocks, relay content</td>
+                        </tr>
+                        <tr class="subtotal-row"><td>Q2 Subtotal</td><td>$200,000</td><td>25%</td><td></td><td></td></tr>
+
+                        <tr class="row-header"><td colspan="5">Q3: China/BRI Expansion (M7&ndash;M9)</td></tr>
+                        <tr>
+                            <td>International Expansion</td>
+                            <td>$100,000</td>
+                            <td>12.5%</td>
+                            <td>M7&ndash;M9</td>
+                            <td>China/BRI market entry, VietBridge partnership, GAC Technology</td>
+                        </tr>
+                        <tr>
+                            <td>Platform Scaling</td>
+                            <td>$60,000</td>
+                            <td>7.5%</td>
+                            <td>M7&ndash;M9</td>
+                            <td>Infrastructure scaling for international users</td>
+                        </tr>
+                        <tr>
+                            <td>Marketing &amp; Partnerships</td>
+                            <td>$50,000</td>
+                            <td>6.25%</td>
+                            <td>M7&ndash;M9</td>
+                            <td>Regional partnerships, Olympiad sponsorship acquisition</td>
+                        </tr>
+                        <tr>
+                            <td>Team &amp; Operations</td>
+                            <td>$40,000</td>
+                            <td>5%</td>
+                            <td>M7&ndash;M9</td>
+                            <td>Regional team, compliance, admin</td>
+                        </tr>
+                        <tr class="subtotal-row"><td>Q3 Subtotal</td><td>$250,000</td><td>31.25%</td><td></td><td></td></tr>
+
+                        <tr class="row-header"><td colspan="5">Q4: Scale &amp; Series A Prep (M10&ndash;M12)</td></tr>
+                        <tr>
+                            <td>Growth &amp; Scaling</td>
+                            <td>$80,000</td>
+                            <td>10%</td>
+                            <td>M10&ndash;M12</td>
+                            <td>User growth, enterprise sales, data licensing</td>
+                        </tr>
+                        <tr>
+                            <td>Series A Preparation</td>
+                            <td>$40,000</td>
+                            <td>5%</td>
+                            <td>M10&ndash;M12</td>
+                            <td>Due diligence, legal, investor materials, auditing</td>
+                        </tr>
+                        <tr>
+                            <td>Team &amp; Operations</td>
+                            <td>$40,000</td>
+                            <td>5%</td>
+                            <td>M10&ndash;M12</td>
+                            <td>Continued operations, contingency reserve</td>
+                        </tr>
+                        <tr>
+                            <td>Contingency</td>
+                            <td>$40,000</td>
+                            <td>5%</td>
+                            <td>Reserve</td>
+                            <td>Emergency buffer (lessons from Phase 1 crisis)</td>
+                        </tr>
+                        <tr class="subtotal-row"><td>Q4 Subtotal</td><td>$200,000</td><td>25%</td><td></td><td></td></tr>
+
+                        <tr class="row-total">
+                            <td>TOTAL</td>
+                            <td>$800,000</td>
+                            <td>100%</td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- 6 REVENUE CHANNELS -->
+            <h2 class="cf-section-header">7 Revenue Channels</h2>
+            <div class="channel-grid">
+                <div class="channel-card" style="border-color:rgba(46,204,113,0.4);">
+                    <div class="ch-name">1. Book Sales (PoC Revenue Signal)</div>
+                    <div class="ch-target positive">$25,000 Y1</div>
+                    <div class="ch-desc">Physical and digital book sales from the 12 Relays manuscript. Not the business model &mdash; the proof of concept. Moves IAAI from &ldquo;pre-revenue&rdquo; to &ldquo;revenue-generating&rdquo; which changes investor perception entirely.</div>
+                    <div class="ch-timing">Revenue from M1. Immediate &mdash; shows intent and market validation.</div>
+                </div>
+                <div class="channel-card">
+                    <div class="ch-name">2. Freemium Subscriptions (B2C)</div>
+                    <div class="ch-target positive">$100,000 Y1</div>
+                    <div class="ch-desc">Free tier (Episode 1 access) converts to Premium ($9.99/mo or $99/yr). Target: 1,500 paying subscribers by M12 at $5.50/mo blended ARPU.</div>
+                    <div class="ch-timing">Revenue from M4. Ramp: 100 &rarr; 400 &rarr; 800 &rarr; 1,500 subs.</div>
+                </div>
+                <div class="channel-card">
+                    <div class="ch-name">3. University Licensing (B2B)</div>
+                    <div class="ch-target positive">$150,000 Y1</div>
+                    <div class="ch-desc">Institutional licenses for universities integrating TRE-GLP into civil engineering curricula. $5K&ndash;$25K per institution depending on student count. <span style="color:#22d3ee;">23 universities already assessed in beta PoC</span> &mdash; MIT, Stanford, Imperial, Tsinghua, NUS &amp; more. <a href="/mobilisation-clock.html#first-23" style="color:#4ade80; text-decoration:underline;">Full roster &rarr;</a></div>
+                    <div class="ch-timing">Revenue from M6. Target: 5 institutions by M12. Pipeline: 23 beta PoC universities across 6 regions.</div>
+                </div>
+                <div class="channel-card">
+                    <div class="ch-name">4. Infrastructure Olympiad Sponsorship</div>
+                    <div class="ch-target positive">$100,000 Y1</div>
+                    <div class="ch-desc">Corporate and government sponsors backing national teams. Platinum ($500K), Gold ($250K), Silver ($100K), Bronze ($50K) tiers.</div>
+                    <div class="ch-timing">Revenue from M8. Target: 1 Bronze sponsor by M12.</div>
+                </div>
+                <div class="channel-card">
+                    <div class="ch-name">5. Enterprise Training (B2B)</div>
+                    <div class="ch-target positive">$100,000 Y1</div>
+                    <div class="ch-desc">Corporate training packages for engineering firms, construction companies, and government agencies. Custom relay configurations.</div>
+                    <div class="ch-timing">Revenue from M9. Target: 2 enterprise clients.</div>
+                </div>
+                <div class="channel-card">
+                    <div class="ch-name">6. Data Intelligence Licensing</div>
+                    <div class="ch-target positive">$100,000 Y1</div>
+                    <div class="ch-desc">Anonymised civilisation intelligence dataset licensing. FITS psychometric data, infrastructure literacy benchmarks, cross-cultural learning patterns.</div>
+                    <div class="ch-timing">Revenue from M10. Pilot data packages.</div>
+                </div>
+                <div class="channel-card">
+                    <div class="ch-name">7. Content Partnerships</div>
+                    <div class="ch-target positive">$50,000 Y1</div>
+                    <div class="ch-desc">Co-branded content with educational publishers, documentary producers, and media platforms. Revenue share on co-created materials.</div>
+                    <div class="ch-timing">Revenue from M10. Target: 1 partnership.</div>
+                </div>
+            </div>
+
+            <!-- MONTHLY CASH FLOW TABLE -->
+            <h2 class="cf-section-header">Monthly Cash Flow &mdash; Conservative Scenario</h2>
+            <div class="cf-table-wrapper">
+                <table class="cf-table">
+                    <thead>
+                        <tr>
+                            <th>Line Item</th>
+                            <th>M1</th><th>M2</th><th>M3</th><th>M4</th><th>M5</th><th>M6</th>
+                            <th>M7</th><th>M8</th><th>M9</th><th>M10</th><th>M11</th><th>M12</th>
+                            <th>TOTAL</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- INFLOWS -->
+                        <tr class="row-header"><td colspan="14">INFLOWS</td></tr>
+                        <tr>
+                            <td>Seed Investment</td>
+                            <td>50</td><td>50</td><td>50</td><td>67</td><td>67</td><td>66</td>
+                            <td>84</td><td>83</td><td>83</td><td>67</td><td>67</td><td>66</td>
+                            <td><strong>800</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Book Sales (PoC)</td>
+                            <td>1</td><td>2</td><td>2</td><td>2</td><td>2</td><td>2</td>
+                            <td>2</td><td>3</td><td>3</td><td>2</td><td>2</td><td>2</td>
+                            <td class="positive"><strong>25</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Subscriptions (B2C)</td>
+                            <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>2</td><td>4</td><td>6</td>
+                            <td>10</td><td>12</td><td>14</td><td>16</td><td>18</td><td>18</td>
+                            <td class="positive"><strong>100</strong></td>
+                        </tr>
+                        <tr>
+                            <td>University Licensing</td>
+                            <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>15</td>
+                            <td>20</td><td>25</td><td>20</td><td>25</td><td>25</td><td>20</td>
+                            <td class="positive"><strong>150</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Olympiad Sponsorship</td>
+                            <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+                            <td>&mdash;</td><td>50</td><td>&mdash;</td><td>&mdash;</td><td>50</td><td>&mdash;</td>
+                            <td class="positive"><strong>100</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Enterprise Training</td>
+                            <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+                            <td>&mdash;</td><td>&mdash;</td><td>25</td><td>25</td><td>25</td><td>25</td>
+                            <td class="positive"><strong>100</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Data Intelligence</td>
+                            <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+                            <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>30</td><td>35</td><td>35</td>
+                            <td class="positive"><strong>100</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Content Partnerships</td>
+                            <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+                            <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>15</td><td>15</td><td>20</td>
+                            <td class="positive"><strong>50</strong></td>
+                        </tr>
+                        <tr class="row-total">
+                            <td>TOTAL INFLOWS</td>
+                            <td>51</td><td>52</td><td>52</td><td>71</td><td>73</td><td>89</td>
+                            <td>116</td><td>173</td><td>145</td><td>180</td><td>237</td><td>186</td>
+                            <td><strong>1,425</strong></td>
+                        </tr>
+
+                        <!-- OUTFLOWS -->
+                        <tr class="row-header"><td colspan="14">OUTFLOWS</td></tr>
+                        <tr>
+                            <td>Platform Development</td>
+                            <td>20</td><td>20</td><td>20</td><td>27</td><td>27</td><td>26</td>
+                            <td>20</td><td>20</td><td>20</td><td>27</td><td>27</td><td>26</td>
+                            <td class="negative"><strong>280</strong></td>
+                        </tr>
+                        <tr>
+                            <td>AI Infrastructure</td>
+                            <td>13</td><td>14</td><td>13</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+                            <td>20</td><td>20</td><td>20</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+                            <td class="negative"><strong>100</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Content &amp; Localisation</td>
+                            <td>7</td><td>7</td><td>6</td><td>10</td><td>10</td><td>10</td>
+                            <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+                            <td class="negative"><strong>50</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Marketing &amp; UA</td>
+                            <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>10</td><td>10</td><td>10</td>
+                            <td>17</td><td>17</td><td>16</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+                            <td class="negative"><strong>80</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Team &amp; Operations</td>
+                            <td>10</td><td>10</td><td>10</td><td>13</td><td>14</td><td>13</td>
+                            <td>13</td><td>14</td><td>13</td><td>13</td><td>14</td><td>13</td>
+                            <td class="negative"><strong>150</strong></td>
+                        </tr>
+                        <tr>
+                            <td>International Expansion</td>
+                            <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+                            <td>34</td><td>33</td><td>33</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+                            <td class="negative"><strong>100</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Series A Prep &amp; Legal</td>
+                            <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>&mdash;</td>
+                            <td>&mdash;</td><td>&mdash;</td><td>&mdash;</td><td>14</td><td>13</td><td>13</td>
+                            <td class="negative"><strong>40</strong></td>
+                        </tr>
+                        <tr class="row-total">
+                            <td>TOTAL OUTFLOWS</td>
+                            <td>50</td><td>51</td><td>49</td><td>60</td><td>61</td><td>59</td>
+                            <td>104</td><td>104</td><td>102</td><td>54</td><td>54</td><td>52</td>
+                            <td class="negative"><strong>800</strong></td>
+                        </tr>
+
+                        <!-- NET CASH FLOW -->
+                        <tr class="row-header"><td colspan="14">NET POSITION</td></tr>
+                        <tr>
+                            <td>Monthly Net</td>
+                            <td class="positive">1</td><td class="positive">1</td><td class="positive">3</td>
+                            <td class="positive">11</td><td class="positive">12</td><td class="positive">30</td>
+                            <td class="positive">12</td><td class="positive">69</td><td class="positive">43</td>
+                            <td class="positive">126</td><td class="positive">183</td><td class="positive">134</td>
+                            <td class="positive"><strong>625</strong></td>
+                        </tr>
+                        <tr class="row-total">
+                            <td>Cumulative Cash</td>
+                            <td>1</td><td>2</td><td>5</td>
+                            <td>16</td><td>28</td><td>58</td>
+                            <td>70</td><td>139</td><td>182</td>
+                            <td>308</td><td>491</td><td>625</td>
+                            <td class="positive"><strong>625</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="cf-notes">
+                <strong>All figures in $K (thousands USD).</strong> Seed investment of $800K deployed over 12 months per One Pager allocation (Q1: $150K, Q2: $200K, Q3: $250K, Q4: $200K). Book sales provide PoC revenue from M1 &mdash; not the business model, but critical to move from &ldquo;pre-revenue&rdquo; to &ldquo;revenue-generating&rdquo; status. Revenue channels activate progressively from M1 (books) through M10 (data/partnerships). Phase 1 cost of $397,550 is 70% deferred consulting (4ECL receivable), not cash burn.
+            </div>
+
+            <!-- CHART -->
+            <div class="chart-container">
+                <h3>Cumulative Cash Position &mdash; Conservative Scenario</h3>
+                <div style="height:300px;">
+                    <canvas id="chart-conservative"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- AGGRESSIVE SCENARIO -->
+        <!-- ============================================ -->
+        <div id="scenario-aggressive" class="scenario-content" style="display:none;">
+
+            <h2 class="cf-section-header">Scenario B: Aggressive (China Strategy)</h2>
+
+            <div class="assumption-box">
+                <h3>Key Assumptions</h3>
+                <ul>
+                    <li><strong>Seed round:</strong> $800,000 initial + potential Series A trigger at M6&ndash;M9</li>
+                    <li><strong>China Strategy:</strong> Henry Leong&rsquo;s VietBridge connection activates SE Asia gaming gateway (303M gamers)</li>
+                    <li><strong>Year 1 revenue target:</strong> $15,000,000&ndash;$50,000,000 (Formation Package projection)</li>
+                    <li><strong>Year 3 revenue target:</strong> $100,000,000+ (Formation Package projection)</li>
+                    <li><strong>Key driver:</strong> Chinese/SE Asian market penetration via gaming + Mandarin language block</li>
+                    <li><strong>Partnership multiplier:</strong> GAC Technology hardware + regional distribution partners</li>
+                    <li><strong>This scenario requires:</strong> Series A ($5M+) by M6, China market entry by M4, 10x team scaling</li>
+                </ul>
+            </div>
+
+            <div class="cf-notes">
+                <strong>Revenue Discrepancy Note:</strong> The Formation Package projects $15&ndash;50M Year 1 and $100M+ Year 3, while Brief v6 projects $250K Year 1 and $1.6M Year 3. These represent two fundamentally different scenarios: the conservative case (English-first, organic growth) and the aggressive case (China Strategy with VietBridge partnership and SE Asian gaming gateway). The aggressive scenario requires significantly more capital and carries proportionally higher execution risk.
+            </div>
+
+            <div class="summary-grid">
+                <div class="summary-card">
+                    <div class="sc-value" style="color:#2ecc71;">$800K+</div>
+                    <div class="sc-label">Initial Seed</div>
+                </div>
+                <div class="summary-card">
+                    <div class="sc-value" style="color:var(--color-accent-gold);">$5M+</div>
+                    <div class="sc-label">Series A Required</div>
+                </div>
+                <div class="summary-card">
+                    <div class="sc-value" style="color:#2ecc71;">$15&ndash;50M</div>
+                    <div class="sc-label">Y1 Revenue Target</div>
+                </div>
+                <div class="summary-card">
+                    <div class="sc-value" style="color:var(--color-accent-gold);">303M</div>
+                    <div class="sc-label">SE Asia Gamers</div>
+                </div>
+                <div class="summary-card">
+                    <div class="sc-value" style="color:#e74c3c;">HIGH</div>
+                    <div class="sc-label">Execution Risk</div>
+                </div>
+            </div>
+
+            <h2 class="cf-section-header">Aggressive Revenue Channels (Scaled)</h2>
+            <div class="channel-grid">
+                <div class="channel-card">
+                    <div class="ch-name">1. Freemium Subscriptions (Global)</div>
+                    <div class="ch-target positive">$3&ndash;8M Y1</div>
+                    <div class="ch-desc">Chinese + Korean + English markets. 50K&ndash;100K paying subscribers at $5&ndash;8/mo blended ARPU. SE Asia gaming gateway as primary acquisition channel.</div>
+                    <div class="ch-timing">Requires Mandarin localisation by M3, SE Asia launch by M4.</div>
+                </div>
+                <div class="channel-card">
+                    <div class="ch-name">2. University Licensing (Asia-Pacific)</div>
+                    <div class="ch-target positive">$2&ndash;5M Y1</div>
+                    <div class="ch-desc">50&ndash;100 universities across China, Korea, Japan, SE Asia. Government-backed infrastructure education mandates as tailwind. <span style="color:#22d3ee;">Already assessed:</span> Tsinghua, Zhejiang, PKU, HKU, Tongji (China); NUS (Singapore); KAIST (Korea); U of Tokyo (Japan). <a href="/mobilisation-clock.html#first-23" style="color:#4ade80; text-decoration:underline;">Full roster &rarr;</a></div>
+                    <div class="ch-timing">Requires regional sales team by M4, government partnerships by M6. 8 APAC universities already in beta PoC pipeline.</div>
+                </div>
+                <div class="channel-card">
+                    <div class="ch-name">3. Infrastructure Olympiad (Global)</div>
+                    <div class="ch-target positive">$3&ndash;10M Y1</div>
+                    <div class="ch-desc">National team sponsorships from sovereign wealth funds, construction conglomerates, and development banks. BRI-aligned nations as primary targets.</div>
+                    <div class="ch-timing">Requires UNESCO/World Bank endorsement pipeline by M6.</div>
+                </div>
+                <div class="channel-card">
+                    <div class="ch-name">4. Enterprise Training (Global)</div>
+                    <div class="ch-target positive">$2&ndash;8M Y1</div>
+                    <div class="ch-desc">Top 50 global construction firms, state enterprises (CCCC, PowerChina, CREC). Custom relay configurations for corporate training programmes.</div>
+                    <div class="ch-timing">Requires enterprise sales team by M5, pilot programmes by M7.</div>
+                </div>
+                <div class="channel-card">
+                    <div class="ch-name">5. Data Intelligence (Premium)</div>
+                    <div class="ch-target positive">$3&ndash;10M Y1</div>
+                    <div class="ch-desc">Civilisation intelligence dataset at scale. Cross-cultural FITS psychometric data, infrastructure literacy benchmarks, predictive models.</div>
+                    <div class="ch-timing">Requires 100K+ active users for statistically significant datasets.</div>
+                </div>
+                <div class="channel-card">
+                    <div class="ch-name">6. Government &amp; Multilateral</div>
+                    <div class="ch-target positive">$2&ndash;9M Y1</div>
+                    <div class="ch-desc">Government contracts for infrastructure literacy programmes. SDG 4, 9, 11, 17 alignment. Development bank partnerships (ADB, AIIB, World Bank).</div>
+                    <div class="ch-timing">Requires policy team by M4, first government MOU by M8.</div>
+                </div>
+            </div>
+
+            <div class="cf-notes">
+                <strong>Execution Dependencies:</strong> The aggressive scenario depends on: (1) Series A funding by M6, (2) China market regulatory approval, (3) VietBridge partnership activation, (4) 10x team scaling from 5 to 50+ people, (5) Government/multilateral endorsements. Each dependency carries significant execution risk. The conservative scenario is recommended as the primary investor pitch, with the aggressive scenario presented as the upside case.
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- PHASE 1 SUNK COST CONTEXT -->
+        <!-- ============================================ -->
+        <h2 class="cf-section-header">Phase 1 Investment Context (Pre-Seed)</h2>
+        <div class="cf-notes">
+            <strong>Phase 1 total investment: $397,550</strong> (Amex-verified, 124 days). Of this, <strong>$279,000 (70%) is deferred consulting time</strong> &mdash; Nigel&rsquo;s Engineering Control ($186K) and Daily Checks ($93K) are 4ECL receivables, not cash burn. Actual cash outlay was approximately $16K&ndash;$20K (AI credits, hardware, domains). Nigel is deferring his costs until the company can achieve cashflow balance. This cost is <em>excluded</em> from the Year 1 projection but establishes the baseline from which the seed round deploys. The platform is operational: 12 relays playable, 4 modes, 27 chapters, 20+ beta testers, 319M+ XP generated, DAVID AI narrator active.
+        </div>
+        <div class="cf-table-wrapper">
+            <table class="cf-table">
+                <thead>
+                    <tr>
+                        <th>Phase 1 Line Item</th>
+                        <th>Amount</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>AI Platform Credits</td><td>$11,438</td><td>591,759 credits consumed (Amex + HSBC verified)</td></tr>
+                    <tr><td>Daily Engineering Checks</td><td>$93,000</td><td>124 days &times; 4hrs/day &times; $187.50/hr (Nigel)</td></tr>
+                    <tr><td>Engineering Control Cost</td><td>$186,000</td><td>124 days &times; $1,500/day (4ECL standard rate)</td></tr>
+                    <tr><td>Lost Work Product</td><td>$49,500</td><td>Platform crisis &mdash; total destruction, no backup</td></tr>
+                    <tr><td>Rebuild Cost</td><td>$15,000</td><td>Reconstruction on replacement platform</td></tr>
+                    <tr><td>Hardware</td><td>$2,469</td><td>Development equipment</td></tr>
+                    <tr><td>Domains</td><td>$212</td><td>Domain registrations</td></tr>
+                    <tr><td>Crisis Rebuild Premium</td><td>$21,000</td><td>Emergency rebuild surcharge</td></tr>
+                    <tr class="row-total">
+                        <td>PHASE 1 TOTAL</td>
+                        <td>$378,619</td>
+                        <td>+5% contingency = $397,550</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- CRITICAL ITEMS -->
+        <h2 class="cf-section-header">5 Critical Items Before Investor Meetings</h2>
+        <div class="cf-table-wrapper">
+            <table class="cf-table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Status</th>
+                        <th>Owner</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>4ECL-IAAI Consulting Agreement</td>
+                        <td style="color:#fb923c;">Pending</td>
+                        <td>Henry / Legal</td>
+                        <td>Formalises relationship between 4ECL and iAAi</td>
+                    </tr>
+                    <tr>
+                        <td>Cap Table</td>
+                        <td style="color:#fb923c;">Pending</td>
+                        <td>Henry</td>
+                        <td>30/20/20/30 equity split documentation</td>
+                    </tr>
+                    <tr>
+                        <td>Shareholders&rsquo; Agreement (Model B)</td>
+                        <td style="color:#fb923c;">Pending</td>
+                        <td>Henry / Legal</td>
+                        <td>With Model B provisions for governance</td>
+                    </tr>
+                    <tr>
+                        <td>IP Assignment Agreement</td>
+                        <td style="color:#fb923c;">Pending</td>
+                        <td>Nigel / Legal</td>
+                        <td>Nigel/4ECL &rarr; iAAi IP transfer (15 assets)</td>
+                    </tr>
+                    <tr>
+                        <td>Year 1 Cash Flow Projection</td>
+                        <td style="color:#2ecc71;">This Document</td>
+                        <td>Nigel / ALAN</td>
+                        <td>Conservative + Aggressive scenarios</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- CROSS-REFERENCES -->
+        <div class="xref-section">
+            <h3>Cross-References</h3>
+            <div class="xref-links">
+                <a href="/finance-admin.html" class="xref-link">&rarr; Finance Admin (Phase 1 Cost Audit)</a>
+                <a href="/4cs-decision.html" class="xref-link">&rarr; 4Cs Decision (Resistance Factors)</a>
+                <a href="/equations-register.html" class="xref-link">&rarr; Equations Register</a>
+                <a href="/vault.html" class="xref-link">&rarr; Vault (Source Documents)</a>
+                <a href="/infrastructure-olympiad.html" class="xref-link">&rarr; Infrastructure Olympiad</a>
+                <a href="/mobilisation-clock.html" class="xref-link">&rarr; Mobilisation Clock</a>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div style="text-align:center; margin-top:50px; padding:20px; color:rgba(255,255,255,0.4); font-size:0.8rem;">
+            <p>Year 1 Cash Flow Projection v2 &mdash; CORRECTED &mdash; 10 March 2026</p>
+            <p>Source data: One Pager for Henry, IAAI Brief v6, Formation Package v2, Investor Pitch v1+v2, Global Market Matrix</p>
+            <p>Compiled by DAVID for investor meeting preparation &mdash; $800K seed, 7 revenue channels, deferred cost structure</p>
+            <p style="margin-top:10px; color:var(--color-accent-gold); font-style:italic;">&ldquo;Give invention light.&rdquo;</p>
+        </div>
+    </div>
+
+    <!-- BACK TO TOP -->
+    <button class="back-to-top" id="back-to-top" title="Back to top">&uarr;</button>
+
+    <!-- NAV SCRIPT -->
+    <script src="/js/site-search.js?v=20260311a"></script>
+    <script src="/js/page-tracker.js" defer></script>
+    <script src="/js/nav-optimise.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script>
+        // SCENARIO TOGGLE
+        function showScenario(scenario) {
+            document.querySelectorAll('.scenario-content').forEach(function(el) {
+                el.style.display = 'none';
+            });
+            document.querySelectorAll('.scenario-tab').forEach(function(tab) {
+                tab.classList.remove('active');
+            });
+            document.getElementById('scenario-' + scenario).style.display = 'block';
+            event.target.classList.add('active');
+        }
+
+        // CHART — Conservative Scenario
+        var ctx = document.getElementById('chart-conservative');
+        if (ctx) {
+            new Chart(ctx.getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: ['M1','M2','M3','M4','M5','M6','M7','M8','M9','M10','M11','M12'],
+                    datasets: [
+                        {
+                            label: 'Cumulative Cash ($K)',
+                            data: [1, 2, 5, 16, 28, 58, 70, 139, 182, 308, 491, 625],
+                            borderColor: '#ffd700',
+                            backgroundColor: 'rgba(255,215,0,0.1)',
+                            fill: true,
+                            tension: 0.3,
+                            pointRadius: 4,
+                            pointBackgroundColor: '#ffd700'
+                        },
+                        {
+                            label: 'Monthly Revenue ($K)',
+                            data: [1, 2, 2, 4, 6, 23, 32, 90, 62, 113, 170, 120],
+                            borderColor: '#2ecc71',
+                            backgroundColor: 'rgba(46,204,113,0.1)',
+                            fill: true,
+                            tension: 0.3,
+                            pointRadius: 3,
+                            pointBackgroundColor: '#2ecc71'
+                        },
+                        {
+                            label: 'Monthly Outflow ($K)',
+                            data: [50, 51, 49, 60, 61, 59, 104, 104, 102, 54, 54, 52],
+                            borderColor: '#e74c3c',
+                            backgroundColor: 'rgba(231,76,60,0.05)',
+                            fill: false,
+                            tension: 0.3,
+                            pointRadius: 3,
+                            pointBackgroundColor: '#e74c3c',
+                            borderDash: [5, 5]
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            labels: { color: '#ccc', font: { size: 11 } }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: { color: '#888' },
+                            grid: { color: 'rgba(255,255,255,0.05)' }
+                        },
+                        y: {
+                            ticks: { color: '#888', callback: function(v) { return '$' + v + 'K'; } },
+                            grid: { color: 'rgba(255,255,255,0.05)' }
+                        }
+                    }
+                }
+            });
+        }
+
+        // BACK TO TOP
+        (function() {
+            var btn = document.getElementById('back-to-top');
+            window.addEventListener('scroll', function() {
+                btn.classList.toggle('visible', window.scrollY > 400);
+            });
+            btn.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+    </script>
+    <div style="text-align:center; padding:1.5rem 1rem; border-top:1px solid rgba(255,215,0,0.2); margin-top:2rem;">
+        <!-- Social Cross-Links -->
+        <div style="margin-top:0.75rem; display:flex; justify-content:center; gap:1.2rem; flex-wrap:wrap; align-items:center;">
+            <a href="https://x.com/dearden_ni37258" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.35rem; color:#ffd700; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="Follow on X">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                X
+            </a>
+            <a href="https://www.linkedin.com/in/nigeldearden" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.35rem; color:#0077B5; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="Connect on LinkedIn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+            </a>
+            <a href="/site.html" style="display:inline-flex; align-items:center; gap:0.35rem; color:#25D366; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="WhatsApp QR on Homepage">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                WhatsApp
+            </a>
+        </div>
+    </div>
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement -->
+
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement (v2 fixed) -->
+<script>
+(function() {
+  try {
+    var sid = sessionStorage.getItem('iaai_sid');
+    if (!sid) {
+      sid = 'ses_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 9);
+      sessionStorage.setItem('iaai_sid', sid);
+    }
+    var data = {
+      path: window.location.pathname + (window.location.hash || ''),
+      pageTitle: document.title || 'Untitled',
+      referrer: document.referrer || '',
+      sessionId: sid
+    };
+    fetch('/api/trpc/analytics.track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ json: data }),
+      credentials: 'include'
+    }).catch(function() {});
+    window.addEventListener('hashchange', function() {
+      var hashData = {
+        path: window.location.pathname + (window.location.hash || ''),
+        pageTitle: document.title || 'Untitled',
+        referrer: window.location.href,
+        sessionId: sid
+      };
+      fetch('/api/trpc/analytics.track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ json: hashData }),
+        credentials: 'include'
+      }).catch(function() {});
+    });
+  } catch(e) {}
+})();
+</script>
+
+    <!-- Mobile table scroll fix -->
+    <script>
+    (function(){
+      if(window.innerWidth > 768) return;
+      document.querySelectorAll('table').forEach(function(t){
+        if(t.parentElement && t.parentElement.classList.contains('table-scroll-wrapper')) return;
+        var w = document.createElement('div');
+        w.className = 'table-scroll-wrapper';
+        t.parentNode.insertBefore(w, t);
+        w.appendChild(t);
+      });
+    })();
+    </script>
+
+
+    <!-- Back-to-Top Button Logic -->
+    <script>
+    (function() {
+        var btn = document.getElementById('back-to-top-btn');
+        if (!btn) return;
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                btn.style.display = 'flex';
+            } else {
+                btn.style.display = 'none';
+            }
+        }, { passive: true });
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    })();
+    </script>
+
+</body>
+</html>

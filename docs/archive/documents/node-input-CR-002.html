@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node Input CR-002 — Cameron Reay Feedback Exchange | Infrastructure Academy</title>
+    <link rel="stylesheet" href="/css/style.css?v=20260410a">
+    <style>
+        .node-input-header {
+            text-align: center;
+            padding: 2rem 1rem;
+            border-bottom: 2px solid var(--color-accent-gold);
+            margin-bottom: 2rem;
+        }
+        .node-input-header h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .node-input-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(255,215,0,0.05);
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        .meta-item { text-align: center; }
+        .meta-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: var(--color-accent-gold); margin-bottom: 4px; }
+        .meta-value { font-size: 1rem; color: var(--color-text-primary); }
+        .wa-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .wa-screenshot {
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+        .wa-screenshot:hover { border-color: rgba(255,215,0,0.6); }
+        .wa-screenshot img { width: 100%; display: block; }
+        .wa-screenshot .wa-caption {
+            padding: 0.75rem;
+            font-size: 0.8rem;
+            color: var(--color-text-secondary);
+            background: rgba(10,22,40,0.8);
+        }
+        .analysis-section {
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            background: rgba(15,31,58,0.6);
+            border-left: 3px solid var(--color-accent-gold);
+            border-radius: 0 8px 8px 0;
+        }
+        .analysis-section h3 { color: var(--color-accent-gold); margin-bottom: 0.75rem; }
+        .takeaway-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .takeaway-card {
+            padding: 1.25rem;
+            background: rgba(255,215,0,0.03);
+            border: 1px solid rgba(255,215,0,0.15);
+            border-radius: 8px;
+        }
+        .takeaway-card h4 { color: var(--color-accent-gold); font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .back-link { display: inline-block; margin: 1rem 0; color: var(--color-accent-gold); text-decoration: none; }
+        .back-link:hover { text-decoration: underline; }
+    </style>
+    <link rel="canonical" href="https://infra-acad-kuqzaex2.manus.space/archive/documents/node-input-CR-002.html">
+    <meta name="keywords" content="infrastructure academy, infrastructure education, civil engineering, civilisation history, infrastructure consciousness, gamified learning, IAAI, Nigel Dearden, infrastructure odyssey, 12 relays, calories to consciousness, archive, document archive, infrastructure archive, historical records">
+
+<style id="mobile-quicknav-styles">
+/* ===== MOBILE QUICK-NAV BAR ===== */
+.mobile-quicknav {
+    display: none;
+    width: 100%;
+    background: linear-gradient(180deg, #0d1f3c 0%, #0a1628 100%);
+    border-bottom: 1px solid rgba(255,215,0,0.25);
+    padding: 6px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 6px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+.mobile-quicknav::-webkit-scrollbar { display: none; }
+.mobile-quicknav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 10px;
+    background: rgba(255,215,0,0.08);
+    border: 1px solid rgba(255,215,0,0.35);
+    border-radius: 16px;
+    color: #ffd700;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+.mobile-quicknav a:active {
+    background: rgba(255,215,0,0.25);
+    transform: scale(0.95);
+}
+.mobile-quicknav a.mqn-home {
+    background: #ffd700;
+    color: #0a1628;
+    border-color: #ffd700;
+}
+@media(max-width:768px) {
+    .mobile-quicknav { display: flex; }
+}
+@media(min-width:769px) {
+    .mobile-quicknav { display: none !important; }
+}
+
+/* ===== BACK-TO-TOP FLOATING BUTTON ===== */
+#back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 16px;
+    z-index: 9999;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(10,22,40,0.92);
+    border: 1.5px solid rgba(255,215,0,0.6);
+    color: #ffd700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    transition: all 0.2s;
+}
+#back-to-top-btn:active {
+    transform: scale(0.9);
+    background: rgba(255,215,0,0.2);
+}
+</style>
+
+</head>
+<body>
+    <!-- iAAi Network Bar — NAV-001 · Cross-Site Navigation -->
+    <!-- ═══ iAAi NETWORK BAR ═══ -->
+    <div id="iaai-network-bar" style="display:flex;align-items:center;justify-content:space-around;width:100%;height:36px;background:#0a1628;position:sticky;top:0;z-index:200001;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">
+      <a href="https://www.infrastructure-academy.com" style="text-decoration:none;color:#fff;font-weight:700;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid #DC2626;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#DC2626"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg> ACADEMY</a>
+      <a href="https://realityeng-epdhlkrn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> QUEST</a>
+      <a href="#" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;opacity:0.5;pointer-events:none;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A843"><path d="M6 2v6l-2 2v4l2 2v6h4v-6l2-2v-4L10 8V2H6zm12 0v6l-2 2v4l2 2v6h-4v-6l-2-2v-4l2-2V2h4z"/></svg> XCHANGE</a>
+      <a href="https://nigelmemorial-ucmtq9dn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#16A34A"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg> MEMORIAL</a>
+      <a href="https://xgrowthtrk-2a93yo5z.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#06B6D4"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/></svg> NEWS</a>
+    </div>
+
+
+<!-- INJECTED COMPACT HEADER BAR -->
+<style>
+.compact-header-bar { position:sticky; top:0; z-index:9999; background:#0a1628; border-bottom:2px solid #ffd700; padding:8px 16px; display:flex; align-items:center; justify-content:space-between; gap:12px; font-family:Georgia,'Times New Roman',serif; }
+.compact-header-bar .chb-brand { display:flex; align-items:center; gap:10px; text-decoration:none; color:#ffd700; }
+.compact-header-bar .chb-brand img { width:28px; height:28px; border-radius:4px; }
+.compact-header-bar .chb-title { font-size:0.85rem; font-weight:bold; letter-spacing:1.5px; color:#ffd700; }
+.compact-header-bar .chb-nav { display:flex; align-items:center; gap:12px; }
+.compact-header-bar .chb-nav a { color:#e2e8f0; text-decoration:none; font-size:0.75rem; letter-spacing:1px; padding:4px 10px; border:1px solid rgba(255,215,0,0.2); border-radius:3px; transition:all 0.2s; }
+.compact-header-bar .chb-nav a:hover { background:rgba(255,215,0,0.1); border-color:#ffd700; color:#ffd700; }
+.compact-header-bar .chb-nav a.chb-home { background:rgba(255,215,0,0.15); border-color:#ffd700; color:#ffd700; font-weight:bold; }
+@media(max-width:600px) { .compact-header-bar .chb-nav a:not(.chb-home) { display:none; } .compact-header-bar .chb-title { font-size:0.7rem; } }
+</style>
+
+<div class="compact-header-bar">
+    <a href="/site.html" class="chb-brand">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iAAi-emblem_e0c9c2c1.png" alt="iAAi">
+        <span class="chb-title">INFRASTRUCTURE ACADEMY</span>
+    </a>
+    <div class="chb-nav">
+        <a href="/site.html" class="chb-home">HOME</a>
+        <a href="/pages/framework.html">FRAMEWORK</a>
+        <a href="/library.html">DOCUMENTS</a>
+        <a href="/play">PLAY</a>
+    </div>
+</div>
+    <!-- ===== MOBILE QUICK-NAV BAR — always visible on mobile ===== -->
+    <div class="mobile-quicknav" id="mobile-quicknav">
+        <a href="/site.html" class="mqn-home">&#127968; HOME</a>
+        <a href="/pages/start-here.html">&#128218; START</a>
+        <a href="/volumes/volume1/index.html">&#128214; READ</a>
+        <a href="/pages/framework.html">&#128736; FRAMEWORK</a>
+        <a href="/play">&#127918; PLAY</a>
+        <a href="/pages/movies.html">&#127916; MOVIES</a>
+        <a href="/pages/resources.html">&#128194; RESOURCES</a>
+        <a href="/press.html">&#128240; PRESS</a>
+    </div>
+
+    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <button id="back-to-top-btn" aria-label="Back to top" title="Back to top">&#9650;</button>
+
+<!-- END COMPACT HEADER BAR -->
+
+
+    <main class="container" style="max-width:1000px; margin:0 auto; padding:2rem;">
+        <a href="/vault.html" class="back-link">&larr; Back to Vault</a>
+
+        <div class="node-input-header">
+            <h1>NODE INPUT CR-002</h1>
+            <p style="color:var(--color-accent-gold); font-size:1.1rem;">Cameron Reay &mdash; Feedback Exchange</p>
+            <p style="color:var(--color-text-secondary); font-size:0.85rem;">WhatsApp Conversation &bull; 8 March 2026 &bull; 2:53&ndash;3:37 AM HKT</p>
+        </div>
+
+        <div class="node-input-meta">
+            <div class="meta-item">
+                <div class="meta-label">Node ID</div>
+                <div class="meta-value">CR-002</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Subject</div>
+                <div class="meta-value">Cameron Reay</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Card Reference</div>
+                <div class="meta-value">iCard 13/52 &bull; Club Suit</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Input Type</div>
+                <div class="meta-value">Feedback &amp; Critique</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Block</div>
+                <div class="meta-value">354 of 365</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Region</div>
+                <div class="meta-value">EN-US (Portland, OR)</div>
+            </div>
+        </div>
+
+        <h2>CONTEXT</h2>
+        <p>This is the second formal node input from Cameron Reay (CR-001 was the original 16 WhatsApp screenshots providing feedback on AI voice, Rome/Egypt content, and Olympic torch repetition). In this exchange, Nigel shared Cameron's personalised iCard (THE DRUMMER &mdash; Card 13/52) and the IAAI &times; GAC Technology partnership deck, testing Cameron's engagement with the Academy's framework and the F1 thesis previously shared.</p>
+
+        <h2>EXCHANGE SCREENSHOTS</h2>
+        <div class="wa-gallery">
+            <div class="wa-screenshot">
+                <img loading="lazy" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_9983_9a2d0d6e.PNG" alt="WhatsApp 1/6">
+                <div class="wa-caption"><strong>1/6</strong> &mdash; Cameron headed to bed. Nigel sends iCard at 2:58 AM. "This is how quick we are."</div>
+            </div>
+            <div class="wa-screenshot">
+                <img loading="lazy" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_9984_7d1b9146.PNG" alt="WhatsApp 2/6">
+                <div class="wa-caption"><strong>2/6</strong> &mdash; Cameron reacts with laugh emoji. Sees iCard as "just a Polaroid." Doesn't grasp the Tecton Trump Card architecture.</div>
+            </div>
+            <div class="wa-screenshot">
+                <img loading="lazy" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_9985_d72e4fb5.PNG" alt="WhatsApp 3/6">
+                <div class="wa-caption"><strong>3/6</strong> &mdash; Nigel shares GAC Tech partnership deck. Asks about YouTube/label name, birthday. Tests F1 thesis comprehension.</div>
+            </div>
+            <div class="wa-screenshot">
+                <img loading="lazy" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_9986_361ce9b0.PNG" alt="WhatsApp 4/6">
+                <div class="wa-caption"><strong>4/6</strong> &mdash; Cameron's substantive response: AI copyright legal point, feedback reception critique, constructive criticism intent.</div>
+            </div>
+            <div class="wa-screenshot">
+                <img loading="lazy" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_9987_f95948bc.PNG" alt="WhatsApp 5/6">
+                <div class="wa-caption"><strong>5/6</strong> &mdash; Nigel shares THE DEEPER PROBLEM image. "It's meant to be copied. It's open source."</div>
+            </div>
+            <div class="wa-screenshot">
+                <img loading="lazy" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_9988_ae907613.PNG" alt="WhatsApp 6/6">
+                <div class="wa-caption"><strong>6/6</strong> &mdash; "Heard chef." Nigel challenges: "8bn people &mdash; how many to hit tipping point?" Re-tests F1 thesis.</div>
+            </div>
+        </div>
+
+        <h2>ANALYSIS (DAVID)</h2>
+
+        <div class="analysis-section">
+            <h3>Cameron's Key Points</h3>
+            <p><strong>1. AI Copyright Warning:</strong> AI-generated art cannot be copyrighted under emerging US/EU law. Only human-created art qualifies. People can copy AI creations without legal consequence.</p>
+            <p><strong>2. Feedback Reception:</strong> Cameron feels his feedback is "pretty quickly challenged" rather than received. He explicitly states: "it doesn't seem like you receive the feedback well."</p>
+            <p><strong>3. External Perspective:</strong> He's offering "constructive criticism and perspective into the AI world and how other humans may perceive it" &mdash; calibration from a non-engineer, non-academic creative professional.</p>
+            <p><strong>4. Pressure Pushback:</strong> He didn't appreciate being "tested" on the F1 thesis. He has shows to prepare for and wasn't expecting an exam.</p>
+        </div>
+
+        <h2>THREE TAKEAWAYS</h2>
+        <div class="takeaway-grid">
+            <div class="takeaway-card">
+                <h4>1. Copyright Point &mdash; Already Addressed</h4>
+                <p>"It's open source / It's meant to be copied" is the correct strategic counter. The Academy isn't a product to be protected &mdash; it's a knowledge framework designed to propagate. The value isn't in the images; it's in the intellectual architecture that a human (Nigel) created.</p>
+            </div>
+            <div class="takeaway-card">
+                <h4>2. Feedback Reception &mdash; Signal Worth Logging</h4>
+                <p>Cameron is Node CR-001 &mdash; the first external reviewer. If the first reviewer feels challenged rather than heard, that's actionable data. The Academy's own STRIVE hierarchy values Verification (V). His perspective as a creative professional represents how non-initiated audiences will perceive the project.</p>
+            </div>
+            <div class="takeaway-card">
+                <h4>3. Speed Landed, Significance Didn't</h4>
+                <p>He saw the iCard as "a nice picture made fast." He didn't see it as a node in a 52-card civilisational intelligence deck with ICE scoring, geographic mapping, and classification. The gap between what was built and what was perceived = the onboarding narrative needs work for non-initiated audiences.</p>
+            </div>
+        </div>
+
+        <div class="analysis-section">
+            <h3>Tipping Point Answer</h3>
+            <p>Nigel asked: "8 billion people &mdash; how many do I need to hit tipping point?" From diffusion theory (Chenoweth's research on social movements): approximately <strong>3.5% of a population</strong> = ~280 million people. But for a niche knowledge framework, the number is far smaller. The Academy needs the <strong>right 1,000 engineers, academics, and strategic thinkers</strong> &mdash; not 280 million casual viewers. Quality of nodes over quantity of followers.</p>
+        </div>
+
+        <p style="text-align:center; color:var(--color-text-secondary); margin-top:3rem; font-size:0.8rem;">
+            Node Input CR-002 &bull; Logged by DAVID (Manus AI) &bull; Block 354 of 365 &bull; 8 March 2026<br>
+            iAAi Tecton Trump Card Series &bull; Infrastructure Academy Archive
+        </p>
+
+        <a href="/vault.html" class="back-link">&larr; Back to Vault</a>
+    </main>
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement -->
+
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement (v2 fixed) -->
+<script>
+(function() {
+  try {
+    var sid = sessionStorage.getItem('iaai_sid');
+    if (!sid) {
+      sid = 'ses_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 9);
+      sessionStorage.setItem('iaai_sid', sid);
+    }
+    var data = {
+      path: window.location.pathname + (window.location.hash || ''),
+      pageTitle: document.title || 'Untitled',
+      referrer: document.referrer || '',
+      sessionId: sid
+    };
+    fetch('/api/trpc/analytics.track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ json: data }),
+      credentials: 'include'
+    }).catch(function() {});
+    window.addEventListener('hashchange', function() {
+      var hashData = {
+        path: window.location.pathname + (window.location.hash || ''),
+        pageTitle: document.title || 'Untitled',
+        referrer: window.location.href,
+        sessionId: sid
+      };
+      fetch('/api/trpc/analytics.track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ json: hashData }),
+        credentials: 'include'
+      }).catch(function() {});
+    });
+  } catch(e) {}
+})();
+</script>
+
+    <!-- Back-to-Top Button Logic -->
+    <script>
+    (function() {
+        var btn = document.getElementById('back-to-top-btn');
+        if (!btn) return;
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                btn.style.display = 'flex';
+            } else {
+                btn.style.display = 'none';
+            }
+        }, { passive: true });
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    })();
+    </script>
+
+</body>
+</html>

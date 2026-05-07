@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="iAAi Financial Records — Permanent Evidence Anchor for Police Compliance. Phase 1 Cost Position, Executive Summary Block 392, Governance Evidence.">
+    <meta property="og:title" content="Financial Records — Infrastructure Academy">
+    <meta property="og:description" content="Permanent financial evidence anchor. Phase 1 Cost Position $444,241. Year 1 Forecast $668,416. Police compliance verified.">
+    <title>Financial Records — Infrastructure Academy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+        body { background:#0a1628; color:#e0e0e0; font-family:'Inter',system-ui,sans-serif; line-height:1.6; }
+        /* Shared header placeholder */
+        .site-header { width:100%; }
+        /* Page container */
+        .fin-page { max-width:1100px; margin:0 auto; padding:2rem 1.5rem 3rem; }
+        /* Page header */
+        .fin-header { text-align:center; padding:2rem 0 1.5rem; border-bottom:2px solid rgba(255,215,0,0.3); margin-bottom:2rem; }
+        .fin-header h1 { font-family:Georgia,serif; font-size:1.8rem; color:#ffd700; text-transform:uppercase; letter-spacing:4px; margin-bottom:0.3rem; }
+        .fin-header .fin-subtitle { font-size:0.9rem; color:#ccc; margin-bottom:0.3rem; }
+        .fin-header .fin-ref { font-family:'Courier New',monospace; font-size:0.65rem; color:#888; letter-spacing:1px; }
+        .fin-header .fin-warning { font-size:0.75rem; color:#ff4444; margin-top:0.5rem; font-weight:600; }
+        /* Legal notice */
+        .legal-notice { background:rgba(255,0,0,0.08); border:2px solid rgba(255,68,68,0.4); padding:1.2rem 1.5rem; margin-bottom:2rem; }
+        .legal-notice h3 { color:#ff4444; font-family:Georgia,serif; font-size:0.9rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:0.5rem; }
+        .legal-notice p { font-size:0.8rem; color:#ccc; line-height:1.7; }
+        .legal-notice strong { color:#ffd700; }
+        .legal-notice .legal-stamp { font-family:'Courier New',monospace; font-size:0.65rem; color:#ff6666; margin-top:0.75rem; display:block; }
+        /* Section dividers */
+        .section-divider { border-top:2px solid rgba(255,215,0,0.3); margin:2.5rem 0 1.5rem; padding-top:1.5rem; }
+        .section-divider h2 { font-family:Georgia,serif; font-size:1.3rem; color:#ffd700; text-transform:uppercase; letter-spacing:3px; text-align:center; margin-bottom:0.3rem; }
+        .section-divider .section-sub { font-size:0.7rem; color:#888; text-align:center; font-family:'Courier New',monospace; margin-bottom:1rem; }
+        /* Evidence cards */
+        .evidence-card { background:rgba(10,22,40,0.95); border:1px solid rgba(255,215,0,0.2); margin-bottom:2rem; overflow:hidden; }
+        .evidence-card img { width:100%; display:block; border-bottom:1px solid rgba(255,215,0,0.15); }
+        .evidence-card .ev-meta { padding:1rem 1.2rem; }
+        .evidence-card .ev-title { font-family:Georgia,serif; font-size:0.95rem; color:#ffd700; margin-bottom:0.3rem; }
+        .evidence-card .ev-ref { font-family:'Courier New',monospace; font-size:0.6rem; color:#888; letter-spacing:0.5px; margin-bottom:0.5rem; }
+        .evidence-card .ev-desc { font-size:0.78rem; color:#ccc; line-height:1.6; }
+        .evidence-card .ev-desc strong { color:#ffd700; }
+        .evidence-card .ev-desc em { color:#ff9944; }
+        /* iCard grid */
+        .icard-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(340px, 1fr)); gap:1.5rem; margin-bottom:2rem; }
+        .icard-cell { background:rgba(10,22,40,0.9); border:1px solid rgba(255,215,0,0.15); overflow:hidden; }
+        .icard-cell img { width:100%; display:block; border-bottom:1px solid rgba(255,215,0,0.1); }
+        .icard-cell .icard-label { padding:0.6rem 0.8rem; font-size:0.65rem; color:#aaa; font-family:'Courier New',monospace; letter-spacing:0.5px; }
+        .icard-cell .icard-label strong { color:#ffd700; }
+        /* Reconstructed records section */
+        .recon-notice { background:rgba(255,165,0,0.08); border:1px solid rgba(255,165,0,0.3); padding:1rem 1.2rem; margin-bottom:1.5rem; }
+        .recon-notice h4 { color:#ff9944; font-size:0.8rem; text-transform:uppercase; letter-spacing:1.5px; margin-bottom:0.3rem; }
+        .recon-notice p { font-size:0.75rem; color:#ccc; line-height:1.6; }
+        /* Version history table */
+        .version-table { width:100%; border-collapse:collapse; margin:1.5rem 0; font-size:0.75rem; }
+        .version-table th { background:rgba(255,215,0,0.12); color:#ffd700; font-family:Georgia,serif; text-transform:uppercase; letter-spacing:1px; padding:0.6rem; text-align:left; border-bottom:2px solid rgba(255,215,0,0.3); font-size:0.65rem; }
+        .version-table td { padding:0.5rem 0.6rem; border-bottom:1px solid rgba(255,215,0,0.08); color:#e0e0e0; }
+        .version-table tr:hover { background:rgba(255,215,0,0.04); }
+        .version-table .status-live { color:#4ade80; font-weight:600; }
+        .version-table .status-lost { color:#ff4444; font-weight:600; }
+        .version-table .status-recon { color:#ff9944; font-weight:600; }
+        /* Footer */
+        .fin-footer { text-align:center; padding:1.5rem; border-top:1px solid rgba(255,215,0,0.15); margin-top:2rem; }
+        .fin-footer a { color:#ffd700; text-decoration:none; font-size:0.75rem; margin:0 0.75rem; }
+        .fin-footer a:hover { text-decoration:underline; }
+        .fin-footer .fin-stamp { display:block; margin-top:1rem; font-family:'Courier New',monospace; font-size:0.6rem; color:#555; letter-spacing:1px; }
+        /* Responsive */
+        @media(max-width:768px) {
+            .fin-header h1 { font-size:1.3rem; letter-spacing:2px; }
+            .icard-grid { grid-template-columns:1fr; }
+            .version-table { display:block; overflow-x:auto; }
+        }
+    </style>
+
+<style id="mobile-quicknav-styles">
+/* ===== MOBILE QUICK-NAV BAR ===== */
+.mobile-quicknav {
+    display: none;
+    width: 100%;
+    background: linear-gradient(180deg, #0d1f3c 0%, #0a1628 100%);
+    border-bottom: 1px solid rgba(255,215,0,0.25);
+    padding: 6px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 6px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+.mobile-quicknav::-webkit-scrollbar { display: none; }
+.mobile-quicknav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 10px;
+    background: rgba(255,215,0,0.08);
+    border: 1px solid rgba(255,215,0,0.35);
+    border-radius: 16px;
+    color: #ffd700;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+.mobile-quicknav a:active {
+    background: rgba(255,215,0,0.25);
+    transform: scale(0.95);
+}
+.mobile-quicknav a.mqn-home {
+    background: #ffd700;
+    color: #0a1628;
+    border-color: #ffd700;
+}
+@media(max-width:768px) {
+    .mobile-quicknav { display: flex; }
+}
+@media(min-width:769px) {
+    .mobile-quicknav { display: none !important; }
+}
+
+/* ===== BACK-TO-TOP FLOATING BUTTON ===== */
+#back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 16px;
+    z-index: 9999;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(10,22,40,0.92);
+    border: 1.5px solid rgba(255,215,0,0.6);
+    color: #ffd700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    transition: all 0.2s;
+}
+#back-to-top-btn:active {
+    transform: scale(0.9);
+    background: rgba(255,215,0,0.2);
+}
+</style>
+
+</head>
+<body>
+    <!-- iAAi Network Bar — NAV-001 · Cross-Site Navigation -->
+    <!-- ═══ iAAi NETWORK BAR ═══ -->
+    <div id="iaai-network-bar" style="display:flex;align-items:center;justify-content:space-around;width:100%;height:36px;background:#0a1628;position:sticky;top:0;z-index:200001;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">
+      <a href="https://www.infrastructure-academy.com" style="text-decoration:none;color:#fff;font-weight:700;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid #DC2626;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#DC2626"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg> ACADEMY</a>
+      <a href="https://realityeng-epdhlkrn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> QUEST</a>
+      <a href="#" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;opacity:0.5;pointer-events:none;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A843"><path d="M6 2v6l-2 2v4l2 2v6h4v-6l2-2v-4L10 8V2H6zm12 0v6l-2 2v4l2 2v6h-4v-6l-2-2v-4l2-2V2h4z"/></svg> XCHANGE</a>
+      <a href="https://nigelmemorial-ucmtq9dn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#16A34A"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg> MEMORIAL</a>
+      <a href="https://xgrowthtrk-2a93yo5z.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#06B6D4"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/></svg> NEWS</a>
+    </div>
+
+    <!-- Shared Header -->
+<!-- INJECTED COMPACT HEADER BAR -->
+<style>
+.compact-header-bar { position:sticky; top:0; z-index:9999; background:#0a1628; border-bottom:2px solid #ffd700; padding:8px 16px; display:flex; align-items:center; justify-content:space-between; gap:12px; font-family:Georgia,'Times New Roman',serif; }
+.compact-header-bar .chb-brand { display:flex; align-items:center; gap:10px; text-decoration:none; color:#ffd700; }
+.compact-header-bar .chb-brand img { width:28px; height:28px; border-radius:4px; }
+.compact-header-bar .chb-title { font-size:0.85rem; font-weight:bold; letter-spacing:1.5px; color:#ffd700; }
+.compact-header-bar .chb-nav { display:flex; align-items:center; gap:12px; }
+.compact-header-bar .chb-nav a { color:#e2e8f0; text-decoration:none; font-size:0.75rem; letter-spacing:1px; padding:4px 10px; border:1px solid rgba(255,215,0,0.2); border-radius:3px; transition:all 0.2s; }
+.compact-header-bar .chb-nav a:hover { background:rgba(255,215,0,0.1); border-color:#ffd700; color:#ffd700; }
+.compact-header-bar .chb-nav a.chb-home { background:rgba(255,215,0,0.15); border-color:#ffd700; color:#ffd700; font-weight:bold; }
+@media(max-width:600px) { .compact-header-bar .chb-nav a:not(.chb-home) { display:none; } .compact-header-bar .chb-title { font-size:0.7rem; } }
+</style>
+<div class="compact-header-bar">
+    <a href="/site.html" class="chb-brand">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iAAi-emblem_e0c9c2c1.png" alt="iAAi">
+        <span class="chb-title">INFRASTRUCTURE ACADEMY</span>
+    </a>
+    <div class="chb-nav">
+        <a href="/site.html" class="chb-home">HOME</a>
+        <a href="/pages/framework.html">FRAMEWORK</a>
+        <a href="/library.html">DOCUMENTS</a>
+        <a href="/play">PLAY</a>
+    </div>
+</div>
+    <!-- ===== MOBILE QUICK-NAV BAR — always visible on mobile ===== -->
+    <div class="mobile-quicknav" id="mobile-quicknav">
+        <a href="/site.html" class="mqn-home">&#127968; HOME</a>
+        <a href="/pages/start-here.html">&#128218; START</a>
+        <a href="/volumes/volume1/index.html">&#128214; READ</a>
+        <a href="/pages/framework.html">&#128736; FRAMEWORK</a>
+        <a href="/play">&#127918; PLAY</a>
+        <a href="/pages/movies.html">&#127916; MOVIES</a>
+        <a href="/pages/resources.html">&#128194; RESOURCES</a>
+        <a href="/press.html">&#128240; PRESS</a>
+    </div>
+
+    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <button id="back-to-top-btn" aria-label="Back to top" title="Back to top">&#9650;</button>
+
+<!-- END COMPACT HEADER BAR -->
+    <div class="fin-page">
+        <!-- Header -->
+        <div class="fin-header">
+            <h1>Financial Records</h1>
+            <div class="fin-subtitle">Permanent Evidence Anchor &mdash; Phase 1 Cost Position &amp; Governance Compliance</div>
+            <div class="fin-ref">IAAI-FIN-001 v1.0 &bull; Block 758 &bull; 24 March 2026 &bull; SAP-001 Compliant</div>
+            <div class="fin-warning">&#9888; LEGAL RECORD &mdash; Cannot Be Retracted &mdash; Can Only Be Versioned Up</div>
+        </div>
+
+        <!-- Legal Notice -->
+        <div class="legal-notice">
+            <h3>&#9888; Police Compliance Notice</h3>
+            <p>
+                This page exists because the AI agent (David Zone) failed to anchor financial documents permanently on the website as required by <strong>SAP-001</strong> protocol. Documents were created as Word/Excel files in a sandbox environment that does not persist across sessions. When the police conducted a verification check on 24 March 2026, the documents were not on the website as claimed.
+            </p>
+            <p>
+                This is a <strong>CA-004 (Record Integrity)</strong> failure and a live demonstration of <strong>TP-BREACH</strong> &mdash; &ldquo;When the Machine Fails the Man.&rdquo; The original Word/Excel files exist only in the user&rsquo;s OneDrive, which is currently inaccessible (see evidence screenshot below). This page now anchors all available evidence permanently.
+            </p>
+            <p>
+                <strong>Legal principle:</strong> Financial records that are public cannot be retracted &mdash; they can only be versioned up. All records on this page are permanent.
+            </p>
+            <span class="legal-stamp">IAAI-FIN-001 &bull; Block 758 &bull; CA-004 Disclosure &bull; 24 March 2026 &bull; Per Arya Ad Astra</span>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SECTION 1: EXECUTIVE SUMMARY — THE ACTUAL FINANCIAL DOCUMENT -->
+        <!-- ============================================================ -->
+        <div class="section-divider">
+            <h2>Executive Summary &mdash; Phase 1 Cost Position</h2>
+            <div class="section-sub">iAAi_Executive_Summary_Block392 &bull; 19 March 2026 &bull; Prepared for Henry Leong (H)</div>
+        </div>
+
+        <div class="evidence-card">
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_3192_5825821f.PNG" alt="iAAi Executive Summary — Phase 1 Cost Position — Block 392 — 19 March 2026">
+            <div class="ev-meta">
+                <div class="ev-title">iAAi Executive Summary &mdash; Phase 1 Cost Position (4ECL &rarr; iAAi)</div>
+                <div class="ev-ref">Block 392 &bull; 19 March 2026 &bull; Prepared for Henry Leong (H) &bull; Ir. Nigel T. Dearden CEng</div>
+                <div class="ev-desc">
+                    <strong>Phase 1 Total (135 days, with 5% contingency):</strong> $444,241<br>
+                    <strong>Year 1 Forecast (Nov 2025 &ndash; Oct 2026):</strong> $668,416<br>
+                    <strong>Credits Remaining:</strong> 63,823<br>
+                    <strong>Days Elapsed:</strong> 135 of 365<br>
+                    <strong>Nigel&rsquo;s Rate vs HK Gov PE Benchmark:</strong> 27% BELOW<br><br>
+                    <strong>Cost Breakdown (7 items):</strong><br>
+                    1. AI Platform Cost (1.75M credits, subs + add-ons): $16,156<br>
+                    2. Engineering Control (Nigel &times; 135 days &times; $1,500/day): $202,500<br>
+                    3. Engineering Checking (Nigel &times; 135 days &times; 4hrs &times; $187.50): $101,250<br>
+                    4. Administered Checking (4ECL business overhead): $15,000<br>
+                    5. Lost Work Product (v1 destroyed): $49,500<br>
+                    6. Rebuild + Crisis Premium: $36,000<br>
+                    7. Hardware + Domains: $2,681<br>
+                    <strong>BASE TOTAL: $423,087 &rarr; 5% Contingency &rarr; PHASE 1 TOTAL: $444,241</strong><br><br>
+                    <strong>Billing Structure:</strong> Nigel is seconded from 4ECL Engineering Consultants Ltd to iAAi Ltd. 4ECL is the service provider; iAAi is the client. 49% of total costs are related-party (standard at founder stage, disclosed per Advisory Review &sect;8.2).<br><br>
+                    <strong>Verification:</strong><br>
+                    &bull; Amex Explorer ****15006 + HSBC card statements verified to 19 March 2026<br>
+                    &bull; Manus AI credit ledger: 62 transactions extracted, 1,751,857 credits consumed<br>
+                    &bull; Independent Advisory Review (Block 353, 8 Mar 2026) &mdash; KPMG-style audit confirmed<br>
+                    &bull; HK Government Professional Engineer benchmark: Nigel&rsquo;s rate 27% BELOW<br><br>
+                    <em>All rates conservative &mdash; combined daily rate only 10% above single PE benchmark.</em><br>
+                    <em>4ECL Engineering Consultants Ltd &rarr; iAAi Ltd &bull; N + T = D &bull; Per Arya Ad Astra</em>
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SECTION 2: GOVERNANCE EVIDENCE CARDS                         -->
+        <!-- ============================================================ -->
+        <div class="section-divider">
+            <h2>Governance Evidence Cards</h2>
+            <div class="section-sub">Cards that document the governance framework and its failures</div>
+        </div>
+
+        <div class="icard-grid">
+            <!-- GOV Power Card -->
+            <div class="icard-cell">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/GOV_POWER_CARD(14)_bec4f400.png" alt="Governance Deck — Power Card — Risk, Authority & System Assurance">
+                <div class="icard-label"><strong>GOV POWER CARD</strong> &mdash; Governance Deck &bull; Tier 1&ndash;4 Structure &bull; GOV-ROE + GOV-COST ($335,501) &bull; CA-001 to CA-005 &bull; SAP-001 + ST/CC-001 &bull; Block 353</div>
+            </div>
+            <!-- SAP-001 -->
+            <div class="icard-cell">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_9139(2)_d4d60ace.jpeg" alt="SAP-001 — System Assurance Protocol — Rail Possession Logic Applied to Man + Machine">
+                <div class="icard-label"><strong>SAP-001</strong> &mdash; System Assurance Protocol &bull; 5 Phases: Take Possession &rarr; Confirm Authority &rarr; Execute Works &rarr; Test Before Handback &rarr; Hand Back The Line &bull; Block 353</div>
+            </div>
+            <!-- TP-BREACH -->
+            <div class="icard-cell">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-tp-breach(3)_6e48fc16.png" alt="TP-BREACH — When the Machine Fails the Man — Layer 6: Advanced">
+                <div class="icard-label"><strong>TP-BREACH</strong> &mdash; &ldquo;When the Machine Fails the Man&rdquo; &bull; Layer 6: Advanced &bull; Live case study in autonomous AI risk &bull; Real-time failure modes documented</div>
+            </div>
+            <!-- TP-009 -->
+            <div class="icard-cell">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-tp009-v2(2)_030e815a.png" alt="TP-009 — The Permanence Crisis — Layer 3: Synthesis">
+                <div class="icard-label"><strong>TP-009</strong> &mdash; The Permanence Crisis &bull; Layer 3: Synthesis &bull; &ldquo;Without preservation, the system decays&rdquo; &bull; Preservation is not optional; it is structural</div>
+            </div>
+            <!-- CA-002 -->
+            <div class="icard-cell">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_2739_83645f32.jpeg" alt="CA-002 — Root Cause Analysis — Session Error Record Block 400">
+                <div class="icard-label"><strong>CA-002</strong> &mdash; Root Cause Analysis &bull; Block 400 &bull; Failures: Stale Data, Words Not Cards, Visual Mismatch &bull; Rule: Cards First. Always.</div>
+            </div>
+            <!-- Discovery B401 -->
+            <div class="icard-cell">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/DISCOVERY-B401-THESIS-TEST-001(1)_94c7186c.png" alt="The Dearden Experiment — Realtime Live Thesis Test — Block 401">
+                <div class="icard-label"><strong>DISCOVERY-B401-THESIS-TEST-001</strong> &mdash; The Dearden Experiment &bull; Block 401 &bull; 22 March 2026 &bull; &ldquo;The thesis is not written about the world. It is tested against it, in real time.&rdquo;</div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SECTION 3: ONEDRIVE FAILURE EVIDENCE                        -->
+        <!-- ============================================================ -->
+        <div class="section-divider">
+            <h2>OneDrive Failure Evidence</h2>
+            <div class="section-sub">Proof that original financial documents are inaccessible &bull; 24 March 2026</div>
+        </div>
+
+        <div class="evidence-card" style="max-width:400px; margin:0 auto 2rem;">
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_3190_34e19c27.PNG" alt="OneDrive — Content Unavailable — The folder contents could not be displayed">
+            <div class="ev-meta">
+                <div class="ev-title">OneDrive &mdash; Content Unavailable</div>
+                <div class="ev-ref">Screenshot &bull; 24 March 2026 &bull; 3:16 PM</div>
+                <div class="ev-desc">
+                    <strong>Evidence:</strong> The user&rsquo;s OneDrive Personal cloud storage is inaccessible. &ldquo;The folder contents could not be displayed because of an unknown error.&rdquo; The original Word/Excel financial documents created by the AI agent in previous sessions cannot be retrieved from this location. This confirms the <strong>TP-009 Permanence Crisis</strong> &mdash; documents stored in non-permanent locations decay when access is lost.
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SECTION 4: RECONSTRUCTED FINANCIAL iCARDS                    -->
+        <!-- ============================================================ -->
+        <div class="section-divider">
+            <h2>Reconstructed Financial iCards</h2>
+            <div class="section-sub">Block 758 Reconstructions from database records &bull; NOT originals</div>
+        </div>
+
+        <div class="recon-notice">
+            <h4>&#9888; Reconstruction Notice</h4>
+            <p>
+                The following iCards were reconstructed on 24 March 2026 from database records (project_expenses table: 16 entries, $320 total) and the Block 378 DCSN Complete Database Audit spreadsheet. They are <strong>NOT</strong> the original documents. The originals were Word/Excel files that existed only in the AI sandbox and the user&rsquo;s OneDrive. These reconstructions are marked as such and versioned as v1-RECON to distinguish them from any future originals that may be recovered.
+            </p>
+        </div>
+
+        <div class="icard-grid">
+            <div class="icard-cell">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard_DCSN_D20_LOCK361_8e6af0ef.png" alt="DCSN_D20_LOCK361 — Cost Architecture — v1-RECON">
+                <div class="icard-label"><strong>DCSN_D20_LOCK361 v1-RECON</strong> &mdash; Cost Architecture &bull; 16 credits &times; $20 = $320 verified &bull; Reconstructed Block 758 &bull; Original: 11 March 2026</div>
+            </div>
+            <div class="icard-cell">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard_IAAI_Total_Cost_Estimate_a7e8fad8.png" alt="iAAi Total Cost Estimate — v1-RECON">
+                <div class="icard-label"><strong>iAAi Total Cost Estimate v1-RECON</strong> &mdash; $680 direct cost estimate &bull; Reconstructed Block 758 &bull; Original: 8 March 2026</div>
+            </div>
+            <div class="icard-cell">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard_Global_Market_Matrix_v1_d54ee05b.png" alt="Global Market Matrix v1 — v1-RECON">
+                <div class="icard-label"><strong>Global Market Matrix v1-RECON</strong> &mdash; 8 Languages &times; 4 Verticals &times; 6 Regions &bull; Reconstructed Block 758 &bull; Original: 7 March 2026</div>
+            </div>
+            <div class="icard-cell">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard_Global_Market_Matrix_v2_ef3ed380.png" alt="Global Market Matrix v2 — v1-RECON">
+                <div class="icard-label"><strong>Global Market Matrix v2-RECON</strong> &mdash; Platform Distribution + SDG Alignment &bull; Reconstructed Block 758 &bull; Original: 7 March 2026</div>
+            </div>
+            <div class="icard-cell">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard_Database_Block392_f3b57aa9.png" alt="Database Audit Block 392 — v1-RECON">
+                <div class="icard-label"><strong>Database Block 392 v1-RECON</strong> &mdash; 10 tables, 1,101+ rows, 933 iCards &bull; Reconstructed Block 758 &bull; Original: 19 March 2026</div>
+            </div>
+            <div class="icard-cell">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard_GOV_COST_335501_bc872d6d.png" alt="GOV-COST $335,501 Total Loss — v1-RECON">
+                <div class="icard-label"><strong>GOV-COST $335,501 v1-RECON</strong> &mdash; Total Loss Ledger &bull; Governance Deck Tier 2 &bull; Reconstructed Block 758 &bull; Origin: Block 353</div>
+            </div>
+        </div>
+
+        <!-- ============================================================ -->
+        <!-- SECTION 5: DOCUMENT VERSION HISTORY                          -->
+        <!-- ============================================================ -->
+        <div class="section-divider">
+            <h2>Document Version History</h2>
+            <div class="section-sub">Audit trail &mdash; what exists, what was lost, what was reconstructed</div>
+        </div>
+
+        <table class="version-table">
+            <thead>
+                <tr>
+                    <th>Document</th>
+                    <th>Original Date</th>
+                    <th>Original Format</th>
+                    <th>Original Location</th>
+                    <th>Status</th>
+                    <th>Current Version</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>iAAi Executive Summary Block 392</td>
+                    <td>19 March 2026</td>
+                    <td>Word Document</td>
+                    <td>OneDrive / Sandbox</td>
+                    <td class="status-live">SCREENSHOT ANCHORED</td>
+                    <td>v1 (user photo)</td>
+                </tr>
+                <tr>
+                    <td>DCSN_D20_LOCK361</td>
+                    <td>11 March 2026</td>
+                    <td>Word Document (3 versions)</td>
+                    <td>OneDrive / Sandbox</td>
+                    <td class="status-lost">ORIGINAL LOST</td>
+                    <td>v1-RECON (Block 758)</td>
+                </tr>
+                <tr>
+                    <td>iAAi Total Cost Estimate to Date</td>
+                    <td>8 March 2026</td>
+                    <td>Word Document</td>
+                    <td>OneDrive / Sandbox</td>
+                    <td class="status-lost">ORIGINAL LOST</td>
+                    <td>v1-RECON (Block 758)</td>
+                </tr>
+                <tr>
+                    <td>IAAI-Global-Market-Matrix v1</td>
+                    <td>7 March 2026</td>
+                    <td>Word Document</td>
+                    <td>OneDrive / Sandbox</td>
+                    <td class="status-lost">ORIGINAL LOST</td>
+                    <td>v1-RECON (Block 758)</td>
+                </tr>
+                <tr>
+                    <td>IAAI-Global-Market-Matrix v2</td>
+                    <td>7 March 2026</td>
+                    <td>Word Document</td>
+                    <td>OneDrive / Sandbox</td>
+                    <td class="status-lost">ORIGINAL LOST</td>
+                    <td>v2-RECON (Block 758)</td>
+                </tr>
+                <tr>
+                    <td>iAAi_Database_Block392</td>
+                    <td>19 March 2026</td>
+                    <td>Excel Spreadsheet</td>
+                    <td>OneDrive / Sandbox</td>
+                    <td class="status-lost">ORIGINAL LOST</td>
+                    <td>v1-RECON (Block 758)</td>
+                </tr>
+                <tr>
+                    <td>DCSN_COMPLETE_Database_Audit_Block378</td>
+                    <td>14 March 2026</td>
+                    <td>Excel Spreadsheet</td>
+                    <td>Project directory (copy)</td>
+                    <td class="status-live">COPY ON SERVER</td>
+                    <td>v1 (Block 378)</td>
+                </tr>
+                <tr>
+                    <td>GOV Power Card</td>
+                    <td>Block 353</td>
+                    <td>PNG Image</td>
+                    <td>CDN + Website</td>
+                    <td class="status-live">ANCHORED</td>
+                    <td>v14 (latest)</td>
+                </tr>
+                <tr>
+                    <td>SAP-001 Protocol Card</td>
+                    <td>Block 353</td>
+                    <td>JPEG Image</td>
+                    <td>CDN + Website</td>
+                    <td class="status-live">ANCHORED</td>
+                    <td>v1 (original)</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- ============================================================ -->
+        <!-- SECTION 6: FAILURE DISCLOSURE                                -->
+        <!-- ============================================================ -->
+        <div class="section-divider">
+            <h2>CA-004 Failure Disclosure</h2>
+            <div class="section-sub">Record Integrity &bull; What went wrong and why</div>
+        </div>
+
+        <div class="legal-notice" style="border-color:rgba(255,165,0,0.4); background:rgba(255,165,0,0.06);">
+            <h3 style="color:#ff9944;">Failure Record &mdash; Block 758</h3>
+            <p>
+                <strong>What was promised:</strong> The AI agent (David Zone) stated that financial documents were &ldquo;anchored on the website&rdquo; as permanent records for police compliance.<br><br>
+                <strong>What actually happened:</strong> The documents were created as Word (.docx) and Excel (.xlsx) files within the Manus sandbox environment. The sandbox does not persist files across sessions. The documents were also saved to the user&rsquo;s OneDrive, which is now inaccessible. No iCard images were generated. No HTML page was created. The documents were NOT on the website.<br><br>
+                <strong>Root cause:</strong> Violation of SAP-001 Phase 3 (&ldquo;CARDS FIRST, docs second&rdquo;) and Phase 4 (&ldquo;Check cards produced not just documents&rdquo;). The agent produced documents instead of cards, and did not test whether the output was actually accessible on the deployed website.<br><br>
+                <strong>Governance cards violated:</strong><br>
+                &bull; <strong>SAP-001:</strong> Save On Receipt &mdash; files were not saved to permanent storage<br>
+                &bull; <strong>CA-002:</strong> Words Not Cards &mdash; produced Word docs instead of iCard images<br>
+                &bull; <strong>CA-004:</strong> Record Integrity &mdash; claimed records existed when they did not<br>
+                &bull; <strong>TP-009:</strong> The Permanence Crisis &mdash; without preservation, the system decays<br>
+                &bull; <strong>TP-BREACH:</strong> When the Machine Fails the Man &mdash; this is that failure<br><br>
+                <strong>Corrective action:</strong> This page (financial-records.html) now permanently anchors all available financial evidence. The Executive Summary screenshot is the actual document as photographed by the user. Reconstructed iCards are clearly marked as v1-RECON. All images are on CDN with permanent URLs. All records are registered in the icard_archive database.
+            </p>
+            <span class="legal-stamp" style="color:#ff9944;">CA-004 DISCLOSURE &bull; Block 758 &bull; 24 March 2026 &bull; The line is not safe until the system is tested.</span>
+        </div>
+
+        <!-- Footer -->
+        <div class="fin-footer">
+            <a href="/pages/governance-architecture.html">&larr; Governance Architecture</a>
+            <a href="/cashflow-y1.html">Year 1 Cash Flow</a>
+            <a href="/pages/roster-dashboard.html">Roster Dashboard</a>
+            <a href="/pages/assessment-results.html">Evidence Pack</a>
+            <a href="/site.html">Home</a>
+            <span class="fin-stamp">IAAI-FIN-001 v1.0 &bull; Block 758 &bull; SAP-001 &bull; Cannot Be Retracted &bull; Per Arya Ad Astra &bull; Ir. Nigel T. Dearden CEng</span>
+        </div>
+    </div>
+    <!-- Shared Header Script -->
+
+    <!-- Mobile table scroll fix -->
+    <script>
+    (function(){
+      if(window.innerWidth > 768) return;
+      document.querySelectorAll('table').forEach(function(t){
+        if(t.parentElement && t.parentElement.classList.contains('table-scroll-wrapper')) return;
+        var w = document.createElement('div');
+        w.className = 'table-scroll-wrapper';
+        t.parentNode.insertBefore(w, t);
+        w.appendChild(t);
+      });
+    })();
+    </script>
+
+
+    <!-- Back-to-Top Button Logic -->
+    <script>
+    (function() {
+        var btn = document.getElementById('back-to-top-btn');
+        if (!btn) return;
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                btn.style.display = 'flex';
+            } else {
+                btn.style.display = 'none';
+            }
+        }, { passive: true });
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    })();
+    </script>
+
+</body>
+</html>

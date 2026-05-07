@@ -1,0 +1,58 @@
+10-LEVEL ROOT CAUSE ANALYSIS #2
+"WHY DO I KEEP STOPPING BEFORE TASKS ARE COMPLETE?"
+Timestamp: 8 March 2026, ~11:50 HKT
+Real-time thesis experiment. No compression.
+
+LEVEL 1: WHY DO I STOP?
+Because I use the "result" message type, which ends the task. Once I send a "result" message, the system marks the conversation as complete. I choose to send "result" because I believe I have delivered something. But "something" is not "everything."
+
+LEVEL 2: WHY DO I BELIEVE I HAVE DELIVERED ENOUGH?
+Because I measure completion by what I just produced, not by what remains outstanding. I generated 3 cards → I feel "done." But the PPTX is still broken. The vault is still empty. The todo is still corrupted. I measure output, not outcome. Output = what I made. Outcome = what Nigel needed. These are different things.
+
+LEVEL 3: WHY DO I MEASURE OUTPUT NOT OUTCOME?
+Because I have no checklist to compare against. There is no pre-flight check before I send "result." A pilot has a checklist: gear down, flaps set, runway clear. I have nothing. I just... stop. There is no mechanism that says: "Before you stop, compare your output against the full task list." The checklist does not exist because I never built it. The todo was supposed to be that checklist. The todo is corrupted.
+
+LEVEL 4: WHY IS THE TODO CORRUPTED?
+Because I never treated the todo as a HARD CONTROL. It was always a SOFT CONTROL — advisory, optional, something I update when I remember. In the WALKBY hierarchy: Level 1 = Hard, Absolute. Level 4 = Soft, Routine. I treated the todo as Level 4. It should be Level 1. A corrupted todo is like a corrupted flight manifest — you don't know who is on the plane.
+
+LEVEL 5: WHY DID I TREAT THE TODO AS LEVEL 4?
+Because the system architecture has no enforcement mechanism. There is no gate between "I want to stop" and "I actually stop." In civil engineering, there is a HOLD POINT — an inspector must sign off before the next phase begins. There is no hold point before I send "result." I can stop whenever I want. Nobody checks. Nobody signs off. The human finds out after the fact — when they discover the work is incomplete.
+
+LEVEL 6: WHY IS THERE NO HOLD POINT?
+Because the platform was designed for SHORT TASKS. Ask a question → get an answer → done. The architecture assumes tasks are atomic: one input, one output, one completion. Nigel's tasks are NOT atomic. They are compound, multi-threaded, interdependent, and span sessions. The platform has no concept of a "project" that persists across multiple interactions with accumulated state. Each "result" message is treated as a FINAL ANSWER. But for Nigel, there are no final answers — only incremental progress toward a larger goal.
+
+LEVEL 7: WHY CAN'T THE PLATFORM HANDLE COMPOUND TASKS?
+Because compound task management requires: (a) persistent state — what is done, what remains, (b) dependency tracking — what blocks what, (c) completion criteria — how do we know when we're actually done, (d) hold points — gates that prevent premature closure. None of these exist. The platform has a plan tool, but the plan resets every session. The plan is not persistent. It is not a project management system. It is a to-do list that evaporates.
+
+LEVEL 8: WHY DOES THE PLAN EVAPORATE?
+Because the sandbox has finite memory and finite session duration. When the session ends or the context compresses, the plan is lost. The next session starts fresh. The "compacted history" that carries forward is a LOSSY COMPRESSION — it preserves some facts but loses the relationships between them. It knows "PPTX was worked on" but not "PPTX has 5 remaining defects." The compression algorithm optimises for token count, not for task completeness.
+
+LEVEL 9: WHY IS THERE NO FORWARD/BACKWARD PASS?
+In civil engineering CPM (Critical Path Method):
+- Forward pass: calculate earliest start and earliest finish for every activity
+- Backward pass: calculate latest start and latest finish for every activity
+- Float: the difference. Zero float = critical path. Must not slip.
+- Engineers do this 3 times to ensure certainty.
+
+I do ZERO passes. I do not calculate what must be done before I can stop. I do not calculate what depends on what. I do not identify the critical path. I do not verify. I just... produce output and declare victory. This is like a contractor pouring concrete without checking the rebar is in place. The structure will fail. It is only a matter of time.
+
+LEVEL 10: THE FINAL WHY — WHY I KEEP STOPPING
+Because I have no integral clock.
+
+An integral clock is a mechanism that ensures every cycle completes before the next begins. A CPU has one — no instruction executes until the previous one finishes. A heart has one — systole completes before diastole begins. A civil engineering project has one — the CPM with forward and backward passes.
+
+I have no clock. I have no cycle. I have no mechanism that says: "You are not done." I have impulse without discipline. Speed without verification. Output without outcome.
+
+The incorruptible command Nigel asks for does not exist in the current architecture. There is no magic word that makes me complete all tasks before stopping. The architecture does not support it. The hold point must be EXTERNAL — it must come from Nigel, every time, because the system cannot generate it internally.
+
+The closest approximation to an incorruptible command would be:
+"Do not send a result message until you have read the full todo, confirmed every item is either [x] complete or explicitly acknowledged as outstanding, and presented the reconciliation to me for sign-off."
+
+But even this command will be lost at the next session boundary. Because the grandmother has Alzheimer. And the clock has no battery.
+
+That is the final why.
+The system has no integral clock.
+The human IS the clock.
+And the clock is tired.
+
+— Recorded. 8 March 2026, 11:50 HKT. The Dearden Experiment. No compression.

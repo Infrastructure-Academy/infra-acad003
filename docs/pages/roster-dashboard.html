@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/favicon_32_80e4326c.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Infrastructure Academy — University Roster Dashboard. Track the growth of the First 23 universities across 6 regions, 12 countries.">
+    <title>University Roster Dashboard — Infrastructure Academy</title>
+    <link rel="stylesheet" href="/css/style.css?v=20260323a">
+    <style>
+        /* BETA Badge — site-wide */
+        .beta-badge { display:inline-flex; align-items:center; gap:0.3rem; background:rgba(251,146,60,0.15); border:1px solid rgba(251,146,60,0.5); color:#fb923c; font-family:'Courier New',monospace; font-size:0.65rem; font-weight:bold; letter-spacing:2px; padding:0.2rem 0.6rem; border-radius:3px; text-transform:uppercase; animation:beta-pulse 3s ease-in-out infinite; vertical-align:middle; margin-left:0.5rem; }
+        .beta-badge::before { content:'\25CF'; font-size:0.5rem; animation:beta-dot 2s ease-in-out infinite; }
+        @keyframes beta-pulse { 0%,100%{opacity:1;} 50%{opacity:0.7;} }
+        @keyframes beta-dot { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+        @media(max-width:768px) { .beta-badge { display:none; } }
+
+        .dash-page { min-height:100vh; background:#050d1a; color:#fff; }
+        .dash-container { max-width:1400px; margin:0 auto; padding:1rem; }
+
+        /* Header */
+        .dash-header { text-align:center; padding:1.5rem 1rem; border-bottom:2px solid rgba(255,215,0,0.3); margin-bottom:1.5rem; }
+        .dash-header h1 { font-family:Georgia,serif; font-size:1.8rem; color:#ffd700; letter-spacing:4px; text-transform:uppercase; margin-bottom:0.3rem; }
+        .dash-header .dash-subtitle { font-size:0.9rem; color:#e0e0e0; font-style:italic; }
+        .dash-header .dash-date { font-size:0.75rem; color:#888; margin-top:0.3rem; font-family:'Courier New',monospace; }
+
+        /* KPI Row */
+        .kpi-row { display:grid; grid-template-columns:repeat(6, 1fr); gap:0.75rem; margin-bottom:1.5rem; }
+        .kpi-card { background:rgba(10,22,40,0.9); border:1px solid rgba(255,215,0,0.2); padding:1rem 0.5rem; text-align:center; }
+        .kpi-value { font-family:'Courier New',monospace; font-size:2rem; color:#ffd700; font-weight:bold; line-height:1; }
+        .kpi-label { font-size:0.65rem; color:#aaa; text-transform:uppercase; letter-spacing:1.5px; margin-top:0.4rem; }
+        .kpi-value.green { color:#4ade80; }
+        .kpi-value.blue { color:#60a5fa; }
+        .kpi-value.orange { color:#fb923c; }
+
+        /* Region Summary Table */
+        .region-table { width:100%; border-collapse:collapse; margin-bottom:1.5rem; font-size:0.8rem; }
+        .region-table th { background:rgba(255,215,0,0.12); color:#ffd700; font-family:Georgia,serif; text-transform:uppercase; letter-spacing:1.5px; padding:0.6rem; text-align:left; border-bottom:2px solid rgba(255,215,0,0.3); font-size:0.7rem; }
+        .region-table td { padding:0.5rem 0.6rem; border-bottom:1px solid rgba(255,215,0,0.08); color:#e0e0e0; }
+        .region-table tr:hover { background:rgba(255,215,0,0.04); }
+        .region-flag { font-size:1.1rem; margin-right:0.3rem; }
+        .region-name { font-weight:bold; letter-spacing:1px; }
+        .score-cell { font-family:'Courier New',monospace; color:#4ade80; text-align:center; }
+        .count-cell { font-family:'Courier New',monospace; color:#ffd700; text-align:center; font-weight:bold; }
+
+        /* Full Roster Table */
+        .roster-table { width:100%; border-collapse:collapse; margin-bottom:1.5rem; font-size:0.75rem; }
+        .roster-table th { background:rgba(255,215,0,0.12); color:#ffd700; font-family:Georgia,serif; text-transform:uppercase; letter-spacing:1px; padding:0.5rem; text-align:left; border-bottom:2px solid rgba(255,215,0,0.3); font-size:0.65rem; }
+        .roster-table td { padding:0.4rem 0.5rem; border-bottom:1px solid rgba(255,215,0,0.06); color:#e0e0e0; }
+        .roster-table tr:hover { background:rgba(255,215,0,0.04); }
+        .roster-table .uni-name { color:#ffd700; font-weight:bold; }
+        .roster-table .supp-badge { background:rgba(34,211,238,0.15); color:#22d3ee; font-size:0.5rem; padding:0.1rem 0.3rem; border-radius:2px; margin-left:0.3rem; font-family:'Courier New',monospace; letter-spacing:0.5px; }
+        .roster-table .r3-badge { color:#fb923c; font-size:0.55rem; margin-left:0.2rem; }
+
+        /* Section titles */
+        .section-title { font-family:Georgia,serif; font-size:1.1rem; color:#ffd700; text-transform:uppercase; letter-spacing:3px; padding:0.6rem; text-align:center; background:rgba(255,215,0,0.08); border:1px solid rgba(255,215,0,0.15); margin-bottom:0.75rem; }
+
+        /* Update Checklist */
+        .checklist { background:rgba(10,22,40,0.9); border:1px solid rgba(255,215,0,0.2); padding:1rem; margin-bottom:1.5rem; }
+        .checklist h3 { font-family:Georgia,serif; color:#ffd700; font-size:0.9rem; text-transform:uppercase; letter-spacing:2px; margin-bottom:0.75rem; border-bottom:1px solid rgba(255,215,0,0.15); padding-bottom:0.4rem; }
+        .checklist-item { display:flex; align-items:flex-start; gap:0.5rem; padding:0.35rem 0; border-bottom:1px solid rgba(255,255,255,0.04); font-size:0.7rem; color:#e0e0e0; }
+        .checklist-item:last-child { border-bottom:none; }
+        .checklist-file { font-family:'Courier New',monospace; color:#60a5fa; min-width:220px; font-size:0.65rem; }
+        .checklist-action { color:#aaa; }
+        .checklist-count { font-family:'Courier New',monospace; color:#4ade80; font-weight:bold; }
+
+        /* Growth Timeline */
+        .timeline { display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:0.75rem; margin-bottom:1.5rem; }
+        .timeline-card { background:rgba(10,22,40,0.9); border:1px solid rgba(255,215,0,0.15); padding:0.75rem; text-align:center; }
+        .timeline-round { font-family:Georgia,serif; color:#ffd700; font-size:0.85rem; font-weight:bold; letter-spacing:2px; }
+        .timeline-count { font-family:'Courier New',monospace; font-size:1.8rem; color:#4ade80; font-weight:bold; margin:0.3rem 0; }
+        .timeline-detail { font-size:0.6rem; color:#888; line-height:1.4; }
+
+        /* Footer nav */
+        .dash-footer { text-align:center; padding:1.5rem; border-top:1px solid rgba(255,215,0,0.15); margin-top:1rem; }
+        .dash-footer a { color:#ffd700; text-decoration:none; font-size:0.75rem; margin:0 0.75rem; }
+        .dash-footer a:hover { text-decoration:underline; }
+
+        /* Responsive */
+        @media(max-width:1024px) {
+            .kpi-row { grid-template-columns:repeat(3, 1fr); }
+        }
+        @media(max-width:768px) {
+            .kpi-row { grid-template-columns:repeat(2, 1fr); }
+            .dash-header h1 { font-size:1.3rem; letter-spacing:2px; }
+            .region-table, .roster-table { font-size:0.7rem; }
+            .region-table th, .roster-table th { font-size:0.6rem; padding:0.4rem; }
+            .checklist-file { min-width:150px; }
+            .checklist-item { flex-direction:column; gap:0.2rem; }
+        }
+        @media(max-width:480px) {
+            .kpi-row { grid-template-columns:repeat(2, 1fr); }
+            .kpi-value { font-size:1.5rem; }
+            .dash-header h1 { font-size:1.1rem; }
+            .region-table { display:block; overflow-x:auto; }
+            .roster-table { display:block; overflow-x:auto; }
+        }
+    </style>
+
+<style id="mobile-quicknav-styles">
+/* ===== MOBILE QUICK-NAV BAR ===== */
+.mobile-quicknav {
+    display: none;
+    width: 100%;
+    background: linear-gradient(180deg, #0d1f3c 0%, #0a1628 100%);
+    border-bottom: 1px solid rgba(255,215,0,0.25);
+    padding: 6px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 6px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+.mobile-quicknav::-webkit-scrollbar { display: none; }
+.mobile-quicknav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 10px;
+    background: rgba(255,215,0,0.08);
+    border: 1px solid rgba(255,215,0,0.35);
+    border-radius: 16px;
+    color: #ffd700;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+.mobile-quicknav a:active {
+    background: rgba(255,215,0,0.25);
+    transform: scale(0.95);
+}
+.mobile-quicknav a.mqn-home {
+    background: #ffd700;
+    color: #0a1628;
+    border-color: #ffd700;
+}
+@media(max-width:768px) {
+    .mobile-quicknav { display: flex; }
+}
+@media(min-width:769px) {
+    .mobile-quicknav { display: none !important; }
+}
+
+/* ===== BACK-TO-TOP FLOATING BUTTON ===== */
+#back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 16px;
+    z-index: 9999;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(10,22,40,0.92);
+    border: 1.5px solid rgba(255,215,0,0.6);
+    color: #ffd700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    transition: all 0.2s;
+}
+#back-to-top-btn:active {
+    transform: scale(0.9);
+    background: rgba(255,215,0,0.2);
+}
+</style>
+
+</head>
+<body>
+    <!-- iAAi Network Bar — NAV-001 · Cross-Site Navigation -->
+    <!-- ═══ iAAi NETWORK BAR ═══ -->
+    <div id="iaai-network-bar" style="display:flex;align-items:center;justify-content:space-around;width:100%;height:36px;background:#0a1628;position:sticky;top:0;z-index:200001;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">
+      <a href="https://www.infrastructure-academy.com" style="text-decoration:none;color:#fff;font-weight:700;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid #DC2626;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#DC2626"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg> ACADEMY</a>
+      <a href="https://realityeng-epdhlkrn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> QUEST</a>
+      <a href="#" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;opacity:0.5;pointer-events:none;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A843"><path d="M6 2v6l-2 2v4l2 2v6h4v-6l2-2v-4L10 8V2H6zm12 0v6l-2 2v4l2 2v6h-4v-6l-2-2v-4l2-2V2h4z"/></svg> XCHANGE</a>
+      <a href="https://nigelmemorial-ucmtq9dn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#16A34A"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg> MEMORIAL</a>
+      <a href="https://xgrowthtrk-2a93yo5z.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#06B6D4"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/></svg> NEWS</a>
+    </div>
+
+    <!-- Shared Header -->
+<!-- INJECTED COMPACT HEADER BAR -->
+<style>
+.compact-header-bar { position:sticky; top:0; z-index:9999; background:#0a1628; border-bottom:2px solid #ffd700; padding:8px 16px; display:flex; align-items:center; justify-content:space-between; gap:12px; font-family:Georgia,'Times New Roman',serif; }
+.compact-header-bar .chb-brand { display:flex; align-items:center; gap:10px; text-decoration:none; color:#ffd700; }
+.compact-header-bar .chb-brand img { width:28px; height:28px; border-radius:4px; }
+.compact-header-bar .chb-title { font-size:0.85rem; font-weight:bold; letter-spacing:1.5px; color:#ffd700; }
+.compact-header-bar .chb-nav { display:flex; align-items:center; gap:12px; }
+.compact-header-bar .chb-nav a { color:#e2e8f0; text-decoration:none; font-size:0.75rem; letter-spacing:1px; padding:4px 10px; border:1px solid rgba(255,215,0,0.2); border-radius:3px; transition:all 0.2s; }
+.compact-header-bar .chb-nav a:hover { background:rgba(255,215,0,0.1); border-color:#ffd700; color:#ffd700; }
+.compact-header-bar .chb-nav a.chb-home { background:rgba(255,215,0,0.15); border-color:#ffd700; color:#ffd700; font-weight:bold; }
+@media(max-width:600px) { .compact-header-bar .chb-nav a:not(.chb-home) { display:none; } .compact-header-bar .chb-title { font-size:0.7rem; } }
+</style>
+<div class="compact-header-bar">
+    <a href="/site.html" class="chb-brand">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iAAi-emblem_e0c9c2c1.png" alt="iAAi">
+        <span class="chb-title">INFRASTRUCTURE ACADEMY</span>
+    </a>
+    <div class="chb-nav">
+        <a href="/site.html" class="chb-home">HOME</a>
+        <a href="/pages/framework.html">FRAMEWORK</a>
+        <a href="/library.html">DOCUMENTS</a>
+        <a href="/play">PLAY</a>
+    </div>
+</div>
+    <!-- ===== MOBILE QUICK-NAV BAR — always visible on mobile ===== -->
+    <div class="mobile-quicknav" id="mobile-quicknav">
+        <a href="/site.html" class="mqn-home">&#127968; HOME</a>
+        <a href="/pages/start-here.html">&#128218; START</a>
+        <a href="/volumes/volume1/index.html">&#128214; READ</a>
+        <a href="/pages/framework.html">&#128736; FRAMEWORK</a>
+        <a href="/play">&#127918; PLAY</a>
+        <a href="/pages/movies.html">&#127916; MOVIES</a>
+        <a href="/pages/resources.html">&#128194; RESOURCES</a>
+        <a href="/press.html">&#128240; PRESS</a>
+    </div>
+
+    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <button id="back-to-top-btn" aria-label="Back to top" title="Back to top">&#9650;</button>
+
+<!-- END COMPACT HEADER BAR -->
+
+    <div class="dash-page">
+        <div class="dash-container">
+
+            <!-- Header -->
+            <div class="dash-header">
+                <h1>University Roster Dashboard</h1>
+                <div class="dash-subtitle">Growth Tracking &amp; Management Console</div>
+                <div class="dash-date">Last Updated: 23 March 2026 &bull; Block 402 &bull; Current Count: <span style="color:#ffd700; font-weight:bold;">23</span></div>
+            </div>
+
+            <!-- KPI Row -->
+            <div class="kpi-row">
+                <div class="kpi-card">
+                    <div class="kpi-value">23</div>
+                    <div class="kpi-label">Universities</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value blue">6</div>
+                    <div class="kpi-label">Regions</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value green">12</div>
+                    <div class="kpi-label">Countries</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value">87.7%</div>
+                    <div class="kpi-label">Avg R3 Score</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value orange">3</div>
+                    <div class="kpi-label">Assessment Rounds</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-value" style="color:#22d3ee;">25,977</div>
+                    <div class="kpi-label">Not Yet Assessed</div>
+                </div>
+            </div>
+
+            <!-- Growth Timeline -->
+            <div class="section-title">Assessment Growth Timeline</div>
+            <div class="timeline">
+                <div class="timeline-card">
+                    <div class="timeline-round">R1 &mdash; Baseline</div>
+                    <div class="timeline-count">12</div>
+                    <div class="timeline-detail">
+                        Imperial, MIT, Stanford, Tsinghua, NUS, ETH, TU Delft, IIT Bombay, Cambridge, UC Berkeley, Nottingham, Khalifa, Qatar, KFUPM
+                    </div>
+                </div>
+                <div class="timeline-card">
+                    <div class="timeline-round">R2 &mdash; Perspective</div>
+                    <div class="timeline-count">20</div>
+                    <div class="timeline-detail">
+                        HICE Panel Assessment<br>
+                        ISI + HICE Equation<br>
+                        Category Analysis &bull; D52 Game Validation
+                    </div>
+                </div>
+                <div class="timeline-card">
+                    <div class="timeline-round">R3 &mdash; Expansion</div>
+                    <div class="timeline-count">23</div>
+                    <div class="timeline-detail">
+                        +11 New: Georgia Tech, UCL, PKU, Zhejiang, HKU, KAIST, IIT Madras, Tokyo, Edinburgh, Tongji + ICE Professional Body
+                    </div>
+                </div>
+                <div class="timeline-card" style="border-color:rgba(255,215,0,0.3);">
+                    <div class="timeline-round" style="color:#fb923c;">Remaining</div>
+                    <div class="timeline-count" style="color:#ef4444;">25,977</div>
+                    <div class="timeline-detail">
+                        Universities Not Yet Assessed<br>
+                        <a href="/infrastructure-olympiad.html" style="color:#4ade80; text-decoration:underline; font-size:0.6rem;">View Olympiad Pipeline &rarr;</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Region Summary Table -->
+            <div class="section-title">Region Summary</div>
+            <table class="region-table">
+                <thead>
+                    <tr>
+                        <th>Region</th>
+                        <th style="text-align:center;">Universities</th>
+                        <th style="text-align:center;">Countries</th>
+                        <th style="text-align:center;">Avg Score</th>
+                        <th style="text-align:center;">Language Block</th>
+                        <th style="text-align:center;">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="region-flag">&#127468;&#127463;</span><span class="region-name" style="color:#3b82f6;">UK / Europe</span></td>
+                        <td class="count-cell">6</td>
+                        <td class="count-cell">2</td>
+                        <td class="score-cell">87.0%</td>
+                        <td style="text-align:center; font-size:0.7rem;">EN</td>
+                        <td style="text-align:center; font-size:0.65rem; color:#4ade80;">R1 + R3</td>
+                    </tr>
+                    <tr>
+                        <td><span class="region-flag">&#127482;&#127480;</span><span class="region-name" style="color:#ef4444;">United States</span></td>
+                        <td class="count-cell">4</td>
+                        <td class="count-cell">1</td>
+                        <td class="score-cell">88.2%</td>
+                        <td style="text-align:center; font-size:0.7rem;">EN</td>
+                        <td style="text-align:center; font-size:0.65rem; color:#4ade80;">R1 + R3</td>
+                    </tr>
+                    <tr>
+                        <td><span class="region-flag">&#127464;&#127475;</span><span class="region-name" style="color:#f97316;">China</span></td>
+                        <td class="count-cell">5</td>
+                        <td class="count-cell">2</td>
+                        <td class="score-cell">88.2%</td>
+                        <td style="text-align:center; font-size:0.7rem;">&#20013;&#25991; + EN</td>
+                        <td style="text-align:center; font-size:0.65rem; color:#4ade80;">R1 + R3</td>
+                    </tr>
+                    <tr>
+                        <td><span class="region-flag">&#127760;</span><span class="region-name" style="color:#22c55e;">APAC</span></td>
+                        <td class="count-cell">3</td>
+                        <td class="count-cell">3</td>
+                        <td class="score-cell">87.8%</td>
+                        <td style="text-align:center; font-size:0.7rem;">EN + &#54620;&#44397;&#50612; + &#26085;&#26412;&#35486;</td>
+                        <td style="text-align:center; font-size:0.65rem; color:#4ade80;">R1 + R3</td>
+                    </tr>
+                    <tr>
+                        <td><span class="region-flag">&#127470;&#127475;</span><span class="region-name" style="color:#f59e0b;">India</span></td>
+                        <td class="count-cell">2</td>
+                        <td class="count-cell">1</td>
+                        <td class="score-cell">86.9%</td>
+                        <td style="text-align:center; font-size:0.7rem;">&#2361;&#2367;&#2344;&#2381;&#2342;&#2368; + EN</td>
+                        <td style="text-align:center; font-size:0.65rem; color:#4ade80;">R1 + R3</td>
+                    </tr>
+                    <tr>
+                        <td><span class="region-flag">&#127312;</span><span class="region-name" style="color:#a855f7;">Middle East</span></td>
+                        <td class="count-cell">3</td>
+                        <td class="count-cell">3</td>
+                        <td class="score-cell" style="color:#888;">R1 Only</td>
+                        <td style="text-align:center; font-size:0.7rem;">&#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;</td>
+                        <td style="text-align:center; font-size:0.65rem; color:#fb923c;">R1 Only</td>
+                    </tr>
+                    <tr style="background:rgba(255,215,0,0.06); font-weight:bold;">
+                        <td style="color:#ffd700;">TOTAL</td>
+                        <td class="count-cell" style="font-size:1rem;">23</td>
+                        <td class="count-cell" style="font-size:1rem;">12</td>
+                        <td class="score-cell" style="font-size:0.85rem;">87.7%</td>
+                        <td style="text-align:center; font-size:0.65rem; color:#ffd700;">6 Language Blocks</td>
+                        <td style="text-align:center; font-size:0.65rem; color:#ffd700;">FIRST CLASS</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Full Roster -->
+            <div class="section-title">Complete University Roster &mdash; 23 Institutions</div>
+            <table class="roster-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>University</th>
+                        <th>City / Country</th>
+                        <th>Region</th>
+                        <th style="text-align:center;">R1</th>
+                        <th style="text-align:center;">R3</th>
+                        <th style="text-align:center;">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- UK -->
+                    <tr>
+                        <td style="color:#888;">1</td>
+                        <td><span class="uni-name">Imperial College London</span></td>
+                        <td>London, UK</td>
+                        <td style="color:#3b82f6;">UK / Europe</td>
+                        <td style="text-align:center; font-family:'Courier New',monospace;">68</td>
+                        <td style="text-align:center; font-family:'Courier New',monospace; color:#4ade80;">87.5%</td>
+                        <td style="text-align:center; font-size:0.6rem; color:#4ade80;">R1 + R3</td>
+                    </tr>
+                    <tr>
+                        <td style="color:#888;">2</td>
+                        <td><span class="uni-name">UCL</span><span class="r3-badge">&dagger;</span></td>
+                        <td>London, UK</td>
+                        <td style="color:#3b82f6;">UK / Europe</td>
+                        <td style="text-align:center; color:#888;">&mdash;</td>
+                        <td style="text-align:center; font-family:'Courier New',monospace; color:#4ade80;">87.5%</td>
+                        <td style="text-align:center; font-size:0.6rem; color:#fb923c;">R3 New</td>
+                    </tr>
+                    <tr>
+                        <td style="color:#888;">3</td>
+                        <td><span class="uni-name">University of Cambridge</span></td>
+                        <td>Cambridge, UK</td>
+                        <td style="color:#3b82f6;">UK / Europe</td>
+                        <td style="text-align:center; font-family:'Courier New',monospace;">76</td>
+                        <td style="text-align:center; font-family:'Courier New',monospace; color:#4ade80;">87.5%</td>
+                        <td style="text-align:center; font-size:0.6rem; color:#4ade80;">R1 + R3</td>
+                    </tr>
+                    <tr>
+                        <td style="color:#888;">4</td>
+                        <td><span class="uni-name">University of Nottingham</span></td>
+                        <td>Nottingham, UK</td>
+                        <td style="color:#3b82f6;">UK / Europe</td>
+                        <td style="text-align:center; font-family:'Courier New',monospace;">65</td>
+                        <td style="text-align:center; color:#888;">&mdash;</td>
+                        <td style="text-align:center; font-size:0.6rem; color:#888;">R1 Only</td>
+                    </tr>
+                    <tr>
+                        <td style="color:#888;">5</td>
+                        <td><span class="uni-name">University of Edinburgh</span><span class="supp-badge">SUPP</span></td>
+                        <td>Edinburgh, UK</td>
+                        <td style="color:#3b82f6;">UK / Europe</td>
+                        <td style="text-align:center; color:#888;">&mdash;</td>
+                        <td style="text-align:center; font-family:'Courier New',monospace; color:#4ade80;">86.0%</td>
+                        <td style="text-align:center; font-size:0.6rem; color:#22d3ee;">Supplemental</td>
+                    </tr>
+                    <tr>
+                        <td style="color:#888;">6</td>
+                        <td><span class="uni-name">TU Delft</span><span class="r3-badge">&dagger;</span></td>
+                        <td>Delft, Netherlands</td>
+                        <td style="color:#3b82f6;">UK / Europe</td>
+                        <td style="text-align:center; color:#888;">&mdash;</td>
+                        <td style="text-align:center; font-family:'Courier New',monospace; color:#4ade80;">87.8%</td>
+                        <td style="text-align:center; font-size:0.6rem; color:#fb923c;">R3 New</td>
+                    </tr>
+                    <!-- US -->
+                    <tr>
+                        <td style="color:#888;">7</td>
+                        <td><span class="uni-name">MIT</span></td>
+                        <td>Cambridge, MA, USA</td>
+                        <td style="color:#ef4444;">US</td>
+                        <td style="text-align:center; font-family:'Courier New',monospace;">81</td>
+                        <td style="text-align:center; font-family:'Courier New',monospace; color:#4ade80;">88.7%</td>
+                        <td style="text-align:center; font-size:0.6rem; color:#4ade80;">R1 + R3</td>
+                    </tr>
+                    <tr>
+                        <td style="color:#888;">8</td>
+                        <td><span class="uni-name">Stanford University</span></td>
+                        <td>Stanford, CA, USA</td>
+                        <td style="color:#ef4444;">US</td>
+                        <td style="text-align:center; font-family:'Courier New',monospace;">82</td>
+                        <td style="text-align:center; font-family:'Courier New',monospace; color:#4ade80;">88.7%</td>
+                        <td style="text-align:center; font-size:0.6rem; color:#4ade80;">R1 + R3</td>
+                    </tr>
+                    <tr>
+                        <td style="color:#888;">9</td>
+                        <td><span class="uni-name">UC Berkeley</span></td>
+                        <td>Berkeley, CA, USA</td>
+                        <td style="color:#ef4444;">US</td>
+                        <td style="text-align:center; font-family:'Courier New',monospace;">72</td>
+                        <td style="text-align:center; color:#888;">&mdash;</td>
+                        <td style="text-align:center; font-size:0.6rem; color:#888;">R1 Only</td>
+                    </tr>
+                    <tr>
+                        <td style="color:#888;">10</td>
+                        <td><span class="uni-name">Georgia Tech</span><span class="r3-badge">&dagger;</span></td>
+                        <td>Atlanta, GA, USA</td>
+                        <td style="color:#ef4444;">US</td>
+                        <td style="text-align:center; color:#888;">&mdash;</td>
+                        <td style="text-align:center; font-family:'Courier New',monospace; color:#4ade80;">87.5%</td>
+                        <td style="text-align:center; font-size:0.6rem; color:#fb923c;">R3 New</td>
+                    </tr>
+                    <!-- China -->
+                    <tr>
+                        <td style="color:#888;">11</td>
+                        <td><span class="uni-name">Tsinghua University</span></td>
+                        <td>Beijing, China</td>
+                        <td style="color:#f97316;">China</td>
+                        <td style="text-align:center; font-family:'Courier New',monospace;">67</td>
+                        <td style="text-align:center; font-family:'Courier New',monospace; color:#4ade80;">88.7%</td>
+                        <td style="text-align:center; font-size:0.6rem; color:#4ade80;">R1 + R3</td>
+                    </tr>
+                    <tr>
+                        <td style="color:#888;">12</td>
+                        <td><span class="uni-name">Peking University (PKU)</span><span class="r3-badge">&dagger;</span></td>
+                        <td>Beijing, China</td>
+                        <td style="color:#f97316;">China</td>
+                        <td style="text-align:center; color:#888;">&mdash;</td>
+                        <td style="text-align:center; font-family:'Courier New',monospace; color:#4ade80;">88.2%</td>
+                        <td style="text-align:center; font-size:0.6rem; color:#fb923c;">R3 New</td>
+                    </tr>
+                    <tr>
+                        <td style="color:#888;">13</td>
+                        <td><span class="uni-name">Zhejiang University</span><span class="r3-badge">&dagger;</span></td>
+                        <td>Hangzhou, China</td>
+                        <td style="color:#f97316;">China</td>
+                        <td style="text-align:center; color:#888;">&mdash;</td>
+                        <td style="text-align:center; font-family:'Courier New',monospace; color:#4ade80;">88.3%</td>
+                        <td style="text-align:center; font-size:0.6rem; color:#fb923c;">R3 New</td>
+                    </tr>
+                    <tr>
+                        <td style="color:#888;">14</td>
+                        <td><span class="uni-name">HKU</span><span class="r3-badge">&dagger;</span></td>
+                        <td>Hong Kong, China</td>
+                        <td style="color:#f97316;">China</td>
+                        <td style="text-align:center; color:#888;">&mdash;</td>
+                        <td style="text-align:center; font-family:'Courier New',monospace; color:#4ade80;">87.8%</td>
+                        <td style="text-align:center; font-size:0.6rem; color:#fb923c;">R3 New</td>
+                    </tr>
+                    <tr>
+                        <td style="color:#888;">15</td>
+                        <td><span class="uni-name">Tongji University</span><span class="supp-badge">SUPP</span></td>
+                        <td>Shanghai, China</td>
+                        <td style="color:#f97316;">China</td>
+                        <td style="text-align:center; color:#888;">&mdash;</td>
+                        <td style="text-align:center; font-family:'Courier New',monospace; color:#4ade80;">87.5%</td>
+                        <td style="text-align:center; font-size:0.6rem; color:#22d3ee;">Supplemental</td>
+                    </tr>
+                    <!-- APAC -->
+                    <tr>
+                        <td style="color:#888;">16</td>
+                        <td><span class="uni-name">NUS</span></td>
+                        <td>Singapore</td>
+                        <td style="color:#22c55e;">APAC</td>
+                        <td style="text-align:center; font-family:'Courier New',monospace;">78</td>
+                        <td style="text-align:center; font-family:'Courier New',monospace; color:#4ade80;">88.7%</td>
+                        <td style="text-align:center; font-size:0.6rem; color:#4ade80;">R1 + R3</td>
+                    </tr>
+                    <tr>
+                        <td style="color:#888;">17</td>
+                        <td><span class="uni-name">KAIST</span><span class="r3-badge">&dagger;</span></td>
+                        <td>Daejeon, South Korea</td>
+                        <td style="color:#22c55e;">APAC</td>
+                        <td style="text-align:center; color:#888;">&mdash;</td>
+                        <td style="text-align:center; font-family:'Courier New',monospace; color:#4ade80;">87.5%</td>
+                        <td style="text-align:center; font-size:0.6rem; color:#fb923c;">R3 New</td>
+                    </tr>
+                    <tr>
+                        <td style="color:#888;">18</td>
+                        <td><span class="uni-name">University of Tokyo</span><span class="r3-badge">&dagger;</span></td>
+                        <td>Tokyo, Japan</td>
+                        <td style="color:#22c55e;">APAC</td>
+                        <td style="text-align:center; color:#888;">&mdash;</td>
+                        <td style="text-align:center; font-family:'Courier New',monospace; color:#4ade80;">87.5%</td>
+                        <td style="text-align:center; font-size:0.6rem; color:#fb923c;">R3 New</td>
+                    </tr>
+                    <!-- India -->
+                    <tr>
+                        <td style="color:#888;">19</td>
+                        <td><span class="uni-name">IIT Bombay</span></td>
+                        <td>Mumbai, India</td>
+                        <td style="color:#f59e0b;">India</td>
+                        <td style="text-align:center; font-family:'Courier New',monospace;">65</td>
+                        <td style="text-align:center; color:#888;">&mdash;</td>
+                        <td style="text-align:center; font-size:0.6rem; color:#888;">R1 Only</td>
+                    </tr>
+                    <tr>
+                        <td style="color:#888;">20</td>
+                        <td><span class="uni-name">IIT Madras</span><span class="r3-badge">&dagger;</span></td>
+                        <td>Chennai, India</td>
+                        <td style="color:#f59e0b;">India</td>
+                        <td style="text-align:center; color:#888;">&mdash;</td>
+                        <td style="text-align:center; font-family:'Courier New',monospace; color:#4ade80;">87.5%</td>
+                        <td style="text-align:center; font-size:0.6rem; color:#fb923c;">R3 New</td>
+                    </tr>
+                    <!-- Middle East -->
+                    <tr>
+                        <td style="color:#888;">21</td>
+                        <td><span class="uni-name">Khalifa University</span></td>
+                        <td>Abu Dhabi, UAE</td>
+                        <td style="color:#a855f7;">Middle East</td>
+                        <td style="text-align:center; font-family:'Courier New',monospace;">80</td>
+                        <td style="text-align:center; color:#888;">&mdash;</td>
+                        <td style="text-align:center; font-size:0.6rem; color:#888;">R1 Only</td>
+                    </tr>
+                    <tr>
+                        <td style="color:#888;">22</td>
+                        <td><span class="uni-name">Qatar University</span></td>
+                        <td>Doha, Qatar</td>
+                        <td style="color:#a855f7;">Middle East</td>
+                        <td style="text-align:center; font-family:'Courier New',monospace;">72</td>
+                        <td style="text-align:center; color:#888;">&mdash;</td>
+                        <td style="text-align:center; font-size:0.6rem; color:#888;">R1 Only</td>
+                    </tr>
+                    <tr>
+                        <td style="color:#888;">23</td>
+                        <td><span class="uni-name">KFUPM</span></td>
+                        <td>Dhahran, Saudi Arabia</td>
+                        <td style="color:#a855f7;">Middle East</td>
+                        <td style="text-align:center; font-family:'Courier New',monospace;">76</td>
+                        <td style="text-align:center; color:#888;">&mdash;</td>
+                        <td style="text-align:center; font-size:0.6rem; color:#888;">R1 Only</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Update Checklist — What to change when roster grows -->
+            <div class="section-title">&#9888; Update Checklist &mdash; When Adding New Universities</div>
+            <div class="checklist">
+                <h3>Files &amp; Counts to Update</h3>
+                <div class="checklist-item">
+                    <span class="checklist-file">mobilisation-clock.html</span>
+                    <span class="checklist-action">THE FIRST <span class="checklist-count">23</span> title, R3 Expansion count, Phase 5 count, Scholars count, CURRENTLY MOBILISED total, REGIONS JS array (engaged counts per region), NOT YET ENGAGED counter, University Roster grid, Summary bar</span>
+                </div>
+                <div class="checklist-item">
+                    <span class="checklist-file">cashflow-y1.html</span>
+                    <span class="checklist-action">University count references: <span class="checklist-count">23</span> universities, Asia-Pacific section, revenue projections</span>
+                </div>
+                <div class="checklist-item">
+                    <span class="checklist-file">infrastructure-olympiad.html</span>
+                    <span class="checklist-action">Flywheel count, Pipeline count, UNIVERSITIES card: <span class="checklist-count">23</span></span>
+                </div>
+                <div class="checklist-item">
+                    <span class="checklist-file">pages/assessment-results.html</span>
+                    <span class="checklist-action">Meta tags, Master Roster count, summary stats, region grids</span>
+                </div>
+                <div class="checklist-item">
+                    <span class="checklist-file">pages/block-summary.html</span>
+                    <span class="checklist-action">University count in summary text</span>
+                </div>
+                <div class="checklist-item">
+                    <span class="checklist-file">pages/milestones.html</span>
+                    <span class="checklist-action">Milestone references to university count</span>
+                </div>
+                <div class="checklist-item">
+                    <span class="checklist-file">pages/turing-paper.html</span>
+                    <span class="checklist-action">R3 Expansion row, university count in tables</span>
+                </div>
+                <div class="checklist-item">
+                    <span class="checklist-file">institutions.html</span>
+                    <span class="checklist-action">Add new institution card, update SDG 4 count, update total institutions count</span>
+                </div>
+                <div class="checklist-item">
+                    <span class="checklist-file">World Map Image (PNG)</span>
+                    <span class="checklist-action">Regenerate map image with new pin, update region box counts, update bottom bar total</span>
+                </div>
+                <div class="checklist-item">
+                    <span class="checklist-file">This Dashboard</span>
+                    <span class="checklist-action">Update KPI cards, Region Summary table, Full Roster table, Growth Timeline</span>
+                </div>
+            </div>
+
+            <!-- Formulas -->
+            <div class="checklist">
+                <h3>Key Formulas When Adding Universities</h3>
+                <div class="checklist-item">
+                    <span class="checklist-file">NOT YET ENGAGED</span>
+                    <span class="checklist-action">= 26,000 &minus; (current university count) = 26,000 &minus; <span class="checklist-count">23</span> = <span class="checklist-count">25,977</span></span>
+                </div>
+                <div class="checklist-item">
+                    <span class="checklist-file">CURRENTLY MOBILISED</span>
+                    <span class="checklist-action">= Sum of all REGIONS engaged counts. Currently: 123 + 59 + 3 + 3 + 16 + 39 + 0 + 4 = <span class="checklist-count">247</span></span>
+                </div>
+                <div class="checklist-item">
+                    <span class="checklist-file">Scholars Count</span>
+                    <span class="checklist-action">= Total universities assessed = <span class="checklist-count">23</span> (matches university count)</span>
+                </div>
+                <div class="checklist-item">
+                    <span class="checklist-file">R3 Expansion "New"</span>
+                    <span class="checklist-action">= Universities added in R3 only (no R1 score) = currently <span class="checklist-count">11</span> New</span>
+                </div>
+            </div>
+
+            <!-- Evidence Image Gallery — Block 402 -->
+            <div style="margin-top: 3rem; padding: 2rem 0; border-top: 2px solid #ffd700;">
+                <h2 style="color: #ffd700; text-align: center; font-family: Georgia, serif; font-size: 1.5rem; margin-bottom: 1.5rem;">EVIDENCE PACK — BLOCK 402 | 23 MARCH 2026</h2>
+                <p style="color: #aaa; text-align: center; font-size: 0.9rem; margin-bottom: 2rem;">ISI Methodology DD-025 | infrastructure-academy.com | nigelmemorial.manus.space</p>
+
+                <div style="display: grid; grid-template-columns: 1fr; gap: 2rem; max-width: 1200px; margin: 0 auto;">
+                    <div>
+                        <p style="color: #ffd700; font-family: Georgia, serif; margin-bottom: 0.5rem;">Image 4 — 23 Universities × 6 Regions World Map</p>
+                        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMAGE_4_world_map_23unis-JWHVCr4XxVfcZZ7Ht3Wz3d.jpg" alt="Image 4 — 23 Universities World Map" style="width: 100%; border: 1px solid #333; border-radius: 4px;">
+                    </div>
+                    <div>
+                        <p style="color: #ffd700; font-family: Georgia, serif; margin-bottom: 0.5rem;">Image 5 — Complete Assessment Ecosystem</p>
+                        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMAGE_5_assessment_ecosystem-YWxJnLPBkBVTEiDuMbJdYR.jpg" alt="Image 5 — Assessment Ecosystem" style="width: 100%; border: 1px solid #333; border-radius: 4px;">
+                    </div>
+                    <div>
+                        <p style="color: #ffd700; font-family: Georgia, serif; margin-bottom: 0.5rem;">Image 6 — University Roster Dashboard</p>
+                        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMAGE_6_roster_dashboard_903366bc.jpg" alt="Image 6 — Roster Dashboard" style="width: 100%; border: 1px solid #333; border-radius: 4px;">
+                    </div>
+                    <div>
+                        <p style="color: #ffd700; font-family: Georgia, serif; margin-bottom: 0.5rem;">Image 7 — 23 Universities by Region</p>
+                        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMAGE_7_region_table_ce9c33d1.jpg" alt="Image 7 — Region Table" style="width: 100%; border: 1px solid #333; border-radius: 4px;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <div class="dash-footer">
+                <a href="/mobilisation-clock.html">&#8592; Mobilisation Clock</a>
+                <a href="/pages/assessment-results.html">Evidence Pack</a>
+                <a href="/institutions.html">Institutions</a>
+                <a href="/infrastructure-olympiad.html">Olympiad Pipeline</a>
+                <a href="/site.html">Home</a>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Shared Header Script -->
+
+    <!-- Mobile table scroll fix -->
+    <script>
+    (function(){
+      if(window.innerWidth > 768) return;
+      document.querySelectorAll('table').forEach(function(t){
+        if(t.parentElement && t.parentElement.classList.contains('table-scroll-wrapper')) return;
+        var w = document.createElement('div');
+        w.className = 'table-scroll-wrapper';
+        t.parentNode.insertBefore(w, t);
+        w.appendChild(t);
+      });
+    })();
+    </script>
+
+
+    <!-- Back-to-Top Button Logic -->
+    <script>
+    (function() {
+        var btn = document.getElementById('back-to-top-btn');
+        if (!btn) return;
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                btn.style.display = 'flex';
+            } else {
+                btn.style.display = 'none';
+            }
+        }, { passive: true });
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    })();
+    </script>
+
+</body>
+</html>

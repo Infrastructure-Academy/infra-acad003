@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Site Map — Infrastructure Academy</title>
+  <link rel="icon" type="image/x-icon" href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/favicon_32_80e4326c.png">
+  <meta name="description" content="Complete site map of Infrastructure Academy — 113 pages across volumes, explore, pages, archive, and resources.">
+  <style>
+    :root {
+      --navy: #0a1628;
+      --navy-light: #0f1f3a;
+      --gold: #ffd700;
+      --gold-dim: rgba(255,215,0,0.4);
+      --text: #e0e0e0;
+      --text-dim: #999;
+      --green: #22c55e;
+      --blue: #60a5fa;
+      --copper: #d97706;
+      --red: #ef4444;
+      --purple: #a78bfa;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:var(--navy); color:var(--text); font-family:Georgia,'Times New Roman',serif; min-height:100vh; }
+
+    .page-header { text-align:center; padding:40px 20px 24px; border-bottom:2px solid var(--gold); }
+    .page-header h1 { color:var(--gold); font-size:2rem; letter-spacing:2px; margin-bottom:6px; }
+    .page-header .subtitle { color:var(--text-dim); font-size:0.95rem; font-style:italic; }
+
+    .back-nav { max-width:1200px; margin:20px auto 0; padding:0 30px; }
+    .back-nav a { color:var(--gold); text-decoration:none; font-size:0.85rem; }
+    .back-nav a:hover { text-decoration:underline; }
+
+    /* Summary */
+    .summary-bar { display:flex; justify-content:center; gap:2rem; flex-wrap:wrap; padding:24px 20px; max-width:1000px; margin:0 auto; }
+    .sum-box { text-align:center; min-width:80px; }
+    .sum-num { font-size:1.8rem; color:var(--gold); font-weight:bold; line-height:1; }
+    .sum-label { font-size:0.65rem; color:var(--text-dim); margin-top:4px; text-transform:uppercase; letter-spacing:1px; }
+
+    /* Search */
+    .search-bar { max-width:600px; margin:20px auto; padding:0 30px; }
+    .search-bar input { width:100%; padding:10px 16px; background:var(--navy-light); border:1px solid var(--gold-dim); color:var(--gold); font-family:Georgia,serif; font-size:0.9rem; outline:none; }
+    .search-bar input::placeholder { color:var(--text-dim); }
+    .search-bar input:focus { border-color:var(--gold); }
+
+    /* Tree */
+    .tree-container { max-width:1200px; margin:30px auto; padding:0 30px; }
+
+    .tree-section { margin-bottom:30px; }
+    .tree-section-header { display:flex; align-items:center; gap:12px; padding:12px 16px; background:var(--navy-light); border-left:3px solid var(--gold); cursor:pointer; user-select:none; }
+    .tree-section-header:hover { background:rgba(255,215,0,0.05); }
+    .tree-section-header .arrow { color:var(--gold); font-size:0.8rem; transition:transform 0.2s; }
+    .tree-section-header.collapsed .arrow { transform:rotate(-90deg); }
+    .tree-section-header .sec-title { color:var(--gold); font-size:1.1rem; letter-spacing:1px; }
+    .tree-section-header .sec-count { color:var(--text-dim); font-size:0.75rem; margin-left:auto; }
+    .tree-section-header .sec-dot { width:10px; height:10px; flex-shrink:0; }
+
+    .tree-items { padding:0 0 0 20px; }
+    .tree-items.hidden { display:none; }
+
+    .tree-item { display:flex; align-items:center; gap:10px; padding:6px 16px; border-left:1px solid rgba(255,215,0,0.1); transition:background 0.15s; }
+    .tree-item:hover { background:rgba(255,215,0,0.03); }
+    .tree-item .ti-icon { color:var(--gold-dim); font-size:0.7rem; flex-shrink:0; }
+    .tree-item a { color:var(--text); text-decoration:none; font-size:0.85rem; flex:1; }
+    .tree-item a:hover { color:var(--gold); }
+    .tree-item .ti-path { color:var(--text-dim); font-size:0.65rem; font-family:'Courier New',monospace; }
+
+    /* Subsection */
+    .tree-sub { margin-left:20px; margin-top:4px; }
+    .tree-sub-header { display:flex; align-items:center; gap:8px; padding:4px 12px; cursor:pointer; user-select:none; }
+    .tree-sub-header:hover { background:rgba(255,215,0,0.03); }
+    .tree-sub-header .sub-title { color:var(--copper); font-size:0.85rem; font-style:italic; }
+    .tree-sub-header .sub-count { color:var(--text-dim); font-size:0.65rem; }
+
+    .page-footer { text-align:center; padding:40px 20px; border-top:1px solid var(--gold-dim); margin-top:40px; color:var(--text-dim); font-size:0.8rem; font-style:italic; }
+
+    .highlight { background:rgba(255,215,0,0.2); color:var(--gold); }
+
+    /* Quick Stats Tooltip */
+    .tree-section-header { position:relative; }
+    .quick-stats { display:none; position:absolute; top:100%; left:16px; z-index:10; background:#0f1f3a; border:1px solid var(--gold-dim); padding:12px 16px; min-width:260px; box-shadow:0 4px 20px rgba(0,0,0,0.5); }
+    .tree-section-header:hover .quick-stats { display:block; }
+    .qs-row { display:flex; justify-content:space-between; align-items:center; padding:3px 0; font-size:0.75rem; }
+    .qs-label { color:var(--text-dim); }
+    .qs-value { color:var(--gold); font-family:'Courier New',monospace; font-weight:bold; }
+    .qs-divider { border-top:1px solid var(--gold-dim); margin:6px 0; }
+    .qs-title { color:var(--gold); font-size:0.7rem; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px; }
+  </style>
+
+<style id="mobile-quicknav-styles">
+/* ===== MOBILE QUICK-NAV BAR ===== */
+.mobile-quicknav {
+    display: none;
+    width: 100%;
+    background: linear-gradient(180deg, #0d1f3c 0%, #0a1628 100%);
+    border-bottom: 1px solid rgba(255,215,0,0.25);
+    padding: 6px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 6px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+.mobile-quicknav::-webkit-scrollbar { display: none; }
+.mobile-quicknav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 10px;
+    background: rgba(255,215,0,0.08);
+    border: 1px solid rgba(255,215,0,0.35);
+    border-radius: 16px;
+    color: #ffd700;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+.mobile-quicknav a:active {
+    background: rgba(255,215,0,0.25);
+    transform: scale(0.95);
+}
+.mobile-quicknav a.mqn-home {
+    background: #ffd700;
+    color: #0a1628;
+    border-color: #ffd700;
+}
+@media(max-width:768px) {
+    .mobile-quicknav { display: flex; }
+}
+@media(min-width:769px) {
+    .mobile-quicknav { display: none !important; }
+}
+
+/* ===== BACK-TO-TOP FLOATING BUTTON ===== */
+#back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 16px;
+    z-index: 9999;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(10,22,40,0.92);
+    border: 1.5px solid rgba(255,215,0,0.6);
+    color: #ffd700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    transition: all 0.2s;
+}
+#back-to-top-btn:active {
+    transform: scale(0.9);
+    background: rgba(255,215,0,0.2);
+}
+</style>
+
+</head>
+<body>
+    <!-- iAAi Network Bar — NAV-001 · Cross-Site Navigation -->
+    <!-- ═══ iAAi NETWORK BAR ═══ -->
+    <div id="iaai-network-bar" style="display:flex;align-items:center;justify-content:space-around;width:100%;height:36px;background:#0a1628;position:sticky;top:0;z-index:200001;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">
+      <a href="https://www.infrastructure-academy.com" style="text-decoration:none;color:#fff;font-weight:700;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid #DC2626;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#DC2626"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg> ACADEMY</a>
+      <a href="https://realityeng-epdhlkrn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> QUEST</a>
+      <a href="#" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;opacity:0.5;pointer-events:none;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A843"><path d="M6 2v6l-2 2v4l2 2v6h4v-6l2-2v-4L10 8V2H6zm12 0v6l-2 2v4l2 2v6h-4v-6l-2-2v-4l2-2V2h4z"/></svg> XCHANGE</a>
+      <a href="https://nigelmemorial-ucmtq9dn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#16A34A"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg> MEMORIAL</a>
+      <a href="https://xgrowthtrk-2a93yo5z.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#06B6D4"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/></svg> NEWS</a>
+    </div>
+
+
+<!-- INJECTED COMPACT HEADER BAR -->
+<style>
+.compact-header-bar { position:sticky; top:0; z-index:9999; background:#0a1628; border-bottom:2px solid #ffd700; padding:8px 16px; display:flex; align-items:center; justify-content:space-between; gap:12px; font-family:Georgia,'Times New Roman',serif; }
+.compact-header-bar .chb-brand { display:flex; align-items:center; gap:10px; text-decoration:none; color:#ffd700; }
+.compact-header-bar .chb-brand img { width:28px; height:28px; border-radius:4px; }
+.compact-header-bar .chb-title { font-size:0.85rem; font-weight:bold; letter-spacing:1.5px; color:#ffd700; }
+.compact-header-bar .chb-nav { display:flex; align-items:center; gap:12px; }
+.compact-header-bar .chb-nav a { color:#e2e8f0; text-decoration:none; font-size:0.75rem; letter-spacing:1px; padding:4px 10px; border:1px solid rgba(255,215,0,0.2); border-radius:3px; transition:all 0.2s; }
+.compact-header-bar .chb-nav a:hover { background:rgba(255,215,0,0.1); border-color:#ffd700; color:#ffd700; }
+.compact-header-bar .chb-nav a.chb-home { background:rgba(255,215,0,0.15); border-color:#ffd700; color:#ffd700; font-weight:bold; }
+@media(max-width:600px) { .compact-header-bar .chb-nav a:not(.chb-home) { display:none; } .compact-header-bar .chb-title { font-size:0.7rem; } }
+</style>
+
+<div class="compact-header-bar">
+    <a href="/site.html" class="chb-brand">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iAAi-emblem_e0c9c2c1.png" alt="iAAi">
+        <span class="chb-title">INFRASTRUCTURE ACADEMY</span>
+    </a>
+    <div class="chb-nav">
+        <a href="/site.html" class="chb-home">HOME</a>
+        <a href="/pages/framework.html">FRAMEWORK</a>
+        <a href="/library.html">DOCUMENTS</a>
+        <a href="/play">PLAY</a>
+    </div>
+</div>
+    <!-- ===== MOBILE QUICK-NAV BAR — always visible on mobile ===== -->
+    <div class="mobile-quicknav" id="mobile-quicknav">
+        <a href="/site.html" class="mqn-home">&#127968; HOME</a>
+        <a href="/pages/start-here.html">&#128218; START</a>
+        <a href="/volumes/volume1/index.html">&#128214; READ</a>
+        <a href="/pages/framework.html">&#128736; FRAMEWORK</a>
+        <a href="/play">&#127918; PLAY</a>
+        <a href="/pages/movies.html">&#127916; MOVIES</a>
+        <a href="/pages/resources.html">&#128194; RESOURCES</a>
+        <a href="/press.html">&#128240; PRESS</a>
+    </div>
+
+    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <button id="back-to-top-btn" aria-label="Back to top" title="Back to top">&#9650;</button>
+
+<!-- END COMPACT HEADER BAR -->
+
+
+
+  <div class="page-header">
+    <h1>SITE MAP</h1>
+    <div class="subtitle">Complete Navigation Index &mdash; Infrastructure Academy</div>
+  </div>
+
+  <div class="back-nav">
+    <a href="/site.html">&larr; Back to Home</a> &nbsp;|&nbsp;
+    <a href="/pages/block-summary.html">Block Summary</a> &nbsp;|&nbsp;
+    <a href="/library.html">Library</a>
+  </div>
+
+  <div class="summary-bar">
+    <div class="sum-box"><div class="sum-num">114</div><div class="sum-label">Total Pages</div></div>
+    <div class="sum-box"><div class="sum-num">8</div><div class="sum-label">Sections</div></div>
+    <div class="sum-box"><div class="sum-num">3</div><div class="sum-label">Volumes</div></div>
+    <div class="sum-box"><div class="sum-num">12</div><div class="sum-label">Relays</div></div>
+    <div class="sum-box"><div class="sum-num">5</div><div class="sum-label">Archive Areas</div></div>
+  </div>
+
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search pages by name or path..." autocomplete="off">
+  </div>
+
+  <div class="tree-container" id="treeContainer"></div>
+
+  <div class="page-footer">
+    <p>&ldquo;Per Arya Ad Astra&rdquo; &mdash; Infrastructure Academy</p>
+    <p style="margin-top:8px;">Ir. Nigel T. Dearden CEng MICE MHKIE &bull; Site Map</p>
+  </div>
+
+  <script>
+  var sections = [
+    {
+      title: "Home & Core",
+      color: "#ffd700",
+      pages: [
+        { name: "Home (Landing Page)", path: "/site.html" },
+        { name: "Start Here", path: "/pages/start-here.html" },
+        { name: "About the Author", path: "/pages/about-author.html" },
+        { name: "Executive Pr\u00e9cis", path: "/executive-precis.html" },
+        { name: "Executive Pr\u00e9cis (Enhanced)", path: "/pages/executive-precis-enhanced.html" },
+        { name: "Press & Media", path: "/press.html" },
+        { name: "Deck (Presentation)", path: "/deck.html" },
+      ]
+    },
+    {
+      title: "Volumes & Chapters",
+      color: "#60a5fa",
+      subsections: [
+        {
+          title: "Volume 1 \u2014 The Civilizational Relay",
+          pages: [
+            { name: "Volume 1 Index", path: "/volumes/volume1/index.html" },
+            { name: "Prologue", path: "/volumes/volume1/prologue.html" },
+            { name: "Relay 01: Fire", path: "/volumes/volume1/relay-01-fire.html" },
+            { name: "Relay 02: Tree (Agriculture)", path: "/volumes/volume1/relay-02-tree.html" },
+            { name: "Relay 03: River (Writing)", path: "/volumes/volume1/relay-03-river.html" },
+            { name: "Relay 04: Horse (The City)", path: "/volumes/volume1/relay-04-horse.html" },
+            { name: "Relay 05: Roads (Mathematics)", path: "/volumes/volume1/relay-05-roads.html" },
+            { name: "Relay 06: Ships (Navigation)", path: "/volumes/volume1/relay-06-ships.html" },
+            { name: "Relay 07: Loom (The Machine)", path: "/volumes/volume1/relay-07-loom.html" },
+            { name: "Relay 08: Rail (Electricity)", path: "/volumes/volume1/relay-08-rail.html" },
+            { name: "Relay 09: Engine (Communication)", path: "/volumes/volume1/relay-09-engine.html" },
+            { name: "Relay 10: AAA (Computing)", path: "/volumes/volume1/relay-10-aaa.html" },
+            { name: "Relay 11: Orbit (Networks)", path: "/volumes/volume1/relay-11-orbit.html" },
+            { name: "Relay 12: Human Nodes", path: "/volumes/volume1/relay-12-human-nodes.html" },
+            { name: "Epilogue", path: "/volumes/volume1/epilogue.html" },
+            { name: "Planetary Engine", path: "/volumes/volume1/planetary-engine.html" },
+            { name: "Torus", path: "/volumes/volume1/torus.html" },
+          ]
+        },
+        {
+          title: "Volume 2 \u2014 The Guide",
+          pages: [
+            { name: "Volume 2 Index", path: "/volumes/volume2/index.html" },
+            { name: "Prologue", path: "/volumes/volume2/prologue.html" },
+            { name: "Relay 01: Fire", path: "/volumes/volume2/relay-01-fire.html" },
+            { name: "Relay 02: Tree", path: "/volumes/volume2/relay-02-tree.html" },
+            { name: "Relay 03: River", path: "/volumes/volume2/relay-03-river.html" },
+            { name: "Relay 04: Horse", path: "/volumes/volume2/relay-04-horse.html" },
+            { name: "Relay 05: Roads", path: "/volumes/volume2/relay-05-roads.html" },
+            { name: "Relay 06: Ships", path: "/volumes/volume2/relay-06-ships.html" },
+            { name: "Relay 07: Loom", path: "/volumes/volume2/relay-07-loom.html" },
+            { name: "Relay 08: Rail", path: "/volumes/volume2/relay-08-rail.html" },
+            { name: "Relay 09: Engine", path: "/volumes/volume2/relay-09-engine.html" },
+            { name: "Relay 10: AAA", path: "/volumes/volume2/relay-10-aaa.html" },
+            { name: "Relay 11: Orbit", path: "/volumes/volume2/relay-11-orbit.html" },
+            { name: "Relay 12: Human Nodes", path: "/volumes/volume2/relay-12-human-nodes.html" },
+            { name: "Epilogue", path: "/volumes/volume2/epilogue.html" },
+            { name: "Torus", path: "/volumes/volume2/torus.html" },
+          ]
+        },
+        {
+          title: "Volume 3 \u2014 The Thesis",
+          pages: [
+            { name: "Volume 3 Index", path: "/volumes/volume3/index.html" },
+            { name: "Prologue", path: "/volumes/volume3/prologue.html" },
+            { name: "Relay 01: Fire", path: "/volumes/volume3/relay-01-fire.html" },
+            { name: "Relay 02: Tree", path: "/volumes/volume3/relay-02-tree.html" },
+            { name: "Relay 03: River", path: "/volumes/volume3/relay-03-river.html" },
+            { name: "Relay 04: Horse", path: "/volumes/volume3/relay-04-horse.html" },
+            { name: "Relay 05: Roads", path: "/volumes/volume3/relay-05-roads.html" },
+            { name: "Relay 06: Ships", path: "/volumes/volume3/relay-06-ships.html" },
+            { name: "Relay 07: Loom", path: "/volumes/volume3/relay-07-loom.html" },
+            { name: "Relay 08: Rail", path: "/volumes/volume3/relay-08-rail.html" },
+            { name: "Relay 09: Engine", path: "/volumes/volume3/relay-09-engine.html" },
+            { name: "Relay 10: AAA", path: "/volumes/volume3/relay-10-aaa.html" },
+            { name: "Relay 11: Orbit", path: "/volumes/volume3/relay-11-orbit.html" },
+            { name: "Relay 12: Human Nodes", path: "/volumes/volume3/relay-12-human-nodes.html" },
+          ]
+        }
+      ]
+    },
+    {
+      title: "Explore & Interactive",
+      color: "#22c55e",
+      pages: [
+        { name: "Civilisation Clock", path: "/civilisation-clock.html" },
+        { name: "Mobilisation Clock", path: "/mobilisation-clock.html" },
+        { name: "Taxonomy", path: "/taxonomy.html" },
+        { name: "4Cs Decision Tool", path: "/4cs-decision.html" },
+        { name: "Chip Evolution", path: "/pages/chip-evolution.html" },
+        { name: "Silk Road", path: "/pages/silk-road.html" },
+        { name: "Discovery Chain", path: "/pages/discovery-chain.html" },
+        { name: "Equations Register", path: "/equations-register.html" },
+        { name: "H-Block Dashboard", path: "/h-block-dashboard.html" },
+        { name: "DCSN Dashboard", path: "/dcsn-dashboard.html" },
+        { name: "Cashflow Y1", path: "/cashflow-y1.html" },
+        { name: "Finance Admin", path: "/finance-admin.html" },
+        { name: "Infrastructure Olympiad", path: "/infrastructure-olympiad.html" },
+        { name: "Masters", path: "/masters.html" },
+        { name: "Vault", path: "/vault.html" },
+      ]
+    },
+    {
+      title: "Pages & Documentation",
+      color: "#d97706",
+      pages: [
+        { name: "Framework", path: "/pages/framework.html" },
+        { name: "Behind the Thesis", path: "/pages/behind-the-thesis.html" },
+        { name: "Before Writing", path: "/pages/before-writing.html" },
+        { name: "Thesis Record", path: "/pages/thesis-record.html" },
+        { name: "Turing Paper", path: "/pages/turing-paper.html" },
+        { name: "G2 Integration Brief", path: "/pages/g2-integration-brief.html" },
+        { name: "Milestones", path: "/pages/milestones.html" },
+        { name: "Scholars", path: "/pages/scholars.html" },
+        { name: "8th Scholar", path: "/pages/8th-scholar.html" },
+        { name: "Glossary", path: "/pages/glossary.html" },
+        { name: "Bibliography", path: "/pages/bibliography.html" },
+        { name: "Supplements", path: "/pages/supplements.html" },
+        { name: "Assessment Results", path: "/pages/assessment-results.html" },
+        { name: "Page Schema", path: "/page-schema.html" },
+      ]
+    },
+    {
+      title: "iCards & Collections",
+      color: "#ef4444",
+      pages: [
+        { name: "iCard Gallery (32 cards)", path: "/icard-gallery.html" },
+        { name: "iCard Register", path: "/icard-register.html" },
+        { name: "iCut Gallery", path: "/icut-gallery.html" },
+        { name: "iCard: 4ECL-BR", path: "/icard-4ecl-br.html" },
+        { name: "iCard: H-Tetra", path: "/icard-h-tetra.html" },
+        { name: "iCard: Khanh Huynh", path: "/icard-khanh-huynh.html" },
+        { name: "iCard: Book Sales Strategy", path: "/icard-book-sales-strategy.html" },
+        { name: "BitPoint Marketplace", path: "/pages/bitpoint-marketplace.html" },
+      ]
+    },
+    {
+      title: "Tracking & Analytics",
+      color: "#a78bfa",
+      pages: [
+        { name: "Block Summary", path: "/pages/block-summary.html" },
+        { name: "Relay Progress Tracker", path: "/pages/relay-tracker.html" },
+        { name: "Relay Detail Hub", path: "/pages/relay-detail.html" },
+        { name: "SDG Alignment Matrix", path: "/pages/sdg-matrix.html" },
+        { name: "Water-Power-Food Nexus", path: "/pages/water-power-nexus.html" },
+        { name: "Observer Register", path: "/pages/observer-register.html" },
+        { name: "Observer Invitation Template", path: "/pages/observer-invitation.html" },
+        { name: "Link Register", path: "/pages/link-register.html" },
+        { name: "Institutions", path: "/institutions.html" },
+        { name: "Pioneers", path: "/pioneers.html" },
+        { name: "Visitor Analytics", path: "/pages/analytics-dashboard.html" },
+        { name: "Site Map (this page)", path: "/pages/sitemap.html" },
+        { name: "Bridge Status (Tetrahedral Observer)", path: "/pages/bridge-status.html" },
+      ]
+    },
+    {
+      title: "Library & Resources",
+      color: "#22c55e",
+      pages: [
+        { name: "Library", path: "/library.html" },
+        { name: "Resources", path: "/pages/resources.html" },
+        { name: "Table of Contents", path: "/resources/table-of-contents.html" },
+      ]
+    },
+    {
+      title: "Archive",
+      color: "#6b7280",
+      subsections: [
+        {
+          title: "Archive Index",
+          pages: [
+            { name: "Archive Home", path: "/archive/index.html" },
+          ]
+        },
+        {
+          title: "Documents",
+          pages: [
+            { name: "Documents Index", path: "/archive/documents/index.html" },
+            { name: "Node Input: CR-002", path: "/archive/documents/node-input-CR-002.html" },
+            { name: "Node Input: JG-001", path: "/archive/documents/node-input-JG-001.html" },
+          ]
+        },
+        {
+          title: "Images",
+          pages: [
+            { name: "Images Index", path: "/archive/images/index.html" },
+          ]
+        },
+        {
+          title: "References",
+          pages: [
+            { name: "References Index", path: "/archive/references/index.html" },
+          ]
+        },
+        {
+          title: "Relays",
+          pages: [
+            { name: "Relays Index", path: "/archive/relays/index.html" },
+          ]
+        },
+        {
+          title: "Supplements",
+          pages: [
+            { name: "Supplements Index", path: "/archive/supplements/index.html" },
+          ]
+        }
+      ]
+    }
+  ];
+
+  var container = document.getElementById('treeContainer');
+
+  function countPages(sec) {
+    var total = 0;
+    if (sec.pages) total += sec.pages.length;
+    if (sec.subsections) sec.subsections.forEach(function(sub) { total += sub.pages.length; });
+    return total;
+  }
+
+  sections.forEach(function(sec, si) {
+    var count = countPages(sec);
+    var div = document.createElement('div');
+    div.className = 'tree-section';
+
+    var header = document.createElement('div');
+    header.className = 'tree-section-header';
+    // Quick Stats data per section
+    var sectionStats = [
+      { pages:7, words:'~42,000', images:18, updated:'2026-03-18' },
+      { pages:47, words:'~385,000', images:96, updated:'2026-03-18' },
+      { pages:15, words:'~28,000', images:42, updated:'2026-03-18' },
+      { pages:14, words:'~52,000', images:24, updated:'2026-03-18' },
+      { pages:8, words:'~3,200', images:31, updated:'2026-03-19' },
+      { pages:11, words:'~18,000', images:12, updated:'2026-03-19' },
+      { pages:3, words:'~8,500', images:6, updated:'2026-03-18' },
+      { pages:8, words:'~4,200', images:8, updated:'2026-03-18' },
+    ];
+    var st = sectionStats[si] || { pages:count, words:'N/A', images:0, updated:'N/A' };
+
+    header.innerHTML = '<span class="arrow">\u25BC</span>' +
+      '<span class="sec-dot" style="background:'+sec.color+';"></span>' +
+      '<span class="sec-title">'+sec.title+'</span>' +
+      '<span class="sec-count">'+count+' pages</span>' +
+      '<div class="quick-stats">' +
+        '<div class="qs-title">\u26A1 Quick Stats</div>' +
+        '<div class="qs-row"><span class="qs-label">Pages</span><span class="qs-value">'+st.pages+'</span></div>' +
+        '<div class="qs-row"><span class="qs-label">Est. Word Count</span><span class="qs-value">'+st.words+'</span></div>' +
+        '<div class="qs-row"><span class="qs-label">Images</span><span class="qs-value">'+st.images+'</span></div>' +
+        '<div class="qs-divider"></div>' +
+        '<div class="qs-row"><span class="qs-label">Last Updated</span><span class="qs-value">'+st.updated+'</span></div>' +
+      '</div>';
+
+    var items = document.createElement('div');
+    items.className = 'tree-items';
+
+    if (sec.pages) {
+      sec.pages.forEach(function(p) {
+        var item = document.createElement('div');
+        item.className = 'tree-item';
+        item.setAttribute('data-search', (p.name + ' ' + p.path).toLowerCase());
+        item.innerHTML = '<span class="ti-icon">\u25B8</span>' +
+          '<a href="'+p.path+'">'+p.name+'</a>' +
+          '<span class="ti-path">'+p.path+'</span>';
+        items.appendChild(item);
+      });
+    }
+
+    if (sec.subsections) {
+      sec.subsections.forEach(function(sub) {
+        var subDiv = document.createElement('div');
+        subDiv.className = 'tree-sub';
+        var subHeader = document.createElement('div');
+        subHeader.className = 'tree-sub-header';
+        subHeader.innerHTML = '<span class="arrow" style="color:var(--copper);font-size:0.7rem;">\u25BC</span>' +
+          '<span class="sub-title">'+sub.title+'</span>' +
+          '<span class="sub-count">('+sub.pages.length+')</span>';
+        subDiv.appendChild(subHeader);
+
+        var subItems = document.createElement('div');
+        subItems.className = 'tree-items';
+        sub.pages.forEach(function(p) {
+          var item = document.createElement('div');
+          item.className = 'tree-item';
+          item.setAttribute('data-search', (p.name + ' ' + p.path + ' ' + sub.title).toLowerCase());
+          item.innerHTML = '<span class="ti-icon">\u25B8</span>' +
+            '<a href="'+p.path+'">'+p.name+'</a>' +
+            '<span class="ti-path">'+p.path+'</span>';
+          subItems.appendChild(item);
+        });
+        subDiv.appendChild(subItems);
+
+        subHeader.addEventListener('click', function() {
+          subItems.classList.toggle('hidden');
+          var arrow = subHeader.querySelector('.arrow');
+          arrow.textContent = subItems.classList.contains('hidden') ? '\u25B6' : '\u25BC';
+        });
+
+        items.appendChild(subDiv);
+      });
+    }
+
+    header.addEventListener('click', function() {
+      items.classList.toggle('hidden');
+      header.classList.toggle('collapsed');
+      var arrow = header.querySelector('.arrow');
+      arrow.textContent = items.classList.contains('hidden') ? '\u25B6' : '\u25BC';
+    });
+
+    div.appendChild(header);
+    div.appendChild(items);
+    container.appendChild(div);
+  });
+
+  // Search
+  var searchInput = document.getElementById('searchInput');
+  searchInput.addEventListener('input', function() {
+    var q = this.value.toLowerCase().trim();
+    var allItems = document.querySelectorAll('.tree-item');
+    var allSections = document.querySelectorAll('.tree-section');
+    var allSubSections = document.querySelectorAll('.tree-sub');
+
+    if (!q) {
+      allItems.forEach(function(el) { el.style.display = ''; el.querySelector('a').innerHTML = el.querySelector('a').textContent; });
+      allSections.forEach(function(el) { el.style.display = ''; });
+      allSubSections.forEach(function(el) { el.style.display = ''; });
+      document.querySelectorAll('.tree-items').forEach(function(el) { el.classList.remove('hidden'); });
+      document.querySelectorAll('.tree-section-header').forEach(function(el) { el.classList.remove('collapsed'); el.querySelector('.arrow').textContent = '\u25BC'; });
+      return;
+    }
+
+    // Show all sections first
+    document.querySelectorAll('.tree-items').forEach(function(el) { el.classList.remove('hidden'); });
+    document.querySelectorAll('.tree-section-header').forEach(function(el) { el.classList.remove('collapsed'); el.querySelector('.arrow').textContent = '\u25BC'; });
+
+    allItems.forEach(function(el) {
+      var searchText = el.getAttribute('data-search') || '';
+      if (searchText.indexOf(q) >= 0) {
+        el.style.display = '';
+        // Highlight match in name
+        var link = el.querySelector('a');
+        var text = link.textContent;
+        var idx = text.toLowerCase().indexOf(q);
+        if (idx >= 0) {
+          link.innerHTML = text.substring(0, idx) + '<span class="highlight">' + text.substring(idx, idx + q.length) + '</span>' + text.substring(idx + q.length);
+        }
+      } else {
+        el.style.display = 'none';
+      }
+    });
+
+    // Hide empty sections
+    allSections.forEach(function(sec) {
+      var visibleItems = sec.querySelectorAll('.tree-item[style=""], .tree-item:not([style])');
+      var hasVisible = false;
+      sec.querySelectorAll('.tree-item').forEach(function(item) {
+        if (item.style.display !== 'none') hasVisible = true;
+      });
+      sec.style.display = hasVisible ? '' : 'none';
+    });
+  });
+  </script>
+
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement -->
+
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement (v2 fixed) -->
+<script>
+(function() {
+  try {
+    var sid = sessionStorage.getItem('iaai_sid');
+    if (!sid) {
+      sid = 'ses_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 9);
+      sessionStorage.setItem('iaai_sid', sid);
+    }
+    var data = {
+      path: window.location.pathname + (window.location.hash || ''),
+      pageTitle: document.title || 'Untitled',
+      referrer: document.referrer || '',
+      sessionId: sid
+    };
+    fetch('/api/trpc/analytics.track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ json: data }),
+      credentials: 'include'
+    }).catch(function() {});
+    window.addEventListener('hashchange', function() {
+      var hashData = {
+        path: window.location.pathname + (window.location.hash || ''),
+        pageTitle: document.title || 'Untitled',
+        referrer: window.location.href,
+        sessionId: sid
+      };
+      fetch('/api/trpc/analytics.track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ json: hashData }),
+        credentials: 'include'
+      }).catch(function() {});
+    });
+  } catch(e) {}
+})();
+</script>
+
+    <!-- Back-to-Top Button Logic -->
+    <script>
+    (function() {
+        var btn = document.getElementById('back-to-top-btn');
+        if (!btn) return;
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                btn.style.display = 'flex';
+            } else {
+                btn.style.display = 'none';
+            }
+        }, { passive: true });
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    })();
+    </script>
+
+</body>
+</html>

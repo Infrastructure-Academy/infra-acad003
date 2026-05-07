@@ -1,0 +1,109 @@
+SUPPLEMENT IMAGE INVENTORY - COMPLETE ANALYSIS
+
+SUPPLEMENT 1: IDENTIFY (Foundational Concepts)
+
+Images CONFIGURED in SupplementPage.jsx:
+
+Summary for Supplement 1:
+
+Total Configured: 5 images
+
+Working: 2 images
+
+Blank/Missing: 3 images
+
+Available Alternatives in System:
+
+SUPPLEMENT 2: UNDERSTAND (Detailed Analysis)
+
+Images CONFIGURED in SupplementPage.jsx:
+
+Summary for Supplement 2:
+
+Total Configured: 6 images
+
+Working: 4 images
+
+Blank/Missing: 2 images
+
+Available Alternatives in System:
+
+SUPPLEMENT 3: MANAGE & CONTROL (Implementation Guidance)
+
+Images CONFIGURED in SupplementPage.jsx:
+
+Summary for Supplement 3:
+
+Total Configured: 14 images
+
+Working: 14 images ✅ ALL PRESENT
+
+Blank/Missing: 0 images
+
+SUPPLEMENT 4: THESIS & VISION (The Counterparts & Orbital Canopy)
+
+Images CONFIGURED in SupplementPage.jsx:
+
+Summary for Supplement 4:
+
+Total Configured: 4 images
+
+Working: 4 images ✅ ALL PRESENT
+
+Blank/Missing: 0 images
+
+IMAGES AVAILABLE IN SYSTEM BUT NOT CURRENTLY USED
+
+These images exist but are NOT assigned to any supplement:
+
+PROBLEM SUMMARY
+
+Critical Issues:
+
+Supplement 1: 3 blank images (60% missing)
+
+5_webs_of_civilization.png - Does not exist in system
+
+supplement1_three_modes_timeline.png - Wrong filename
+
+supplement1_4cs_collapse_cycle.png - Wrong filename
+
+Supplement 2: 2 blank images (33% missing)
+
+supplement1_bronze_age_4cs.png - Wrong filename
+
+supplement1_prerome_rome_4cs.png - Wrong filename
+
+Root Cause:
+
+Filenames in SupplementPage.jsx do not match actual filenames in /public/images/ directory. The images exist but with different naming conventions.
+
+SOLUTION
+
+Option 1: Fix Filenames in SupplementPage.jsx (Recommended)
+
+Update the file references to match existing files:
+
+Supplement 1 fixes:
+
+Line 18: 5_webs_of_civilization.png → Need to identify correct source
+
+Line 20: supplement1_three_modes_timeline.png → supplement1_three_modes.png
+
+Line 21: supplement1_4cs_collapse_cycle.png → supplement1_4cs_threats.png
+
+Supplement 2 fixes:
+
+Line 33: supplement1_bronze_age_4cs.png → bronze_age_4cs_case_study.png
+
+Line 34: supplement1_prerome_rome_4cs.png → prerome_rome_4cs_case_study.png
+
+Option 2: Rename Files in /public/images/
+
+Rename existing files to match expected names in SupplementPage.jsx
+
+Option 3: Hybrid Approach
+
+Use existing files with corrected filenames (Option 1)
+
+Identify or create the missing 5_webs_of_civilization.png

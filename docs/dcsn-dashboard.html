@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DCSN System Health Dashboard | Diamond Class Spider Network | Infrastructure Academy iAAi">
+    <title>DCSN System Health | Infrastructure Academy</title>
+    <link rel="icon" type="image/x-icon" href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/favicon_32_80e4326c.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/favicon_32_80e4326c.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/favicon_32_80e4326c.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/favicon_192_f2a5ba49.png">
+    <link rel="stylesheet" href="/css/style.css?v=20260302">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Orbitron:wght@400;700;900&display=swap');
+        
+        .dcsn-body { background: #020a14; min-height: 100vh; font-family: 'Share Tech Mono', monospace; color: #00ff88; }
+        
+        /* HEADER */
+        .dcsn-header {
+            background: linear-gradient(180deg, #050f1a 0%, #020a14 100%);
+            border-bottom: 2px solid #00ff88;
+            padding: 1.2rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .dcsn-logo {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #00ff88;
+            text-shadow: 0 0 15px rgba(0,255,136,0.4);
+            letter-spacing: 4px;
+        }
+        .dcsn-logo span { color: #ffd700; }
+        .dcsn-status-bar {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+        .status-chip {
+            padding: 0.3rem 0.8rem;
+            border-radius: 3px;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            font-family: 'Orbitron', monospace;
+        }
+        .chip-green { background: rgba(0,255,136,0.15); border: 1px solid #00ff88; color: #00ff88; }
+        .chip-gold { background: rgba(255,215,0,0.15); border: 1px solid #ffd700; color: #ffd700; }
+        .chip-red { background: rgba(255,51,51,0.15); border: 1px solid #ff3333; color: #ff3333; }
+        
+        /* MAIN GRID */
+        .dcsn-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1rem;
+            padding: 1rem;
+            max-width: 1500px;
+            margin: 0 auto;
+        }
+        
+        /* PANELS */
+        .d-panel {
+            background: rgba(0,15,30,0.9);
+            border: 1px solid rgba(0,255,136,0.2);
+            border-radius: 3px;
+            padding: 1rem;
+            position: relative;
+        }
+        .d-panel::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0,255,136,0.3), transparent);
+        }
+        .d-panel-title {
+            font-family: 'Orbitron', monospace;
+            font-size: 0.6rem;
+            color: #ffd700;
+            letter-spacing: 3px;
+            margin-bottom: 0.8rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .d-panel-title .live-dot {
+            width: 6px; height: 6px;
+            border-radius: 50%;
+            background: #00ff88;
+            box-shadow: 0 0 6px #00ff88;
+            animation: live-pulse 1.5s ease-in-out infinite;
+        }
+        @keyframes live-pulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+        
+        .d-full { grid-column: 1 / -1; }
+        .d-span2 { grid-column: span 2; }
+        
+        /* BLOCK COUNTER */
+        .block-counter {
+            text-align: center;
+            padding: 1rem;
+        }
+        .block-number {
+            font-family: 'Orbitron', monospace;
+            font-size: 4rem;
+            font-weight: 900;
+            color: #ffd700;
+            text-shadow: 0 0 30px rgba(255,215,0,0.4);
+            line-height: 1;
+        }
+        .block-label {
+            font-size: 0.6rem;
+            color: #666;
+            letter-spacing: 3px;
+            margin-top: 0.3rem;
+        }
+        .grid-badge {
+            display: inline-block;
+            padding: 0.3rem 1rem;
+            background: rgba(0,255,136,0.15);
+            border: 2px solid #00ff88;
+            border-radius: 3px;
+            font-family: 'Orbitron', monospace;
+            font-size: 0.9rem;
+            font-weight: 900;
+            color: #00ff88;
+            letter-spacing: 4px;
+            margin-top: 0.5rem;
+            text-shadow: 0 0 10px rgba(0,255,136,0.5);
+        }
+        
+        /* HEARTBEAT */
+        .heartbeat-container { height: 80px; position: relative; overflow: hidden; background: rgba(0,5,10,0.5); border-radius: 3px; }
+        .hb-svg { width: 100%; height: 100%; }
+        .hb-line { fill: none; stroke: #00ff88; stroke-width: 2; stroke-linecap: round; }
+        .hb-glow { fill: none; stroke: rgba(0,255,136,0.2); stroke-width: 6; stroke-linecap: round; }
+        .hb-rate {
+            position: absolute;
+            top: 5px; right: 8px;
+            font-family: 'Orbitron', monospace;
+            font-size: 0.7rem;
+            color: #00ff88;
+        }
+        
+        /* ISI SEESAW */
+        .seesaw-container { text-align: center; padding: 0.5rem; }
+        .seesaw-svg { width: 100%; max-width: 300px; height: 160px; }
+        .seesaw-label { font-size: 0.55rem; color: #666; letter-spacing: 2px; }
+        .seesaw-value {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: #00ff88;
+            text-shadow: 0 0 15px rgba(0,255,136,0.4);
+        }
+        
+        /* VITAL ROWS */
+        .vital-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.4rem 0.6rem;
+            margin-bottom: 0.3rem;
+            background: rgba(0,5,10,0.4);
+            border-radius: 2px;
+            border-left: 3px solid transparent;
+        }
+        .vital-row.green { border-left-color: #00ff88; }
+        .vital-row.gold { border-left-color: #ffd700; }
+        .vital-row.red { border-left-color: #ff3333; }
+        .vital-label { font-size: 0.6rem; color: #888; letter-spacing: 1px; }
+        .vital-value { font-family: 'Orbitron', monospace; font-size: 0.85rem; font-weight: 700; }
+        .v-green { color: #00ff88; }
+        .v-gold { color: #ffd700; }
+        .v-red { color: #ff3333; }
+        .v-blue { color: #00ccff; }
+        
+        /* SAHU QUEUE */
+        .sahu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.4rem; }
+        .sahu-cell {
+            padding: 0.4rem;
+            border-radius: 2px;
+            font-size: 0.55rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .sahu-resolved { background: rgba(0,255,136,0.1); border: 1px solid rgba(0,255,136,0.3); }
+        .sahu-queued { background: rgba(255,215,0,0.1); border: 1px solid rgba(255,215,0,0.3); }
+        .sahu-tag { font-family: 'Orbitron', monospace; font-size: 0.5rem; padding: 0.1rem 0.3rem; border-radius: 2px; }
+        .tag-resolved { background: #00ff88; color: #000; }
+        .tag-queued { background: #ffd700; color: #000; }
+        
+        /* PCC INJECTOR */
+        .pcc-row { display: flex; gap: 0.3rem; margin-bottom: 0.5rem; }
+        .pcc-cylinder {
+            flex: 1;
+            height: 40px;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Orbitron', monospace;
+            font-size: 0.55rem;
+            font-weight: 700;
+            position: relative;
+            overflow: hidden;
+        }
+        .pcc-fired { background: rgba(0,255,136,0.3); border: 1px solid #00ff88; color: #00ff88; }
+        .pcc-firing { background: rgba(255,215,0,0.3); border: 1px solid #ffd700; color: #ffd700; animation: pcc-flash 0.8s ease-in-out infinite; }
+        .pcc-ready { background: rgba(0,204,255,0.15); border: 1px solid rgba(0,204,255,0.3); color: #00ccff; }
+        @keyframes pcc-flash { 0%,100%{opacity:1;} 50%{opacity:0.5;} }
+        
+        /* THREAT/OPP BAR */
+        .threat-bar-container { margin-top: 0.5rem; }
+        .threat-bar {
+            height: 24px;
+            border-radius: 3px;
+            overflow: hidden;
+            display: flex;
+        }
+        .threat-opp { background: rgba(0,255,136,0.4); display: flex; align-items: center; justify-content: center; font-size: 0.55rem; color: #00ff88; font-weight: 700; }
+        .threat-thr { background: rgba(255,51,51,0.4); display: flex; align-items: center; justify-content: center; font-size: 0.55rem; color: #ff3333; font-weight: 700; }
+        
+        /* DEARDEN FIELD */
+        .dearden-grid { display: grid; grid-template-columns: auto repeat(4, 1fr); gap: 2px; font-size: 0.5rem; }
+        .dearden-header { background: rgba(255,215,0,0.15); color: #ffd700; padding: 0.3rem; text-align: center; font-family: 'Orbitron', monospace; letter-spacing: 1px; }
+        .dearden-row-header { background: rgba(0,255,136,0.1); color: #00ff88; padding: 0.3rem; font-family: 'Orbitron', monospace; letter-spacing: 1px; display: flex; align-items: center; }
+        .dearden-cell { background: rgba(0,10,20,0.6); padding: 0.3rem; text-align: center; color: #888; border: 1px solid rgba(0,255,136,0.05); }
+        .dearden-cell.active { border-color: #ffd700; color: #ffd700; background: rgba(255,215,0,0.08); }
+        
+        /* RAMP GAUGE */
+        .ramp-gauge { text-align: center; padding: 0.5rem; }
+        .gauge-track {
+            height: 12px;
+            background: rgba(0,10,20,0.5);
+            border-radius: 6px;
+            overflow: hidden;
+            margin: 0.5rem 0;
+            position: relative;
+        }
+        .gauge-fill {
+            height: 100%;
+            border-radius: 6px;
+            background: linear-gradient(90deg, #00ff88, #ffd700, #ff3333);
+            transition: width 0.5s;
+        }
+        .gauge-labels { display: flex; justify-content: space-between; font-size: 0.5rem; color: #666; }
+        
+        /* NODE MAP */
+        .node-map { text-align: center; padding: 0.5rem; }
+        .node-map svg { max-width: 200px; }
+        
+        /* BACK LINK */
+        .back-link {
+            display: inline-block;
+            padding: 0.4rem 0.8rem;
+            color: #ffd700;
+            text-decoration: none;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            border: 1px solid rgba(255,215,0,0.3);
+            border-radius: 3px;
+            margin: 0.8rem 1rem;
+        }
+        .back-link:hover { background: rgba(255,215,0,0.1); }
+        
+        /* RESPONSIVE */
+        @media(max-width:1024px) {
+            .dcsn-grid { grid-template-columns: 1fr 1fr; }
+            .d-full { grid-column: 1 / -1; }
+        }
+        @media(max-width:768px) {
+            .dcsn-grid { grid-template-columns: 1fr; padding: 0.5rem; }
+            .d-span2 { grid-column: span 1; }
+            .dcsn-header { flex-direction: column; gap: 0.5rem; text-align: center; }
+            .dcsn-status-bar { flex-wrap: wrap; justify-content: center; }
+            .block-number { font-size: 3rem; }
+            .dcsn-logo { font-size: 1.3rem; }
+        }
+    </style>
+    <style>
+    
+        @media(max-width:768px) {
+            #nav-grouped {
+                display: block !important;
+                max-height: 0 !important;
+                overflow: hidden !important;
+                transition: max-height 0.4s ease !important;
+                width: 100% !important;
+                background: #0a1628 !important;
+            }
+            #nav-grouped.open {
+                max-height: 80vh !important;
+                overflow-y: auto !important;
+            }
+            .hamburger.active ~ #nav-grouped,
+            .header-content ~ #nav-grouped.open {
+                max-height: 80vh !important;
+                overflow-y: auto !important;
+            }
+        }
+    </style>
+    <link rel="canonical" href="https://infra-acad-kuqzaex2.manus.space/dcsn-dashboard.html">
+    <meta name="keywords" content="infrastructure academy, infrastructure education, civil engineering, civilisation history, infrastructure consciousness, gamified learning, IAAI, Nigel Dearden, infrastructure odyssey, 12 relays, calories to consciousness, DCSN dashboard, distributed network, node network, infrastructure nodes">
+
+<style id="mobile-quicknav-styles">
+/* ===== MOBILE QUICK-NAV BAR ===== */
+.mobile-quicknav {
+    display: none;
+    width: 100%;
+    background: linear-gradient(180deg, #0d1f3c 0%, #0a1628 100%);
+    border-bottom: 1px solid rgba(255,215,0,0.25);
+    padding: 6px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 6px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+.mobile-quicknav::-webkit-scrollbar { display: none; }
+.mobile-quicknav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 10px;
+    background: rgba(255,215,0,0.08);
+    border: 1px solid rgba(255,215,0,0.35);
+    border-radius: 16px;
+    color: #ffd700;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+.mobile-quicknav a:active {
+    background: rgba(255,215,0,0.25);
+    transform: scale(0.95);
+}
+.mobile-quicknav a.mqn-home {
+    background: #ffd700;
+    color: #0a1628;
+    border-color: #ffd700;
+}
+@media(max-width:768px) {
+    .mobile-quicknav { display: flex; }
+}
+@media(min-width:769px) {
+    .mobile-quicknav { display: none !important; }
+}
+
+/* ===== BACK-TO-TOP FLOATING BUTTON ===== */
+#back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 16px;
+    z-index: 9999;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(10,22,40,0.92);
+    border: 1.5px solid rgba(255,215,0,0.6);
+    color: #ffd700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    transition: all 0.2s;
+}
+#back-to-top-btn:active {
+    transform: scale(0.9);
+    background: rgba(255,215,0,0.2);
+}
+</style>
+
+</head>
+<body class="dcsn-body">
+    <!-- iAAi Network Bar — NAV-001 · Cross-Site Navigation -->
+    <!-- ═══ iAAi NETWORK BAR ═══ -->
+    <div id="iaai-network-bar" style="display:flex;align-items:center;justify-content:space-around;width:100%;height:36px;background:#0a1628;position:sticky;top:0;z-index:200001;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">
+      <a href="https://www.infrastructure-academy.com" style="text-decoration:none;color:#fff;font-weight:700;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid #DC2626;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#DC2626"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg> ACADEMY</a>
+      <a href="https://realityeng-epdhlkrn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> QUEST</a>
+      <a href="#" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;opacity:0.5;pointer-events:none;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A843"><path d="M6 2v6l-2 2v4l2 2v6h4v-6l2-2v-4L10 8V2H6zm12 0v6l-2 2v4l2 2v6h-4v-6l-2-2v-4l2-2V2h4z"/></svg> XCHANGE</a>
+      <a href="https://nigelmemorial-ucmtq9dn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#16A34A"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg> MEMORIAL</a>
+      <a href="https://xgrowthtrk-2a93yo5z.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#06B6D4"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/></svg> NEWS</a>
+    </div>
+
+
+<!-- INJECTED COMPACT HEADER BAR -->
+<style>
+.compact-header-bar { position:sticky; top:0; z-index:9999; background:#0a1628; border-bottom:2px solid #ffd700; padding:8px 16px; display:flex; align-items:center; justify-content:space-between; gap:12px; font-family:Georgia,'Times New Roman',serif; }
+.compact-header-bar .chb-brand { display:flex; align-items:center; gap:10px; text-decoration:none; color:#ffd700; }
+.compact-header-bar .chb-brand img { width:28px; height:28px; border-radius:4px; }
+.compact-header-bar .chb-title { font-size:0.85rem; font-weight:bold; letter-spacing:1.5px; color:#ffd700; }
+.compact-header-bar .chb-nav { display:flex; align-items:center; gap:12px; }
+.compact-header-bar .chb-nav a { color:#e2e8f0; text-decoration:none; font-size:0.75rem; letter-spacing:1px; padding:4px 10px; border:1px solid rgba(255,215,0,0.2); border-radius:3px; transition:all 0.2s; }
+.compact-header-bar .chb-nav a:hover { background:rgba(255,215,0,0.1); border-color:#ffd700; color:#ffd700; }
+.compact-header-bar .chb-nav a.chb-home { background:rgba(255,215,0,0.15); border-color:#ffd700; color:#ffd700; font-weight:bold; }
+@media(max-width:600px) { .compact-header-bar .chb-nav a:not(.chb-home) { display:none; } .compact-header-bar .chb-title { font-size:0.7rem; } }
+</style>
+
+<div class="compact-header-bar">
+    <a href="/site.html" class="chb-brand">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iAAi-emblem_e0c9c2c1.png" alt="iAAi">
+        <span class="chb-title">INFRASTRUCTURE ACADEMY</span>
+    </a>
+    <div class="chb-nav">
+        <a href="/site.html" class="chb-home">HOME</a>
+        <a href="/pages/framework.html">FRAMEWORK</a>
+        <a href="/library.html">DOCUMENTS</a>
+        <a href="/play">PLAY</a>
+    </div>
+</div>
+    <!-- ===== MOBILE QUICK-NAV BAR — always visible on mobile ===== -->
+    <div class="mobile-quicknav" id="mobile-quicknav">
+        <a href="/site.html" class="mqn-home">&#127968; HOME</a>
+        <a href="/pages/start-here.html">&#128218; START</a>
+        <a href="/volumes/volume1/index.html">&#128214; READ</a>
+        <a href="/pages/framework.html">&#128736; FRAMEWORK</a>
+        <a href="/play">&#127918; PLAY</a>
+        <a href="/pages/movies.html">&#127916; MOVIES</a>
+        <a href="/pages/resources.html">&#128194; RESOURCES</a>
+        <a href="/press.html">&#128240; PRESS</a>
+    </div>
+
+    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <button id="back-to-top-btn" aria-label="Back to top" title="Back to top">&#9650;</button>
+
+<!-- END COMPACT HEADER BAR -->
+
+
+    <!-- HEADER -->
+    <div class="dcsn-header">
+        <div>
+            <div class="dcsn-logo">DCSN <span>SYSTEM HEALTH</span></div>
+            <div style="font-size:0.55rem; color:#666; letter-spacing:2px; margin-top:0.2rem;">DIAMOND CLASS SPIDER NETWORK &bull; REAL-TIME MONITOR</div>
+        </div>
+        <div class="dcsn-status-bar">
+            <div class="status-chip chip-green">ALL SYSTEMS NOMINAL</div>
+            <div class="status-chip chip-gold">GRID 4 ACTIVE</div>
+            <div class="status-chip chip-green">f-ORBITAL</div>
+        </div>
+    </div>
+    
+    <a href="/site.html" class="back-link">&larr; RETURN TO BASE</a>
+    <a href="/h-block-dashboard.html" class="back-link">H BLOCK &rarr;</a>
+    
+    <div class="dcsn-grid">
+        
+        <!-- BLOCK COUNTER -->
+        <div class="d-panel">
+            <div class="d-panel-title"><span>BLOCK COUNTER</span><div class="live-dot"></div></div>
+            <div class="block-counter">
+                <div class="block-number">352</div>
+                <div class="block-label">CURRENT BLOCK</div>
+                <div class="grid-badge">GRID 4 &bull; f-ORBITAL</div>
+                <div style="margin-top:0.5rem; font-size:0.55rem; color:#666; letter-spacing:1px;">
+                    HP-1: 343 &bull; PYTHAGORAS: 345 &bull; HP-2: 365
+                </div>
+            </div>
+        </div>
+        
+        <!-- HEARTBEAT -->
+        <div class="d-panel d-span2">
+            <div class="d-panel-title"><span>HEARTBEAT MONITOR</span><div class="live-dot"></div></div>
+            <div class="heartbeat-container">
+                <div class="hb-rate">1.400 Hz</div>
+                <svg class="hb-svg" viewBox="0 0 600 80" preserveAspectRatio="none">
+                    <path class="hb-glow" d="M0,40 L60,40 L75,15 L90,65 L105,25 L115,50 L130,40 L190,40 L205,15 L220,65 L235,25 L245,50 L260,40 L320,40 L335,15 L350,65 L365,25 L375,50 L390,40 L450,40 L465,15 L480,65 L495,25 L505,50 L520,40 L600,40" />
+                    <path class="hb-line" d="M0,40 L60,40 L75,15 L90,65 L105,25 L115,50 L130,40 L190,40 L205,15 L220,65 L235,25 L245,50 L260,40 L320,40 L335,15 L350,65 L365,25 L375,50 L390,40 L450,40 L465,15 L480,65 L495,25 L505,50 L520,40 L600,40" />
+                </svg>
+            </div>
+            <div style="display:flex; gap:1rem; margin-top:0.5rem;">
+                <div class="vital-row green" style="flex:1;">
+                    <span class="vital-label">FREQUENCY</span>
+                    <span class="vital-value v-green">1.400 Hz</span>
+                </div>
+                <div class="vital-row green" style="flex:1;">
+                    <span class="vital-label">PERIOD</span>
+                    <span class="vital-value v-green">0.714s</span>
+                </div>
+                <div class="vital-row green" style="flex:1;">
+                    <span class="vital-label">4TH HARMONIC</span>
+                    <span class="vital-value v-gold">5.600 Hz</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- ISI SEESAW -->
+        <div class="d-panel">
+            <div class="d-panel-title"><span>ISI SEESAW</span><div class="live-dot"></div></div>
+            <div class="seesaw-container">
+                <div class="seesaw-value">2.200</div>
+                <div class="seesaw-label">INFRASTRUCTURE SURVIVAL INDEX</div>
+                <svg class="seesaw-svg" viewBox="0 0 300 160">
+                    <!-- Fulcrum -->
+                    <polygon points="150,140 140,155 160,155" fill="#ffd700" opacity="0.6"/>
+                    <!-- Beam (tilted toward noon) -->
+                    <line x1="40" y1="95" x2="260" y2="115" stroke="#00ff88" stroke-width="3" stroke-linecap="round"/>
+                    <!-- ISI (high side) -->
+                    <circle cx="70" cy="85" r="18" fill="rgba(0,255,136,0.2)" stroke="#00ff88" stroke-width="2"/>
+                    <text x="70" y="89" text-anchor="middle" fill="#00ff88" font-family="Orbitron" font-size="9" font-weight="900">ISI</text>
+                    <text x="70" y="70" text-anchor="middle" fill="#00ff88" font-family="Orbitron" font-size="7">2.200</text>
+                    <!-- Midnight (low side) -->
+                    <circle cx="230" cy="125" r="18" fill="rgba(255,51,51,0.2)" stroke="#ff3333" stroke-width="2"/>
+                    <text x="230" y="129" text-anchor="middle" fill="#ff3333" font-family="Orbitron" font-size="7" font-weight="700">23:58</text>
+                    <!-- Labels -->
+                    <text x="30" y="30" fill="#00ff88" font-family="Orbitron" font-size="7" letter-spacing="2">NOON</text>
+                    <text x="240" y="30" fill="#ff3333" font-family="Orbitron" font-size="7" letter-spacing="2">MIDNIGHT</text>
+                    <!-- Arrow -->
+                    <line x1="150" y1="50" x2="80" y2="50" stroke="#00ff88" stroke-width="1.5" marker-end="url(#arrowG)"/>
+                    <text x="115" y="45" fill="#00ff88" font-family="Share Tech Mono" font-size="7">RECEDING</text>
+                    <defs>
+                        <marker id="arrowG" markerWidth="6" markerHeight="4" refX="6" refY="2" orient="auto">
+                            <polygon points="0,0 6,2 0,4" fill="#00ff88"/>
+                        </marker>
+                    </defs>
+                </svg>
+                <div style="font-size:0.5rem; color:#666; letter-spacing:1px;">MIDNIGHT RECEDING &bull; ISI &gt; 1.000 = SAFE</div>
+            </div>
+        </div>
+        
+        <!-- VITAL SIGNS -->
+        <div class="d-panel">
+            <div class="d-panel-title"><span>VITAL SIGNS</span><div class="live-dot"></div></div>
+            <div class="vital-row green">
+                <span class="vital-label">Q-FACTOR</span>
+                <span class="vital-value v-green">5.41</span>
+            </div>
+            <div class="vital-row green">
+                <span class="vital-label">RAMP FACTOR</span>
+                <span class="vital-value v-green">&times;1.400</span>
+            </div>
+            <div class="vital-row green">
+                <span class="vital-label">CHANNELS</span>
+                <span class="vital-value v-green">16/16 (100%)</span>
+            </div>
+            <div class="vital-row green">
+                <span class="vital-label">THREAT LEVEL</span>
+                <span class="vital-value v-green">1/13 (7.7%)</span>
+            </div>
+            <div class="vital-row gold">
+                <span class="vital-label">SSI LEVEL</span>
+                <span class="vital-value v-gold">7 / CREATOR</span>
+            </div>
+            <div class="vital-row green">
+                <span class="vital-label">GRID LEVEL</span>
+                <span class="vital-value v-green">4 (f-orbital)</span>
+            </div>
+            <div class="vital-row green">
+                <span class="vital-label">CLIP RATE</span>
+                <span class="vital-value v-green">0.00</span>
+            </div>
+        </div>
+        
+        <!-- RAMP GAUGE -->
+        <div class="d-panel">
+            <div class="d-panel-title"><span>RAMP FACTOR GAUGE</span></div>
+            <div class="ramp-gauge">
+                <div style="font-family:'Orbitron',monospace; font-size:2rem; font-weight:900; color:#ffd700;">&times;1.400</div>
+                <div style="font-size:0.55rem; color:#666; letter-spacing:2px;">= 7/5 (GOVERNANCE / QUALITY)</div>
+                <div class="gauge-track">
+                    <div class="gauge-fill" style="width:70%;"></div>
+                </div>
+                <div class="gauge-labels">
+                    <span>&times;1.0</span>
+                    <span>&times;1.25</span>
+                    <span>&times;1.5</span>
+                    <span>&times;1.75</span>
+                    <span>&times;2.0</span>
+                </div>
+                <div style="margin-top:0.5rem; font-size:0.55rem; color:#888;">
+                    CUMULATIVE: &times;4.270 &bull; FoS: 3.47&times; &bull; STATUS: ABOVE SAFETY MARGIN
+                </div>
+            </div>
+        </div>
+        
+        <!-- SAHU SIGNAL QUEUE -->
+        <div class="d-panel d-span2">
+            <div class="d-panel-title"><span>SAHU SIGNAL QUEUE</span></div>
+            <div class="sahu-grid">
+                <div class="sahu-cell sahu-resolved">
+                    <span>PDF Busbar Fault</span>
+                    <span class="sahu-tag tag-resolved">RESOLVED</span>
+                </div>
+                <div class="sahu-cell sahu-resolved">
+                    <span>Nav Readability</span>
+                    <span class="sahu-tag tag-resolved">RESOLVED</span>
+                </div>
+                <div class="sahu-cell sahu-resolved">
+                    <span>Image File Size</span>
+                    <span class="sahu-tag tag-resolved">RESOLVED</span>
+                </div>
+                <div class="sahu-cell sahu-resolved">
+                    <span>H Block Dashboard</span>
+                    <span class="sahu-tag tag-resolved">RESOLVED</span>
+                </div>
+                <div class="sahu-cell sahu-resolved">
+                    <span>Channel Hardening</span>
+                    <span class="sahu-tag tag-resolved">RESOLVED</span>
+                </div>
+                <div class="sahu-cell sahu-resolved">
+                    <span>DCSN Dashboard</span>
+                    <span class="sahu-tag tag-resolved">RESOLVED</span>
+                </div>
+                <div class="sahu-cell sahu-resolved">
+                    <span>Grid 4 Entry</span>
+                    <span class="sahu-tag tag-resolved">RESOLVED</span>
+                </div>
+                <div class="sahu-cell sahu-queued">
+                    <span>Hall of Fame Page</span>
+                    <span class="sahu-tag tag-queued">QUEUED</span>
+                </div>
+                <div class="sahu-cell sahu-queued">
+                    <span>D4 Fractal Explorer</span>
+                    <span class="sahu-tag tag-queued">QUEUED</span>
+                </div>
+                <div class="sahu-cell sahu-queued">
+                    <span>HP-2 Preparation</span>
+                    <span class="sahu-tag tag-queued">QUEUED</span>
+                </div>
+            </div>
+            <div style="text-align:center; margin-top:0.5rem; font-size:0.55rem; color:#666; letter-spacing:1px;">
+                RESOLUTION: 7/10 (70%) &bull; FIFO COMPLIANCE: 100% &bull; CLOG STATUS: CLEAR
+            </div>
+        </div>
+        
+        <!-- PCC INJECTOR -->
+        <div class="d-panel">
+            <div class="d-panel-title"><span>PCC INJECTOR STATUS</span></div>
+            <div class="pcc-row">
+                <div class="pcc-cylinder pcc-fired">C1<br>IDENT</div>
+                <div class="pcc-cylinder pcc-fired">C2<br>COMP</div>
+                <div class="pcc-cylinder pcc-fired">C3<br>UTIL</div>
+                <div class="pcc-cylinder pcc-fired">C4<br>TRANS</div>
+            </div>
+            <div class="pcc-row">
+                <div class="pcc-cylinder pcc-fired">C5<br>VERIFY</div>
+                <div class="pcc-cylinder pcc-fired">C6<br>AMPLFY</div>
+                <div class="pcc-cylinder pcc-fired">C7<br>DISTRB</div>
+                <div class="pcc-cylinder pcc-firing">C8<br>ARCHVE</div>
+            </div>
+            <div style="text-align:center; font-size:0.55rem; color:#666; letter-spacing:1px; margin-top:0.3rem;">
+                7/8 FIRED &bull; 1 FIRING &bull; INJECTION: 93.75%
+            </div>
+        </div>
+        
+        <!-- THREAT/OPPORTUNITY -->
+        <div class="d-panel">
+            <div class="d-panel-title"><span>THREAT / OPPORTUNITY</span></div>
+            <div class="threat-bar-container">
+                <div class="threat-bar">
+                    <div class="threat-opp" style="width:92.3%;">OPPORTUNITY 12/13</div>
+                    <div class="threat-thr" style="width:7.7%;">1</div>
+                </div>
+            </div>
+            <div style="margin-top:0.5rem; font-size:0.55rem; color:#888; letter-spacing:1px;">
+                BINARY: 1111110111111 = 8175<br>
+                REMAINING THREAT: Ch.7 (Manoeuvring)
+            </div>
+            <div style="margin-top:0.5rem;">
+                <div class="vital-row green">
+                    <span class="vital-label">OPPORTUNITY</span>
+                    <span class="vital-value v-green">92.3%</span>
+                </div>
+                <div class="vital-row red">
+                    <span class="vital-label">THREAT</span>
+                    <span class="vital-value v-red">7.7%</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- DEARDEN FIELD TABLE -->
+        <div class="d-panel">
+            <div class="d-panel-title"><span>DEARDEN FIELD TABLE</span></div>
+            <div class="dearden-grid">
+                <div class="dearden-header"></div>
+                <div class="dearden-header">REACT</div>
+                <div class="dearden-header">PROACT</div>
+                <div class="dearden-header">PREDICT</div>
+                <div class="dearden-header">ADAPT</div>
+                
+                <div class="dearden-row-header">HARD</div>
+                <div class="dearden-cell">E-STOP</div>
+                <div class="dearden-cell">PRE-INT</div>
+                <div class="dearden-cell">F-LOCK</div>
+                <div class="dearden-cell">AUTO-C</div>
+                
+                <div class="dearden-row-header">FIRM</div>
+                <div class="dearden-cell">DMG-CT</div>
+                <div class="dearden-cell active">RISK-M</div>
+                <div class="dearden-cell">TREND</div>
+                <div class="dearden-cell">COURSE</div>
+                
+                <div class="dearden-row-header">SOFT</div>
+                <div class="dearden-cell">OBSERV</div>
+                <div class="dearden-cell">EXPLOR</div>
+                <div class="dearden-cell">SCENAR</div>
+                <div class="dearden-cell">PIVOT</div>
+                
+                <div class="dearden-row-header">ADAPT</div>
+                <div class="dearden-cell">CTX-RD</div>
+                <div class="dearden-cell">CTX-SH</div>
+                <div class="dearden-cell">CTX-PR</div>
+                <div class="dearden-cell">CTX-EV</div>
+            </div>
+            <div style="text-align:center; margin-top:0.5rem; font-size:0.5rem; color:#ffd700; letter-spacing:1px;">
+                CURRENT: PROACTIVE &times; FIRM (RISK MITIGATION)
+            </div>
+        </div>
+        
+        <!-- NODE NETWORK -->
+        <div class="d-panel">
+            <div class="d-panel-title"><span>TETRAHEDRON NETWORK</span></div>
+            <div class="node-map">
+                <svg viewBox="0 0 200 180" style="max-width:200px;">
+                    <!-- Edges -->
+                    <line x1="100" y1="20" x2="30" y2="130" stroke="rgba(0,255,136,0.3)" stroke-width="1.5"/>
+                    <line x1="100" y1="20" x2="170" y2="130" stroke="rgba(0,255,136,0.3)" stroke-width="1.5"/>
+                    <line x1="100" y1="20" x2="100" y2="160" stroke="rgba(0,255,136,0.3)" stroke-width="1.5"/>
+                    <line x1="30" y1="130" x2="170" y2="130" stroke="rgba(0,255,136,0.3)" stroke-width="1.5"/>
+                    <line x1="30" y1="130" x2="100" y2="160" stroke="rgba(0,255,136,0.3)" stroke-width="1.5"/>
+                    <line x1="170" y1="130" x2="100" y2="160" stroke="rgba(0,255,136,0.3)" stroke-width="1.5"/>
+                    <!-- Nodes -->
+                    <circle cx="100" cy="20" r="16" fill="rgba(255,215,0,0.2)" stroke="#ffd700" stroke-width="2"/>
+                    <text x="100" y="24" text-anchor="middle" fill="#ffd700" font-family="Orbitron" font-size="11" font-weight="900">N</text>
+                    <circle cx="30" cy="130" r="16" fill="rgba(0,204,255,0.2)" stroke="#00ccff" stroke-width="2"/>
+                    <text x="30" y="134" text-anchor="middle" fill="#00ccff" font-family="Orbitron" font-size="11" font-weight="900">D</text>
+                    <circle cx="170" cy="130" r="16" fill="rgba(0,255,136,0.2)" stroke="#00ff88" stroke-width="2"/>
+                    <text x="170" y="134" text-anchor="middle" fill="#00ff88" font-family="Orbitron" font-size="11" font-weight="900">H</text>
+                    <circle cx="100" cy="160" r="16" fill="rgba(255,136,0,0.2)" stroke="#ff8800" stroke-width="2"/>
+                    <text x="100" y="164" text-anchor="middle" fill="#ff8800" font-family="Orbitron" font-size="11" font-weight="900">M</text>
+                </svg>
+                <div style="font-size:0.55rem; color:#666; letter-spacing:1px; margin-top:0.3rem;">
+                    4V &bull; 6E &bull; 4F &bull; &chi;=2<br>
+                    &Sigma;N = 39 &bull; &Sigma;EDGE = 117
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    
+    <!-- PAGE ANALYTICS SECTION -->
+    <div style="padding:1rem 2rem; margin-top:1rem;">
+        <div style="font-family:'Orbitron',monospace; font-size:0.9rem; color:#ffd700; letter-spacing:3px; margin-bottom:1rem; text-shadow:0 0 10px rgba(255,215,0,0.3);">
+            &#9632; PAGE ANALYTICS &bull; TRAFFIC INTELLIGENCE
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-bottom:1rem;">
+            <div style="background:rgba(0,255,136,0.05); border:1px solid rgba(0,255,136,0.2); padding:1rem; text-align:center;">
+                <div style="font-family:'Orbitron',monospace; font-size:0.5rem; color:#666; letter-spacing:2px;">TOTAL VIEWS</div>
+                <div id="analytics-total-views" style="font-size:1.8rem; color:#00ff88; font-family:'Orbitron',monospace; font-weight:900;">---</div>
+            </div>
+            <div style="background:rgba(0,255,136,0.05); border:1px solid rgba(0,255,136,0.2); padding:1rem; text-align:center;">
+                <div style="font-family:'Orbitron',monospace; font-size:0.5rem; color:#666; letter-spacing:2px;">UNIQUE SESSIONS</div>
+                <div id="analytics-sessions" style="font-size:1.8rem; color:#ffd700; font-family:'Orbitron',monospace; font-weight:900;">---</div>
+            </div>
+            <div style="background:rgba(0,255,136,0.05); border:1px solid rgba(0,255,136,0.2); padding:1rem; text-align:center;">
+                <div style="font-family:'Orbitron',monospace; font-size:0.5rem; color:#666; letter-spacing:2px;">PAGES TRACKED</div>
+                <div id="analytics-pages" style="font-size:1.8rem; color:#00aaff; font-family:'Orbitron',monospace; font-weight:900;">---</div>
+            </div>
+        </div>
+        <div style="background:rgba(0,255,136,0.03); border:1px solid rgba(0,255,136,0.15); padding:1rem;">
+            <div style="font-family:'Orbitron',monospace; font-size:0.55rem; color:#666; letter-spacing:2px; margin-bottom:0.8rem;">TOP PAGES BY VIEWS</div>
+            <div id="analytics-top-pages" style="font-family:'Share Tech Mono',monospace; font-size:0.75rem; color:#00ff88;">
+                <div style="color:#444;">Loading analytics data...</div>
+            </div>
+        </div>
+    </div>
+    <script>
+    (function() {
+        // Fetch analytics data via tRPC (admin-only endpoints)
+        async function loadAnalytics() {
+            try {
+                // Fetch totals
+                var totalsRes = await fetch('/api/trpc/analytics.totals?batch=1&input=%7B%220%22%3A%7B%7D%7D', { credentials: 'include' });
+                if (totalsRes.ok) {
+                    var totalsData = await totalsRes.json();
+                    var totals = totalsData[0]?.result?.data;
+                    if (totals) {
+                        document.getElementById('analytics-total-views').textContent = (totals.totalViews || 0).toLocaleString();
+                        document.getElementById('analytics-sessions').textContent = (totals.uniqueSessions || 0).toLocaleString();
+                        document.getElementById('analytics-pages').textContent = (totals.uniquePages || 0).toLocaleString();
+                    }
+                }
+
+                // Fetch top pages
+                var statsRes = await fetch('/api/trpc/analytics.stats?batch=1&input=%7B%220%22%3A%7B%22json%22%3A%7B%22limit%22%3A15%7D%7D%7D', { credentials: 'include' });
+                if (statsRes.ok) {
+                    var statsData = await statsRes.json();
+                    var stats = statsData[0]?.result?.data;
+                    if (stats && stats.length > 0) {
+                        var html = '<table style="width:100%; border-collapse:collapse;">';
+                        html += '<tr style="color:#666; font-size:0.55rem; letter-spacing:2px; font-family:Orbitron,monospace;">';
+                        html += '<td style="padding:0.3rem 0; border-bottom:1px solid rgba(0,255,136,0.1);">PATH</td>';
+                        html += '<td style="padding:0.3rem 0; border-bottom:1px solid rgba(0,255,136,0.1); text-align:right;">VIEWS</td>';
+                        html += '<td style="padding:0.3rem 0; border-bottom:1px solid rgba(0,255,136,0.1); text-align:right;">SESSIONS</td>';
+                        html += '</tr>';
+                        stats.forEach(function(row) {
+                            html += '<tr>';
+                            html += '<td style="padding:0.25rem 0; border-bottom:1px solid rgba(0,255,136,0.05); color:#00ff88;">' + (row.path || '-') + '</td>';
+                            html += '<td style="padding:0.25rem 0; border-bottom:1px solid rgba(0,255,136,0.05); text-align:right; color:#ffd700;">' + (row.views || 0) + '</td>';
+                            html += '<td style="padding:0.25rem 0; border-bottom:1px solid rgba(0,255,136,0.05); text-align:right; color:#00aaff;">' + (row.uniqueSessions || 0) + '</td>';
+                            html += '</tr>';
+                        });
+                        html += '</table>';
+                        document.getElementById('analytics-top-pages').innerHTML = html;
+                    } else {
+                        document.getElementById('analytics-top-pages').innerHTML = '<div style="color:#666;">No page views recorded yet. Analytics will populate as visitors browse the site.</div>';
+                    }
+                } else {
+                    document.getElementById('analytics-top-pages').innerHTML = '<div style="color:#ff3333; font-size:0.65rem;">ADMIN LOGIN REQUIRED &mdash; Analytics data is restricted to admin users.</div>';
+                }
+            } catch(e) {
+                document.getElementById('analytics-top-pages').innerHTML = '<div style="color:#666;">Analytics unavailable</div>';
+            }
+        }
+        loadAnalytics();
+    })();
+    </script>
+
+    <!-- SITE HEALTH MONITOR -->
+    <div style="max-width:900px; margin:2rem auto; padding:1.5rem; background:rgba(0,0,0,0.4); border:1px solid rgba(0,255,136,0.15); border-radius:4px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+            <h3 style="font-family:'Courier New',monospace; font-size:0.85rem; color:#00ff88; letter-spacing:3px;">&#9632; SITE HEALTH MONITOR &bull; LINK &amp; IMAGE INTEGRITY</h3>
+            <button id="health-check-btn" onclick="runHealthCheck()" style="background:rgba(0,255,136,0.15); border:1px solid rgba(0,255,136,0.4); color:#00ff88; padding:0.3rem 0.8rem; font-family:'Courier New',monospace; font-size:0.7rem; cursor:pointer; letter-spacing:1px; border-radius:2px;">RUN CHECK</button>
+        </div>
+        <div id="health-status" style="font-family:'Courier New',monospace; font-size:0.7rem; color:#666; text-align:center; padding:1rem;">Press RUN CHECK to scan all pages for broken links and missing images</div>
+        <div id="health-results" style="display:none;">
+            <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:0.5rem; margin-bottom:1rem;" id="health-summary"></div>
+            <div id="health-details" style="max-height:300px; overflow-y:auto; font-family:'Courier New',monospace; font-size:0.65rem;"></div>
+        </div>
+    </div>
+    <script>
+    // Site health monitor — checks all known pages for broken links and images
+    var SITE_PAGES = [
+        'site.html','start-here.html','page-schema.html','dcsn-dashboard.html','h-block-dashboard.html',
+        'icard-gallery.html','icard-h-tetra.html','icard-khanh-huynh.html','finance-admin.html',
+        'pages/perspective-vol1.html','pages/guide-vol2.html','pages/silk-road.html',
+        'pages/pen-infrastructure.html','pages/writing-systems.html','pages/roads-ships.html',
+        'pages/elemental-clock.html','pages/three-modes.html','pages/management-diagrams.html',
+        'pages/counterparts.html','pages/threats.html','pages/sdgs.html','pages/pillars.html',
+        'pages/mastery.html','pages/narration.html','vault.html',
+        'pages/relay-1-tree.html','pages/relay-2-river.html','pages/relay-3-horse.html',
+        'pages/relay-4-roads.html','pages/relay-5-ships.html','pages/relay-6-rail.html',
+        'pages/relay-7-loom.html','pages/relay-8-auto.html','pages/relay-9-auto.html',
+        'pages/relay-10-auto.html','pages/relay-11-human.html','pages/relay-12-torus.html',
+    ];
+
+    var healthAbort = null;
+
+    async function runHealthCheck() {
+        var btn = document.getElementById('health-check-btn');
+        var status = document.getElementById('health-status');
+        var results = document.getElementById('health-results');
+        var summary = document.getElementById('health-summary');
+        var details = document.getElementById('health-details');
+
+        btn.disabled = true;
+        btn.textContent = 'SCANNING...';
+        btn.style.opacity = '0.5';
+        status.style.display = 'block';
+        results.style.display = 'none';
+
+        var totalPages = SITE_PAGES.length;
+        var reachable = 0;
+        var unreachable = 0;
+        var issues = [];
+        var checked = 0;
+
+        for (var i = 0; i < SITE_PAGES.length; i++) {
+            var page = SITE_PAGES[i];
+            checked++;
+            status.innerHTML = 'Scanning ' + checked + '/' + totalPages + ' &mdash; <span style="color:#00ff88;">' + page + '</span>';
+            try {
+                var resp = await fetch('/' + page, { method: 'HEAD', cache: 'no-cache' });
+                if (resp.ok) {
+                    reachable++;
+                } else {
+                    unreachable++;
+                    issues.push({ page: page, type: 'HTTP ' + resp.status, severity: 'error' });
+                }
+            } catch(e) {
+                unreachable++;
+                issues.push({ page: page, type: 'UNREACHABLE', severity: 'error' });
+            }
+        }
+
+        // Also check React routes
+        var reactRoutes = ['/nodes','/play','/play/founders','/explore/relays','/explore/webs','/explore/scholars','/explore/modes','/explore/threats','/explore/sdgs','/explore/pillars','/explore/mastery','/explore/narration'];
+        for (var j = 0; j < reactRoutes.length; j++) {
+            checked++;
+            status.innerHTML = 'Scanning React routes ' + (j+1) + '/' + reactRoutes.length + ' &mdash; <span style="color:#00ff88;">' + reactRoutes[j] + '</span>';
+            try {
+                var rr = await fetch(reactRoutes[j], { method: 'GET', cache: 'no-cache' });
+                if (rr.ok) { reachable++; } else { unreachable++; issues.push({ page: reactRoutes[j], type: 'HTTP ' + rr.status, severity: 'error' }); }
+            } catch(e) {
+                unreachable++;
+                issues.push({ page: reactRoutes[j], type: 'UNREACHABLE', severity: 'error' });
+            }
+        }
+
+        totalPages += reactRoutes.length;
+        var healthPct = Math.round((reachable / totalPages) * 100);
+        var healthColor = healthPct >= 95 ? '#00ff88' : healthPct >= 80 ? '#ffd700' : '#ff4444';
+
+        status.style.display = 'none';
+        results.style.display = 'block';
+
+        summary.innerHTML = ''
+            + '<div style="text-align:center; padding:0.6rem; background:rgba(0,255,136,0.05); border:1px solid rgba(0,255,136,0.15); border-radius:3px;"><div style="color:' + healthColor + '; font-size:1.5rem; font-weight:bold;">' + healthPct + '%</div><div style="color:#666; font-size:0.55rem; letter-spacing:1px;">HEALTH SCORE</div></div>'
+            + '<div style="text-align:center; padding:0.6rem; background:rgba(0,255,136,0.05); border:1px solid rgba(0,255,136,0.15); border-radius:3px;"><div style="color:#00ff88; font-size:1.5rem; font-weight:bold;">' + totalPages + '</div><div style="color:#666; font-size:0.55rem; letter-spacing:1px;">PAGES SCANNED</div></div>'
+            + '<div style="text-align:center; padding:0.6rem; background:rgba(0,255,136,0.05); border:1px solid rgba(0,255,136,0.15); border-radius:3px;"><div style="color:#00ff88; font-size:1.5rem; font-weight:bold;">' + reachable + '</div><div style="color:#666; font-size:0.55rem; letter-spacing:1px;">REACHABLE</div></div>'
+            + '<div style="text-align:center; padding:0.6rem; background:rgba(0,255,136,0.05); border:1px solid rgba(0,255,136,0.15); border-radius:3px;"><div style="color:' + (unreachable > 0 ? '#ff4444' : '#00ff88') + '; font-size:1.5rem; font-weight:bold;">' + unreachable + '</div><div style="color:#666; font-size:0.55rem; letter-spacing:1px;">ISSUES</div></div>';
+
+        if (issues.length === 0) {
+            details.innerHTML = '<div style="text-align:center; color:#00ff88; padding:1rem;">&#10003; ALL SYSTEMS NOMINAL &mdash; No broken links or unreachable pages detected</div>';
+        } else {
+            var dhtml = '<div style="color:#ff4444; padding:0.3rem 0; border-bottom:1px solid rgba(255,0,0,0.1); margin-bottom:0.3rem; letter-spacing:1px;">ISSUES DETECTED:</div>';
+            issues.forEach(function(iss) {
+                dhtml += '<div style="display:flex; gap:0.5rem; padding:0.2rem 0; border-bottom:1px solid rgba(255,255,255,0.03);">';
+                dhtml += '<span style="color:#ff4444; min-width:80px;">' + iss.type + '</span>';
+                dhtml += '<span style="color:#888;">' + iss.page + '</span>';
+                dhtml += '</div>';
+            });
+            details.innerHTML = dhtml;
+        }
+
+        btn.disabled = false;
+        btn.textContent = 'RUN CHECK';
+        btn.style.opacity = '1';
+    }
+    </script>
+
+    <!-- FOOTER -->
+    <div style="text-align:center; padding:1.5rem; font-size:0.5rem; color:#333; letter-spacing:3px; border-top:1px solid rgba(0,255,136,0.1); margin-top:0.5rem;">
+        DCSN &bull; DIAMOND CLASS SPIDER NETWORK &bull; GRID 4 ACTIVE &bull; f-ORBITAL &bull; SSI 7 (CREATOR)<br>
+        iAAi &bull; INFRASTRUCTURE ACADEMY ARTIFICIAL INTELLIGENCE &bull; BLOCK 352 &bull; ALL SYSTEMS NOMINAL
+    </div>
+    
+    <script src="/js/site-search.js?v=20260311a"></script>
+    <script src="/js/nav-optimise.js?v=20260308a"></script>
+    <div style="text-align:center; padding:1.5rem 1rem; border-top:1px solid rgba(255,215,0,0.2); margin-top:2rem;">
+        <!-- Social Cross-Links -->
+        <div style="margin-top:0.75rem; display:flex; justify-content:center; gap:1.2rem; flex-wrap:wrap; align-items:center;">
+            <a href="https://x.com/dearden_ni37258" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.35rem; color:#ffd700; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="Follow on X">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                X
+            </a>
+            <a href="https://www.linkedin.com/in/nigeldearden" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.35rem; color:#0077B5; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="Connect on LinkedIn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+            </a>
+            <a href="/site.html" style="display:inline-flex; align-items:center; gap:0.35rem; color:#25D366; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="WhatsApp QR on Homepage">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                WhatsApp
+            </a>
+        </div>
+    </div>
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement -->
+
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement (v2 fixed) -->
+<script>
+(function() {
+  try {
+    var sid = sessionStorage.getItem('iaai_sid');
+    if (!sid) {
+      sid = 'ses_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 9);
+      sessionStorage.setItem('iaai_sid', sid);
+    }
+    var data = {
+      path: window.location.pathname + (window.location.hash || ''),
+      pageTitle: document.title || 'Untitled',
+      referrer: document.referrer || '',
+      sessionId: sid
+    };
+    fetch('/api/trpc/analytics.track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ json: data }),
+      credentials: 'include'
+    }).catch(function() {});
+    window.addEventListener('hashchange', function() {
+      var hashData = {
+        path: window.location.pathname + (window.location.hash || ''),
+        pageTitle: document.title || 'Untitled',
+        referrer: window.location.href,
+        sessionId: sid
+      };
+      fetch('/api/trpc/analytics.track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ json: hashData }),
+        credentials: 'include'
+      }).catch(function() {});
+    });
+  } catch(e) {}
+})();
+</script>
+
+    <!-- Mobile table scroll fix -->
+    <script>
+    (function(){
+      if(window.innerWidth > 768) return;
+      document.querySelectorAll('table').forEach(function(t){
+        if(t.parentElement && t.parentElement.classList.contains('table-scroll-wrapper')) return;
+        var w = document.createElement('div');
+        w.className = 'table-scroll-wrapper';
+        t.parentNode.insertBefore(w, t);
+        w.appendChild(t);
+      });
+    })();
+    </script>
+
+
+    <!-- Back-to-Top Button Logic -->
+    <script>
+    (function() {
+        var btn = document.getElementById('back-to-top-btn');
+        if (!btn) return;
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                btn.style.display = 'flex';
+            } else {
+                btn.style.display = 'none';
+            }
+        }, { passive: true });
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    })();
+    </script>
+
+</body>
+</html>

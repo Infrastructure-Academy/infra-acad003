@@ -1,0 +1,127 @@
+{
+  "meta": {
+    "title": "iAAi Beta Test — Unis12",
+    "version": "2.0",
+    "date": "2026-03-06",
+    "author": "Ir. Nigel T. Dearden CEng MICE MHKIE & Manus AI",
+    "rounds_completed": 2
+  },
+  "uv_total": 225,
+  "uv_breakdown": {
+    "wave1_development": 15,
+    "wave2_registered": 21,
+    "wave3_ice_reviews": 20,
+    "wave4_university_benchmark": 120,
+    "wave5_meta_vr": 1,
+    "wave6_rogue_teams": 3,
+    "wave7_round2_focused_audit": 45
+  },
+  "uv_by_type": {
+    "internal": 15,
+    "registered": 21,
+    "dd_testing": 189
+  },
+  "round1": {
+    "consolidated_score": 75,
+    "verdict": "CONDITIONAL GO",
+    "score_threshold": 80,
+    "score_gap": 5,
+    "category_scores": {
+      "content_quality": 89,
+      "pedagogical_innovation": 87,
+      "curriculum_alignment": 86,
+      "global_scalability": 85,
+      "assessment_framework": 83,
+      "technical_infrastructure": 82
+    },
+    "global_average": 84.6,
+    "grading_equivalent": {
+      "uk_classification": "Solid First Class Honours",
+      "us_gpa": "4.0",
+      "qaa_grade": "A+",
+      "ice_verdict": "Endorsed with Conditions"
+    }
+  },
+  "round2": {
+    "type": "Focused Audit — 3 Weakest Categories Only",
+    "data_sets": 45,
+    "reviewers": 15,
+    "categories_tested": 3,
+    "category_scores": {
+      "technical_infrastructure": 73.5,
+      "assessment_framework": 70.1,
+      "global_scalability": 80.3
+    },
+    "three_category_average": 74.6,
+    "grading_equivalent": {
+      "uk_classification": "Upper Second Class (2:1)",
+      "us_gpa": "3.7",
+      "qaa_grade": "A"
+    },
+    "delta_vs_round1": {
+      "technical_infrastructure": -8.5,
+      "assessment_framework": -12.9,
+      "global_scalability": -4.7,
+      "three_category_average": -8.7
+    },
+    "context_note": "Drop expected: Round 2 tested ONLY the 3 weakest categories. Round 1 strong categories (Content 89%, Pedagogy 87%) are excluded from this average.",
+    "top_weaknesses": {
+      "xp_transparency": { "cited_by": "15/15", "pct": 100 },
+      "infrastructure_bottlenecks": { "cited_by": "15/15", "pct": 100 },
+      "broken_links_404": { "cited_by": "14/15", "pct": 93 },
+      "mobile_responsiveness": { "cited_by": "13/15", "pct": 87 },
+      "monetisation_concerns": { "cited_by": "10/15", "pct": 67 },
+      "bilingual_issues": { "cited_by": "8/15", "pct": 53 },
+      "cpd_ice_documentation": { "cited_by": "8/15", "pct": 53 },
+      "cultural_adaptability": { "cited_by": "8/15", "pct": 53 }
+    },
+    "fix_priorities": {
+      "immediate": ["Fix game.html 404 error", "Fix resources.html 404 error", "Full site link audit"],
+      "high": ["Create Assessment Framework page", "Document 4-mode differentiation", "Add CPD/ICE attribute mapping", "Mobile responsiveness audit"],
+      "medium": ["Complete bilingual switching", "Monetisation strategy docs", "Scalability roadmap", "Cultural adaptation framework"],
+      "enhancement": ["Evidence-gathering portal", "Playable relay demo", "Stress testing", "Community management plan"]
+    },
+    "estimated_recovery": {
+      "fix_broken_links": "+8 to +12 points",
+      "add_assessment_docs": "+5 to +8 points",
+      "mobile_fixes": "+3 to +5 points"
+    }
+  },
+  "ice_reviews": {
+    "freeform_explorer": { "r1_score": 76, "r2_tech": 70, "r2_assess": 40, "r2_scale": 60, "verdict": "Conditional GO" },
+    "guided_campaign": { "r1_score": 75, "r2_tech": 85, "r2_assess": 84, "r2_scale": 90, "verdict": "Conditional GO" },
+    "academic_programme": { "r1_score": 73, "r2_tech": 60, "r2_assess": 70, "r2_scale": 80, "verdict": "Conditional GO" }
+  },
+  "university_scores": [
+    { "name": "Imperial College London", "region": "UK", "r1_score": 91, "r2_tech": 80, "r2_assess": 70, "r2_scale": 85 },
+    { "name": "MIT", "region": "USA", "r1_score": 89, "r2_tech": 75, "r2_assess": 80, "r2_scale": 88 },
+    { "name": "ETH Zurich", "region": "Europe", "r1_score": 88, "r2_tech": 65, "r2_assess": 50, "r2_scale": 70 },
+    { "name": "TU Delft", "region": "Europe", "r1_score": 87, "r2_tech": 82, "r2_assess": 83, "r2_scale": 85 },
+    { "name": "Tsinghua University", "region": "Asia-Pacific", "r1_score": 86, "r2_tech": 65, "r2_assess": 50, "r2_scale": 75 },
+    { "name": "National University of Singapore", "region": "Asia-Pacific", "r1_score": 85, "r2_tech": 75, "r2_assess": 80, "r2_scale": 82 },
+    { "name": "IIT Bombay", "region": "Asia-Pacific", "r1_score": 84, "r2_tech": 80, "r2_assess": 70, "r2_scale": 90 },
+    { "name": "University of Tokyo", "region": "Asia-Pacific", "r1_score": 83, "r2_tech": 75, "r2_assess": 80, "r2_scale": 85 },
+    { "name": "Khalifa University", "region": "Middle East", "r1_score": 82, "r2_tech": 75, "r2_assess": 70, "r2_scale": 85 },
+    { "name": "University of Queensland", "region": "Asia-Pacific", "r1_score": 81, "r2_tech": 75, "r2_assess": 80, "r2_scale": 85 },
+    { "name": "KFUPM", "region": "Middle East", "r1_score": 80, "r2_tech": 60, "r2_assess": 70, "r2_scale": 75 },
+    { "name": "Qatar University", "region": "Middle East", "r1_score": 79, "r2_tech": 80, "r2_assess": 75, "r2_scale": 70 }
+  ],
+  "olympiad": {
+    "language_blocks": 8,
+    "racing_nations": 6,
+    "preparing_nations": 26,
+    "expansion_nations": 11,
+    "rogue_classes": 3,
+    "total_entities": 59
+  },
+  "rogue_teams": [
+    { "name": "The Outriders", "icon": "🏴", "type": "Independent solo players" },
+    { "name": "Freeform Engineers", "icon": "🏴‍☠️", "type": "Retired professionals, autodidacts" },
+    { "name": "The Mavericks", "icon": "🦅", "type": "Cross-block Mode 4 candidates" }
+  ],
+  "golden_observations": [
+    { "university": "Tsinghua", "observation": "The platform is more useful for Western students learning about the East than for Eastern students learning about themselves." },
+    { "university": "IIT Bombay", "observation": "India arguably represents a fourth mode — the Syncretic, absorbing and transforming influences from multiple civilisations." },
+    { "university": "MIT", "observation": "MIT students would want to IMPROVE the game mechanics — which is the highest form of engagement." }
+  ]
+}

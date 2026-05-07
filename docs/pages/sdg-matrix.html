@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SDG Alignment Matrix — Infrastructure Academy</title>
+  <link rel="icon" type="image/x-icon" href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/favicon_32_80e4326c.png">
+  <link rel="canonical" href="https://infra-acad-kuqzaex2.manus.space/pages/sdg-matrix.html">
+  <meta name="description" content="SDG Alignment Matrix — How the iAAi 12 civilisational relays map to the 17 UN Sustainable Development Goals. Interactive cross-reference grid.">
+  <style>
+    :root {
+      --navy: #0a1628;
+      --navy-light: #0f1f3a;
+      --gold: #ffd700;
+      --gold-dim: rgba(255,215,0,0.4);
+      --text: #e0e0e0;
+      --text-dim: #999;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:var(--navy); color:var(--text); font-family:Georgia,'Times New Roman',serif; min-height:100vh; }
+
+    .page-header { text-align:center; padding:40px 20px 24px; border-bottom:2px solid var(--gold); }
+    .page-header h1 { color:var(--gold); font-size:2rem; letter-spacing:2px; margin-bottom:6px; }
+    .page-header .subtitle { color:var(--text-dim); font-size:0.95rem; font-style:italic; }
+    .page-header .domain { color:var(--gold); font-size:0.8rem; margin-top:10px; opacity:0.7; }
+
+    .back-nav { max-width:1400px; margin:20px auto 0; padding:0 20px; }
+    .back-nav a { color:var(--gold); text-decoration:none; font-size:0.85rem; }
+    .back-nav a:hover { text-decoration:underline; }
+
+    .content { max-width:1400px; margin:0 auto; padding:20px 20px 50px; }
+
+    .legend { display:flex; flex-wrap:wrap; gap:16px; margin:20px 0; align-items:center; }
+    .legend-item { display:flex; align-items:center; gap:6px; font-size:0.8rem; color:var(--text-dim); }
+    .legend-dot { width:16px; height:16px; border-radius:3px; }
+    .legend-dot.primary { background:#ffd700; }
+    .legend-dot.secondary { background:rgba(255,215,0,0.35); }
+    .legend-dot.empty { background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); }
+
+    /* Matrix container */
+    .matrix-wrap { overflow-x:auto; margin:20px 0; }
+    .matrix { border-collapse:collapse; width:100%; min-width:900px; }
+    .matrix th, .matrix td { border:1px solid rgba(255,255,255,0.08); text-align:center; font-size:0.7rem; }
+    .matrix th { padding:8px 4px; background:var(--navy-light); }
+    .matrix th.sdg-header { writing-mode:vertical-rl; text-orientation:mixed; min-width:36px; max-width:42px; height:140px; font-weight:normal; letter-spacing:0.5px; cursor:pointer; transition:background 0.15s; }
+    .matrix th.sdg-header:hover { background:rgba(255,215,0,0.08); }
+    .matrix th.relay-header { text-align:left; padding:8px 10px; min-width:120px; font-weight:bold; color:var(--gold); cursor:pointer; transition:background 0.15s; }
+    .matrix th.relay-header:hover { background:rgba(255,215,0,0.08); }
+    .matrix th.corner { background:var(--navy); min-width:120px; }
+
+    .matrix td { width:36px; height:36px; padding:0; cursor:pointer; transition:all 0.15s; }
+    .matrix td.primary { background:rgba(255,215,0,0.7); }
+    .matrix td.primary:hover { background:#ffd700; box-shadow:0 0 8px rgba(255,215,0,0.5); }
+    .matrix td.secondary { background:rgba(255,215,0,0.2); }
+    .matrix td.secondary:hover { background:rgba(255,215,0,0.4); }
+    .matrix td.empty { background:rgba(255,255,255,0.02); }
+    .matrix td.empty:hover { background:rgba(255,255,255,0.06); }
+
+    /* Tooltip */
+    .tooltip { display:none; position:fixed; background:var(--navy-light); border:1px solid var(--gold); padding:14px 18px; max-width:320px; z-index:100; pointer-events:none; }
+    .tooltip.active { display:block; }
+    .tooltip h4 { color:var(--gold); font-size:0.9rem; margin-bottom:6px; }
+    .tooltip p { color:var(--text); font-size:0.8rem; line-height:1.5; }
+    .tooltip .link-hint { color:var(--text-dim); font-size:0.7rem; margin-top:6px; font-style:italic; }
+
+    /* Stats */
+    .stats-row { display:flex; gap:16px; flex-wrap:wrap; margin:24px 0; }
+    .stat-box { background:var(--navy-light); border:1px solid rgba(255,215,0,0.15); padding:14px 20px; text-align:center; flex:1; min-width:140px; }
+    .stat-box .num { color:var(--gold); font-size:1.6rem; font-weight:bold; }
+    .stat-box .label { color:var(--text-dim); font-size:0.7rem; text-transform:uppercase; letter-spacing:1px; margin-top:4px; }
+
+    /* SDG color bar */
+    .sdg-colors { display:flex; margin:16px 0; height:6px; border-radius:3px; overflow:hidden; }
+    .sdg-colors span { flex:1; }
+
+    .section { margin:30px 0; }
+    .section h2 { color:var(--gold); font-size:1.3rem; margin-bottom:12px; border-bottom:1px solid rgba(255,215,0,0.2); padding-bottom:6px; }
+    .section p { font-size:0.9rem; line-height:1.6; margin-bottom:12px; }
+
+    .cross-links { display:flex; flex-wrap:wrap; gap:10px; margin:20px 0; }
+    .cross-link { display:inline-flex; align-items:center; gap:6px; background:var(--navy-light); border:1px solid rgba(255,215,0,0.2); padding:8px 14px; text-decoration:none; color:var(--gold); font-size:0.8rem; transition:all 0.2s; }
+    .cross-link:hover { border-color:var(--gold); }
+
+    .page-footer { text-align:center; padding:20px; border-top:1px solid rgba(255,215,0,0.15); color:var(--text-dim); font-size:0.8rem; max-width:1400px; margin:0 auto; }
+    .page-footer a { color:var(--gold); text-decoration:none; }
+
+    /* Relay Detail Panel */
+    .relay-panel-overlay { display:none; position:fixed; top:0; left:0; right:0; bottom:0; background:rgba(0,0,0,0.7); z-index:200; }
+    .relay-panel-overlay.active { display:flex; align-items:center; justify-content:center; }
+    .relay-panel { background:var(--navy); border:2px solid var(--gold); max-width:680px; width:95%; max-height:85vh; overflow-y:auto; padding:0; position:relative; }
+    .relay-panel-header { background:rgba(255,215,0,0.08); padding:20px 24px; border-bottom:1px solid rgba(255,215,0,0.2); display:flex; justify-content:space-between; align-items:flex-start; }
+    .relay-panel-header h2 { color:var(--gold); font-size:1.4rem; margin:0; }
+    .relay-panel-header .rp-sub { color:var(--text-dim); font-size:0.85rem; margin-top:4px; }
+    .relay-panel-close { background:none; border:1px solid rgba(255,215,0,0.3); color:var(--gold); font-size:1.2rem; cursor:pointer; width:32px; height:32px; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+    .relay-panel-close:hover { background:rgba(255,215,0,0.1); }
+    .relay-panel-body { padding:20px 24px; }
+    .rp-section { margin-bottom:20px; }
+    .rp-section h3 { color:var(--gold); font-size:1rem; margin-bottom:8px; border-bottom:1px solid rgba(255,215,0,0.1); padding-bottom:4px; }
+    .rp-section p { font-size:0.85rem; line-height:1.6; color:var(--text); }
+    .rp-sdg-chips { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
+    .rp-sdg-chip { font-size:0.7rem; padding:3px 8px; border-radius:3px; color:#fff; font-weight:bold; }
+    .rp-sdg-chip.primary { opacity:1; }
+    .rp-sdg-chip.secondary { opacity:0.55; }
+    .rp-institutions { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
+    .rp-inst { font-size:0.75rem; padding:4px 10px; background:var(--navy-light); border:1px solid rgba(255,215,0,0.15); color:var(--text); }
+    .rp-icards { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
+    .rp-icard { font-size:0.75rem; padding:4px 10px; background:rgba(255,215,0,0.06); border:1px solid rgba(255,215,0,0.2); color:var(--gold); }
+
+    @media (max-width:768px) {
+      .matrix th.sdg-header { height:100px; font-size:0.6rem; }
+      .stats-row { flex-direction:column; }
+      .relay-panel { max-height:90vh; }
+    }
+  </style>
+
+<style id="mobile-quicknav-styles">
+/* ===== MOBILE QUICK-NAV BAR ===== */
+.mobile-quicknav {
+    display: none;
+    width: 100%;
+    background: linear-gradient(180deg, #0d1f3c 0%, #0a1628 100%);
+    border-bottom: 1px solid rgba(255,215,0,0.25);
+    padding: 6px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 6px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+.mobile-quicknav::-webkit-scrollbar { display: none; }
+.mobile-quicknav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 10px;
+    background: rgba(255,215,0,0.08);
+    border: 1px solid rgba(255,215,0,0.35);
+    border-radius: 16px;
+    color: #ffd700;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+.mobile-quicknav a:active {
+    background: rgba(255,215,0,0.25);
+    transform: scale(0.95);
+}
+.mobile-quicknav a.mqn-home {
+    background: #ffd700;
+    color: #0a1628;
+    border-color: #ffd700;
+}
+@media(max-width:768px) {
+    .mobile-quicknav { display: flex; }
+}
+@media(min-width:769px) {
+    .mobile-quicknav { display: none !important; }
+}
+
+/* ===== BACK-TO-TOP FLOATING BUTTON ===== */
+#back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 16px;
+    z-index: 9999;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(10,22,40,0.92);
+    border: 1.5px solid rgba(255,215,0,0.6);
+    color: #ffd700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    transition: all 0.2s;
+}
+#back-to-top-btn:active {
+    transform: scale(0.9);
+    background: rgba(255,215,0,0.2);
+}
+</style>
+
+</head>
+<body>
+    <!-- iAAi Network Bar — NAV-001 · Cross-Site Navigation -->
+    <!-- ═══ iAAi NETWORK BAR ═══ -->
+    <div id="iaai-network-bar" style="display:flex;align-items:center;justify-content:space-around;width:100%;height:36px;background:#0a1628;position:sticky;top:0;z-index:200001;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">
+      <a href="https://www.infrastructure-academy.com" style="text-decoration:none;color:#fff;font-weight:700;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid #DC2626;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#DC2626"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg> ACADEMY</a>
+      <a href="https://realityeng-epdhlkrn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> QUEST</a>
+      <a href="#" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;opacity:0.5;pointer-events:none;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A843"><path d="M6 2v6l-2 2v4l2 2v6h4v-6l2-2v-4L10 8V2H6zm12 0v6l-2 2v4l2 2v6h-4v-6l-2-2v-4l2-2V2h4z"/></svg> XCHANGE</a>
+      <a href="https://nigelmemorial-ucmtq9dn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#16A34A"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg> MEMORIAL</a>
+      <a href="https://xgrowthtrk-2a93yo5z.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#06B6D4"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/></svg> NEWS</a>
+    </div>
+
+
+<!-- INJECTED COMPACT HEADER BAR -->
+<style>
+.compact-header-bar { position:sticky; top:0; z-index:9999; background:#0a1628; border-bottom:2px solid #ffd700; padding:8px 16px; display:flex; align-items:center; justify-content:space-between; gap:12px; font-family:Georgia,'Times New Roman',serif; }
+.compact-header-bar .chb-brand { display:flex; align-items:center; gap:10px; text-decoration:none; color:#ffd700; }
+.compact-header-bar .chb-brand img { width:28px; height:28px; border-radius:4px; }
+.compact-header-bar .chb-title { font-size:0.85rem; font-weight:bold; letter-spacing:1.5px; color:#ffd700; }
+.compact-header-bar .chb-nav { display:flex; align-items:center; gap:12px; }
+.compact-header-bar .chb-nav a { color:#e2e8f0; text-decoration:none; font-size:0.75rem; letter-spacing:1px; padding:4px 10px; border:1px solid rgba(255,215,0,0.2); border-radius:3px; transition:all 0.2s; }
+.compact-header-bar .chb-nav a:hover { background:rgba(255,215,0,0.1); border-color:#ffd700; color:#ffd700; }
+.compact-header-bar .chb-nav a.chb-home { background:rgba(255,215,0,0.15); border-color:#ffd700; color:#ffd700; font-weight:bold; }
+@media(max-width:600px) { .compact-header-bar .chb-nav a:not(.chb-home) { display:none; } .compact-header-bar .chb-title { font-size:0.7rem; } }
+</style>
+
+<div class="compact-header-bar">
+    <a href="/site.html" class="chb-brand">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iAAi-emblem_e0c9c2c1.png" alt="iAAi">
+        <span class="chb-title">INFRASTRUCTURE ACADEMY</span>
+    </a>
+    <div class="chb-nav">
+        <a href="/site.html" class="chb-home">HOME</a>
+        <a href="/pages/framework.html">FRAMEWORK</a>
+        <a href="/library.html">DOCUMENTS</a>
+        <a href="/play">PLAY</a>
+    </div>
+</div>
+    <!-- ===== MOBILE QUICK-NAV BAR — always visible on mobile ===== -->
+    <div class="mobile-quicknav" id="mobile-quicknav">
+        <a href="/site.html" class="mqn-home">&#127968; HOME</a>
+        <a href="/pages/start-here.html">&#128218; START</a>
+        <a href="/volumes/volume1/index.html">&#128214; READ</a>
+        <a href="/pages/framework.html">&#128736; FRAMEWORK</a>
+        <a href="/play">&#127918; PLAY</a>
+        <a href="/pages/movies.html">&#127916; MOVIES</a>
+        <a href="/pages/resources.html">&#128194; RESOURCES</a>
+        <a href="/press.html">&#128240; PRESS</a>
+    </div>
+
+    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <button id="back-to-top-btn" aria-label="Back to top" title="Back to top">&#9650;</button>
+
+<!-- END COMPACT HEADER BAR -->
+
+
+
+  <div class="page-header">
+    <h1>SDG ALIGNMENT MATRIX</h1>
+    <p class="subtitle">17 UN Sustainable Development Goals &times; 12 Civilisational Relays</p>
+    <p class="domain">www.infrastructure-academy.com/pages/sdg-matrix.html</p>
+  </div>
+
+  <div class="back-nav">
+    <a href="/site.html">&larr; Back to Home</a> &nbsp;|&nbsp;
+    <a href="/pages/water-power-nexus.html">FEW Nexus</a> &nbsp;|&nbsp;
+    <a href="/institutions.html">Institutions Map</a>
+  </div>
+
+  <div class="content">
+
+    <!-- SDG Color Bar -->
+    <div class="sdg-colors">
+      <span style="background:#E5243B"></span>
+      <span style="background:#DDA63A"></span>
+      <span style="background:#4C9F38"></span>
+      <span style="background:#C5192D"></span>
+      <span style="background:#FF3A21"></span>
+      <span style="background:#26BDE2"></span>
+      <span style="background:#FCC30B"></span>
+      <span style="background:#A21942"></span>
+      <span style="background:#FD6925"></span>
+      <span style="background:#DD1367"></span>
+      <span style="background:#FD9D24"></span>
+      <span style="background:#BF8B2E"></span>
+      <span style="background:#3F7E44"></span>
+      <span style="background:#0A97D9"></span>
+      <span style="background:#56C02B"></span>
+      <span style="background:#00689D"></span>
+      <span style="background:#19486A"></span>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-box"><div class="num">17</div><div class="label">UN SDGs</div></div>
+      <div class="stat-box"><div class="num">12</div><div class="label">Relays</div></div>
+      <div class="stat-box"><div class="num" id="primaryCount">0</div><div class="label">Primary Links</div></div>
+      <div class="stat-box"><div class="num" id="secondaryCount">0</div><div class="label">Secondary Links</div></div>
+      <div class="stat-box"><div class="num" id="coveragePercent">0%</div><div class="label">SDG Coverage</div></div>
+    </div>
+
+    <div class="legend">
+      <div class="legend-item"><div class="legend-dot primary"></div> Primary alignment (direct)</div>
+      <div class="legend-item"><div class="legend-dot secondary"></div> Secondary alignment (indirect)</div>
+      <div class="legend-item"><div class="legend-dot empty"></div> No significant link</div>
+      <span style="color:var(--text-dim); font-size:0.75rem; margin-left:auto;">Hover cells for details &bull; Click headers to highlight</span>
+    </div>
+
+    <div class="matrix-wrap">
+      <table class="matrix" id="sdgMatrix"></table>
+    </div>
+
+    <div class="section">
+      <h2>How to Read the Matrix</h2>
+      <p><strong>Rows</strong> represent the 12 civilisational relays of the iAAi framework, from Relay 1 (Fire) through Relay 12 (Torus). <strong>Columns</strong> represent the 17 UN Sustainable Development Goals. Each cell indicates whether a relay has a <strong>primary</strong> (direct, operational) or <strong>secondary</strong> (indirect, enabling) relationship with that SDG.</p>
+      <p>The matrix reveals that infrastructure is not a single-SDG concern. Every relay touches multiple goals, and every goal requires multiple infrastructure systems. This cross-cutting nature is why the iAAi framework treats infrastructure as a unified field rather than isolated disciplines.</p>
+    </div>
+
+    <div class="section">
+      <h2>Key Nexus Points</h2>
+      <p>The densest cluster appears around SDGs 6, 7, 9, and 11 &mdash; Clean Water, Affordable Energy, Industry &amp; Innovation, and Sustainable Cities. These four goals collectively depend on 10 of the 12 relays, confirming that urban infrastructure is the primary delivery mechanism for sustainable development.</p>
+      <p>The <strong>Food-Energy-Water (FEW) Nexus</strong> (SDGs 2+6+7) is visible as a horizontal band across Relays 2, 3, and 8 &mdash; Tree, River, and Engine. See the <a href="/pages/water-power-nexus.html" style="color:var(--gold);">dedicated FEW Nexus case study</a> for the full analysis.</p>
+    </div>
+
+    <div class="section">
+      <h2>Related Pages</h2>
+      <div class="cross-links">
+        <a class="cross-link" href="/pages/water-power-nexus.html">&#127754; FEW Nexus</a>
+        <a class="cross-link" href="/institutions.html">&#127759; Institutions Map</a>
+        <a class="cross-link" href="/icard-gallery.html">&#127924; iCard Gallery</a>
+        <a class="cross-link" href="/pages/block-summary.html">&#128220; Block Summary</a>
+        <a class="cross-link" href="https://sdgs.un.org/goals" target="_blank" rel="noopener">&#127760; UN SDG Portal</a>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="page-footer">
+    <p>N&#8321; (ALAN/Nigel) + N&#8322; (DAVID/Manus) | <a href="/site.html">Infrastructure Academy</a> | SDG Alignment &mdash; Block 392</p>
+    <p style="margin-top:6px; font-size:0.75rem;">SDG framework: United Nations (2015). Relay-SDG mapping: iAAi analytical framework (2026).</p>
+  </div>
+
+  <!-- Relay Detail Panel -->
+  <div class="relay-panel-overlay" id="relayPanelOverlay">
+    <div class="relay-panel">
+      <div class="relay-panel-header">
+        <div>
+          <h2 id="rpTitle"></h2>
+          <div class="rp-sub" id="rpSub"></div>
+        </div>
+        <button class="relay-panel-close" id="rpClose">&times;</button>
+      </div>
+      <div class="relay-panel-body">
+        <div class="rp-section">
+          <h3>Chapter Summary</h3>
+          <p id="rpSummary"></p>
+        </div>
+        <div class="rp-section">
+          <h3>SDG Alignments</h3>
+          <div class="rp-sdg-chips" id="rpSdgs"></div>
+        </div>
+        <div class="rp-section">
+          <h3>Key Institutions</h3>
+          <div class="rp-institutions" id="rpInst"></div>
+        </div>
+        <div class="rp-section">
+          <h3>Related iCards</h3>
+          <div class="rp-icards" id="rpCards"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tooltip -->
+  <div class="tooltip" id="tooltip">
+    <h4 id="ttTitle"></h4>
+    <p id="ttDesc"></p>
+    <div class="link-hint" id="ttHint"></div>
+  </div>
+
+  <script>
+    // SDG definitions with official UN colors
+    const sdgs = [
+      { num:1,  name:"No Poverty",              color:"#E5243B" },
+      { num:2,  name:"Zero Hunger",             color:"#DDA63A" },
+      { num:3,  name:"Good Health",             color:"#4C9F38" },
+      { num:4,  name:"Quality Education",       color:"#C5192D" },
+      { num:5,  name:"Gender Equality",         color:"#FF3A21" },
+      { num:6,  name:"Clean Water",             color:"#26BDE2" },
+      { num:7,  name:"Affordable Energy",       color:"#FCC30B" },
+      { num:8,  name:"Decent Work",             color:"#A21942" },
+      { num:9,  name:"Industry & Innovation",   color:"#FD6925" },
+      { num:10, name:"Reduced Inequalities",    color:"#DD1367" },
+      { num:11, name:"Sustainable Cities",       color:"#FD9D24" },
+      { num:12, name:"Responsible Consumption",  color:"#BF8B2E" },
+      { num:13, name:"Climate Action",           color:"#3F7E44" },
+      { num:14, name:"Life Below Water",         color:"#0A97D9" },
+      { num:15, name:"Life on Land",             color:"#56C02B" },
+      { num:16, name:"Peace & Justice",          color:"#00689D" },
+      { num:17, name:"Partnerships",             color:"#19486A" }
+    ];
+
+    // 12 Relays
+    const relays = [
+      { num:1,  name:"Fire",   desc:"Energy harnessing, combustion, warmth" },
+      { num:2,  name:"Tree",   desc:"Agriculture, food systems, forestry" },
+      { num:3,  name:"River",  desc:"Water systems, irrigation, sanitation" },
+      { num:4,  name:"Stone",  desc:"Construction, shelter, materials" },
+      { num:5,  name:"Road",   desc:"Transport, trade routes, connectivity" },
+      { num:6,  name:"Metal",  desc:"Metallurgy, tools, industrialisation" },
+      { num:7,  name:"Wheel",  desc:"Mechanical advantage, vehicles, logistics" },
+      { num:8,  name:"Engine", desc:"Power generation, thermodynamics" },
+      { num:9,  name:"Orbit",  desc:"Space, satellites, global systems" },
+      { num:10, name:"Web",    desc:"Networks, internet, communication" },
+      { num:11, name:"Code",   desc:"Computing, AI, digital infrastructure" },
+      { num:12, name:"Torus",  desc:"Unified field, circular systems, synthesis" }
+    ];
+
+    // Alignment matrix: [relay][sdg] = 'P' (primary), 'S' (secondary), '' (none)
+    // Based on iAAi analytical framework mapping
+    const matrix = [
+      // SDG:  1    2    3    4    5    6    7    8    9   10   11   12   13   14   15   16   17
+      /*Fire*/  ['S', 'S', 'S', '',  '',  '',  'P', 'S', 'P', '',  'S', 'S', 'P', '',  '',  '',  'S'],
+      /*Tree*/  ['P', 'P', 'P', 'S', 'S', 'P', 'S', 'P', 'S', 'S', 'S', 'P', 'P', '',  'P', '',  'S'],
+      /*River*/ ['S', 'P', 'P', '',  'S', 'P', 'S', 'S', 'P', '',  'P', 'S', 'S', 'P', 'P', '',  'S'],
+      /*Stone*/ ['P', '',  'S', 'S', '',  'S', 'S', 'P', 'P', '',  'P', 'P', 'S', '',  'S', '',  'S'],
+      /*Road*/  ['S', 'S', 'S', 'S', '',  '',  'S', 'P', 'P', 'S', 'P', 'S', 'S', '',  '',  'S', 'P'],
+      /*Metal*/ ['S', '',  'S', 'S', '',  '',  'S', 'P', 'P', '',  'S', 'P', 'S', '',  '',  '',  'S'],
+      /*Wheel*/ ['S', 'S', '',  'S', '',  '',  'S', 'P', 'P', 'S', 'P', 'S', 'S', '',  '',  '',  'P'],
+      /*Engine*/['S', 'S', 'S', 'S', '',  'S', 'P', 'P', 'P', '',  'P', 'S', 'P', 'S', '',  '',  'S'],
+      /*Orbit*/ ['',  'S', 'S', 'P', '',  'S', 'S', 'S', 'P', '',  'S', 'S', 'P', 'P', 'P', 'S', 'P'],
+      /*Web*/   ['S', '',  'P', 'P', 'S', '',  'S', 'P', 'P', 'P', 'P', 'S', 'S', '',  '',  'S', 'P'],
+      /*Code*/  ['S', 'S', 'P', 'P', 'S', 'S', 'S', 'P', 'P', 'S', 'P', 'S', 'S', 'S', 'S', 'S', 'P'],
+      /*Torus*/ ['P', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P', 'P']
+    ];
+
+    // Descriptions for primary alignments
+    const descriptions = {
+      "1-7":  "Fire is the original energy source. Relay 1 directly enables SDG 7 through combustion-based power.",
+      "1-9":  "Fire enabled smelting, ceramics, and the first industrial processes.",
+      "1-13": "Combustion is the primary driver of CO2 emissions and climate change.",
+      "2-1":  "Agriculture is the foundation of food security and poverty reduction.",
+      "2-2":  "Tree/Agriculture is the direct mechanism for achieving Zero Hunger.",
+      "2-3":  "Agricultural communities developed the first public health systems.",
+      "2-6":  "Irrigation is the largest consumer of freshwater globally (70%).",
+      "2-8":  "Agriculture remains the largest employer in developing economies.",
+      "2-12": "Food systems account for ~30% of global greenhouse gas emissions.",
+      "2-13": "Land use change for agriculture is a major climate driver.",
+      "2-15": "Agriculture and forestry directly shape terrestrial ecosystems.",
+      "3-2":  "Water systems enable food production through irrigation.",
+      "3-3":  "Clean water and sanitation are fundamental to public health.",
+      "3-6":  "Water treatment and distribution are core water infrastructure.",
+      "3-9":  "Water engineering drives innovation in filtration and desalination.",
+      "3-11": "Urban water systems are essential for sustainable cities.",
+      "3-14": "Freshwater systems connect directly to marine ecosystems.",
+      "3-15": "River systems are the arteries of terrestrial biodiversity.",
+      "4-1":  "Shelter and construction directly address poverty through housing.",
+      "4-8":  "Construction is one of the largest employment sectors globally.",
+      "4-9":  "Building materials science drives industrial innovation.",
+      "4-11": "Construction creates the physical fabric of sustainable cities.",
+      "4-12": "Material selection and waste management in construction.",
+      "5-8":  "Transport infrastructure enables economic participation.",
+      "5-9":  "Road networks are the backbone of industrial logistics.",
+      "5-11": "Transport connectivity defines urban form and accessibility.",
+      "6-8":  "Metallurgy and manufacturing are major employment sectors.",
+      "6-9":  "Metal processing is foundational to industrial innovation.",
+      "6-12": "Mining and smelting have major resource consumption impacts.",
+      "7-8":  "Mechanical systems enable productive employment.",
+      "7-9":  "The wheel enabled logistics, manufacturing, and trade.",
+      "7-11": "Vehicle systems shape urban planning and city design.",
+      "8-7":  "Power generation is the direct mechanism for energy access.",
+      "8-8":  "Energy sector is a major employer and economic driver.",
+      "8-9":  "Engine technology drives industrial innovation.",
+      "8-11": "Power infrastructure is essential for urban sustainability.",
+      "8-13": "Fossil fuel engines are primary contributors to climate change.",
+      "9-4":  "Satellites enable global education through communications.",
+      "9-9":  "Space technology represents the frontier of innovation.",
+      "9-13": "Earth observation satellites monitor climate change.",
+      "9-14": "Ocean monitoring satellites track marine ecosystems.",
+      "9-15": "Remote sensing monitors deforestation and land use.",
+      "10-3": "Telemedicine and digital health through networks.",
+      "10-4": "The internet enables universal access to education.",
+      "10-8": "Digital economy creates new employment pathways.",
+      "10-9": "The web is the defining innovation platform of our era.",
+      "10-10":"Digital inclusion reduces inequalities.",
+      "10-11":"Smart city networks enable sustainable urban management.",
+      "11-3": "AI-powered diagnostics and health systems.",
+      "11-4": "AI and computing transform education delivery.",
+      "11-8": "Tech sector is the fastest-growing employment domain.",
+      "11-9": "Computing is the engine of modern innovation.",
+      "11-11":"Smart infrastructure enables sustainable cities.",
+      "12-1": "Torus represents the unified approach to ending poverty.",
+      "12-2": "Circular food systems within the torus framework.",
+      "12-3": "Holistic health through integrated infrastructure.",
+      "12-4": "Universal education through unified knowledge systems.",
+      "12-5": "Equality through systemic infrastructure design.",
+      "12-6": "Circular water systems in the torus model.",
+      "12-7": "Renewable energy loops in the torus framework.",
+      "12-8": "Sustainable employment through circular economy.",
+      "12-9": "Innovation through systemic integration.",
+      "12-10":"Reducing inequalities through unified infrastructure.",
+      "12-11":"The sustainable city as a torus system.",
+      "12-12":"Circular consumption as the torus principle.",
+      "12-13":"Climate action through systemic infrastructure.",
+      "12-14":"Ocean stewardship in the unified field.",
+      "12-15":"Terrestrial stewardship in the unified field.",
+      "12-16":"Peace through infrastructure equity.",
+      "12-17":"The torus IS the ultimate partnership model."
+    };
+
+    // Build the table
+    const table = document.getElementById('sdgMatrix');
+    let primaryCount = 0, secondaryCount = 0;
+    const sdgsWithLinks = new Set();
+
+    // Header row
+    let headerRow = '<tr><th class="corner">Relay \\ SDG</th>';
+    sdgs.forEach(s => {
+      headerRow += `<th class="sdg-header" data-sdg="${s.num}" style="color:${s.color}; border-bottom:3px solid ${s.color};" title="SDG ${s.num}: ${s.name}">SDG ${s.num}: ${s.name}</th>`;
+    });
+    headerRow += '</tr>';
+    table.innerHTML = headerRow;
+
+    // Data rows
+    relays.forEach((relay, ri) => {
+      let row = `<tr><th class="relay-header" data-relay="${ri}" title="${relay.desc}">R${relay.num}: ${relay.name}</th>`;
+      sdgs.forEach((sdg, si) => {
+        const val = matrix[ri][si];
+        const cls = val === 'P' ? 'primary' : val === 'S' ? 'secondary' : 'empty';
+        const key = `${ri+1}-${si+1}`;
+        const desc = descriptions[key] || '';
+        if (val === 'P') { primaryCount++; sdgsWithLinks.add(si); }
+        if (val === 'S') { secondaryCount++; sdgsWithLinks.add(si); }
+        row += `<td class="${cls}" data-relay="${ri}" data-sdg="${si}" data-key="${key}" data-desc="${desc}" data-level="${val}"></td>`;
+      });
+      row += '</tr>';
+      table.innerHTML += row;
+    });
+
+    document.getElementById('primaryCount').textContent = primaryCount;
+    document.getElementById('secondaryCount').textContent = secondaryCount;
+    document.getElementById('coveragePercent').textContent = Math.round((sdgsWithLinks.size / 17) * 100) + '%';
+
+    // Tooltip
+    const tooltip = document.getElementById('tooltip');
+    const ttTitle = document.getElementById('ttTitle');
+    const ttDesc = document.getElementById('ttDesc');
+    const ttHint = document.getElementById('ttHint');
+
+    table.addEventListener('mouseover', e => {
+      const td = e.target.closest('td');
+      if (!td || !td.dataset.relay) return;
+      const ri = parseInt(td.dataset.relay);
+      const si = parseInt(td.dataset.sdg);
+      const level = td.dataset.level;
+      const desc = td.dataset.desc;
+
+      ttTitle.textContent = `R${relays[ri].num} ${relays[ri].name} × SDG ${sdgs[si].num} ${sdgs[si].name}`;
+      ttDesc.textContent = desc || (level === 'P' ? 'Primary alignment' : level === 'S' ? 'Secondary alignment' : 'No significant link identified');
+      ttHint.textContent = level ? `${level === 'P' ? 'Primary' : 'Secondary'} alignment` : '';
+
+      tooltip.classList.add('active');
+      const rect = td.getBoundingClientRect();
+      tooltip.style.left = Math.min(rect.right + 10, window.innerWidth - 340) + 'px';
+      tooltip.style.top = Math.max(rect.top - 20, 10) + 'px';
+    });
+
+    table.addEventListener('mouseout', e => {
+      if (!e.target.closest('td')) return;
+      tooltip.classList.remove('active');
+    });
+
+    // Relay detail data
+    const relayDetails = [
+      { summary:"Fire is humanity's first infrastructure relay. The controlled use of combustion enabled cooking (caloric surplus), warmth (habitat expansion), and smelting (material transformation). Fire is the original energy technology and the precursor to every power system that followed.", institutions:["IEA","IRENA","World Energy Council","OPEC"], icards:["Day 1 — The Spark","Block 385 Verification"] },
+      { summary:"The Tree relay represents agriculture, forestry, and the biological systems that feed civilisation. From the first cultivated grain to modern agroforestry, this relay connects food security to land management and the carbon cycle.", institutions:["FAO","CGIAR","World Food Programme","IFAD"], icards:["UN SDG Water-Power Nexus"] },
+      { summary:"River systems are the arteries of civilisation — irrigation, sanitation, hydropower, and navigation. Every major city was founded on a river. Water infrastructure remains the most critical and underinvested system globally.", institutions:["UNESCO-IHP","World Water Council","UNEP","Uticome"], icards:["Richard Menenzes — Observer","UN SDG Water-Power Nexus"] },
+      { summary:"Stone represents construction, shelter, and the built environment. From megalithic structures to reinforced concrete, this relay is the physical fabric of civilisation — housing, fortification, and monumental architecture.", institutions:["FIDIC","ICE","World Green Building Council"], icards:["Craig Stephen — Observer"] },
+      { summary:"Roads are the connective tissue of empire and commerce. From the Persian Royal Road to the modern interstate, transport infrastructure enables trade, communication, and the movement of people and ideas.", institutions:["IRF","World Bank Transport","ITF-OECD"], icards:["Reece Wemyss — Observer"] },
+      { summary:"Metallurgy transformed tools, weapons, and machines. The Bronze Age, Iron Age, and Steel Age each represent quantum leaps in human capability. Metal is the material substrate of industrialisation.", institutions:["World Steel Association","ICMM","UNIDO"], icards:[] },
+      { summary:"The wheel enabled mechanical advantage — vehicles, gears, pulleys, turbines. Combined with the road, it created logistics. Combined with the engine, it created modern transport.", institutions:["IMO","ICAO","UIC","IRU"], icards:[] },
+      { summary:"The engine relay covers thermodynamics, power generation, and the conversion of fuel to work. Steam, internal combustion, and turbines powered the Industrial Revolution and continue to power civilisation.", institutions:["IEA","World Energy Council","IAEA"], icards:["Block 391 Completion Summary"] },
+      { summary:"Orbit represents the space age — satellites, GPS, Earth observation, and global communications. Space infrastructure enables weather forecasting, disaster monitoring, and the global coordination layer.", institutions:["ESA","NASA","UNOOSA","ITU"], icards:["Day 100 Milestone"] },
+      { summary:"The Web relay covers networks, the internet, and digital communications. From the telegraph to fibre optics to 5G, this relay enables the information layer that coordinates all other infrastructure.", institutions:["ITU","ICANN","IEEE","W3C"], icards:[] },
+      { summary:"Code represents computing, AI, and digital infrastructure. Software is eating the world — from SCADA systems controlling power grids to AI optimising logistics. Code is the newest relay but already the most pervasive.", institutions:["IEEE","ACM","ISO/IEC JTC 1","Partnership on AI"], icards:["4 Laws of iAAi","TP-017 Master Builder","Procrastination = Beta"] },
+      { summary:"The Torus is the synthesis — the unified field where all 11 previous relays converge into a self-sustaining, circular infrastructure system. It represents the aspiration of complete SDG alignment and civilisational sustainability.", institutions:["United Nations","World Economic Forum","Club of Rome"], icards:["Block 391 Completion Summary","Day 134 Morning Brief"] }
+    ];
+
+    // Relay panel logic
+    const overlay = document.getElementById('relayPanelOverlay');
+    const rpClose = document.getElementById('rpClose');
+
+    function openRelayPanel(ri) {
+      const relay = relays[ri];
+      const detail = relayDetails[ri];
+      document.getElementById('rpTitle').textContent = `Relay ${relay.num}: ${relay.name}`;
+      document.getElementById('rpSub').textContent = relay.desc;
+      document.getElementById('rpSummary').textContent = detail.summary;
+
+      // SDG chips
+      const sdgContainer = document.getElementById('rpSdgs');
+      sdgContainer.innerHTML = '';
+      sdgs.forEach((sdg, si) => {
+        const val = matrix[ri][si];
+        if (val) {
+          const chip = document.createElement('span');
+          chip.className = 'rp-sdg-chip ' + (val === 'P' ? 'primary' : 'secondary');
+          chip.style.background = sdg.color;
+          chip.textContent = `SDG ${sdg.num}` + (val === 'S' ? ' (indirect)' : '');
+          sdgContainer.appendChild(chip);
+        }
+      });
+
+      // Institutions
+      const instContainer = document.getElementById('rpInst');
+      instContainer.innerHTML = '';
+      detail.institutions.forEach(name => {
+        const el = document.createElement('span');
+        el.className = 'rp-inst';
+        el.textContent = name;
+        instContainer.appendChild(el);
+      });
+
+      // iCards
+      const cardContainer = document.getElementById('rpCards');
+      cardContainer.innerHTML = '';
+      if (detail.icards.length === 0) {
+        cardContainer.innerHTML = '<span style="color:var(--text-dim); font-size:0.75rem; font-style:italic;">No iCards linked yet</span>';
+      } else {
+        detail.icards.forEach(name => {
+          const el = document.createElement('span');
+          el.className = 'rp-icard';
+          el.textContent = name;
+          cardContainer.appendChild(el);
+        });
+      }
+
+      overlay.classList.add('active');
+    }
+
+    rpClose.addEventListener('click', () => overlay.classList.remove('active'));
+    overlay.addEventListener('click', e => { if (e.target === overlay) overlay.classList.remove('active'); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') overlay.classList.remove('active'); });
+
+    // Highlight row/column on header click
+    let activeRow = -1, activeCol = -1;
+
+    table.addEventListener('click', e => {
+      const th = e.target.closest('th');
+      if (!th) return;
+
+      if (th.classList.contains('relay-header')) {
+        const ri = parseInt(th.dataset.relay);
+        // Open relay detail panel
+        openRelayPanel(ri);
+        return;
+      } else if (th.classList.contains('sdg-header')) {
+        const si = parseInt(th.dataset.sdg) - 1;
+        activeCol = activeCol === si ? -1 : si;
+        activeRow = -1;
+      }
+
+      // Update highlights
+      table.querySelectorAll('td').forEach(td => {
+        const ri = parseInt(td.dataset.relay);
+        const si = parseInt(td.dataset.sdg);
+        const isHighlighted = (activeRow >= 0 && ri === activeRow) || (activeCol >= 0 && si === activeCol);
+        td.style.outline = isHighlighted ? '2px solid #ffd700' : '';
+        td.style.zIndex = isHighlighted ? '1' : '';
+      });
+
+      table.querySelectorAll('.relay-header').forEach(th => {
+        th.style.background = parseInt(th.dataset.relay) === activeRow ? 'rgba(255,215,0,0.12)' : '';
+      });
+      table.querySelectorAll('.sdg-header').forEach(th => {
+        th.style.background = parseInt(th.dataset.sdg) - 1 === activeCol ? 'rgba(255,215,0,0.12)' : '';
+      });
+    });
+  </script>
+
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement -->
+
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement (v2 fixed) -->
+<script>
+(function() {
+  try {
+    var sid = sessionStorage.getItem('iaai_sid');
+    if (!sid) {
+      sid = 'ses_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 9);
+      sessionStorage.setItem('iaai_sid', sid);
+    }
+    var data = {
+      path: window.location.pathname + (window.location.hash || ''),
+      pageTitle: document.title || 'Untitled',
+      referrer: document.referrer || '',
+      sessionId: sid
+    };
+    fetch('/api/trpc/analytics.track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ json: data }),
+      credentials: 'include'
+    }).catch(function() {});
+    window.addEventListener('hashchange', function() {
+      var hashData = {
+        path: window.location.pathname + (window.location.hash || ''),
+        pageTitle: document.title || 'Untitled',
+        referrer: window.location.href,
+        sessionId: sid
+      };
+      fetch('/api/trpc/analytics.track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ json: hashData }),
+        credentials: 'include'
+      }).catch(function() {});
+    });
+  } catch(e) {}
+})();
+</script>
+
+    <!-- Mobile table scroll fix -->
+    <script>
+    (function(){
+      if(window.innerWidth > 768) return;
+      document.querySelectorAll('table').forEach(function(t){
+        if(t.parentElement && t.parentElement.classList.contains('table-scroll-wrapper')) return;
+        var w = document.createElement('div');
+        w.className = 'table-scroll-wrapper';
+        t.parentNode.insertBefore(w, t);
+        w.appendChild(t);
+      });
+    })();
+    </script>
+
+
+    <!-- Back-to-Top Button Logic -->
+    <script>
+    (function() {
+        var btn = document.getElementById('back-to-top-btn');
+        if (!btn) return;
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                btn.style.display = 'flex';
+            } else {
+                btn.style.display = 'none';
+            }
+        }, { passive: true });
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    })();
+    </script>
+
+</body>
+</html>

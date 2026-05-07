@@ -125,10 +125,15 @@ header {
   border-bottom: 2px solid var(--color-accent-gold);
   padding: 0.4rem var(--spacing-sm);
   position: sticky;
-  top: 0;
+  top: 32px;
   z-index: 200000;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
   overflow: visible;
+}
+
+/* Ensure sections clear the sticky header when scrolled to */
+[id^="section-"], .container, section {
+  scroll-margin-top: 156px;
 }
 
 .header-content {
@@ -638,7 +643,7 @@ footer {
   }
   
   main {
-    padding: var(--spacing-lg);
+    padding: var(--spacing-sm) var(--spacing-md);
   }
   
   .header-content {
@@ -687,7 +692,7 @@ footer {
     text-overflow: ellipsis;
     min-width: 0;
     letter-spacing: 0.5px;
-    max-width: calc(100vw - 170px);
+    max-width: calc(100vw - 220px);
   }
   
   .header-tagline {
@@ -696,7 +701,7 @@ footer {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: calc(100vw - 170px);
+    max-width: calc(100vw - 220px);
   }
   
   .header-subtitle {
@@ -929,7 +934,7 @@ footer {
   }
   
   main {
-    padding: var(--spacing-md);
+    padding: var(--spacing-xs) var(--spacing-sm);
   }
   
   .iaai-logo-box {
@@ -975,20 +980,28 @@ footer {
   }
   
   h1 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
   }
   
   h2 {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
   }
   
   p {
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
   
   .container,
   .content-box {
-    padding: var(--spacing-md);
+    padding: var(--spacing-sm);
+  }
+
+  .container {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .separator-thick {
+    margin: var(--spacing-xs) 0;
   }
   
   nav a {
@@ -1220,12 +1233,13 @@ footer {
 /* Mobile: position selector in header area */
 @media (max-width: 768px) {
   .lang-selector {
-    position: absolute;
-    top: 50%;
-    right: 52px;
-    transform: translateY(-50%);
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
     z-index: 99999;
     margin-left: 0;
+    flex-shrink: 0;
   }
 
   .lang-current {
@@ -1245,9 +1259,10 @@ footer {
 
 @media (max-width: 480px) {
   .lang-selector {
-    top: 50%;
-    right: 48px;
-    transform: translateY(-50%);
+    position: relative;
+    top: auto;
+    right: auto;
+    transform: none;
   }
 
   .lang-current {
@@ -1505,6 +1520,45 @@ footer {
   padding-left: calc(1rem - 3px);
 }
 
+/* Multi-column dropdown for large menus */
+.nav-dropdown-columns {
+  display: none;
+  min-width: 580px;
+  flex-direction: row;
+  gap: 0;
+  right: 0;
+  left: auto;
+  transform: none;
+}
+.nav-group:hover .nav-dropdown-columns,
+.nav-group.open .nav-dropdown-columns {
+  display: flex;
+}
+.nav-dropdown-col {
+  flex: 1;
+  min-width: 180px;
+  border-right: 1px solid rgba(255, 215, 0, 0.1);
+}
+.nav-dropdown-col:last-child {
+  border-right: none;
+}
+.nav-dropdown-header {
+  padding: 0.5rem 1rem 0.3rem;
+  color: var(--color-accent-gold);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+  white-space: nowrap;
+}
+
+/* Max-height for long single-column dropdowns */
+.nav-group-dropdown:not(.nav-dropdown-columns) {
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
 /* ============================================
    SCROLL PROGRESS BAR
    ============================================ */
@@ -1617,5 +1671,237 @@ footer {
     padding: 0.75rem 1.2rem;
     font-size: 0.85rem;
     text-align: center;
+  }
+}
+
+
+/* ===== FIRST-VISIT MOBILE DISCOVERY HINTS ===== */
+/* One-time visual cues for new users — dismissed after first interaction */
+
+/* 1. Hamburger menu: gold ring pulse on first visit */
+@keyframes hamburger-ring-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(255,215,0,0.6); }
+  50%  { box-shadow: 0 0 0 10px rgba(255,215,0,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,215,0,0); }
+}
+@media(max-width:768px) {
+  .hamburger.discovery-hint {
+    animation: hamburger-ring-pulse 1.5s ease-out 3;
+    border-radius: 6px;
+    position: relative;
+  }
+  .hamburger.discovery-hint::after {
+    content: 'MENU';
+    position: absolute;
+    bottom: -16px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.5rem;
+    color: #ffd700;
+    letter-spacing: 1.5px;
+    font-family: var(--font-heading);
+    white-space: nowrap;
+    opacity: 0.8;
+    animation: hint-fade 4s ease-out forwards;
+  }
+}
+
+/* 2. Swipe hint overlay for horizontal carousels */
+@keyframes swipe-hint-slide {
+  0%   { transform: translateX(0); opacity: 0.9; }
+  50%  { transform: translateX(-20px); opacity: 0.5; }
+  100% { transform: translateX(0); opacity: 0; }
+}
+.swipe-hint-overlay {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #ffd700;
+  font-size: 0.7rem;
+  font-family: var(--font-heading);
+  letter-spacing: 1px;
+  pointer-events: none;
+  z-index: 10;
+  animation: swipe-hint-slide 1.2s ease-in-out 3;
+  animation-fill-mode: forwards;
+}
+.swipe-hint-overlay .swipe-arrow {
+  font-size: 1.2rem;
+  animation: swipe-hint-slide 1.2s ease-in-out 3;
+  animation-fill-mode: forwards;
+}
+
+/* 3. Scroll nav: first-visit label */
+@keyframes hint-fade {
+  0%   { opacity: 0.9; }
+  75%  { opacity: 0.9; }
+  100% { opacity: 0; display: none; }
+}
+#scroll-nav .discovery-label {
+  font-size: 0.5rem;
+  color: #ffd700;
+  letter-spacing: 1px;
+  font-family: var(--font-heading);
+  text-align: center;
+  white-space: nowrap;
+  animation: hint-fade 6s ease-out forwards;
+  pointer-events: none;
+  max-width: 60px;
+  line-height: 1.1;
+  background: rgba(10,22,40,0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 2px 6px;
+  border-radius: 3px;
+}
+
+/* 4. Start Here CTA: subtle pulse border for first-time visitors */
+@keyframes start-here-glow {
+  0%   { box-shadow: 0 0 8px rgba(255,215,0,0.3); }
+  50%  { box-shadow: 0 0 20px rgba(255,215,0,0.6), 0 0 40px rgba(255,215,0,0.2); }
+  100% { box-shadow: 0 0 8px rgba(255,215,0,0.3); }
+}
+.start-here-cta.discovery-glow {
+  animation: start-here-glow 1.5s ease-in-out 3;
+}
+
+/* ============================================
+   MOBILE TABLE & CONTENT OVERFLOW FIXES
+   Global responsive table handling
+   ============================================ */
+
+/* All tables: prevent overflow by default */
+table {
+  max-width: 100%;
+  border-collapse: collapse;
+}
+
+/* Responsive table wrapper — applied via JS to all tables */
+.table-scroll-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+  margin-bottom: var(--spacing-sm);
+}
+
+/* Mobile-specific fixes */
+@media (max-width: 768px) {
+  /* Force all tables to be scrollable on mobile */
+  table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100vw;
+    font-size: 0.85rem;
+  }
+
+  /* Prevent any element from exceeding viewport width */
+  main,
+  .container,
+  .content-box,
+  section,
+  article,
+  div {
+    max-width: 100vw;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+
+  /* Tables with inline width:100% — override to allow scroll */
+  table[style*="width:100%"],
+  table[style*="width: 100%"] {
+    width: max-content !important;
+    min-width: 100%;
+  }
+
+  /* Table cells: allow wrapping and constrain width */
+  td, th {
+    max-width: 200px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+
+  /* Curriculum tables and other named tables */
+  .curriculum-table,
+  .sdg-mapping-table,
+  .relay-table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    font-size: 0.8rem;
+  }
+
+  /* Ensure content-box doesn't clip */
+  .content-box {
+    overflow-x: auto;
+  }
+
+  /* Prevent pre/code blocks from overflowing */
+  pre, code {
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-all;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Even smaller screens: tighter table handling */
+  table {
+    font-size: 0.75rem;
+  }
+
+  td, th {
+    padding: 4px 6px;
+    max-width: 150px;
+  }
+
+  /* Ensure containers have minimal padding to maximize table space */
+  .container table,
+  .content-box table {
+    margin-left: -4px;
+    margin-right: -4px;
+  }
+}
+
+/* ============================================
+   NETWORK BAR — MOBILE RESPONSIVENESS
+   ============================================ */
+
+@media (max-width: 480px) {
+  #iaai-network-bar {
+    font-size: 9px !important;
+    letter-spacing: 0.5px !important;
+    padding: 6px 0 !important;
+  }
+
+  #iaai-network-bar a {
+    font-size: 9px !important;
+    letter-spacing: 0.5px !important;
+  }
+
+  header {
+    top: 28px !important;
+  }
+}
+
+@media (max-width: 360px) {
+  #iaai-network-bar {
+    font-size: 7.5px !important;
+    letter-spacing: 0.3px !important;
+    padding: 5px 0 !important;
+  }
+
+  #iaai-network-bar a {
+    font-size: 7.5px !important;
+  }
+
+  header {
+    top: 24px !important;
   }
 }

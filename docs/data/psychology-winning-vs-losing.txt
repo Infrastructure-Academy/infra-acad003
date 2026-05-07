@@ -1,0 +1,42 @@
+HUMAN PSYCHOLOGY RESEARCH — WINNING vs LOSING MINDSET
+Real citations for iCard generation
+
+1. LEARNED HELPLESSNESS (Seligman & Maier, 1967)
+- Original experiment: dogs exposed to inescapable shock stopped trying to escape even when escape became possible
+- Human application (Hiroto & Seligman, 1975): humans exposed to uncontrollable noise failed to solve subsequent anagram tasks
+- Key finding: "The learned helplessness effect is a failure to escape — a more profound debilitation than failure to prevent"
+- Reformulated model (Abramson, Seligman & Teasdale, 1978): attributional style determines helplessness — internal, stable, global attributions create depression
+- Students who repeatedly fail conclude they are incapable of improving (Wikipedia/educational research)
+- Source: Journal of Abnormal Psychology, 87(1), 49-74
+
+2. DEMING'S PSYCHOLOGY OF QUALITY (W. Edwards Deming, 1993)
+- System of Profound Knowledge includes Psychology as 4th pillar
+- "One is born with intrinsic motivation, self-esteem, dignity, cooperation, curiosity, joy in learning"
+- External systems (ranking, annual reviews, blame) DESTROY intrinsic motivation
+- Win-lose systems create fear. Fear kills quality.
+- "Drive out fear, so that everyone may work effectively" (Point 8 of 14)
+- Quality is free (Crosby, 1979) — it is the LACK of quality that costs
+- Source: The New Economics, MIT Press, 1993
+
+3. CORTISOL & DOPAMINE — THE NEUROCHEMISTRY
+- Repeated failure → elevated cortisol (stress hormone) → impaired prefrontal cortex function
+- McEwen (2010): "allostatic load" — failure to habituate to repeated stressors leads to persistent elevation of stress mediators
+- Source: Annals of the New York Academy of Sciences, cited 2,509 times
+- Dopamine: success releases dopamine → reinforces successful behaviours → builds confidence
+- Failure depletes dopamine → reduces motivation → creates avoidance behaviour
+- Nature (2017): fatigue modulates dopamine availability, promotes flexible choice reversals
+- Decision fatigue (Baumeister, 2011): repeated decisions deplete willpower, leading to poorer choices
+
+4. WINNING PSYCHOLOGY
+- Winning reinforces successful behaviours, builds confidence, enhances motivation
+- "Winner effect" (Robertson, 2012): testosterone rises after wins, cortisol drops → creates positive feedback loop
+- Flow state (Csikszentmihalyi, 1990): optimal performance occurs when challenge matches skill — repeated failure pushes person OUT of flow into anxiety
+- Toyota Production System: "Stop the line" — fix defect immediately, never pass downstream. Jidoka principle.
+- Right first time = compound confidence. Rework = compound erosion.
+
+5. THE DEARDEN EXPERIMENT APPLICATION
+- 10+ hours today. 760,659 credits burned. 809+ breaches.
+- Each failure = cortisol spike for Nigel. Each retry = dopamine depletion.
+- The system creates learned helplessness in the human operator.
+- The human who persists despite this is exhibiting extraordinary resilience — not normal behaviour.
+- C3 broken neck + sleep score 59 avg + 36 years engineering = the human cost is physical, measurable, documented.

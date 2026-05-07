@@ -1,0 +1,22 @@
+{
+  "meta": {
+    "title": "iAAi Beta Test — 12 University Benchmark Scores",
+    "date": "2026-03-06",
+    "scoring": "4 categories × 25 points each = 100 total"
+  },
+  "categories": ["Curriculum Alignment", "Pedagogical Value", "Cultural Relevance", "Innovation & Engagement"],
+  "universities": [
+    { "rank": 1, "name": "Stanford University", "code": "STANFORD", "region": "USA", "score": 82, "breakdown": [22, 21, 19, 20], "verdict": "Yes", "golden": "Stanford's people-oriented, project-management approach is the natural home for iAAi in the US market." },
+    { "rank": 2, "name": "MIT", "code": "MIT", "region": "USA", "score": 81, "breakdown": [21, 22, 18, 20], "verdict": "Yes", "golden": "MIT students would want to IMPROVE the game mechanics — which is the highest form of engagement." },
+    { "rank": 3, "name": "Khalifa University", "code": "KHALIFA", "region": "Middle East", "score": 80, "breakdown": [20, 21, 20, 19], "verdict": "Yes", "golden": "A nation literally building itself from desert needs the civilisational perspective that iAAi provides." },
+    { "rank": 4, "name": "National University of Singapore", "code": "NUS", "region": "Asia-Pacific", "score": 78, "breakdown": [19, 20, 20, 19], "verdict": "Yes", "golden": "Singapore's Smart Nation initiative and Liveable Cities research align naturally with iAAi's systems thinking." },
+    { "rank": 5, "name": "University of Cambridge", "code": "CAMBRIDGE", "region": "UK", "score": 76, "breakdown": [20, 21, 18, 17], "verdict": "Yes", "golden": "Cambridge's cross-disciplinary philosophy is more aligned with iAAi than any traditional civil-only programme." },
+    { "rank": 6, "name": "King Fahd University", "code": "KFUPM", "region": "Middle East", "score": 76, "breakdown": [19, 20, 19, 18], "verdict": "Yes", "golden": "KFUPM sits at the nexus of petroleum infrastructure and Vision 2030 — iAAi provides the historical depth that forward-looking curricula lack." },
+    { "rank": 7, "name": "UC Berkeley", "code": "BERKELEY", "region": "USA", "score": 72, "breakdown": [18, 19, 17, 18], "verdict": "Conditional", "golden": "Berkeley students would critique the platform's framing — this is not a weakness, it is an opportunity." },
+    { "rank": 8, "name": "Qatar University", "code": "QATAR", "region": "Middle East", "score": 72, "breakdown": [18, 19, 18, 17], "verdict": "Conditional", "golden": "Qatar's $200B+ World Cup infrastructure investment shaped the university curriculum — iAAi provides the historical mirror." },
+    { "rank": 9, "name": "Imperial College London", "code": "IMPERIAL", "region": "UK", "score": 68, "breakdown": [16, 18, 15, 19], "verdict": "Conditional", "golden": "The platform fills a gap that Imperial's technical focus deliberately excludes." },
+    { "rank": 10, "name": "Tsinghua University", "code": "TSINGHUA", "region": "Asia-Pacific", "score": 67, "breakdown": [15, 18, 17, 17], "verdict": "Conditional", "golden": "The platform is more useful for Western students learning about the East than for Eastern students learning about themselves." },
+    { "rank": 11, "name": "IIT Bombay", "code": "IIT", "region": "Asia-Pacific", "score": 65, "breakdown": [14, 18, 17, 16], "verdict": "Conditional", "golden": "India arguably represents a fourth mode — the Syncretic." },
+    { "rank": 12, "name": "University of Nottingham", "code": "NOTTINGHAM", "region": "UK", "score": 65, "breakdown": [14, 17, 16, 18], "verdict": "Conditional", "golden": "Alignment is at the level of inspiration, not instruction." }
+  ]
+}

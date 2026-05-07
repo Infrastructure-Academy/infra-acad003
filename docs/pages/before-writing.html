@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Before Writing — The Knowledge Web — Infrastructure Academy</title>
+    <meta name="description" content="Before Writing: The Knowledge Web exhibit. Proto-counting, tally marks, clay tokens, bullae, and the birth of numbers — 43,000 BCE to 3,000 BCE. Counting preceded language by 35,000 years. Numbers are the infrastructure of thought.">
+    <meta property="og:title" content="Before Writing — The Knowledge Web">
+    <meta property="og:description" content="Proto-counting, tally marks, clay tokens, and the birth of numbers. 43,000 BCE to 3,000 BCE. Counting preceded language by 35,000 years.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Infrastructure Academy">
+    <link rel="stylesheet" href="/css/style.css?v=20260410a">
+    <style>
+        /* BETA Badge */
+        .beta-badge { display:inline-flex; align-items:center; gap:0.3rem; background:rgba(251,146,60,0.15); border:1px solid rgba(251,146,60,0.5); color:#fb923c; font-family:'Courier New',monospace; font-size:0.65rem; font-weight:bold; letter-spacing:2px; padding:0.2rem 0.6rem; border-radius:3px; text-transform:uppercase; animation:beta-pulse 3s ease-in-out infinite; vertical-align:middle; margin-left:0.5rem; }
+        .beta-badge::before { content:'\25CF'; font-size:0.5rem; animation:beta-dot 2s ease-in-out infinite; }
+        @keyframes beta-pulse { 0%,100%{opacity:1;} 50%{opacity:0.7;} }
+        @keyframes beta-dot { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+        @media(max-width:768px) { .beta-badge { display:none; } .header-title { max-width: calc(100vw - 160px) !important; } .header-tagline::after { content:'BETA'; display:inline-block; font-family:'Courier New',monospace; font-size:0.4rem; font-weight:bold; color:#fb923c; letter-spacing:1px; margin-left:0.5rem; background:rgba(251,146,60,0.15); border:1px solid rgba(251,146,60,0.5); padding:0.05rem 0.3rem; border-radius:2px; vertical-align:middle; animation:beta-pulse 3s ease-in-out infinite; } }
+
+        /* Exhibit-specific styles */
+        .exhibit-hero {
+            text-align: center;
+            padding: 3rem 1.5rem 2rem;
+            border-bottom: 2px solid var(--color-accent-gold);
+            margin-bottom: 2rem;
+        }
+        .exhibit-hero h1 {
+            font-family: var(--font-heading);
+            font-size: 2.4rem;
+            color: var(--color-accent-gold);
+            letter-spacing: 4px;
+            margin-bottom: 0.5rem;
+        }
+        .exhibit-subtitle {
+            font-size: 1.1rem;
+            color: var(--color-text-secondary);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        .exhibit-meta {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            line-height: 1.8;
+        }
+        .exhibit-section {
+            max-width: 1100px;
+            margin: 0 auto 2rem;
+            padding: 0 1.5rem;
+        }
+        .exhibit-section h2 {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            color: var(--color-accent-gold);
+            letter-spacing: 3px;
+            border-bottom: 1px solid rgba(255,215,0,0.3);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        .exhibit-section h3 {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            color: var(--color-text-primary);
+            letter-spacing: 2px;
+            margin: 2rem 0 0.75rem;
+        }
+        .exhibit-section p {
+            font-size: 0.95rem;
+            line-height: 1.9;
+            color: var(--color-text-secondary);
+            margin-bottom: 1rem;
+        }
+        .section-subtitle {
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+            font-style: italic;
+            margin-bottom: 1.5rem;
+        }
+        .separator-thick {
+            border: none;
+            border-top: 2px solid rgba(255,215,0,0.3);
+            margin: 2.5rem auto;
+            max-width: 1100px;
+        }
+        .separator-thin {
+            border: none;
+            border-top: 1px solid rgba(255,215,0,0.15);
+            margin: 1.5rem auto;
+            max-width: 1100px;
+        }
+        .exhibit-image {
+            width: 100%;
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 4px;
+            margin: 1.5rem 0;
+        }
+        .image-caption {
+            font-size: 0.8rem;
+            color: var(--color-accent-gold);
+            text-align: center;
+            font-style: italic;
+            margin-top: -0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .insight-box {
+            background: rgba(255,215,0,0.04);
+            border: 2px solid var(--color-accent-gold);
+            border-radius: 8px;
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+        .insight-box .insight-title {
+            font-family: var(--font-heading);
+            font-size: 1.4rem;
+            color: var(--color-accent-gold);
+            letter-spacing: 3px;
+            margin-bottom: 0.75rem;
+        }
+        .insight-box p {
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+            line-height: 1.8;
+            margin-bottom: 0;
+        }
+        .evidence-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.85rem;
+        }
+        .evidence-table th {
+            background: rgba(255,215,0,0.1);
+            color: var(--color-accent-gold);
+            padding: 0.75rem;
+            text-align: left;
+            border-bottom: 2px solid rgba(255,215,0,0.3);
+            letter-spacing: 1px;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+        .evidence-table td {
+            padding: 0.6rem 0.75rem;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            color: var(--color-text-secondary);
+            vertical-align: top;
+        }
+        .evidence-table tr:hover td {
+            background: rgba(255,215,0,0.03);
+        }
+        .number-card {
+            display: inline-block;
+            background: rgba(15,31,58,0.7);
+            border: 1px solid rgba(255,215,0,0.3);
+            border-radius: 6px;
+            padding: 0.6rem 1rem;
+            margin: 0.3rem;
+            text-align: center;
+            min-width: 80px;
+        }
+        .number-card .num {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--color-accent-gold);
+            line-height: 1.2;
+        }
+        .number-card .meaning {
+            font-size: 0.65rem;
+            color: var(--color-text-secondary);
+            letter-spacing: 0.5px;
+        }
+        .numbers-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 1.5rem 0;
+        }
+        .relay-chain {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1.5rem 0;
+            font-size: 0.85rem;
+        }
+        .relay-chain .node {
+            background: rgba(255,215,0,0.1);
+            border: 1px solid rgba(255,215,0,0.3);
+            border-radius: 4px;
+            padding: 0.4rem 0.8rem;
+            color: var(--color-text-primary);
+            font-size: 0.8rem;
+        }
+        .relay-chain .arrow {
+            color: var(--color-accent-gold);
+            font-size: 1.2rem;
+        }
+        .exhibit-toc {
+            max-width: 1100px;
+            margin: 0 auto 2rem;
+            padding: 1.5rem 2rem;
+            background: rgba(255,215,0,0.03);
+            border: 1px solid rgba(255,215,0,0.15);
+            border-radius: 6px;
+        }
+        .exhibit-toc h3 {
+            font-family: var(--font-heading);
+            color: var(--color-accent-gold);
+            letter-spacing: 2px;
+            margin-bottom: 0.75rem;
+            font-size: 1rem;
+        }
+        .exhibit-toc ol {
+            padding-left: 1.5rem;
+            margin: 0;
+        }
+        .exhibit-toc li {
+            margin-bottom: 0.4rem;
+        }
+        .exhibit-toc a {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        .exhibit-toc a:hover {
+            color: var(--color-accent-gold);
+        }
+        /* Mobile nav */
+        #nav-grouped { display: block !important; max-height: 0 !important; overflow: hidden !important; transition: max-height 0.4s ease !important; width: 100% !important; background: #0a1628 !important; }
+        #nav-grouped.open { max-height: 80vh !important; overflow-y: auto !important; }
+        @media(max-width:768px) {
+            .exhibit-hero h1 { font-size: 1.6rem; letter-spacing: 2px; }
+            .exhibit-section h2 { font-size: 1.3rem; }
+            .number-card { min-width: 65px; padding: 0.4rem 0.6rem; }
+            .number-card .num { font-size: 1.4rem; }
+        }
+    </style>
+    <link rel="canonical" href="https://infra-acad-kuqzaex2.manus.space/pages/before-writing.html">
+    <meta name="keywords" content="infrastructure academy, infrastructure education, civil engineering, civilisation history, infrastructure consciousness, gamified learning, IAAI, Nigel Dearden, infrastructure odyssey, 12 relays, calories to consciousness, before writing, methodology, research process, writing approach">
+
+<style id="mobile-quicknav-styles">
+/* ===== MOBILE QUICK-NAV BAR ===== */
+.mobile-quicknav {
+    display: none;
+    width: 100%;
+    background: linear-gradient(180deg, #0d1f3c 0%, #0a1628 100%);
+    border-bottom: 1px solid rgba(255,215,0,0.25);
+    padding: 6px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 6px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+.mobile-quicknav::-webkit-scrollbar { display: none; }
+.mobile-quicknav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 10px;
+    background: rgba(255,215,0,0.08);
+    border: 1px solid rgba(255,215,0,0.35);
+    border-radius: 16px;
+    color: #ffd700;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+.mobile-quicknav a:active {
+    background: rgba(255,215,0,0.25);
+    transform: scale(0.95);
+}
+.mobile-quicknav a.mqn-home {
+    background: #ffd700;
+    color: #0a1628;
+    border-color: #ffd700;
+}
+@media(max-width:768px) {
+    .mobile-quicknav { display: flex; }
+}
+@media(min-width:769px) {
+    .mobile-quicknav { display: none !important; }
+}
+
+/* ===== BACK-TO-TOP FLOATING BUTTON ===== */
+#back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 16px;
+    z-index: 9999;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(10,22,40,0.92);
+    border: 1.5px solid rgba(255,215,0,0.6);
+    color: #ffd700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    transition: all 0.2s;
+}
+#back-to-top-btn:active {
+    transform: scale(0.9);
+    background: rgba(255,215,0,0.2);
+}
+</style>
+
+</head>
+<body>
+    <!-- iAAi Network Bar — NAV-001 · Cross-Site Navigation -->
+    <!-- ═══ iAAi NETWORK BAR ═══ -->
+    <div id="iaai-network-bar" style="display:flex;align-items:center;justify-content:space-around;width:100%;height:36px;background:#0a1628;position:sticky;top:0;z-index:200001;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">
+      <a href="https://www.infrastructure-academy.com" style="text-decoration:none;color:#fff;font-weight:700;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid #DC2626;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#DC2626"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg> ACADEMY</a>
+      <a href="https://realityeng-epdhlkrn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> QUEST</a>
+      <a href="#" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;opacity:0.5;pointer-events:none;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A843"><path d="M6 2v6l-2 2v4l2 2v6h4v-6l2-2v-4L10 8V2H6zm12 0v6l-2 2v4l2 2v6h-4v-6l-2-2v-4l2-2V2h4z"/></svg> XCHANGE</a>
+      <a href="https://nigelmemorial-ucmtq9dn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#16A34A"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg> MEMORIAL</a>
+      <a href="https://xgrowthtrk-2a93yo5z.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#06B6D4"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/></svg> NEWS</a>
+    </div>
+
+    <header role="banner">
+        <div class="header-content">
+            <div class="header-brand">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/tt-icon_5ea32be1.jpeg" alt="Tetrahedron" class="header-tetra-thumb">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iaai_correct_gold_logo_cebb3b74.jpeg" alt="IAAI" class="iaai-logo-box">
+                <div class="header-text-group">
+                    <div class="header-title" data-i18n="header.title">INFRASTRUCTURE ACADEMY <span class="beta-badge" data-i18n="badge.beta">BETA</span></div>
+                    <div class="header-tagline">Infrastructure &bull; Infostructure &bull; The Academy of Both</div>
+                </div>
+                <a href="/pages/8th-scholar.html" class="header-scholar-link" title="The 8th Scholar"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/scholar_square_859aca43.jpeg" alt="The 8th Scholar" class="header-scholar-thumb"></a>
+            <!-- Social Follow Buttons -->
+            <div class="header-social-buttons" style="display:flex; align-items:center; gap:6px; flex-shrink:0;">
+                <a href="https://x.com/dearden_ni37258" target="_blank" rel="noopener" title="Follow on X" style="display:inline-flex; align-items:center; gap:4px; padding:4px 10px; background:#000; color:#fff; border:1px solid #333; border-radius:20px; font-size:0.7rem; font-weight:bold; text-decoration:none; white-space:nowrap;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> <span class="social-count">42</span></a>
+                <a href="https://www.facebook.com/share/1Fcxyhbsw3/?mibextid=wwXIfr" target="_blank" rel="noopener" title="Follow on Facebook" style="display:inline-flex; align-items:center; gap:4px; padding:4px 10px; background:#1877F2; color:#fff; border-radius:20px; font-size:0.7rem; font-weight:bold; text-decoration:none; white-space:nowrap;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Follow</a>
+                <a href="https://www.linkedin.com/in/nigeldearden" target="_blank" rel="noopener" title="Follow on LinkedIn" style="display:inline-flex; align-items:center; gap:4px; padding:4px 10px; background:#0A66C2; color:#fff; border-radius:20px; font-size:0.7rem; font-weight:bold; text-decoration:none; white-space:nowrap;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> Follow</a>
+                <a href="https://app.joinhandshake.com/profiles/nigeldearden" target="_blank" rel="noopener" title="Connect on Handshake" style="display:inline-flex; align-items:center; gap:4px; padding:4px 10px; background:#FF7043; color:#fff; border-radius:20px; font-size:0.7rem; font-weight:bold; text-decoration:none; white-space:nowrap;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6zm4 4h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg> Handshake</a>
+            </div>
+            </div>
+            <button class="hamburger" id="hamburger-menu" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <nav id="nav-menu" role="navigation" aria-label="Primary navigation">
+            <a href="/site.html" data-i18n="nav.home">HOME</a>
+            <a href="/pages/framework.html" data-i18n="nav.framework">FRAMEWORK</a>
+            <a href="/executive-precis.html" data-i18n="nav.precis">EXEC PR&Eacute;CIS</a>
+            <a href="/pages/resources.html" data-i18n="nav.resources">RESOURCES</a>
+            <a href="/library.html" data-i18n="nav.documents">DOCUMENTS</a>
+            <a href="/pages/about-author.html" data-i18n="nav.author">AUTHOR</a>
+            <a href="/volumes/volume1/index.html" data-i18n="nav.ep1">EP.1: PERSPECTIVE</a>
+            <a href="/volumes/volume2/index.html" data-i18n="nav.ep2">EP.2: GUIDE</a>
+            <a href="/play" data-i18n="nav.ep3">EP.3: GAME</a>
+        </nav>
+        <nav id="nav-row2" role="navigation" aria-label="Secondary navigation" class="nav-row2">
+            <a href="/pages/start-here.html" data-i18n="nav.starthere">START HERE</a>
+            <a href="/mobilisation-clock.html" data-i18n="nav.clock">MOBILISATION CLOCK</a>
+            <a href="/infrastructure-olympiad.html" data-i18n="nav.olympiad">OLYMPIAD</a>
+            <a href="/pioneers.html" data-i18n="nav.pioneers">PIONEERS</a>
+            <a href="/taxonomy.html" data-i18n="nav.taxonomy">TAXONOMY</a>
+            <a href="/masters.html" data-i18n="nav.masters">MASTERS</a>
+            <a href="/institutions.html" data-i18n="nav.institutions">INSTITUTIONS</a>
+            <a href="/pages/roster-dashboard.html" data-i18n="nav.roster" style="color:#22d3ee;">ROSTER DASHBOARD</a>
+            <a href="/pages/governance-architecture.html" data-i18n="nav.governance" style="color:#ef4444;">GOVERNANCE</a>
+            <a href="/civilisation-clock.html" data-i18n="nav.civclock">CIVILISATION CLOCK</a>
+            <a href="/play/founders" data-i18n="nav.founders">FOUNDERS WALL</a>
+            <a href="/site.html#charter" data-i18n="nav.charter">CHARTER</a>
+            <a href="/pages/thesis-record.html">THESIS RECORD</a>
+            <a href="/pages/before-writing.html" class="active">BEFORE WRITING</a>
+            <a href="/pages/glossary.html" data-i18n="nav.glossary">GLOSSARY</a>
+            <a href="/vault.html" data-i18n="nav.vault">VAULT</a>
+            <a href="/icut-gallery.html" data-i18n="nav.gallery">ICUT GALLERY</a>
+        </nav>
+    </header>
+    <!-- ===== MOBILE QUICK-NAV BAR — always visible on mobile ===== -->
+    <div class="mobile-quicknav" id="mobile-quicknav">
+        <a href="/site.html" class="mqn-home">&#127968; HOME</a>
+        <a href="/pages/start-here.html">&#128218; START</a>
+        <a href="/volumes/volume1/index.html">&#128214; READ</a>
+        <a href="/pages/framework.html">&#128736; FRAMEWORK</a>
+        <a href="/play">&#127918; PLAY</a>
+        <a href="/pages/movies.html">&#127916; MOVIES</a>
+        <a href="/pages/resources.html">&#128194; RESOURCES</a>
+        <a href="/press.html">&#128240; PRESS</a>
+    </div>
+
+    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <button id="back-to-top-btn" aria-label="Back to top" title="Back to top">&#9650;</button>
+
+
+    <main role="main">
+
+        <!-- HERO -->
+        <div class="exhibit-hero">
+            <h1>BEFORE WRITING</h1>
+            <div class="exhibit-subtitle">The Knowledge Web &mdash; Proto-Counting, Clay Tokens &amp; the Birth of Numbers</div>
+            <div class="exhibit-meta">
+                <strong>Span:</strong> 43,000 BCE &rarr; 3,000 BCE &mdash; 40,000 years of numerical evolution<br>
+                <strong>Key Insight:</strong> Counting preceded language by 35,000 years<br>
+                <strong>Thesis Connection:</strong> Numbers are the infrastructure of thought &mdash; the first relay before Fire<br>
+                <strong>Part of:</strong> The Knowledge Web &mdash; Web 2 of 5 (Knowledge, Education, Research)
+            </div>
+        </div>
+
+        <!-- TABLE OF CONTENTS -->
+        <div class="exhibit-toc">
+            <h3>EXHIBIT GUIDE</h3>
+            <ol>
+                <li><a href="#tally">Gallery I &mdash; Proto-Counting &amp; Tally Marks (43,000&ndash;8,000 BCE)</a></li>
+                <li><a href="#tokens">Gallery II &mdash; Clay Tokens &amp; Bullae (8,000&ndash;3,500 BCE)</a></li>
+                <li><a href="#numerals">Gallery III &mdash; Proto-Numerals to Symbols (3,500&ndash;3,000 BCE)</a></li>
+                <li><a href="#codex">Gallery IV &mdash; The Numbers Codex</a></li>
+                <li><a href="#relay">Gallery V &mdash; The Relay of Numbers</a></li>
+                <li><a href="#thesis">Gallery VI &mdash; Thesis Connection</a></li>
+            </ol>
+        </div>
+
+        <div class="separator-thick"></div>
+
+        <!-- GALLERY I: PROTO-COUNTING -->
+        <div class="exhibit-section" id="tally">
+            <h2>I. PROTO-COUNTING &amp; TALLY MARKS</h2>
+            <p class="section-subtitle">43,000&ndash;8,000 BCE &mdash; The First Human Records</p>
+
+            <p>Before language, before writing, before cities, before agriculture &mdash; humans counted. The fundamental need to quantify &mdash; days, kills, lunar cycles, resources &mdash; was the first abstract thought. This pre-dates all known writing systems and formal languages by 35,000 years, revealing that numerical thinking is a foundational cognitive ability that evolved long before the ability to record spoken words.</p>
+
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/kw_proto_counting_tally_marks_41f5d615.jpg" alt="The Knowledge Web: Before Writing — Proto-Counting and Tally Marks" class="exhibit-image" />
+            <p class="image-caption">THE KNOWLEDGE WEB: Before Writing &mdash; Proto-Counting &amp; Tally Marks (43,000&ndash;8,000 BCE)</p>
+
+            <h3>PRIMARY EVIDENCE</h3>
+            <table class="evidence-table">
+                <thead>
+                    <tr>
+                        <th>Artefact</th>
+                        <th>Date</th>
+                        <th>Location</th>
+                        <th>Significance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Lebombo Bone</strong></td>
+                        <td>c. 43,000 BCE</td>
+                        <td>Swaziland (Eswatini)</td>
+                        <td>A baboon fibula with 29 notch marks, possibly tracking lunar cycles. The oldest known mathematical object.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Wolf Bone</strong></td>
+                        <td>c. 30,000 BCE</td>
+                        <td>Czech Republic</td>
+                        <td>57 notches in groups of 5, suggesting an early base-five counting system.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ishango Bone</strong></td>
+                        <td>c. 20,000 BCE</td>
+                        <td>Congo</td>
+                        <td>A bone tool with grouped tally marks indicating a sophisticated system, possibly prime numbers or multiplication.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Lascaux Cave Marks</strong></td>
+                        <td>c. 17,000 BCE</td>
+                        <td>France</td>
+                        <td>Abstract dots and lines in cave art, possibly recording counts of animals or celestial events.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>PARALLEL PROTO-COUNTING SYSTEMS</h3>
+            <p>Proto-counting was not confined to one civilisation. Across the globe, independent cultures developed parallel systems for quantifying their world:</p>
+            <table class="evidence-table">
+                <thead>
+                    <tr>
+                        <th>System</th>
+                        <th>Region</th>
+                        <th>Method</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Aboriginal Message Sticks</strong></td>
+                        <td>Australia</td>
+                        <td>Carved wooden sticks used for conveying messages and recording quantities or events.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Body-Counting System</strong></td>
+                        <td>Papua New Guinea</td>
+                        <td>A numbering system using 27 distinct body parts to count quantities, demonstrating a cognitive link between the body and numbers.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Quipu</strong></td>
+                        <td>Andes (South America)</td>
+                        <td>Knotted string records used by the Inca Empire for accounting, census data, and narrative encoding.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="insight-box">
+                <div class="insight-title">COUNTING PRECEDED LANGUAGE BY 35,000 YEARS</div>
+                <p>The fundamental human need to quantify &mdash; days, kills, lunar cycles, resources &mdash; was the first abstract thought. This pre-dates all known writing systems and formal languages, revealing that numerical thinking is a foundational cognitive ability that evolved long before the ability to record spoken words. The tally mark is the first infrastructure of thought.</p>
+            </div>
+        </div>
+
+        <div class="separator-thick"></div>
+
+        <!-- GALLERY II: CLAY TOKENS -->
+        <div class="exhibit-section" id="tokens">
+            <h2>II. CLAY TOKENS &amp; BULLAE</h2>
+            <p class="section-subtitle">8,000&ndash;3,500 BCE &mdash; The Birth of Accounting &mdash; Commerce Before Literature</p>
+
+            <p>The transition from tally marks to clay tokens represents one of the most consequential technological leaps in human history. For 4,600 years, all written records were purely numerical and accounting-based. Commerce, not literature, was the primary driver for the invention of writing. The merchant preceded the poet. The ledger preceded the epic.</p>
+
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/kw_clay_tokens_bullae_374c0bbc.jpg" alt="The Knowledge Web: Clay Tokens and Bullae" class="exhibit-image" />
+            <p class="image-caption">THE KNOWLEDGE WEB: Clay Tokens &amp; Bullae &mdash; The Birth of Accounting (8,000&ndash;3,500 BCE)</p>
+
+            <h3>THE SCHMANDT-BESSERAT DISCOVERY</h3>
+            <p>Archaeologist Denise Schmandt-Besserat&rsquo;s groundbreaking research revealed that the origins of writing lie not in storytelling but in accounting. Small geometric clay shapes &mdash; spheres, cones, discs, ovoids, cylinders &mdash; served as counters for specific goods. Each shape represented a commodity: spheres for grain, cones for small measures, discs for large measures, ovoids for oil, cylinders for livestock.</p>
+
+            <table class="evidence-table">
+                <thead>
+                    <tr>
+                        <th>Stage</th>
+                        <th>Date</th>
+                        <th>Innovation</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Simple Tokens</strong></td>
+                        <td>c. 8,000 BCE</td>
+                        <td>Small tangible objects used for counting specific goods like grain or livestock.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Complex Tokens</strong></td>
+                        <td>c. 4,400 BCE</td>
+                        <td>More elaborate shapes with incised markings representing bread, textiles, garments &mdash; an expanding economy.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Bullae</strong></td>
+                        <td>c. 3,700 BCE</td>
+                        <td>Hollow clay balls enclosing tokens &mdash; the first tamper-evident records. A sealed contract.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Surface Impressions</strong></td>
+                        <td>c. 3,500 BCE</td>
+                        <td>Marks pressed onto the bulla surface before sealing &mdash; the moment 2D symbols replaced 3D objects. The birth of writing.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="insight-box">
+                <div class="insight-title">THE LEDGER BEFORE THE EPIC</div>
+                <p>For 4,600 years, all written records were purely numerical and accounting-based. Commerce, not literature, was the primary driver for the invention of writing. The merchant preceded the poet. The need to track goods, manage resources, and record transactions drove the evolution from tokens to bullae, to surface impressions, and finally to numerical tablets. The ability to capture human speech was a much later development, only after a robust infrastructure for accounting was established.</p>
+            </div>
+        </div>
+
+        <div class="separator-thick"></div>
+
+        <!-- GALLERY III: PROTO-NUMERALS TO SYMBOLS -->
+        <div class="exhibit-section" id="numerals">
+            <h2>III. PROTO-NUMERALS TO SYMBOLS</h2>
+            <p class="section-subtitle">3,500&ndash;3,000 BCE &mdash; The Bridge from Counting to Writing &mdash; Numbers Became Words</p>
+
+            <p>The final transformation &mdash; from physical counting objects to abstract written symbols &mdash; occurred across multiple civilisations simultaneously. This was not a single invention but a global parallel emergence, driven by the same underlying need: to record quantities at scale. The great transition from 3D tokens to 2D symbols is the moment infrastructure became information.</p>
+
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/kw_proto_numerals_to_symbols_4776eee5.jpg" alt="The Knowledge Web: Proto-Numerals to Symbols" class="exhibit-image" />
+            <p class="image-caption">THE KNOWLEDGE WEB: Proto-Numerals to Symbols &mdash; The Bridge from Counting to Writing (3,500&ndash;3,000 BCE)</p>
+
+            <h3>THE GREAT TRANSITION</h3>
+            <table class="evidence-table">
+                <thead>
+                    <tr>
+                        <th>Stage</th>
+                        <th>Date</th>
+                        <th>Description</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Clay Token</strong></td>
+                        <td>c. 8,000 BCE</td>
+                        <td>Small, tangible objects used for counting specific goods, like grain or livestock.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Token Impression</strong></td>
+                        <td>c. 3,500 BCE</td>
+                        <td>Marks made by pressing tokens onto clay surfaces before enclosure, providing a visible record of the contents.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Stylus-Drawn Symbol</strong></td>
+                        <td>c. 3,300 BCE</td>
+                        <td>Abstract symbols drawn with a stylus to represent the tokens, replacing the physical objects themselves.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Abstract Numeral</strong></td>
+                        <td>c. 3,000 BCE</td>
+                        <td>These symbols evolved into pure abstract numerals, independent of the goods they once represented, marking the birth of writing.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>GLOBAL PARALLEL EMERGENCE</h3>
+            <table class="evidence-table">
+                <thead>
+                    <tr>
+                        <th>System</th>
+                        <th>Date</th>
+                        <th>Region</th>
+                        <th>Significance</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Sumerian Proto-Cuneiform</strong></td>
+                        <td>c. 3,400 BCE</td>
+                        <td>Mesopotamia</td>
+                        <td>Developed from accounting tokens, using wedge and circle impressions.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Egyptian Proto-Hieroglyphic</strong></td>
+                        <td>c. 3,200 BCE</td>
+                        <td>Egypt</td>
+                        <td>Based on pictograms of common objects, used for monumental inscriptions.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Chinese Oracle Bone</strong></td>
+                        <td>c. 1,200 BCE</td>
+                        <td>China (Shang Dynasty)</td>
+                        <td>Early forms of Chinese numerals used for divination records, derived from tally marks.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Indian Brahmi Numerals</strong></td>
+                        <td>c. 300 BCE</td>
+                        <td>India</td>
+                        <td>The ancestor of modern numbers, leading to Hindu-Arabic numerals and the invention of zero (Brahmagupta, 628 CE).</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="insight-box">
+                <div class="insight-title">NUMBERS ARE THE INFRASTRUCTURE OF THOUGHT</div>
+                <p>Mathematics is the language in which God has written the universe. The number system itself is a relay &mdash; from Indian origin through Islamic transmission to European adoption to global standard. The numbers ARE the infrastructure. Every calculation, every structural analysis, every digital system uses Indian-origin numerals and zero. The relay of numbers IS the thesis.</p>
+            </div>
+        </div>
+
+        <div class="separator-thick"></div>
+
+        <!-- GALLERY IV: THE NUMBERS CODEX -->
+        <div class="exhibit-section" id="codex">
+            <h2>IV. THE NUMBERS CODEX</h2>
+            <p class="section-subtitle">Every number in the thesis is deliberate &mdash; a catalogue of numerical intent</p>
+
+            <p>Throughout <em>An Infrastructure Odyssey</em>, numbers are not arbitrary. Each carries deliberate encoding &mdash; connecting to the thesis architecture, to cultural significance, to mathematical beauty. This is not numerology for its own sake. It is the documentation of a deliberate encoding system that runs through the entire work.</p>
+
+            <div class="numbers-grid">
+                <div class="number-card">
+                    <div class="num">0</div>
+                    <div class="meaning">Shunya &mdash; The Void</div>
+                </div>
+                <div class="number-card">
+                    <div class="num">1</div>
+                    <div class="meaning">Unity &mdash; The Individual</div>
+                </div>
+                <div class="number-card">
+                    <div class="num">2</div>
+                    <div class="meaning">Duality &mdash; Man + Machine</div>
+                </div>
+                <div class="number-card">
+                    <div class="num">3</div>
+                    <div class="meaning">Trinity &mdash; 3Cs, 3 Episodes</div>
+                </div>
+                <div class="number-card">
+                    <div class="num">4</div>
+                    <div class="meaning">4ECL &mdash; 4 Pillars</div>
+                </div>
+                <div class="number-card">
+                    <div class="num">5</div>
+                    <div class="meaning">5 Great Webs</div>
+                </div>
+                <div class="number-card">
+                    <div class="num">7</div>
+                    <div class="meaning">7 Scholars</div>
+                </div>
+                <div class="number-card">
+                    <div class="num">8</div>
+                    <div class="meaning">&infin; rotated &mdash; 88 keys</div>
+                </div>
+                <div class="number-card">
+                    <div class="num">10</div>
+                    <div class="meaning">IO &mdash; Binary &mdash; Decimal</div>
+                </div>
+                <div class="number-card">
+                    <div class="num">12</div>
+                    <div class="meaning">12 Relays &mdash; 12 Zodiac</div>
+                </div>
+                <div class="number-card">
+                    <div class="num">17</div>
+                    <div class="meaning">17 UN SDGs</div>
+                </div>
+                <div class="number-card">
+                    <div class="num">35</div>
+                    <div class="meaning">Years Abroad (1991&ndash;2026)</div>
+                </div>
+                <div class="number-card">
+                    <div class="num">88</div>
+                    <div class="meaning">Piano Keys &mdash; &#20843;&#20843; Lucky</div>
+                </div>
+                <div class="number-card">
+                    <div class="num">100</div>
+                    <div class="meaning">10&sup2; &mdash; ALAN &mdash; Century</div>
+                </div>
+            </div>
+
+            <h3>INDIAN MATHEMATICS &mdash; THE VEDIC FOUNDATION</h3>
+            <p>The thesis claims infrastructure is universal &mdash; all civilisations built it. Indian civilisation&rsquo;s mathematical contributions are foundational to ALL modern infrastructure. Every calculation, every structural analysis, every digital system uses Indian-origin numerals and zero. The Numbers Codex honours this heritage.</p>
+
+            <table class="evidence-table">
+                <thead>
+                    <tr>
+                        <th>Contribution</th>
+                        <th>Source</th>
+                        <th>Date</th>
+                        <th>Impact</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Invention of Zero</strong></td>
+                        <td>Brahmagupta</td>
+                        <td>628 CE</td>
+                        <td>The concept of shunya (void) as a number &mdash; the foundation of all modern mathematics and computing.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Vedic Mathematics</strong></td>
+                        <td>Sulba Sutras</td>
+                        <td>c. 800 BCE</td>
+                        <td>Ancient mathematical traditions encoded in the Vedas &mdash; geometry, algebra, and astronomical calculations.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Place-Value Notation</strong></td>
+                        <td>Aryabhata</td>
+                        <td>476&ndash;550 CE</td>
+                        <td>Developed place-value notation, approximated pi, described planetary motion.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Hindu-Arabic Numerals</strong></td>
+                        <td>Indian Origin</td>
+                        <td>c. 300 BCE onward</td>
+                        <td>The &ldquo;Arabic&rdquo; numerals are actually Indian, transmitted via the Islamic Golden Age to Europe and the world.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Intuitive Mathematics</strong></td>
+                        <td>Ramanujan</td>
+                        <td>1887&ndash;1920</td>
+                        <td>The legendary self-taught mathematician whose intuitive grasp of numbers borders on the mystical.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="separator-thick"></div>
+
+        <!-- GALLERY V: THE RELAY OF NUMBERS -->
+        <div class="exhibit-section" id="relay">
+            <h2>V. THE RELAY OF NUMBERS</h2>
+            <p class="section-subtitle">From Indian origin to global standard &mdash; the number system IS a civilisational relay</p>
+
+            <p>The transmission of the numeral system across civilisations is itself a perfect demonstration of the thesis. Numbers were invented in India, refined and transmitted through the Islamic Golden Age, adopted by Europe through trade and scholarship, and became the universal language of commerce and science. The relay of numbers IS the thesis in miniature.</p>
+
+            <div class="relay-chain">
+                <div class="node"><strong>Indian Origin</strong><br><span style="font-size:0.7rem;">Invention of positional system &amp; zero</span></div>
+                <div class="arrow">&rarr;</div>
+                <div class="node"><strong>Islamic Transmission</strong><br><span style="font-size:0.7rem;">Translation &amp; refinement by Islamic mathematicians</span></div>
+                <div class="arrow">&rarr;</div>
+                <div class="node"><strong>European Adoption</strong><br><span style="font-size:0.7rem;">Spread through trade &amp; scholarship</span></div>
+                <div class="arrow">&rarr;</div>
+                <div class="node"><strong>Global Standard</strong><br><span style="font-size:0.7rem;">Universal language of commerce &amp; science</span></div>
+            </div>
+
+            <p>This relay demonstrates every principle of the thesis: knowledge passes between civilisations, each adding value. No single culture owns mathematics. The relay is the mechanism by which human knowledge becomes universal infrastructure. The numbers are not just tools &mdash; they are the infrastructure of thought itself.</p>
+
+            <div class="insight-box">
+                <div class="insight-title">THE NUMBERS ARE THE INFRASTRUCTURE</div>
+                <p>The number system itself is a relay &mdash; from Indian origin through Islamic transmission to European adoption to global standard. Every bridge, every building, every digital system, every financial transaction relies on this relay. The numbers ARE the infrastructure. And the relay of numbers IS the thesis.</p>
+            </div>
+        </div>
+
+        <div class="separator-thick"></div>
+
+        <!-- GALLERY VI: THESIS CONNECTION -->
+        <div class="exhibit-section" id="thesis">
+            <h2>VI. THESIS CONNECTION</h2>
+            <p class="section-subtitle">How &ldquo;Before Writing&rdquo; connects to the 12 Civilisational Relays</p>
+
+            <p>The &ldquo;Before Writing&rdquo; exhibit sits before Relay 1 (Fire) in the thesis chronology. It establishes that the cognitive infrastructure for abstract thought &mdash; counting, quantifying, recording &mdash; existed for 35,000 years before the first relay. The relays are the visible infrastructure of civilisation. The numbers are the invisible infrastructure that made them possible.</p>
+
+            <table class="evidence-table">
+                <thead>
+                    <tr>
+                        <th>Connection</th>
+                        <th>Relay</th>
+                        <th>How Numbers Enabled It</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Calories</strong></td>
+                        <td>Relay 1: Fire</td>
+                        <td>Counting days, tracking seasons, measuring food stores &mdash; the caloric foundation required quantification.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Settlement</strong></td>
+                        <td>Relay 2: Tree</td>
+                        <td>Land measurement, timber counting, resource allocation &mdash; permanent settlement required accounting.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Exchange</strong></td>
+                        <td>Relay 3: River</td>
+                        <td>Grain accounting, trade records, taxation &mdash; river civilisations invented writing FROM accounting.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Empire</strong></td>
+                        <td>Relay 4: Horse</td>
+                        <td>Census, military logistics, tribute calculation &mdash; empire requires counting at scale.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Digital</strong></td>
+                        <td>Relay 10: AAA Triad</td>
+                        <td>Binary (1/0), algorithms, computation &mdash; the digital age is built entirely on numbers.</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Consciousness</strong></td>
+                        <td>Relay 12: Human Nodes</td>
+                        <td>The thesis itself &mdash; 575,801 words, 2,645 tasks, 360 blocks &mdash; documented through numbers.</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3>THE FAMILY CONNECTION</h3>
+            <p>The Dearden family embodies the entire arc from pre-literate oral tradition through to modern infrastructure. Helen Lesley Zavacky (n&eacute;e Dearden) &mdash; Financial Controller &mdash; connects to Relay 3 (River): proto-writing arose from grain accounting, which became cuneiform, which became the foundation of all written civilisation. Accounting &rarr; the need to record &rarr; proto-writing systems. Sound predates writing. Writing predates engineering. Engineering requires accounting. The family IS the thesis.</p>
+
+            <div style="text-align:center; margin:3rem 0 1rem; padding:2rem; border:2px solid var(--color-accent-gold); border-radius:8px; background:rgba(255,215,0,0.03);">
+                <p style="font-size:1.3rem; font-family:var(--font-heading); color:var(--color-accent-gold); letter-spacing:3px; margin-bottom:0.5rem;">PER ARYA AD ASTRA</p>
+                <p style="font-size:0.9rem; color:var(--color-text-secondary); font-style:italic;">Through nobility, to the stars</p>
+                <p style="font-size:0.8rem; color:var(--color-text-secondary); margin-top:1rem;">Block 360 &bull; Day 127 &bull; 12 March 2026</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <div class="footer" style="text-align:center; padding:2rem 1rem; border-top:1px solid rgba(255,215,0,0.2); margin-top:3rem;">
+        <p style="color:var(--color-text-secondary); font-size:0.85rem;">&copy; 2026 Infrastructure Academy. All rights reserved. Preserving knowledge for eternity.</p>
+        <p style="color:var(--color-text-secondary); font-size:0.75rem; margin-top:0.5rem;">Episode 1: Earthbound Foundations | Episode 2: Reality Engines &mdash; The Gray Arena | Episode 3: Stewardship &amp; Renewal &mdash; The Cosmic Scale</p>
+    
+        <!-- Social Cross-Links -->
+        <div style="margin-top:0.75rem; display:flex; justify-content:center; gap:1.2rem; flex-wrap:wrap; align-items:center;">
+            <a href="https://x.com/dearden_ni37258" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.35rem; color:#ffd700; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="Follow on X">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                X
+            </a>
+            <a href="https://www.linkedin.com/in/nigeldearden" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.35rem; color:#0077B5; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="Connect on LinkedIn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+            </a>
+            <a href="/site.html" style="display:inline-flex; align-items:center; gap:0.35rem; color:#25D366; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="WhatsApp QR on Homepage">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                WhatsApp
+            </a>
+        </div>
+    </div>
+    <script src="/js/discovery-hints.js"></script>
+    <script src="/js/main.js?v=20260308a"></script>
+    <script src="/js/i18n.js?v=20260308a"></script>
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" title="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+    <script>
+        const btn=document.getElementById('back-to-top');
+        window.addEventListener('scroll',()=>{btn.style.display=window.scrollY>400?'flex':'none';});
+    </script>
+    <!-- Search Bar -->
+    <script src="/js/site-search.js?v=20260311a"></script>
+    <!-- Nav Optimise -->
+    <script src="/js/nav-optimise.js?v=20260312a"></script>
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement -->
+
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement (v2 fixed) -->
+<script>
+(function() {
+  try {
+    var sid = sessionStorage.getItem('iaai_sid');
+    if (!sid) {
+      sid = 'ses_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 9);
+      sessionStorage.setItem('iaai_sid', sid);
+    }
+    var data = {
+      path: window.location.pathname + (window.location.hash || ''),
+      pageTitle: document.title || 'Untitled',
+      referrer: document.referrer || '',
+      sessionId: sid
+    };
+    fetch('/api/trpc/analytics.track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ json: data }),
+      credentials: 'include'
+    }).catch(function() {});
+    window.addEventListener('hashchange', function() {
+      var hashData = {
+        path: window.location.pathname + (window.location.hash || ''),
+        pageTitle: document.title || 'Untitled',
+        referrer: window.location.href,
+        sessionId: sid
+      };
+      fetch('/api/trpc/analytics.track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ json: hashData }),
+        credentials: 'include'
+      }).catch(function() {});
+    });
+  } catch(e) {}
+})();
+</script>
+
+    <!-- Mobile table scroll fix -->
+    <script>
+    (function(){
+      if(window.innerWidth > 768) return;
+      document.querySelectorAll('table').forEach(function(t){
+        if(t.parentElement && t.parentElement.classList.contains('table-scroll-wrapper')) return;
+        var w = document.createElement('div');
+        w.className = 'table-scroll-wrapper';
+        t.parentNode.insertBefore(w, t);
+        w.appendChild(t);
+      });
+    })();
+    </script>
+
+
+    <!-- Back-to-Top Button Logic -->
+    <script>
+    (function() {
+        var btn = document.getElementById('back-to-top-btn');
+        if (!btn) return;
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                btn.style.display = 'flex';
+            } else {
+                btn.style.display = 'none';
+            }
+        }, { passive: true });
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    })();
+    </script>
+
+</body>
+</html>

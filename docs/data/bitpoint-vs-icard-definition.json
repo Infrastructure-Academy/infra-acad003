@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "title": "BitPoint vs iCard — Definitive Distinction",
+    "source": "RECALL Block 353 + WhatsApp confirmation to Henry Leong & Michael",
+    "locked": true,
+    "date": "2026-03-06",
+    "domain": "www.infrastructure-academy.com"
+  },
+  "bitpoint": {
+    "full_name": "The BitPoint",
+    "tagline": "Physical Intellectual Currency",
+    "definition": "A unit of knowledge made physical, tradeable, collectible. Not cryptocurrency. Not blockchain. A BIT of POINT. Our bitcoin exchange made tangible.",
+    "rule": "Every observation becomes a card. Every card becomes a BitPoint.",
+    "format": "Collectible card — numbered, tradeable, part of the 52-card set",
+    "numbering": "BitPoint NN of 52",
+    "source_block": 353,
+    "purpose": "The product. External-facing. Shared with partners, investors, players.",
+    "example": "BitPoint 01 of 52 — THE BITPOINT (Physical Intellectual Currency card shared with Henry & Michael)"
+  },
+  "icard": {
+    "full_name": "iCard",
+    "tagline": "Internal Infographic Snapshot",
+    "definition": "An infographic snapshot card for internal project use. Status reports, review findings, data summaries, return briefs.",
+    "format": "Dark navy (#0a1628) infographic card with gold (#ffd700) accents",
+    "numbering": "Sequential by session (iCard #1, #2, etc.)",
+    "purpose": "The process tool. Internal-facing. Project management, decision support, audit trail.",
+    "example": "iCard #1 — Review Findings (12 university scores snapshot)"
+  },
+  "key_distinction": "BitPoints are the PRODUCT (collectible knowledge cards for the market). iCards are the PROCESS TOOL (internal infographic snapshots for project management). Never interchange them.",
+  "tre_correction": {
+    "correct": "TRE = The Reality Engine (Guided Learning Platform)",
+    "incorrect": "TRE = The Relay Experience (WRONG — was an error in the ALAN & DAVID paper, fixed 2026-03-06)",
+    "files_fixed": 26,
+    "verification": "Zero instances of 'Relay Experience' remain in source files as of 2026-03-06"
+  }
+}

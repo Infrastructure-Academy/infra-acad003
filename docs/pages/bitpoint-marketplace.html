@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/favicon_32_80e4326c.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/favicon_32_80e4326c.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/favicon_192_f2a5ba49.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="BitPoints Marketplace — Complete 60-card Series 1 collectible deck. 4 suits: Relay, Scholar, Blueprint, Epoch. 12 themed cards + 3 Jokers per suit. The Getty Images library of consciousness architecture.">
+    <meta property="og:title" content="BitPoints Marketplace — 60-Card Series 1 Deck">
+    <meta property="og:description" content="Complete collectible card marketplace. 4 suits × 15 cards. Relay (Gold), Scholar (Silver), Blueprint (Copper), Epoch (Crimson).">
+    <title>BitPoints Marketplace — Series 1 | Infrastructure Academy</title>
+    <link rel="stylesheet" href="/css/style.css?v=20260317a">
+    <style>
+        /* BETA Badge */
+        .beta-badge { display:inline-flex; align-items:center; gap:0.3rem; background:rgba(251,146,60,0.15); border:1px solid rgba(251,146,60,0.5); color:#fb923c; font-family:'Courier New',monospace; font-size:0.65rem; font-weight:bold; letter-spacing:2px; padding:0.2rem 0.6rem; border-radius:3px; text-transform:uppercase; animation:beta-pulse 3s ease-in-out infinite; vertical-align:middle; margin-left:0.5rem; }
+        .beta-badge::before { content:'\25CF'; font-size:0.5rem; animation:beta-dot 2s ease-in-out infinite; }
+        @keyframes beta-pulse { 0%,100%{opacity:1;} 50%{opacity:0.7;} }
+        @keyframes beta-dot { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+        @media(max-width:768px) { .beta-badge { display:none; } .header-title { max-width: calc(100vw - 160px) !important; } }
+
+        /* ===== MARKETPLACE HERO ===== */
+        .mp-hero {
+            text-align: center;
+            padding: 3rem 1.5rem 2rem;
+            border-bottom: 2px solid var(--color-accent-gold);
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        .mp-hero h1 {
+            font-family: var(--font-heading);
+            font-size: 2.4rem;
+            color: var(--color-accent-gold);
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+        }
+        .mp-hero .subtitle {
+            font-size: 1.1rem;
+            color: var(--color-text-secondary);
+            font-style: italic;
+            margin-bottom: 1rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .mp-hero .deck-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+        .mp-hero .stat-box {
+            text-align: center;
+            min-width: 100px;
+        }
+        .mp-hero .stat-number {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            color: var(--color-accent-gold);
+            font-weight: bold;
+            line-height: 1;
+        }
+        .mp-hero .stat-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-text-secondary);
+            margin-top: 0.3rem;
+        }
+
+        /* ===== SUIT NAVIGATION ===== */
+        .suit-nav {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            padding: 1rem 1.5rem;
+            margin-bottom: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: var(--color-bg-primary);
+            border-bottom: 1px solid rgba(255,215,0,0.15);
+        }
+        .suit-btn {
+            padding: 0.6rem 1.2rem;
+            border: 2px solid rgba(255,255,255,0.15);
+            background: transparent;
+            color: var(--color-text-secondary);
+            font-family: var(--font-heading);
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 4px;
+        }
+        .suit-btn:hover { border-color: rgba(255,215,0,0.5); color: var(--color-accent-gold); }
+        .suit-btn.active { border-color: var(--color-accent-gold); color: var(--color-accent-gold); background: rgba(255,215,0,0.08); }
+        .suit-btn.all-btn { border-color: rgba(255,215,0,0.3); }
+        .suit-btn[data-suit="relay"] { --suit-color: #D4AF37; }
+        .suit-btn[data-suit="scholar"] { --suit-color: #7B8FA1; }
+        .suit-btn[data-suit="blueprint"] { --suit-color: #B87333; }
+        .suit-btn[data-suit="epoch"] { --suit-color: #DC143C; }
+        .suit-btn[data-suit]:hover, .suit-btn[data-suit].active { border-color: var(--suit-color); color: var(--suit-color); background: rgba(255,255,255,0.03); }
+
+        /* ===== SUIT SECTION ===== */
+        .suit-section {
+            padding: 2rem 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .suit-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 2px solid rgba(255,255,255,0.08);
+        }
+        .suit-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        .suit-header h2 {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            letter-spacing: 3px;
+            margin-bottom: 0;
+        }
+        .suit-header .suit-desc {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            font-style: italic;
+        }
+        .suit-header .suit-count {
+            font-family: 'Courier New', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 1px;
+            color: var(--color-text-secondary);
+            margin-left: auto;
+            white-space: nowrap;
+        }
+
+        /* Suit-specific colors */
+        .suit-relay .suit-icon { background: rgba(212,175,55,0.15); border: 2px solid #D4AF37; color: #D4AF37; }
+        .suit-relay .suit-header h2 { color: #D4AF37; }
+        .suit-relay .suit-header { border-bottom-color: rgba(212,175,55,0.3); }
+        .suit-scholar .suit-icon { background: rgba(123,143,161,0.15); border: 2px solid #7B8FA1; color: #7B8FA1; }
+        .suit-scholar .suit-header h2 { color: #7B8FA1; }
+        .suit-scholar .suit-header { border-bottom-color: rgba(123,143,161,0.3); }
+        .suit-blueprint .suit-icon { background: rgba(184,115,51,0.15); border: 2px solid #B87333; color: #B87333; }
+        .suit-blueprint .suit-header h2 { color: #B87333; }
+        .suit-blueprint .suit-header { border-bottom-color: rgba(184,115,51,0.3); }
+        .suit-epoch .suit-icon { background: rgba(220,20,60,0.15); border: 2px solid #DC143C; color: #DC143C; }
+        .suit-epoch .suit-header h2 { color: #DC143C; }
+        .suit-epoch .suit-header { border-bottom-color: rgba(220,20,60,0.3); }
+
+        /* ===== CARD GRID ===== */
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1.2rem;
+        }
+        .bp-card {
+            background: var(--color-bg-secondary);
+            border: 1px solid rgba(255,255,255,0.06);
+            border-radius: 6px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            position: relative;
+        }
+        .bp-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+        }
+        .bp-card .card-img-wrap {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+        .bp-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+        .bp-card .card-info {
+            padding: 0.8rem;
+            position: relative;
+            z-index: 7;
+            background: var(--color-bg-secondary);
+        }
+        .bp-card .card-id {
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.3rem;
+        }
+        .suit-relay .bp-card .card-id { color: #D4AF37; }
+        .suit-scholar .bp-card .card-id { color: #7B8FA1; }
+        .suit-blueprint .bp-card .card-id { color: #B87333; }
+        .suit-epoch .bp-card .card-id { color: #DC143C; }
+
+        .bp-card .card-name {
+            font-family: var(--font-heading);
+            font-size: 1.15rem;
+            color: var(--color-text-primary);
+            margin-bottom: 0.3rem;
+            line-height: 1.3;
+        }
+        .bp-card .card-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            padding: 0.15rem 0.5rem;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        .tag-themed { background: rgba(255,215,0,0.1); color: #D4AF37; border: 1px solid rgba(212,175,55,0.3); }
+        .tag-joker { background: rgba(168,85,247,0.15); color: #a855f7; border: 1px solid rgba(168,85,247,0.4); }
+
+        /* ===== TIER LOCK OVERLAY ===== */
+        .bp-card.tier-locked .card-img-wrap {
+            position: relative;
+        }
+        .bp-card.tier-locked .card-img-wrap::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(10,22,40,0.65);
+            backdrop-filter: blur(3px);
+            z-index: 5;
+        }
+        .bp-card .lock-overlay {
+            display: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 300px;
+            z-index: 6;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 1rem;
+        }
+        .bp-card.tier-locked .lock-overlay { display: flex; }
+        .lock-overlay .lock-icon { font-size: 2rem; margin-bottom: 0.5rem; }
+        .lock-overlay .lock-text { font-family: var(--font-heading); font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; color: var(--color-accent-gold); }
+        .lock-overlay .lock-tier { font-size: 0.7rem; color: var(--color-text-secondary); margin-top: 0.3rem; letter-spacing: 1px; }
+
+        /* ===== LIGHTBOX ===== */
+        .lightbox {
+            display: none;
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: rgba(0,0,0,0.92);
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+        .lightbox.active { display: flex; }
+        .lightbox img {
+            max-width: 90vw;
+            max-height: 85vh;
+            object-fit: contain;
+            border: 2px solid rgba(255,215,0,0.3);
+            border-radius: 6px;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 1.5rem;
+            right: 2rem;
+            font-size: 2rem;
+            color: var(--color-accent-gold);
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-family: var(--font-heading);
+            z-index: 10000;
+        }
+        .lightbox-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2.5rem;
+            color: var(--color-accent-gold);
+            cursor: pointer;
+            background: rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,215,0,0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            z-index: 10000;
+        }
+        .lightbox-prev { left: 1rem; }
+        .lightbox-next { right: 1rem; }
+        .lightbox-caption {
+            position: absolute;
+            bottom: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: var(--color-text-primary);
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            letter-spacing: 2px;
+            text-shadow: 0 2px 8px rgba(0,0,0,0.8);
+        }
+        .lightbox-caption .lb-id {
+            font-family: 'Courier New', monospace;
+            font-size: 0.65rem;
+            color: var(--color-accent-gold);
+            letter-spacing: 3px;
+            display: block;
+            margin-bottom: 0.3rem;
+        }
+
+        /* ===== DECK SUMMARY TABLE ===== */
+        .deck-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+        .deck-table th, .deck-table td {
+            padding: 0.6rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+            font-size: 0.85rem;
+        }
+        .deck-table th {
+            font-family: var(--font-heading);
+            color: var(--color-accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.7rem;
+        }
+        .deck-table .suit-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+            vertical-align: middle;
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .mp-hero h1 { font-size: 1.6rem; letter-spacing: 2px; }
+            .mp-hero .deck-stats { gap: 1rem; }
+            .mp-hero .stat-number { font-size: 1.6rem; }
+            .card-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 0.8rem; }
+            .bp-card img { height: 220px; }
+            .suit-nav { gap: 0.3rem; }
+            .suit-btn { padding: 0.4rem 0.8rem; font-size: 0.6rem; }
+            .suit-header { flex-wrap: wrap; }
+            .suit-header .suit-count { margin-left: 0; width: 100%; margin-top: 0.3rem; }
+        }
+        @media (max-width: 480px) {
+            .card-grid { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+            .bp-card img { height: 180px; }
+            .bp-card .card-info { padding: 0.5rem; }
+            .bp-card .card-name { font-size: 0.8rem; }
+        }
+    </style>
+
+<style id="mobile-quicknav-styles">
+/* ===== MOBILE QUICK-NAV BAR ===== */
+.mobile-quicknav {
+    display: none;
+    width: 100%;
+    background: linear-gradient(180deg, #0d1f3c 0%, #0a1628 100%);
+    border-bottom: 1px solid rgba(255,215,0,0.25);
+    padding: 6px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 6px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+.mobile-quicknav::-webkit-scrollbar { display: none; }
+.mobile-quicknav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 10px;
+    background: rgba(255,215,0,0.08);
+    border: 1px solid rgba(255,215,0,0.35);
+    border-radius: 16px;
+    color: #ffd700;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+.mobile-quicknav a:active {
+    background: rgba(255,215,0,0.25);
+    transform: scale(0.95);
+}
+.mobile-quicknav a.mqn-home {
+    background: #ffd700;
+    color: #0a1628;
+    border-color: #ffd700;
+}
+@media(max-width:768px) {
+    .mobile-quicknav { display: flex; }
+}
+@media(min-width:769px) {
+    .mobile-quicknav { display: none !important; }
+}
+
+/* ===== BACK-TO-TOP FLOATING BUTTON ===== */
+#back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 16px;
+    z-index: 9999;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(10,22,40,0.92);
+    border: 1.5px solid rgba(255,215,0,0.6);
+    color: #ffd700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    transition: all 0.2s;
+}
+#back-to-top-btn:active {
+    transform: scale(0.9);
+    background: rgba(255,215,0,0.2);
+}
+</style>
+
+</head>
+<body>
+    <!-- iAAi Network Bar — NAV-001 · Cross-Site Navigation -->
+    <!-- ═══ iAAi NETWORK BAR ═══ -->
+    <div id="iaai-network-bar" style="display:flex;align-items:center;justify-content:space-around;width:100%;height:36px;background:#0a1628;position:sticky;top:0;z-index:200001;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">
+      <a href="https://www.infrastructure-academy.com" style="text-decoration:none;color:#fff;font-weight:700;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid #DC2626;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#DC2626"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg> ACADEMY</a>
+      <a href="https://realityeng-epdhlkrn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> QUEST</a>
+      <a href="#" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;opacity:0.5;pointer-events:none;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A843"><path d="M6 2v6l-2 2v4l2 2v6h4v-6l2-2v-4L10 8V2H6zm12 0v6l-2 2v4l2 2v6h-4v-6l-2-2v-4l2-2V2h4z"/></svg> XCHANGE</a>
+      <a href="https://nigelmemorial-ucmtq9dn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#16A34A"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg> MEMORIAL</a>
+      <a href="https://xgrowthtrk-2a93yo5z.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#06B6D4"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/></svg> NEWS</a>
+    </div>
+
+    <!-- HEADER -->
+    <header class="site-header" style="display:flex; align-items:center; justify-content:space-between; padding:0.8rem 1.5rem; border-bottom:2px solid var(--color-accent-gold); background:var(--color-bg-primary); position:relative; z-index:200;">
+        <div style="display:flex; align-items:center; gap:0.8rem;">
+            <a href="/site.html" style="text-decoration:none; display:flex; align-items:center; gap:0.8rem;">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/favicon_32_80e4326c.png" alt="iAAi" style="width:32px; height:32px;">
+                <div>
+                    <div class="header-title" style="font-family:var(--font-heading); font-size:1.1rem; color:var(--color-accent-gold); letter-spacing:3px; text-transform:uppercase; white-space:nowrap;">INFRASTRUCTURE ACADEMY</div>
+                    <div class="header-tagline" style="font-size:0.55rem; color:var(--color-text-secondary); letter-spacing:2px; text-transform:uppercase;">AN INFRASTRUCTURE ODYSSEY</div>
+                </div>
+            </a>
+            <span class="beta-badge">BETA</span>
+        </div>
+        <nav style="display:flex; gap:1rem; align-items:center; flex-wrap:wrap;">
+            <a href="/site.html" style="color:var(--color-text-secondary); text-decoration:none; font-size:0.7rem; letter-spacing:1px; text-transform:uppercase;">HOME</a>
+            <a href="/pages/chip-evolution.html" style="color:var(--color-text-secondary); text-decoration:none; font-size:0.7rem; letter-spacing:1px; text-transform:uppercase;">CHIP EVOLUTION</a>
+            <a href="/library.html" style="color:var(--color-text-secondary); text-decoration:none; font-size:0.7rem; letter-spacing:1px; text-transform:uppercase;">LIBRARY</a>
+            <a href="/pages/link-register.html" style="color:var(--color-text-secondary); text-decoration:none; font-size:0.7rem; letter-spacing:1px; text-transform:uppercase;">LINK REGISTER</a>
+            <a href="/pages/8th-scholar.html" style="text-decoration:none;">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/scholar_square_859aca43.jpeg" alt="The 8th Scholar" style="width:28px; height:28px; border-radius:50%; border:1px solid var(--color-accent-gold);">
+            </a>
+        </nav>
+    </header>
+    <!-- ===== MOBILE QUICK-NAV BAR — always visible on mobile ===== -->
+    <div class="mobile-quicknav" id="mobile-quicknav">
+        <a href="/site.html" class="mqn-home">&#127968; HOME</a>
+        <a href="/pages/start-here.html">&#128218; START</a>
+        <a href="/volumes/volume1/index.html">&#128214; READ</a>
+        <a href="/pages/framework.html">&#128736; FRAMEWORK</a>
+        <a href="/play">&#127918; PLAY</a>
+        <a href="/pages/movies.html">&#127916; MOVIES</a>
+        <a href="/pages/resources.html">&#128194; RESOURCES</a>
+        <a href="/press.html">&#128240; PRESS</a>
+    </div>
+
+    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <button id="back-to-top-btn" aria-label="Back to top" title="Back to top">&#9650;</button>
+
+
+    <main style="max-width:1400px; margin:0 auto;">
+        <!-- HERO -->
+        <div class="mp-hero">
+            <h1>BITPOINTS MARKETPLACE</h1>
+            <div class="subtitle">Series 1 &mdash; Complete 60-Card Collectible Deck. Four suits mapping 12,000 years of civilisational infrastructure.</div>
+            <div class="deck-stats">
+                <div class="stat-box">
+                    <div class="stat-number">60</div>
+                    <div class="stat-label">Total Cards</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Suits</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">48</div>
+                    <div class="stat-label">Themed Cards</div>
+                </div>
+                <div class="stat-box">
+                    <div class="stat-number">12</div>
+                    <div class="stat-label">Jokers</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SUIT NAVIGATION -->
+        <div class="suit-nav">
+            <button class="suit-btn all-btn active" data-suit="all" onclick="filterSuit('all')">ALL 60</button>
+            <button class="suit-btn" data-suit="relay" onclick="filterSuit('relay')">&#9830; RELAY</button>
+            <button class="suit-btn" data-suit="scholar" onclick="filterSuit('scholar')">&#9827; SCHOLAR</button>
+            <button class="suit-btn" data-suit="blueprint" onclick="filterSuit('blueprint')">&#9824; BLUEPRINT</button>
+            <button class="suit-btn" data-suit="epoch" onclick="filterSuit('epoch')">&#9829; EPOCH</button>
+        </div>
+
+        <!-- ===== SUIT 1: RELAY (Gold/Bronze) ===== -->
+        <div class="suit-section suit-relay" data-suit-section="relay">
+            <div class="suit-header">
+                <div class="suit-icon">&#9830;</div>
+                <div>
+                    <h2>SUIT 1 &mdash; THE RELAY</h2>
+                    <div class="suit-desc">12 civilisational relays from Fire to Human Nodes + 3 Sun Tzu fractal connectors</div>
+                </div>
+                <div class="suit-count">15 / 60 CARDS &bull; GOLD / BRONZE</div>
+            </div>
+            <div class="card-grid">
+                <div class="bp-card" onclick="openLightbox(0)">
+                    <div class="card-img-wrap"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/bitpoint-01-fire-relay_46f572d3.png" alt="R01 — The Fire Relay" loading="lazy"></div>
+                    <div class="card-info">
+                        <div class="card-id">R01 &bull; RELAY 01/12</div>
+                        <div class="card-name">THE FIRE RELAY</div>
+                        <span class="card-tag tag-themed">THEMED</span>
+                    </div>
+                    <div class="lock-overlay"><div class="lock-icon">&#128274;</div><div class="lock-text">SCHOLAR TIER</div><div class="lock-tier">Subscribe to unlock</div></div>
+                </div>
+                <div class="bp-card" onclick="openLightbox(1)">
+                    <div class="card-img-wrap"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/bitpoint-02-tree-relay_fe452324.png" alt="R02 — The Tree Relay" loading="lazy"></div>
+                    <div class="card-info">
+                        <div class="card-id">R02 &bull; RELAY 02/12</div>
+                        <div class="card-name">THE TREE RELAY</div>
+                        <span class="card-tag tag-themed">THEMED</span>
+                    </div>
+                    <div class="lock-overlay"><div class="lock-icon">&#128274;</div><div class="lock-text">SCHOLAR TIER</div><div class="lock-tier">Subscribe to unlock</div></div>
+                </div>
+                <div class="bp-card" onclick="openLightbox(2)">
+                    <div class="card-img-wrap"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/bitpoint-03-river-relay_40236332.png" alt="R03 — The River Relay" loading="lazy"></div>
+                    <div class="card-info">
+                        <div class="card-id">R03 &bull; RELAY 03/12</div>
+                        <div class="card-name">THE RIVER RELAY</div>
+                        <span class="card-tag tag-themed">THEMED</span>
+                    </div>
+                    <div class="lock-overlay"><div class="lock-icon">&#128274;</div><div class="lock-text">SCHOLAR TIER</div><div class="lock-tier">Subscribe to unlock</div></div>
+                </div>
+                <div class="bp-card" onclick="openLightbox(3)">
+                    <div class="card-img-wrap"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/bitpoint-04-horse-relay_ca450768.png" alt="R04 — The Horse Relay" loading="lazy"></div>
+                    <div class="card-info">
+                        <div class="card-id">R04 &bull; RELAY 04/12</div>
+                        <div class="card-name">THE HORSE RELAY</div>
+                        <span class="card-tag tag-themed">THEMED</span>
+                    </div>
+                    <div class="lock-overlay"><div class="lock-icon">&#128274;</div><div class="lock-text">SCHOLAR TIER</div><div class="lock-tier">Subscribe to unlock</div></div>
+                </div>
+                <div class="bp-card" onclick="openLightbox(4)">
+                    <div class="card-img-wrap"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/bitpoint-05-roads-relay_31ef1184.png" alt="R05 — The Roads Relay" loading="lazy"></div>
+                    <div class="card-info">
+                        <div class="card-id">R05 &bull; RELAY 05/12</div>
+                        <div class="card-name">THE ROADS RELAY</div>
+                        <span class="card-tag tag-themed">THEMED</span>
+                    </div>
+                    <div class="lock-overlay"><div class="lock-icon">&#128274;</div><div class="lock-text">SCHOLAR TIER</div><div class="lock-tier">Subscribe to unlock</div></div>
+                </div>
+                <div class="bp-card" onclick="openLightbox(5)">
+                    <div class="card-img-wrap"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/bitpoint-06-ships-relay_c1374735.png" alt="R06 — The Ships Relay" loading="lazy"></div>
+                    <div class="card-info">
+                        <div class="card-id">R06 &bull; RELAY 06/12</div>
+                        <div class="card-name">THE SHIPS RELAY</div>
+                        <span class="card-tag tag-themed">THEMED</span>
+                    </div>
+                    <div class="lock-overlay"><div class="lock-icon">&#128274;</div><div class="lock-text">SCHOLAR TIER</div><div class="lock-tier">Subscribe to unlock</div></div>
+                </div>
+                <div class="bp-card" onclick="openLightbox(6)">
+                    <div class="card-img-wrap"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/bitpoint-07-loom-relay_7d14cb35.png" alt="R07 — The Loom Relay" loading="lazy"></div>
+                    <div class="card-info">
+                        <div class="card-id">R07 &bull; RELAY 07/12</div>
+                        <div class="card-name">THE LOOM RELAY</div>
+                        <span class="card-tag tag-themed">THEMED</span>
+                    </div>
+                    <div class="lock-overlay"><div class="lock-icon">&#128274;</div><div class="lock-text">SCHOLAR TIER</div><div class="lock-tier">Subscribe to unlock</div></div>
+                </div>
+                <div class="bp-card" onclick="openLightbox(7)">
+                    <div class="card-img-wrap"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/bitpoint-08-rail-relay_aeea9206.png" alt="R08 — The Rail Relay" loading="lazy"></div>
+                    <div class="card-info">
+                        <div class="card-id">R08 &bull; RELAY 08/12</div>
+                        <div class="card-name">THE RAIL RELAY</div>
+                        <span class="card-tag tag-themed">THEMED</span>
+                    </div>
+                    <div class="lock-overlay"><div class="lock-icon">&#128274;</div><div class="lock-text">SCHOLAR TIER</div><div class="lock-tier">Subscribe to unlock</div></div>
+                </div>
+                <div class="bp-card" onclick="openLightbox(8)">
+                    <div class="card-img-wrap"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/bitpoint-09-engine-relay_ced524f6.png" alt="R09 — The Engine Relay" loading="lazy"></div>
+                    <div class="card-info">
+                        <div class="card-id">R09 &bull; RELAY 09/12</div>
+                        <div class="card-name">THE ENGINE RELAY</div>
+                        <span class="card-tag tag-themed">THEMED</span>
+                    </div>
+                    <div class="lock-overlay"><div class="lock-icon">&#128274;</div><div class="lock-text">SCHOLAR TIER</div><div class="lock-tier">Subscribe to unlock</div></div>
+                </div>
+                <div class="bp-card" onclick="openLightbox(9)">
+                    <div class="card-img-wrap"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/bitpoint-10-aaa-triad-relay_7fc0dac3.png" alt="R10 — The AAA Triad Relay" loading="lazy"></div>
+                    <div class="card-info">
+                        <div class="card-id">R10 &bull; RELAY 10/12</div>
+                        <div class="card-name">THE AAA TRIAD RELAY</div>
+                        <span class="card-tag tag-themed">THEMED</span>
+                    </div>
+                    <div class="lock-overlay"><div class="lock-icon">&#128274;</div><div class="lock-text">SCHOLAR TIER</div><div class="lock-tier">Subscribe to unlock</div></div>
+                </div>
+                <div class="bp-card" onclick="openLightbox(10)">
+                    <div class="card-img-wrap"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/bitpoint-11-orbit-relay_68cdeb66.png" alt="R11 — The Orbit Relay" loading="lazy"></div>
+                    <div class="card-info">
+                        <div class="card-id">R11 &bull; RELAY 11/12</div>
+                        <div class="card-name">THE ORBIT RELAY</div>
+                        <span class="card-tag tag-themed">THEMED</span>
+                    </div>
+                    <div class="lock-overlay"><div class="lock-icon">&#128274;</div><div class="lock-text">SCHOLAR TIER</div><div class="lock-tier">Subscribe to unlock</div></div>
+                </div>
+                <div class="bp-card" onclick="openLightbox(11)">
+                    <div class="card-img-wrap"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/bitpoint-12-human-nodes-relay_c76808f9.png" alt="R12 — The Human Nodes Relay" loading="lazy"></div>
+                    <div class="card-info">
+                        <div class="card-id">R12 &bull; RELAY 12/12</div>
+                        <div class="card-name">THE HUMAN NODES RELAY</div>
+                        <span class="card-tag tag-themed">THEMED</span>
+                    </div>
+                    <div class="lock-overlay"><div class="lock-icon">&#128274;</div><div class="lock-text">SCHOLAR TIER</div><div class="lock-tier">Subscribe to unlock</div></div>
+                </div>
+                <div class="bp-card" onclick="openLightbox(12)">
+                    <div class="card-img-wrap"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/bitpoint-13-joker-suntzu_f69b5f50.png" alt="JOKER A — Use of Spies" loading="lazy"></div>
+                    <div class="card-info">
+                        <div class="card-id">RJ1 &bull; JOKER A</div>
+                        <div class="card-name">THE USE OF SPIES</div>
+                        <span class="card-tag tag-joker">JOKER</span>
+                    </div>
+                    <div class="lock-overlay"><div class="lock-icon">&#128274;</div><div class="lock-text">SCHOLAR TIER</div><div class="lock-tier">Subscribe to unlock</div></div>
+                </div>
+                <div class="bp-card" onclick="openLightbox(13)">
+                    <div class="card-img-wrap"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/bitpoint-14-joker-mirror-table_0a095cf6.png" alt="JOKER B — Mirror Inversion" loading="lazy"></div>
+                    <div class="card-info">
+                        <div class="card-id">RJ2 &bull; JOKER B</div>
+                        <div class="card-name">MIRROR INVERSION TABLE</div>
+                        <span class="card-tag tag-joker">JOKER</span>
+                    </div>
+                    <div class="lock-overlay"><div class="lock-icon">&#128274;</div><div class="lock-text">SCHOLAR TIER</div><div class="lock-tier">Subscribe to unlock</div></div>
+                </div>
+                <div class="bp-card" onclick="openLightbox(14)">
+                    <div class="card-img-wrap"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/bitpoint-14-joker-mirror-v2_5f232fb2.png" alt="JOKER C — Side-by-Side Mirror" loading="lazy"></div>
+                    <div class="card-info">
+                        <div class="card-id">RJ3 &bull; JOKER C</div>
+                        <div class="card-name">SIDE-BY-SIDE MIRROR</div>
+                        <span class="card-tag tag-joker">JOKER</span>
+                    </div>
+                    <div class="lock-overlay"><div class="lock-icon">&#128274;</div><div class="lock-text">SCHOLAR TIER</div><div class="lock-tier">Subscribe to unlock</div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== SUIT 2: SCHOLAR (Silver/Blue) ===== -->
+        <div class="suit-section suit-scholar" data-suit-section="scholar">
+            <div class="suit-header">
+                <div class="suit-icon">&#9827;</div>
+                <div>
+                    <h2>SUIT 2 &mdash; THE SCHOLAR</h2>
+                    <div class="suit-desc">12 master thinkers who shaped infrastructure consciousness + 3 knowledge connectors</div>
+                </div>
+                <div class="suit-count">15 / 60 CARDS &bull; SILVER / BLUE</div>
+            </div>
+            <div class="card-grid" id="scholar-grid"></div>
+        </div>
+
+        <!-- ===== SUIT 3: BLUEPRINT (Copper/Green) ===== -->
+        <div class="suit-section suit-blueprint" data-suit-section="blueprint">
+            <div class="suit-header">
+                <div class="suit-icon">&#9824;</div>
+                <div>
+                    <h2>SUIT 3 &mdash; THE BLUEPRINT</h2>
+                    <div class="suit-desc">12 landmark engineering achievements that defined civilisation + 3 design connectors</div>
+                </div>
+                <div class="suit-count">15 / 60 CARDS &bull; COPPER / GREEN</div>
+            </div>
+            <div class="card-grid" id="blueprint-grid"></div>
+        </div>
+
+        <!-- ===== SUIT 4: EPOCH (Crimson/Red) ===== -->
+        <div class="suit-section suit-epoch" data-suit-section="epoch">
+            <div class="suit-header">
+                <div class="suit-icon">&#9829;</div>
+                <div>
+                    <h2>SUIT 4 &mdash; THE EPOCH</h2>
+                    <div class="suit-desc">12 civilisational ages from Stone to Digital + 3 temporal connectors</div>
+                </div>
+                <div class="suit-count">15 / 60 CARDS &bull; CRIMSON / RED</div>
+            </div>
+            <div class="card-grid" id="epoch-grid"></div>
+        </div>
+
+        <!-- ===== DECK SUMMARY ===== -->
+        <div style="padding: 2rem 1.5rem; margin-bottom: 2rem;">
+            <h2 style="font-family:var(--font-heading); color:var(--color-accent-gold); letter-spacing:3px; text-transform:uppercase; margin-bottom:1rem; text-align:center;">SERIES 1 DECK MANIFEST</h2>
+            <table class="deck-table">
+                <thead>
+                    <tr><th>Suit</th><th>Theme</th><th>Colour</th><th>Themed</th><th>Jokers</th><th>Total</th><th>Access</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><span class="suit-dot" style="background:#D4AF37;"></span>RELAY</td>
+                        <td>Civilisational Relays</td>
+                        <td>Gold / Bronze</td>
+                        <td>12</td>
+                        <td>3</td>
+                        <td>15</td>
+                        <td>Scholar</td>
+                    </tr>
+                    <tr>
+                        <td><span class="suit-dot" style="background:#7B8FA1;"></span>SCHOLAR</td>
+                        <td>Master Thinkers</td>
+                        <td>Silver / Blue</td>
+                        <td>12</td>
+                        <td>3</td>
+                        <td>15</td>
+                        <td>Scholar</td>
+                    </tr>
+                    <tr>
+                        <td><span class="suit-dot" style="background:#B87333;"></span>BLUEPRINT</td>
+                        <td>Engineering Landmarks</td>
+                        <td>Copper / Green</td>
+                        <td>12</td>
+                        <td>3</td>
+                        <td>15</td>
+                        <td>Scholar</td>
+                    </tr>
+                    <tr>
+                        <td><span class="suit-dot" style="background:#DC143C;"></span>EPOCH</td>
+                        <td>Civilisational Ages</td>
+                        <td>Crimson / Red</td>
+                        <td>12</td>
+                        <td>3</td>
+                        <td>15</td>
+                        <td>Scholar</td>
+                    </tr>
+                    <tr style="border-top:2px solid var(--color-accent-gold); font-weight:bold;">
+                        <td colspan="3" style="color:var(--color-accent-gold);">TOTAL</td>
+                        <td style="color:var(--color-accent-gold);">48</td>
+                        <td style="color:var(--color-accent-gold);">12</td>
+                        <td style="color:var(--color-accent-gold);">60</td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="text-align:center; margin-top:1.5rem; font-size:0.8rem; color:var(--color-text-secondary);">
+                Free tier: Preview thumbnails of all 60 cards &bull; Player tier: Full resolution Suit 1 (Relay) &bull; Scholar tier: Full resolution all 4 suits &bull; <a href="/library.html" style="color:var(--color-accent-gold);">Subscribe &rarr;</a>
+            </p>
+        </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer style="text-align:center; padding:2rem 1.5rem; border-top:1px solid rgba(255,215,0,0.15); font-size:0.7rem; color:var(--color-text-secondary); letter-spacing:1px;">
+        &copy; 2026 Infrastructure Academy &mdash; An Infrastructure Odyssey &bull; <a href="/site.html" style="color:var(--color-accent-gold); text-decoration:none;">Home</a> &bull; <a href="/pages/chip-evolution.html" style="color:var(--color-accent-gold); text-decoration:none;">Chip Evolution</a> &bull; <a href="/library.html" style="color:var(--color-accent-gold); text-decoration:none;">Library</a>
+    </footer>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <button class="lightbox-nav lightbox-prev" onclick="navLightbox(-1)">&#8249;</button>
+        <img id="lb-img" src="" alt="">
+        <button class="lightbox-nav lightbox-next" onclick="navLightbox(1)">&#8250;</button>
+        <div class="lightbox-caption">
+            <span class="lb-id" id="lb-id"></span>
+            <span id="lb-name"></span>
+        </div>
+    </div>
+
+    <script>
+    // ===== CARD DATA =====
+    const CDN = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/';
+
+    const scholarCards = [
+        { id: 'S01', num: '01/12', name: 'HOMER', file: 'suit2_scholar-01-homer_9590f279.png', type: 'themed' },
+        { id: 'S02', num: '02/12', name: 'CONFUCIUS', file: 'suit2_scholar-02-confucius_81fbe1dd.png', type: 'themed' },
+        { id: 'S03', num: '03/12', name: 'SUN TZU', file: 'suit2_scholar-03-suntzu_3b68b21f.png', type: 'themed' },
+        { id: 'S04', num: '04/12', name: 'ARISTOTLE', file: 'suit2_scholar-04-aristotle_7cd629c3.png', type: 'themed' },
+        { id: 'S05', num: '05/12', name: 'SIMA QIAN', file: 'suit2_scholar-05-sima-qian_54ee74e6.png', type: 'themed' },
+        { id: 'S06', num: '06/12', name: 'MARCO POLO', file: 'suit2_scholar-06-marco-polo_49fb3a4f.png', type: 'themed' },
+        { id: 'S07', num: '07/12', name: 'IMHOTEP', file: 'suit2_scholar-07-imhotep_f70584a1.png', type: 'themed' },
+        { id: 'S08', num: '08/12', name: 'VITRUVIUS', file: 'suit2_scholar-08-vitruvius_42e6c495.png', type: 'themed' },
+        { id: 'S09', num: '09/12', name: 'AL-JAZARI', file: 'suit2_scholar-09-al-jazari_660e5135.png', type: 'themed' },
+        { id: 'S10', num: '10/12', name: 'DA VINCI', file: 'suit2_scholar-10-da-vinci_61f0fd3a.png', type: 'themed' },
+        { id: 'S11', num: '11/12', name: 'BRUNEL', file: 'suit2_scholar-11-brunel_554d87a3.png', type: 'themed' },
+        { id: 'S12', num: '12/12', name: 'TESLA', file: 'suit2_scholar-12-tesla_aa68afa6.png', type: 'themed' },
+        { id: 'SJ1', num: 'JOKER A', name: 'THE POLYMATH', file: 'suit2_scholar-joker-a-polymath_49cffa31.png', type: 'joker' },
+        { id: 'SJ2', num: 'JOKER B', name: 'EAST-WEST BRIDGE', file: 'suit2_scholar-joker-b-east-west_74e113da.png', type: 'joker' },
+        { id: 'SJ3', num: 'JOKER C', name: 'THE LIVING LIBRARY', file: 'suit2_scholar-joker-c-living-library_f64c9b3d.png', type: 'joker' }
+    ];
+
+    const blueprintCards = [
+        { id: 'B01', num: '01/12', name: 'THE PYRAMID', file: 'suit3_blueprint-01-pyramid_dd694899.png', type: 'themed' },
+        { id: 'B02', num: '02/12', name: 'THE AQUEDUCT', file: 'suit3_blueprint-02-aqueduct_3d954c22.png', type: 'themed' },
+        { id: 'B03', num: '03/12', name: 'THE GREAT WALL', file: 'suit3_blueprint-03-great-wall_a5aae484.png', type: 'themed' },
+        { id: 'B04', num: '04/12', name: 'THE ROMAN ROAD', file: 'suit3_blueprint-04-roman-road_4a0e3a50.png', type: 'themed' },
+        { id: 'B05', num: '05/12', name: 'THE SILK ROAD', file: 'suit3_blueprint-05-silk-road_ad65f54a.png', type: 'themed' },
+        { id: 'B06', num: '06/12', name: 'THE CANAL LOCK', file: 'suit3_blueprint-06-canal-lock_0305edb2.png', type: 'themed' },
+        { id: 'B07', num: '07/12', name: 'THE STEAM ENGINE', file: 'suit3_blueprint-07-steam-engine_9ad2c911.png', type: 'themed' },
+        { id: 'B08', num: '08/12', name: 'THE RAILWAY BRIDGE', file: 'suit3_blueprint-08-railway-bridge_bb973dc6.png', type: 'themed' },
+        { id: 'B09', num: '09/12', name: 'THE POWER GRID', file: 'suit3_blueprint-09-power-grid_29eb5034.png', type: 'themed' },
+        { id: 'B10', num: '10/12', name: 'THE SKYSCRAPER', file: 'suit3_blueprint-10-skyscraper_9ce5442b.png', type: 'themed' },
+        { id: 'B11', num: '11/12', name: 'THE SATELLITE', file: 'suit3_blueprint-11-satellite_d500b203.png', type: 'themed' },
+        { id: 'B12', num: '12/12', name: 'THE INTERNET', file: 'suit3_blueprint-12-internet_59785e44.png', type: 'themed' },
+        { id: 'BJ1', num: 'JOKER A', name: 'THE MASTER PLAN', file: 'suit3_blueprint-joker-a-master-plan_b67eb71d.png', type: 'joker' },
+        { id: 'BJ2', num: 'JOKER B', name: 'FORM & FUNCTION', file: 'suit3_blueprint-joker-b-form-function_d20a802c.png', type: 'joker' },
+        { id: 'BJ3', num: 'JOKER C', name: 'THE UNBUILT', file: 'suit3_blueprint-joker-c-unbuilt_1d05c0c5.png', type: 'joker' }
+    ];
+
+    const epochCards = [
+        { id: 'E01', num: '01/12', name: 'STONE AGE', file: 'suit4_epoch-01-stone-age_2024a156.png', type: 'themed' },
+        { id: 'E02', num: '02/12', name: 'BRONZE AGE', file: 'suit4_epoch-02-bronze-age_a149dffd.png', type: 'themed' },
+        { id: 'E03', num: '03/12', name: 'IRON AGE', file: 'suit4_epoch-03-iron-age_616013a2.png', type: 'themed' },
+        { id: 'E04', num: '04/12', name: 'CLASSICAL ERA', file: 'suit4_epoch-04-classical-era_2c4d7768.png', type: 'themed' },
+        { id: 'E05', num: '05/12', name: 'SILK ROAD ERA', file: 'suit4_epoch-05-silk-road-era_7311bdcc.png', type: 'themed' },
+        { id: 'E06', num: '06/12', name: 'ISLAMIC GOLDEN AGE', file: 'suit4_epoch-06-islamic-golden-age_e3115e44.png', type: 'themed' },
+        { id: 'E07', num: '07/12', name: 'RENAISSANCE', file: 'suit4_epoch-07-renaissance_276069c1.png', type: 'themed' },
+        { id: 'E08', num: '08/12', name: 'AGE OF EXPLORATION', file: 'suit4_epoch-08-age-of-exploration_da8891f8.png', type: 'themed' },
+        { id: 'E09', num: '09/12', name: 'INDUSTRIAL REVOLUTION', file: 'suit4_epoch-09-industrial-revolution_c170aca2.png', type: 'themed' },
+        { id: 'E10', num: '10/12', name: 'ELECTRICAL AGE', file: 'suit4_epoch-10-electrical-age_d2e084e7.png', type: 'themed' },
+        { id: 'E11', num: '11/12', name: 'SPACE AGE', file: 'suit4_epoch-11-space-age_03e393f3.png', type: 'themed' },
+        { id: 'E12', num: '12/12', name: 'DIGITAL AGE', file: 'suit4_epoch-12-digital-age_e7384be4.png', type: 'themed' },
+        { id: 'EJ1', num: 'JOKER A', name: 'THE TIMELINE', file: 'suit4_epoch-joker-a-timeline_335abd92.png', type: 'joker' },
+        { id: 'EJ2', num: 'JOKER B', name: 'THE COLLAPSE', file: 'suit4_epoch-joker-b-collapse_32bf35b2.png', type: 'joker' },
+        { id: 'EJ3', num: 'JOKER C', name: 'THE NEXT EPOCH', file: 'suit4_epoch-joker-c-next-epoch_579d3bd1.png', type: 'joker' }
+    ];
+
+    // Build card HTML for suits 2-4
+    function buildCardHTML(cards, suitPrefix) {
+        return cards.map((c, i) => {
+            const globalIdx = (suitPrefix === 'scholar' ? 15 : suitPrefix === 'blueprint' ? 30 : 45) + i;
+            const tagClass = c.type === 'joker' ? 'tag-joker' : 'tag-themed';
+            const tagLabel = c.type === 'joker' ? 'JOKER' : 'THEMED';
+            const numLabel = c.type === 'joker' ? c.num : `${suitPrefix.toUpperCase()} ${c.num}`;
+            return `<div class="bp-card" onclick="openLightbox(${globalIdx})">
+                <div class="card-img-wrap"><img src="${CDN}${c.file}" alt="${c.id} — ${c.name}" loading="lazy"></div>
+                <div class="card-info">
+                    <div class="card-id">${c.id} &bull; ${numLabel}</div>
+                    <div class="card-name">${c.name}</div>
+                    <span class="card-tag ${tagClass}">${tagLabel}</span>
+                </div>
+                <div class="lock-overlay"><div class="lock-icon">&#128274;</div><div class="lock-text">SCHOLAR TIER</div><div class="lock-tier">Subscribe to unlock</div></div>
+            </div>`;
+        }).join('');
+    }
+
+    document.getElementById('scholar-grid').innerHTML = buildCardHTML(scholarCards, 'scholar');
+    document.getElementById('blueprint-grid').innerHTML = buildCardHTML(blueprintCards, 'blueprint');
+    document.getElementById('epoch-grid').innerHTML = buildCardHTML(epochCards, 'epoch');
+
+    // ===== ALL CARDS FLAT LIST FOR LIGHTBOX =====
+    const relayCards = [
+        { id: 'R01', name: 'THE FIRE RELAY', file: 'bitpoint-01-fire-relay_46f572d3.png' },
+        { id: 'R02', name: 'THE TREE RELAY', file: 'bitpoint-02-tree-relay_fe452324.png' },
+        { id: 'R03', name: 'THE RIVER RELAY', file: 'bitpoint-03-river-relay_40236332.png' },
+        { id: 'R04', name: 'THE HORSE RELAY', file: 'bitpoint-04-horse-relay_ca450768.png' },
+        { id: 'R05', name: 'THE ROADS RELAY', file: 'bitpoint-05-roads-relay_31ef1184.png' },
+        { id: 'R06', name: 'THE SHIPS RELAY', file: 'bitpoint-06-ships-relay_c1374735.png' },
+        { id: 'R07', name: 'THE LOOM RELAY', file: 'bitpoint-07-loom-relay_7d14cb35.png' },
+        { id: 'R08', name: 'THE RAIL RELAY', file: 'bitpoint-08-rail-relay_aeea9206.png' },
+        { id: 'R09', name: 'THE ENGINE RELAY', file: 'bitpoint-09-engine-relay_ced524f6.png' },
+        { id: 'R10', name: 'THE AAA TRIAD RELAY', file: 'bitpoint-10-aaa-triad-relay_7fc0dac3.png' },
+        { id: 'R11', name: 'THE ORBIT RELAY', file: 'bitpoint-11-orbit-relay_68cdeb66.png' },
+        { id: 'R12', name: 'THE HUMAN NODES RELAY', file: 'bitpoint-12-human-nodes-relay_c76808f9.png' },
+        { id: 'RJ1', name: 'THE USE OF SPIES', file: 'bitpoint-13-joker-suntzu_f69b5f50.png' },
+        { id: 'RJ2', name: 'MIRROR INVERSION TABLE', file: 'bitpoint-14-joker-mirror-table_0a095cf6.png' },
+        { id: 'RJ3', name: 'SIDE-BY-SIDE MIRROR', file: 'bitpoint-14-joker-mirror-v2_5f232fb2.png' }
+    ];
+
+    const allCards = [
+        ...relayCards,
+        ...scholarCards,
+        ...blueprintCards,
+        ...epochCards
+    ];
+
+    // ===== LIGHTBOX =====
+    let currentLB = 0;
+    function openLightbox(idx) {
+        currentLB = idx;
+        const card = allCards[idx];
+        document.getElementById('lb-img').src = CDN + card.file;
+        document.getElementById('lb-id').textContent = card.id + ' — SERIES 1';
+        document.getElementById('lb-name').textContent = card.name;
+        document.getElementById('lightbox').classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeLightbox() {
+        document.getElementById('lightbox').classList.remove('active');
+        document.body.style.overflow = '';
+    }
+    function navLightbox(dir) {
+        currentLB = (currentLB + dir + allCards.length) % allCards.length;
+        const card = allCards[currentLB];
+        document.getElementById('lb-img').src = CDN + card.file;
+        document.getElementById('lb-id').textContent = card.id + ' — SERIES 1';
+        document.getElementById('lb-name').textContent = card.name;
+    }
+    document.addEventListener('keydown', function(e) {
+        if (!document.getElementById('lightbox').classList.contains('active')) return;
+        if (e.key === 'Escape') closeLightbox();
+        if (e.key === 'ArrowLeft') navLightbox(-1);
+        if (e.key === 'ArrowRight') navLightbox(1);
+    });
+
+    // ===== SUIT FILTER =====
+    function filterSuit(suit) {
+        document.querySelectorAll('.suit-btn').forEach(b => b.classList.remove('active'));
+        document.querySelector(`.suit-btn[data-suit="${suit}"]`).classList.add('active');
+        document.querySelectorAll('.suit-section').forEach(s => {
+            if (suit === 'all') {
+                s.style.display = '';
+            } else {
+                s.style.display = s.dataset.suitSection === suit ? '' : 'none';
+            }
+        });
+    }
+
+    // ===== TIER GATING =====
+    // Check user tier via API, apply locks
+    async function checkTierAccess() {
+        try {
+            const resp = await fetch('/api/trpc/library.getMyTier');
+            const data = await resp.json();
+            const tier = data?.result?.data?.tier || 'free';
+            if (tier === 'scholar' || tier === 'enterprise') {
+                // Unlock all cards
+                document.querySelectorAll('.bp-card').forEach(c => c.classList.remove('tier-locked'));
+            } else if (tier === 'player') {
+                // Unlock only Relay suit
+                document.querySelectorAll('.suit-relay .bp-card').forEach(c => c.classList.remove('tier-locked'));
+            }
+            // Free tier: all locked (default state)
+        } catch(e) {
+            // Not logged in or API error — keep all locked
+            console.log('Tier check: defaulting to free preview');
+        }
+    }
+
+    // On load: lock all cards, then check tier
+    document.querySelectorAll('.bp-card').forEach(c => c.classList.add('tier-locked'));
+    checkTierAccess();
+    </script>
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement -->
+
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement (v2 fixed) -->
+<script>
+(function() {
+  try {
+    var sid = sessionStorage.getItem('iaai_sid');
+    if (!sid) {
+      sid = 'ses_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 9);
+      sessionStorage.setItem('iaai_sid', sid);
+    }
+    var data = {
+      path: window.location.pathname + (window.location.hash || ''),
+      pageTitle: document.title || 'Untitled',
+      referrer: document.referrer || '',
+      sessionId: sid
+    };
+    fetch('/api/trpc/analytics.track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ json: data }),
+      credentials: 'include'
+    }).catch(function() {});
+    window.addEventListener('hashchange', function() {
+      var hashData = {
+        path: window.location.pathname + (window.location.hash || ''),
+        pageTitle: document.title || 'Untitled',
+        referrer: window.location.href,
+        sessionId: sid
+      };
+      fetch('/api/trpc/analytics.track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ json: hashData }),
+        credentials: 'include'
+      }).catch(function() {});
+    });
+  } catch(e) {}
+})();
+</script>
+
+    <!-- Mobile table scroll fix -->
+    <script>
+    (function(){
+      if(window.innerWidth > 768) return;
+      document.querySelectorAll('table').forEach(function(t){
+        if(t.parentElement && t.parentElement.classList.contains('table-scroll-wrapper')) return;
+        var w = document.createElement('div');
+        w.className = 'table-scroll-wrapper';
+        t.parentNode.insertBefore(w, t);
+        w.appendChild(t);
+      });
+    })();
+    </script>
+
+
+    <!-- Back-to-Top Button Logic -->
+    <script>
+    (function() {
+        var btn = document.getElementById('back-to-top-btn');
+        if (!btn) return;
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                btn.style.display = 'flex';
+            } else {
+                btn.style.display = 'none';
+            }
+        }, { passive: true });
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    })();
+    </script>
+
+</body>
+</html>

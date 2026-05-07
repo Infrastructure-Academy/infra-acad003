@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="La Menara — The Cultural Significance Series. Deep-dive explorations of each civilisational relay across all five webs: Physical, Biological, Digital, Social, and Consciousness. Part of Infrastructure Academy — An Infrastructure Odyssey.">
+    <meta name="keywords" content="La Menara,cultural significance,civilisation relays,five webs,infrastructure mythology,fire,tree,river,horse,roads,ships,loom,rail,engine,orbit,human nodes">
+    <meta name="author" content="Nigel Dearden — Infrastructure Academy">
+    <meta property="og:title" content="La Menara — Cultural Significance Series — Infrastructure Academy">
+    <meta property="og:description" content="Deep-dive explorations of each civilisational relay across all five webs. Mythology, food, law, medicine, spirituality — the cultural infrastructure that shaped civilisation.">
+    <meta property="og:type" content="website">
+    <title>La Menara — Cultural Significance Series — Infrastructure Academy</title>
+    <link rel="stylesheet" href="/css/style.css?v=20260410a">
+    <style>
+        .lm-hero {
+            text-align: center;
+            padding: 3rem 1.5rem 2rem;
+            background: linear-gradient(180deg, rgba(10,22,40,0.95) 0%, rgba(26,58,92,0.6) 100%);
+            border-bottom: 2px solid var(--color-accent-gold);
+        }
+        .lm-hero h1 {
+            font-family: var(--font-heading);
+            color: var(--color-accent-gold);
+            font-size: 2.8rem;
+            letter-spacing: 3px;
+            margin-bottom: 0.5rem;
+        }
+        .lm-hero .lm-subtitle {
+            color: var(--color-text-secondary);
+            font-size: 1.1rem;
+            font-style: italic;
+            max-width: 700px;
+            margin: 0 auto 1rem;
+            line-height: 1.6;
+        }
+        .lm-hero .lm-stats {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1.5rem;
+        }
+        .lm-hero .lm-stat {
+            text-align: center;
+        }
+        .lm-hero .lm-stat-number {
+            font-family: var(--font-heading);
+            color: var(--color-accent-gold);
+            font-size: 2rem;
+            display: block;
+        }
+        .lm-hero .lm-stat-label {
+            color: var(--color-text-secondary);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .lm-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+        .lm-card {
+            background: rgba(26,58,92,0.25);
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+        .lm-card:hover {
+            border-color: rgba(255,215,0,0.5);
+            box-shadow: 0 0 20px rgba(255,215,0,0.1);
+        }
+        .lm-card-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+        .lm-card-body {
+            padding: 1.2rem 1.5rem;
+        }
+        .lm-card-relay {
+            font-family: var(--font-heading);
+            color: var(--color-accent-gold);
+            font-size: 0.75rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 0.3rem;
+        }
+        .lm-card-title {
+            font-family: var(--font-heading);
+            color: #ffffff;
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+        }
+        .lm-card-desc {
+            color: var(--color-text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+        .lm-card-webs {
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+            margin-bottom: 1rem;
+        }
+        .lm-web-tag {
+            font-size: 0.65rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: 3px;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+        .lm-web-physical { background: rgba(239,68,68,0.2); color: #ef4444; }
+        .lm-web-biological { background: rgba(34,197,94,0.2); color: #22c55e; }
+        .lm-web-digital { background: rgba(59,130,246,0.2); color: #3b82f6; }
+        .lm-web-social { background: rgba(234,179,8,0.2); color: #eab308; }
+        .lm-web-consciousness { background: rgba(168,85,247,0.2); color: #a855f7; }
+        .lm-card-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .lm-card-links a {
+            color: var(--color-accent-gold);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+        .lm-card-links a:hover {
+            text-decoration: underline;
+        }
+        .lm-coming-soon {
+            opacity: 0.4;
+            pointer-events: none;
+        }
+        .lm-coming-soon .lm-card-img {
+            filter: grayscale(1);
+        }
+        .lm-coming-badge {
+            display: inline-block;
+            background: rgba(255,215,0,0.15);
+            border: 1px solid rgba(255,215,0,0.3);
+            color: var(--color-accent-gold);
+            font-size: 0.7rem;
+            padding: 0.15rem 0.5rem;
+            border-radius: 3px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+        .lm-framework {
+            text-align: center;
+            padding: 2rem 0;
+        }
+        .lm-framework img {
+            max-width: 600px;
+            width: 100%;
+            cursor: pointer;
+        }
+        @media (max-width: 600px) {
+            .lm-hero h1 { font-size: 1.8rem; }
+            .lm-grid { grid-template-columns: 1fr; }
+            .lm-card-img { height: 160px; }
+        }
+    </style>
+
+<style id="mobile-quicknav-styles">
+/* ===== MOBILE QUICK-NAV BAR ===== */
+.mobile-quicknav {
+    display: none;
+    width: 100%;
+    background: linear-gradient(180deg, #0d1f3c 0%, #0a1628 100%);
+    border-bottom: 1px solid rgba(255,215,0,0.25);
+    padding: 6px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 6px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+.mobile-quicknav::-webkit-scrollbar { display: none; }
+.mobile-quicknav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 10px;
+    background: rgba(255,215,0,0.08);
+    border: 1px solid rgba(255,215,0,0.35);
+    border-radius: 16px;
+    color: #ffd700;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+.mobile-quicknav a:active {
+    background: rgba(255,215,0,0.25);
+    transform: scale(0.95);
+}
+.mobile-quicknav a.mqn-home {
+    background: #ffd700;
+    color: #0a1628;
+    border-color: #ffd700;
+}
+@media(max-width:768px) {
+    .mobile-quicknav { display: flex; }
+}
+@media(min-width:769px) {
+    .mobile-quicknav { display: none !important; }
+}
+
+/* ===== BACK-TO-TOP FLOATING BUTTON ===== */
+#back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 16px;
+    z-index: 9999;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(10,22,40,0.92);
+    border: 1.5px solid rgba(255,215,0,0.6);
+    color: #ffd700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    transition: all 0.2s;
+}
+#back-to-top-btn:active {
+    transform: scale(0.9);
+    background: rgba(255,215,0,0.2);
+}
+</style>
+
+</head>
+<body>
+    <!-- iAAi Network Bar — NAV-001 · Cross-Site Navigation -->
+    <!-- ═══ iAAi NETWORK BAR ═══ -->
+    <div id="iaai-network-bar" style="display:flex;align-items:center;justify-content:space-around;width:100%;height:36px;background:#0a1628;position:sticky;top:0;z-index:200001;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">
+      <a href="https://www.infrastructure-academy.com" style="text-decoration:none;color:#fff;font-weight:700;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid #DC2626;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#DC2626"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg> ACADEMY</a>
+      <a href="https://realityeng-epdhlkrn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> QUEST</a>
+      <a href="#" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;opacity:0.5;pointer-events:none;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A843"><path d="M6 2v6l-2 2v4l2 2v6h4v-6l2-2v-4L10 8V2H6zm12 0v6l-2 2v4l2 2v6h-4v-6l-2-2v-4l2-2V2h4z"/></svg> XCHANGE</a>
+      <a href="https://nigelmemorial-ucmtq9dn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#16A34A"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg> MEMORIAL</a>
+      <a href="https://xgrowthtrk-2a93yo5z.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#06B6D4"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/></svg> NEWS</a>
+    </div>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-top">
+            <a href="/site.html" class="header-title" style="text-decoration:none;">INFRASTRUCTURE ACADEMY</a>
+        </div>
+        <div class="header-tagline">An Infrastructure Odyssey</div>
+        <nav id="nav-menu" role="navigation" aria-label="Primary navigation">
+            <a href="/site.html">HOME</a>
+            <a href="/pages/framework.html">FRAMEWORK</a>
+            <a href="/pages/resources.html">RESOURCES</a>
+            <a href="/volumes/volume1/index.html">EP.1: PERSPECTIVE</a>
+            <a href="/volumes/volume2/index.html">EP.2: GUIDE</a>
+            <a href="/play">EP.3: GAME</a>
+            <a href="/pages/la-menara.html" class="active" style="color:#ffd700;">LA MENARA</a>
+        </nav>
+    </header>
+    <!-- ===== MOBILE QUICK-NAV BAR — always visible on mobile ===== -->
+    <div class="mobile-quicknav" id="mobile-quicknav">
+        <a href="/site.html" class="mqn-home">&#127968; HOME</a>
+        <a href="/pages/start-here.html">&#128218; START</a>
+        <a href="/volumes/volume1/index.html">&#128214; READ</a>
+        <a href="/pages/framework.html">&#128736; FRAMEWORK</a>
+        <a href="/play">&#127918; PLAY</a>
+        <a href="/pages/movies.html">&#127916; MOVIES</a>
+        <a href="/pages/resources.html">&#128194; RESOURCES</a>
+        <a href="/press.html">&#128240; PRESS</a>
+    </div>
+
+    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <button id="back-to-top-btn" aria-label="Back to top" title="Back to top">&#9650;</button>
+
+
+    <main role="main">
+        <!-- HERO -->
+        <div class="lm-hero">
+            <h1>LA MENARA</h1>
+            <p class="lm-subtitle">
+                The Cultural Significance Series &mdash; Deep-dive explorations of each civilisational relay
+                across all five webs: Physical, Biological, Digital, Social, and Consciousness.
+            </p>
+            <p style="color: var(--color-text-secondary); font-size: 0.9rem; margin-bottom: 1rem;">
+                &ldquo;La Menara&rdquo; &mdash; The Lighthouse. Each entry illuminates the cultural, mythological,
+                and spiritual dimensions of infrastructure that shaped civilisation.
+            </p>
+            <div class="lm-stats">
+                <div class="lm-stat">
+                    <span class="lm-stat-number">6</span>
+                    <span class="lm-stat-label">Completed</span>
+                </div>
+                <div class="lm-stat">
+                    <span class="lm-stat-number">12</span>
+                    <span class="lm-stat-label">Total Relays</span>
+                </div>
+                <div class="lm-stat">
+                    <span class="lm-stat-number">5</span>
+                    <span class="lm-stat-label">Webs per Relay</span>
+                </div>
+                <div class="lm-stat">
+                    <span class="lm-stat-number">60</span>
+                    <span class="lm-stat-label">Web Analyses</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="separator-thick"></div>
+
+        <!-- 12 RELAYS x 5 WEBS FRAMEWORK -->
+        <div class="container lm-framework">
+            <h2 style="color: var(--color-accent-gold); margin-bottom: 1rem;">THE COMPLETE FRAMEWORK</h2>
+            <p style="color: var(--color-text-secondary); margin-bottom: 1.5rem;">12 Civilisational Relays &times; 5 Webs &mdash; Each relay is measured across all five webs</p>
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCARD_00B_12_RELAYS_5_WEBS(1)_104bb54c.png"
+                 alt="12 Relays x 5 Webs - The Complete Framework"
+                 onclick="openLightbox(this.src)" loading="lazy">
+            <p style="color: var(--color-text-secondary); font-size: 0.85rem; margin-top: 0.5rem;">iAAi &mdash; Principia Tectonica &mdash; Nigel T. Dearden</p>
+        </div>
+
+        <div class="separator-thick"></div>
+
+        <!-- LA MENARA ENTRIES -->
+        <div class="container">
+            <h2 style="text-align: center; color: var(--color-accent-gold); margin-bottom: 0.5rem;">THE SERIES</h2>
+            <p style="text-align: center; color: var(--color-text-secondary); margin-bottom: 2rem;">Click any entry to explore its landscape artwork, iCard, and reference document</p>
+
+            <div class="lm-grid">
+
+                <!-- R01 FIRE -->
+                <div class="lm-card">
+                    <img class="lm-card-img" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/La_Menara_Landscape_Fire_History_e4365bb3.png" alt="La Menara - Fire" loading="lazy" onclick="openLightbox(this.src)">
+                    <div class="lm-card-body">
+                        <div class="lm-card-relay">R01 &mdash; pre-10,000 BCE</div>
+                        <div class="lm-card-title">The Remarkable Fire</div>
+                        <p class="lm-card-desc">1.5 million years of fire as the first platform. Prometheus, Agni, Hephaestus, Vesta. Cooking as the original calorie processing chain. The temperature ladder from campfire to nuclear fusion. Eternal flames that still burn.</p>
+                        <div class="lm-card-webs">
+                            <span class="lm-web-tag lm-web-physical">Physical</span>
+                            <span class="lm-web-tag lm-web-biological">Biological</span>
+                            <span class="lm-web-tag lm-web-digital">Digital</span>
+                            <span class="lm-web-tag lm-web-social">Social</span>
+                            <span class="lm-web-tag lm-web-consciousness">Consciousness</span>
+                        </div>
+                        <div class="lm-card-links">
+                            <a href="/volumes/volume1/relay-01-fire.html">Volume 1</a>
+                            <a href="/volumes/volume2/relay-01-fire.html">Volume 2</a>
+                            <a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/La_Menara_The_Remarkable_Fire_b40e6e4e.docx" download>&#x1F4E5; REF-FIRE-001</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- R02 TREE -->
+                <div class="lm-card">
+                    <img class="lm-card-img" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/La_Menara_Landscape_Tree_History_4e7c82d8.png" alt="La Menara - Tree" loading="lazy" onclick="openLightbox(this.src)">
+                    <div class="lm-card-body">
+                        <div class="lm-card-relay">R02 &mdash; pre-10,000 BCE</div>
+                        <div class="lm-card-title">The Remarkable Tree</div>
+                        <p class="lm-card-desc">385 million years of trees as food, medicine, mythology, law, and spirituality. Athena&rsquo;s olive, Yggdrasil, the Bodhi Tree. Apple to cider to vinegar &mdash; the original multi-output processing chain. The Vouves olive still bearing fruit after 4,000 years.</p>
+                        <div class="lm-card-webs">
+                            <span class="lm-web-tag lm-web-physical">Physical</span>
+                            <span class="lm-web-tag lm-web-biological">Biological</span>
+                            <span class="lm-web-tag lm-web-digital">Digital</span>
+                            <span class="lm-web-tag lm-web-social">Social</span>
+                            <span class="lm-web-tag lm-web-consciousness">Consciousness</span>
+                        </div>
+                        <div class="lm-card-links">
+                            <a href="/volumes/volume1/relay-02-tree.html">Volume 1</a>
+                            <a href="/volumes/volume2/relay-02-tree.html">Volume 2</a>
+                            <a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/La_Menara_The_Remarkable_Tree_184abb7e.docx" download>&#x1F4E5; REF-TREE-001</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- R03 RIVER -->
+                <div class="lm-card">
+                    <img class="lm-card-img" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/La_Menara_Landscape_River_History_c6a8c980.png" alt="La Menara - River" loading="lazy" onclick="openLightbox(this.src)">
+                    <div class="lm-card-body">
+                        <div class="lm-card-relay">R03 &mdash; 8,000 BCE</div>
+                        <div class="lm-card-title">The Remarkable River</div>
+                        <p class="lm-card-desc">4.4 billion years of water as infrastructure. Five great river civilisations, Marsh Arabs&rsquo; reed cathedrals, Uru floating islands. 21 water deities, hydraulic engineering ladder, universal flood myths, water law, and purification rites.</p>
+                        <div class="lm-card-webs">
+                            <span class="lm-web-tag lm-web-physical">Physical</span>
+                            <span class="lm-web-tag lm-web-biological">Biological</span>
+                            <span class="lm-web-tag lm-web-digital">Digital</span>
+                            <span class="lm-web-tag lm-web-social">Social</span>
+                            <span class="lm-web-tag lm-web-consciousness">Consciousness</span>
+                        </div>
+                        <div class="lm-card-links">
+                            <a href="/volumes/volume1/relay-03-river.html">Volume 1</a>
+                            <a href="/volumes/volume2/relay-03-river.html">Volume 2</a>
+                            <a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/La_Menara_The_Remarkable_River_60ce1a09.docx" download>&#x1F4E5; REF-RIVER-001</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- R04 HORSE -->
+                <div class="lm-card">
+                    <img class="lm-card-img" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/La_Menara_Landscape_Horse_History_f8d02b69.png" alt="La Menara - Horse" loading="lazy" onclick="openLightbox(this.src)">
+                    <div class="lm-card-body">
+                        <div class="lm-card-relay">R04 &mdash; 4,000 BCE</div>
+                        <div class="lm-card-title">The Remarkable Horse</div>
+                        <p class="lm-card-desc">The animal that steered civilisation. Reins as the first steering mechanism, chariot warfare, cavalry empires, the Mongol Yam postal relay. Pegasus, Sleipnir, the Four Horsemen. The stirrup revolution and the horsepower legacy that measures engines to this day.</p>
+                        <div class="lm-card-webs">
+                            <span class="lm-web-tag lm-web-physical">Physical</span>
+                            <span class="lm-web-tag lm-web-biological">Biological</span>
+                            <span class="lm-web-tag lm-web-digital">Digital</span>
+                            <span class="lm-web-tag lm-web-social">Social</span>
+                            <span class="lm-web-tag lm-web-consciousness">Consciousness</span>
+                        </div>
+                        <div class="lm-card-links">
+                            <a href="/volumes/volume1/relay-04-horse.html">Volume 1</a>
+                            <a href="/volumes/volume2/relay-04-horse.html">Volume 2</a>
+                            <a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/La_Menara_The_Remarkable_Horse_4fd679f6.docx" download>&#x1F4E5; REF-HORSE-001</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- R05 ROADS -->
+                <div class="lm-card">
+                    <img class="lm-card-img" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/La_Menara_Landscape_Road_History_0c16c386.png" alt="La Menara - Roads" loading="lazy" onclick="openLightbox(this.src)">
+                    <div class="lm-card-body">
+                        <div class="lm-card-relay">R05 &mdash; 500 BCE</div>
+                        <div class="lm-card-title">The Remarkable Road</div>
+                        <p class="lm-card-desc">The path that connected everything. Aboriginal Songlines (60,000 years), Persian Royal Road, Via Appia, Silk Road, Inca Qhapaq &Ntilde;an. Pilgrimage roads, engineering ladder from dirt track to smart highway. The Tao as road, Frost&rsquo;s diverging path.</p>
+                        <div class="lm-card-webs">
+                            <span class="lm-web-tag lm-web-physical">Physical</span>
+                            <span class="lm-web-tag lm-web-biological">Biological</span>
+                            <span class="lm-web-tag lm-web-digital">Digital</span>
+                            <span class="lm-web-tag lm-web-social">Social</span>
+                            <span class="lm-web-tag lm-web-consciousness">Consciousness</span>
+                        </div>
+                        <div class="lm-card-links">
+                            <a href="/volumes/volume1/relay-05-roads.html">Volume 1</a>
+                            <a href="/volumes/volume2/relay-05-roads.html">Volume 2</a>
+                            <a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/La_Menara_The_Remarkable_Road_434d79d0.docx" download>&#x1F4E5; REF-ROADS-001</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- R06 SHIPS -->
+                <div class="lm-card">
+                    <img class="lm-card-img" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/La_Menara_Landscape_Ship_History_a89fc2d3.png" alt="La Menara - Ships" loading="lazy" onclick="openLightbox(this.src)">
+                    <div class="lm-card-body">
+                        <div class="lm-card-relay">R06 &mdash; 500 CE</div>
+                        <div class="lm-card-title">The Remarkable Ship</div>
+                        <p class="lm-card-desc">The vessel that made the world one. Polynesian wayfinding, Viking longships, Zheng He&rsquo;s treasure fleet, Phoenician trade. 95% of internet via submarine cables. Maritime law from 800 BCE, ship burial rites, the Ship of Theseus paradox.</p>
+                        <div class="lm-card-webs">
+                            <span class="lm-web-tag lm-web-physical">Physical</span>
+                            <span class="lm-web-tag lm-web-biological">Biological</span>
+                            <span class="lm-web-tag lm-web-digital">Digital</span>
+                            <span class="lm-web-tag lm-web-social">Social</span>
+                            <span class="lm-web-tag lm-web-consciousness">Consciousness</span>
+                        </div>
+                        <div class="lm-card-links">
+                            <a href="/volumes/volume1/relay-06-ships.html">Volume 1</a>
+                            <a href="/volumes/volume2/relay-06-ships.html">Volume 2</a>
+                            <a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/La_Menara_The_Remarkable_Ship_f4b3f872.docx" download>&#x1F4E5; REF-SHIPS-001</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- R07 LOOM — Active -->
+                <a href="/volumes/volume1/relay-07-loom.html" class="lm-card" style="text-decoration:none; color:inherit;">
+                    <div style="height:200px; overflow:hidden;">
+                        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/La_Menara_Landscape_Loom_History_d13b313d.png" alt="La Menara — The Remarkable Loom" style="width:100%; height:100%; object-fit:cover;">
+                    </div>
+                    <div class="lm-card-body">
+                        <div class="lm-card-relay">R07 &mdash; 1780 CE</div>
+                        <div class="lm-card-title">The Remarkable Loom</div>
+                        <p class="lm-card-desc">The machine that wove civilisation: Jacquard punch cards seeding computing, Athena vs Arachne, Empress Leizu discovering silk, textus = text. 25-page reference with 5 webs analysis.</p>
+                    </div>
+                </a>
+
+                <!-- R08 RAIL — Active -->
+                <div class="lm-card" onclick="window.location.href='/volumes/volume1/relay-08-rail.html'" style="cursor:pointer;">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/La_Menara_Landscape_Rail_History_975f7c87.png" alt="La Menara: Rail" style="width:100%; height:200px; object-fit:cover;">
+                    <div class="lm-card-body">
+                        <div class="lm-card-relay">R08 &mdash; 1830 CE</div>
+                        <div class="lm-card-title">The Remarkable Rail</div>
+                        <p class="lm-card-desc">The iron horse that standardised time: Diolkos to Maglev, John Henry vs the steam drill, railway time zones, telegraph following rails, Darjeeling Himalayan Railway.</p>
+                    </div>
+                </div>
+
+                <!-- R09 ENGINE — Active -->
+                <div class="lm-card">
+                    <div style="height:200px; overflow:hidden;">
+                        <img loading="lazy" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/la_menara_r09_engine_landscape-Pcf6qb5oJPpUCgVUWkQXBv.webp" alt="La Menara: The Remarkable Engine" onclick="openLightbox(this.src)" style="width:100%; height:100%; object-fit:cover; cursor:pointer;">
+                    </div>
+                    <div class="lm-card-body">
+                        <div class="lm-card-relay">R09 &mdash; 1850 CE</div>
+                        <div class="lm-card-title">The Remarkable Engine</div>
+                        <p class="lm-card-desc">Newcomen, Watt, Tesla vs Edison, thermodynamics as philosophy, the machine that multiplied human muscle. Hephaestus to Babbage, efficiency ladder, War of the Currents, Frankenstein.</p>
+                        <div style="text-align:center; margin-top:0.5rem;">
+                            <a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/La_Menara_The_Remarkable_Engine_92ffec21.docx" download style="display:inline-block; padding:6px 16px; background:var(--color-accent-gold); color:var(--color-bg-primary); font-weight:700; border-radius:6px; text-decoration:none; font-size:0.8rem;">Download REF-ENGINE-001</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- R10 AAA TRIAD — Active -->
+                <div class="lm-card">
+                    <div style="height:200px; overflow:hidden;">
+                        <img loading="lazy" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/la_menara_r10_aaa_landscape-FrDipHCmJuiAE78NtnP66X.webp" alt="La Menara: The Remarkable AAA Triad" onclick="openLightbox(this.src)" style="width:100%; height:100%; object-fit:cover; cursor:pointer;">
+                    </div>
+                    <div class="lm-card-body">
+                        <div class="lm-card-relay">R10 &mdash; 1900 CE</div>
+                        <div class="lm-card-title">The Remarkable AAA Triad</div>
+                        <p class="lm-card-desc">Automobiles, Aviation &amp; Airwaves: Benz to Tesla, Wright Flyer to Boeing 787, Marconi to smartphone. The three technologies that shrank the world.</p>
+                        <div style="text-align:center; margin-top:0.5rem;">
+                            <a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/La_Menara_The_Remarkable_AAA_Triad_a6c07e21.docx" download style="display:inline-block; padding:6px 16px; background:var(--color-accent-gold); color:var(--color-bg-primary); font-weight:700; border-radius:6px; text-decoration:none; font-size:0.8rem;">Download REF-AAA-001</a>
+                        </div>
+                    </div>
+                </div>
+        </div>
+
+        <div class="separator-thick"></div>
+
+        <!-- R11 ORBIT — Active -->
+                <div class="lm-card">
+                    <div style="height:200px; overflow:hidden;">
+                        <img loading="lazy" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/la_menara_r11_orbit_landscape-aGVTxcgPG7PzzoEV579usM.webp" alt="La Menara: The Remarkable Orbit" onclick="openLightbox(this.src)" style="width:100%; height:100%; object-fit:cover; cursor:pointer;">
+                    </div>
+                    <div class="lm-card-body">
+                        <div class="lm-card-relay">R11 &mdash; 1957 CE</div>
+                        <div class="lm-card-title">The Remarkable Orbit</div>
+                        <p class="lm-card-desc">Satellites, Space Stations &amp; Planetary Infrastructure: from Sputnik to Starlink, ISS to Pale Blue Dot. The relay that lifted us off the Earth.</p>
+                        <div style="text-align:center; margin-top:0.5rem;">
+                            <a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/La_Menara_The_Remarkable_Orbit_98fc4342.docx" download style="display:inline-block; padding:6px 16px; background:var(--color-accent-gold); color:var(--color-bg-primary); font-weight:700; border-radius:6px; text-decoration:none; font-size:0.8rem;">Download REF-ORBIT-001</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- R12 HUMAN NODES — Active -->
+                <div class="lm-card">
+                    <div style="height:200px; overflow:hidden;">
+                        <img loading="lazy" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/la_menara_r12_nodes_landscape-3J99jYLrnxPXAydSGWTYwM.webp" alt="La Menara: The Remarkable Human Nodes" onclick="openLightbox(this.src)" style="width:100%; height:100%; object-fit:cover; cursor:pointer;">
+                    </div>
+                    <div class="lm-card-body">
+                        <div class="lm-card-relay">R12 &mdash; 2000 CE</div>
+                        <div class="lm-card-title">The Remarkable Human Nodes</div>
+                        <p class="lm-card-desc">Robots, AI, Biosynthetics, Synesthetics &amp; Quantum: the relay that programmes the programmer. From Calories to Consciousness &mdash; the Torus returns.</p>
+                        <div style="text-align:center; margin-top:0.5rem;">
+                            <a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/La_Menara_The_Remarkable_Human_Nodes_70402eb4.docx" download style="display:inline-block; padding:6px 16px; background:var(--color-accent-gold); color:var(--color-bg-primary); font-weight:700; border-radius:6px; text-decoration:none; font-size:0.8rem;">Download REF-NODES-001</a>
+                        </div>
+                    </div>
+                </div>
+        <!-- FIVE WEBS LEGEND -->
+        <div class="container" style="text-align: center; padding-bottom: 2rem;">
+            <h2 style="color: var(--color-accent-gold); margin-bottom: 1rem;">THE FIVE WEBS</h2>
+            <p style="color: var(--color-text-secondary); margin-bottom: 1.5rem;">Each relay is analysed across all five interconnected webs</p>
+            <div style="display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+                <div style="text-align: center;">
+                    <div style="width: 50px; height: 50px; background: rgba(239,68,68,0.3); border: 2px solid #ef4444; border-radius: 50%; margin: 0 auto 0.5rem; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">&#x1F3D7;&#xFE0F;</div>
+                    <div style="color: #ef4444; font-weight: bold; font-size: 0.8rem;">PHYSICAL</div>
+                    <div style="color: var(--color-text-secondary); font-size: 0.75rem;">Materials &amp; Engineering</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="width: 50px; height: 50px; background: rgba(34,197,94,0.3); border: 2px solid #22c55e; border-radius: 50%; margin: 0 auto 0.5rem; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">&#x1F33F;</div>
+                    <div style="color: #22c55e; font-weight: bold; font-size: 0.8rem;">BIOLOGICAL</div>
+                    <div style="color: var(--color-text-secondary); font-size: 0.75rem;">Food, Medicine &amp; Life</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="width: 50px; height: 50px; background: rgba(59,130,246,0.3); border: 2px solid #3b82f6; border-radius: 50%; margin: 0 auto 0.5rem; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">&#x1F4BB;</div>
+                    <div style="color: #3b82f6; font-weight: bold; font-size: 0.8rem;">DIGITAL</div>
+                    <div style="color: var(--color-text-secondary); font-size: 0.75rem;">Data, Code &amp; Networks</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="width: 50px; height: 50px; background: rgba(234,179,8,0.3); border: 2px solid #eab308; border-radius: 50%; margin: 0 auto 0.5rem; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">&#x1F91D;</div>
+                    <div style="color: #eab308; font-weight: bold; font-size: 0.8rem;">SOCIAL</div>
+                    <div style="color: var(--color-text-secondary); font-size: 0.75rem;">Law, Trade &amp; Governance</div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="width: 50px; height: 50px; background: rgba(168,85,247,0.3); border: 2px solid #a855f7; border-radius: 50%; margin: 0 auto 0.5rem; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">&#x1F9E0;</div>
+                    <div style="color: #a855f7; font-weight: bold; font-size: 0.8rem;">CONSCIOUSNESS</div>
+                    <div style="color: var(--color-text-secondary); font-size: 0.75rem;">Myth, Spirit &amp; Identity</div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- LA MENARA NAVIGATION -->
+    <section style="padding: 2.5rem 1.5rem; text-align: center; border-top: 1px solid rgba(255,215,0,0.15); border-bottom: 1px solid rgba(255,215,0,0.15); margin: 2rem auto; max-width: 900px;">
+        <h3 style="font-family: var(--font-heading); color: var(--color-accent-gold); font-size: 1.3rem; letter-spacing: 2px; margin-bottom: 1.2rem;">EXPLORE LA MENARA</h3>
+        <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+            <a href="/pages/la-menara-timeline.html" style="display:inline-flex; align-items:center; gap:0.5rem; padding:0.6rem 1.5rem; border:1px solid var(--color-accent-gold); border-radius:6px; color:var(--color-accent-gold); text-decoration:none; font-size:0.9rem; transition:all 0.3s;" onmouseover="this.style.background='rgba(255,215,0,0.1)'" onmouseout="this.style.background='transparent'">&#128336; Interactive Timeline</a>
+            <a href="/pages/torus-ceremony.html" style="display:inline-flex; align-items:center; gap:0.5rem; padding:0.6rem 1.5rem; border:1px solid var(--color-accent-gold); border-radius:6px; color:var(--color-accent-gold); text-decoration:none; font-size:0.9rem; transition:all 0.3s;" onmouseover="this.style.background='rgba(255,215,0,0.1)'" onmouseout="this.style.background='transparent'">&#x21BB; Torus Ceremony</a>
+            <a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/La_Menara_Complete_Compendium_59a44ee7.pdf" download style="display:inline-flex; align-items:center; gap:0.5rem; padding:0.6rem 1.5rem; border:1px solid var(--color-accent-gold); border-radius:6px; color:var(--color-accent-gold); text-decoration:none; font-size:0.9rem; transition:all 0.3s;" onmouseover="this.style.background='rgba(255,215,0,0.1)'" onmouseout="this.style.background='transparent'">&#128196; Complete Compendium (PDF)</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer style="text-align: center; padding: 2rem 1rem; border-top: 1px solid rgba(255,215,0,0.2); color: var(--color-text-secondary); font-size: 0.85rem;">
+        <p>La Menara &mdash; The Cultural Significance Series</p>
+        <p>iAAi &mdash; Principia Tectonica &mdash; Nigel T. Dearden</p>
+        <p style="margin-top: 0.5rem;"><em>Per Arya Ad Astra</em></p>
+    </footer>
+
+    <!-- LIGHTBOX -->
+    <div id="lightbox-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); z-index:10000; cursor:pointer; justify-content:center; align-items:center;" onclick="this.style.display='none'">
+        <img id="lightbox-img" style="max-width:95%; max-height:95%; object-fit:contain;">
+    </div>
+    <script>
+    function openLightbox(src) {
+        var overlay = document.getElementById('lightbox-overlay');
+        document.getElementById('lightbox-img').src = src;
+        overlay.style.display = 'flex';
+    }
+    </script>
+
+    <!-- Back-to-Top Button Logic -->
+    <script>
+    (function() {
+        var btn = document.getElementById('back-to-top-btn');
+        if (!btn) return;
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                btn.style.display = 'flex';
+            } else {
+                btn.style.display = 'none';
+            }
+        }, { passive: true });
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    })();
+    </script>
+
+</body>
+</html>

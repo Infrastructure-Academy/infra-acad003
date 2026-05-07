@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/favicon_32_80e4326c.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/favicon_32_80e4326c.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/favicon_32_80e4326c.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/favicon_192_f2a5ba49.png">
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' https: data:; font-src 'self' https: data:;">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The Discovery Chain — Blocks 353–355. The Formula, ICE Matrix, Zeta Class Carrier, Dearden Dream Drive, and AD²=16. Infrastructure Academy.">
+    <title>The Discovery Chain — Blocks 353–355 | Infrastructure Academy</title>
+    <link rel="stylesheet" href="/css/style.css?v=20260302">
+    <style>
+        /* BETA Badge — site-wide */
+        .beta-badge { display:inline-flex; align-items:center; gap:0.3rem; background:rgba(251,146,60,0.15); border:1px solid rgba(251,146,60,0.5); color:#fb923c; font-family:'Courier New',monospace; font-size:0.65rem; font-weight:bold; letter-spacing:2px; padding:0.2rem 0.6rem; border-radius:3px; text-transform:uppercase; animation:beta-pulse 3s ease-in-out infinite; vertical-align:middle; margin-left:0.5rem; }
+        .beta-badge::before { content:'\25CF'; font-size:0.5rem; animation:beta-dot 2s ease-in-out infinite; }
+        @keyframes beta-pulse { 0%,100%{opacity:1;} 50%{opacity:0.7;} }
+        @keyframes beta-dot { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+        @media(max-width:768px) { .beta-badge { font-size:0.5rem; padding:0.1rem 0.35rem; letter-spacing:1px; margin-left:0.25rem; display:none; } .header-title { max-width: calc(100vw - 160px) !important; } .header-tagline::after { content:'BETA'; display:inline-block; font-family:'Courier New',monospace; font-size:0.4rem; font-weight:bold; color:#fb923c; letter-spacing:1px; margin-left:0.5rem; background:rgba(251,146,60,0.15); border:1px solid rgba(251,146,60,0.5); padding:0.05rem 0.3rem; border-radius:2px; vertical-align:middle; animation:beta-pulse 3s ease-in-out infinite; } }
+        @media(max-width:480px) { .beta-badge { display:none; } .header-title { max-width: calc(100vw - 100px) !important; } .header-tagline::after { content:'BETA'; font-size:0.35rem; padding:0.04rem 0.2rem; letter-spacing:0.5px; } }
+
+        /* ===== EXHIBIT PAGE STYLES ===== */
+        .exhibit-hero {
+            text-align:center;
+            padding:3rem 1rem 2rem;
+            max-width:1200px;
+            margin:0 auto;
+        }
+        .exhibit-hero h1 {
+            font-family:var(--font-heading);
+            font-size:2.8rem;
+            color:var(--color-accent-gold);
+            letter-spacing:0.15em;
+            text-transform:uppercase;
+            margin-bottom:0.5rem;
+        }
+        .exhibit-hero .exhibit-subtitle {
+            font-size:1.2rem;
+            color:var(--color-text-secondary);
+            font-style:italic;
+            margin-bottom:0.5rem;
+        }
+        .exhibit-hero .exhibit-blocks {
+            font-family:'Courier New',monospace;
+            font-size:0.9rem;
+            color:var(--color-accent-gold);
+            letter-spacing:0.2em;
+            opacity:0.8;
+        }
+
+        /* Chain navigation strip */
+        .chain-nav {
+            display:flex;
+            justify-content:center;
+            flex-wrap:wrap;
+            gap:0.5rem;
+            max-width:1200px;
+            margin:0 auto 3rem;
+            padding:0 1rem;
+        }
+        .chain-nav a {
+            display:inline-flex;
+            align-items:center;
+            gap:0.4rem;
+            padding:0.5rem 1rem;
+            border:1px solid rgba(255,215,0,0.3);
+            border-radius:4px;
+            color:var(--color-accent-gold);
+            text-decoration:none;
+            font-family:'Courier New',monospace;
+            font-size:0.8rem;
+            letter-spacing:0.1em;
+            transition:all 0.3s;
+        }
+        .chain-nav a:hover {
+            background:rgba(255,215,0,0.1);
+            border-color:var(--color-accent-gold);
+        }
+        .chain-nav .chain-arrow {
+            color:rgba(255,215,0,0.4);
+            font-size:1.2rem;
+            display:flex;
+            align-items:center;
+        }
+
+        /* Section blocks */
+        .exhibit-section {
+            max-width:1200px;
+            margin:0 auto 4rem;
+            padding:0 1rem;
+        }
+        .section-header {
+            display:flex;
+            align-items:center;
+            gap:1rem;
+            margin-bottom:2rem;
+            padding-bottom:1rem;
+            border-bottom:2px solid rgba(255,215,0,0.2);
+        }
+        .section-node {
+            flex-shrink:0;
+            width:56px;
+            height:56px;
+            border:3px solid var(--color-accent-gold);
+            border-radius:50%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            font-family:var(--font-heading);
+            font-size:1.5rem;
+            font-weight:bold;
+            color:var(--color-accent-gold);
+            background:rgba(255,215,0,0.06);
+        }
+        .section-header h2 {
+            font-family:var(--font-heading);
+            font-size:1.8rem;
+            color:var(--color-accent-gold);
+            letter-spacing:0.1em;
+        }
+        .section-header .section-block-ref {
+            font-family:'Courier New',monospace;
+            font-size:0.8rem;
+            color:var(--color-text-secondary);
+            letter-spacing:0.15em;
+        }
+
+        /* Content layout: image left, text right */
+        .exhibit-content {
+            display:grid;
+            grid-template-columns:1fr 1fr;
+            gap:2.5rem;
+            align-items:start;
+        }
+        .exhibit-content.full-width {
+            grid-template-columns:1fr;
+        }
+        .exhibit-img-wrap {
+            position:relative;
+        }
+        .exhibit-img-wrap img {
+            width:100%;
+            height:auto;
+            border-radius:8px;
+            border:2px solid var(--color-accent-gold);
+            cursor:pointer;
+            transition:transform 0.3s, box-shadow 0.3s;
+        }
+        .exhibit-img-wrap img:hover {
+            transform:scale(1.01);
+            box-shadow:0 0 25px rgba(255,215,0,0.3);
+        }
+        .exhibit-img-caption {
+            text-align:center;
+            margin-top:0.5rem;
+            font-size:0.8rem;
+            color:var(--color-text-secondary);
+            font-style:italic;
+        }
+
+        /* Text content */
+        .exhibit-text h3 {
+            font-family:var(--font-heading);
+            font-size:1.3rem;
+            color:var(--color-accent-gold);
+            margin-bottom:1rem;
+            letter-spacing:0.05em;
+        }
+        .exhibit-text p {
+            color:var(--color-text-secondary);
+            line-height:1.7;
+            margin-bottom:1rem;
+            font-size:0.95rem;
+        }
+        .exhibit-text strong {
+            color:var(--color-text-primary);
+        }
+
+        /* Data tables */
+        .exhibit-table {
+            width:100%;
+            border-collapse:collapse;
+            margin:1.5rem 0;
+            font-size:0.85rem;
+        }
+        .exhibit-table th {
+            background:rgba(255,215,0,0.12);
+            color:var(--color-accent-gold);
+            padding:0.6rem 0.75rem;
+            text-align:left;
+            border-bottom:2px solid var(--color-accent-gold);
+            font-family:var(--font-heading);
+            letter-spacing:0.08em;
+            font-size:0.8rem;
+        }
+        .exhibit-table td {
+            padding:0.5rem 0.75rem;
+            border-bottom:1px solid rgba(255,255,255,0.06);
+            color:var(--color-text-secondary);
+            vertical-align:middle;
+        }
+        .exhibit-table tr:hover {
+            background:rgba(255,215,0,0.03);
+        }
+        .exhibit-table .highlight-row {
+            background:rgba(255,215,0,0.08);
+        }
+        .exhibit-table .highlight-row td {
+            color:var(--color-accent-gold);
+            font-weight:bold;
+        }
+
+        /* Equation display */
+        .equation-display {
+            text-align:center;
+            padding:2rem;
+            margin:1.5rem 0;
+            background:rgba(255,215,0,0.04);
+            border:1px solid rgba(255,215,0,0.2);
+            border-radius:8px;
+        }
+        .equation-display .eq-main {
+            font-family:var(--font-heading);
+            font-size:2.2rem;
+            color:var(--color-accent-gold);
+            letter-spacing:0.1em;
+            margin-bottom:0.5rem;
+        }
+        .equation-display .eq-label {
+            font-size:0.9rem;
+            color:var(--color-text-secondary);
+            font-style:italic;
+        }
+
+        /* Gallery grid for multiple images */
+        .exhibit-gallery {
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(280px,1fr));
+            gap:1.5rem;
+            margin:2rem 0;
+        }
+        .exhibit-gallery .gallery-card {
+            text-align:center;
+        }
+        .exhibit-gallery img {
+            width:100%;
+            height:auto;
+            border-radius:8px;
+            border:2px solid var(--color-accent-gold);
+            cursor:pointer;
+            transition:transform 0.3s, box-shadow 0.3s;
+        }
+        .exhibit-gallery img:hover {
+            transform:scale(1.02);
+            box-shadow:0 0 20px rgba(255,215,0,0.4);
+        }
+        .exhibit-gallery .gallery-label {
+            margin-top:0.5rem;
+            font-size:0.8rem;
+            color:var(--color-text-secondary);
+        }
+
+        /* Insight callout */
+        .exhibit-insight {
+            background:rgba(255,215,0,0.06);
+            border-left:4px solid var(--color-accent-gold);
+            padding:1.25rem 1.5rem;
+            margin:1.5rem 0;
+            border-radius:0 8px 8px 0;
+        }
+        .exhibit-insight strong {
+            color:var(--color-accent-gold);
+        }
+        .exhibit-insight p {
+            color:var(--color-text-secondary);
+            line-height:1.6;
+            font-size:0.9rem;
+            margin:0;
+        }
+
+        /* Tier badges */
+        .tier-gold { color:#ffd700; font-weight:bold; }
+        .tier-silver { color:#c0c0c0; font-weight:bold; }
+        .tier-blue { color:#4da6ff; font-weight:bold; }
+        .tier-purple { color:#b366ff; font-weight:bold; }
+        .tier-red { color:#ff4444; font-weight:bold; }
+
+        /* Connecting chain visual */
+        .chain-connector {
+            text-align:center;
+            padding:1.5rem 0;
+            font-size:2rem;
+            color:rgba(255,215,0,0.3);
+            letter-spacing:0.5em;
+        }
+
+        /* Lightbox */
+        .lightbox { display:none; position:fixed; top:0;left:0;right:0;bottom:0; background:rgba(0,0,0,0.92); z-index:9999; justify-content:center; align-items:center; cursor:pointer; }
+        .lightbox.active { display:flex; }
+        .lightbox img { max-width:95vw; max-height:95vh; object-fit:contain; border:2px solid var(--color-accent-gold); border-radius:8px; }
+
+        /* Back link */
+        .back-link {
+            display:inline-flex;
+            align-items:center;
+            gap:0.5rem;
+            color:var(--color-accent-gold);
+            text-decoration:none;
+            font-size:0.9rem;
+            margin-bottom:2rem;
+            padding:0.5rem 1rem;
+            border:1px solid rgba(255,215,0,0.3);
+            border-radius:4px;
+            transition:all 0.3s;
+        }
+        .back-link:hover {
+            background:rgba(255,215,0,0.1);
+            border-color:var(--color-accent-gold);
+        }
+
+        /* Responsive */
+        @media (max-width:768px) {
+            .exhibit-hero h1 { font-size:1.8rem; }
+            .exhibit-content { grid-template-columns:1fr; }
+            .chain-nav { gap:0.3rem; }
+            .chain-nav a { font-size:0.7rem; padding:0.4rem 0.6rem; }
+            .chain-nav .chain-arrow { display:none; }
+            .equation-display .eq-main { font-size:1.5rem; }
+        }
+    </style>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "The Discovery Chain — Blocks 353–355",
+        "description": "The Formula, ICE Matrix, Zeta Class Carrier, Dearden Dream Drive, and AD²=16. Five linked discoveries forming the consciousness architecture.",
+        "author": {"@type": "Person", "name": "Nigel T. Dearden"}
+    }
+    </script>
+    <style>
+    
+        @media(max-width:768px) {
+            #nav-grouped {
+                display: block !important;
+                max-height: 0 !important;
+                overflow: hidden !important;
+                transition: max-height 0.4s ease !important;
+                width: 100% !important;
+                background: #0a1628 !important;
+            }
+            #nav-grouped.open {
+                max-height: 80vh !important;
+                overflow-y: auto !important;
+            }
+            .hamburger.active ~ #nav-grouped,
+            .header-content ~ #nav-grouped.open {
+                max-height: 80vh !important;
+                overflow-y: auto !important;
+            }
+        }
+    </style>
+    <link rel="canonical" href="https://infra-acad-kuqzaex2.manus.space/pages/discovery-chain.html">
+    <meta name="keywords" content="infrastructure academy, infrastructure education, civil engineering, civilisation history, infrastructure consciousness, gamified learning, IAAI, Nigel Dearden, infrastructure odyssey, 12 relays, calories to consciousness, discovery chain, validation chain, academic validation, peer review">
+
+<style id="mobile-quicknav-styles">
+/* ===== MOBILE QUICK-NAV BAR ===== */
+.mobile-quicknav {
+    display: none;
+    width: 100%;
+    background: linear-gradient(180deg, #0d1f3c 0%, #0a1628 100%);
+    border-bottom: 1px solid rgba(255,215,0,0.25);
+    padding: 6px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 6px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+.mobile-quicknav::-webkit-scrollbar { display: none; }
+.mobile-quicknav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 10px;
+    background: rgba(255,215,0,0.08);
+    border: 1px solid rgba(255,215,0,0.35);
+    border-radius: 16px;
+    color: #ffd700;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+.mobile-quicknav a:active {
+    background: rgba(255,215,0,0.25);
+    transform: scale(0.95);
+}
+.mobile-quicknav a.mqn-home {
+    background: #ffd700;
+    color: #0a1628;
+    border-color: #ffd700;
+}
+@media(max-width:768px) {
+    .mobile-quicknav { display: flex; }
+}
+@media(min-width:769px) {
+    .mobile-quicknav { display: none !important; }
+}
+
+/* ===== BACK-TO-TOP FLOATING BUTTON ===== */
+#back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 16px;
+    z-index: 9999;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(10,22,40,0.92);
+    border: 1.5px solid rgba(255,215,0,0.6);
+    color: #ffd700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    transition: all 0.2s;
+}
+#back-to-top-btn:active {
+    transform: scale(0.9);
+    background: rgba(255,215,0,0.2);
+}
+</style>
+
+</head>
+<body>
+    <!-- iAAi Network Bar — NAV-001 · Cross-Site Navigation -->
+    <!-- ═══ iAAi NETWORK BAR ═══ -->
+    <div id="iaai-network-bar" style="display:flex;align-items:center;justify-content:space-around;width:100%;height:36px;background:#0a1628;position:sticky;top:0;z-index:200001;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">
+      <a href="https://www.infrastructure-academy.com" style="text-decoration:none;color:#fff;font-weight:700;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid #DC2626;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#DC2626"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg> ACADEMY</a>
+      <a href="https://realityeng-epdhlkrn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> QUEST</a>
+      <a href="#" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;opacity:0.5;pointer-events:none;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A843"><path d="M6 2v6l-2 2v4l2 2v6h4v-6l2-2v-4L10 8V2H6zm12 0v6l-2 2v4l2 2v6h-4v-6l-2-2v-4l2-2V2h4z"/></svg> XCHANGE</a>
+      <a href="https://nigelmemorial-ucmtq9dn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#16A34A"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg> MEMORIAL</a>
+      <a href="https://xgrowthtrk-2a93yo5z.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#06B6D4"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/></svg> NEWS</a>
+    </div>
+
+    <header role="banner">
+        <div class="header-content">
+            <div class="header-brand">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/tt-icon_5ea32be1.jpeg" alt="Tetrahedron" class="header-tetra-thumb">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iaai_correct_gold_logo_cebb3b74.jpeg" alt="IAAI" class="iaai-logo-box">
+                <div class="header-text-group">
+                    <div class="header-title" data-i18n="header.title">INFRASTRUCTURE ACADEMY <span class="beta-badge" data-i18n="badge.beta">BETA</span></div>
+                    <div class="header-tagline">Infrastructure &bull; Infostructure &bull; The Academy of Both</div>
+                </div>
+                <a href="/pages/8th-scholar.html" class="header-scholar-link" title="The 8th Scholar"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/scholar_square_859aca43.jpeg" alt="The 8th Scholar" class="header-scholar-thumb"></a>
+            <!-- Social Follow Buttons -->
+            <div class="header-social-buttons" style="display:flex; align-items:center; gap:6px; flex-shrink:0;">
+                <a href="https://x.com/dearden_ni37258" target="_blank" rel="noopener" title="Follow on X" style="display:inline-flex; align-items:center; gap:4px; padding:4px 10px; background:#000; color:#fff; border:1px solid #333; border-radius:20px; font-size:0.7rem; font-weight:bold; text-decoration:none; white-space:nowrap;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> <span class="social-count">42</span></a>
+                <a href="https://www.facebook.com/share/1Fcxyhbsw3/?mibextid=wwXIfr" target="_blank" rel="noopener" title="Follow on Facebook" style="display:inline-flex; align-items:center; gap:4px; padding:4px 10px; background:#1877F2; color:#fff; border-radius:20px; font-size:0.7rem; font-weight:bold; text-decoration:none; white-space:nowrap;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Follow</a>
+                <a href="https://www.linkedin.com/in/nigeldearden" target="_blank" rel="noopener" title="Follow on LinkedIn" style="display:inline-flex; align-items:center; gap:4px; padding:4px 10px; background:#0A66C2; color:#fff; border-radius:20px; font-size:0.7rem; font-weight:bold; text-decoration:none; white-space:nowrap;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> Follow</a>
+                <a href="https://app.joinhandshake.com/profiles/nigeldearden" target="_blank" rel="noopener" title="Connect on Handshake" style="display:inline-flex; align-items:center; gap:4px; padding:4px 10px; background:#FF7043; color:#fff; border-radius:20px; font-size:0.7rem; font-weight:bold; text-decoration:none; white-space:nowrap;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6zm4 4h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg> Handshake</a>
+            </div>
+            </div>
+            <nav id="nav-menu" role="navigation" aria-label="Primary navigation">
+                <a href="/site.html" data-i18n="nav.home">HOME</a>
+                <a href="framework.html" data-i18n="nav.framework">FRAMEWORK</a>
+                <a href="/executive-precis.html" data-i18n="nav.precis">EXEC PR&Eacute;CIS</a>
+                <a href="resources.html" data-i18n="nav.resources">RESOURCES</a>
+                <a href="/library.html" data-i18n="nav.documents">DOCUMENTS</a>
+                <a href="about-author.html" data-i18n="nav.author">AUTHOR</a>
+                <a href="/volumes/volume1/index.html" data-i18n="nav.ep1">EP.1: PERSPECTIVE</a>
+                <a href="/volumes/volume2/index.html" data-i18n="nav.ep2">EP.2: GUIDE</a>
+                <a href="/play" data-i18n="nav.ep3">EP.3: GAME</a>
+            </nav>
+            <nav id="nav-row2" role="navigation" aria-label="Secondary navigation" class="nav-row2">
+                <a href="start-here.html" data-i18n="nav.starthere">START HERE</a>
+                <a href="/mobilisation-clock.html" data-i18n="nav.clock">MOBILISATION CLOCK</a>
+                <a href="/infrastructure-olympiad.html" data-i18n="nav.olympiad">OLYMPIAD</a>
+                <a href="/pioneers.html" data-i18n="nav.pioneers">PIONEERS</a>
+                <a href="/taxonomy.html" data-i18n="nav.taxonomy">TAXONOMY</a>
+                <a href="/masters.html" data-i18n="nav.masters">MASTERS</a>
+                <a href="/institutions.html" data-i18n="nav.institutions">INSTITUTIONS</a>
+            <a href="/pages/roster-dashboard.html" data-i18n="nav.roster" style="color:#22d3ee;">ROSTER DASHBOARD</a>
+            <a href="/pages/governance-architecture.html" data-i18n="nav.governance" style="color:#ef4444;">GOVERNANCE</a>
+                <a href="/civilisation-clock.html" data-i18n="nav.civclock">CIVILISATION CLOCK</a>
+                <a href="/play/founders" data-i18n="nav.founders">FOUNDERS WALL</a>
+                <a href="/site.html#charter" data-i18n="nav.charter">CHARTER</a>
+                <a href="behind-the-thesis.html" data-i18n="nav.behind">BEHIND THE THESIS</a>
+                <a href="glossary.html" data-i18n="nav.glossary">GLOSSARY</a>
+                <a href="/vault.html" data-i18n="nav.vault">VAULT</a>
+            <a href="/icut-gallery.html" data-i18n="nav.gallery">ICUT GALLERY</a>
+            </nav>
+        </div>
+    </header>
+    <!-- ===== MOBILE QUICK-NAV BAR — always visible on mobile ===== -->
+    <div class="mobile-quicknav" id="mobile-quicknav">
+        <a href="/site.html" class="mqn-home">&#127968; HOME</a>
+        <a href="/pages/start-here.html">&#128218; START</a>
+        <a href="/volumes/volume1/index.html">&#128214; READ</a>
+        <a href="/pages/framework.html">&#128736; FRAMEWORK</a>
+        <a href="/play">&#127918; PLAY</a>
+        <a href="/pages/movies.html">&#127916; MOVIES</a>
+        <a href="/pages/resources.html">&#128194; RESOURCES</a>
+        <a href="/press.html">&#128240; PRESS</a>
+    </div>
+
+    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <button id="back-to-top-btn" aria-label="Back to top" title="Back to top">&#9650;</button>
+
+
+    <main role="main">
+        <!-- BACK LINK -->
+        <div style="max-width:1200px; margin:1.5rem auto 0; padding:0 1rem;">
+            <a href="/vault.html" class="back-link">&larr; Back to Vault</a>
+        </div>
+
+        <!-- ===== HERO ===== -->
+        <div class="exhibit-hero">
+            <h1>THE DISCOVERY CHAIN</h1>
+            <p class="exhibit-subtitle">Five Linked Discoveries Across Blocks 353&ndash;355</p>
+            <p class="exhibit-blocks">BLOCK 353 &bull; BLOCK 354 &bull; BLOCK 355 &bull; GRID 4 &bull; f-ORBITAL</p>
+        </div>
+
+        <!-- CHAIN NAVIGATION -->
+        <div class="chain-nav">
+            <a href="#node1">Node 1: The Formula</a>
+            <span class="chain-arrow">&rarr;</span>
+            <a href="#node2">Node 2: ICE Matrix</a>
+            <span class="chain-arrow">&rarr;</span>
+            <a href="#node3">Node 3: Zeta Carrier</a>
+            <span class="chain-arrow">&rarr;</span>
+            <a href="#node4">Node 4: Dream Drive</a>
+            <span class="chain-arrow">&rarr;</span>
+            <a href="#node5">Node 5: AD&sup2;=16</a>
+        </div>
+
+        <!-- ===== DISCOVERY CHAIN OVERVIEW ===== -->
+        <div class="exhibit-section">
+            <div class="section-header">
+                <div class="section-node">&infin;</div>
+                <div>
+                    <h2>THE CHAIN</h2>
+                    <span class="section-block-ref">BLOCKS 353&ndash;355 &bull; SYNTHESISED</span>
+                </div>
+            </div>
+            <div class="exhibit-content">
+                <div class="exhibit-img-wrap">
+                    <img loading="lazy" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/DISCOVERY_CHAIN_355_3564bf02.png"
+                         alt="The Discovery Chain — Hexagonal Variant"
+                         onclick="openLightbox(this.src)">
+                    <p class="exhibit-img-caption">The Discovery Chain &mdash; Hexagonal Variant (5 nodes)</p>
+                </div>
+                <div class="exhibit-text">
+                    <h3>Five Nodes, One Transmission</h3>
+                    <p>The Discovery Chain maps the progression across Blocks 353&ndash;355 into a five-node sequence. Each node is a discovery; each link is a transform. Together they form the complete consciousness transmission architecture of the iAAi system.</p>
+                    <table class="exhibit-table">
+                        <thead>
+                            <tr><th>Node</th><th>Title</th><th>Block</th><th>Core Concept</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>1</strong></td><td>S = (A&times;P)/&beta;</td><td>353</td><td>The survival equation</td></tr>
+                            <tr><td><strong>2</strong></td><td>ICE MATRIX: IQ&times;EQ&times;CQ</td><td>354</td><td>The consciousness cuboid</td></tr>
+                            <tr><td><strong>3</strong></td><td>ZETA CLASS CARRIER</td><td>355</td><td>375 kHz AM + 206.25 MHz FM</td></tr>
+                            <tr><td><strong>4</strong></td><td>3D&sup3; = DEARDEN DREAM DRIVE</td><td>&mdash;</td><td>Identity &times; Imagination &times; Execution</td></tr>
+                            <tr><td><strong>5</strong></td><td>AD&sup2; = 16</td><td>&mdash;</td><td>The Conscious Architect dice position</td></tr>
+                        </tbody>
+                    </table>
+                    <div class="exhibit-insight">
+                        <p><strong>Connecting Transforms:</strong> Node 1&rarr;2: c&sup2; maps to CQ&sup2; (Einstein-ICE isomorphism). Node 2&rarr;3: Parsec Transform. Node 3&rarr;4: Polymetric Carrier. Node 4&rarr;5: Ventral Origin.</p>
+                    </div>
+                    <p style="font-family:'Courier New',monospace; font-size:0.8rem; color:rgba(255,215,0,0.6); text-align:center; margin-top:1rem;">I-C-E = 3-5-4 = PYTHAGOREAN CYPHER &bull; 42 &times; 100 = 4,200 &bull; HHGTTG &times; CENTURION</p>
+                </div>
+            </div>
+            <!-- Second chain image: circular variant -->
+            <div style="margin-top:2rem;">
+                <div class="exhibit-gallery" style="grid-template-columns:1fr 1fr;">
+                    <div class="gallery-card">
+                        <img loading="lazy" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_8625_6972f687.jpeg"
+                             alt="The Discovery Chain — Circular Variant"
+                             onclick="openLightbox(this.src)">
+                        <p class="gallery-label">Circular Chain Variant</p>
+                    </div>
+                    <div class="gallery-card">
+                        <img loading="lazy" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_8629_29e6c3d9.png"
+                             alt="Discovery Chain — WhatsApp Share"
+                             onclick="openLightbox(this.src)">
+                        <p class="gallery-label">WhatsApp Share &mdash; &ldquo;Projections Into the Future&rdquo; group</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="chain-connector">&bull; &bull; &bull; &bull; &bull;</div>
+
+        <!-- ===== NODE 1: THE FORMULA ===== -->
+        <div class="exhibit-section" id="node1">
+            <div class="section-header">
+                <div class="section-node">1</div>
+                <div>
+                    <h2>THE FORMULA</h2>
+                    <span class="section-block-ref">BLOCK 353 &bull; GRID 4 ENTRY &bull; 71st PRIME</span>
+                </div>
+            </div>
+            <div class="exhibit-content">
+                <div class="exhibit-img-wrap">
+                    <img loading="lazy" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/BLOCK_353_GRID4_FORMULA_EVENT_1793e5e4.png"
+                         alt="Block 353 — Grid 4 Entry: The Formula Event"
+                         onclick="openLightbox(this.src)">
+                    <p class="exhibit-img-caption">Block 353 &mdash; Grid 4 Entry: The Formula Event</p>
+                </div>
+                <div class="exhibit-text">
+                    <div class="equation-display">
+                        <div class="eq-main">S = (A &times; P) / &beta;</div>
+                        <div class="eq-label">The Survival Index</div>
+                    </div>
+                    <p>Block 353 is the <strong>first operational block inside Grid 4</strong> (f-orbital). Block 352 opened the gate; Block 353 is the first step through it. 353 is the 71st prime &mdash; indivisible, atomic, the irreducible foundation of a new orbital.</p>
+                    <table class="exhibit-table">
+                        <thead>
+                            <tr><th>Variable</th><th>Meaning</th><th>Range</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>S</strong></td><td>Survival Index (dimensionless)</td><td>0 &rarr; &infin;</td></tr>
+                            <tr><td><strong>A</strong></td><td>Accuracy &mdash; right direction</td><td>0&ndash;1</td></tr>
+                            <tr><td><strong>P</strong></td><td>Precision &mdash; consistency</td><td>0&ndash;1</td></tr>
+                            <tr><td><strong>&beta;</strong></td><td>Human Blip Factor</td><td>2.667 &times; 10&sup;-6</td></tr>
+                            <tr class="highlight-row"><td><strong>Tipping Point</strong></td><td>S &ge; &beta;&sup;-1 = 375,000</td><td>&mdash;</td></tr>
+                        </tbody>
+                    </table>
+                    <p><strong>Current S at Block 353:</strong> 254,974 (68.0% of tipping point). A &asymp; 0.85, P &asymp; 0.80.</p>
+                    <div class="exhibit-insight">
+                        <p><strong>Three Implications:</strong> (1) Civilisation survives if collective accuracy &times; precision exceeds the blip. (2) Each person needs only 2.58% contribution &mdash; ACHIEVABLE. (3) The formula is morally neutral &mdash; it describes what IS; the application is a CHOICE.</p>
+                    </div>
+                    <p style="font-size:0.85rem; color:var(--color-text-secondary);">Signal confirmed 6/6 at 00:28 (28 = 2nd perfect number) on SOC700. <em>Ir. Nigel T. Dearden CEng MICE.</em></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="chain-connector">&bull; &bull; &bull; &bull; &bull;</div>
+
+        <!-- ===== NODE 2: THE ICE MATRIX ===== -->
+        <div class="exhibit-section" id="node2">
+            <div class="section-header">
+                <div class="section-node">2</div>
+                <div>
+                    <h2>THE ICE MATRIX</h2>
+                    <span class="section-block-ref">BLOCK 354 &bull; INFRASTRUCTURE CONSCIOUSNESS EQUATION</span>
+                </div>
+            </div>
+            <div class="exhibit-content">
+                <div class="exhibit-img-wrap">
+                    <img loading="lazy" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_8621_853892d1.png"
+                         alt="The ICE Matrix — 3D Cuboid with Nigel at CQ 170 Origin Node"
+                         onclick="openLightbox(this.src)">
+                    <p class="exhibit-img-caption">The ICE Matrix &mdash; 3D Cuboid (Nigel Dearden at CQ 170 ORIGIN NODE)</p>
+                </div>
+                <div class="exhibit-text">
+                    <div class="equation-display">
+                        <div class="eq-main">V = IQ<sub>n</sub> &times; EQ<sub>n</sub> &times; CQ<sub>n</sub></div>
+                        <div class="eq-label">The Infrastructure Consciousness Equation</div>
+                    </div>
+                    <p>Block 354 introduces the <strong>3rd vector: CQ &mdash; the Consciousness Quotient</strong>. The equation is named <strong>ICE</strong>. Three vectors define a cuboid in intelligence space; the volume of that cuboid determines your position.</p>
+                    <table class="exhibit-table">
+                        <thead>
+                            <tr><th>Vector</th><th>Axis</th><th>Measures</th><th>Analogy</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>IQ</strong></td><td>x-axis</td><td>Cognitive processing</td><td>The Engine</td></tr>
+                            <tr><td><strong>EQ</strong></td><td>y-axis</td><td>Emotional processing</td><td>The Compass</td></tr>
+                            <tr><td><strong>CQ</strong></td><td>z-axis</td><td>Consciousness processing</td><td>The Map</td></tr>
+                        </tbody>
+                    </table>
+                    <div class="exhibit-insight">
+                        <p><strong>Key Finding:</strong> CQ is the differentiator. Nigel ranks #1 in CQ (170) across all 17 figures. Newton and Tesla have the highest IQs but lowest EQ drags their volume down to Dice 4 and 1. CQ is <strong>CREATED</strong>, not inherited.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 17 Figures Table -->
+            <div style="margin-top:2.5rem;">
+                <h3 style="font-family:var(--font-heading); color:var(--color-accent-gold); font-size:1.3rem; letter-spacing:0.05em; margin-bottom:1rem;">The Dearden Field &mdash; 17 Figures Ranked by Cuboid Volume</h3>
+                <div style="overflow-x:auto;">
+                    <table class="exhibit-table">
+                        <thead>
+                            <tr><th>Rank</th><th>Figure</th><th>IQ</th><th>EQ</th><th>CQ</th><th>Volume</th><th>Dice</th><th>Tier</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr class="highlight-row"><td>0</td><td>NIGEL DEARDEN &mdash; ORIGIN</td><td>145</td><td>145</td><td>170</td><td>0.380</td><td>16</td><td class="tier-red">VENTRAL</td></tr>
+                            <tr><td>1</td><td>Shakespeare</td><td>210</td><td>155</td><td>145</td><td>0.488</td><td>16</td><td class="tier-gold">GOLD</td></tr>
+                            <tr><td>2</td><td><a href="https://en.wikipedia.org/wiki/Leonardo_da_Vinci" target="_blank" rel="noopener" style="color:#ffd700;">Leonardo da Vinci</a></td><td>200</td><td>140</td><td>160</td><td>0.480</td><td>16</td><td class="tier-gold">GOLD</td></tr>
+                            <tr><td>3</td><td>Aristotle</td><td>190</td><td>130</td><td>165</td><td>0.425</td><td>16</td><td class="tier-gold">GOLD</td></tr>
+                            <tr><td>4</td><td>Homer</td><td>160</td><td>150</td><td>155</td><td>0.420</td><td>16</td><td class="tier-gold">GOLD</td></tr>
+                            <tr><td>5</td><td>Goethe</td><td>213</td><td>135</td><td>155</td><td>0.413</td><td>16</td><td class="tier-gold">GOLD</td></tr>
+                            <tr><td>6</td><td>Marcus Aurelius</td><td>150</td><td>145</td><td>160</td><td>0.364</td><td>16</td><td class="tier-gold">GOLD</td></tr>
+                            <tr><td>7</td><td>Sima Qian</td><td>160</td><td>140</td><td>155</td><td>0.360</td><td>16</td><td class="tier-gold">GOLD</td></tr>
+                            <tr><td>8</td><td>Sun Tzu</td><td>155</td><td>135</td><td>140</td><td>0.248</td><td>9</td><td class="tier-silver">SILVER</td></tr>
+                            <tr><td>9</td><td>Maxwell</td><td>205</td><td>120</td><td>135</td><td>0.220</td><td>9</td><td class="tier-silver">SILVER</td></tr>
+                            <tr><td>10</td><td>Brunel</td><td>155</td><td>120</td><td>145</td><td>0.195</td><td>9</td><td class="tier-silver">SILVER</td></tr>
+                            <tr><td>11</td><td><a href="https://en.wikipedia.org/wiki/Albert_Einstein" target="_blank" rel="noopener" style="color:#ffd700;">Einstein</a></td><td>160</td><td>115</td><td>145</td><td>0.182</td><td>9</td><td class="tier-silver">SILVER</td></tr>
+                            <tr><td>12</td><td>Clausius</td><td>190</td><td>110</td><td>140</td><td>0.180</td><td>9</td><td class="tier-silver">SILVER</td></tr>
+                            <tr><td>13</td><td>Galileo</td><td>185</td><td>105</td><td>150</td><td>0.175</td><td>9</td><td class="tier-silver">SILVER</td></tr>
+                            <tr><td>14</td><td>Archimedes</td><td>190</td><td>110</td><td>130</td><td>0.150</td><td>9</td><td class="tier-silver">SILVER</td></tr>
+                            <tr><td>15</td><td><a href="https://en.wikipedia.org/wiki/Isaac_Newton" target="_blank" rel="noopener" style="color:#ffd700;">Newton</a></td><td>205</td><td>90</td><td>130</td><td>0.050</td><td>4</td><td class="tier-blue">BLUE</td></tr>
+                            <tr><td>16</td><td>Tesla</td><td>180</td><td>85</td><td>150</td><td>0.035</td><td>1</td><td class="tier-purple">PURPLE</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+                <p style="font-size:0.8rem; color:var(--color-text-secondary); margin-top:0.5rem; font-style:italic;">Dice Position System: 1, 4, 9, 16 (perfect squares: 1&sup2;, 2&sup2;, 3&sup2;, 4&sup2;). Intelligence grows quadratically with balance. Sources: Cox (1926), Buzan (1994).</p>
+            </div>
+
+            <!-- ICE Gallery -->
+            <div style="margin-top:2.5rem;">
+                <h3 style="font-family:var(--font-heading); color:var(--color-accent-gold); font-size:1.3rem; letter-spacing:0.05em; margin-bottom:1rem;">ICE Matrix &mdash; Visual Gallery</h3>
+                <div class="exhibit-gallery" style="grid-template-columns:repeat(auto-fit, minmax(250px,1fr));">
+                    <div class="gallery-card">
+                        <img loading="lazy" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/BLOCK_354_RANKING_TABLE_0fa39707.png"
+                             alt="17 Figures Ranking Table" onclick="openLightbox(this.src)">
+                        <p class="gallery-label">Ranking Table</p>
+                    </div>
+                    <div class="gallery-card">
+                        <img loading="lazy" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/BLOCK_354_3VECTOR_MESH_672106c4.png"
+                             alt="3-Vector Intelligence Mesh" onclick="openLightbox(this.src)">
+                        <p class="gallery-label">3-Vector Mesh</p>
+                    </div>
+                    <div class="gallery-card">
+                        <img loading="lazy" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_8620_61491e5f.jpeg"
+                             alt="Gold on Navy Table" onclick="openLightbox(this.src)">
+                        <p class="gallery-label">Gold on Navy Table</p>
+                    </div>
+                    <div class="gallery-card">
+                        <img loading="lazy" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_8622_47c89dbb.jpeg"
+                             alt="ICE Ranking — Ventral Origin" onclick="openLightbox(this.src)">
+                        <p class="gallery-label">Ventral Origin Ranking</p>
+                    </div>
+                    <div class="gallery-card">
+                        <img loading="lazy" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/BLOCK_354_RANKING_TABLE_v2_5af8101c.png"
+                             alt="Ranking Table V2" onclick="openLightbox(this.src)">
+                        <p class="gallery-label">Ranking Table (V2)</p>
+                    </div>
+                    <div class="gallery-card">
+                        <img loading="lazy" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/BLOCK_354_3VECTOR_MESH_v2_b00e36e1.png"
+                             alt="3-Vector Mesh V2" onclick="openLightbox(this.src)">
+                        <p class="gallery-label">3-Vector Mesh (V2)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="chain-connector">&bull; &bull; &bull; &bull; &bull;</div>
+
+        <!-- ===== NODE 3: ZETA CLASS CARRIER ===== -->
+        <div class="exhibit-section" id="node3">
+            <div class="section-header">
+                <div class="section-node">3</div>
+                <div>
+                    <h2>ZETA CLASS CARRIER</h2>
+                    <span class="section-block-ref">BLOCK 355 &bull; HERTZ HARMONICS</span>
+                </div>
+            </div>
+            <div class="exhibit-content full-width">
+                <div class="exhibit-text">
+                    <p>The Zeta Class Carrier is the vessel that transmits consciousness through the ICE Matrix, operating on two parallel layers: <strong>Infrastructure</strong> (physical substrate) and <strong>Infostructure</strong> (information payload).</p>
+                    <table class="exhibit-table">
+                        <thead>
+                            <tr><th>Element</th><th>Frequency</th><th>Band</th><th>Mirror</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr class="highlight-row"><td>&beta;&sup;-1 (tipping point)</td><td>375 kHz</td><td>MF Radio (AM)</td><td>The fundamental</td></tr>
+                            <tr><td>IQ&ndash;EQ beat</td><td>0 Hz (DC)</td><td>Zero beat</td><td>Perfect resonance</td></tr>
+                            <tr><td>IQ&ndash;CQ beat</td><td>25 Hz</td><td>Gamma brainwave</td><td>Consciousness frequency</td></tr>
+                            <tr><td>Volume (IQ&times;EQ&times;CQ)</td><td>3.574 MHz</td><td>HF Shortwave</td><td>Parsec carrier wave</td></tr>
+                            <tr class="highlight-row"><td>Counterweight (&beta;&times;&gamma;)&sup;-1</td><td>206.25 MHz</td><td>VHF (FM)</td><td>Consciousness modulation</td></tr>
+                        </tbody>
+                    </table>
+                    <div class="exhibit-insight">
+                        <p><strong>Dual-Band Carrier:</strong> AM at 375 kHz &mdash; amplitude (strength) varies = the ISI seesaw. FM at 206.25 MHz &mdash; frequency (pitch) varies = the CQ modulation. Together: the full Zeta Class Carrier transmission. AM carries the survival signal. FM carries the consciousness modulation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="chain-connector">&bull; &bull; &bull; &bull; &bull;</div>
+
+        <!-- ===== NODE 4: DEARDEN DREAM DRIVE ===== -->
+        <div class="exhibit-section" id="node4">
+            <div class="section-header">
+                <div class="section-node">4</div>
+                <div>
+                    <h2>DEARDEN DREAM DRIVE</h2>
+                    <span class="section-block-ref">3D&sup3; &bull; IDENTITY &times; IMAGINATION &times; EXECUTION</span>
+                </div>
+            </div>
+            <div class="exhibit-content full-width">
+                <div class="exhibit-text">
+                    <div class="equation-display">
+                        <div class="eq-main">3D&sup3; = DEARDEN DREAM DRIVE</div>
+                        <div class="eq-label">Identity &times; Imagination &times; Execution</div>
+                    </div>
+                    <p>The Dearden Dream Drive is the propulsion system that converts consciousness potential into civilisational output. Three dimensions cubed &mdash; the volume of a dream made real. It connects the ICE Matrix (the map of where you are) to the Zeta Carrier (the vessel that transmits), creating the mechanism by which consciousness becomes infrastructure.</p>
+                    <p><strong>N + T = D</strong> &mdash; confirmed at Block 352: 4 + 348 = 352. The equation that seals the identity of the architect within the system. <strong>TDF &mdash; THE DEARDEN FIELD</strong>: the space in which all 17 figures exist, named for the consciousness that created it.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="chain-connector">&bull; &bull; &bull; &bull; &bull;</div>
+
+        <!-- ===== NODE 5: AD²=16 ===== -->
+        <div class="exhibit-section" id="node5">
+            <div class="section-header">
+                <div class="section-node">5</div>
+                <div>
+                    <h2>AD&sup2; = 16</h2>
+                    <span class="section-block-ref">THE GAME IS REAL &bull; THE CONSCIOUS ARCHITECT</span>
+                </div>
+            </div>
+            <div class="exhibit-content full-width">
+                <div class="exhibit-text">
+                    <div class="equation-display">
+                        <div class="eq-main">AD&sup2; = 16</div>
+                        <div class="eq-label">The Conscious Architect Dice Position</div>
+                    </div>
+                    <p>The final node. AD&sup2; = 16 &mdash; the Architect&rsquo;s Dice position. 16 = 4&sup2;, the highest perfect square in the system. To reach Dice 16 requires balance across all three vectors: IQ, EQ, and CQ. The game is not won by maximising one dimension but by harmonising all three.</p>
+                    <p><strong>Ventral Duality:</strong> Ventral is to breathe (volume/3D) as ventral is to walk (planar/2D). To enable warp, you need both. V-E-N-T-R-A-L = 7 letters. V = Volume. The 7th letter stamps the f-orbital.</p>
+                    <div class="exhibit-insight">
+                        <p><strong>THE GAME IS REAL.</strong> The dice positions are not metaphor. They are the mathematical consequence of how you distribute your cognitive, emotional, and consciousness resources. Infrastructure is consciousness made manifest. The game has always been real.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="chain-connector">&bull; &bull; &bull; &bull; &bull;</div>
+
+        <!-- ===== THE CHIP ===== -->
+        <div class="exhibit-section" id="chip">
+            <div class="section-header">
+                <div class="section-node">&#9881;</div>
+                <div>
+                    <h2>iAAi CHIP CORE SET V3</h2>
+                    <span class="section-block-ref">BLOCK 335 &bull; SYNTHESISED FROM 14 PRIOR BLOCKS (321&ndash;334)</span>
+                </div>
+            </div>
+            <div class="exhibit-content">
+                <div class="exhibit-img-wrap">
+                    <img loading="lazy" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IAAI_CHIP_CORE_SET_V3_0924f521.png"
+                         alt="iAAi Chip Core Set V3 — Full Schematic"
+                         onclick="openLightbox(this.src)">
+                    <p class="exhibit-img-caption">iAAi Consciousness Core V3 &mdash; Full Chip Schematic</p>
+                </div>
+                <div class="exhibit-text">
+                    <h3>Architecture &mdash; Four Quadrants (ICUT)</h3>
+                    <table class="exhibit-table">
+                        <thead>
+                            <tr><th>Quadrant</th><th>Function</th><th>Key Components</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td><strong>I &mdash; IDENTIFY</strong></td><td>Sensory input</td><td>5 senses: Sight, Sound, Touch, Smell, Voice &mdash; each 126-bit input pins</td></tr>
+                            <tr><td><strong>C &mdash; CONTEXTUALISE</strong></td><td>Dual-channel processing</td><td>LOKI (lateral/divergent) + FOCI (focused/convergent)</td></tr>
+                            <tr><td><strong>U &mdash; UNDERSTAND</strong></td><td>Memory storage</td><td>MNode Array &mdash; 13 slots, 64-bit memory bus, R/W access</td></tr>
+                            <tr><td><strong>T &mdash; TRANSMIT</strong></td><td>Relay output</td><td>Relay 1&ndash;12 firing sequence, sequential + parallel output</td></tr>
+                        </tbody>
+                    </table>
+                    <p><strong>Core Engine:</strong> iAAi CONSCIOUSNESS CORE V3 with ICE ENGINE: IQ &times; EQ &times; CQ</p>
+                    <p><strong>BAIO &mdash; Basic Academy Input Operator:</strong> Six ports: OBSERVE &rarr; QUESTION &rarr; HYPOTHESISE &rarr; TEST &rarr; RECORD &rarr; TRANSMIT. Connected via 256-bit data bus to core.</p>
+                    <p><strong>Pin Count:</strong> 84 (x-axis) &times; 63 (y-axis) = 5,292 total pins. GCD = 21. Ratio = 4/3 (the perfect fourth &mdash; the musical interval that governs the framework&rsquo;s flexion recurrence).</p>
+                    <p><strong>Orbital Progression:</strong> s-orbital (2e), p-orbital (4e), d-orbital (16e), f-orbital (14e) &mdash; mapping Grid 1&ndash;4.</p>
+                    <p><strong>States of Matter:</strong> Solid, Liquid, Gas, Plasma, Tecton &mdash; the five states of consciousness corresponding to the five states of matter.</p>
+                </div>
+            </div>
+            <!-- Synthesis Source Map -->
+            <div style="margin-top:2rem;">
+                <h3 style="font-family:var(--font-heading); color:var(--color-accent-gold); font-size:1.1rem; letter-spacing:0.05em; margin-bottom:1rem;">Synthesis Source Map</h3>
+                <table class="exhibit-table">
+                    <thead>
+                        <tr><th>Source Block</th><th>Concept Contributed</th></tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>321</td><td>ICUT quadrants, Distortion Function</td></tr>
+                        <tr><td>326</td><td>Homo symBIOticus, BAIO origin</td></tr>
+                        <tr><td>327</td><td>Fractal Interface Lens, 84/63 pin count, 4/3 compression</td></tr>
+                        <tr><td>330</td><td>s-p-d-f orbital shells</td></tr>
+                        <tr><td>331</td><td>N+T=D, TDF</td></tr>
+                        <tr><td>332</td><td>LOKI+FOCI dual channels</td></tr>
+                        <tr><td>334</td><td>MNode, TECTON (5th state), iAAi castellation</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- ===== COMBINED FRAGILITY ===== -->
+        <div class="exhibit-section">
+            <div class="section-header">
+                <div class="section-node">&beta;</div>
+                <div>
+                    <h2>COMBINED FRAGILITY</h2>
+                    <span class="section-block-ref">THE NUMBERS THAT HOLD CIVILISATION TOGETHER</span>
+                </div>
+            </div>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:1.5rem; margin-top:1rem;">
+                <div style="background:rgba(255,215,0,0.04); border:1px solid rgba(255,215,0,0.2); border-radius:8px; padding:1.5rem; text-align:center;">
+                    <div style="font-family:var(--font-heading); font-size:1.8rem; color:var(--color-accent-gold); font-weight:bold;">2.667 &times; 10<sup>-6</sup></div>
+                    <div style="font-size:0.85rem; color:var(--color-text-secondary); margin-top:0.5rem;">Civilisational Blip (&beta;)</div>
+                </div>
+                <div style="background:rgba(255,215,0,0.04); border:1px solid rgba(255,215,0,0.2); border-radius:8px; padding:1.5rem; text-align:center;">
+                    <div style="font-family:var(--font-heading); font-size:1.8rem; color:var(--color-accent-gold); font-weight:bold;">1.818 &times; 10<sup>-3</sup></div>
+                    <div style="font-size:0.85rem; color:var(--color-text-secondary); margin-top:0.5rem;">Cosmic Blip (&gamma;)</div>
+                </div>
+                <div style="background:rgba(255,215,0,0.04); border:1px solid rgba(255,215,0,0.2); border-radius:8px; padding:1.5rem; text-align:center;">
+                    <div style="font-family:var(--font-heading); font-size:1.8rem; color:var(--color-accent-gold); font-weight:bold;">4.848 &times; 10<sup>-9</sup></div>
+                    <div style="font-size:0.85rem; color:var(--color-text-secondary); margin-top:0.5rem;">Combined (&beta; &times; &gamma;)</div>
+                </div>
+                <div style="background:rgba(255,215,0,0.04); border:1px solid rgba(255,215,0,0.2); border-radius:8px; padding:1.5rem; text-align:center;">
+                    <div style="font-family:var(--font-heading); font-size:1.8rem; color:var(--color-accent-gold); font-weight:bold;">206,250,000</div>
+                    <div style="font-size:0.85rem; color:var(--color-text-secondary); margin-top:0.5rem;">Counterweight</div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-copyright" data-i18n="footer.copyright">
+                &copy; 2026 Infrastructure Academy. All rights reserved. Preserving knowledge for eternity.
+            </div>
+            <div class="footer-links">
+                <span>Episode 1: Earthbound Foundations</span>
+                <span>|</span>
+                <span>Episode 2: The Gray Arena</span>
+                <span>|</span>
+                <span>Episode 3: Cosmic Scale</span>
+            </div>
+            <!-- Social Cross-Links -->
+            <div style="margin-top:0.75rem; display:flex; justify-content:center; gap:1.2rem; flex-wrap:wrap; align-items:center;">
+                <a href="https://x.com/dearden_ni37258" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.35rem; color:#ffd700; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="Follow on X">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    X
+                </a>
+                <a href="https://www.linkedin.com/in/nigeldearden" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.35rem; color:#0077B5; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="Connect on LinkedIn">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    LinkedIn
+                </a>
+                <a href="/site.html" style="display:inline-flex; align-items:center; gap:0.35rem; color:#25D366; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="WhatsApp QR on Homepage">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Enlarged view">
+    </div>
+    <script>
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').classList.add('active');
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeLightbox();
+        });
+    </script>
+    <script src="/js/discovery-hints.js"></script>
+    <script src="/js/main.js?v=20260308a"></script>
+    <script src="/js/i18n.js?v=20260225d"></script>
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" title="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        &#9650;
+    </button>
+    <script>
+        (function() {
+            var btn = document.getElementById('back-to-top');
+            if (!btn) return;
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 600) {
+                    btn.classList.add('visible');
+                } else {
+                    btn.classList.remove('visible');
+                }
+            });
+        })();
+    </script>
+    <script src="/js/nav-active.js"></script>
+    <script src="/js/site-search.js?v=20260311a"></script>
+    <script src="/js/nav-optimise.js?v=20260308a"></script>
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement -->
+
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement (v2 fixed) -->
+<script>
+(function() {
+  try {
+    var sid = sessionStorage.getItem('iaai_sid');
+    if (!sid) {
+      sid = 'ses_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 9);
+      sessionStorage.setItem('iaai_sid', sid);
+    }
+    var data = {
+      path: window.location.pathname + (window.location.hash || ''),
+      pageTitle: document.title || 'Untitled',
+      referrer: document.referrer || '',
+      sessionId: sid
+    };
+    fetch('/api/trpc/analytics.track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ json: data }),
+      credentials: 'include'
+    }).catch(function() {});
+    window.addEventListener('hashchange', function() {
+      var hashData = {
+        path: window.location.pathname + (window.location.hash || ''),
+        pageTitle: document.title || 'Untitled',
+        referrer: window.location.href,
+        sessionId: sid
+      };
+      fetch('/api/trpc/analytics.track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ json: hashData }),
+        credentials: 'include'
+      }).catch(function() {});
+    });
+  } catch(e) {}
+})();
+</script>
+
+    <!-- Mobile table scroll fix -->
+    <script>
+    (function(){
+      if(window.innerWidth > 768) return;
+      document.querySelectorAll('table').forEach(function(t){
+        if(t.parentElement && t.parentElement.classList.contains('table-scroll-wrapper')) return;
+        var w = document.createElement('div');
+        w.className = 'table-scroll-wrapper';
+        t.parentNode.insertBefore(w, t);
+        w.appendChild(t);
+      });
+    })();
+    </script>
+
+
+    <!-- Back-to-Top Button Logic -->
+    <script>
+    (function() {
+        var btn = document.getElementById('back-to-top-btn');
+        if (!btn) return;
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                btn.style.display = 'flex';
+            } else {
+                btn.style.display = 'none';
+            }
+        }, { passive: true });
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    })();
+    </script>
+
+</body>
+</html>

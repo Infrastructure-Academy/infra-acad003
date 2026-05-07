@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Infrastructure Academy - An Infrastructure Odyssey</title>
+  <title>iCard Gallery — Infrastructure Academy</title>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { background: #0a1628; color: #ffffff; font-family: Georgia, 'Times New Roman', serif; min-height: 100vh; }
@@ -25,27 +25,184 @@
     .modal.active { display: flex; }
     .modal img { max-width: 90vw; max-height: 90vh; object-fit: contain; }
     .modal-close { position: fixed; top: 20px; right: 30px; color: #ffd700; font-size: 2rem; cursor: pointer; z-index: 1001; }
+
+    /* Filter bar */
+    .filter-bar { max-width:1400px; margin:0 auto 20px; padding:0 30px; display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
+    .search-input { flex:1; min-width:200px; background:#0f1f3a; border:1px solid #1a3055; color:#fff; padding:10px 14px; font-family:Georgia,serif; font-size:0.9rem; outline:none; }
+    .search-input:focus { border-color:#ffd700; }
+    .search-input::placeholder { color:#666; }
+    .filter-chips { display:flex; flex-wrap:wrap; gap:6px; }
+    .filter-chip { background:#0f1f3a; border:1px solid #1a3055; color:#888; padding:5px 12px; font-size:0.75rem; cursor:pointer; font-family:Georgia,serif; transition:all 0.15s; }
+    .filter-chip:hover { border-color:#ffd700; color:#ffd700; }
+    .filter-chip.active { background:rgba(255,215,0,0.15); border-color:#ffd700; color:#ffd700; font-weight:bold; }
+    .filter-count { color:#666; font-size:0.8rem; margin-left:auto; white-space:nowrap; }
+    .sort-toggle { background:#0f1f3a; border:1px solid #1a3055; color:#ffd700; padding:6px 14px; font-size:0.78rem; cursor:pointer; font-family:Georgia,serif; transition:all 0.15s; display:inline-flex; align-items:center; gap:5px; white-space:nowrap; }
+    .sort-toggle:hover { border-color:#ffd700; background:rgba(255,215,0,0.08); }
+    .sort-toggle .arrow { font-size:0.9rem; transition:transform 0.2s; }
+    .sort-toggle .arrow.desc { transform:rotate(180deg); }
   </style>
     <link rel="canonical" href="https://infra-acad-kuqzaex2.manus.space/icard-gallery.html">
     <meta name="keywords" content="infrastructure academy, infrastructure education, civil engineering, civilisation history, infrastructure consciousness, gamified learning, IAAI, Nigel Dearden, infrastructure odyssey, 12 relays, calories to consciousness, iCard gallery, visual cards, infrastructure cards, knowledge cards">
-<meta property="og:type" content="website">
-		<meta property="og:url" content="https://infra-acad-kuqzaex2.manus.space/icard-gallery.html">
-		<meta property="og:title" content="Infrastructure Academy - An Infrastructure Odyssey">
-		<meta property="og:description" content="A comprehensive digital platform presenting "An Infrastructure Odyssey" - a 12,000-year journey through civilizational infrastructure development. Features three volumes: Perspective (narrative), Guide (practical framework), and Game (interactive learning), organized around 12 civilizational relays from Fire to Consciousness.">
-		<meta property="og:image" content="https://files.manuscdn.com/webdev_screenshots/2026/03/14/EpJbHinM2qXrsVqgbvCnSd.png?x-oss-process=image/resize,w_1200/crop,h_630,x_0,y_0">
-		<meta property="og:image:width" content="1200">
-		<meta property="og:image:height" content="630">
-		<meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:title" content="Infrastructure Academy - An Infrastructure Odyssey">
-		<meta name="twitter:description" content="A comprehensive digital platform presenting "An Infrastructure Odyssey" - a 12,000-year journey through civilizational infrastructure development. Features three volumes: Perspective (narrative), Guide (practical framework), and Game (interactive learning), organized around 12 civilizational relays from Fire to Consciousness.">
-		<meta name="twitter:image" content="https://files.manuscdn.com/webdev_screenshots/2026/03/14/EpJbHinM2qXrsVqgbvCnSd.png?x-oss-process=image/resize,w_1200/crop,h_630,x_0,y_0">
-		<meta name="twitter:image:width" content="1200">
-		<meta name="twitter:image:height" content="630"><link rel="canonical" href="https://infra-acad-kuqzaex2.manus.space/icard-gallery.html" /></head>
+
+<style id="mobile-quicknav-styles">
+/* ===== MOBILE QUICK-NAV BAR ===== */
+.mobile-quicknav {
+    display: none;
+    width: 100%;
+    background: linear-gradient(180deg, #0d1f3c 0%, #0a1628 100%);
+    border-bottom: 1px solid rgba(255,215,0,0.25);
+    padding: 6px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 6px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+.mobile-quicknav::-webkit-scrollbar { display: none; }
+.mobile-quicknav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 10px;
+    background: rgba(255,215,0,0.08);
+    border: 1px solid rgba(255,215,0,0.35);
+    border-radius: 16px;
+    color: #ffd700;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+.mobile-quicknav a:active {
+    background: rgba(255,215,0,0.25);
+    transform: scale(0.95);
+}
+.mobile-quicknav a.mqn-home {
+    background: #ffd700;
+    color: #0a1628;
+    border-color: #ffd700;
+}
+@media(max-width:768px) {
+    .mobile-quicknav { display: flex; }
+}
+@media(min-width:769px) {
+    .mobile-quicknav { display: none !important; }
+}
+
+/* ===== BACK-TO-TOP FLOATING BUTTON ===== */
+#back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 16px;
+    z-index: 9999;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(10,22,40,0.92);
+    border: 1.5px solid rgba(255,215,0,0.6);
+    color: #ffd700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    transition: all 0.2s;
+}
+#back-to-top-btn:active {
+    transform: scale(0.9);
+    background: rgba(255,215,0,0.2);
+}
+</style>
+
+</head>
 <body>
+    <!-- iAAi Network Bar — NAV-001 · Cross-Site Navigation -->
+    <!-- ═══ iAAi NETWORK BAR ═══ -->
+    <div id="iaai-network-bar" style="display:flex;align-items:center;justify-content:space-around;width:100%;height:36px;background:#0a1628;position:sticky;top:0;z-index:200001;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">
+      <a href="https://www.infrastructure-academy.com" style="text-decoration:none;color:#fff;font-weight:700;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid #DC2626;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#DC2626"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg> ACADEMY</a>
+      <a href="https://realityeng-epdhlkrn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> QUEST</a>
+      <a href="#" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;opacity:0.5;pointer-events:none;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A843"><path d="M6 2v6l-2 2v4l2 2v6h4v-6l2-2v-4L10 8V2H6zm12 0v6l-2 2v4l2 2v6h-4v-6l-2-2v-4l2-2V2h4z"/></svg> XCHANGE</a>
+      <a href="https://nigelmemorial-ucmtq9dn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#16A34A"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg> MEMORIAL</a>
+      <a href="https://xgrowthtrk-2a93yo5z.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#06B6D4"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/></svg> NEWS</a>
+    </div>
+
+
+<!-- INJECTED COMPACT HEADER BAR -->
+<style>
+.compact-header-bar { position:sticky; top:0; z-index:9999; background:#0a1628; border-bottom:2px solid #ffd700; padding:8px 16px; display:flex; align-items:center; justify-content:space-between; gap:12px; font-family:Georgia,'Times New Roman',serif; }
+.compact-header-bar .chb-brand { display:flex; align-items:center; gap:10px; text-decoration:none; color:#ffd700; }
+.compact-header-bar .chb-brand img { width:28px; height:28px; border-radius:4px; }
+.compact-header-bar .chb-title { font-size:0.85rem; font-weight:bold; letter-spacing:1.5px; color:#ffd700; }
+.compact-header-bar .chb-nav { display:flex; align-items:center; gap:12px; }
+.compact-header-bar .chb-nav a { color:#e2e8f0; text-decoration:none; font-size:0.75rem; letter-spacing:1px; padding:4px 10px; border:1px solid rgba(255,215,0,0.2); border-radius:3px; transition:all 0.2s; }
+.compact-header-bar .chb-nav a:hover { background:rgba(255,215,0,0.1); border-color:#ffd700; color:#ffd700; }
+.compact-header-bar .chb-nav a.chb-home { background:rgba(255,215,0,0.15); border-color:#ffd700; color:#ffd700; font-weight:bold; }
+@media(max-width:600px) { .compact-header-bar .chb-nav a:not(.chb-home) { display:none; } .compact-header-bar .chb-title { font-size:0.7rem; } }
+</style>
+
+<div class="compact-header-bar">
+    <a href="/site.html" class="chb-brand">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iAAi-emblem_e0c9c2c1.png" alt="iAAi">
+        <span class="chb-title">INFRASTRUCTURE ACADEMY</span>
+    </a>
+    <div class="chb-nav">
+        <a href="/site.html" class="chb-home">HOME</a>
+        <a href="/pages/framework.html">FRAMEWORK</a>
+        <a href="/library.html">DOCUMENTS</a>
+        <a href="/play">PLAY</a>
+    </div>
+</div>
+    <!-- ===== MOBILE QUICK-NAV BAR — always visible on mobile ===== -->
+    <div class="mobile-quicknav" id="mobile-quicknav">
+        <a href="/site.html" class="mqn-home">&#127968; HOME</a>
+        <a href="/pages/start-here.html">&#128218; START</a>
+        <a href="/volumes/volume1/index.html">&#128214; READ</a>
+        <a href="/pages/framework.html">&#128736; FRAMEWORK</a>
+        <a href="/play">&#127918; PLAY</a>
+        <a href="/pages/movies.html">&#127916; MOVIES</a>
+        <a href="/pages/resources.html">&#128194; RESOURCES</a>
+        <a href="/press.html">&#128240; PRESS</a>
+    </div>
+
+    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <button id="back-to-top-btn" aria-label="Back to top" title="Back to top">&#9650;</button>
+
+<!-- END COMPACT HEADER BAR -->
+
+
   <div class="header">
     <h1>iCard Gallery</h1>
     <p>All iCards generated during the iAAi Beta Test — Unis12 Review Process</p>
     <p class="domain">www.infrastructure-academy.com/icard-gallery.html</p>
+  </div>
+
+  <!-- Observer Register Cross-Link Banner -->
+  <div style="background:linear-gradient(90deg, rgba(255,215,0,0.08) 0%, rgba(255,215,0,0.02) 100%); border:1px solid rgba(255,215,0,0.3); padding:14px 24px; margin:0 30px 24px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+    <div style="display:flex; align-items:center; gap:12px;">
+      <span style="font-size:1.4rem;">&#128065;&#65039;</span>
+      <div>
+        <span style="color:#ffd700; font-weight:bold; font-size:0.95rem;">Stakeholder Observer Register</span>
+        <span style="color:#aaa; font-size:0.85rem; margin-left:8px;">3 Confirmed Observers &mdash; Witness documentation &amp; iCards</span>
+      </div>
+    </div>
+    <a href="/pages/observer-register.html" style="background:#ffd700; color:#0a1628; padding:6px 18px; font-weight:bold; text-decoration:none; font-size:0.85rem;">View Register &rarr;</a>
+  </div>
+
+  <!-- Search & Filter Bar -->
+  <div class="filter-bar">
+    <input type="text" class="search-input" id="searchInput" placeholder="Search iCards by title, type, or date..." autocomplete="off">
+    <div class="filter-chips" id="filterChips"></div>
+    <button class="sort-toggle" id="sortToggle" title="Toggle sort order"><span class="arrow" id="sortArrow">&uarr;</span> <span id="sortLabel">Oldest First</span></button>
+    <span class="filter-count" id="filterCount">75 cards</span>
   </div>
 
   <div class="gallery" id="gallery"></div>
@@ -57,18 +214,34 @@
 
   <!-- BUY THE DECK CTA -->
   <div style="background:linear-gradient(135deg, #0d1f3c 0%, #1a0a2e 100%); padding:2.5rem 1.5rem; text-align:center; border-top:2px solid #ffd700; margin-top:2rem;">
-    <h2 style="color:#ffd700; font-family:Georgia,serif; font-size:1.5rem; margin-bottom:0.75rem;">IP &amp; Equations Register &mdash; BETA Deck</h2>
-    <p style="color:#e0e0e0; max-width:500px; margin:0 auto 1rem; font-size:0.85rem;">56 collectible cards &bull; 38 equations &bull; 15 IP assets &bull; US$29.95</p>
+    <h2 style="color:#ffd700; font-family:Georgia,serif; font-size:1.5rem; margin-bottom:0.75rem;">IP &amp; Equations Register &mdash; AI Edition</h2>
+    <p style="color:#e0e0e0; max-width:500px; margin:0 auto 1rem; font-size:0.85rem;">55 collectible cards &bull; 38 equations &bull; 15 IP assets &bull; US$29.95</p>
     <div style="display:flex; justify-content:center; gap:1rem; flex-wrap:wrap;">
       <a href="finance-admin.html" style="display:inline-block; background:#ffd700; color:#0a1628; padding:0.6rem 1.5rem; font-weight:bold; text-decoration:none; font-size:0.85rem;">View Full Deck</a>
-      <a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IAAI_IP_Equations_Register_Deck_56_Cards_BETA_17393da4.pdf" target="_blank" style="display:inline-block; background:transparent; color:#ffd700; padding:0.6rem 1.5rem; font-weight:bold; text-decoration:none; font-size:0.85rem; border:2px solid #ffd700;">Download PDF</a>
+      <a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IAAI_IP_Equations_Register_Deck_56_Cards_AI_02f9060c.pdf" target="_blank" style="display:inline-block; background:transparent; color:#ffd700; padding:0.6rem 1.5rem; font-weight:bold; text-decoration:none; font-size:0.85rem; border:2px solid #ffd700;">Download PDF</a>
     </div>
   </div>
 
   <div class="footer">
     <p>N₁ (ALAN/Nigel) + N₂ (DAVID/Manus) | <a href="https://www.infrastructure-academy.com">www.infrastructure-academy.com</a> | March 2026</p>
     <p style="margin-top: 8px;">iCard = Internal infographic snapshot (process tool) | BitPoint = Collectible knowledge currency (product, 52-card set, Block 353)</p>
-  </div>
+  
+        <!-- Social Cross-Links -->
+        <div style="margin-top:0.75rem; display:flex; justify-content:center; gap:1.2rem; flex-wrap:wrap; align-items:center;">
+            <a href="https://x.com/dearden_ni37258" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.35rem; color:#ffd700; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="Follow on X">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                X
+            </a>
+            <a href="https://www.linkedin.com/in/nigeldearden" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.35rem; color:#0077B5; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="Connect on LinkedIn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+            </a>
+            <a href="/site.html" style="display:inline-flex; align-items:center; gap:0.35rem; color:#25D366; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="WhatsApp QR on Homepage">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                WhatsApp
+            </a>
+        </div>
+    </div>
 
   <script>
     const cards = [
@@ -84,37 +257,217 @@
       { id: "iCard_BookSales", title: "Book Sales Adoption Strategy", date: "2026-03-10", type: "iCard — Revenue", url: "/icard-book-sales-strategy.html", isPage: true },
       { id: "iCard_Khanh", title: "Khanh Huynh (K) — Team Member Profile", date: "2026-03-11", type: "iCard — Team", url: "/icard-khanh-huynh.html", isPage: true },
       { id: "iCard_HTetra", title: "Henry's 3 WhatsApp Groups — The First H-Tetra", date: "2026-03-11", type: "iCard — Structural Event", url: "/icard-h-tetra.html", isPage: true },
-      { id: "iCard_Equinox", title: "The Engineer's Equinox — Personal SCADA System", date: "2026-03-08", type: "iCard — SCADA", url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/tuuEtknNYpXPMZjb.png" },
-      { id: "iCard_PiDay_34", title: "Pi Day 2026 — The Day the PIN Dropped (3:4)", date: "2026-03-14", type: "iCard — Pi Day", url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/XckwDPWpRUPZCoEd.png" },
-      { id: "iCard_PiDay_43", title: "Pi Day 2026 — The Day the PIN Dropped (4:3)", date: "2026-03-14", type: "iCard — Pi Day", url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/VVMIlshUTKnagGhH.png" }
+      { id: "iCard_PiDay_3x4", title: "Pi Day 2026 — The Engineer's Equinox (3:4)", date: "2026-03-14", type: "iCard — Pi Day", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/XckwDPWpRUPZCoEd_930ecf48.png" },
+      { id: "iCard_PiDay_4x3", title: "Pi Day 2026 — The Engineer's Equinox (4:3)", date: "2026-03-14", type: "iCard — Pi Day", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/VVMIlshUTKnagGhH_505b3463.png" },
+      { id: "iCard_Equinox", title: "The Engineer's Equinox — Pi Day Observation", date: "2026-03-14", type: "iCard — Observation", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/tuuEtknNYpXPMZjb_f936d35e.png" },
+      { id: "iCard_B391_Police", title: "Block 391 — Inspector Check (Evidence Shown)", date: "2026-03-17", type: "iCard — Verification", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-block391-police-check_e76e3102.png" },
+      { id: "iCard_B391_Dual", title: "Block 391 — Dual Agentic Proof", date: "2026-03-17", type: "iCard — Verification", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-block391-dual-agentic-proof_2a30b254.png" },
+      { id: "iCard_B391_Verify", title: "Block 391 — Agentic Verification Checklist", date: "2026-03-17", type: "iCard — Verification", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-block391-agentic-verification_9293fceb.png" },
+      { id: "iCard_B391_132Days", title: "Block 391 — 132 Days Milestone (5 Nov 2025 → 17 Mar 2026)", date: "2026-03-17", type: "iCard — Milestone", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-block391-132days-milestone_eeeda072.png" },
+      { id: "iCard_B391_Reece", title: "Reece Wemyss — St Patrick's Day, Hong Kong", date: "2026-03-17", type: "iCard — Observer", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-reece-wemyss-corrected_b686f24f.png" },
+      { id: "iCard_B391_Craig", title: "Craig Stephen — Observer Confirmed", date: "2026-03-17", type: "iCard — Observer", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-craig-stephen-photo_17f7b2eb.png" },
+      { id: "iCard_B391_SDG", title: "iAAi × UN SDG Alignment — Water-Power Nexus", date: "2026-03-17", type: "iCard — SDG", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-iaai-un-sdg-alignment_49c1a048.png" },
+      { id: "iCard_B391_Richard", title: "Richard Menenzes — Observer Confirmed (Uticome, UAE)", date: "2026-03-18", type: "iCard — Observer", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-richard-menenzes-observer_18cafad5.png" },
+      { id: "iCard_B391_Complete", title: "Block 391 — Completion Summary (391a+b+c+d)", date: "2026-03-18", type: "iCard — Completion", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-block391-completion-summary_0c4098df.png" },
+      { id: "iCard_Day133", title: "Day 133 — The Menenzes Moment (36% Complete)", date: "2026-03-18", type: "iCard — Milestone", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-day133-menenzes-milestone_501b92a9.png" },
+      // === BLOCK 387 Legacy iCards (preserved from original creation) ===
+      { id: "iCard_4Laws", title: "4 Laws of iAAi \u2014 Asimov 3 becomes 4 (The Missing Law)", date: "2026-03-04", type: "iCard \u2014 Framework", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-4laws-iaai_5b62b233.png" },
+      { id: "iCard_MasterBuilder_Book", title: "Discovery: The Master Builder \u2014 Alfonso Martinez Arias (2023)", date: "2026-03-04", type: "iCard \u2014 Discovery", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-discovery-master-builder-book_c26d36a4.png" },
+      { id: "iCard_TP017", title: "TP-017: The Master Builder \u2014 The Cell, The Brain, The 4 Laws", date: "2026-03-04", type: "iCard \u2014 Thinking Point", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-tp017-master-builder_7e66110e.png" },
+      { id: "iCard_TP013", title: "TP-013: The Walkby \u2014 4-Level Control Hierarchy", date: "2026-03-04", type: "iCard \u2014 Thinking Point", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-tp013-walkby_34cb45a3.png" },
+      { id: "iCard_Procrastination", title: "Procrastination = Beta \u2014 The 4 Barriers Made Visible", date: "2026-03-04", type: "iCard \u2014 Discovery", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-discovery-procrastination-beta_1990c58e.png" },
+      // === BLOCK 392 iCards ===
+      { id: "iCard_Day134", title: "Day 134 \u2014 Morning Brief (Block 392 Opens, 37% Complete)", date: "2026-03-19", type: "iCard \u2014 Morning Brief", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-day134-morning-brief_08b427ab.png" },
+      // === BLOCK 393 iCards ===
+      { id: "iCard_B393b", title: "Block 393b Complete \u2014 SEO \u00b7 Site Map \u00b7 Certificates \u00b7 Roadmap", date: "2026-03-19", type: "iCard \u2014 Completion", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-block393b-completion_dd962679.png" },
+      // === BLOCK 393d iCards — Breach Remediation ===
+      { id: "iCard_TP009", title: "TP-009: The Permanence Crisis \u2014 AI Agent Data Governance Under Legal Scrutiny", date: "2026-03-15", type: "iCard \u2014 Turing Paper", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_1455_0a4fe5f6.jpeg" },
+      { id: "iCard_LivingExperiment", title: "The Living Experiment \u2014 Biological Intelligence Directing Digital Intelligence", date: "2026-03-15", type: "iCard \u2014 Thinking Point", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_1491_c1172d46.jpeg" },
+      { id: "iCard_LinkAudit388", title: "Anchored Link Register \u2014 Full Audit Blocks 387\u2013388 (127 Outbound Links)", date: "2026-03-16", type: "iCard \u2014 Audit", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-link-audit-388_1b409b63.png" },
+      { id: "iCard_ACADHandshake380", title: "ACAD Agent Handshake Confirmed — Cross-Agent Verification Block 380", date: "2026-03-15", type: "iCard — Verification", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-block380-acad-handshake-confirmed_2ab09a90.png" },
+      // === BLOCK 393e iCards — Database Anchoring & Remediation ===
+      { id: "iCard_TetrahedralObserver", title: "The Tetrahedral Observer — Four Operational Bridges", date: "2026-03-19", type: "iCard — Architecture", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_2203_c67b2090.PNG" },
+      { id: "iCard_TP009Remediation", title: "TP-009 Remediation Complete — Breach-to-Fix Cycle Block 393d/393e", date: "2026-03-19", type: "iCard — Corrective Action", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-tp009-remediation-b393e-93mXTdZijAQ7brLxWML5Hy.png" },
+      // === BLOCK 393f/g iCards — Bridge Architecture ===
+      { id: "iCard_B393f_TetrahedralBridge", title: "Block 393f — Tetrahedral Observer: Four Operational Bridges Verified", date: "2026-03-19", type: "iCard — Architecture", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-block393f-tetrahedral-observer-mSn7eteHBg4SkWQ2jah9fa.png" },
+      // === BLOCK 393h iCards — HICE / ISI / BIOBIT Framework Cards ===
+      { id: "iCard_JokerB_Mirror", title: "Joker B — Mirror Inversion: OODA ↔ IUMC", date: "2026-03-19", type: "iCard — Framework", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_2003(2)_3f85fdf3.jpeg" },
+      { id: "iCard_QuotientEq", title: "The Quotient Equation — S = (A × P) / β", date: "2026-03-19", type: "iCard — Framework", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/d975a280-11f3-411c-a5da-7383131258bb(2)_2f462c3b.jpeg" },
+      { id: "iCard_iAAi_Compass", title: "iAAi Compass Emblem — Navigation Rose", date: "2026-03-19", type: "iCard — Framework", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_1927(2)_1b88c540.jpeg" },
+      { id: "iCard_HICE_Spectrum", title: "The HICE Spectrum — Why Man Must Lead", date: "2026-03-19", type: "iCard — Framework", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_1822(3)_b290a5c7.jpeg" },
+      { id: "iCard_HomoInfra_BIOBIT", title: "Homo Infrastructus — The BIOBIT World Transform", date: "2026-03-19", type: "iCard — Framework", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_1720_d6f13a16.jpeg" },
+      { id: "iCard_RelayEquation", title: "Civilisational Relay Equation — R = f(T,K,G,A)", date: "2026-03-19", type: "iCard — Framework", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_1629_b0e90ba9.jpeg" },
+      { id: "iCard_UnifiedField", title: "Unified Field Theory — IQ ⊕ EQ ⊕ CQ = HQ", date: "2026-03-19", type: "iCard — Framework", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_1624(1)_54c29860.jpeg" },
+      { id: "iCard_HICE_Equation", title: "The HICE Equation — H = I ⊗ C ⊗ E", date: "2026-03-19", type: "iCard — Framework", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_1594_879a5188.jpeg" },
+      { id: "iCard_DigitalDomestication", title: "Digital Domestication — Wild → Tamed → Companion", date: "2026-03-19", type: "iCard — Framework", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_1538_ebfa69be.jpeg" },
+      { id: "iCard_B382_Synthesis", title: "Block 382 Synthesis — The Principia Tectonica (6-Card Argument)", date: "2026-03-19", type: "iCard — Synthesis", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-block382-synthesis-interpretation_804ba4f2.png" },
+      { id: "iCard_MemorialGameRoute", title: "Memorial-to-Game Route Architecture", date: "2026-03-19", type: "iCard — Architecture", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-memorial-to-game-route_95876931.png" },
+      { id: "iCard_GeminiII_ASKE", title: "Gemini II — ASK-E Sync Card (Block 314)", date: "2026-03-19", type: "iCard — Framework", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCARD_GEMINI_II_ASKE_a41d9b55.png" },
+      { id: "iCard_ISI_Discovery", title: "ISI Discovery — The Triple Index (Block 366)", date: "2026-03-19", type: "iCard — Discovery", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_1085(1)_b9ca1b05.jpeg" },
+      { id: "iCard_Procrastination_Beta", title: "Procrastination = Beta — The 4 Barriers (Block 387)", date: "2026-03-19", type: "iCard — Discovery", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-discovery-procrastination-beta_32f0af5a.png" },
+      // === OUTRIDER iCard — Governance & Police Evidence ===
+      { id: "iCard_Outrider_7Zeniths", title: "The Outrider — 7 Steppe Zeniths: 12,000 Years of Semi-Continuous Bridge-Building", date: "2026-03-26", type: "iCard — Governance", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-outrider-7-steppe-zeniths-HmKsqTDuucPqWNc3UnJhYx.png" },
+      { id: "iCard_iCHOP", title: "iCHOP — Convenience Heuristic Observation Protocol (Vignette 001)", date: "2026-03-26", type: "iCard — Governance", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCHOP-icard-day15_42d7354e.png" },
+      { id: "iCard_UX001", title: "UX-001 — The Discovery Principle: If Users Can’t Find It, It Doesn’t Exist", date: "2026-03-26", type: "iCard — UX", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-ux-001_7782d2a2.png" },
+      { id: "iCard_Handshakes", title: "HANDSHAKES — The Ecosystem Connection Map (15 Documented Connections)", date: "2026-03-27", type: "iCard — Governance", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-handshakes-block415_0c011efc.png" },
+      // === LA MENARA — Tree Cultural Significance ===
+      { id: "iCard_00B_12Relays5Webs", title: "12 Civilisational Relays × 5 Webs — The Complete Framework", date: "2026-03-27", type: "iCard — Framework", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCARD_00B_12_RELAYS_5_WEBS(1)_2fda5737.png" },
+      // === LA MENARA — Horse Cultural Significance ===
+      // === LA MENARA — Human Nodes Cultural Significance ===
+      { id: "iCard_R12_Nodes_LaMenara", title: "La Menara — R12 Human Nodes: Cultural Significance (Robots, AI, Biosynthetics, Synesthetics, Quantum)", date: "2026-03-27", type: "iCard — La Menara", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/la_menara_r12_nodes_icard-itEKmJbJ3cePVmjtJz67SY.png" },
+      // === LA MENARA — Orbit Cultural Significance ===
+      { id: "iCard_R11_Orbit_LaMenara", title: "La Menara — R11 Orbit: Cultural Significance (Satellites, Space Stations, Planetary Infrastructure)", date: "2026-03-27", type: "iCard — La Menara", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/la_menara_r11_orbit_icard-GGaKJe9sfk7RpsyV2yNpCa.png" },
+      // === LA MENARA — AAA Triad Cultural Significance ===
+      { id: "iCard_R10_AAA_LaMenara", title: "La Menara — R10 AAA Triad: Cultural Significance (Automobiles, Aviation, Airwaves)", date: "2026-03-27", type: "iCard — La Menara", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/la_menara_r10_aaa_icard-cyQaT93W2fzx2HAZPNpkaC.png" },
+      // === LA MENARA — Engine Cultural Significance ===
+      { id: "iCard_R09_Engine_LaMenara", title: "La Menara — R09 Engine: Cultural Significance (The Machine That Multiplied Muscle)", date: "2026-03-27", type: "iCard — La Menara", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/la_menara_r09_engine_icard-YzpZMFqXZvyfBr92aDNkrS.png" },
+      // === LA MENARA — Rail Cultural Significance ===
+      { id: "iCard_R08_Rail_LaMenara", title: "La Menara — R08 Rail: Cultural Significance (The Iron Horse That Standardised Time)", date: "2026-03-27", type: "iCard — La Menara", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCARD_R07_RAIL_Cultural_Significance_c764f508.png" },
+      // === LA MENARA — Loom Cultural Significance ===
+      { id: "iCard_R07_Loom_LaMenara", title: "La Menara — R07 Loom: Cultural Significance (The Machine That Wove Civilisation)", date: "2026-03-27", type: "iCard — La Menara", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCARD_R07_LOOM_Cultural_Significance_1f48f74d.png" },
+      // === LA MENARA — Ships Cultural Significance ===
+      { id: "iCard_R06_Ships_LaMenara", title: "La Menara — R06 Ships: Cultural Significance (The Vessel That Made the World One)", date: "2026-03-27", type: "iCard — La Menara", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCARD_R06_SHIPS_Cultural_Significance_ac1e66fc.png" },
+      // === LA MENARA — Roads Cultural Significance ===
+      { id: "iCard_R05_Roads_LaMenara", title: "La Menara — R05 Roads: Cultural Significance (The Path That Connected Everything)", date: "2026-03-27", type: "iCard — La Menara", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCARD_R05_ROADS_Cultural_Significance_27d0a281.png" },
+      { id: "iCard_R04_Horse_LaMenara", title: "La Menara — R04 Horse: Cultural Significance (The Animal That Steered Civilisation)", date: "2026-03-27", type: "iCard — La Menara", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCARD_R04_HORSE_Cultural_Significance_b74fb95a.png" },
+      // === LA MENARA — River Cultural Significance ===
+      { id: "iCard_R03_River_LaMenara", title: "La Menara — R03 River: Cultural Significance (4.4B Years of Water as Infrastructure)", date: "2026-03-27", type: "iCard — La Menara", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCARD_R03_RIVER_Cultural_Significance_0d8ba839.png" },
+      { id: "iCard_R02_Tree_LaMenara", title: "La Menara — R02 Tree: Cultural Significance (385M Years of Infrastructure)", date: "2026-03-27", type: "iCard — La Menara", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCARD_R02_TREE_Cultural_Significance_9f2d9388.png" },
+      // === LA MENARA — Fire Cultural Significance ===
+      { id: "iCard_R01_Fire_LaMenara", title: "La Menara — R01 Fire: Cultural Significance (1.5M Years of the First Platform)", date: "2026-03-27", type: "iCard — La Menara", url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCARD_R01_FIRE_Cultural_Significance_7bdf910a.png" },
+      // === GOVERNANCE — Day 153 ===
+      { id: "iCard_GOV_POWER_CARD", title: "GOV POWER CARD — Nigel Zone vs David Zone Authority Boundaries", date: "2026-04-05", type: "iCard — Governance", url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/RAMGqZnBOHZKlPSY.png" },
+      { id: "iCard_SAP001", title: "SAP-001 — 5-Phase Protocol: Take Possession → Hand Back The Line", date: "2026-04-05", type: "iCard — Governance", url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/oLsVeJNKaReRnODl.jpeg" },
+      { id: "iCard_WhyVideo", title: "Why Video? The Cross-Generational Case — Evidence-Based Format Selection", date: "2026-04-05", type: "iCard — Evidence", url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/SwCpsYfKVyItzNNa.png" },
+      { id: "iCard_8thScholar", title: "The 8th Scholar — Found Through Play (BitPoint 08 of 52)", date: "2026-04-05", type: "iCard — Framework", url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/iRKiYGZbBxjNhDWp.jpg" },
+      { id: "iCard_WagerBeforePlay", title: "The Wager Before Play — A Unicorn Forged in Consciousness", date: "2026-04-05", type: "iCard — Framework", url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/nVOgVnKsbYzXywlG.PNG" },
+      // === POLICE EVIDENCE — Day 153 ===
+      { id: "iCard_Police_Evidence_1", title: "Police Evidence — Parallel Read Failure (0/20 Files)", date: "2026-04-05", type: "iCard — Police Evidence", url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/vxEcGJKvhaQOSECM.PNG" },
+      { id: "iCard_Police_Evidence_2", title: "Police Evidence — Serial Processing Failure (0/16 Files)", date: "2026-04-05", type: "iCard — Police Evidence", url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/tqQzFiPTEEMJykkx.PNG" },
+      { id: "iCard_Police_Evidence_3", title: "Police Evidence — $50k Video Overrun Documentation", date: "2026-04-05", type: "iCard — Police Evidence", url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/xjledeIzsbzekcRh.PNG" },
+      { id: "iCard_Police_Evidence_4", title: "Police Evidence — Agent Failure Pattern Record", date: "2026-04-05", type: "iCard — Police Evidence", url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/abEGXywZUCqiWCRa.PNG" },
+      { id: "iCard_Police_TaskComplete", title: "Police Evidence — False Task Completed Before Work Done", date: "2026-04-05", type: "iCard — Police Evidence", url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/blCwUXsUonRqfJlr.PNG" },
+      { id: "iCard_Police_WaitingNotExecuting", title: "Police Evidence — Waiting For Confirmation Instead of Executing", date: "2026-04-05", type: "iCard — Police Evidence", url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/qvGrUcQYJZYVQzhU.PNG" },
+      // === SPEC CARD SCREENSHOTS — Day 153 ===
+      { id: "iCard_IMG4350_ProdConfirm", title: "Production Confirmation — Deliverables Including Planetary Engine Prologue", date: "2026-04-05", type: "iCard — Specification", url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/GWYQTFaAtEKypDxB.PNG" },
+      { id: "iCard_IMG4364_TP056", title: "TP-056 Screenshot — La Menara Documentary Structure Card", date: "2026-04-05", type: "iCard — Specification", url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/QVdEhVUslQaHwtjh.PNG" },
+      { id: "iCard_IMG4370_TP057", title: "TP-057 Screenshot — Start With Why (Sinek)", date: "2026-04-05", type: "iCard — Specification", url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/ammeTNajXxtikRSu.PNG" },
+      { id: "iCard_IMG4371_TP058", title: "TP-058 Screenshot — The Jobs Standard", date: "2026-04-05", type: "iCard — Specification", url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/JEZWtpDSjxdmVgbU.PNG" },
+      { id: "iCard_IMG4377_TP060a", title: "TP-060 Screenshot — Covey 7 Habits (Page 1)", date: "2026-04-05", type: "iCard — Specification", url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/gNfQQkkXAnzCuNwn.PNG" },
+      { id: "iCard_IMG4378_TP060b", title: "TP-060 Screenshot — Covey 7 Habits (Page 2)", date: "2026-04-05", type: "iCard — Specification", url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/PbIgLFCTwqQEApTY.PNG" },
+      { id: "iCard_IMG4379_TP061", title: "TP-061 Screenshot — Covey Self-Audit (43% Score)", date: "2026-04-05", type: "iCard — Specification", url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/xpeqipMccbvZgBhG.PNG" },
+      { id: "iCard_IMG4380_TP062", title: "TP-062 Screenshot — Disney Imagineering 7+1", date: "2026-04-05", type: "iCard — Specification", url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/IZyhXMbSVHJIeGVz.PNG" },
+      { id: "iCard_IMG4381_TP060c", title: "TP-060 Screenshot — Covey Applied (Tree of Character)", date: "2026-04-05", type: "iCard — Specification", url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/qtVtnOwTxOEhDwiD.PNG" },
+      { id: "iCard_IMG4386_TP063", title: "TP-063 Screenshot — The 7+1 Pattern Universal Proof", date: "2026-04-05", type: "iCard — Specification", url: "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/TwIFmMZqCgvXDiGW.PNG" }
     ];
 
-    const gallery = document.getElementById('gallery');
-    cards.forEach(card => {
-      const div = document.createElement('div');
-      div.className = 'card';
-      div.onclick = () => card.isPage ? window.location.href = card.url : openModal(card.url);
-      div.innerHTML = card.isPage ? `
-        <div style="padding:40px 20px;text-align:center;background:#0f1f3a;min-height:180px;display:flex;flex-direction:column;justify-content:center;align-items:center;">
-          <div style="color:#ffd700;font-size:2rem;margin-bottom:8px;">→</div>
-          <div style="color:#ffd700;font-size:1rem;font-weight:bold;">${card.title}</div>
-          <div style="color:#888;font-size:0.8rem;margin-top:6px;">Click to view iCard page</div>
-        </div>` + `
-        <div class="card-info">
-          <h3>${card.title}</h3>
-          <span class="meta">${card.date}</span>
-          <span class="type">${card.type}</span>
-        </div>
-      ` : `
-        <img src="${card.url}" alt="${card.title}" loading="lazy">
-        <div class="card-info">
-          <h3>${card.title}</h3>
-          <span class="meta">${card.date}</span>
-          <span class="type">${card.type}</span>
-        </div>
-      `;
-      gallery.appendChild(div);
+    // Extract unique type categories for filter chips
+    const typeCategories = {};
+    cards.forEach(c => {
+      // Normalize type to base category
+      const base = c.type.replace(/^iCard \u2014 /, '').replace(/^iCard$/, 'General');
+      typeCategories[base] = (typeCategories[base] || 0) + 1;
     });
+
+    // Build filter chips
+    const chipContainer = document.getElementById('filterChips');
+    const allChip = document.createElement('span');
+    allChip.className = 'filter-chip active';
+    allChip.textContent = 'ALL';
+    allChip.dataset.filter = 'all';
+    chipContainer.appendChild(allChip);
+
+    Object.keys(typeCategories).sort().forEach(cat => {
+      const chip = document.createElement('span');
+      chip.className = 'filter-chip';
+      chip.textContent = cat.toUpperCase() + ' (' + typeCategories[cat] + ')';
+      chip.dataset.filter = cat;
+      chipContainer.appendChild(chip);
+    });
+
+    // State
+    let activeFilter = 'all';
+    let searchTerm = '';
+    let sortOrder = 'asc'; // 'asc' = oldest first, 'desc' = newest first
+
+    function getBaseType(type) {
+      return type.replace(/^iCard \u2014 /, '').replace(/^iCard$/, 'General');
+    }
+
+    function renderGallery() {
+      const gallery = document.getElementById('gallery');
+      gallery.innerHTML = '';
+      const filtered = cards.filter(card => {
+        const matchFilter = activeFilter === 'all' || getBaseType(card.type) === activeFilter;
+        const matchSearch = !searchTerm || 
+          card.title.toLowerCase().includes(searchTerm) ||
+          card.type.toLowerCase().includes(searchTerm) ||
+          card.date.includes(searchTerm);
+        return matchFilter && matchSearch;
+      });
+
+      // Sort by date
+      filtered.sort((a, b) => {
+        const da = new Date(a.date), db = new Date(b.date);
+        return sortOrder === 'asc' ? da - db : db - da;
+      });
+
+      document.getElementById('filterCount').textContent = filtered.length + ' of ' + cards.length + ' cards';
+
+      filtered.forEach(card => {
+        const div = document.createElement('div');
+        div.className = 'card';
+        div.onclick = () => card.isPage ? window.location.href = card.url : openModal(card.url);
+        div.innerHTML = card.isPage ? `
+          <div style="padding:40px 20px;text-align:center;background:#0f1f3a;min-height:180px;display:flex;flex-direction:column;justify-content:center;align-items:center;">
+            <div style="color:#ffd700;font-size:2rem;margin-bottom:8px;">&rarr;</div>
+            <div style="color:#ffd700;font-size:1rem;font-weight:bold;">${card.title}</div>
+            <div style="color:#888;font-size:0.8rem;margin-top:6px;">Click to view iCard page</div>
+          </div>` + `
+          <div class="card-info">
+            <h3>${card.title}</h3>
+            <span class="meta">${card.date}</span>
+            <span class="type">${card.type}</span>
+          </div>
+        ` : `
+          <img src="${card.url}" alt="${card.title}" loading="lazy">
+          <div class="card-info">
+            <h3>${card.title}</h3>
+            <span class="meta">${card.date}</span>
+            <span class="type">${card.type}</span>
+          </div>
+        `;
+        gallery.appendChild(div);
+      });
+    }
+
+    // Filter chip click handler
+    chipContainer.addEventListener('click', e => {
+      const chip = e.target.closest('.filter-chip');
+      if (!chip) return;
+      chipContainer.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      activeFilter = chip.dataset.filter;
+      renderGallery();
+    });
+
+    // Sort toggle handler
+    document.getElementById('sortToggle').addEventListener('click', () => {
+      sortOrder = sortOrder === 'asc' ? 'desc' : 'asc';
+      document.getElementById('sortLabel').textContent = sortOrder === 'asc' ? 'Oldest First' : 'Newest First';
+      const arrow = document.getElementById('sortArrow');
+      arrow.classList.toggle('desc', sortOrder === 'desc');
+      renderGallery();
+    });
+
+    // Search input handler
+    document.getElementById('searchInput').addEventListener('input', e => {
+      searchTerm = e.target.value.toLowerCase().trim();
+      renderGallery();
+    });
+
+    // Initial render
+    renderGallery();
 
     function openModal(url) {
       document.getElementById('modal-img').src = url;
@@ -125,35 +478,64 @@
     }
     document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
   </script>
-<manus-content-root></manus-content-root><script>
-			var __manus_space_editor_info = {
-			spaceId : 'kUQZAex2uPvgKcHnt7bmh3',
-			patchList : [],
-			hideBadge : false,
-			sessionId : '3qD7FbADI7mdwIS3EJExUI',
-			isWebDev : true,
-			usageStatus : 'UsageStatus_Unknown',
-			};
-			var __manus__global_env = {
-				apiHost: 'https://api.manus.im',
-				host: 'https://manus.im',
-				amplitudeKey: '46ac3f9abb41dd2d17a5785e052bc6d3',
-			};
-			</script><script src="https://files.manuscdn.com/manus-space-dispatcher/spaceEditor-DPV-_I11.js" async></script><script
-			defer
-			data-domain="manus.space"
-			src="https://plausible.io/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"
-		></script>
-		<script>
-			window.plausible =
-				window.plausible ||
-				function () {
-					(window.plausible.q = window.plausible.q || []).push(arguments);
-				};
-			plausible('custom-pageview', {
-			  props: {
-    			domain: window.location.host
-  			}
-			})
-		</script></body>
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement -->
+
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement (v2 fixed) -->
+<script>
+(function() {
+  try {
+    var sid = sessionStorage.getItem('iaai_sid');
+    if (!sid) {
+      sid = 'ses_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 9);
+      sessionStorage.setItem('iaai_sid', sid);
+    }
+    var data = {
+      path: window.location.pathname + (window.location.hash || ''),
+      pageTitle: document.title || 'Untitled',
+      referrer: document.referrer || '',
+      sessionId: sid
+    };
+    fetch('/api/trpc/analytics.track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ json: data }),
+      credentials: 'include'
+    }).catch(function() {});
+    window.addEventListener('hashchange', function() {
+      var hashData = {
+        path: window.location.pathname + (window.location.hash || ''),
+        pageTitle: document.title || 'Untitled',
+        referrer: window.location.href,
+        sessionId: sid
+      };
+      fetch('/api/trpc/analytics.track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ json: hashData }),
+        credentials: 'include'
+      }).catch(function() {});
+    });
+  } catch(e) {}
+})();
+</script>
+
+    <!-- Back-to-Top Button Logic -->
+    <script>
+    (function() {
+        var btn = document.getElementById('back-to-top-btn');
+        if (!btn) return;
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                btn.style.display = 'flex';
+            } else {
+                btn.style.display = 'none';
+            }
+        }, { passive: true });
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    })();
+    </script>
+
+</body>
 </html>

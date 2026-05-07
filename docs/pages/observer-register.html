@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stakeholder Observer Register — Infrastructure Academy</title>
+  <link rel="icon" type="image/x-icon" href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/favicon_32_80e4326c.png">
+  <link rel="canonical" href="https://infra-acad-kuqzaex2.manus.space/pages/observer-register.html">
+  <meta name="description" content="Stakeholder Observer Register — Confirmed observers who have witnessed and reviewed the Infrastructure Academy platform during the POC Beta Trial.">
+  <meta name="keywords" content="infrastructure academy, stakeholder, observer, verification, iCard, witness, beta trial, POC">
+  <style>
+    :root {
+      --navy: #0a1628;
+      --navy-light: #0f1f3a;
+      --gold: #ffd700;
+      --gold-dim: rgba(255,215,0,0.4);
+      --text: #e0e0e0;
+      --text-dim: #999;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:var(--navy); color:var(--text); font-family:Georgia,'Times New Roman',serif; min-height:100vh; }
+
+    /* Header */
+    .page-header { text-align:center; padding:40px 20px 24px; border-bottom:2px solid var(--gold); }
+    .page-header h1 { color:var(--gold); font-size:2rem; letter-spacing:2px; margin-bottom:6px; }
+    .page-header .subtitle { color:var(--text-dim); font-size:0.95rem; font-style:italic; }
+    .page-header .domain { color:var(--gold); font-size:0.8rem; margin-top:10px; opacity:0.7; }
+
+    /* Back nav */
+    .back-nav { max-width:1200px; margin:20px auto 0; padding:0 30px; }
+    .back-nav a { color:var(--gold); text-decoration:none; font-size:0.85rem; }
+    .back-nav a:hover { text-decoration:underline; }
+
+    /* Stats bar */
+    .stats-bar { display:flex; justify-content:center; gap:2rem; flex-wrap:wrap; padding:24px 20px; max-width:900px; margin:0 auto; }
+    .stat-box { text-align:center; min-width:120px; }
+    .stat-num { font-size:2.2rem; color:var(--gold); font-weight:bold; line-height:1; }
+    .stat-label { font-size:0.75rem; color:var(--text-dim); margin-top:4px; text-transform:uppercase; letter-spacing:1px; }
+
+    /* Observer cards */
+    .observers { max-width:1200px; margin:30px auto 40px; padding:0 30px; display:flex; flex-direction:column; gap:30px; }
+
+    .observer-card { display:grid; grid-template-columns:320px 1fr; gap:24px; background:var(--navy-light); border:1px solid rgba(255,215,0,0.2); border-radius:8px; padding:24px; transition:border-color 0.3s; }
+    .observer-card:hover { border-color:var(--gold); }
+
+    .observer-icard { width:100%; border-radius:6px; cursor:pointer; transition:transform 0.3s; border:1px solid rgba(255,215,0,0.15); }
+    .observer-icard:hover { transform:scale(1.02); }
+
+    .observer-details { display:flex; flex-direction:column; justify-content:center; }
+    .observer-name { color:var(--gold); font-size:1.5rem; margin-bottom:4px; }
+    .observer-role { color:var(--text-dim); font-size:0.9rem; font-style:italic; margin-bottom:16px; }
+    .observer-status { display:inline-block; background:rgba(255,215,0,0.15); color:var(--gold); font-size:0.7rem; padding:3px 10px; border-radius:3px; letter-spacing:1px; text-transform:uppercase; margin-bottom:16px; font-weight:bold; }
+
+    .witness-section { margin-bottom:14px; }
+    .witness-title { color:var(--gold); font-size:0.8rem; text-transform:uppercase; letter-spacing:1px; margin-bottom:6px; }
+    .witness-list { list-style:none; padding:0; }
+    .witness-list li { font-size:0.85rem; color:var(--text); padding:3px 0; padding-left:1.2em; position:relative; }
+    .witness-list li::before { content:'\2713'; position:absolute; left:0; color:var(--gold); font-weight:bold; }
+
+    .observer-quote { font-style:italic; color:var(--text); font-size:0.9rem; line-height:1.6; border-left:3px solid var(--gold); padding-left:14px; margin-top:12px; }
+    .observer-quote .attribution { display:block; color:var(--gold); font-size:0.8rem; margin-top:6px; font-style:normal; }
+
+    .observer-meta { display:flex; gap:16px; flex-wrap:wrap; margin-top:14px; font-size:0.75rem; color:var(--text-dim); }
+    .observer-meta span { display:inline-flex; align-items:center; gap:4px; }
+
+    /* Footer */
+    .page-footer { text-align:center; padding:24px 20px; border-top:1px solid rgba(255,215,0,0.15); color:var(--text-dim); font-size:0.8rem; margin-top:20px; }
+    .page-footer a { color:var(--gold); text-decoration:none; }
+
+    /* Modal */
+    .modal { display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.92); z-index:1000; justify-content:center; align-items:center; cursor:pointer; }
+    .modal.active { display:flex; }
+    .modal img { max-width:90vw; max-height:90vh; object-fit:contain; }
+    .modal-close { position:fixed; top:20px; right:30px; color:var(--gold); font-size:2rem; cursor:pointer; z-index:1001; }
+
+    /* Protocol section */
+    .protocol { max-width:900px; margin:0 auto 30px; padding:0 30px; }
+    .protocol-box { background:var(--navy-light); border:1px solid rgba(255,215,0,0.2); border-radius:8px; padding:24px; }
+    .protocol-box h3 { color:var(--gold); font-size:1rem; margin-bottom:12px; letter-spacing:1px; }
+    .protocol-box p { font-size:0.85rem; line-height:1.7; color:var(--text); margin-bottom:10px; }
+    .protocol-box .step { display:flex; gap:12px; margin-bottom:8px; align-items:flex-start; }
+    .protocol-box .step-num { color:var(--gold); font-weight:bold; font-size:0.85rem; min-width:24px; }
+    .protocol-box .step-text { font-size:0.85rem; color:var(--text); line-height:1.5; }
+
+    /* Responsive */
+    @media(max-width:768px) {
+      .observer-card { grid-template-columns:1fr; }
+      .observer-icard { max-width:300px; margin:0 auto; }
+      .stats-bar { gap:1rem; }
+      .stat-num { font-size:1.8rem; }
+    }
+  </style>
+
+<style id="mobile-quicknav-styles">
+/* ===== MOBILE QUICK-NAV BAR ===== */
+.mobile-quicknav {
+    display: none;
+    width: 100%;
+    background: linear-gradient(180deg, #0d1f3c 0%, #0a1628 100%);
+    border-bottom: 1px solid rgba(255,215,0,0.25);
+    padding: 6px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 6px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+.mobile-quicknav::-webkit-scrollbar { display: none; }
+.mobile-quicknav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 10px;
+    background: rgba(255,215,0,0.08);
+    border: 1px solid rgba(255,215,0,0.35);
+    border-radius: 16px;
+    color: #ffd700;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+.mobile-quicknav a:active {
+    background: rgba(255,215,0,0.25);
+    transform: scale(0.95);
+}
+.mobile-quicknav a.mqn-home {
+    background: #ffd700;
+    color: #0a1628;
+    border-color: #ffd700;
+}
+@media(max-width:768px) {
+    .mobile-quicknav { display: flex; }
+}
+@media(min-width:769px) {
+    .mobile-quicknav { display: none !important; }
+}
+
+/* ===== BACK-TO-TOP FLOATING BUTTON ===== */
+#back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 16px;
+    z-index: 9999;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(10,22,40,0.92);
+    border: 1.5px solid rgba(255,215,0,0.6);
+    color: #ffd700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    transition: all 0.2s;
+}
+#back-to-top-btn:active {
+    transform: scale(0.9);
+    background: rgba(255,215,0,0.2);
+}
+</style>
+
+</head>
+<body>
+    <!-- iAAi Network Bar — NAV-001 · Cross-Site Navigation -->
+    <!-- ═══ iAAi NETWORK BAR ═══ -->
+    <div id="iaai-network-bar" style="display:flex;align-items:center;justify-content:space-around;width:100%;height:36px;background:#0a1628;position:sticky;top:0;z-index:200001;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">
+      <a href="https://www.infrastructure-academy.com" style="text-decoration:none;color:#fff;font-weight:700;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid #DC2626;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#DC2626"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg> ACADEMY</a>
+      <a href="https://realityeng-epdhlkrn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> QUEST</a>
+      <a href="#" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;opacity:0.5;pointer-events:none;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A843"><path d="M6 2v6l-2 2v4l2 2v6h4v-6l2-2v-4L10 8V2H6zm12 0v6l-2 2v4l2 2v6h-4v-6l-2-2v-4l2-2V2h4z"/></svg> XCHANGE</a>
+      <a href="https://nigelmemorial-ucmtq9dn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#16A34A"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg> MEMORIAL</a>
+      <a href="https://xgrowthtrk-2a93yo5z.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#06B6D4"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/></svg> NEWS</a>
+    </div>
+
+
+<!-- INJECTED COMPACT HEADER BAR -->
+<style>
+.compact-header-bar { position:sticky; top:0; z-index:9999; background:#0a1628; border-bottom:2px solid #ffd700; padding:8px 16px; display:flex; align-items:center; justify-content:space-between; gap:12px; font-family:Georgia,'Times New Roman',serif; }
+.compact-header-bar .chb-brand { display:flex; align-items:center; gap:10px; text-decoration:none; color:#ffd700; }
+.compact-header-bar .chb-brand img { width:28px; height:28px; border-radius:4px; }
+.compact-header-bar .chb-title { font-size:0.85rem; font-weight:bold; letter-spacing:1.5px; color:#ffd700; }
+.compact-header-bar .chb-nav { display:flex; align-items:center; gap:12px; }
+.compact-header-bar .chb-nav a { color:#e2e8f0; text-decoration:none; font-size:0.75rem; letter-spacing:1px; padding:4px 10px; border:1px solid rgba(255,215,0,0.2); border-radius:3px; transition:all 0.2s; }
+.compact-header-bar .chb-nav a:hover { background:rgba(255,215,0,0.1); border-color:#ffd700; color:#ffd700; }
+.compact-header-bar .chb-nav a.chb-home { background:rgba(255,215,0,0.15); border-color:#ffd700; color:#ffd700; font-weight:bold; }
+@media(max-width:600px) { .compact-header-bar .chb-nav a:not(.chb-home) { display:none; } .compact-header-bar .chb-title { font-size:0.7rem; } }
+</style>
+
+<div class="compact-header-bar">
+    <a href="/site.html" class="chb-brand">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iAAi-emblem_e0c9c2c1.png" alt="iAAi">
+        <span class="chb-title">INFRASTRUCTURE ACADEMY</span>
+    </a>
+    <div class="chb-nav">
+        <a href="/site.html" class="chb-home">HOME</a>
+        <a href="/pages/framework.html">FRAMEWORK</a>
+        <a href="/library.html">DOCUMENTS</a>
+        <a href="/play">PLAY</a>
+    </div>
+</div>
+    <!-- ===== MOBILE QUICK-NAV BAR — always visible on mobile ===== -->
+    <div class="mobile-quicknav" id="mobile-quicknav">
+        <a href="/site.html" class="mqn-home">&#127968; HOME</a>
+        <a href="/pages/start-here.html">&#128218; START</a>
+        <a href="/volumes/volume1/index.html">&#128214; READ</a>
+        <a href="/pages/framework.html">&#128736; FRAMEWORK</a>
+        <a href="/play">&#127918; PLAY</a>
+        <a href="/pages/movies.html">&#127916; MOVIES</a>
+        <a href="/pages/resources.html">&#128194; RESOURCES</a>
+        <a href="/press.html">&#128240; PRESS</a>
+    </div>
+
+    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <button id="back-to-top-btn" aria-label="Back to top" title="Back to top">&#9650;</button>
+
+<!-- END COMPACT HEADER BAR -->
+
+
+
+  <div class="page-header">
+    <h1>STAKEHOLDER OBSERVER REGISTER</h1>
+    <p class="subtitle">Confirmed observers who have witnessed and reviewed the iAAi platform during the POC Beta Trial</p>
+    <p class="domain">www.infrastructure-academy.com/pages/observer-register.html</p>
+  </div>
+
+  <div class="back-nav">
+    <a href="/site.html">&larr; Back to Home</a> &nbsp;|&nbsp;
+    <a href="/icard-gallery.html">iCard Gallery</a> &nbsp;|&nbsp;
+    <a href="/institutions.html">Institutions</a> &nbsp;|&nbsp;
+    <a href="/pages/observer-invitation.html" style="color:#22c55e;">&#128233; Observer Invitation Template</a>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat-box">
+      <div class="stat-num">3</div>
+      <div class="stat-label">Confirmed Observers</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">132+</div>
+      <div class="stat-label">Days of Beta Trial</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">6</div>
+      <div class="stat-label">Witness Items per Observer</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-num">391</div>
+      <div class="stat-label">Blocks Completed</div>
+    </div>
+  </div>
+
+  <div class="observers">
+
+    <!-- OBSERVER 1: Richard Menenzes -->
+    <div class="observer-card">
+      <img class="observer-icard" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-richard-menenzes-observer_18cafad5.png" alt="Richard Menenzes Observer iCard" onclick="openModal(this.src)">
+      <div class="observer-details">
+        <h2 class="observer-name">Richard Menenzes</h2>
+        <div class="observer-role">Founder &amp; Director — Uticome (Utico), UAE</div>
+        <span class="observer-status">Observer Confirmed — Block 391</span>
+
+        <div class="witness-section">
+          <div class="witness-title">Witness Items Received</div>
+          <ul class="witness-list">
+            <li>Infrastructure Academy — 3 Operational Bridges</li>
+            <li>21-University Assessment Ecosystem</li>
+            <li>Ai Organisational Structure (Model B)</li>
+            <li>Validation Chain — ISI to Game</li>
+            <li>BitPoints Marketplace — 60 Card Deck</li>
+            <li>iAAi &times; UN SDG Alignment — Water-Power Nexus</li>
+          </ul>
+        </div>
+
+        <div class="observer-quote">
+          "You are onto something good. It has potential if you are trying to do Good and not trying to make money."
+          <span class="attribution">— Richard Menenzes, 18 March 2026</span>
+        </div>
+
+        <div class="observer-meta">
+          <span>Sector: Water &amp; Power, Utilities</span>
+          <span>Region: UAE / Middle East</span>
+          <span>Website: <a href="https://www.uticome.com" target="_blank" rel="noopener" style="color:var(--gold);">uticome.com</a></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- OBSERVER 2: Craig Stephen -->
+    <div class="observer-card">
+      <img class="observer-icard" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-craig-stephen-photo_17f7b2eb.png" alt="Craig Stephen Observer iCard" onclick="openModal(this.src)">
+      <div class="observer-details">
+        <h2 class="observer-name">Craig Stephen</h2>
+        <div class="observer-role">Observer — Hong Kong</div>
+        <span class="observer-status">Observer Confirmed — Block 391</span>
+
+        <div class="witness-section">
+          <div class="witness-title">Witness Items Received</div>
+          <ul class="witness-list">
+            <li>Infrastructure Academy — Platform Walkthrough</li>
+            <li>BitPoints Series 1 — 60-Card Collectible Deck</li>
+            <li>iCard Gallery — Verification Documentation</li>
+            <li>TRE Game Engine — Interactive Learning Platform</li>
+            <li>Memorial Site — Commemorative Pages</li>
+            <li>POC Beta Trial — Live Demonstration</li>
+          </ul>
+        </div>
+
+        <div class="observer-meta">
+          <span>Region: Hong Kong</span>
+          <span>Date: 17 March 2026 (St Patrick's Day)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- OBSERVER 3: Reece Wemyss -->
+    <div class="observer-card">
+      <img class="observer-icard" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-reece-wemyss-corrected_b686f24f.png" alt="Reece Wemyss Observer iCard" onclick="openModal(this.src)">
+      <div class="observer-details">
+        <h2 class="observer-name">Reece Wemyss</h2>
+        <div class="observer-role">Observer — Hong Kong</div>
+        <span class="observer-status">Observer Confirmed — Block 391</span>
+
+        <div class="witness-section">
+          <div class="witness-title">Witness Items Received</div>
+          <ul class="witness-list">
+            <li>Infrastructure Academy — Platform Walkthrough</li>
+            <li>BitPoints Series 1 — 60-Card Collectible Deck</li>
+            <li>iCard Gallery — Verification Documentation</li>
+            <li>TRE Game Engine — Interactive Learning Platform</li>
+            <li>Memorial Site — Commemorative Pages</li>
+            <li>POC Beta Trial — Live Demonstration</li>
+          </ul>
+        </div>
+
+        <div class="observer-meta">
+          <span>Region: Hong Kong</span>
+          <span>Date: 17 March 2026 (St Patrick's Day)</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Observer Protocol -->
+  <div class="protocol">
+    <div class="protocol-box">
+      <h3>OBSERVER PROTOCOL</h3>
+      <p>The iAAi Observer Register documents independent stakeholders who have witnessed and reviewed the Infrastructure Academy platform during its Proof of Concept (POC) Beta Trial. Each observer receives a personalised iCard documenting their engagement.</p>
+      <div class="step"><span class="step-num">1.</span><span class="step-text"><strong>Witness:</strong> Observer is shown the live platform, including all operational bridges (Read, Explore, Play), the BitPoints marketplace, and the iCard verification system.</span></div>
+      <div class="step"><span class="step-num">2.</span><span class="step-text"><strong>Document:</strong> An iCard is generated recording the observer's name, date, location, and specific items witnessed.</span></div>
+      <div class="step"><span class="step-num">3.</span><span class="step-text"><strong>Register:</strong> The observer is added to this public register with their iCard, creating a permanent, verifiable record of stakeholder engagement.</span></div>
+      <div class="step"><span class="step-num">4.</span><span class="step-text"><strong>Verify:</strong> All iCards are uploaded to CDN with unique hashes, ensuring tamper-proof documentation of the observer chain.</span></div>
+    </div>
+  </div>
+
+  <div class="page-footer">
+    <p>N&#x2081; (ALAN/Nigel) + N&#x2082; (DAVID/Manus) | <a href="https://www.infrastructure-academy.com">www.infrastructure-academy.com</a> | March 2026</p>
+    <p style="margin-top:6px;">Per Arya Ad Astra — Through Noble Effort to the Stars</p>
+  </div>
+
+  <!-- Lightbox modal -->
+  <div class="modal" id="modal" onclick="closeModal()">
+    <span class="modal-close">&times;</span>
+    <img id="modal-img" src="" alt="Full size iCard">
+  </div>
+
+  <script>
+    function openModal(src) {
+      document.getElementById('modal-img').src = src;
+      document.getElementById('modal').classList.add('active');
+    }
+    function closeModal() {
+      document.getElementById('modal').classList.remove('active');
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+  </script>
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement -->
+
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement (v2 fixed) -->
+<script>
+(function() {
+  try {
+    var sid = sessionStorage.getItem('iaai_sid');
+    if (!sid) {
+      sid = 'ses_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 9);
+      sessionStorage.setItem('iaai_sid', sid);
+    }
+    var data = {
+      path: window.location.pathname + (window.location.hash || ''),
+      pageTitle: document.title || 'Untitled',
+      referrer: document.referrer || '',
+      sessionId: sid
+    };
+    fetch('/api/trpc/analytics.track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ json: data }),
+      credentials: 'include'
+    }).catch(function() {});
+    window.addEventListener('hashchange', function() {
+      var hashData = {
+        path: window.location.pathname + (window.location.hash || ''),
+        pageTitle: document.title || 'Untitled',
+        referrer: window.location.href,
+        sessionId: sid
+      };
+      fetch('/api/trpc/analytics.track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ json: hashData }),
+        credentials: 'include'
+      }).catch(function() {});
+    });
+  } catch(e) {}
+})();
+</script>
+
+    <!-- Back-to-Top Button Logic -->
+    <script>
+    (function() {
+        var btn = document.getElementById('back-to-top-btn');
+        if (!btn) return;
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                btn.style.display = 'flex';
+            } else {
+                btn.style.display = 'none';
+            }
+        }, { passive: true });
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    })();
+    </script>
+
+</body>
+</html>

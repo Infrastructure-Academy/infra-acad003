@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="La Menara Interactive Timeline — 12 Civilisational Relays spanning 12,000 years across 5 webs. From Fire to Human Nodes, the complete infrastructure odyssey.">
+    <title>La Menara Timeline — Infrastructure Academy</title>
+    <link rel="stylesheet" href="/css/style.css?v=20260327a">
+    <style>
+        /* ── Hero ── */
+        .tl-hero {
+            text-align: center;
+            padding: 3rem 1.5rem 2rem;
+            background: linear-gradient(180deg, rgba(10,22,40,0.97) 0%, rgba(26,58,92,0.5) 100%);
+            border-bottom: 2px solid var(--color-accent-gold);
+        }
+        .tl-hero h1 {
+            font-family: var(--font-heading);
+            color: var(--color-accent-gold);
+            font-size: 2.6rem;
+            letter-spacing: 3px;
+            margin-bottom: 0.5rem;
+        }
+        .tl-hero .tl-sub {
+            color: var(--color-text-secondary);
+            font-size: 1.05rem;
+            font-style: italic;
+            max-width: 650px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        .tl-hero .tl-span {
+            display: flex;
+            justify-content: center;
+            gap: 2.5rem;
+            margin-top: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .tl-hero .tl-span-item {
+            text-align: center;
+        }
+        .tl-hero .tl-span-num {
+            font-family: var(--font-heading);
+            color: var(--color-accent-gold);
+            font-size: 2rem;
+            display: block;
+        }
+        .tl-hero .tl-span-label {
+            color: var(--color-text-secondary);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* ── Timeline Container ── */
+        .tl-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem 4rem;
+            position: relative;
+        }
+
+        /* ── Central Spine ── */
+        .tl-spine {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(
+                to bottom,
+                var(--color-accent-gold) 0%,
+                rgba(255,215,0,0.4) 50%,
+                var(--color-accent-gold) 100%
+            );
+            transform: translateX(-50%);
+        }
+        @media (max-width: 768px) {
+            .tl-spine { left: 30px; }
+        }
+
+        /* ── Relay Node ── */
+        .tl-node {
+            position: relative;
+            width: 48%;
+            margin-bottom: 3rem;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        .tl-node.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .tl-node:nth-child(odd) {
+            margin-left: 0;
+            text-align: right;
+        }
+        .tl-node:nth-child(even) {
+            margin-left: 52%;
+            text-align: left;
+        }
+        @media (max-width: 768px) {
+            .tl-node,
+            .tl-node:nth-child(odd),
+            .tl-node:nth-child(even) {
+                width: calc(100% - 60px);
+                margin-left: 60px;
+                text-align: left;
+            }
+        }
+
+        /* ── Dot on spine ── */
+        .tl-dot {
+            position: absolute;
+            top: 1.5rem;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--color-accent-gold);
+            border: 3px solid var(--color-bg-primary);
+            box-shadow: 0 0 12px rgba(255,215,0,0.5);
+            z-index: 2;
+        }
+        .tl-node:nth-child(odd) .tl-dot {
+            right: -9%;
+        }
+        .tl-node:nth-child(even) .tl-dot {
+            left: -9%;
+        }
+        @media (max-width: 768px) {
+            .tl-dot {
+                left: -45px !important;
+                right: auto !important;
+            }
+        }
+
+        /* ── Card ── */
+        .tl-card {
+            background: rgba(26,58,92,0.3);
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: border-color 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            display: block;
+            color: inherit;
+        }
+        .tl-card:hover {
+            border-color: rgba(255,215,0,0.6);
+            box-shadow: 0 0 25px rgba(255,215,0,0.15);
+        }
+        .tl-card-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+        .tl-card-body {
+            padding: 1rem 1.2rem;
+        }
+        .tl-card-era {
+            font-family: var(--font-heading);
+            color: var(--color-accent-gold);
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 0.3rem;
+        }
+        .tl-card-title {
+            font-family: var(--font-heading);
+            color: var(--color-accent-gold);
+            font-size: 1.3rem;
+            margin-bottom: 0.4rem;
+        }
+        .tl-card-subtitle {
+            color: var(--color-text-secondary);
+            font-size: 0.9rem;
+            font-style: italic;
+            margin-bottom: 0.6rem;
+        }
+        .tl-card-desc {
+            color: var(--color-text-secondary);
+            font-size: 0.85rem;
+            line-height: 1.55;
+        }
+        .tl-card-webs {
+            display: flex;
+            gap: 0.4rem;
+            flex-wrap: wrap;
+            margin-top: 0.6rem;
+            justify-content: inherit;
+        }
+        .tl-web-tag {
+            font-size: 0.7rem;
+            padding: 2px 8px;
+            border-radius: 12px;
+            border: 1px solid rgba(255,215,0,0.3);
+            color: var(--color-accent-gold);
+            background: rgba(255,215,0,0.05);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* ── Torus Return Arrow ── */
+        .tl-torus {
+            text-align: center;
+            padding: 3rem 1.5rem;
+            position: relative;
+        }
+        .tl-torus-arrow {
+            font-size: 3rem;
+            color: var(--color-accent-gold);
+            animation: torusPulse 2s ease-in-out infinite;
+        }
+        @keyframes torusPulse {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.15); }
+        }
+        .tl-torus-text {
+            font-family: var(--font-heading);
+            color: var(--color-accent-gold);
+            font-size: 1.3rem;
+            margin-top: 0.5rem;
+            letter-spacing: 2px;
+        }
+        .tl-torus-sub {
+            color: var(--color-text-secondary);
+            font-size: 0.9rem;
+            font-style: italic;
+            margin-top: 0.3rem;
+        }
+
+        /* ── Download bar ── */
+        .tl-download {
+            text-align: center;
+            padding: 2rem 1.5rem 3rem;
+            border-top: 1px solid rgba(255,215,0,0.15);
+        }
+        .tl-download a {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.7rem 2rem;
+            border: 1px solid var(--color-accent-gold);
+            border-radius: 6px;
+            color: var(--color-accent-gold);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+        }
+        .tl-download a:hover {
+            background: rgba(255,215,0,0.1);
+        }
+
+        /* ── Back link ── */
+        .tl-back {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--color-accent-gold);
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin: 1.5rem;
+            transition: opacity 0.3s;
+        }
+        .tl-back:hover { opacity: 0.7; }
+    </style>
+
+<style id="mobile-quicknav-styles">
+/* ===== MOBILE QUICK-NAV BAR ===== */
+.mobile-quicknav {
+    display: none;
+    width: 100%;
+    background: linear-gradient(180deg, #0d1f3c 0%, #0a1628 100%);
+    border-bottom: 1px solid rgba(255,215,0,0.25);
+    padding: 6px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 6px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+.mobile-quicknav::-webkit-scrollbar { display: none; }
+.mobile-quicknav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 10px;
+    background: rgba(255,215,0,0.08);
+    border: 1px solid rgba(255,215,0,0.35);
+    border-radius: 16px;
+    color: #ffd700;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+.mobile-quicknav a:active {
+    background: rgba(255,215,0,0.25);
+    transform: scale(0.95);
+}
+.mobile-quicknav a.mqn-home {
+    background: #ffd700;
+    color: #0a1628;
+    border-color: #ffd700;
+}
+@media(max-width:768px) {
+    .mobile-quicknav { display: flex; }
+}
+@media(min-width:769px) {
+    .mobile-quicknav { display: none !important; }
+}
+
+/* ===== BACK-TO-TOP FLOATING BUTTON ===== */
+#back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 16px;
+    z-index: 9999;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(10,22,40,0.92);
+    border: 1.5px solid rgba(255,215,0,0.6);
+    color: #ffd700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    transition: all 0.2s;
+}
+#back-to-top-btn:active {
+    transform: scale(0.9);
+    background: rgba(255,215,0,0.2);
+}
+</style>
+
+</head>
+<body>
+    <!-- iAAi Network Bar — NAV-001 · Cross-Site Navigation -->
+    <!-- ═══ iAAi NETWORK BAR ═══ -->
+    <div id="iaai-network-bar" style="display:flex;align-items:center;justify-content:space-around;width:100%;height:36px;background:#0a1628;position:sticky;top:0;z-index:200001;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">
+      <a href="https://www.infrastructure-academy.com" style="text-decoration:none;color:#fff;font-weight:700;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid #DC2626;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#DC2626"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg> ACADEMY</a>
+      <a href="https://realityeng-epdhlkrn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> QUEST</a>
+      <a href="#" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;opacity:0.5;pointer-events:none;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A843"><path d="M6 2v6l-2 2v4l2 2v6h4v-6l2-2v-4L10 8V2H6zm12 0v6l-2 2v4l2 2v6h-4v-6l-2-2v-4l2-2V2h4z"/></svg> XCHANGE</a>
+      <a href="https://nigelmemorial-ucmtq9dn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#16A34A"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg> MEMORIAL</a>
+      <a href="https://xgrowthtrk-2a93yo5z.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#06B6D4"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/></svg> NEWS</a>
+    </div>
+
+    <!-- ===== MOBILE QUICK-NAV BAR — always visible on mobile ===== -->
+    <div class="mobile-quicknav" id="mobile-quicknav">
+        <a href="/site.html" class="mqn-home">&#127968; HOME</a>
+        <a href="/pages/start-here.html">&#128218; START</a>
+        <a href="/volumes/volume1/index.html">&#128214; READ</a>
+        <a href="/pages/framework.html">&#128736; FRAMEWORK</a>
+        <a href="/play">&#127918; PLAY</a>
+        <a href="/pages/movies.html">&#127916; MOVIES</a>
+        <a href="/pages/resources.html">&#128194; RESOURCES</a>
+        <a href="/press.html">&#128240; PRESS</a>
+    </div>
+
+    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <button id="back-to-top-btn" aria-label="Back to top" title="Back to top">&#9650;</button>
+
+
+    <a href="/pages/la-menara.html" class="tl-back">&larr; Back to La Menara</a> <a href="/site.html" class="tl-back" style="margin-left:8px;">&larr; HOME</a>
+
+    <!-- Hero -->
+    <section class="tl-hero">
+        <h1>THE CIVILISATIONAL RELAY</h1>
+        <p class="tl-sub">An interactive timeline of twelve infrastructure relays spanning 12,000 years &mdash; from the first controlled flame to the quantum networks that programme the programmer.</p>
+        <div class="tl-span">
+            <div class="tl-span-item">
+                <span class="tl-span-num">12</span>
+                <span class="tl-span-label">Relays</span>
+            </div>
+            <div class="tl-span-item">
+                <span class="tl-span-num">12,000</span>
+                <span class="tl-span-label">Years</span>
+            </div>
+            <div class="tl-span-item">
+                <span class="tl-span-num">5</span>
+                <span class="tl-span-label">Webs</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <div class="tl-container">
+        <div class="tl-spine"></div>
+
+        <!-- R01 Fire -->
+        <div class="tl-node">
+            <div class="tl-dot"></div>
+            <a href="/volumes/volume1/relay-01-fire.html" class="tl-card">
+                <img class="tl-card-img" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/La_Menara_Landscape_Fire_History_e4365bb3.png" alt="R01 Fire Landscape" loading="lazy">
+                <div class="tl-card-body">
+                    <div class="tl-card-era">pre-10,000 BCE</div>
+                    <div class="tl-card-title">R01 &mdash; The Remarkable Fire</div>
+                    <div class="tl-card-subtitle">The First Platform</div>
+                    <p class="tl-card-desc">Controlled fire transformed raw calories into cooked energy, unlocking brain growth, social gathering, and the first technology transfer across generations. The hearth became humanity&rsquo;s original server room.</p>
+                    <div class="tl-card-webs">
+                        <span class="tl-web-tag">Physical</span>
+                        <span class="tl-web-tag">Biological</span>
+                        <span class="tl-web-tag">Social</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- R02 Tree -->
+        <div class="tl-node">
+            <div class="tl-dot"></div>
+            <a href="/volumes/volume1/relay-02-tree.html" class="tl-card">
+                <img class="tl-card-img" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/La_Menara_Landscape_Tree_History_4e7c82d8.png" alt="R02 Tree Landscape" loading="lazy">
+                <div class="tl-card-body">
+                    <div class="tl-card-era">pre-10,000 BCE</div>
+                    <div class="tl-card-title">R02 &mdash; The Remarkable Tree</div>
+                    <div class="tl-card-subtitle">The Living Machine</div>
+                    <p class="tl-card-desc">Timber framed the first shelters, ships, and bridges. The tree was fuel, scaffold, weapon, and pharmacy &mdash; the original multi-purpose infrastructure platform that enabled settlement.</p>
+                    <div class="tl-card-webs">
+                        <span class="tl-web-tag">Physical</span>
+                        <span class="tl-web-tag">Biological</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- R03 River -->
+        <div class="tl-node">
+            <div class="tl-dot"></div>
+            <a href="/volumes/volume1/relay-03-river.html" class="tl-card">
+                <img class="tl-card-img" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/La_Menara_Landscape_River_History_c6a8c980.png" alt="R03 River Landscape" loading="lazy">
+                <div class="tl-card-body">
+                    <div class="tl-card-era">c. 8,000 BCE</div>
+                    <div class="tl-card-title">R03 &mdash; The Remarkable River</div>
+                    <div class="tl-card-subtitle">The Liquid Highway</div>
+                    <p class="tl-card-desc">Rivers created the first civilisational corridors. Irrigation, navigation, sanitation, and power &mdash; every great civilisation grew along a river. Water was the original bandwidth.</p>
+                    <div class="tl-card-webs">
+                        <span class="tl-web-tag">Physical</span>
+                        <span class="tl-web-tag">Biological</span>
+                        <span class="tl-web-tag">Social</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- R04 Horse -->
+        <div class="tl-node">
+            <div class="tl-dot"></div>
+            <a href="/volumes/volume1/relay-04-horse.html" class="tl-card">
+                <img class="tl-card-img" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/La_Menara_Landscape_Horse_History_f8d02b69.png" alt="R04 Horse Landscape" loading="lazy">
+                <div class="tl-card-body">
+                    <div class="tl-card-era">c. 4,000 BCE</div>
+                    <div class="tl-card-title">R04 &mdash; The Remarkable Horse</div>
+                    <div class="tl-card-subtitle">The Steering Revolution</div>
+                    <p class="tl-card-desc">The horse compressed distance, amplified military power, and enabled the first postal systems. From chariot to cavalry to carriage, equine infrastructure shaped empires for 5,000 years.</p>
+                    <div class="tl-card-webs">
+                        <span class="tl-web-tag">Physical</span>
+                        <span class="tl-web-tag">Biological</span>
+                        <span class="tl-web-tag">Social</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- R05 Roads -->
+        <div class="tl-node">
+            <div class="tl-dot"></div>
+            <a href="/volumes/volume1/relay-05-roads.html" class="tl-card">
+                <img class="tl-card-img" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/La_Menara_Landscape_Road_History_0c16c386.png" alt="R05 Roads Landscape" loading="lazy">
+                <div class="tl-card-body">
+                    <div class="tl-card-era">c. 500 BCE</div>
+                    <div class="tl-card-title">R05 &mdash; The Remarkable Roads</div>
+                    <div class="tl-card-subtitle">The Path That Connected Everything</div>
+                    <p class="tl-card-desc">From Persian Royal Roads to Roman viae to the Silk Road, engineered paths unified empires, standardised trade, and proved that connectivity is the ultimate force multiplier.</p>
+                    <div class="tl-card-webs">
+                        <span class="tl-web-tag">Physical</span>
+                        <span class="tl-web-tag">Social</span>
+                        <span class="tl-web-tag">Digital</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- R06 Ships -->
+        <div class="tl-node">
+            <div class="tl-dot"></div>
+            <a href="/volumes/volume1/relay-06-ships.html" class="tl-card">
+                <img class="tl-card-img" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/La_Menara_Landscape_Ship_History_a89fc2d3.png" alt="R06 Ships Landscape" loading="lazy">
+                <div class="tl-card-body">
+                    <div class="tl-card-era">c. 500 CE</div>
+                    <div class="tl-card-title">R06 &mdash; The Remarkable Ships</div>
+                    <div class="tl-card-subtitle">The Vessel That Made the World One</div>
+                    <p class="tl-card-desc">Ships turned oceans from barriers into highways. From Polynesian wayfinders to Zheng He&rsquo;s treasure fleet to container shipping, maritime infrastructure globalised civilisation.</p>
+                    <div class="tl-card-webs">
+                        <span class="tl-web-tag">Physical</span>
+                        <span class="tl-web-tag">Social</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- R07 Loom -->
+        <div class="tl-node">
+            <div class="tl-dot"></div>
+            <a href="/volumes/volume1/relay-07-loom.html" class="tl-card">
+                <img class="tl-card-img" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/La_Menara_Landscape_Loom_History_d13b313d.png" alt="R07 Loom Landscape" loading="lazy">
+                <div class="tl-card-body">
+                    <div class="tl-card-era">c. 1780 CE</div>
+                    <div class="tl-card-title">R07 &mdash; The Remarkable Loom</div>
+                    <div class="tl-card-subtitle">The Machine That Wove Civilisation</div>
+                    <p class="tl-card-desc">Jacquard&rsquo;s punch cards became the ancestor of computing. The power loom triggered the Industrial Revolution, factory systems, and the first programmable machines.</p>
+                    <div class="tl-card-webs">
+                        <span class="tl-web-tag">Physical</span>
+                        <span class="tl-web-tag">Digital</span>
+                        <span class="tl-web-tag">Social</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- R08 Rail -->
+        <div class="tl-node">
+            <div class="tl-dot"></div>
+            <a href="/volumes/volume1/relay-08-rail.html" class="tl-card">
+                <img class="tl-card-img" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/La_Menara_Landscape_Rail_History_975f7c87.png" alt="R08 Rail Landscape" loading="lazy">
+                <div class="tl-card-body">
+                    <div class="tl-card-era">c. 1830 CE</div>
+                    <div class="tl-card-title">R08 &mdash; The Remarkable Rail</div>
+                    <div class="tl-card-subtitle">The Iron Horse That Standardised Time</div>
+                    <p class="tl-card-desc">Railways forced the invention of time zones, standardised gauge, and created the first mass transit networks. Rail compressed geography and synchronised nations.</p>
+                    <div class="tl-card-webs">
+                        <span class="tl-web-tag">Physical</span>
+                        <span class="tl-web-tag">Social</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- R09 Engine -->
+        <div class="tl-node">
+            <div class="tl-dot"></div>
+            <a href="/volumes/volume1/relay-09-engine.html" class="tl-card">
+                <img class="tl-card-img" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/la_menara_r09_engine_landscape-Pcf6qb5oJPpUCgVUWkQXBv.webp" alt="R09 Engine Landscape" loading="lazy">
+                <div class="tl-card-body">
+                    <div class="tl-card-era">c. 1850 CE</div>
+                    <div class="tl-card-title">R09 &mdash; The Remarkable Engine</div>
+                    <div class="tl-card-subtitle">The Machine That Multiplied Muscle</div>
+                    <p class="tl-card-desc">From Newcomen&rsquo;s atmospheric pump to the internal combustion engine, mechanical power freed civilisation from biological limits and launched the age of exponential energy.</p>
+                    <div class="tl-card-webs">
+                        <span class="tl-web-tag">Physical</span>
+                        <span class="tl-web-tag">Digital</span>
+                        <span class="tl-web-tag">Social</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- R10 AAA Triad -->
+        <div class="tl-node">
+            <div class="tl-dot"></div>
+            <a href="/volumes/volume1/relay-10-aaa.html" class="tl-card">
+                <img class="tl-card-img" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/la_menara_r10_aaa_landscape-FrDipHCmJuiAE78NtnP66X.webp" alt="R10 AAA Triad Landscape" loading="lazy">
+                <div class="tl-card-body">
+                    <div class="tl-card-era">c. 1900 CE</div>
+                    <div class="tl-card-title">R10 &mdash; The Remarkable AAA Triad</div>
+                    <div class="tl-card-subtitle">Automobiles, Aviation &amp; Airwaves</div>
+                    <p class="tl-card-desc">Three technologies converged: the automobile reshaped cities, aviation collapsed continents, and radio/television created the first real-time global consciousness.</p>
+                    <div class="tl-card-webs">
+                        <span class="tl-web-tag">Physical</span>
+                        <span class="tl-web-tag">Digital</span>
+                        <span class="tl-web-tag">Social</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- R11 Orbit -->
+        <div class="tl-node">
+            <div class="tl-dot"></div>
+            <a href="/volumes/volume1/relay-11-orbit.html" class="tl-card">
+                <img class="tl-card-img" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/la_menara_r11_orbit_landscape-aGVTxcgPG7PzzoEV579usM.webp" alt="R11 Orbit Landscape" loading="lazy">
+                <div class="tl-card-body">
+                    <div class="tl-card-era">c. 1957 CE</div>
+                    <div class="tl-card-title">R11 &mdash; The Remarkable Orbit</div>
+                    <div class="tl-card-subtitle">Satellites, Space Stations &amp; Planetary Infrastructure</div>
+                    <p class="tl-card-desc">Sputnik began the orbital age. GPS, Starlink, ISS, and planetary observation &mdash; space infrastructure now underpins navigation, communication, climate science, and defence.</p>
+                    <div class="tl-card-webs">
+                        <span class="tl-web-tag">Physical</span>
+                        <span class="tl-web-tag">Digital</span>
+                        <span class="tl-web-tag">Social</span>
+                        <span class="tl-web-tag">Consciousness</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- R12 Human Nodes -->
+        <div class="tl-node">
+            <div class="tl-dot"></div>
+            <a href="/volumes/volume1/relay-12-human-nodes.html" class="tl-card">
+                <img class="tl-card-img" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/la_menara_r12_nodes_landscape-3J99jYLrnxPXAydSGWTYwM.webp" alt="R12 Human Nodes Landscape" loading="lazy">
+                <div class="tl-card-body">
+                    <div class="tl-card-era">c. 2000 CE &rarr;</div>
+                    <div class="tl-card-title">R12 &mdash; The Remarkable Human Nodes</div>
+                    <div class="tl-card-subtitle">Robots, AI, Biosynthetics, Synesthetics &amp; Quantum</div>
+                    <p class="tl-card-desc">The relay that programmes the programmer. ChatGPT, CRISPR, Neuralink, quantum computing &mdash; humanity becomes both infrastructure and user. The Torus returns.</p>
+                    <div class="tl-card-webs">
+                        <span class="tl-web-tag">Physical</span>
+                        <span class="tl-web-tag">Biological</span>
+                        <span class="tl-web-tag">Digital</span>
+                        <span class="tl-web-tag">Social</span>
+                        <span class="tl-web-tag">Consciousness</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <!-- Torus Return -->
+    <section class="tl-torus">
+        <div class="tl-torus-arrow">&#x21BB;</div>
+        <div class="tl-torus-text">THE TORUS RETURNS</div>
+        <div class="tl-torus-sub">R12 feeds back to R1 &mdash; the cycle continues</div>
+    </section>
+
+    <!-- Download -->
+    <section class="tl-download">
+        <a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/La_Menara_Complete_Compendium_59a44ee7.pdf" download>
+            &#128196; Download Complete Compendium (PDF &mdash; 12 Relays + 24 Artworks)
+        </a>
+    </section>
+
+    <script>
+        // Scroll-triggered reveal animation
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
+
+        document.querySelectorAll('.tl-node').forEach(node => observer.observe(node));
+    </script>
+
+    <!-- Back-to-Top Button Logic -->
+    <script>
+    (function() {
+        var btn = document.getElementById('back-to-top-btn');
+        if (!btn) return;
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                btn.style.display = 'flex';
+            } else {
+                btn.style.display = 'none';
+            }
+        }, { passive: true });
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    })();
+    </script>
+
+</body>
+</html>

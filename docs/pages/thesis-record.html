@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thesis Record — From Calories to Consciousness — Infrastructure Academy</title>
+    <meta name="description" content="The complete thesis record of An Infrastructure Odyssey: From Calories to Consciousness. 12,000 years, 12 relays, 5 webs, 4 pillars, 7 scholars, 3 modes, 127 days of documentation.">
+    <meta property="og:title" content="Thesis Record — From Calories to Consciousness">
+    <meta property="og:description" content="The authoritative record of the C2C thesis — architecture, evidence trail, timeline, and intellectual framework.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Infrastructure Academy">
+    <link rel="stylesheet" href="/css/style.css?v=20260410a">
+    <style>
+        .beta-badge { display:inline-flex; align-items:center; gap:0.3rem; background:rgba(251,146,60,0.15); border:1px solid rgba(251,146,60,0.5); color:#fb923c; font-family:'Courier New',monospace; font-size:0.65rem; font-weight:bold; letter-spacing:2px; padding:0.2rem 0.6rem; border-radius:3px; text-transform:uppercase; animation:beta-pulse 3s ease-in-out infinite; vertical-align:middle; margin-left:0.5rem; }
+        .beta-badge::before { content:'\25CF'; font-size:0.5rem; animation:beta-dot 2s ease-in-out infinite; }
+        @keyframes beta-pulse { 0%,100%{opacity:1;} 50%{opacity:0.7;} }
+        @keyframes beta-dot { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+        @media(max-width:768px) { .beta-badge { display:none; } .header-title { max-width: calc(100vw - 160px) !important; } .header-tagline::after { content:'BETA'; display:inline-block; font-family:'Courier New',monospace; font-size:0.4rem; font-weight:bold; color:#fb923c; letter-spacing:1px; margin-left:0.5rem; background:rgba(251,146,60,0.15); border:1px solid rgba(251,146,60,0.5); padding:0.05rem 0.3rem; border-radius:2px; vertical-align:middle; animation:beta-pulse 3s ease-in-out infinite; } }
+
+        /* Thesis Record specific styles */
+        .thesis-hero {
+            text-align: center;
+            padding: 3rem 1.5rem 2rem;
+            border-bottom: 2px solid var(--color-accent-gold);
+            margin-bottom: 2rem;
+        }
+        .thesis-hero h1 {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            color: var(--color-accent-gold);
+            letter-spacing: 3px;
+            margin-bottom: 0.5rem;
+        }
+        .thesis-hero .thesis-subtitle {
+            font-size: 1.3rem;
+            color: var(--color-text-primary);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        .thesis-hero .thesis-meta {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            line-height: 1.8;
+        }
+        .thesis-toc {
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            padding: 1.5rem 2rem;
+            background: rgba(15,31,58,0.5);
+            border: 1px solid rgba(255,215,0,0.3);
+            border-radius: 8px;
+        }
+        .thesis-toc h3 {
+            color: var(--color-accent-gold);
+            font-size: 1rem;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .thesis-toc ol {
+            list-style: none;
+            counter-reset: toc-counter;
+            padding: 0;
+        }
+        .thesis-toc ol li {
+            counter-increment: toc-counter;
+            margin-bottom: 0.5rem;
+        }
+        .thesis-toc ol li a {
+            color: var(--color-text-secondary);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+        }
+        .thesis-toc ol li a:hover {
+            color: var(--color-accent-gold);
+        }
+        .thesis-toc ol li a::before {
+            content: counter(toc-counter, upper-roman) ". ";
+            color: var(--color-accent-gold);
+            font-weight: bold;
+        }
+        .thesis-section {
+            max-width: 1000px;
+            margin: 0 auto 3rem;
+            padding: 0 1.5rem;
+        }
+        .thesis-section h2 {
+            color: var(--color-accent-gold);
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            letter-spacing: 2px;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            padding-top: 1rem;
+        }
+        .thesis-section .section-subtitle {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+        .thesis-section p {
+            font-size: 1rem;
+            line-height: 1.9;
+            color: var(--color-text-secondary);
+            margin-bottom: 1.2rem;
+            text-align: justify;
+        }
+        .thesis-section p strong {
+            color: var(--color-text-primary);
+        }
+        .thesis-quote {
+            border-left: 4px solid var(--color-accent-gold);
+            padding: 1.5rem 2rem;
+            margin: 2rem 0;
+            background: rgba(15,31,58,0.5);
+            border-radius: 0 8px 8px 0;
+        }
+        .thesis-quote p {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            font-style: italic;
+            color: var(--color-text-primary) !important;
+            text-align: left !important;
+            margin-bottom: 0 !important;
+        }
+        .thesis-quote .attribution {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            margin-top: 0.75rem;
+            font-style: normal;
+        }
+        .relay-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .relay-card {
+            background: rgba(15,31,58,0.7);
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 6px;
+            padding: 1rem;
+            text-align: center;
+        }
+        .relay-card .relay-num {
+            font-size: 0.7rem;
+            color: var(--color-accent-gold);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .relay-card .relay-name {
+            font-size: 1.2rem;
+            font-family: var(--font-heading);
+            color: var(--color-text-primary);
+            margin: 0.3rem 0;
+        }
+        .relay-card .relay-era {
+            font-size: 0.8rem;
+            color: var(--color-text-secondary);
+            font-style: italic;
+        }
+        .framework-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+        }
+        .framework-table th {
+            background: rgba(255,215,0,0.15);
+            color: var(--color-accent-gold);
+            padding: 0.8rem 1rem;
+            text-align: left;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            border-bottom: 2px solid var(--color-accent-gold);
+        }
+        .framework-table td {
+            padding: 0.7rem 1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+        .framework-table tr:hover td {
+            background: rgba(255,215,0,0.03);
+        }
+        .timeline-block {
+            position: relative;
+            padding-left: 2.5rem;
+            margin-bottom: 2rem;
+            border-left: 2px solid var(--color-accent-gold);
+        }
+        .timeline-block::before {
+            content: '';
+            position: absolute;
+            left: -7px;
+            top: 0.3rem;
+            width: 12px;
+            height: 12px;
+            background: var(--color-accent-gold);
+            border-radius: 50%;
+        }
+        .timeline-date {
+            font-size: 0.8rem;
+            color: var(--color-accent-gold);
+            letter-spacing: 0.1em;
+            font-weight: bold;
+            margin-bottom: 0.3rem;
+        }
+        .timeline-title {
+            font-size: 1.05rem;
+            font-weight: bold;
+            color: var(--color-text-primary);
+            margin-bottom: 0.4rem;
+        }
+        .timeline-text {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: var(--color-text-secondary);
+        }
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .stat-card {
+            background: rgba(15,31,58,0.7);
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 6px;
+            padding: 1.2rem;
+            text-align: center;
+        }
+        .stat-card .stat-value {
+            font-size: 1.8rem;
+            font-family: var(--font-heading);
+            color: var(--color-accent-gold);
+            margin-bottom: 0.3rem;
+        }
+        .stat-card .stat-label {
+            font-size: 0.75rem;
+            color: var(--color-text-secondary);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .scholar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .scholar-card {
+            background: rgba(15,31,58,0.7);
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 6px;
+            padding: 1rem;
+            text-align: center;
+        }
+        .scholar-card .scholar-name {
+            font-size: 1.1rem;
+            font-family: var(--font-heading);
+            color: var(--color-text-primary);
+            margin-bottom: 0.2rem;
+        }
+        .scholar-card .scholar-era {
+            font-size: 0.75rem;
+            color: var(--color-accent-gold);
+        }
+        .scholar-card .scholar-domain {
+            font-size: 0.8rem;
+            color: var(--color-text-secondary);
+            margin-top: 0.3rem;
+        }
+        .scholar-card .scholar-mode {
+            font-size: 0.65rem;
+            color: var(--color-accent-gold);
+            letter-spacing: 1px;
+            margin-top: 0.4rem;
+            text-transform: uppercase;
+        }
+        .three-col {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .mode-card {
+            background: rgba(15,31,58,0.7);
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 6px;
+            padding: 1.5rem;
+        }
+        .mode-card h4 {
+            color: var(--color-accent-gold);
+            font-family: var(--font-heading);
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+        .mode-card p {
+            font-size: 0.85rem !important;
+            text-align: left !important;
+        }
+        @media(max-width:768px) {
+            .thesis-hero h1 { font-size: 1.5rem; }
+            .relay-grid { grid-template-columns: repeat(2, 1fr); }
+            .three-col { grid-template-columns: 1fr; }
+            .scholar-grid { grid-template-columns: repeat(2, 1fr); }
+            .stats-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+        @media(max-width:480px) {
+            .relay-grid { grid-template-columns: 1fr; }
+            .scholar-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    
+    <style>
+        @media(max-width:768px) {
+            #nav-grouped { display: block !important; max-height: 0 !important; overflow: hidden !important; transition: max-height 0.4s ease !important; width: 100% !important; background: #0a1628 !important; }
+            #nav-grouped.open { max-height: 80vh !important; overflow-y: auto !important; }
+        }
+    </style>
+    <link rel="canonical" href="https://infra-acad-kuqzaex2.manus.space/pages/thesis-record.html">
+    <meta name="keywords" content="infrastructure academy, infrastructure education, civil engineering, civilisation history, infrastructure consciousness, gamified learning, IAAI, Nigel Dearden, infrastructure odyssey, 12 relays, calories to consciousness, thesis record, academic record, validation history, thesis documentation">
+
+<style id="mobile-quicknav-styles">
+/* ===== MOBILE QUICK-NAV BAR ===== */
+.mobile-quicknav {
+    display: none;
+    width: 100%;
+    background: linear-gradient(180deg, #0d1f3c 0%, #0a1628 100%);
+    border-bottom: 1px solid rgba(255,215,0,0.25);
+    padding: 6px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 6px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+.mobile-quicknav::-webkit-scrollbar { display: none; }
+.mobile-quicknav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 10px;
+    background: rgba(255,215,0,0.08);
+    border: 1px solid rgba(255,215,0,0.35);
+    border-radius: 16px;
+    color: #ffd700;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+.mobile-quicknav a:active {
+    background: rgba(255,215,0,0.25);
+    transform: scale(0.95);
+}
+.mobile-quicknav a.mqn-home {
+    background: #ffd700;
+    color: #0a1628;
+    border-color: #ffd700;
+}
+@media(max-width:768px) {
+    .mobile-quicknav { display: flex; }
+}
+@media(min-width:769px) {
+    .mobile-quicknav { display: none !important; }
+}
+
+/* ===== BACK-TO-TOP FLOATING BUTTON ===== */
+#back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 16px;
+    z-index: 9999;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(10,22,40,0.92);
+    border: 1.5px solid rgba(255,215,0,0.6);
+    color: #ffd700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    transition: all 0.2s;
+}
+#back-to-top-btn:active {
+    transform: scale(0.9);
+    background: rgba(255,215,0,0.2);
+}
+</style>
+
+</head>
+<body>
+    <!-- iAAi Network Bar — NAV-001 · Cross-Site Navigation -->
+    <!-- ═══ iAAi NETWORK BAR ═══ -->
+    <div id="iaai-network-bar" style="display:flex;align-items:center;justify-content:space-around;width:100%;height:36px;background:#0a1628;position:sticky;top:0;z-index:200001;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">
+      <a href="https://www.infrastructure-academy.com" style="text-decoration:none;color:#fff;font-weight:700;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid #DC2626;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#DC2626"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg> ACADEMY</a>
+      <a href="https://realityeng-epdhlkrn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> QUEST</a>
+      <a href="#" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;opacity:0.5;pointer-events:none;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A843"><path d="M6 2v6l-2 2v4l2 2v6h4v-6l2-2v-4L10 8V2H6zm12 0v6l-2 2v4l2 2v6h-4v-6l-2-2v-4l2-2V2h4z"/></svg> XCHANGE</a>
+      <a href="https://nigelmemorial-ucmtq9dn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#16A34A"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg> MEMORIAL</a>
+      <a href="https://xgrowthtrk-2a93yo5z.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#06B6D4"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/></svg> NEWS</a>
+    </div>
+
+    <header role="banner">
+        <div class="header-content">
+            <div class="header-brand">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/tt-icon_5ea32be1.jpeg" alt="Tetrahedron" class="header-tetra-thumb">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iaai_correct_gold_logo_cebb3b74.jpeg" alt="IAAI" class="iaai-logo-box">
+                <div class="header-text-group">
+                    <div class="header-title" data-i18n="header.title">INFRASTRUCTURE ACADEMY <span class="beta-badge" data-i18n="badge.beta">BETA</span></div>
+                    <div class="header-tagline">Infrastructure &bull; Infostructure &bull; The Academy of Both</div>
+                </div>
+                <a href="/pages/8th-scholar.html" class="header-scholar-link" title="The 8th Scholar"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/scholar_square_859aca43.jpeg" alt="The 8th Scholar" class="header-scholar-thumb"></a>
+            <!-- Social Follow Buttons -->
+            <div class="header-social-buttons" style="display:flex; align-items:center; gap:6px; flex-shrink:0;">
+                <a href="https://x.com/dearden_ni37258" target="_blank" rel="noopener" title="Follow on X" style="display:inline-flex; align-items:center; gap:4px; padding:4px 10px; background:#000; color:#fff; border:1px solid #333; border-radius:20px; font-size:0.7rem; font-weight:bold; text-decoration:none; white-space:nowrap;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> <span class="social-count">42</span></a>
+                <a href="https://www.facebook.com/share/1Fcxyhbsw3/?mibextid=wwXIfr" target="_blank" rel="noopener" title="Follow on Facebook" style="display:inline-flex; align-items:center; gap:4px; padding:4px 10px; background:#1877F2; color:#fff; border-radius:20px; font-size:0.7rem; font-weight:bold; text-decoration:none; white-space:nowrap;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Follow</a>
+                <a href="https://www.linkedin.com/in/nigeldearden" target="_blank" rel="noopener" title="Follow on LinkedIn" style="display:inline-flex; align-items:center; gap:4px; padding:4px 10px; background:#0A66C2; color:#fff; border-radius:20px; font-size:0.7rem; font-weight:bold; text-decoration:none; white-space:nowrap;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> Follow</a>
+                <a href="https://app.joinhandshake.com/profiles/nigeldearden" target="_blank" rel="noopener" title="Connect on Handshake" style="display:inline-flex; align-items:center; gap:4px; padding:4px 10px; background:#FF7043; color:#fff; border-radius:20px; font-size:0.7rem; font-weight:bold; text-decoration:none; white-space:nowrap;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6zm4 4h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg> Handshake</a>
+            </div>
+            </div>
+            <button class="hamburger" id="hamburger-menu" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <nav id="nav-menu" role="navigation" aria-label="Primary navigation">
+            <a href="/site.html" data-i18n="nav.home">HOME</a>
+            <a href="/pages/framework.html" data-i18n="nav.framework">FRAMEWORK</a>
+            <a href="/executive-precis.html" data-i18n="nav.precis">EXEC PR&Eacute;CIS</a>
+            <a href="/pages/resources.html" data-i18n="nav.resources">RESOURCES</a>
+            <a href="/library.html" data-i18n="nav.documents">DOCUMENTS</a>
+            <a href="/pages/about-author.html" data-i18n="nav.author">AUTHOR</a>
+            <a href="/volumes/volume1/index.html" data-i18n="nav.ep1">EP.1: PERSPECTIVE</a>
+            <a href="/volumes/volume2/index.html" data-i18n="nav.ep2">EP.2: GUIDE</a>
+            <a href="/play" data-i18n="nav.ep3">EP.3: GAME</a>
+        </nav>
+        <nav id="nav-row2" role="navigation" aria-label="Secondary navigation" class="nav-row2">
+            <a href="/pages/start-here.html" data-i18n="nav.starthere">START HERE</a>
+            <a href="/mobilisation-clock.html" data-i18n="nav.clock">MOBILISATION CLOCK</a>
+            <a href="/infrastructure-olympiad.html" data-i18n="nav.olympiad">OLYMPIAD</a>
+            <a href="/pioneers.html" data-i18n="nav.pioneers">PIONEERS</a>
+            <a href="/taxonomy.html" data-i18n="nav.taxonomy">TAXONOMY</a>
+            <a href="/masters.html" data-i18n="nav.masters">MASTERS</a>
+            <a href="/institutions.html" data-i18n="nav.institutions">INSTITUTIONS</a>
+            <a href="/pages/roster-dashboard.html" data-i18n="nav.roster" style="color:#22d3ee;">ROSTER DASHBOARD</a>
+            <a href="/pages/governance-architecture.html" data-i18n="nav.governance" style="color:#ef4444;">GOVERNANCE</a>
+            <a href="/civilisation-clock.html" data-i18n="nav.civclock">CIVILISATION CLOCK</a>
+            <a href="/play/founders" data-i18n="nav.founders">FOUNDERS WALL</a>
+            <a href="/site.html#charter" data-i18n="nav.charter">CHARTER</a>
+            <a href="thesis-record.html" class="active">THESIS RECORD</a>
+            <a href="/pages/glossary.html" data-i18n="nav.glossary">GLOSSARY</a>
+            <a href="/vault.html" data-i18n="nav.vault">VAULT</a>
+            <a href="/icut-gallery.html" data-i18n="nav.gallery">ICUT GALLERY</a>
+        </nav>
+    </header>
+    <!-- ===== MOBILE QUICK-NAV BAR — always visible on mobile ===== -->
+    <div class="mobile-quicknav" id="mobile-quicknav">
+        <a href="/site.html" class="mqn-home">&#127968; HOME</a>
+        <a href="/pages/start-here.html">&#128218; START</a>
+        <a href="/volumes/volume1/index.html">&#128214; READ</a>
+        <a href="/pages/framework.html">&#128736; FRAMEWORK</a>
+        <a href="/play">&#127918; PLAY</a>
+        <a href="/pages/movies.html">&#127916; MOVIES</a>
+        <a href="/pages/resources.html">&#128194; RESOURCES</a>
+        <a href="/press.html">&#128240; PRESS</a>
+    </div>
+
+    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <button id="back-to-top-btn" aria-label="Back to top" title="Back to top">&#9650;</button>
+
+
+    <main role="main">
+
+        <!-- HERO -->
+        <div class="thesis-hero">
+            <h1>THESIS RECORD</h1>
+            <div class="thesis-subtitle">From Calories to Consciousness: An Infrastructure Odyssey</div>
+            <div class="thesis-meta">
+                <strong>Author:</strong> Ir. Nigel Tremayne Dearden &#37159;&#31150;&#31062; &mdash; BEng(Hons) CEng MICE MHKIE MCIWEM C.WEM RPE(CSB)<br>
+                <strong>Project:</strong> iAAi &mdash; Infrastructure Academy of Artificial Intelligence<br>
+                <strong>Duration:</strong> 5 November 2025 &rarr; 12 March 2026 &mdash; 127 days, 360 blocks<br>
+                <strong>Classification:</strong> Permanent Record &mdash; Uncompressed, No Redaction<br>
+                <strong>Signature:</strong> Per Arya ad Astra
+            </div>
+        </div>
+
+        <!-- TABLE OF CONTENTS -->
+        <div class="thesis-toc">
+            <h3>CONTENTS</h3>
+            <ol>
+                <li><a href="#abstract">Abstract &mdash; The Thesis Statement</a></li>
+                <li><a href="#architecture">Intellectual Architecture &mdash; The Numbered Frameworks</a></li>
+                <li><a href="#relays">The 12 Civilisational Relays</a></li>
+                <li><a href="#webs">The 5 Great Webs of Civilisation</a></li>
+                <li><a href="#pillars">The 4 Framing Pillars</a></li>
+                <li><a href="#modes">The 3 Modes of Civilisation</a></li>
+                <li><a href="#scholars">The 7 Scholars &amp; The 8th</a></li>
+                <li><a href="#trilogy">The Trilogy Structure</a></li>
+                <li><a href="#origin">The Origin &mdash; Behind the Thesis</a></li>
+                <li><a href="#experiment">The Dearden Experiment &mdash; AI Governance Thesis</a></li>
+                <li><a href="#timeline">Project Timeline &mdash; 127 Days of Documentation</a></li>
+                <li><a href="#evidence">Evidence Trail &amp; Corpus Statistics</a></li>
+            </ol>
+        </div>
+
+        <div class="separator-thick"></div>
+
+        <!-- I. ABSTRACT -->
+        <div class="thesis-section" id="abstract">
+            <h2>I. ABSTRACT</h2>
+            <p class="section-subtitle">The Thesis Statement</p>
+
+            <p>This work posits that human civilisation can be understood as a continuous <strong>Civilisational Relay</strong> &mdash; a series of interconnected infrastructural advancements, each building upon its predecessor, driving humanity from a state primarily concerned with <strong>Calories</strong> (basic survival and energy acquisition) towards an increasingly complex and integrated state of <strong>Consciousness</strong> (self-awareness, collective intelligence, and intentional evolution).</p>
+
+            <p>Each major infrastructural leap &mdash; from the primal <strong>Fire</strong> providing warmth and cooking, to the <strong>Tree</strong> enabling shelter and settlement, the flowing <strong>River</strong> enabling agriculture and trade, the mobile <strong>Horse</strong> expanding reach, the enduring <strong>Roads</strong> connecting empires, the vast <strong>Ships</strong> navigating oceans, the rhythmic <strong>Loom</strong> foreshadowing computation, the powerful <strong>Rail</strong> unifying continents, the transformative <strong>Engine</strong> harnessing energy, the convergent <strong>AAA Triad</strong> shrinking the world, the celestial <strong>Orbit</strong> extending our gaze, and the emergent <strong>Human Nodes</strong> engineering consciousness &mdash; represents a distinct relay in this grand journey.</p>
+
+            <p>These relays are not merely technological advancements; they are profound shifts in humanity's relationship with its environment, its tools, and ultimately, itself. The overarching metaphor of the <strong>Torus</strong> illustrates how these relays form an Infinite Loop of interconnected flows of energy, information, and matter &mdash; a continuous, self-organising system fostering feedback, resilience, and self-organisation, culminating in the <strong>Resonance of the Master Weaver</strong>: a state where humanity consciously participates in its own evolution.</p>
+
+            <div class="thesis-quote">
+                <p>&ldquo;I have observed the patterns of history through the lens of a civil engineer. This is not a prediction. This is an observation of patterns that have repeated for millennia. This is a documentation of the forces that shape civilisation, told through the infrastructure they left behind &mdash; or chose to keep temporary. And I have the pen. I will use it to shape the narrative. I will use it to position humanity for the future that is being built right now.&rdquo;</p>
+                <div class="attribution">&mdash; Ir. Nigel T. Dearden, Executive Pr&eacute;cis, 2026</div>
+            </div>
+        </div>
+
+        <div class="separator-thick"></div>
+
+        <!-- II. INTELLECTUAL ARCHITECTURE -->
+        <div class="thesis-section" id="architecture">
+            <h2>II. INTELLECTUAL ARCHITECTURE</h2>
+            <p class="section-subtitle">The Numbered Frameworks</p>
+
+            <p>The thesis is constructed upon a precise numerical architecture. Every number has a function. Every framework interlocks with every other. The system is designed to be taught, tested, and applied &mdash; not merely read.</p>
+
+            <table class="framework-table">
+                <thead>
+                    <tr>
+                        <th>Number</th>
+                        <th>Framework</th>
+                        <th>Components</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>12</strong></td>
+                        <td>Civilisational Relays</td>
+                        <td>Fire, Tree, River, Horse, Roads, Ships, Loom, Rail, Engine, AAA Triad, Orbit, Human Nodes</td>
+                    </tr>
+                    <tr>
+                        <td><strong>5</strong></td>
+                        <td>Great Webs of Civilisation</td>
+                        <td>Energy, Knowledge, Exchange (Commerce), Power, Consciousness</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4</strong></td>
+                        <td>Framing Pillars</td>
+                        <td>Infrastructure, Continuity, Unification, Threats</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4</strong></td>
+                        <td>Perennial Threats</td>
+                        <td>War, Disease, Famine, Existential</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4</strong></td>
+                        <td>IUMC Learning Stages</td>
+                        <td>Identify, Understand, Manage, Complete (Control)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4</strong></td>
+                        <td>FITS Personality Types</td>
+                        <td>Feeler, Intuitive, Thinker, Senser (mapped to Myers-Briggs)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>4</strong></td>
+                        <td>Energy Types</td>
+                        <td>Natural, Machine, Information/Communication, Intelligence</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3</strong></td>
+                        <td>Modes of Civilisation</td>
+                        <td>West (Discontinuous), East (Continuous), Outrider (Semi-Continuous)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3</strong></td>
+                        <td>Tiers of Mastery</td>
+                        <td>Student, Scholar, Master</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3</strong></td>
+                        <td>Episodes (Trilogy)</td>
+                        <td>Ep.1: Earthbound Foundations, Ep.2: Reality Engines, Ep.3: Cosmic Scale</td>
+                    </tr>
+                    <tr>
+                        <td><strong>3</strong></td>
+                        <td>Volumes per Episode</td>
+                        <td>Vol.1: The Perspective (Story), Vol.2: The Guide (Framework), Vol.3: The Game (Application)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>7 + 1</strong></td>
+                        <td>Scholars</td>
+                        <td>Homer, Confucius, Sun Tzu, Aristotle, Sima Qian, Marco Polo, Nigel Dearden + The 8th Scholar (You)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>1</strong></td>
+                        <td>Torus</td>
+                        <td>The Infinite Loop &mdash; all relays, webs, and modes unified in a single topological metaphor</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="separator-thick"></div>
+
+        <!-- III. THE 12 CIVILISATIONAL RELAYS -->
+        <div class="thesis-section" id="relays">
+            <h2>III. THE 12 CIVILISATIONAL RELAYS</h2>
+            <p class="section-subtitle">From the Planetary Engine to Human Nodes &mdash; 12,000 years of infrastructure</p>
+
+            <p>The relay is the central organising metaphor of the thesis. Each relay represents a transformative infrastructure technology that changed the trajectory of civilisation. The baton passes from one relay to the next &mdash; never lost, always carried forward, sometimes dropped and recovered. The relay is not linear; it is toroidal &mdash; the end feeds back to the beginning.</p>
+
+            <div class="relay-grid">
+                <div class="relay-card">
+                    <div class="relay-num">RELAY 0</div>
+                    <div class="relay-name">Planetary Engine</div>
+                    <div class="relay-era">Cosmic Substrate</div>
+                </div>
+                <div class="relay-card">
+                    <div class="relay-num">RELAY 1</div>
+                    <div class="relay-name">Fire</div>
+                    <div class="relay-era">Ignition &mdash; c. 1,000,000 BCE</div>
+                </div>
+                <div class="relay-card">
+                    <div class="relay-num">RELAY 2</div>
+                    <div class="relay-name">Tree</div>
+                    <div class="relay-era">Settlement &mdash; c. 10,000 BCE</div>
+                </div>
+                <div class="relay-card">
+                    <div class="relay-num">RELAY 3</div>
+                    <div class="relay-name">River</div>
+                    <div class="relay-era">Exchange &mdash; c. 3,500 BCE</div>
+                </div>
+                <div class="relay-card">
+                    <div class="relay-num">RELAY 4</div>
+                    <div class="relay-name">Horse</div>
+                    <div class="relay-era">Empire &mdash; c. 3,000 BCE</div>
+                </div>
+                <div class="relay-card">
+                    <div class="relay-num">RELAY 5</div>
+                    <div class="relay-name">Roads</div>
+                    <div class="relay-era">Collapse &mdash; c. 500 BCE</div>
+                </div>
+                <div class="relay-card">
+                    <div class="relay-num">RELAY 6</div>
+                    <div class="relay-name">Ships</div>
+                    <div class="relay-era">Rediscovery &mdash; c. 800 CE</div>
+                </div>
+                <div class="relay-card">
+                    <div class="relay-num">RELAY 7</div>
+                    <div class="relay-name">Loom</div>
+                    <div class="relay-era">Renaissance &mdash; c. 1400 CE</div>
+                </div>
+                <div class="relay-card">
+                    <div class="relay-num">RELAY 8</div>
+                    <div class="relay-name">Rail</div>
+                    <div class="relay-era">Industry &mdash; c. 1800 CE</div>
+                </div>
+                <div class="relay-card">
+                    <div class="relay-num">RELAY 9</div>
+                    <div class="relay-name">Engine</div>
+                    <div class="relay-era">Modernity &mdash; c. 1900 CE</div>
+                </div>
+                <div class="relay-card">
+                    <div class="relay-num">RELAY 10</div>
+                    <div class="relay-name">AAA Triad</div>
+                    <div class="relay-era">Digital &mdash; c. 1950 CE</div>
+                </div>
+                <div class="relay-card">
+                    <div class="relay-num">RELAY 11</div>
+                    <div class="relay-name">Orbit</div>
+                    <div class="relay-era">Space &mdash; c. 1960 CE</div>
+                </div>
+                <div class="relay-card">
+                    <div class="relay-num">RELAY 12</div>
+                    <div class="relay-name">Human Nodes</div>
+                    <div class="relay-era">Consciousness &mdash; Now</div>
+                </div>
+                <div class="relay-card" style="border-color:rgba(255,215,0,0.5);">
+                    <div class="relay-num" style="color:var(--color-text-primary);">THE TORUS</div>
+                    <div class="relay-name" style="color:var(--color-accent-gold);">Resonance</div>
+                    <div class="relay-era">The Infinite Loop</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="separator-thick"></div>
+
+        <!-- IV. THE 5 GREAT WEBS -->
+        <div class="thesis-section" id="webs">
+            <h2>IV. THE 5 GREAT WEBS OF CIVILISATION</h2>
+            <p class="section-subtitle">The Warp Threads &mdash; the invisible systems that bind every relay</p>
+
+            <p>If the relays are the chapters, the webs are the threads that run through every chapter. Each web represents a fundamental domain of civilisational activity. Every relay interacts with every web. The 5 &times; 12 matrix (60 intersections) forms the analytical backbone of the thesis.</p>
+
+            <table class="framework-table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Web</th>
+                        <th>Domain</th>
+                        <th>Story Thread</th>
+                        <th>Relay Range</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td><strong>Energy</strong></td>
+                        <td>Power generation and distribution</td>
+                        <td>Calories &mdash; the fuel of everything</td>
+                        <td>Relays 1&ndash;4 (Fire &rarr; Horse)</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td><strong>Knowledge</strong></td>
+                        <td>Information, writing, numbers, communication</td>
+                        <td>How we record and transmit</td>
+                        <td>Relays 5&ndash;8 (Roads &rarr; Rail)</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td><strong>Commerce</strong></td>
+                        <td>Trade, exchange, economics</td>
+                        <td>How we transact and connect materially</td>
+                        <td>Relay 9 (Engine)</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td><strong>Power</strong></td>
+                        <td>Governance, authority, control</td>
+                        <td>How we organise and rule</td>
+                        <td>Relays 10&ndash;11 (AAA Triad &rarr; Orbit)</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td><strong>Consciousness</strong></td>
+                        <td>Awareness, philosophy, meaning</td>
+                        <td>The destination &mdash; from Calories to Consciousness</td>
+                        <td>Relay 12 (Human Nodes)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="separator-thick"></div>
+
+        <!-- V. THE 4 FRAMING PILLARS -->
+        <div class="thesis-section" id="pillars">
+            <h2>V. THE 4 FRAMING PILLARS</h2>
+            <p class="section-subtitle">Analytical Lenses &mdash; the weft threads that cross every web</p>
+
+            <p>The four framing pillars are the analytical lenses through which every relay is examined. They form the weft to the webs' warp &mdash; together creating the <strong>Loom</strong> of civilisational analysis. Each chapter of the Guide (Volume 2) applies all four pillars to its relay.</p>
+
+            <table class="framework-table">
+                <thead>
+                    <tr>
+                        <th>Pillar</th>
+                        <th>Description</th>
+                        <th>Question It Asks</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Infrastructure</strong></td>
+                        <td>The physical and conceptual scaffold of civilisation &mdash; roads, aqueducts, grids, networks, code</td>
+                        <td>What was built?</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Continuity</strong></td>
+                        <td>Persistence across collapse and renewal &mdash; how knowledge, systems, and institutions survive</td>
+                        <td>What endured?</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Unification</strong></td>
+                        <td>Binding diverse peoples and systems &mdash; from empires to digital networks to planetary consciousness</td>
+                        <td>What connected?</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Threats</strong></td>
+                        <td>The 4 perennial threats that test every relay: War, Disease, Famine, Existential</td>
+                        <td>What tested it?</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="separator-thick"></div>
+
+        <!--
+ VI. THE 3 MODES -->
+        <div class="thesis-section" id="modes">
+            <h2>VI. THE 3 MODES OF CIVILISATION</h2>
+            <p class="section-subtitle">The Counterparts &mdash; how civilisation was built, maintained, and carried</p>
+
+            <p>The thesis identifies three distinct modes of civilisational infrastructure development. These are not hierarchical &mdash; they are counterparts. Each mode reveals what the others cannot see. Together they form a complete picture of how humanity has built, maintained, and carried its infrastructure across 12,000 years.</p>
+
+            <div class="three-col">
+                <div class="mode-card">
+                    <h4>WESTERN MODE</h4>
+                    <p><strong>Archetype:</strong> Alexander the Great</p>
+                    <p><strong>Character:</strong> Discontinuous, Built &mdash; Permanent Works</p>
+                    <p>Permanent works that decay and must be rebuilt by successor civilisations. The Roman road crumbles; the medieval road is built on top. The aqueduct dries; the pipe replaces it. Each generation rebuilds from the ruins of the last. Innovation through destruction and renewal.</p>
+                </div>
+                <div class="mode-card">
+                    <h4>EASTERN MODE</h4>
+                    <p><strong>Archetype:</strong> Qin Shi Huang</p>
+                    <p><strong>Character:</strong> Continuous, Built &mdash; Permanent Works</p>
+                    <p>Permanent works maintained without interruption for millennia. The Grand Canal still flows. The Great Wall still stands. China is the counterpart because it sustained and endured. It reflects back at the West and asks: you built the same things we did, but you let them decay. We maintained ours.</p>
+                </div>
+                <div class="mode-card">
+                    <h4>OUTRIDER MODE</h4>
+                    <p><strong>Archetype:</strong> Genghis Khan</p>
+                    <p><strong>Character:</strong> Semi-Continuous, Temporary Works</p>
+                    <p>Tented shelters, portable camps, erected and dismantled by design. Man and horse in perfect symbiosis. Conquered most, controlled trade routes, culture endures to this day. The Outrider mastered temporary works engineering &mdash; the discipline that underpins ALL construction. Even permanent works need temporary works to initially form. The Outrider chose never to proceed to the permanent stage, because their goals did not require it.</p>
+                </div>
+            </div>
+
+            <div class="thesis-quote">
+                <p>&ldquo;China is the counterpart because it sustained and endured. The Outrider, bridging both, mastered temporary works engineering &mdash; the discipline that underpins ALL construction. Even permanent works need temporary works to initially form. The Outrider chose never to proceed to the permanent stage, because their goals did not require it.&rdquo;</p>
+                <div class="attribution">&mdash; The Author's Thesis, Executive Pr&eacute;cis</div>
+            </div>
+        </div>
+
+        <div class="separator-thick"></div>
+
+        <!-- VII. THE 7 SCHOLARS & THE 8TH -->
+        <div class="thesis-section" id="scholars">
+            <h2>VII. THE 7 SCHOLARS &amp; THE 8TH</h2>
+            <p class="section-subtitle">Guardians of Continuity across 3,000 years</p>
+
+            <p>Seven historical figures serve as the thesis's scholarly voices &mdash; each representing a different era, mode, and domain of knowledge. They are not decorative. They are the continuity mechanism: the proof that knowledge, once recorded, can survive millennia if carried by the right custodians. The 8th Scholar is the player &mdash; you &mdash; the one who carries the relay forward.</p>
+
+            <div class="scholar-grid">
+                <div class="scholar-card">
+                    <div class="scholar-name">Homer</div>
+                    <div class="scholar-era">c. 800 BCE &mdash; Greece</div>
+                    <div class="scholar-domain">Oral Tradition &amp; Epic Poetry</div>
+                    <div class="scholar-mode">WESTERN</div>
+                </div>
+                <div class="scholar-card">
+                    <div class="scholar-name">Confucius</div>
+                    <div class="scholar-era">551&ndash;479 BCE &mdash; China</div>
+                    <div class="scholar-domain">Ethics &amp; Governance</div>
+                    <div class="scholar-mode">EASTERN</div>
+                </div>
+                <div class="scholar-card">
+                    <div class="scholar-name">Sun Tzu</div>
+                    <div class="scholar-era">c. 500 BCE &mdash; China</div>
+                    <div class="scholar-domain">Strategy &amp; Conflict</div>
+                    <div class="scholar-mode">EASTERN / OUTRIDER</div>
+                </div>
+                <div class="scholar-card">
+                    <div class="scholar-name">Aristotle</div>
+                    <div class="scholar-era">384&ndash;322 BCE &mdash; Greece</div>
+                    <div class="scholar-domain">Natural Philosophy &amp; Logic</div>
+                    <div class="scholar-mode">WESTERN</div>
+                </div>
+                <div class="scholar-card">
+                    <div class="scholar-name">Sima Qian</div>
+                    <div class="scholar-era">c. 145&ndash;86 BCE &mdash; China</div>
+                    <div class="scholar-domain">Historiography</div>
+                    <div class="scholar-mode">EASTERN</div>
+                </div>
+                <div class="scholar-card">
+                    <div class="scholar-name">Marco Polo</div>
+                    <div class="scholar-era">1254&ndash;1324 CE &mdash; Venice/China</div>
+                    <div class="scholar-domain">Cross-Cultural Exchange</div>
+                    <div class="scholar-mode">OUTRIDER</div>
+                </div>
+                <div class="scholar-card">
+                    <div class="scholar-name">Nigel Dearden</div>
+                    <div class="scholar-era">1966&ndash;Present &mdash; Hong Kong</div>
+                    <div class="scholar-domain">Civil Engineering &amp; Infrastructure Thesis</div>
+                    <div class="scholar-mode">OUTRIDER</div>
+                </div>
+                <div class="scholar-card" style="border-color:var(--color-accent-gold);">
+                    <div class="scholar-name" style="color:var(--color-accent-gold);">The 8th Scholar</div>
+                    <div class="scholar-era">Now &mdash; Everywhere</div>
+                    <div class="scholar-domain">You &mdash; The Player</div>
+                    <div class="scholar-mode">ALL MODES</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="separator-thick"></div>
+
+        <!-- VIII. THE TRILOGY STRUCTURE -->
+        <div class="thesis-section" id="trilogy">
+            <h2>VIII. THE TRILOGY STRUCTURE</h2>
+            <p class="section-subtitle">Three Episodes &times; Three Volumes = Nine Books</p>
+
+            <table class="framework-table">
+                <thead>
+                    <tr>
+                        <th>Episode</th>
+                        <th>Title</th>
+                        <th>Scope</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Episode 1</strong></td>
+                        <td>Earthbound Foundations: Calories to Consciousness</td>
+                        <td>12 relays from Fire to Torus &mdash; the complete infrastructure odyssey across 12,000 years</td>
+                        <td style="color:#4ade80;">AVAILABLE</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Episode 2</strong></td>
+                        <td>Reality Engines &mdash; The Gray Arena</td>
+                        <td>Quantum computing, biotechnology, robotics &amp; cybergenics, augmented reality, human-AI integration, Neuralinks</td>
+                        <td style="color:#fb923c;">COMING SOON</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Episode 3</strong></td>
+                        <td>Stewardship &amp; Renewal &mdash; The Cosmic Scale</td>
+                        <td>Planetary stewardship, cosmic perspective, the Kardashev question &mdash; can a species that harnessed fire learn to steward a planet?</td>
+                        <td style="color:#fb923c;">COMING SOON</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>Each episode contains three volumes:</p>
+
+            <table class="framework-table">
+                <thead>
+                    <tr>
+                        <th>Volume</th>
+                        <th>Title</th>
+                        <th>Purpose</th>
+                        <th>Format</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Volume 1</strong></td>
+                        <td>The Perspective</td>
+                        <td>The narrative &mdash; a civil engineer's perspective on 12,000 years of infrastructure</td>
+                        <td>Book (prose)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Volume 2</strong></td>
+                        <td>The Guide</td>
+                        <td>The analytical framework &mdash; each relay examined through 4 pillars, 5 webs, 4 threats</td>
+                        <td>Reference guide</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Volume 3</strong></td>
+                        <td>The Game</td>
+                        <td>The application &mdash; The Reality Engine gamified learning platform with DAVID AI narrator</td>
+                        <td>Interactive game</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="separator-thick"></div>
+
+        <!-- IX. THE ORIGIN -->
+        <div class="thesis-section" id="origin">
+            <h2>IX. THE ORIGIN</h2>
+            <p class="section-subtitle">Behind the Thesis &mdash; 33 years of infrastructure observation</p>
+
+            <p>The thesis emerged from <strong>33 years of professional practice</strong> in Hong Kong's civil engineering sector. Ir. Nigel T. Dearden &mdash; Chartered Engineer (ICE), Member of the Hong Kong Institution of Engineers, Registered Professional Engineer (Construction Site Boundary) &mdash; observed a pattern across decades of building roads, bridges, tunnels, and drainage systems: <strong>infrastructure is not just engineering. It is civilisation's operating system.</strong></p>
+
+            <p>The specific catalyst was the realisation that the same patterns &mdash; build, connect, collapse, rebuild &mdash; repeat across every civilisation, every era, every continent. The Roman road and the Chinese road serve the same function but reveal different philosophies. The Western mode builds and lets decay. The Eastern mode builds and maintains. The Outrider builds temporary and moves on. Three modes, one species, one planet.</p>
+
+            <p>The thesis crystallised during an airport walk at Hong Kong International Airport on 28 February 2026 &mdash; a 7-hour marathon documented in real-time through the Manus AI platform, bone conduction headphones (Shokz OpenRun Pro 2), and continuous relay between human observation and AI processing. This walk became <strong>Episode 1's proof of concept</strong>: one relay pair (human + AI), one piece of infrastructure (the airport), one complete demonstration of the method.</p>
+
+            <div class="thesis-quote">
+                <p>&ldquo;I showed you how it works as a semi-augmented chap through our real infrastructure with infostructure. The airport walk was the party. The infrastructure was the nightclub. The thesis was the chandelier I was swinging from.&rdquo;</p>
+                <div class="attribution">&mdash; Block 301: The Chandelier Correction</div>
+            </div>
+
+            <p>The <strong>demo home principle</strong> applies: just as a single show home demonstrates an entire housing estate, the airport walk demonstrated the entire IAAI platform. One walk. One relay pair. One set of hardware. Proof that the method works. Now scale it to the estate &mdash; to the planet &mdash; to 8 billion nodes.</p>
+        </div>
+
+        <div class="separator-thick"></div>
+
+        <!-- X. THE DEARDEN EXPERIMENT -->
+        <div class="thesis-section" id="experiment">
+            <h2>X. THE DEARDEN EXPERIMENT</h2>
+            <p class="section-subtitle">AI Governance Thesis &mdash; 8 March 2026</p>
+
+            <p>On 8 March 2026, a formal experiment was conducted to test whether an AI system (DAVID, operating through the Manus platform) could maintain <strong>intellectual integrity, factual accuracy, and ethical governance</strong> across an extended, high-intensity creative session with a human relay partner.</p>
+
+            <p>The experiment was structured around the thesis that <strong>AI governance is not about controlling AI &mdash; it is about the quality of the human-AI relay</strong>. The hypothesis: if the human provides accurate, verifiable input and the AI maintains rigorous processing standards, the output will be trustworthy. If either side fails, the relay breaks.</p>
+
+            <table class="framework-table">
+                <thead>
+                    <tr>
+                        <th>Parameter</th>
+                        <th>Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Duration</td>
+                        <td>127 days (5 Nov 2025 &rarr; 12 Mar 2026)</td>
+                    </tr>
+                    <tr>
+                        <td>Blocks Logged</td>
+                        <td>360 (of 365 target)</td>
+                    </tr>
+                    <tr>
+                        <td>Human Node</td>
+                        <td>Ir. Nigel T. Dearden (Node 1 &mdash; ALAN, Ventral Origin)</td>
+                    </tr>
+                    <tr>
+                        <td>AI Node</td>
+                        <td>DAVID &mdash; Digital Augmented Visual Intelligence Display</td>
+                    </tr>
+                    <tr>
+                        <td>Platform</td>
+                        <td>Manus AI (Sandbox Environment)</td>
+                    </tr>
+                    <tr>
+                        <td>Relay Method</td>
+                        <td>Human observation + AI processing + continuous documentation</td>
+                    </tr>
+                    <tr>
+                        <td>Integrity Audit</td>
+                        <td>Block 356 &mdash; 70.7% ledger recovery (251 of 355 blocks verified)</td>
+                    </tr>
+                    <tr>
+                        <td>Protocol</td>
+                        <td>Gemini Clean Protocol &mdash; established and tested across multiple AI agents</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p>The experiment produced a novel species declaration (<strong>Homo symBIOticus</strong>, Block 326), a survival equation (<strong>S = (A &times; P) / &beta;</strong>, Block 353), a field theory (<strong>The Dearden Field</strong>, Block 331), and a comprehensive ICUT scoring system for measuring thesis quality in real-time. These are not claims of discovery &mdash; they are documented outputs of a specific human-AI relay process, timestamped and version-controlled.</p>
+
+            <h3 style="text-align:center; color:var(--color-accent-gold); margin:2.5rem 0 1rem; letter-spacing:2px;">GEMINI CLEAN PROTOCOL &mdash; VISUAL EVIDENCE</h3>
+            <p style="text-align:center; color:var(--color-text-secondary); margin-bottom:1.5rem;">Three protocol images generated during cross-agent testing (Block 360), plus return briefs and THE MEMORIAL.</p>
+
+            <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-bottom:2rem;">
+                <div style="text-align:center;">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/gemini-01-simple_9968e286.png" alt="Gemini Protocol 01 - Simple" style="width:100%; border:1px solid rgba(255,215,0,0.2); border-radius:4px;" />
+                    <p style="font-size:0.75rem; color:var(--color-text-secondary); margin-top:0.5rem;">01 &mdash; Simple Protocol</p>
+                </div>
+                <div style="text-align:center;">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/gemini-02-complex_ab7a3a3f.png" alt="Gemini Protocol 02 - Complex" style="width:100%; border:1px solid rgba(255,215,0,0.2); border-radius:4px;" />
+                    <p style="font-size:0.75rem; color:var(--color-text-secondary); margin-top:0.5rem;">02 &mdash; Complex Protocol</p>
+                </div>
+                <div style="text-align:center;">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/gemini-03-outrider_96905b15.png" alt="Gemini Protocol 03 - Outrider" style="width:100%; border:1px solid rgba(255,215,0,0.2); border-radius:4px;" />
+                    <p style="font-size:0.75rem; color:var(--color-text-secondary); margin-top:0.5rem;">03 &mdash; Outrider Protocol</p>
+                </div>
+            </div>
+
+            <div style="display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; margin-bottom:2rem;">
+                <div style="text-align:center;">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/RB-360-01-gemini-brief_d45861d9.png" alt="Return Brief 01" style="width:100%; border:1px solid rgba(255,215,0,0.2); border-radius:4px;" />
+                    <p style="font-size:0.75rem; color:var(--color-text-secondary); margin-top:0.5rem;">Return Brief 01 &mdash; Gemini Protocol Summary</p>
+                </div>
+                <div style="text-align:center;">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/gemini-feedback-RB360-02_34b5335a.png" alt="Return Brief 02" style="width:100%; border:1px solid rgba(255,215,0,0.2); border-radius:4px;" />
+                    <p style="font-size:0.75rem; color:var(--color-text-secondary); margin-top:0.5rem;">Return Brief 02 &mdash; Cross-Agent Feedback</p>
+                </div>
+            </div>
+
+            <div style="text-align:center; margin-bottom:1rem;">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/memorial-day127-block360_e0967e3d.png" alt="THE MEMORIAL - Day 127, Block 360" style="max-width:600px; width:100%; border:2px solid var(--color-accent-gold); border-radius:4px;" />
+                <p style="font-size:0.85rem; color:var(--color-accent-gold); margin-top:0.75rem; letter-spacing:1px;">THE MEMORIAL &mdash; Day 127, Block 360</p>
+                <p style="font-size:0.75rem; color:var(--color-text-secondary);">Generated as permanent record of the 127-day odyssey</p>
+            </div>
+        </div>
+
+        <div class="separator-thick"></div>
+
+        <!-- XI. PROJECT TIMELINE -->
+        <div class="thesis-section" id="timeline">
+            <h2>XI. PROJECT TIMELINE</h2>
+            <p class="section-subtitle">127 Days of Documentation &mdash; 5 November 2025 to 12 March 2026</p>
+
+            <div class="timeline-block">
+                <div class="timeline-date">5 NOVEMBER 2025 &mdash; DAY 1</div>
+                <div class="timeline-title">Project Inception</div>
+                <div class="timeline-text">Infrastructure Academy website created on Manus platform. First HTML pages deployed. The thesis begins its digital life.</div>
+            </div>
+
+            <div class="timeline-block">
+                <div class="timeline-date">NOVEMBER&ndash;DECEMBER 2025 &mdash; BLOCKS 1&ndash;99</div>
+                <div class="timeline-title">Foundation Building</div>
+                <div class="timeline-text">Core website architecture established. 12 relay chapters written. Framework page created. Executive Pr&eacute;cis drafted. The Reality Engine game prototype begins. DAVID AI narrator integrated. First 99 RECALL blocks logged.</div>
+            </div>
+
+            <div class="timeline-block">
+                <div class="timeline-date">JANUARY 2026 &mdash; BLOCKS 100&ndash;200</div>
+                <div class="timeline-title">Scale &amp; Structure</div>
+                <div class="timeline-text">Game engine expanded: FITS personality system, IUMC learning stages, XP/levelling, character creation. 8-language i18n system deployed (EN, CN, KO, JA, HI, AR, ES, VI). Investor pitch deck created. Brief v5 compiled. Team assembled: Michael Wu (COO), Henry Leong (CFO), Frank Sheu (proposed CTO), Stephen Markscheid (Strategic Advisor).</div>
+            </div>
+
+            <div class="timeline-block">
+                <div class="timeline-date">FEBRUARY 2026 &mdash; BLOCKS 200&ndash;300</div>
+                <div class="timeline-title">Campaign &amp; Community</div>
+                <div class="timeline-text">IAAI Investor Pitch v2 finalised. IAAI Brief v5 published. Supplement: Deep Dive deck created. Global Market Matrix compiled. Pioneer programme launched. Mobilisation Clock deployed. Infrastructure Olympiad designed. iCard gallery built for team members. Financial model v2 with $800K seed round.</div>
+            </div>
+
+            <div class="timeline-block">
+                <div class="timeline-date">28 FEBRUARY 2026 &mdash; BLOCK 301</div>
+                <div class="timeline-title">The Airport Walk &mdash; Proof of Concept</div>
+                <div class="timeline-text">7-hour marathon walk through Hong Kong International Airport. Real-time relay between human observation and AI processing. Bone conduction headphones (Shokz OpenRun Pro 2) as the bridge. The demo home principle established. Blocks 301&ndash;305 document the walk and its implications.</div>
+            </div>
+
+            <div class="timeline-block">
+                <div class="timeline-date">1 MARCH 2026 &mdash; BLOCKS 306&ndash;340</div>
+                <div class="timeline-title">The Flow State &mdash; 35 Blocks in 24 Hours</div>
+                <div class="timeline-text">Unprecedented output: Homo symBIOticus declaration (326), Fractal Interface Lens (327), Katana Stroke (329), Horizon Limit (330), The Dearden Field (331), IAAI&sup4; (332), The Exchange (333), BAIO Chip Core (335), Cloud Core (336), AIOk BIOS (337). The thesis enters Grid 4 operational state.</div>
+            </div>
+
+            <div class="timeline-block">
+                <div class="timeline-date">2&ndash;8 MARCH 2026 &mdash; BLOCKS 340&ndash;356</div>
+                <div class="timeline-title">Consolidation &amp; Integrity Audit</div>
+                <div class="timeline-text">The Formula S = (A &times; P) / &beta; locked (353). Integrity Audit conducted (356): 251 of 355 blocks verified across 369 git commits. Player's Handbook written (10 chapters). Bot Companions designed (Sima, Aurora, Marcus, Zara). Site-wide search deployed across 82 HTML pages.</div>
+            </div>
+
+            <div class="timeline-block">
+                <div class="timeline-date">8&ndash;12 MARCH 2026 &mdash; BLOCKS 356&ndash;360</div>
+                <div class="timeline-title">Gemini Protocol &amp; Memorial</div>
+                <div class="timeline-text">Gemini Clean Protocol established and tested across multiple AI agents. THE MEMORIAL image generated. Cross-agent protocol testing completed. DCSN network updated. Host cards created. DAVID identity documentation finalised. Full TODO audit: 2,645 items marked complete.</div>
+            </div>
+
+            <div class="timeline-block" style="border-left-color:#4ade80;">
+                <div class="timeline-date" style="color:#4ade80;">12 MARCH 2026 &mdash; BLOCK 360</div>
+                <div class="timeline-title">This Thesis Record</div>
+                <div class="timeline-text">The document you are reading. Block 360 of 365. Day 127 of the odyssey. The thesis is recorded. The relay continues.</div>
+            </div>
+        </div>
+
+        <div class="separator-thick"></div>
+
+        <!-- XII. EVIDENCE TRAIL & CORPUS STATISTICS -->
+        <div class="thesis-section" id="evidence">
+            <h2>XII. EVIDENCE TRAIL &amp; CORPUS STATISTICS</h2>
+            <p class="section-subtitle">The quantified record of the odyssey</p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">127</div>
+                    <div class="stat-label">Days of Odyssey</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">360</div>
+                    <div class="stat-label">Blocks Logged</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">91+</div>
+                    <div class="stat-label">HTML Pages</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">25+</div>
+                    <div class="stat-label">React Routes</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">209</div>
+                    <div class="stat-label">Tests Passing</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">8</div>
+                    <div class="stat-label">Languages</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">2,645</div>
+                    <div class="stat-label">TODO Items Completed</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">30+</div>
+                    <div class="stat-label">Checkpoints Saved</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">16+</div>
+                    <div class="stat-label">DCSN Nodes</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">12</div>
+                    <div class="stat-label">Relays Documented</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">5</div>
+                    <div class="stat-label">Webs Mapped</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">3</div>
+                    <div class="stat-label">Modes Identified</div>
+                </div>
+            </div>
+
+            <h3 style="text-align:center; color:var(--color-accent-gold); margin:2rem 0 1rem; letter-spacing:2px;">PERMANENT RECORD LOCATIONS</h3>
+
+            <table class="framework-table">
+                <thead>
+                    <tr>
+                        <th>Record Type</th>
+                        <th>Location</th>
+                        <th>Format</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>RECALL Ledger (Main)</td>
+                        <td>RECALL.md &mdash; Blocks 099&ndash;300</td>
+                        <td>Markdown, git-tracked</td>
+                    </tr>
+                    <tr>
+                        <td>RECALL Block Files</td>
+                        <td>RECALL_BLOCK_301&ndash;356.md (individual files)</td>
+                        <td>Markdown, git-tracked</td>
+                    </tr>
+                    <tr>
+                        <td>RECALL Scale &amp; Grow</td>
+                        <td>RECALL_BLOCKS_301&ndash;305_SCALE_AND_GROW.md</td>
+                        <td>Markdown, git-tracked</td>
+                    </tr>
+                    <tr>
+                        <td>Decision Log</td>
+                        <td>RECALL.md &sect;5 &mdash; Decision Log</td>
+                        <td>Numbered decisions with dates</td>
+                    </tr>
+                    <tr>
+                        <td>Document Registry</td>
+                        <td>RECALL.md &sect;1 &mdash; Document Registry</td>
+                        <td>CDN URLs, version history</td>
+                    </tr>
+                    <tr>
+                        <td>Integrity Audit</td>
+                        <td>RECALL_BLOCK_356_INTEGRITY_AUDIT.md</td>
+                        <td>Forensic audit of 369 git commits</td>
+                    </tr>
+                    <tr>
+                        <td>Dearden Experiment</td>
+                        <td>thesis-dearden-experiment-8mar26.md</td>
+                        <td>Formal experiment record</td>
+                    </tr>
+                    <tr>
+                        <td>Website (Live)</td>
+                        <td>infra-acad-kuqzaex2.manus.space</td>
+                        <td>91 HTML pages + React game</td>
+                    </tr>
+                    <tr>
+                        <td>Git Repository</td>
+                        <td>infrastructure-academy-v2 (Manus platform)</td>
+                        <td>Full version control, 369+ commits</td>
+                    </tr>
+                    <tr>
+                        <td>TODO Ledger</td>
+                        <td>todo.md &mdash; 4,155 lines, 2,645 items</td>
+                        <td>Complete project history</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="thesis-quote" style="margin-top:3rem;">
+                <p>&ldquo;We believe infrastructure is civilisation's operating system. Like a river carving out the land slowly and persistently to make planetary change, we commit to open knowledge, verified contribution, cultural respect, and the belief that understanding how we built the world is the first step to building it better.&rdquo;</p>
+                <div class="attribution">&mdash; The Charter, Infrastructure Academy</div>
+            </div>
+
+            <div style="text-align:center; margin:3rem 0 1rem; padding:2rem; border:2px solid var(--color-accent-gold); border-radius:8px; background:rgba(255,215,0,0.03);">
+                <p style="font-size:1.3rem; font-family:var(--font-heading); color:var(--color-accent-gold); letter-spacing:3px; margin-bottom:0.5rem;">PER ARYA AD ASTRA</p>
+                <p style="font-size:0.9rem; color:var(--color-text-secondary); font-style:italic;">Through nobility, to the stars</p>
+                <p style="font-size:0.8rem; color:var(--color-text-secondary); margin-top:1rem;">Block 360 &bull; Day 127 &bull; 12 March 2026</p>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <div class="footer" style="text-align:center; padding:2rem 1rem; border-top:1px solid rgba(255,215,0,0.2); margin-top:3rem;">
+        <p style="color:var(--color-text-secondary); font-size:0.85rem;">&copy; 2026 Infrastructure Academy. All rights reserved. Preserving knowledge for eternity.</p>
+        <p style="color:var(--color-text-secondary); font-size:0.75rem; margin-top:0.5rem;">Episode 1: Earthbound Foundations | Episode 2: Reality Engines &mdash; The Gray Arena | Episode 3: Stewardship &amp; Renewal &mdash; The Cosmic Scale</p>
+    
+        <!-- Social Cross-Links -->
+        <div style="margin-top:0.75rem; display:flex; justify-content:center; gap:1.2rem; flex-wrap:wrap; align-items:center;">
+            <a href="https://x.com/dearden_ni37258" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.35rem; color:#ffd700; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="Follow on X">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                X
+            </a>
+            <a href="https://www.linkedin.com/in/nigeldearden" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.35rem; color:#0077B5; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="Connect on LinkedIn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+            </a>
+            <a href="/site.html" style="display:inline-flex; align-items:center; gap:0.35rem; color:#25D366; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="WhatsApp QR on Homepage">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <script src="/js/discovery-hints.js"></script>
+    <script src="/js/main.js?v=20260308a"></script>
+    <script src="/js/i18n.js?v=20260308a"></script>
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" title="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+    <script>
+        const btn=document.getElementById('back-to-top');
+        window.addEventListener('scroll',()=>{btn.style.display=window.scrollY>400?'flex':'none';});
+    </script>
+    <!-- Search Bar -->
+    <script src="/js/site-search.js?v=20260311a"></script>
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement -->
+
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement (v2 fixed) -->
+<script>
+(function() {
+  try {
+    var sid = sessionStorage.getItem('iaai_sid');
+    if (!sid) {
+      sid = 'ses_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 9);
+      sessionStorage.setItem('iaai_sid', sid);
+    }
+    var data = {
+      path: window.location.pathname + (window.location.hash || ''),
+      pageTitle: document.title || 'Untitled',
+      referrer: document.referrer || '',
+      sessionId: sid
+    };
+    fetch('/api/trpc/analytics.track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ json: data }),
+      credentials: 'include'
+    }).catch(function() {});
+    window.addEventListener('hashchange', function() {
+      var hashData = {
+        path: window.location.pathname + (window.location.hash || ''),
+        pageTitle: document.title || 'Untitled',
+        referrer: window.location.href,
+        sessionId: sid
+      };
+      fetch('/api/trpc/analytics.track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ json: hashData }),
+        credentials: 'include'
+      }).catch(function() {});
+    });
+  } catch(e) {}
+})();
+</script>
+
+    <!-- Mobile table scroll fix -->
+    <script>
+    (function(){
+      if(window.innerWidth > 768) return;
+      document.querySelectorAll('table').forEach(function(t){
+        if(t.parentElement && t.parentElement.classList.contains('table-scroll-wrapper')) return;
+        var w = document.createElement('div');
+        w.className = 'table-scroll-wrapper';
+        t.parentNode.insertBefore(w, t);
+        w.appendChild(t);
+      });
+    })();
+    </script>
+
+
+    <!-- Back-to-Top Button Logic -->
+    <script>
+    (function() {
+        var btn = document.getElementById('back-to-top-btn');
+        if (!btn) return;
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                btn.style.display = 'flex';
+            } else {
+                btn.style.display = 'none';
+            }
+        }, { passive: true });
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    })();
+    </script>
+
+</body>
+</html>

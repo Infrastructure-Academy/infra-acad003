@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes — Infrastructure Academy</title>
+    <meta name="description" content="A curated collection of quotes that guide the Infrastructure Academy mission.">
+    <link rel="icon" href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iAAi-emblem_e0c9c2c1.png" type="image/png">
+    <style>
+        :root {
+            --color-bg-primary: #0a1628;
+            --color-text-primary: #e2e8f0;
+            --color-accent-gold: #ffd700;
+            --color-border: rgba(255, 215, 0, 0.3);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: var(--color-bg-primary); color: var(--color-text-primary); font-family: Georgia, 'Times New Roman', serif; min-height: 100vh; }
+        .icard-page { max-width: 800px; margin: 0 auto; padding: 40px 24px 60px; }
+        .icard-header { text-align: center; margin-bottom: 50px; padding-bottom: 30px; border-bottom: 2px solid var(--color-border); }
+        .icard-header h1 { font-size: 2rem; color: var(--color-accent-gold); letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px; }
+        .icard-header .subtitle { font-size: 0.9rem; color: rgba(255,255,255,0.6); font-style: italic; }
+        .quote-card { background: rgba(255, 215, 0, 0.03); border: 1px solid var(--color-border); border-left: 4px solid var(--color-accent-gold); padding: 30px 30px 24px; margin-bottom: 30px; border-radius: 4px; }
+        .quote-card .quote-number { font-size: 0.7rem; color: rgba(255,215,0,0.5); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 12px; }
+        .quote-card blockquote { font-size: 1.2rem; line-height: 1.7; color: #fff; font-style: italic; margin-bottom: 16px; }
+        .quote-card .attribution { font-size: 0.95rem; color: var(--color-accent-gold); text-align: right; }
+        .icard-footer { text-align: center; margin-top: 50px; padding: 20px; color: rgba(255,255,255,0.4); font-size: 0.8rem; }
+        .icard-footer .gold { color: var(--color-accent-gold); font-style: italic; }
+        @media (max-width: 600px) {
+            .icard-page { padding: 20px 16px 40px; }
+            .icard-header h1 { font-size: 1.5rem; }
+            .quote-card blockquote { font-size: 1.05rem; }
+            .quote-card { padding: 20px 18px 18px; }
+        }
+    </style>
+    <link rel="canonical" href="https://infra-acad-kuqzaex2.manus.space/quotes.html">
+
+<style id="mobile-quicknav-styles">
+/* ===== MOBILE QUICK-NAV BAR ===== */
+.mobile-quicknav {
+    display: none;
+    width: 100%;
+    background: linear-gradient(180deg, #0d1f3c 0%, #0a1628 100%);
+    border-bottom: 1px solid rgba(255,215,0,0.25);
+    padding: 6px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 6px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+.mobile-quicknav::-webkit-scrollbar { display: none; }
+.mobile-quicknav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 10px;
+    background: rgba(255,215,0,0.08);
+    border: 1px solid rgba(255,215,0,0.35);
+    border-radius: 16px;
+    color: #ffd700;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+.mobile-quicknav a:active {
+    background: rgba(255,215,0,0.25);
+    transform: scale(0.95);
+}
+.mobile-quicknav a.mqn-home {
+    background: #ffd700;
+    color: #0a1628;
+    border-color: #ffd700;
+}
+@media(max-width:768px) {
+    .mobile-quicknav { display: flex; }
+}
+@media(min-width:769px) {
+    .mobile-quicknav { display: none !important; }
+}
+
+/* ===== BACK-TO-TOP FLOATING BUTTON ===== */
+#back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 16px;
+    z-index: 9999;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(10,22,40,0.92);
+    border: 1.5px solid rgba(255,215,0,0.6);
+    color: #ffd700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    transition: all 0.2s;
+}
+#back-to-top-btn:active {
+    transform: scale(0.9);
+    background: rgba(255,215,0,0.2);
+}
+</style>
+
+</head>
+<body>
+    <!-- iAAi Network Bar -->
+    <div id="iaai-network-bar" style="display:flex;align-items:center;justify-content:space-around;width:100%;height:36px;background:#0a1628;position:sticky;top:0;z-index:200001;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">
+      <a href="https://www.infrastructure-academy.com" style="text-decoration:none;color:#fff;font-weight:700;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid #DC2626;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#DC2626"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg> ACADEMY</a>
+      <a href="https://realityeng-epdhlkrn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> QUEST</a>
+      <a href="#" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;opacity:0.5;pointer-events:none;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A843"><path d="M6 2v6l-2 2v4l2 2v6h4v-6l2-2v-4L10 8V2H6zm12 0v6l-2 2v4l2 2v6h-4v-6l-2-2v-4l2-2V2h4z"/></svg> XCHANGE</a>
+      <a href="https://nigelmemorial-ucmtq9dn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#16A34A"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg> MEMORIAL</a>
+      <a href="https://xgrowthtrk-2a93yo5z.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#06B6D4"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/></svg> NEWS</a>
+    </div>
+
+    <!-- Compact Header -->
+    <style>
+    .compact-header-bar { position:sticky; top:36px; z-index:9999; background:#0a1628; border-bottom:2px solid #ffd700; padding:8px 16px; display:flex; align-items:center; justify-content:space-between; gap:12px; font-family:Georgia,'Times New Roman',serif; }
+    .compact-header-bar .chb-brand { display:flex; align-items:center; gap:10px; text-decoration:none; color:#ffd700; }
+    .compact-header-bar .chb-brand img { width:28px; height:28px; border-radius:4px; }
+    .compact-header-bar .chb-title { font-size:0.85rem; font-weight:bold; letter-spacing:1.5px; color:#ffd700; }
+    .compact-header-bar .chb-nav { display:flex; align-items:center; gap:12px; }
+    .compact-header-bar .chb-nav a { color:#e2e8f0; text-decoration:none; font-size:0.75rem; letter-spacing:1px; padding:4px 10px; border:1px solid rgba(255,215,0,0.2); border-radius:3px; }
+    .compact-header-bar .chb-nav a.chb-home { background:rgba(255,215,0,0.15); border-color:#ffd700; color:#ffd700; font-weight:bold; }
+    @media(max-width:600px) { .compact-header-bar .chb-nav a:not(.chb-home) { display:none; } .compact-header-bar .chb-title { font-size:0.7rem; } }
+    </style>
+    <div class="compact-header-bar">
+        <a href="/site.html" class="chb-brand">
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iAAi-emblem_e0c9c2c1.png" alt="iAAi">
+            <span class="chb-title">INFRASTRUCTURE ACADEMY</span>
+        </a>
+        <div class="chb-nav">
+            <a href="/site.html" class="chb-home">HOME</a>
+        </div>
+    </div>
+    <!-- ===== MOBILE QUICK-NAV BAR — always visible on mobile ===== -->
+    <div class="mobile-quicknav" id="mobile-quicknav">
+        <a href="/site.html" class="mqn-home">&#127968; HOME</a>
+        <a href="/pages/start-here.html">&#128218; START</a>
+        <a href="/volumes/volume1/index.html">&#128214; READ</a>
+        <a href="/pages/framework.html">&#128736; FRAMEWORK</a>
+        <a href="/play">&#127918; PLAY</a>
+        <a href="/pages/movies.html">&#127916; MOVIES</a>
+        <a href="/pages/resources.html">&#128194; RESOURCES</a>
+        <a href="/press.html">&#128240; PRESS</a>
+    </div>
+
+    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <button id="back-to-top-btn" aria-label="Back to top" title="Back to top">&#9650;</button>
+
+
+    <!-- Page Content -->
+    <div class="icard-page">
+        <div class="icard-header">
+            <h1>Quotes</h1>
+            <p class="subtitle">Words that guide the Odyssey</p>
+        </div>
+
+        <div class="quote-card">
+            <div class="quote-number">Quote #1</div>
+            <blockquote>"The secret of change is to focus all of your energy not on fighting the old, but on building the new."</blockquote>
+            <div class="attribution">— Socrates</div>
+        </div>
+
+        <div class="quote-card">
+            <div class="quote-number">Quote #2</div>
+            <blockquote>"Never confuse education with intelligence, you can have a PhD and still be an idiot."</blockquote>
+            <div class="attribution">— Richard Feynman</div>
+        </div>
+
+        <div class="icard-footer">
+            <p class="gold">Infrastructure Academy — An Infrastructure Odyssey</p>
+            <p style="margin-top:8px;">© 2025 Ir. Nigel T. Dearden CEng CWEM</p>
+        </div>
+    </div>
+
+    <!-- Back-to-Top Button Logic -->
+    <script>
+    (function() {
+        var btn = document.getElementById('back-to-top-btn');
+        if (!btn) return;
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                btn.style.display = 'flex';
+            } else {
+                btn.style.display = 'none';
+            }
+        }, { passive: true });
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    })();
+    </script>
+
+</body>
+</html>

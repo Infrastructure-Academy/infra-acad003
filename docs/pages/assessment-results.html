@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assessment Results — HICE Evidence Pack — Infrastructure Academy</title>
+    <meta name="description" content="Complete HICE framework validation: 23 universities, 6 regions, 3 assessment rounds (R1 75/100, R2 8.1/10, R3 87.5%). Evidence pack with ISI methodology, world map, and validation chain.">
+    <meta property="og:title" content="Assessment Results — HICE Evidence Pack">
+    <meta property="og:description" content="23 universities × 6 regions × 3 rounds. The complete assessment evidence for Infrastructure Academy's HICE framework.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Infrastructure Academy">
+    <link rel="icon" type="image/x-icon" href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/favicon_32_80e4326c.png">
+    <link rel="stylesheet" href="/css/style.css?v=20260410a">
+    <style>
+        .beta-badge { display:inline-flex; align-items:center; gap:0.3rem; background:rgba(251,146,60,0.15); border:1px solid rgba(251,146,60,0.5); color:#fb923c; font-family:'Courier New',monospace; font-size:0.65rem; font-weight:bold; letter-spacing:2px; padding:0.2rem 0.6rem; border-radius:3px; text-transform:uppercase; animation:beta-pulse 3s ease-in-out infinite; vertical-align:middle; margin-left:0.5rem; }
+        .beta-badge::before { content:'\25CF'; font-size:0.5rem; animation:beta-dot 2s ease-in-out infinite; }
+        @keyframes beta-pulse { 0%,100%{opacity:1;} 50%{opacity:0.7;} }
+        @keyframes beta-dot { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+        @media(max-width:768px) { .beta-badge { display:none; } .header-title { max-width: calc(100vw - 160px) !important; } .header-tagline::after { content:'BETA'; display:inline-block; font-family:'Courier New',monospace; font-size:0.4rem; font-weight:bold; color:#fb923c; letter-spacing:1px; margin-left:0.5rem; background:rgba(251,146,60,0.15); border:1px solid rgba(251,146,60,0.5); padding:0.05rem 0.3rem; border-radius:2px; vertical-align:middle; animation:beta-pulse 3s ease-in-out infinite; } }
+
+        /* Assessment Results Page Styles */
+        .ar-hero {
+            text-align: center;
+            padding: 3rem 1.5rem 2rem;
+            border-bottom: 2px solid var(--color-accent-gold);
+            margin-bottom: 2rem;
+        }
+        .ar-hero h1 {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            color: var(--color-accent-gold);
+            letter-spacing: 3px;
+            margin-bottom: 0.5rem;
+        }
+        .ar-hero .ar-subtitle {
+            font-size: 1.3rem;
+            color: var(--color-text-primary);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        .ar-hero .ar-meta {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            line-height: 1.8;
+        }
+        .ar-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 1rem;
+            max-width: 1200px;
+            margin: 1.5rem auto;
+            padding: 0 1rem;
+        }
+        .ar-stat {
+            background: rgba(15,31,58,0.7);
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 6px;
+            padding: 1.2rem;
+            text-align: center;
+        }
+        .ar-stat .sv { font-size: 1.8rem; font-family: var(--font-heading); color: var(--color-accent-gold); margin-bottom: 0.3rem; }
+        .ar-stat .sl { font-size: 0.7rem; color: var(--color-text-secondary); letter-spacing: 1px; text-transform: uppercase; }
+
+        /* Evidence Pack Sections */
+        .ep-section {
+            max-width: 1400px;
+            margin: 3rem auto;
+            padding: 0 1rem;
+        }
+        .ep-section h2 {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            color: var(--color-accent-gold);
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255,215,0,0.3);
+        }
+        .ep-section .ep-desc {
+            font-size: 0.95rem;
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            max-width: 900px;
+        }
+        .ep-image-wrap {
+            border: 2px solid rgba(255,215,0,0.3);
+            border-radius: 8px;
+            overflow: hidden;
+            background: rgba(10,22,40,0.8);
+            margin-bottom: 1rem;
+        }
+        .ep-image-wrap img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .ep-caption {
+            font-size: 0.8rem;
+            color: var(--color-text-secondary);
+            text-align: center;
+            padding: 0.75rem;
+            border-top: 1px solid rgba(255,215,0,0.15);
+            font-style: italic;
+        }
+
+        /* University Table */
+        .uni-table-wrap {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+        .uni-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+        }
+        .uni-table th {
+            background: rgba(15,31,58,0.9);
+            color: var(--color-accent-gold);
+            padding: 0.75rem 0.5rem;
+            text-align: left;
+            font-size: 0.75rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            border-bottom: 2px solid var(--color-accent-gold);
+            white-space: nowrap;
+        }
+        .uni-table td {
+            padding: 0.6rem 0.5rem;
+            border-bottom: 1px solid rgba(255,215,0,0.1);
+            color: var(--color-text-primary);
+        }
+        .uni-table tr:hover { background: rgba(255,215,0,0.05); }
+        .uni-table .new-r3 { color: #4ade80; font-size: 0.7rem; }
+        .uni-table .score-high { color: #4ade80; font-weight: bold; }
+        .uni-table .score-mid { color: var(--color-accent-gold); }
+        .uni-table .score-na { color: #666; font-style: italic; }
+
+        /* Round Cards */
+        .round-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        .round-card {
+            background: rgba(15,31,58,0.7);
+            border: 1px solid rgba(255,215,0,0.25);
+            border-radius: 8px;
+            padding: 1.5rem;
+        }
+        .round-card h3 {
+            font-family: var(--font-heading);
+            color: var(--color-accent-gold);
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        .round-card .rc-score {
+            font-size: 2.2rem;
+            font-family: var(--font-heading);
+            color: #4ade80;
+            margin: 0.5rem 0;
+        }
+        .round-card .rc-detail {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+        .round-card .rc-verdict {
+            display: inline-block;
+            margin-top: 0.75rem;
+            padding: 0.3rem 0.8rem;
+            background: rgba(255,215,0,0.15);
+            border: 1px solid rgba(255,215,0,0.4);
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: var(--color-accent-gold);
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        /* Download Section */
+        .download-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: rgba(15,31,58,0.5);
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 8px;
+        }
+        .dl-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.6rem 1.2rem;
+            background: rgba(255,215,0,0.1);
+            border: 1px solid rgba(255,215,0,0.4);
+            border-radius: 4px;
+            color: var(--color-accent-gold);
+            text-decoration: none;
+            font-size: 0.85rem;
+            transition: all 0.3s;
+        }
+        .dl-btn:hover {
+            background: rgba(255,215,0,0.2);
+            border-color: var(--color-accent-gold);
+        }
+
+        /* TOC */
+        .ar-toc {
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            padding: 1.5rem 2rem;
+            background: rgba(15,31,58,0.5);
+            border: 1px solid rgba(255,215,0,0.3);
+            border-radius: 8px;
+        }
+        .ar-toc h3 {
+            font-family: var(--font-heading);
+            color: var(--color-accent-gold);
+            font-size: 1rem;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+        .ar-toc a {
+            display: block;
+            padding: 0.4rem 0;
+            color: var(--color-text-primary);
+            text-decoration: none;
+            font-size: 0.9rem;
+            border-bottom: 1px solid rgba(255,215,0,0.08);
+        }
+        .ar-toc a:hover { color: var(--color-accent-gold); }
+        .ar-toc a .toc-num { color: var(--color-accent-gold); margin-right: 0.5rem; font-weight: bold; }
+    </style>
+    <link rel="canonical" href="https://infra-acad-kuqzaex2.manus.space/pages/assessment-results.html">
+    <meta name="keywords" content="infrastructure academy, infrastructure education, civil engineering, civilisation history, infrastructure consciousness, gamified learning, IAAI, Nigel Dearden, infrastructure odyssey, 12 relays, calories to consciousness, assessment results, thesis validation, academic assessment, 8.1 score">
+
+<style id="mobile-quicknav-styles">
+/* ===== MOBILE QUICK-NAV BAR ===== */
+.mobile-quicknav {
+    display: none;
+    width: 100%;
+    background: linear-gradient(180deg, #0d1f3c 0%, #0a1628 100%);
+    border-bottom: 1px solid rgba(255,215,0,0.25);
+    padding: 6px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 6px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+.mobile-quicknav::-webkit-scrollbar { display: none; }
+.mobile-quicknav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 10px;
+    background: rgba(255,215,0,0.08);
+    border: 1px solid rgba(255,215,0,0.35);
+    border-radius: 16px;
+    color: #ffd700;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+.mobile-quicknav a:active {
+    background: rgba(255,215,0,0.25);
+    transform: scale(0.95);
+}
+.mobile-quicknav a.mqn-home {
+    background: #ffd700;
+    color: #0a1628;
+    border-color: #ffd700;
+}
+@media(max-width:768px) {
+    .mobile-quicknav { display: flex; }
+}
+@media(min-width:769px) {
+    .mobile-quicknav { display: none !important; }
+}
+
+/* ===== BACK-TO-TOP FLOATING BUTTON ===== */
+#back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 16px;
+    z-index: 9999;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(10,22,40,0.92);
+    border: 1.5px solid rgba(255,215,0,0.6);
+    color: #ffd700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    transition: all 0.2s;
+}
+#back-to-top-btn:active {
+    transform: scale(0.9);
+    background: rgba(255,215,0,0.2);
+}
+</style>
+
+</head>
+<body>
+    <!-- iAAi Network Bar — NAV-001 · Cross-Site Navigation -->
+    <!-- ═══ iAAi NETWORK BAR ═══ -->
+    <div id="iaai-network-bar" style="display:flex;align-items:center;justify-content:space-around;width:100%;height:36px;background:#0a1628;position:sticky;top:0;z-index:200001;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">
+      <a href="https://www.infrastructure-academy.com" style="text-decoration:none;color:#fff;font-weight:700;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid #DC2626;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#DC2626"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg> ACADEMY</a>
+      <a href="https://realityeng-epdhlkrn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> QUEST</a>
+      <a href="#" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;opacity:0.5;pointer-events:none;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A843"><path d="M6 2v6l-2 2v4l2 2v6h4v-6l2-2v-4L10 8V2H6zm12 0v6l-2 2v4l2 2v6h-4v-6l-2-2v-4l2-2V2h4z"/></svg> XCHANGE</a>
+      <a href="https://nigelmemorial-ucmtq9dn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#16A34A"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg> MEMORIAL</a>
+      <a href="https://xgrowthtrk-2a93yo5z.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#06B6D4"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/></svg> NEWS</a>
+    </div>
+
+    <header role="banner">
+        <div class="header-content">
+            <div class="header-brand">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/tt-icon_5ea32be1.jpeg" alt="Tetrahedron" class="header-tetra-thumb">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iaai_correct_gold_logo_cebb3b74.jpeg" alt="IAAI" class="iaai-logo-box">
+                <div class="header-text-group">
+                    <div class="header-title" data-i18n="header.title">INFRASTRUCTURE ACADEMY <span class="beta-badge" data-i18n="badge.beta">BETA</span></div>
+                    <div class="header-tagline">Infrastructure &bull; Infostructure &bull; The Academy of Both</div>
+                </div>
+                <a href="/pages/8th-scholar.html" class="header-scholar-link" title="The 8th Scholar"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/scholar_square_859aca43.jpeg" alt="The 8th Scholar" class="header-scholar-thumb"></a>
+            <!-- Social Follow Buttons -->
+            <div class="header-social-buttons" style="display:flex; align-items:center; gap:6px; flex-shrink:0;">
+                <a href="https://x.com/dearden_ni37258" target="_blank" rel="noopener" title="Follow on X" style="display:inline-flex; align-items:center; gap:4px; padding:4px 10px; background:#000; color:#fff; border:1px solid #333; border-radius:20px; font-size:0.7rem; font-weight:bold; text-decoration:none; white-space:nowrap;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> <span class="social-count">42</span></a>
+                <a href="https://www.facebook.com/share/1Fcxyhbsw3/?mibextid=wwXIfr" target="_blank" rel="noopener" title="Follow on Facebook" style="display:inline-flex; align-items:center; gap:4px; padding:4px 10px; background:#1877F2; color:#fff; border-radius:20px; font-size:0.7rem; font-weight:bold; text-decoration:none; white-space:nowrap;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Follow</a>
+                <a href="https://www.linkedin.com/in/nigeldearden" target="_blank" rel="noopener" title="Follow on LinkedIn" style="display:inline-flex; align-items:center; gap:4px; padding:4px 10px; background:#0A66C2; color:#fff; border-radius:20px; font-size:0.7rem; font-weight:bold; text-decoration:none; white-space:nowrap;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> Follow</a>
+                <a href="https://app.joinhandshake.com/profiles/nigeldearden" target="_blank" rel="noopener" title="Connect on Handshake" style="display:inline-flex; align-items:center; gap:4px; padding:4px 10px; background:#FF7043; color:#fff; border-radius:20px; font-size:0.7rem; font-weight:bold; text-decoration:none; white-space:nowrap;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6zm4 4h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg> Handshake</a>
+            </div>
+            </div>
+            <button class="hamburger" id="hamburger-menu" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <nav id="nav-menu" role="navigation" aria-label="Primary navigation">
+            <a href="/site.html" data-i18n="nav.home">HOME</a>
+            <a href="/pages/framework.html" data-i18n="nav.framework">FRAMEWORK</a>
+            <a href="/executive-precis.html" data-i18n="nav.precis">EXEC PR&Eacute;CIS</a>
+            <a href="/pages/resources.html" data-i18n="nav.resources">RESOURCES</a>
+            <a href="/library.html" data-i18n="nav.documents">DOCUMENTS</a>
+            <a href="/pages/about-author.html" data-i18n="nav.author">AUTHOR</a>
+            <a href="/volumes/volume1/index.html" data-i18n="nav.ep1">EP.1: PERSPECTIVE</a>
+            <a href="/volumes/volume2/index.html" data-i18n="nav.ep2">EP.2: GUIDE</a>
+            <a href="/play" data-i18n="nav.ep3">EP.3: GAME</a>
+        </nav>
+        <nav id="nav-row2" role="navigation" aria-label="Secondary navigation" class="nav-row2">
+            <a href="/pages/start-here.html" data-i18n="nav.starthere">START HERE</a>
+            <a href="/mobilisation-clock.html" data-i18n="nav.clock">MOBILISATION CLOCK</a>
+            <a href="/infrastructure-olympiad.html" data-i18n="nav.olympiad">OLYMPIAD</a>
+            <a href="/pioneers.html" data-i18n="nav.pioneers">PIONEERS</a>
+            <a href="/taxonomy.html" data-i18n="nav.taxonomy">TAXONOMY</a>
+            <a href="/masters.html" data-i18n="nav.masters">MASTERS</a>
+            <a href="/institutions.html" data-i18n="nav.institutions">INSTITUTIONS</a>
+            <a href="/pages/roster-dashboard.html" data-i18n="nav.roster" style="color:#22d3ee;">ROSTER DASHBOARD</a>
+            <a href="/pages/governance-architecture.html" data-i18n="nav.governance" style="color:#ef4444;">GOVERNANCE</a>
+            <a href="/civilisation-clock.html" data-i18n="nav.civclock">CIVILISATION CLOCK</a>
+            <a href="/play/founders" data-i18n="nav.founders">FOUNDERS WALL</a>
+            <a href="/pages/thesis-record.html">THESIS RECORD</a>
+            <a href="/pages/assessment-results.html" class="active">ASSESSMENT RESULTS</a>
+            <a href="/pages/glossary.html" data-i18n="nav.glossary">GLOSSARY</a>
+            <a href="/vault.html" data-i18n="nav.vault">VAULT</a>
+        </nav>
+    </header>
+    <!-- ===== MOBILE QUICK-NAV BAR — always visible on mobile ===== -->
+    <div class="mobile-quicknav" id="mobile-quicknav">
+        <a href="/site.html" class="mqn-home">&#127968; HOME</a>
+        <a href="/pages/start-here.html">&#128218; START</a>
+        <a href="/volumes/volume1/index.html">&#128214; READ</a>
+        <a href="/pages/framework.html">&#128736; FRAMEWORK</a>
+        <a href="/play">&#127918; PLAY</a>
+        <a href="/pages/movies.html">&#127916; MOVIES</a>
+        <a href="/pages/resources.html">&#128194; RESOURCES</a>
+        <a href="/press.html">&#128240; PRESS</a>
+    </div>
+
+    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <button id="back-to-top-btn" aria-label="Back to top" title="Back to top">&#9650;</button>
+
+
+    <main role="main">
+
+        <!-- HERO -->
+        <div class="ar-hero">
+            <h1>ASSESSMENT RESULTS</h1>
+            <div class="ar-subtitle">HICE Framework Validation &mdash; Complete Evidence Pack</div>
+            <div class="ar-meta">
+                23 Universities &bull; 6 Regions &bull; 12 Countries &bull; 3 Assessment Rounds<br>
+                ISI Methodology DD-025 &bull; Block 363 &bull; Day 127 &bull; 13 March 2026<br>
+                <em>H = I + C + E &mdash; The Equation for the People Who Build the World&rsquo;s Houses</em>
+            </div>
+        </div>
+
+        <!-- KEY STATS -->
+        <div class="ar-stats">
+            <div class="ar-stat"><div class="sv">21</div><div class="sl">Universities</div></div>
+            <div class="ar-stat"><div class="sv">6</div><div class="sl">Regions</div></div>
+            <div class="ar-stat"><div class="sv">321+</div><div class="sl">UV Data Sets</div></div>
+            <div class="ar-stat"><div class="sv">75/100</div><div class="sl">R1 &mdash; ICE</div></div>
+            <div class="ar-stat"><div class="sv">8.1/10</div><div class="sl">R2 &mdash; Panel</div></div>
+            <div class="ar-stat"><div class="sv">87.5%</div><div class="sl">R3 &mdash; Audit</div></div>
+            <div class="ar-stat"><div class="sv">FIRST CLASS</div><div class="sl">All 16 R3 Unis</div></div>
+        </div>
+
+        <!-- TABLE OF CONTENTS -->
+        <div class="ar-toc">
+            <h3>CONTENTS</h3>
+            <a href="#rounds"><span class="toc-num">I.</span> Three Assessment Rounds</a>
+            <a href="#ecosystem"><span class="toc-num">II.</span> Complete Assessment Ecosystem</a>
+            <a href="#worldmap"><span class="toc-num">III.</span> University World Map &mdash; 21 Institutions</a>
+            <a href="#validation"><span class="toc-num">IV.</span> The Validation Chain</a>
+            <a href="#roster"><span class="toc-num">V.</span> Master University Roster</a>
+            <a href="#downloads"><span class="toc-num">VI.</span> Downloads &amp; Machine-Readable Data</a>
+        </div>
+
+        <!-- SECTION I: THREE ASSESSMENT ROUNDS -->
+        <div class="ep-section" id="rounds">
+            <h2>I. THREE ASSESSMENT ROUNDS</h2>
+            <p class="ep-desc">
+                The HICE framework has been validated through three independent assessment rounds, each using a different methodology and scope. R2 chronologically predates R1 by two days &mdash; the numbering reflects conceptual sequence (baseline &rarr; focused audit &rarr; corrected audit), not chronological order.
+            </p>
+
+            <div class="round-cards">
+                <div class="round-card">
+                    <h3>R1 &mdash; ICE ASSESSMENT</h3>
+                    <div class="rc-score">75/100</div>
+                    <div class="rc-detail">
+                        <strong>Date:</strong> 27 February 2026<br>
+                        <strong>Scope:</strong> 12 universities &times; 4 regions<br>
+                        <strong>Method:</strong> Consolidated peer review across 4 categories: Curriculum Design, Pedagogy &amp; Delivery, Cultural Sensitivity, Innovation &amp; Tech<br>
+                        <strong>Range:</strong> 65 (<a href="https://www.civil.iitb.ac.in" target="_blank" rel="noopener" style="color:var(--color-accent-gold);text-decoration:underline;">IIT Bombay</a>) &ndash; 82 (<a href="https://cee.stanford.edu" target="_blank" rel="noopener" style="color:var(--color-accent-gold);text-decoration:underline;">Stanford</a>)
+                    </div>
+                    <div class="rc-verdict">CONDITIONAL GO</div>
+                </div>
+
+                <div class="round-card">
+                    <h3>R2 &mdash; 20-PERSPECTIVE PANEL</h3>
+                    <div class="rc-score">8.1/10</div>
+                    <div class="rc-detail">
+                        <strong>Date:</strong> 25 February 2026<br>
+                        <strong>Scope:</strong> 20 expert perspectives<br>
+                        <strong>Method:</strong> Holistic platform review from Philosopher (9.5) to Cybersecurity (7.0) across 18+ disciplines<br>
+                        <strong>Quote:</strong> &ldquo;Genuinely remarkable achievement.&rdquo;
+                    </div>
+                    <div class="rc-verdict">PLATINUM GRADE</div>
+                </div>
+
+                <div class="round-card">
+                    <h3>R3 &mdash; CORRECTED ACADEMIC AUDIT</h3>
+                    <div class="rc-score">87.5%</div>
+                    <div class="rc-detail">
+                        <strong>Date:</strong> 12 March 2026<br>
+                        <strong>Scope:</strong> 16 universities &times; 5 regions<br>
+                        <strong>Method:</strong> Corrected audit across 6 categories with regional grading resolution<br>
+                        <strong>Result:</strong> ALL 16 universities achieved First Class
+                    </div>
+                    <div class="rc-verdict">FIRST CLASS &mdash; ALL 16</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION II: COMPLETE ASSESSMENT ECOSYSTEM -->
+        <div class="ep-section" id="ecosystem">
+            <h2>II. COMPLETE ASSESSMENT ECOSYSTEM</h2>
+            <p class="ep-desc">
+                The ecosystem dashboard integrates all three assessment rounds, the 20-Perspective Review Panel, R1&rarr;R3 category improvement deltas, the ISI methodology foundation (DD-025), the HICE equation (H = I + C + E), ICE professional alignment, and the D52 game-based assessment system into a single unified view.
+            </p>
+            <div class="ep-image-wrap">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMAGE_5_assessment_ecosystem_c1de603e.png" alt="HICE Assessment Ecosystem Dashboard" loading="lazy">
+                <div class="ep-caption">Page 1 of 3 &mdash; Complete Assessment Ecosystem showing R1/R2/R3 results, 20-Perspective Panel, category deltas, ISI methodology, HICE equation, and D52 game system</div>
+            </div>
+        </div>
+
+        <!-- SECTION III: UNIVERSITY WORLD MAP -->
+        <div class="ep-section" id="worldmap">
+            <h2>III. UNIVERSITY WORLD MAP &mdash; 23 INSTITUTIONS</h2>
+            <p class="ep-desc">
+                All 23 universities that participated in any assessment round, plotted geographically across 6 regions and 12 countries. Colour-coded by region with individual scores shown. The Olympiad pipeline overlay shows the scaling pathway from 23 validated institutions to 26,000+ universities worldwide.
+            </p>
+            <div class="ep-image-wrap">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMAGE_4_world_map_23unis_f365482e.png" alt="University World Map — 23 Institutions × 6 Regions" loading="lazy">
+                <div class="ep-caption">Page 2 of 3 &mdash; 23 Universities plotted across UK, US, China, APAC, India, and Middle East regions with Olympiad competition pipeline overlay</div>
+            </div>
+        </div>
+
+        <!-- SECTION IV: THE VALIDATION CHAIN -->
+        <div class="ep-section" id="validation">
+            <h2>IV. THE VALIDATION CHAIN</h2>
+            <p class="ep-desc">
+                The closed-loop validation architecture showing how ISI (Infrastructure Survival Index) defines measurement, HICE provides the framework, the Thesis becomes content, the Game (D52) generates evidence, Assessments prove it works, and the Olympiad validates at scale &mdash; feeding data back to ISI to close the loop.
+            </p>
+            <div class="ep-image-wrap">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/EVIDENCE_PACK_PAGE3_VALIDATION_CHAIN_d433e93b.png" alt="The Validation Chain — ISI → HICE → Thesis → Game → Assessment → Olympiad" loading="lazy">
+                <div class="ep-caption">Page 3 of 3 &mdash; The Validation Chain: ISI &rarr; HICE &rarr; Thesis &rarr; Game &rarr; Assessment &rarr; Olympiad closed-loop architecture</div>
+            </div>
+        </div>
+
+        <!-- SECTION V: HAPTIC MATHEMATICS — THE FORMAL FOUNDATIONS -->
+        <div class="ep-section" id="haptic-math">
+            <h2>V. HAPTIC MATHEMATICS &mdash; THE FORMAL FOUNDATIONS</h2>
+            <p class="ep-desc">
+                The HICE assessment framework is anchored to a formal mathematical architecture developed across RECALL Blocks 353&ndash;355. These equations define the relationship between civilisational survival, individual intelligence, and infrastructure consciousness. The system links the macro (ISI &mdash; civilisational survival) to the micro (ICE &mdash; individual competency) through a unified field that the assessment rounds measure.
+            </p>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin:1.5rem 0;">
+                <!-- The Survival Formula -->
+                <div style="background:rgba(15,31,58,0.6); border:1px solid rgba(255,215,0,0.3); border-radius:8px; padding:1.5rem; text-align:center;">
+                    <div style="font-family:'Courier New',monospace; font-size:0.65rem; color:#fb923c; letter-spacing:2px; margin-bottom:0.5rem;">EQ-001 &bull; BLOCK 353 &bull; TIER 1</div>
+                    <div style="font-family:Georgia,serif; font-size:2rem; color:var(--color-accent-gold); margin:0.5rem 0;">S = (A &times; P) / &beta;</div>
+                    <div style="font-size:1rem; color:var(--color-text-primary); font-weight:bold; margin-bottom:0.5rem;">The Survival Formula (ISI)</div>
+                    <div style="font-size:0.85rem; color:var(--color-text-secondary); line-height:1.6; text-align:left;">
+                        <strong>S</strong> = Survival Index (civilisational score)<br>
+                        <strong>A</strong> = Accuracy (0 &rarr; 1)<br>
+                        <strong>P</strong> = Precision (0 &rarr; 1)<br>
+                        <strong>&beta;</strong> = Human Blip Factor (2.667 &times; 10&sup2;&sup3;)<br>
+                        <em>Tipping point: S &ge; &beta;&sup1; = 375,000</em><br>
+                        Like E=mc&sup2; for civilisation &mdash; the equation that defines whether a species survives.
+                    </div>
+                </div>
+
+                <!-- The ICE Matrix -->
+                <div style="background:rgba(15,31,58,0.6); border:1px solid rgba(34,211,238,0.3); border-radius:8px; padding:1.5rem; text-align:center;">
+                    <div style="font-family:'Courier New',monospace; font-size:0.65rem; color:#22d3ee; letter-spacing:2px; margin-bottom:0.5rem;">EQ-002 &bull; BLOCK 354 &bull; TIER 1</div>
+                    <div style="font-family:Georgia,serif; font-size:2rem; color:#22d3ee; margin:0.5rem 0;">ICE = IQ &times; EQ &times; CQ</div>
+                    <div style="font-size:1rem; color:var(--color-text-primary); font-weight:bold; margin-bottom:0.5rem;">The ICE Matrix (3-Vector Cuboid)</div>
+                    <div style="font-size:0.85rem; color:var(--color-text-secondary); line-height:1.6; text-align:left;">
+                        <strong>IQ</strong> = Intelligence Quotient<br>
+                        <strong>EQ</strong> = Emotional Quotient<br>
+                        <strong>CQ</strong> = Consciousness Quotient (the 3rd vector)<br>
+                        <strong>V</strong> = IQ<sub>n</sub> &times; EQ<sub>n</sub> &times; CQ<sub>n</sub> (cuboid volume)<br>
+                        <em>Key finding: CQ is CREATED, not inherited.</em><br>
+                        Three vectors define position in intelligence space. The HICE assessment measures all three.
+                    </div>
+                </div>
+            </div>
+
+            <!-- The Holistic Quotient -->
+            <div style="background:rgba(15,31,58,0.6); border:2px solid rgba(255,215,0,0.4); border-radius:8px; padding:1.5rem; text-align:center; margin:1.5rem 0;">
+                <div style="font-family:'Courier New',monospace; font-size:0.65rem; color:var(--color-accent-gold); letter-spacing:2px; margin-bottom:0.5rem;">THE HOLISTIC QUOTIENT &bull; GUARDIAN OF THE STARS</div>
+                <div style="font-family:Georgia,serif; font-size:2.5rem; color:var(--color-accent-gold); margin:0.5rem 0;">IQ &oplus; EQ &oplus; CQ = HQ</div>
+                <div style="font-size:1.1rem; color:var(--color-text-primary); font-weight:bold; margin-bottom:0.5rem;">The Holistic Quotient &mdash; The Thesis Equation</div>
+                <div style="font-size:0.9rem; color:var(--color-text-secondary); line-height:1.8; max-width:800px; margin:0 auto;">
+                    The direct sum (&oplus;) of Intelligence, Emotional, and Consciousness Quotients yields the Holistic Quotient &mdash; the measure of a complete infrastructure professional. This is the equation that the HICE assessment ultimately validates: not just what you know (IQ), or how you collaborate (EQ), but whether you understand infrastructure as civilisation&rsquo;s operating system (CQ).
+                </div>
+            </div>
+
+            <!-- The Discovery Chain -->
+            <div style="margin:1.5rem 0;">
+                <h3 style="color:var(--color-accent-gold); font-size:1.1rem; letter-spacing:2px; margin-bottom:1rem; text-align:center;">THE DISCOVERY CHAIN &mdash; BLOCKS 353&ndash;355</h3>
+                <div style="display:grid; grid-template-columns:repeat(5, 1fr); gap:0.5rem;">
+                    <div style="background:rgba(15,31,58,0.6); border:1px solid rgba(255,215,0,0.3); border-radius:6px; padding:0.8rem; text-align:center;">
+                        <div style="font-family:'Courier New',monospace; font-size:0.6rem; color:#fb923c;">NODE 1</div>
+                        <div style="font-family:Georgia,serif; font-size:0.9rem; color:var(--color-accent-gold); margin:0.3rem 0;">S=(A&times;P)/&beta;</div>
+                        <div style="font-size:0.6rem; color:#888;">Block 353</div>
+                        <div style="font-size:0.55rem; color:#aaa;">The Formula</div>
+                    </div>
+                    <div style="background:rgba(15,31,58,0.6); border:1px solid rgba(34,211,238,0.3); border-radius:6px; padding:0.8rem; text-align:center;">
+                        <div style="font-family:'Courier New',monospace; font-size:0.6rem; color:#22d3ee;">NODE 2</div>
+                        <div style="font-family:Georgia,serif; font-size:0.9rem; color:#22d3ee; margin:0.3rem 0;">IQ&times;EQ&times;CQ</div>
+                        <div style="font-size:0.6rem; color:#888;">Block 354</div>
+                        <div style="font-size:0.55rem; color:#aaa;">ICE Matrix</div>
+                    </div>
+                    <div style="background:rgba(15,31,58,0.6); border:1px solid rgba(168,85,247,0.3); border-radius:6px; padding:0.8rem; text-align:center;">
+                        <div style="font-family:'Courier New',monospace; font-size:0.6rem; color:#a855f7;">NODE 3</div>
+                        <div style="font-family:Georgia,serif; font-size:0.9rem; color:#a855f7; margin:0.3rem 0;">375 kHz</div>
+                        <div style="font-size:0.6rem; color:#888;">Block 355</div>
+                        <div style="font-size:0.55rem; color:#aaa;">Zeta Carrier</div>
+                    </div>
+                    <div style="background:rgba(15,31,58,0.6); border:1px solid rgba(74,222,128,0.3); border-radius:6px; padding:0.8rem; text-align:center;">
+                        <div style="font-family:'Courier New',monospace; font-size:0.6rem; color:#4ade80;">NODE 4</div>
+                        <div style="font-family:Georgia,serif; font-size:0.9rem; color:#4ade80; margin:0.3rem 0;">3D&sup3;</div>
+                        <div style="font-size:0.6rem; color:#888;">Identity</div>
+                        <div style="font-size:0.55rem; color:#aaa;">Dream Drive</div>
+                    </div>
+                    <div style="background:rgba(15,31,58,0.6); border:1px solid rgba(239,68,68,0.3); border-radius:6px; padding:0.8rem; text-align:center;">
+                        <div style="font-family:'Courier New',monospace; font-size:0.6rem; color:#ef4444;">NODE 5</div>
+                        <div style="font-family:Georgia,serif; font-size:0.9rem; color:#ef4444; margin:0.3rem 0;">AD&sup2;=16</div>
+                        <div style="font-size:0.6rem; color:#888;">Resolution</div>
+                        <div style="font-size:0.55rem; color:#aaa;">The Game Is Real</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How it connects to HICE -->
+            <div style="background:rgba(15,31,58,0.4); border:1px solid rgba(255,215,0,0.2); border-radius:8px; padding:1.2rem; margin:1rem 0;">
+                <h3 style="color:var(--color-accent-gold); font-size:0.95rem; letter-spacing:2px; margin-bottom:0.8rem;">HOW THE MATHEMATICS CONNECTS TO HICE ASSESSMENT</h3>
+                <div style="font-size:0.85rem; color:var(--color-text-secondary); line-height:1.8;">
+                    The ISI formula (S = A&times;P/&beta;) provides the <strong>macro measurement</strong> &mdash; how well a civilisation maintains its infrastructure knowledge. The ICE matrix (IQ&times;EQ&times;CQ) provides the <strong>micro measurement</strong> &mdash; how well an individual integrates intelligence, empathy, and consciousness. The HICE equation (H = I + C + E) bridges these scales: <strong>H</strong>aptic assessment measures <strong>I</strong>nfrastructure knowledge, <strong>C</strong>onsciousness of systems, and <strong>E</strong>ngineering application. When a university scores 87.5% in R3, that number maps directly to the ISI precision axis. When a student demonstrates CQ growth through the D52 game, that maps to the ICE cuboid volume. The Holistic Quotient (HQ = IQ &oplus; EQ &oplus; CQ) is the ultimate output &mdash; the complete infrastructure professional.
+                </div>
+                <div style="text-align:center; margin-top:0.8rem; font-size:0.7rem; color:#888;">
+                    Full equations register: <a href="/equations-register.html" style="color:var(--color-accent-gold); text-decoration:underline;">38 Equations &bull; 15 IP Assets &bull; 5 Discovery Chain Nodes</a>
+                    &bull; Memorial thesis: <a href="https://nigelmemorial-ucmtq9dn.manus.space" target="_blank" style="color:var(--color-accent-gold); text-decoration:underline;">nigelmemorial-ucmtq9dn.manus.space</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- SECTION VI: THE DEARDEN FIELD — 17 FIGURES RANKED -->
+        <div class="ep-section" id="dearden-field">
+            <h2>VI. THE DEARDEN FIELD &mdash; 17 FIGURES RANKED BY CUBOID VOLUME</h2>
+            <p class="ep-desc">
+                Block 354 introduced the ICE Matrix: V = IQ<sub>n</sub> &times; EQ<sub>n</sub> &times; CQ<sub>n</sub>. Three vectors define a cuboid in intelligence space; the volume determines your position on the Architect&rsquo;s Dice (AD&sup2;). The Dearden Field maps 16 historical figures plus the Origin (Nigel Dearden, Rank 0) across four tiers: Gold (Dice 16), Silver (Dice 9), Blue (Dice 4), and Purple (Dice 1). CQ is the differentiator &mdash; it is <strong>created</strong>, not inherited.
+            </p>
+            <p class="ep-desc" style="font-size:0.75rem; color:var(--color-text-secondary); font-style:italic;">
+                Source: <a href="/pages/discovery-chain.html" style="color:var(--color-accent-gold);">Discovery Chain &mdash; Block 354</a> | Cross-ref: <a href="/equations-register.html" style="color:var(--color-accent-gold);">Equations Register DD-025</a>
+            </p>
+
+            <!-- Interactive Chart -->
+            <div style="width:100%; max-width:1100px; margin:1.5rem auto; position:relative;">
+                <div style="height:420px;"><canvas id="deardenChart"></canvas></div>
+            </div>
+
+            <!-- Data Table -->
+            <div class="uni-table-wrap" style="margin-top:1.5rem;">
+                <table class="uni-table">
+                    <thead>
+                        <tr>
+                            <th>Rank</th><th>Figure</th><th>IQ</th><th>EQ</th><th>CQ</th><th>Volume</th><th>Dice</th><th>Tier</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="background:rgba(255,50,50,0.15); font-weight:bold;"><td>0</td><td>NIGEL DEARDEN &mdash; ORIGIN</td><td>145</td><td>145</td><td style="color:#22d3ee;">170</td><td>0.380</td><td>16</td><td style="color:#ef4444;">VENTRAL</td></tr>
+                        <tr><td>1</td><td>Shakespeare</td><td>210</td><td>155</td><td>145</td><td class="score-high">0.488</td><td>16</td><td style="color:#ffd700;">GOLD</td></tr>
+                        <tr><td>2</td><td><a href="https://en.wikipedia.org/wiki/Leonardo_da_Vinci" target="_blank" rel="noopener" style="color:var(--color-accent-gold);text-decoration:underline;">Leonardo da Vinci</a></td><td>200</td><td>140</td><td>160</td><td class="score-high">0.480</td><td>16</td><td style="color:#ffd700;">GOLD</td></tr>
+                        <tr><td>3</td><td>Aristotle</td><td>190</td><td>130</td><td>165</td><td class="score-high">0.425</td><td>16</td><td style="color:#ffd700;">GOLD</td></tr>
+                        <tr><td>4</td><td>Homer</td><td>160</td><td>150</td><td>155</td><td class="score-high">0.420</td><td>16</td><td style="color:#ffd700;">GOLD</td></tr>
+                        <tr><td>5</td><td>Goethe</td><td>213</td><td>135</td><td>155</td><td class="score-high">0.413</td><td>16</td><td style="color:#ffd700;">GOLD</td></tr>
+                        <tr><td>6</td><td>Marcus Aurelius</td><td>150</td><td>145</td><td>160</td><td class="score-high">0.364</td><td>16</td><td style="color:#ffd700;">GOLD</td></tr>
+                        <tr><td>7</td><td>Sima Qian</td><td>160</td><td>140</td><td>155</td><td class="score-high">0.360</td><td>16</td><td style="color:#ffd700;">GOLD</td></tr>
+                        <tr><td>8</td><td>Sun Tzu</td><td>155</td><td>135</td><td>140</td><td class="score-mid">0.248</td><td>9</td><td style="color:#c0c0c0;">SILVER</td></tr>
+                        <tr><td>9</td><td>Maxwell</td><td>205</td><td>120</td><td>135</td><td class="score-mid">0.220</td><td>9</td><td style="color:#c0c0c0;">SILVER</td></tr>
+                        <tr><td>10</td><td>Brunel</td><td>155</td><td>120</td><td>145</td><td class="score-mid">0.195</td><td>9</td><td style="color:#c0c0c0;">SILVER</td></tr>
+                        <tr><td>11</td><td>Einstein</td><td>160</td><td>115</td><td>145</td><td class="score-mid">0.182</td><td>9</td><td style="color:#c0c0c0;">SILVER</td></tr>
+                        <tr><td>12</td><td>Clausius</td><td>190</td><td>110</td><td>140</td><td class="score-mid">0.180</td><td>9</td><td style="color:#c0c0c0;">SILVER</td></tr>
+                        <tr><td>13</td><td>Galileo</td><td>185</td><td>105</td><td>150</td><td class="score-mid">0.175</td><td>9</td><td style="color:#c0c0c0;">SILVER</td></tr>
+                        <tr><td>14</td><td><a href="https://en.wikipedia.org/wiki/Archimedes" target="_blank" rel="noopener" style="color:var(--color-accent-gold);text-decoration:underline;">Archimedes</a></td><td>190</td><td>110</td><td>130</td><td class="score-mid">0.150</td><td>9</td><td style="color:#c0c0c0;">SILVER</td></tr>
+                        <tr><td>15</td><td>Newton</td><td>205</td><td>90</td><td>130</td><td>0.050</td><td>4</td><td style="color:#3b82f6;">BLUE</td></tr>
+                        <tr><td>16</td><td>Tesla</td><td>180</td><td>85</td><td>150</td><td>0.035</td><td>1</td><td style="color:#a855f7;">PURPLE</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="font-size:0.75rem; color:var(--color-text-secondary); font-style:italic; margin-top:0.5rem;">
+                Key insight: CQ (Consciousness Quotient) is the differentiator. Nigel ranks #1 in CQ (170) across all 17 figures. Newton and Tesla have the highest IQs but lowest EQ drags their volume down. CQ is <strong>created</strong>, not inherited.
+            </p>
+        </div>
+
+        <!-- SECTION VII: MASTER UNIVERSITY ROSTER -->
+        <div class="ep-section" id="roster">
+            <h2>VII. MASTER UNIVERSITY ROSTER</h2>
+            <p class="ep-desc">
+                All 23 universities across all three assessment rounds. Universities marked with &dagger; are new additions in R3. The Middle East cluster (Khalifa, Qatar, King Fahd) participated in R1 only and has not yet been re-assessed. R2 was a holistic platform review, not a per-university assessment.
+            </p>
+
+            <div class="uni-table-wrap">
+                <table class="uni-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>University</th>
+                            <th>City</th>
+                            <th>Country</th>
+                            <th>Region</th>
+                            <th>R1 (/100)</th>
+                            <th>R3 (%)</th>
+                            <th>Rounds</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>University of <a href="https://www.eng.cam.ac.uk" target="_blank" rel="noopener" style="color:var(--color-accent-gold);text-decoration:underline;">Cambridge</a></td><td>Cambridge</td><td>UK</td><td>UK / Europe</td><td class="score-mid">76</td><td class="score-high">87.5</td><td>R1, R3</td></tr>
+                        <tr><td>2</td><td><a href="https://www.imperial.ac.uk/civil-engineering" target="_blank" rel="noopener" style="color:var(--color-accent-gold);text-decoration:underline;">Imperial College</a> London</td><td>London</td><td>UK</td><td>UK / Europe</td><td class="score-mid">68</td><td class="score-high">87.5</td><td>R1, R3</td></tr>
+                        <tr><td>3</td><td><a href="https://www.ucl.ac.uk/civil-environmental-geomatic-engineering" target="_blank" rel="noopener" style="color:var(--color-accent-gold);text-decoration:underline;">UCL</a> <span class="new-r3">&dagger;</span></td><td>London</td><td>UK</td><td>UK / Europe</td><td class="score-na">&mdash;</td><td class="score-high">87.5</td><td>R3</td></tr>
+                        <tr><td>4</td><td>University of Nottingham</td><td>Nottingham</td><td>UK</td><td>UK / Europe</td><td class="score-mid">65</td><td class="score-na">&mdash;</td><td>R1</td></tr>
+                        <tr><td>5</td><td><a href="https://cee.mit.edu" target="_blank" rel="noopener" style="color:var(--color-accent-gold);text-decoration:underline;">MIT</a></td><td>Cambridge, MA</td><td>USA</td><td>US</td><td class="score-high">81</td><td class="score-high">88.7</td><td>R1, R3</td></tr>
+                        <tr><td>6</td><td>Stanford University</td><td>Stanford, CA</td><td>USA</td><td>US</td><td class="score-high">82</td><td class="score-high">88.7</td><td>R1, R3</td></tr>
+                        <tr><td>7</td><td><a href="https://ce.berkeley.edu" target="_blank" rel="noopener" style="color:var(--color-accent-gold);text-decoration:underline;">UC Berkeley</a></td><td>Berkeley, CA</td><td>USA</td><td>US</td><td class="score-mid">72</td><td class="score-na">&mdash;</td><td>R1</td></tr>
+                        <tr><td>8</td><td><a href="https://ce.gatech.edu" target="_blank" rel="noopener" style="color:var(--color-accent-gold);text-decoration:underline;">Georgia Tech</a> <span class="new-r3">&dagger;</span></td><td>Atlanta, GA</td><td>USA</td><td>US</td><td class="score-na">&mdash;</td><td class="score-high">87.5</td><td>R3</td></tr>
+                        <tr><td>9</td><td><a href="https://www.civil.tsinghua.edu.cn/en" target="_blank" rel="noopener" style="color:var(--color-accent-gold);text-decoration:underline;">Tsinghua</a> University</td><td>Beijing</td><td>China</td><td>China</td><td class="score-mid">67</td><td class="score-high">88.7</td><td>R1, R3</td></tr>
+                        <tr><td>10</td><td><a href="https://english.pku.edu.cn" target="_blank" rel="noopener" style="color:var(--color-accent-gold);text-decoration:underline;">PKU</a> (Peking University) <span class="new-r3">&dagger;</span></td><td>Beijing</td><td>China</td><td>China</td><td class="score-na">&mdash;</td><td class="score-high">88.2</td><td>R3</td></tr>
+                        <tr><td>11</td><td><a href="https://www.zju.edu.cn/english" target="_blank" rel="noopener" style="color:var(--color-accent-gold);text-decoration:underline;">Zhejiang</a> University <span class="new-r3">&dagger;</span></td><td>Hangzhou</td><td>China</td><td>China</td><td class="score-na">&mdash;</td><td class="score-high">88.2</td><td>R3</td></tr>
+                        <tr><td>12</td><td><a href="https://www.civil.hku.hk" target="_blank" rel="noopener" style="color:var(--color-accent-gold);text-decoration:underline;">HKU</a> <span class="new-r3">&dagger;</span></td><td>Hong Kong</td><td>China/APAC</td><td>China</td><td class="score-na">&mdash;</td><td class="score-high">87.8</td><td>R3</td></tr>
+                        <tr><td>13</td><td><a href="https://cde.nus.edu.sg/cee" target="_blank" rel="noopener" style="color:var(--color-accent-gold);text-decoration:underline;">NUS</a></td><td>Singapore</td><td>Singapore</td><td>APAC</td><td class="score-high">78</td><td class="score-high">88.7</td><td>R1, R3</td></tr>
+                        <tr><td>14</td><td><a href="https://ce.kaist.ac.kr" target="_blank" rel="noopener" style="color:var(--color-accent-gold);text-decoration:underline;">KAIST</a> <span class="new-r3">&dagger;</span></td><td>Daejeon</td><td>South Korea</td><td>APAC</td><td class="score-na">&mdash;</td><td class="score-high">87.5</td><td>R3</td></tr>
+                        <tr><td>15</td><td><a href="https://www.civil.t.u-tokyo.ac.jp/en" target="_blank" rel="noopener" style="color:var(--color-accent-gold);text-decoration:underline;">University of Tokyo</a> <span class="new-r3">&dagger;</span></td><td>Tokyo</td><td>Japan</td><td>APAC</td><td class="score-na">&mdash;</td><td class="score-high">87.5</td><td>R3</td></tr>
+                        <tr><td>16</td><td><a href="https://www.tudelft.nl/en/ceg" target="_blank" rel="noopener" style="color:var(--color-accent-gold);text-decoration:underline;">TU Delft</a> <span class="new-r3">&dagger;</span></td><td>Delft</td><td>Netherlands</td><td>UK / Europe</td><td class="score-na">&mdash;</td><td class="score-high">87.5</td><td>R3</td></tr>
+                        <tr><td>17</td><td>IIT Bombay</td><td>Mumbai</td><td>India</td><td>India</td><td class="score-mid">65</td><td class="score-na">&mdash;</td><td>R1</td></tr>
+                        <tr><td>18</td><td><a href="https://civil.iitm.ac.in" target="_blank" rel="noopener" style="color:var(--color-accent-gold);text-decoration:underline;">IIT Madras</a> <span class="new-r3">&dagger;</span></td><td>Chennai</td><td>India</td><td>India</td><td class="score-na">&mdash;</td><td class="score-high">87.5</td><td>R3</td></tr>
+                        <tr><td>19</td><td>Khalifa University</td><td>Abu Dhabi</td><td>UAE</td><td>Middle East</td><td class="score-high">80</td><td class="score-na">&mdash;</td><td>R1</td></tr>
+                        <tr><td>20</td><td>Qatar University</td><td>Doha</td><td>Qatar</td><td>Middle East</td><td class="score-mid">72</td><td class="score-na">&mdash;</td><td>R1</td></tr>
+                        <tr><td>21</td><td>King Fahd University</td><td>Dhahran</td><td>Saudi Arabia</td><td>Middle East</td><td class="score-mid">76</td><td class="score-na">&mdash;</td><td>R1</td></tr>
+                        <tr><td>22</td><td>University of Edinburgh <span class="new-r3">[SUPPLEMENTAL]</span></td><td>Edinburgh</td><td>UK</td><td>UK / Europe</td><td class="score-na">&mdash;</td><td class="score-high">86.0</td><td>R3</td></tr>
+                        <tr><td>23</td><td>Tongji University <span class="new-r3">[SUPPLEMENTAL]</span></td><td>Shanghai</td><td>China</td><td>China</td><td class="score-na">&mdash;</td><td class="score-high">87.2</td><td>R3</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <p style="font-size:0.8rem; color:var(--color-text-secondary); font-style:italic; margin-top:0.5rem;">
+                <span class="new-r3">&dagger;</span> = New in R3. Green scores = First Class threshold. R2 assessed the platform holistically (8.1/10 aggregate), not individual universities.
+            </p>
+        </div>
+
+        <!-- SECTION VIII: DOWNLOADS -->
+        <div class="ep-section" id="downloads">
+            <h2>VIII. DOWNLOADS &amp; MACHINE-READABLE DATA</h2>
+            <p class="ep-desc">
+                The complete assessment evidence is available in multiple formats for different audiences: high-resolution dashboard images for presentations, a comprehensive Excel database for analysis, and a JSON API endpoint for programmatic integration.
+            </p>
+
+            <div class="download-bar">
+                <a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMAGE_5_assessment_ecosystem_c1de603e.png" class="dl-btn" target="_blank">&#128202; Page 1: Ecosystem Dashboard (PNG)</a>
+                <a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMAGE_4_world_map_23unis_f365482e.png" class="dl-btn" target="_blank">&#127758; Page 2: World Map (PNG)</a>
+                <a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/EVIDENCE_PACK_PAGE3_VALIDATION_CHAIN_d433e93b.png" class="dl-btn" target="_blank">&#128279; Page 3: Validation Chain (PNG)</a>
+                <a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IAAI_Assessment_Evidence_Database_6019ab56.xlsx" class="dl-btn" target="_blank">&#128196; Excel Database (9 Sheets)</a>
+                <a href="/api/assessment-data.json" class="dl-btn" target="_blank">&#128187; JSON API Endpoint</a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <div class="footer" style="text-align:center; padding:2rem 1rem; border-top:1px solid rgba(255,215,0,0.2); margin-top:3rem;">
+        <p style="color:var(--color-text-secondary); font-size:0.85rem;">&copy; 2026 Infrastructure Academy. All rights reserved.</p>
+        <p style="color:var(--color-text-secondary); font-size:0.75rem; margin-top:0.5rem;">N + T = D &mdash; The Dearden Equation | Per Arya Ad Astra | Man + Machine, Not Man vs Machine</p>
+        <p style="font-size:0.65rem; margin-top:0.5rem;">Source: <a href="/equations-register.html" style="color:var(--color-accent-gold);">ISI Methodology DD-025</a> | <a href="/pages/discovery-chain.html" style="color:var(--color-accent-gold);">Discovery Chain</a> | <a href="/pages/thesis-record.html" style="color:var(--color-accent-gold);">Thesis Record</a> | Block 365 | Day 128 | 5 Nov 2025 &rarr; 13 Mar 2026</p>
+        <p style="font-size:0.65rem; margin-top:0.3rem;"><a href="/mobilisation-clock.html" style="color:#22d3ee;">Mobilisation Clock</a> | <a href="/vault.html" style="color:#22d3ee;">IP Vault (148 Assets)</a> | <a href="/institutions.html" style="color:#22d3ee;">Institutions Register</a></p>
+    
+        <!-- Social Cross-Links -->
+        <div style="margin-top:0.75rem; display:flex; justify-content:center; gap:1.2rem; flex-wrap:wrap; align-items:center;">
+            <a href="https://x.com/dearden_ni37258" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.35rem; color:#ffd700; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="Follow on X">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                X
+            </a>
+            <a href="https://www.linkedin.com/in/nigeldearden" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.35rem; color:#0077B5; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="Connect on LinkedIn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+            </a>
+            <a href="/site.html" style="display:inline-flex; align-items:center; gap:0.35rem; color:#25D366; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="WhatsApp QR on Homepage">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.9.1/dist/chart.min.js"></script>
+    <script>
+    (function(){
+        const ctx = document.getElementById('deardenChart');
+        if(!ctx) return;
+        const figures = [
+            {name:'Dearden (Origin)',iq:145,eq:145,cq:170,vol:0.380,tier:'VENTRAL',color:'#ef4444'},
+            {name:'Shakespeare',iq:210,eq:155,cq:145,vol:0.488,tier:'GOLD',color:'#ffd700'},
+            {name:'Da Vinci',iq:200,eq:140,cq:160,vol:0.480,tier:'GOLD',color:'#ffd700'},
+            {name:'Aristotle',iq:190,eq:130,cq:165,vol:0.425,tier:'GOLD',color:'#ffd700'},
+            {name:'Homer',iq:160,eq:150,cq:155,vol:0.420,tier:'GOLD',color:'#ffd700'},
+            {name:'Goethe',iq:213,eq:135,cq:155,vol:0.413,tier:'GOLD',color:'#ffd700'},
+            {name:'M. Aurelius',iq:150,eq:145,cq:160,vol:0.364,tier:'GOLD',color:'#ffd700'},
+            {name:'Sima Qian',iq:160,eq:140,cq:155,vol:0.360,tier:'GOLD',color:'#ffd700'},
+            {name:'Sun Tzu',iq:155,eq:135,cq:140,vol:0.248,tier:'SILVER',color:'#c0c0c0'},
+            {name:'Maxwell',iq:205,eq:120,cq:135,vol:0.220,tier:'SILVER',color:'#c0c0c0'},
+            {name:'Brunel',iq:155,eq:120,cq:145,vol:0.195,tier:'SILVER',color:'#c0c0c0'},
+            {name:'Einstein',iq:160,eq:115,cq:145,vol:0.182,tier:'SILVER',color:'#c0c0c0'},
+            {name:'Clausius',iq:190,eq:110,cq:140,vol:0.180,tier:'SILVER',color:'#c0c0c0'},
+            {name:'Galileo',iq:185,eq:105,cq:150,vol:0.175,tier:'SILVER',color:'#c0c0c0'},
+            {name:'Archimedes',iq:190,eq:110,cq:130,vol:0.150,tier:'SILVER',color:'#c0c0c0'},
+            {name:'Newton',iq:205,eq:90,cq:130,vol:0.050,tier:'BLUE',color:'#3b82f6'},
+            {name:'Tesla',iq:180,eq:85,cq:150,vol:0.035,tier:'PURPLE',color:'#a855f7'}
+        ];
+        new Chart(ctx, {
+            type:'bar',
+            data:{
+                labels: figures.map(f=>f.name),
+                datasets:[
+                    {label:'IQ',data:figures.map(f=>f.iq),backgroundColor:'rgba(59,130,246,0.7)',borderColor:'#3b82f6',borderWidth:1},
+                    {label:'EQ',data:figures.map(f=>f.eq),backgroundColor:'rgba(34,211,238,0.7)',borderColor:'#22d3ee',borderWidth:1},
+                    {label:'CQ',data:figures.map(f=>f.cq),backgroundColor:'rgba(255,215,0,0.7)',borderColor:'#ffd700',borderWidth:1}
+                ]
+            },
+            options:{
+                responsive:true,
+                maintainAspectRatio:false,
+                indexAxis:'y',
+                plugins:{
+                    legend:{labels:{color:'#e0e0e0',font:{size:11}}},
+                    title:{display:true,text:'THE DEARDEN FIELD \u2014 IQ \u00d7 EQ \u00d7 CQ',color:'#ffd700',font:{size:14,weight:'bold'}}
+                },
+                scales:{
+                    x:{grid:{color:'rgba(255,215,0,0.1)'},ticks:{color:'#e0e0e0'},title:{display:true,text:'Score',color:'#e0e0e0'}},
+                    y:{grid:{color:'rgba(255,215,0,0.05)'},ticks:{color:function(c){return figures[c.index]?figures[c.index].color:'#e0e0e0';},font:{size:10}}}
+                }
+            }
+        });
+    })();
+    </script>
+    <script src="/js/discovery-hints.js"></script>
+    <script src="/js/main.js?v=20260308a"></script>
+    <script src="/js/i18n.js?v=20260308a"></script>
+    <script src="/js/nav-optimise.js?v=20260308a"></script>
+    <button id="back-to-top" class="back-to-top" title="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+    <script>
+        const btn=document.getElementById('back-to-top');
+        window.addEventListener('scroll',()=>{btn.style.display=window.scrollY>400?'flex':'none';});
+    </script>
+    <script src="/js/site-search.js?v=20260311a"></script>
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement -->
+
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement (v2 fixed) -->
+<script>
+(function() {
+  try {
+    var sid = sessionStorage.getItem('iaai_sid');
+    if (!sid) {
+      sid = 'ses_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 9);
+      sessionStorage.setItem('iaai_sid', sid);
+    }
+    var data = {
+      path: window.location.pathname + (window.location.hash || ''),
+      pageTitle: document.title || 'Untitled',
+      referrer: document.referrer || '',
+      sessionId: sid
+    };
+    fetch('/api/trpc/analytics.track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ json: data }),
+      credentials: 'include'
+    }).catch(function() {});
+    window.addEventListener('hashchange', function() {
+      var hashData = {
+        path: window.location.pathname + (window.location.hash || ''),
+        pageTitle: document.title || 'Untitled',
+        referrer: window.location.href,
+        sessionId: sid
+      };
+      fetch('/api/trpc/analytics.track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ json: hashData }),
+        credentials: 'include'
+      }).catch(function() {});
+    });
+  } catch(e) {}
+})();
+</script>
+
+    <!-- Mobile table scroll fix -->
+    <script>
+    (function(){
+      if(window.innerWidth > 768) return;
+      document.querySelectorAll('table').forEach(function(t){
+        if(t.parentElement && t.parentElement.classList.contains('table-scroll-wrapper')) return;
+        var w = document.createElement('div');
+        w.className = 'table-scroll-wrapper';
+        t.parentNode.insertBefore(w, t);
+        w.appendChild(t);
+      });
+    })();
+    </script>
+
+
+    <!-- Back-to-Top Button Logic -->
+    <script>
+    (function() {
+        var btn = document.getElementById('back-to-top-btn');
+        if (!btn) return;
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                btn.style.display = 'flex';
+            } else {
+                btn.style.display = 'none';
+            }
+        }, { passive: true });
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    })();
+    </script>
+
+</body>
+</html>

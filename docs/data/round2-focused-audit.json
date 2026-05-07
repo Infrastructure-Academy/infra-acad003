@@ -1,0 +1,304 @@
+{
+  "results": [
+    {
+      "input": "Reviewer 1: Imperial College London — Professor of Civil Engineering. Your department is world-ranked #1 for civil engineering. You expect rigorous technical standards, robust assessment frameworks, and evidence of global applicability. Your Round 1 overall score was 91%.",
+      "output": {
+        "reviewer_name": "Imperial College London — Prof. of Civil Engineering",
+        "tech_infra_score": 80,
+        "tech_infra_strengths": "Platform Reliability: The platform is generally reliable, with most pages loading quickly and without errors.;Navigation Consistency: The main navigation bar is consistent across the pages that loaded correctly.;Gamification Engine: The gamification elements, such as the mobilization clock and the Olympiad leaderboard, are visually engaging and appear to be functional, though a deeper technical audit would be required to assess the engine's quality.",
+        "tech_infra_weaknesses": "Broken Links: Critical pages, including \"game.html\" and \"resources.html\", are returning 404 \"Page Not Found\" errors. This severely hinders the user experience and prevents access to core platform features.;Bilingual Switching: The language switching functionality is inconsistent and unreliable. The platform defaulted to Korean and failed to switch to English on the first attempt.;Mobile Responsiveness: While not exhaustively tested, the complex layouts and large images may not translate well to smaller screens, potentially creating a poor user experience on mobile devices.",
+        "tech_infra_recommendations": "Fix Broken Links: Immediately address the 404 errors on the \"game.html\" and \"resources.html\" pages. A full site audit should be conducted to identify and fix any other broken links.;Improve Language Switching: The language switching mechanism needs to be robust and reliable. It should default to the user's browser language or provide a clear and functional language selector.;Conduct Mobile Testing: A thorough mobile responsiveness test should be conducted across a range of devices and screen sizes. The layout and content should be optimized for a seamless mobile experience.",
+        "assessment_score": 70,
+        "assessment_strengths": "Transparent Scoring: The \"Infrastructure Olympiad\" page displays a clear scoring system for different categories, which suggests a degree of transparency in the assessment.;Structured Progression: The different player tiers (\"Pioneers,\" \"Ambassadors,\" \"Scholars\") on the \"Mobilisation Clock\" page suggest a structured progression system for users.;Contextual Depth: The \"Masters\" page, with its list of historical figures, has the potential to be integrated into the assessment framework to provide context and depth.",
+        "assessment_weaknesses": "Inaccessible Game: The broken \"game.html\" page makes it impossible to assess the core of the assessment framework, including the XP/points system, 4-mode differentiation, and evidence-gathering.;Lack of Detail: There is no clear information on how CPD/ICE attributes are supported or how compliance gates are calibrated.;Fragmented Information: The information about the assessment framework is scattered across different pages, lacking a single, comprehensive explanation.",
+        "assessment_recommendations": "Prioritize Game Functionality: The \"game.html\" page must be fixed to allow for a proper evaluation of the assessment framework.;Create a Centralized \"Assessment Framework\" Page: A dedicated page should be created to clearly and comprehensively explain the entire assessment system.;Integrate \"Masters\" as Adjudicators: The historical figures on the \"Masters\" page could be used as virtual mentors or adjudicators within the game to provide feedback and assess player progress.",
+        "scalability_score": 85,
+        "scalability_strengths": "8-Language-Block Strategy: The platform's commitment to an 8-language-block strategy is a significant strength, demonstrating a clear understanding of the need for multilingual support to achieve global reach.;Cultural Adaptability: The \"Infrastructure Olympiad\" page, with its country-specific \"Infrastructure Story\" and the inclusion of culturally relevant details, shows an awareness of the importance of cultural adaptability.;Olympiad Competitive Scaling: The \"Infrastructure Olympiad\" concept is a powerful tool for competitive scaling. The leaderboard and national rankings can drive engagement and encourage wider participation.",
+        "scalability_weaknesses": "Monetization Pathway Realism: The monetization pathways are not clearly defined. While there are \"Sponsor a Team\" and \"Go Pro\" options, the value proposition for these is not well-articulated.;Infrastructure Bottlenecks at Scale: The platform's reliance on a centralized server infrastructure could create bottlenecks as the user base grows. A more distributed architecture may be necessary to ensure a smooth experience for a global audience.;Community Management at Scale: The platform's success will depend on its ability to manage a large and diverse community of users. There is no clear plan for community moderation, support, or engagement at scale.",
+        "scalability_recommendations": "Develop a Clear Monetization Strategy: A detailed and realistic monetization plan should be developed, with clear value propositions for each revenue stream.;Implement a Scalable Infrastructure: The platform should be migrated to a more scalable and distributed infrastructure, such as a cloud-based solution with a global content delivery network (CDN).;Create a Community Management Plan: A comprehensive community management plan should be created, outlining strategies for moderation, support, and engagement. This could include a tiered support system, a community forum, and a program for user-generated content.",
+        "overall_verdict": "Tech: Declined; Assessment: Declined; Scalability: Unchanged"
+      },
+      "error": ""
+    },
+    {
+      "input": "Reviewer 2: MIT — Professor of Civil & Environmental Engineering. Your institution pioneered engineering education. You look for innovation in pedagogy, technical excellence, and scalable learning systems. Your Round 1 overall score was 89%.",
+      "output": {
+        "reviewer_name": "MIT — Professor of Civil & Environmental Engineering",
+        "tech_infra_score": 75,
+        "tech_infra_strengths": "Visually Stunning and Consistent Design;Robust and Reliable Platform;Clear and Consistent Navigation",
+        "tech_infra_weaknesses": "Critical Broken Link;Lack of Mobile Responsiveness;Inconsistent Bilingual Implementation",
+        "tech_infra_recommendations": "Fix the Broken Game Link Immediately;Implement a Responsive Design;Complete and Proofread all Translations",
+        "assessment_score": 80,
+        "assessment_strengths": "Comprehensive and Well-Structured Framework;Clear Differentiation of Learning Modes;Strong Support for Professional Development",
+        "assessment_weaknesses": "Lack of Transparency in XP and Point Allocation;Unclear Compliance Gate Calibration;Limited Evidence-Gathering for Adjudication",
+        "assessment_recommendations": "Provide Detailed Information on XP and Point Allocation;Explain the Compliance Gate Calibration Process;Implement a Robust Evidence-Gathering and Submission System",
+        "scalability_score": 88,
+        "scalability_strengths": "Well-Defined Language Strategy;Culturally Adaptive Content;Innovative and Scalable Competition Model",
+        "scalability_weaknesses": "Unrealistic Monetization Pathway;Potential for Infrastructure Bottlenecks;Over-reliance on Gamification",
+        "scalability_recommendations": "Re-evaluate the Monetization Strategy;Develop a Decentralized Infrastructure;Offer a More Traditional Learning Experience",
+        "overall_verdict": "Tech: Declined; Assessment: Declined; Scalability: Improved"
+      },
+      "error": ""
+    },
+    {
+      "input": "Reviewer 3: ETH Zurich — Professor of Infrastructure Management. Your Swiss institution values precision, systematic thinking, and European engineering standards. Your Round 1 overall score was 88%.",
+      "output": {
+        "reviewer_name": "ETH Zurich — Professor of Infrastructure Management",
+        "tech_infra_score": 65,
+        "tech_infra_strengths": "Visually Appealing Design; Fast Load Times; Clear Navigation on Landing Page",
+        "tech_infra_weaknesses": "Critical Broken Links; Inconsistent Bilingual Support; Lack of Mobile Responsiveness",
+        "tech_infra_recommendations": "Fix all broken links immediately.; Ensure complete and consistent bilingual support across all pages.; Implement a responsive design to ensure that the platform is accessible and usable on all devices, including desktops, tablets, and smartphones.",
+        "assessment_score": 50,
+        "assessment_strengths": "Detailed Mobilisation Clock; Clear Contributor Classes; Comprehensive Masters Section",
+        "assessment_weaknesses": "Lack of Transparency in XP/Points System; Unclear 4-Mode Differentiation; No Information on CPD/ICE Attribute Support",
+        "assessment_recommendations": "Provide a detailed explanation of the XP and points system.; Clearly explain the 4-mode differentiation and how it impacts the gameplay and learning experience.; Integrate CPD/ICE attribute support into the platform and provide clear documentation on how users can track their progress against these attributes.",
+        "scalability_score": 70,
+        "scalability_strengths": "Ambitious 8-Language-Block Strategy; Well-Defined Expansion Model; Detailed Olympiad Framework",
+        "scalability_weaknesses": "Unrealistic Monetisation Pathway; Potential for Infrastructure Bottlenecks; Limited Cultural Adaptability",
+        "scalability_recommendations": "Develop a more realistic and detailed monetisation strategy.; Implement a distributed server architecture to ensure that the platform can handle a large number of concurrent users without performance degradation.; Develop a framework for cultural adaptation that goes beyond simple language translation.",
+        "overall_verdict": "Tech: Declined; Assessment: Declined; Scalability: Declined"
+      },
+      "error": ""
+    },
+    {
+      "input": "Reviewer 4: TU Delft — Professor of Hydraulic Engineering. Your Dutch institution is a leader in water infrastructure and sustainable engineering education. Your Round 1 overall score was 87%.",
+      "output": {
+        "reviewer_name": "TU Delft — Professor of Hydraulic Engineering",
+        "tech_infra_score": 82,
+        "tech_infra_strengths": "The core platform and its main pages are reliable and consistently available.;The bilingual switching functionality is seamless and effective.;The main navigation is consistent across all key pages, providing a good user experience.",
+        "tech_infra_weaknesses": "The 'Resources' link in the main navigation is broken, leading to a 404 error page.;There are some inconsistencies in page loading, with certain pages like 'Masters' failing to load content initially.;The platform's mobile responsiveness has not been fully verified and could be a potential weakness.",
+        "tech_infra_recommendations": "Immediately fix the broken 'Resources' link to ensure all navigation is functional.;Investigate and resolve the intermittent page loading issues to improve platform reliability.;Conduct thorough mobile testing across a range of devices to identify and address any responsiveness problems.",
+        "assessment_score": 83,
+        "assessment_strengths": "The platform clearly outlines a 4-mode differentiation (Player, Pioneer, Ambassador, Scholar), which provides a structured progression for users.;The gamification elements, such as XP and leaderboards, are present and appear to be functional, which can enhance user engagement.;The platform mentions CPD/ICE attribute support, which is a significant strength for professional development.",
+        "assessment_weaknesses": "The transparency of the XP/points system is not immediately clear. It's difficult to understand how points are awarded and what they signify.;The compliance gate calibration is not explained, making it difficult to assess its fairness and effectiveness.;The evidence-gathering mechanism for professor adjudication is not detailed, which is a critical component for academic validation.",
+        "assessment_recommendations": "Create a dedicated page or a clear, accessible guide that explains the XP/points system in detail.;Provide clear documentation on how the compliance gates are calibrated and how they ensure a fair assessment.;Develop and document a robust evidence-gathering system that allows professors to easily review and adjudicate student work.",
+        "scalability_score": 85,
+        "scalability_strengths": "The 8-language-block strategy is a strong foundation for global expansion.;The Infrastructure Olympiad concept is a powerful tool for driving competitive scaling and user engagement.;The platform's vision is culturally inclusive, aiming to reach a broad international audience.",
+        "scalability_weaknesses": "The monetization strategy is not clearly defined, raising questions about its long-term sustainability.;The platform has not yet demonstrated its ability to handle infrastructure bottlenecks at a global scale.;The cultural adaptation strategy appears to be limited to language translation, without addressing deeper cultural nuances.",
+        "scalability_recommendations": "Develop a detailed and transparent monetization plan that outlines revenue streams and pricing models.;Conduct stress tests and simulations to identify and address potential infrastructure bottlenecks.;Create a comprehensive cultural adaptation framework that considers regional learning preferences and content localization.",
+        "overall_verdict": "Tech: Unchanged; Assessment: Unchanged; Scalability: Unchanged"
+      },
+      "error": ""
+    },
+    {
+      "input": "Reviewer 5: Tsinghua University — Professor of Civil Engineering. Your institution is China's premier engineering university. You assess East-West balance, Chinese infrastructure representation, and bilingual quality. Your Round 1 overall score was 86%.",
+      "output": {
+        "reviewer_name": "Tsinghua University — Professor of Civil Engineering",
+        "tech_infra_score": 65,
+        "tech_infra_strengths": "Good initial page load speed;Visually appealing design;Clear top-level navigation structure",
+        "tech_infra_weaknesses": "Critical broken links to core content (game, resources);Language switching redirects to an external site, breaking user flow;Poor mobile responsiveness",
+        "tech_infra_recommendations": "Immediately fix the broken links to `game.html` and `resources.html`;Debug and fix the language switching functionality to ensure it correctly displays the translated content within the same site;Implement a responsive design that adapts to various screen sizes, particularly for mobile devices",
+        "assessment_score": 50,
+        "assessment_strengths": "The concept of a global Olympiad is engaging;The inclusion of historical 'Masters' provides a unique flavor;The platform has a basic structure for team formation",
+        "assessment_weaknesses": "Complete lack of transparency on XP/point system;The '4-mode differentiation' is not explained, and only three modes are mentioned;No evidence of compliance gates or CPD/ICE attribute support",
+        "assessment_recommendations": "Develop and clearly document the XP and points system, explaining how users can earn them;Clarify the '4-mode differentiation' and provide distinct learning paths and assessments for each mode;Integrate a formal CPD/ICE attribute framework, mapping activities and achievements to specific professional competencies",
+        "scalability_score": 75,
+        "scalability_strengths": "Ambitious and well-defined 8-language-block strategy;The 'flywheel' model for the Olympiad is a theoretically sound scaling strategy;Clear monetization pathways through sponsorship tiers",
+        "scalability_weaknesses": "Incomplete language implementation, with several languages not yet active;Over-reliance on a Western-centric historical narrative, with limited deep integration of Chinese and other non-Western infrastructure histories;The current technical infrastructure is not robust enough to support a large, global user base",
+        "scalability_recommendations": "Prioritize the full implementation of the 8-language-block strategy, starting with the languages marked as 'COMING SOON';Enrich the curriculum with more diverse, non-Western case studies and historical examples, particularly from China, to create a more balanced and globally appealing platform;Invest in a more scalable and resilient cloud infrastructure to ensure platform stability and performance as the user base grows",
+        "overall_verdict": "Tech: Declined; Assessment: Unchanged; Scalability: Improved"
+      },
+      "error": ""
+    },
+    {
+      "input": "Reviewer 6: National University of Singapore — Professor of Infrastructure Systems. Your institution bridges Asian and Western engineering traditions. You assess cross-cultural applicability and systems thinking. Your Round 1 overall score was 85%.",
+      "output": {
+        "reviewer_name": "National University of Singapore — Professor of Infrastructure Systems",
+        "tech_infra_score": 75,
+        "tech_infra_strengths": "Platform Reliability: The website is generally fast and responsive, with no major performance issues observed during the audit;Consistent Navigation: The main navigation menu is consistent across the pages, providing a predictable user experience;Bilingual Support: The inclusion of bilingual support is a positive step towards global accessibility.",
+        "tech_infra_weaknesses": "Broken Core Functionality: The link to the main game (`game.html`) is broken, which is a critical failure that prevents access to the core feature of the platform;Inconsistent Language Implementation: The language switching is not consistently applied, with some elements remaining in the original language after switching;Mobile Responsiveness Unverified: The mobile responsiveness of the platform has not been verified and could be a potential issue for users on mobile devices.",
+        "tech_infra_recommendations": "Fix Critical Links: Immediately repair the broken link to `game.html` to restore access to the game;Implement Full Internationalization: Overhaul the language switching to ensure a complete and seamless experience in all supported languages;Conduct Mobile Testing: Perform thorough testing on various mobile devices to ensure a fully responsive and usable experience for all users.",
+        "assessment_score": 80,
+        "assessment_strengths": "Differentiated Tiers: The subscription model is well-structured, with clear differentiation between the free and paid tiers, offering a low barrier to entry;Engaging Gamification: The XP system and the long-term goal of becoming a \"Master Weaver\" are strong motivators for user engagement;Inspirational Content: The inclusion of historical \"Masters\" provides a unique and inspirational context for the learning journey.",
+        "assessment_weaknesses": "Unclear User Journey: The connection between individual player progress and the team-based Olympiad is not clearly explained;Undefined Role of Masters: The role of the \"Masters\" within the assessment framework is not defined, making their contribution to player progression unclear;Lack of Accreditation Details: There is a lack of specific information on how the platform supports CPD/ICE attributes and evidence gathering.",
+        "assessment_recommendations": "Clarify the User Journey: Create a visual guide or a dedicated page to explain the progression from individual learning to the Olympiad competition;Integrate Masters into Assessment: Define a clear role for the \"Masters\" in the assessment, such as unlocking bonus content or providing XP rewards;Provide Accreditation Documentation: Develop clear documentation explaining how the platform aligns with professional accreditation standards like CPD/ICE.",
+        "scalability_score": 82,
+        "scalability_strengths": "Ambitious Vision: The mobilisation clock and the 1-billion-learner target demonstrate a clear and ambitious vision for global scalability;Sustainable Growth Model: The \"Flywheel\" concept presents a powerful and self-sustaining model for long-term growth;Strategic Language Blocks: The 8-language-block strategy provides a solid foundation for reaching a global audience.",
+        "scalability_weaknesses": "Over-reliance on Sponsorship: The monetization model is heavily dependent on corporate and institutional sponsorship, which could pose a sustainability risk;Cultural Adaptation: The platform's approach to cultural adaptation appears to be limited to language translation, with little evidence of deeper cultural customization;Potential for Bottlenecks: The platform's ability to handle a large number of concurrent users and data processing at scale has not been addressed.",
+        "scalability_recommendations": "Diversify Revenue Streams: Explore additional monetization options, such as premium content, certifications, or partnerships with other educational platforms;Develop a Cultural Adaptation Framework: Create a framework for adapting content to different cultural contexts, going beyond simple translation;Conduct Scalability Testing: Perform stress testing and a thorough technical review to identify and address potential scalability bottlenecks in the infrastructure.",
+        "overall_verdict": "Tech: Declined; Assessment: Unchanged; Scalability: Unchanged"
+      },
+      "error": ""
+    },
+    {
+      "input": "Reviewer 7: IIT Bombay — Professor of Civil Engineering. Your institution serves the world's largest developing infrastructure market. You assess relevance to emerging economies and practical applicability. Your Round 1 overall score was 84%.",
+      "output": {
+        "reviewer_name": "IIT Bombay — Professor of Civil Engineering",
+        "tech_infra_score": 80,
+        "tech_infra_strengths": "Generally reliable and loads quickly; Seamless bilingual switching; The platform supports 8 languages",
+        "tech_infra_weaknesses": "Broken 'resources.html' link (404 error); Mobile responsiveness is untested; Gamification engine's underlying quality needs deeper inspection",
+        "tech_infra_recommendations": "Fix the broken 'resources.html' link; Conduct thorough mobile responsiveness testing; Perform a technical audit of the gamification engine",
+        "assessment_score": 70,
+        "assessment_strengths": "The concept of a 24M XP cap is intriguing; The Olympiad leaderboard provides a competitive element; The platform alludes to a 'Master Weaver' level",
+        "assessment_weaknesses": "Lack of transparency in XP and point systems; Unclear differentiation between the four modes of play; No information on compliance gates, CPD/ICE support, or professor adjudication",
+        "assessment_recommendations": "Create a detailed guide explaining the XP and point systems; Clearly define the four modes of play; Provide comprehensive documentation on compliance gates, CPD/ICE support, and the adjudication process",
+        "scalability_score": 90,
+        "scalability_strengths": "Excellent 8-language-block strategy; Good cultural adaptability; Well-designed and scalable Olympiad framework",
+        "scalability_weaknesses": "Potential for server infrastructure bottlenecks at scale; Real-time data on the Mobilisation Clock and the live medal table will require a robust and scalable backend; The platform's reliance on a centralized server infrastructure could become a bottleneck as the user base grows",
+        "scalability_recommendations": "Implement a more scalable and distributed server architecture; Load-test the platform to identify and address potential bottlenecks; Consider using a content delivery network (CDN) to improve global performance",
+        "overall_verdict": "Tech: Unchanged; Assessment: Declined; Scalability: Improved"
+      },
+      "error": ""
+    },
+    {
+      "input": "Reviewer 8: University of Tokyo — Professor of Urban Engineering. Your institution leads in earthquake engineering and urban infrastructure. You assess technical depth and Asian representation. Your Round 1 overall score was 83%.",
+      "output": {
+        "reviewer_name": "University of Tokyo — Professor of Urban Engineering",
+        "tech_infra_score": 75,
+        "tech_infra_strengths": "Platform is generally reliable and performs well;Bilingual switching is a strong feature;Gamification engine seems technically sound",
+        "tech_infra_weaknesses": "Broken links for 'Game' and 'Resources' pages;Inconsistent navigation;Mobile responsiveness could be improved",
+        "tech_infra_recommendations": "Fix all broken links and ensure all pages are accessible;Improve navigation consistency and user experience;Enhance mobile responsiveness for a better experience on all devices",
+        "assessment_score": 80,
+        "assessment_strengths": "Clear concept of XP and points;Good concept of 4-mode differentiation;Potential to support CPD/ICE attributes",
+        "assessment_weaknesses": "XP/points system lacks transparency and fairness;4-mode differentiation is not well-defined;No evidence-gathering mechanism for professor adjudication",
+        "assessment_recommendations": "Improve the transparency and fairness of the XP/points system;Clearly define the 4-mode differentiation and its impact on the user experience;Implement an evidence-gathering mechanism for professor adjudication",
+        "scalability_score": 85,
+        "scalability_strengths": "Solid 8-language-block strategy;Good driver for competitive scaling with the Olympiad concept;Realistic monetisation pathway",
+        "scalability_weaknesses": "Cultural adaptability needs more attention;Potential infrastructure bottlenecks at scale;Monetisation model needs more detail and validation",
+        "scalability_recommendations": "Enhance cultural adaptability by including more diverse content and representation;Develop a robust infrastructure plan to handle scalability;Further develop and validate the monetisation model",
+        "overall_verdict": "Tech: Declined; Assessment: Unchanged; Scalability: Unchanged"
+      },
+      "error": ""
+    },
+    {
+      "input": "Reviewer 9: Khalifa University — Professor of Civil Infrastructure. Your UAE institution focuses on Gulf region infrastructure development. You assess Middle Eastern representation and desert/extreme environment engineering. Your Round 1 overall score was 82%.",
+      "output": {
+        "reviewer_name": "Khalifa University — Professor of Civil Infrastructure",
+        "tech_infra_score": 75,
+        "tech_infra_strengths": "The mobilisation clock page is visually impressive and provides a real-time overview of the platform's reach;The platform has a consistent and professional design across all pages;The website is generally responsive and performs well on different devices.",
+        "tech_infra_weaknesses": "The main call to action to enter the game leads to a 404 error page, which is a critical failure;The mobilisation clock page is not fully translated into English, with some sections remaining in Korean;There are some broken links and missing assets, such as images that fail to load.",
+        "tech_infra_recommendations": "Immediately fix the broken link to the game to ensure users can access the core functionality of the platform;Conduct a comprehensive review of all pages to ensure complete and accurate translations for all supported languages;Perform a thorough audit of the entire platform to identify and fix all broken links and missing assets.",
+        "assessment_score": 70,
+        "assessment_strengths": "The Olympiad provides a clear competitive structure that could motivate students and institutions;The concept of earning XP and progressing through relays is a good foundation for a gamified learning experience;The inclusion of CPD and ICE attribute support is a valuable feature for professional engineers.",
+        "assessment_weaknesses": "There is a lack of transparency on how XP and points are awarded, making it difficult for users to understand how to progress;The differentiation between the 4 modes of play is not clearly explained, diminishing their potential impact;The platform lacks a clear mechanism for students to gather and present evidence of their work for professor adjudication.",
+        "assessment_recommendations": "Create a detailed and easily accessible guide that explains the XP and points system, including specific examples of how to earn them;Provide clear and concise explanations of the 4 modes of play, highlighting the unique challenges and learning outcomes of each;Implement a feature that allows students to export a portfolio of their work, including their completed relays, achievements, and reflections, for easy submission and review by professors.",
+        "scalability_score": 85,
+        "scalability_strengths": "The 8-language-block strategy is clearly articulated and visually represented on the mobilisation clock page, demonstrating a strong commitment to global reach;The monetisation pathways are well-defined, with clear pricing tiers for individuals, institutions, and sponsors;The \"Masters\" section showcases a diverse range of historical figures from different cultures, which is a positive step towards cultural adaptability.",
+        "scalability_weaknesses": "The subscription and pricing information is presented as a placeholder and needs to be finalized;The platform lacks representation of engineering in desert and extreme environments, a critical area of expertise in the Gulf region and other parts of the world;There is a notable lack of representation from the Middle East in the \"Masters\" section, particularly given the region's significant contributions to infrastructure and engineering.",
+        "scalability_recommendations": "Finalize the subscription and pricing information and present it clearly on the website;Develop and incorporate content, case studies, and challenges specifically focused on desert and extreme environment engineering;Add prominent historical figures and engineering marvels from the Middle East to the \"Masters\" section and other relevant parts of the platform.",
+        "overall_verdict": "Tech: Declined; Assessment: Declined; Scalability: Unchanged"
+      },
+      "error": ""
+    },
+    {
+      "input": "Reviewer 10: University of Queensland — Professor of Engineering. Your Australian institution serves the Asia-Pacific region. You assess Southern Hemisphere representation and mining/resource infrastructure. Your Round 1 overall score was 81%.",
+      "output": {
+        "reviewer_name": "University of Queensland — Professor of Engineering",
+        "tech_infra_score": 75,
+        "tech_infra_strengths": "Consistent and professional design across the platform.;Bilingual switching functionality is well-implemented and responsive.;The mobilisation clock is a strong feature, providing real-time data and a sense of urgency.",
+        "tech_infra_weaknesses": "Critical broken links to the `game.html` and `resources.html` pages (404 errors).;The platform is not fully mobile-responsive, with some elements displaying poorly on smaller screens.;Some pages, particularly those with heavy visual assets, are slow to load.",
+        "tech_infra_recommendations": "Immediately fix the broken links to the `game.html` and `resources.html` pages to ensure a complete user journey.;Implement a comprehensive mobile-first design strategy to ensure a seamless experience on all devices.;Optimize all images and scripts to improve page load times and overall platform performance.",
+        "assessment_score": 80,
+        "assessment_strengths": "The platform has a clear and well-defined assessment framework with a 4-mode differentiation that caters to diverse learning styles.;The use of XP and points is a well-integrated and effective gamification element for learner motivation.;The concept of the Infrastructure Olympiad is a strong driver of engagement and competition.",
+        "assessment_weaknesses": "The calibration of the compliance gates is opaque, lacking clear explanation for learners.;There is no information on how to gather and present evidence for professor adjudication, a key component for academic use.;The support for CPD/ICE attributes is mentioned but not clearly documented or integrated into the user experience.",
+        "assessment_recommendations": "Provide a detailed explanation of the compliance gate calibration methodology to enhance transparency and fairness.;Create a comprehensive guide for learners and professors on the evidence-gathering and adjudication process.;Develop clear documentation and user interface elements that explicitly map platform activities to CPD/ICE attributes.",
+        "scalability_score": 85,
+        "scalability_strengths": "The 8-language-block strategy is a robust and ambitious plan for global reach.;The Infrastructure Olympiad is a highly scalable and engaging concept for fostering international competition.;The monetisation pathway, including sponsorship and premium features, is realistic and well-considered.",
+        "scalability_weaknesses": "The platform's cultural adaptability needs improvement, particularly in the representation of Southern Hemisphere and mining/resource infrastructure.;Potential infrastructure bottlenecks at scale, especially with a large number of concurrent users, are a significant concern.;The platform is not yet fully localized for all target languages, with some content still in English.",
+        "scalability_recommendations": "Diversify the content to include more case studies and examples from the Southern Hemisphere and the mining/resource sectors to improve cultural resonance.;Conduct stress testing and develop a detailed plan to address potential infrastructure bottlenecks at scale.;Prioritize and complete the full localization of the platform for all 8 target languages to ensure a truly global user experience.",
+        "overall_verdict": "Tech: Declined; Assessment: Unchanged; Scalability: Improved"
+      },
+      "error": ""
+    },
+    {
+      "input": "Reviewer 11: KFUPM — Professor of Civil & Environmental Engineering. Your Saudi institution is central to Vision 2030 mega-projects. You assess relevance to large-scale national transformation programmes. Your Round 1 overall score was 80%.",
+      "output": {
+        "reviewer_name": "KFUPM — Professor of Civil & Environmental Engineering",
+        "tech_infra_score": 60,
+        "tech_infra_strengths": "Visually appealing design;Clear information architecture;Functional gamification engine",
+        "tech_infra_weaknesses": "Broken links;Non-functional bilingual switching feature;Lack of mobile responsiveness",
+        "tech_infra_recommendations": "Fix the broken links (game.html, resources.html);Implement a functional bilingual switching feature;Make the platform mobile-responsive.",
+        "assessment_score": 70,
+        "assessment_strengths": "Leaderboard with XP and point systems;Clear 'Three Modes' system;Infrastructure Olympiad concept",
+        "assessment_weaknesses": "Lack of clarity on 4-mode differentiation;No information on compliance gate calibration;No explicit mention of CPD/ICE attribute support",
+        "assessment_recommendations": "Provide clear documentation on the 4-mode differentiation, compliance gate calibration, and CPD/ICE attribute support;Implement a robust evidence-gathering system for professor adjudication;Clarify the methodology for point allocation to improve transparency and fairness.",
+        "scalability_score": 75,
+        "scalability_strengths": "8-language-block strategy;Infrastructure Olympiad concept;Clear monetization strategy",
+        "scalability_weaknesses": "Limited cultural adaptability;Monetization strategy may not be sufficient for long-term sustainability;The platform is not built on a scalable infrastructure",
+        "scalability_recommendations": "Improve the cultural adaptability of the platform;Explore additional monetization pathways;Migrate the platform to a scalable cloud-based infrastructure.",
+        "overall_verdict": "Tech: Declined; Assessment: Unchanged; Scalability: Unchanged"
+      },
+      "error": ""
+    },
+    {
+      "input": "Reviewer 12: Qatar University — Professor of Civil Engineering. Your institution serves the Gulf's newest infrastructure boom. You assess relevance to rapidly developing nations. Your Round 1 overall score was 79%.",
+      "output": {
+        "reviewer_name": "Qatar University — Professor of Civil Engineering",
+        "tech_infra_score": 80,
+        "tech_infra_strengths": "Platform reliability and loading speed;Functional bilingual switching (English/Korean);Clear gamification engine with progression paths and XP system.",
+        "tech_infra_weaknesses": "Broken \"resources\" link (404 error);Inconsistent navigation (e.g., \"Return to Academy\" link);Sub-optimal mobile responsiveness, especially on pages with tables.",
+        "tech_infra_recommendations": "Fix the broken \"resources\" link and add content;Standardize navigation to ensure a consistent user experience;Improve mobile responsiveness for better accessibility on all devices.",
+        "assessment_score": 75,
+        "assessment_strengths": "Transparent XP and points system;4-mode differentiation catering to different learning styles;Apparent support for evidence-gathering for adjudication.",
+        "assessment_weaknesses": "Unclear compliance gate calibration;Lack of explicit CPD/ICE attribute mapping and tracking;Undefined evidence-gathering process for adjudication.",
+        "assessment_recommendations": "Document the compliance gate calibration process clearly;Integrate a system for tracking and mapping CPD/ICE attributes;Create a user-friendly interface for evidence-gathering and adjudication.",
+        "scalability_score": 70,
+        "scalability_strengths": "8-language-block strategy for global accessibility;Engaging Olympiad concept for cross-cultural competition;Clear vision for cultural adaptability.",
+        "scalability_weaknesses": "Unrealistic and unsustainable monetization pathway;Potential for infrastructure bottlenecks at scale;Incomplete translations for some languages.",
+        "scalability_recommendations": "Develop a diversified and robust monetization strategy;Conduct stress tests and optimize infrastructure for scalability;Prioritize and complete translations for all 8 languages.",
+        "overall_verdict": "Tech: Declined; Assessment: Declined; Scalability: Declined"
+      },
+      "error": ""
+    },
+    {
+      "input": "Reviewer 13: ICE Freeform Explorer Reviewer. You assessed Briefing Package 1 in Round 1. You evaluate whether the platform supports self-directed, exploratory learning aligned with ICE CPD requirements. Focus on whether freeform learners can demonstrate CEng attributes.",
+      "output": {
+        "reviewer_name": "ICE Freeform Explorer Reviewer",
+        "tech_infra_score": 70,
+        "tech_infra_strengths": "Consistent navigation bar across most pages;Bilingual switching functionality is present and works on main pages;The platform is generally reliable and loads pages quickly",
+        "tech_infra_weaknesses": "The 'resources.html' page is broken and displays a 404 error;The gamification engine is behind a login wall, preventing full assessment without an account;Mobile responsiveness could be improved; some elements are not perfectly aligned on smaller screens",
+        "tech_infra_recommendations": "Fix the 'resources.html' page immediately;Implement a guest/demo mode for the gamification engine;Conduct a thorough review of the mobile layout to improve responsiveness",
+        "assessment_score": 40,
+        "assessment_strengths": "The platform has a clear progression system with 12 relays and 5 great webs;The concept of a Master Weaver dashboard suggests a system for tracking progress;The platform is based on a trilogy of books, which could provide a solid foundation for the assessment framework",
+        "assessment_weaknesses": "There is a complete lack of transparency regarding the XP and points system;No information is available about the 4-mode differentiation mentioned in the audit instructions;The website does not explain compliance gate calibration or how it is implemented",
+        "assessment_recommendations": "Create a detailed guide explaining the XP and points system;Clearly define and explain the 4-mode differentiation on the platform;Provide documentation on compliance gate calibration and its implementation",
+        "scalability_score": 60,
+        "scalability_strengths": "The 8-language-block strategy is a clear and ambitious plan for global reach;The Infrastructure Olympiad is a strong concept for driving engagement and competition;The platform has a clear vision for monetization through sponsorships and partnerships",
+        "scalability_weaknesses": "The monetization strategy is not yet proven and relies on attracting high-level sponsors;The cultural adaptability of the content has not been tested, and some concepts may not translate well;The platform's infrastructure may not be able to handle a large number of concurrent users",
+        "scalability_recommendations": "Develop a more detailed and phased monetization plan;Conduct pilot programs in different cultural contexts to test the adaptability of the content;Create a scalable infrastructure plan that can support a growing user base",
+        "overall_verdict": "Tech: Declined; Assessment: Declined; Scalability: Unchanged"
+      },
+      "error": ""
+    },
+    {
+      "input": "Reviewer 14: ICE Guided Campaign Reviewer. You assessed Briefing Package 2 in Round 1. You evaluate whether the guided learning pathway provides structured progression toward ICE professional competencies. Focus on the campaign structure and milestone tracking.",
+      "output": {
+        "reviewer_name": "ICE Guided Campaign Reviewer",
+        "tech_infra_score": 85,
+        "tech_infra_strengths": "Clear and consistent navigation across the platform.;The platform is built on a modern web stack, which allows for rich, interactive experiences.;The 'Beta Notice' effectively manages user expectations regarding the platform's development status.",
+        "tech_infra_weaknesses": "Bilingual switching is not fully implemented, with many images and some content remaining in English.;The platform's reliance on images for key information hinders accessibility and localization.;The functionality of dynamic elements like the 'mobilisation clock' and 'live medal table' is not verifiable and may be cosmetic at this stage.",
+        "tech_infra_recommendations": "Prioritize full implementation of the 8-language-block strategy, ensuring all content, including images, is localized.;Replace images containing text with actual text to improve accessibility, searchability, and localization.;Implement the dynamic features with real data to enhance user engagement and demonstrate the platform's capabilities.",
+        "assessment_score": 84,
+        "assessment_strengths": "The IUMC (Identify, Understand, Manage, Control) methodology provides a robust and clear framework for learning.;The gamification elements, including XP, leaderboards, and contributor classes, are well-conceived and create a compelling user journey.;The mapping to professional accreditations (ABET, JBM, Washington Accord) and the generation of CPD certificates provide a strong value proposition for professionals.",
+        "assessment_weaknesses": "The core of the assessment, the game itself, is not fully explorable, making it difficult to assess the fairness and transparency of the XP/points system.;The '4-mode differentiation' is mentioned but not clearly explained or demonstrated.;The evidence-gathering process for professor adjudication is not detailed.",
+        "assessment_recommendations": "Develop and release a playable demo of at least one relay to allow for a proper assessment of the gamification and assessment mechanics.;Provide clear documentation on the '4-mode differentiation' and how it impacts gameplay and assessment.;Create a detailed guide for professors on how to use the platform for adjudication, including how to access and interpret student evidence.",
+        "scalability_score": 90,
+        "scalability_strengths": "The 8-language-block strategy is a well-researched and effective approach to global market penetration.;The 'Flywheel' growth model (Players > Professionals > Patrons > Platform Scales) is a powerful and realistic strategy for scaling the platform.;The monetization strategy, with its diverse tiers for individuals, institutions, and sponsors, is well-defined and provides multiple revenue streams.",
+        "scalability_weaknesses": "The platform's success is heavily reliant on the recruitment of 'Ambassadors' and 'Pioneers' to drive localization and adoption.;The 'Infrastructure Olympiad' is a key component of the scalability strategy, but it is not yet a reality.;The platform's ability to handle a large number of concurrent users and the associated infrastructure bottlenecks have not been tested.",
+        "scalability_recommendations": "Accelerate the recruitment of 'Ambassadors' for each language block to ensure high-quality translations and cultural adaptation.;Forge partnerships with universities and engineering firms in each target region to drive adoption and validate the platform's content.;Develop a clear roadmap for the 'Infrastructure Olympiad,' including a timeline for the first competition and details on how teams can participate.",
+        "overall_verdict": "Tech: Improved; Assessment: Improved; Scalability: Improved"
+      },
+      "error": ""
+    },
+    {
+      "input": "Reviewer 15: ICE Academic Programme Reviewer. You assessed Briefing Package 3 in Round 1. You evaluate whether the platform meets academic programme standards for ICE-accredited degrees. Focus on curriculum alignment, assessment rigour, and learning outcomes mapping.",
+      "output": {
+        "reviewer_name": "ICE Academic Programme Reviewer",
+        "tech_infra_score": 60,
+        "tech_infra_strengths": "The platform has a visually appealing and consistent design across the pages that were accessible;The use of a consistent navigation menu across the site makes it easy for users to find their way around;The platform is fast and responsive, with pages loading quickly and smoothly.",
+        "tech_infra_weaknesses": "Multiple critical links are broken, including the link to the game itself, which severely impacts the user experience and prevents a full assessment of the platform;The mobile responsiveness of the platform could not be fully assessed due to technical limitations, but the desktop experience suggests that it may not be optimized for smaller screens;There is no clear indication of whether the platform has a bilingual switching feature, which is a key requirement for a global platform.",
+        "tech_infra_recommendations": "Fix all broken links immediately, with a priority on the /game.html, /resources, and /framework pages;Implement a comprehensive and automated link-checking process to prevent broken links in the future;Conduct a thorough mobile responsiveness audit to ensure that the platform is accessible and usable on a wide range of devices.",
+        "assessment_score": 70,
+        "assessment_strengths": "The Mobilisation Clock provides a clear and transparent overview of the platform's progress towards its goal of 1 billion learners;The platform metrics and contributor classes are well-defined, providing a clear understanding of how users can contribute to the platform;The Infrastructure Olympiad provides a clear competitive framework that encourages engagement and competition.",
+        "assessment_weaknesses": "The core of the assessment framework, the game itself, is inaccessible due to a broken link, preventing a full evaluation of the XP/points system;There is a lack of clear documentation on the 4-mode differentiation, making it difficult to assess the effectiveness of this feature;The mechanism for evidence-gathering for professor adjudication is not clearly defined.",
+        "assessment_recommendations": "Fix the broken /game.html link to allow for assessment of the gamification engine;Provide clear and detailed documentation on the XP/points system, including how points are awarded and how they contribute to a user's overall progress;Develop a more robust system for evidence-gathering for professor adjudication, such as a dedicated portal for professors to review student work.",
+        "scalability_score": 80,
+        "scalability_strengths": "The 8-language-block strategy provides a strong foundation for global reach and cultural adaptability;The Mobilisation Clock and Infrastructure Olympiad are designed to scale and encourage global competition, which is a key driver for growth;The platform's focus on civilizational stewardship and infrastructure literacy has the potential to resonate with a global audience.",
+        "scalability_weaknesses": "The monetization pathway is not entirely clear, which raises concerns about the platform's long-term financial sustainability;The reliance on university adoption as a primary growth driver may be a bottleneck, as it is a slow and often bureaucratic process;The cultural adaptability of the platform's content has not been fully demonstrated, and there is a risk that it may not be equally engaging for all cultures.",
+        "scalability_recommendations": "Provide a more detailed and transparent explanation of the monetization strategy to instill confidence in the platform's long-term financial sustainability;Diversify the growth strategy to include other channels besides universities, such as partnerships with professional organizations and corporate training programs;Develop a more detailed roadmap for the cultural adaptation of the platform's content to ensure that it is relevant and engaging for a global audience.",
+        "overall_verdict": "Tech: Declined; Assessment: Unchanged; Scalability: Unchanged"
+      },
+      "error": ""
+    }
+  ]
+}

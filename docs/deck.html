@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="IP & Equations Register — 55 Card AI Collection. 38 equations and 15 IP assets from An Infrastructure Odyssey by Nigel Dearden.">
+    <title>The Deck — IP & Equations Register | Infrastructure Academy</title>
+    <link rel="stylesheet" href="/css/style.css?v=20260311a">
+    <style>
+        /* Deck Page Specific Styles */
+        .deck-hero {
+            text-align: center;
+            padding: 3rem 2rem 2rem;
+            background: linear-gradient(180deg, #0a1628 0%, #0f1f3a 100%);
+        }
+        .deck-hero h1 {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: var(--color-accent-gold);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 0.5rem;
+        }
+        .deck-hero .subtitle {
+            font-size: 1.1rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 0.5rem;
+        }
+        .deck-hero .beta-label {
+            display: inline-block;
+            background: rgba(251,146,60,0.15);
+            border: 1px solid rgba(251,146,60,0.5);
+            color: #fb923c;
+            font-family: 'Courier New', monospace;
+            font-size: 0.75rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+            padding: 0.25rem 0.75rem;
+            border-radius: 3px;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+        .deck-cover-section {
+            display: flex;
+            gap: 3rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem;
+            align-items: center;
+        }
+        .deck-cover-img {
+            flex: 0 0 320px;
+            max-width: 320px;
+        }
+        .deck-cover-img img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 3px solid var(--color-accent-gold);
+            box-shadow: 0 0 40px rgba(255,215,0,0.2);
+        }
+        .deck-cover-info {
+            flex: 1;
+        }
+        .deck-cover-info h2 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            color: var(--color-accent-gold);
+            margin-bottom: 1rem;
+        }
+        .deck-cover-info p {
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+            margin-bottom: 1rem;
+        }
+        .deck-stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .deck-stat {
+            text-align: center;
+            background: rgba(15,31,58,0.7);
+            border: 1px solid rgba(255,215,0,0.3);
+            border-radius: 8px;
+            padding: 1rem 0.5rem;
+        }
+        .deck-stat .num {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--color-accent-gold);
+            font-weight: bold;
+        }
+        .deck-stat .label {
+            font-size: 0.8rem;
+            color: var(--color-text-secondary);
+            margin-top: 0.25rem;
+        }
+        .price-box {
+            display: flex;
+            gap: 1.5rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        .price-card {
+            flex: 1;
+            min-width: 200px;
+            background: rgba(15,31,58,0.7);
+            border: 2px solid var(--color-accent-gold);
+            border-radius: 12px;
+            padding: 1.5rem;
+            text-align: center;
+        }
+        .price-card.featured {
+            border-color: #fb923c;
+            box-shadow: 0 0 20px rgba(251,146,60,0.3);
+        }
+        .price-card h3 {
+            font-family: var(--font-heading);
+            color: var(--color-accent-gold);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        .price-card .price {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            color: #ffffff;
+            font-weight: bold;
+        }
+        .price-card .price-sub {
+            font-size: 0.8rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 1rem;
+        }
+        .price-card .desc {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 1rem;
+            line-height: 1.5;
+        }
+        .btn-buy {
+            display: inline-block;
+            padding: 0.75rem 2rem;
+            background: linear-gradient(135deg, var(--color-accent-gold), var(--color-accent-gold-dark));
+            color: #0a1628;
+            font-weight: bold;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s;
+            letter-spacing: 1px;
+        }
+        .btn-buy:hover {
+            box-shadow: 0 0 20px rgba(255,215,0,0.5);
+            transform: translateY(-2px);
+        }
+        .btn-buy-secondary {
+            background: transparent;
+            border: 2px solid var(--color-accent-gold);
+            color: var(--color-accent-gold);
+        }
+        .btn-buy-secondary:hover {
+            background: rgba(255,215,0,0.1);
+        }
+        .btn-download {
+            display: inline-block;
+            padding: 0.5rem 1.5rem;
+            background: transparent;
+            border: 1px solid rgba(255,215,0,0.5);
+            color: var(--color-accent-gold);
+            font-size: 0.85rem;
+            border-radius: 6px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 0.5rem;
+        }
+
+        /* Suit Sections */
+        .suit-section {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .suit-section h2 {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            color: var(--color-accent-gold);
+            margin-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(255,215,0,0.3);
+            padding-bottom: 0.5rem;
+        }
+        .suit-section .suit-desc {
+            color: var(--color-text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 1rem;
+        }
+        .card-item {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 2px solid rgba(255,215,0,0.3);
+            transition: all 0.3s;
+            cursor: pointer;
+            background: var(--color-bg-secondary);
+        }
+        .card-item:hover {
+            border-color: var(--color-accent-gold);
+            box-shadow: 0 0 15px rgba(255,215,0,0.3);
+            transform: translateY(-3px);
+        }
+        .card-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .card-item .card-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10,22,40,0.85);
+            padding: 0.4rem 0.5rem;
+            font-size: 0.7rem;
+            color: var(--color-accent-gold);
+            text-align: center;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        /* Bigger Picture Section */
+        .bigger-picture {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: rgba(15,31,58,0.5);
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 12px;
+        }
+        .bigger-picture h2 {
+            font-family: var(--font-heading);
+            color: var(--color-accent-gold);
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        .flow-chain {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+        }
+        .flow-step {
+            background: rgba(255,215,0,0.1);
+            border: 1px solid rgba(255,215,0,0.4);
+            border-radius: 8px;
+            padding: 0.75rem 1.25rem;
+            text-align: center;
+        }
+        .flow-step .step-name {
+            font-family: var(--font-heading);
+            color: var(--color-accent-gold);
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+        .flow-step .step-desc {
+            font-size: 0.7rem;
+            color: var(--color-text-secondary);
+            margin-top: 0.25rem;
+        }
+        .flow-arrow {
+            color: var(--color-accent-gold);
+            font-size: 1.5rem;
+        }
+
+        /* Success/Cancel Messages */
+        .purchase-msg {
+            max-width: 600px;
+            margin: 1rem auto;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            display: none;
+        }
+        .purchase-msg.success {
+            background: rgba(34,197,94,0.15);
+            border: 1px solid rgba(34,197,94,0.5);
+            color: #22c55e;
+        }
+        .purchase-msg.cancelled {
+            background: rgba(251,146,60,0.15);
+            border: 1px solid rgba(251,146,60,0.5);
+            color: #fb923c;
+        }
+
+        /* Lightbox */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.95);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        .lightbox.active { display: flex; }
+        .lightbox-inner {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            max-width: 95vw;
+            max-height: 85vh;
+        }
+        .lightbox img {
+            max-width: 80vw;
+            max-height: 80vh;
+            object-fit: contain;
+            border: 2px solid var(--color-accent-gold);
+            border-radius: 8px;
+        }
+        .lightbox-nav {
+            background: rgba(255,215,0,0.15);
+            border: 1px solid rgba(255,215,0,0.5);
+            color: #ffd700;
+            font-size: 2rem;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+            flex-shrink: 0;
+        }
+        .lightbox-nav:hover {
+            background: rgba(255,215,0,0.3);
+        }
+        .lightbox-label {
+            color: #ffd700;
+            font-family: var(--font-heading);
+            font-size: 1.1rem;
+            text-align: center;
+            margin-top: 0.75rem;
+            letter-spacing: 1px;
+        }
+        .lightbox-counter {
+            color: rgba(255,255,255,0.5);
+            font-size: 0.8rem;
+            margin-top: 0.3rem;
+            text-align: center;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 1rem;
+            right: 1.5rem;
+            color: #ffd700;
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 10000;
+            background: none;
+            border: none;
+        }
+        @media(max-width: 768px) {
+            .lightbox-nav { width: 36px; height: 36px; font-size: 1.4rem; }
+            .lightbox img { max-width: 75vw; max-height: 70vh; }
+        }
+
+        /* Responsive */
+        @media(max-width: 768px) {
+            .deck-cover-section { flex-direction: column; padding: 1rem; }
+            .deck-cover-img { flex: none; max-width: 250px; margin: 0 auto; }
+            .deck-stats { grid-template-columns: repeat(2, 1fr); }
+            .price-box { flex-direction: column; }
+            .card-grid { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+            .deck-hero h1 { font-size: 1.8rem; }
+            .flow-chain { flex-direction: column; }
+            .flow-arrow { transform: rotate(90deg); }
+        }
+    </style>
+    <link rel="canonical" href="https://infra-acad-kuqzaex2.manus.space/deck.html">
+    <meta name="keywords" content="infrastructure academy, infrastructure education, civil engineering, civilisation history, infrastructure consciousness, gamified learning, IAAI, Nigel Dearden, infrastructure odyssey, 12 relays, calories to consciousness, presentation deck, slides, infrastructure presentation">
+
+<style id="mobile-quicknav-styles">
+/* ===== MOBILE QUICK-NAV BAR ===== */
+.mobile-quicknav {
+    display: none;
+    width: 100%;
+    background: linear-gradient(180deg, #0d1f3c 0%, #0a1628 100%);
+    border-bottom: 1px solid rgba(255,215,0,0.25);
+    padding: 6px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 6px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+.mobile-quicknav::-webkit-scrollbar { display: none; }
+.mobile-quicknav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 10px;
+    background: rgba(255,215,0,0.08);
+    border: 1px solid rgba(255,215,0,0.35);
+    border-radius: 16px;
+    color: #ffd700;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+.mobile-quicknav a:active {
+    background: rgba(255,215,0,0.25);
+    transform: scale(0.95);
+}
+.mobile-quicknav a.mqn-home {
+    background: #ffd700;
+    color: #0a1628;
+    border-color: #ffd700;
+}
+@media(max-width:768px) {
+    .mobile-quicknav { display: flex; }
+}
+@media(min-width:769px) {
+    .mobile-quicknav { display: none !important; }
+}
+
+/* ===== BACK-TO-TOP FLOATING BUTTON ===== */
+#back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 16px;
+    z-index: 9999;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(10,22,40,0.92);
+    border: 1.5px solid rgba(255,215,0,0.6);
+    color: #ffd700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    transition: all 0.2s;
+}
+#back-to-top-btn:active {
+    transform: scale(0.9);
+    background: rgba(255,215,0,0.2);
+}
+</style>
+
+</head>
+<body>
+    <!-- iAAi Network Bar — NAV-001 · Cross-Site Navigation -->
+    <!-- ═══ iAAi NETWORK BAR ═══ -->
+    <div id="iaai-network-bar" style="display:flex;align-items:center;justify-content:space-around;width:100%;height:36px;background:#0a1628;position:sticky;top:0;z-index:200001;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">
+      <a href="https://www.infrastructure-academy.com" style="text-decoration:none;color:#fff;font-weight:700;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid #DC2626;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#DC2626"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg> ACADEMY</a>
+      <a href="https://realityeng-epdhlkrn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> QUEST</a>
+      <a href="#" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;opacity:0.5;pointer-events:none;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A843"><path d="M6 2v6l-2 2v4l2 2v6h4v-6l2-2v-4L10 8V2H6zm12 0v6l-2 2v4l2 2v6h-4v-6l-2-2v-4l2-2V2h4z"/></svg> XCHANGE</a>
+      <a href="https://nigelmemorial-ucmtq9dn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#16A34A"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg> MEMORIAL</a>
+      <a href="https://xgrowthtrk-2a93yo5z.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#06B6D4"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/></svg> NEWS</a>
+    </div>
+
+    <!-- Header -->
+<!-- INJECTED COMPACT HEADER BAR -->
+<style>
+.compact-header-bar { position:sticky; top:0; z-index:9999; background:#0a1628; border-bottom:2px solid #ffd700; padding:8px 16px; display:flex; align-items:center; justify-content:space-between; gap:12px; font-family:Georgia,'Times New Roman',serif; }
+.compact-header-bar .chb-brand { display:flex; align-items:center; gap:10px; text-decoration:none; color:#ffd700; }
+.compact-header-bar .chb-brand img { width:28px; height:28px; border-radius:4px; }
+.compact-header-bar .chb-title { font-size:0.85rem; font-weight:bold; letter-spacing:1.5px; color:#ffd700; }
+.compact-header-bar .chb-nav { display:flex; align-items:center; gap:12px; }
+.compact-header-bar .chb-nav a { color:#e2e8f0; text-decoration:none; font-size:0.75rem; letter-spacing:1px; padding:4px 10px; border:1px solid rgba(255,215,0,0.2); border-radius:3px; transition:all 0.2s; }
+.compact-header-bar .chb-nav a:hover { background:rgba(255,215,0,0.1); border-color:#ffd700; color:#ffd700; }
+.compact-header-bar .chb-nav a.chb-home { background:rgba(255,215,0,0.15); border-color:#ffd700; color:#ffd700; font-weight:bold; }
+@media(max-width:600px) { .compact-header-bar .chb-nav a:not(.chb-home) { display:none; } .compact-header-bar .chb-title { font-size:0.7rem; } }
+</style>
+<div class="compact-header-bar">
+    <a href="/site.html" class="chb-brand">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iAAi-emblem_e0c9c2c1.png" alt="iAAi">
+        <span class="chb-title">INFRASTRUCTURE ACADEMY</span>
+    </a>
+    <div class="chb-nav">
+        <a href="/site.html" class="chb-home">HOME</a>
+        <a href="/pages/framework.html">FRAMEWORK</a>
+        <a href="/library.html">DOCUMENTS</a>
+        <a href="/play">PLAY</a>
+    </div>
+</div>
+    <!-- ===== MOBILE QUICK-NAV BAR — always visible on mobile ===== -->
+    <div class="mobile-quicknav" id="mobile-quicknav">
+        <a href="/site.html" class="mqn-home">&#127968; HOME</a>
+        <a href="/pages/start-here.html">&#128218; START</a>
+        <a href="/volumes/volume1/index.html">&#128214; READ</a>
+        <a href="/pages/framework.html">&#128736; FRAMEWORK</a>
+        <a href="/play">&#127918; PLAY</a>
+        <a href="/pages/movies.html">&#127916; MOVIES</a>
+        <a href="/pages/resources.html">&#128194; RESOURCES</a>
+        <a href="/press.html">&#128240; PRESS</a>
+    </div>
+
+    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <button id="back-to-top-btn" aria-label="Back to top" title="Back to top">&#9650;</button>
+
+<!-- END COMPACT HEADER BAR -->
+
+    <main>
+        <!-- Purchase Status Messages -->
+        <div class="purchase-msg success" id="purchaseSuccess">
+            Thank you for your purchase! Your AI Edition deck PDF will be delivered to your email shortly.
+        </div>
+        <div class="purchase-msg cancelled" id="purchaseCancelled">
+            Purchase cancelled. No charge was made. You can try again anytime.
+        </div>
+
+        <!-- Hero Section -->
+        <section class="deck-hero">
+            <h1>The Deck</h1>
+            <p class="subtitle">IP & Equations Register — 55 Card Collection</p>
+            <span class="beta-label">AI EDITION — March 2026</span>
+        </section>
+
+        <!-- Cover + Purchase Section -->
+        <section class="deck-cover-section">
+            <div class="deck-cover-img">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_01_4154e11f.jpg" alt="iAAi Cover Card" onclick="openLightbox(this.src)">
+            </div>
+            <div class="deck-cover-info">
+                <h2>IP & Equations Register</h2>
+                <p>55 collectible cards featuring 38 equations and 15 IP assets from <em>Calories to Consciousness: An Infrastructure Odyssey</em> — a civil engineer's perspective and guide. Authored by Nigel Dearden.</p>
+                <p>Each card is self-explanatory for first-time learners. The deck maps the complete journey from FITS profiling through ICUT knowledge transfer, IUMC infrastructure application, to the ISI — the Infrastructure Survival Index that measures whether civilisation survives.</p>
+
+                <div class="deck-stats">
+                    <div class="deck-stat"><div class="num">55</div><div class="label">Cards</div></div>
+                    <div class="deck-stat"><div class="num">38</div><div class="label">Equations</div></div>
+                    <div class="deck-stat"><div class="num">15</div><div class="label">IP Assets</div></div>
+                    <div class="deck-stat"><div class="num">4</div><div class="label">Suits</div></div>
+                </div>
+
+                <div class="price-box">
+                    <div class="price-card featured">
+                        <h3>Physical Deck</h3>
+                        <div class="price">$29.95</div>
+                        <div class="price-sub">USD + shipping</div>
+                        <div class="desc">55 printed cards, premium card stock, collector's box</div>
+                        <button class="btn-buy" onclick="buyDeck('DECK_BETA')">Pre-Order Now</button>
+                    </div>
+                    <div class="price-card">
+                        <h3>Digital PDF</h3>
+                        <div class="price">$9.95</div>
+                        <div class="price-sub">USD — instant download</div>
+                        <div class="desc">High-resolution PDF of all 55 cards, print-at-home ready</div>
+                        <button class="btn-buy btn-buy-secondary" onclick="buyDeck('DECK_DIGITAL')">Buy Digital</button>
+                    </div>
+                </div>
+                <a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IAAI_IP_Equations_Register_Deck_56_Cards_AI_02f9060c.pdf" class="btn-download" target="_blank">Preview PDF (Free)</a>
+            </div>
+        </section>
+
+        <!-- The Bigger Picture -->
+        <section class="bigger-picture">
+            <h2>The Connected System</h2>
+            <p style="text-align:center; color:var(--color-text-secondary); margin-bottom:1rem;">Every card in this deck is part of one connected system — from profiling the learner to measuring civilisation's survival.</p>
+            <div class="flow-chain">
+                <div class="flow-step">
+                    <div class="step-name">FITS</div>
+                    <div class="step-desc">Profiles the learner</div>
+                </div>
+                <span class="flow-arrow">&rarr;</span>
+                <div class="flow-step">
+                    <div class="step-name">ICUT</div>
+                    <div class="step-desc">Transfers knowledge</div>
+                </div>
+                <span class="flow-arrow">&rarr;</span>
+                <div class="flow-step">
+                    <div class="step-name">IUMC</div>
+                    <div class="step-desc">Applies to infrastructure</div>
+                </div>
+                <span class="flow-arrow">&rarr;</span>
+                <div class="flow-step">
+                    <div class="step-name">ISI</div>
+                    <div class="step-desc">Measures survival</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SPADES — Foundational Equations -->
+        <section class="suit-section">
+            <h2>&#9824; Spades — Foundational Equations</h2>
+            <p class="suit-desc">The mathematical foundations of infrastructure consciousness. 13 cards covering the core survival formula, ICE matrix, Pythagorean cypher, and Dearden's Law.</p>
+            <div class="card-grid">
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_02_ea408871.jpg" alt="A♠ Survival Formula"><div class="card-label">A♠ Survival Formula</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_03_c7dbe1fc.jpg" alt="2♠ ICE Matrix"><div class="card-label">2♠ ICE Matrix</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_04_c1a71775.jpg" alt="3♠ Dual Band"><div class="card-label">3♠ Dual Band</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_05_d884c780.jpg" alt="4♠ Architect Signature"><div class="card-label">4♠ Architect Signature</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_06_584e20a6.jpg" alt="5♠ Game Real"><div class="card-label">5♠ Game Real</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_07_1f6e4cfc.jpg" alt="6♠ Architect ID"><div class="card-label">6♠ Architect ID</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_08_5c07b91f.jpg" alt="7♠ Tetrahedron"><div class="card-label">7♠ Tetrahedron</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_09_d8e1847c.jpg" alt="8♠ Pythagorean Cypher"><div class="card-label">8♠ Pythagorean Cypher</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_10_4c25be21.jpg" alt="9♠ Adams Constant"><div class="card-label">9♠ Adams Constant</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/10_10S_turing_papers_d836d855.png" alt="10♠ Turing Papers"><div class="card-label">10♠ Turing Papers</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_12_ed2bba52.jpg" alt="J♠ Block Rolls"><div class="card-label">J♠ Block Rolls</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_13_83073303.jpg" alt="Q♠ Hyperalfelexion"><div class="card-label">Q♠ Hyperalfelexion</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_14_3f6c6568.jpg" alt="K♠ Principia Infrastructura"><div class="card-label">K♠ Principia Infrastructura</div></div>
+            </div>
+        </section>
+
+        <!-- HEARTS — Intelligence Frameworks -->
+        <section class="suit-section">
+            <h2>&#9829; Hearts — Intelligence Frameworks</h2>
+            <p class="suit-desc">The human intelligence and profiling systems. 13 cards covering IUMC, ICUT, FITS, WALKBY, STRIVE, DAVID, OODA, DIKW, ASPIRE, and BAIO frameworks.</p>
+            <div class="card-grid">
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_15_c93443fc.jpg" alt="A♥ IUMC"><div class="card-label">A♥ IUMC</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_16_7f21fe43.jpg" alt="2♥ ICUT"><div class="card-label">2♥ ICUT</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_17_59e9f9a9.jpg" alt="3♥ FITS"><div class="card-label">3♥ FITS</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_18_e11eecec.jpg" alt="4♥ WALKBY"><div class="card-label">4♥ WALKBY</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_19_0f0c449d.jpg" alt="5♥ STRIVE"><div class="card-label">5♥ STRIVE</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_20_575ef63c.jpg" alt="6♥ DAVID"><div class="card-label">6♥ DAVID</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_21_01a14fb7.jpg" alt="7♥ OODA"><div class="card-label">7♥ OODA</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_22_c54b911a.jpg" alt="8♥ DIKW"><div class="card-label">8♥ DIKW</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_23_5c1fb3b9.jpg" alt="9♥ ASPIRE STAR"><div class="card-label">9♥ ASPIRE STAR</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_24_bb75afb3.jpg" alt="10♥ BAIO"><div class="card-label">10♥ BAIO</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_25_14c5fe97.jpg" alt="J♥ FITS IP"><div class="card-label">J♥ FITS IP</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_26_13e8a55a.jpg" alt="Q♥ DAVID IP"><div class="card-label">Q♥ DAVID IP</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_27_f0df0725.jpg" alt="K♥ ICUT IP"><div class="card-label">K♥ ICUT IP</div></div>
+            </div>
+        </section>
+
+        <!-- DIAMONDS — Structural & Governance -->
+        <section class="suit-section">
+            <h2>&#9830; Diamonds — Structural & Governance</h2>
+            <p class="suit-desc">Infrastructure governance, risk, and survival metrics. 13 cards covering the Human Blip, Fragility Index, 4Cs, ISI Speedometer, Death Spiral, and more.</p>
+            <div class="card-grid">
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_28_58c8f13a.jpg" alt="A♦ Human Blip"><div class="card-label">A♦ Human Blip</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_29_9f0009f6.jpg" alt="2♦ Fragility Index"><div class="card-label">2♦ Fragility Index</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_30_1d8df34c.jpg" alt="3♦ Four Horsemen"><div class="card-label">3♦ Four Horsemen (4Cs)</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_31_9e56f315.jpg" alt="4♦ ISI Speedometer"><div class="card-label">4♦ ISI Speedometer</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_32_8fbee15b.jpg" alt="5♦ Death Spiral"><div class="card-label">5♦ Death Spiral</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_33_ff9a512e.jpg" alt="6♦ Matriarch"><div class="card-label">6♦ Matriarch</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_34_8c81089c.jpg" alt="7♦ Alliance Strength"><div class="card-label">7♦ Alliance Strength</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_35_742bcc2d.jpg" alt="8♦ Entropy S"><div class="card-label">8♦ Entropy S</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_36_de559e52.jpg" alt="9♦ Resilience Quotient"><div class="card-label">9♦ Resilience Quotient</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_37_ba5135f6.jpg" alt="10♦ Seesaw"><div class="card-label">10♦ Seesaw</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_38_9313f704.jpg" alt="J♦ Dearden Field"><div class="card-label">J♦ Dearden Field</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_39_268a29f9.jpg" alt="Q♦ SAP-001"><div class="card-label">Q♦ SAP-001</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_40_465d4b2f.jpg" alt="K♦ 12 Relays IP"><div class="card-label">K♦ 12 Relays IP</div></div>
+            </div>
+        </section>
+
+        <!-- CLUBS — Temporal & Meta -->
+        <section class="suit-section">
+            <h2>&#9827; Clubs — Temporal & Meta</h2>
+            <p class="suit-desc">Time, scale, and the meta-equations. 13 cards covering Cosmic Clocks, Planetary Clock, Civilisational Clock, Harrison Grid, and the IP system cards.</p>
+            <div class="card-grid">
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_41_7c30689e.jpg" alt="A♣ Cosmic Clock"><div class="card-label">A♣ Cosmic Clock</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_42_0ee8eda2.jpg" alt="2♣ Planetary Clock"><div class="card-label">2♣ Planetary Clock</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_43_ddab57b2.jpg" alt="3♣ Civilisational Clock"><div class="card-label">3♣ Civilisational Clock</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_44_c0d3f8d3.jpg" alt="4♣ Radio Blip"><div class="card-label">4♣ Radio Blip</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_45_9dc133c2.jpg" alt="5♣ Spider Network"><div class="card-label">5♣ Spider Network</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_46_e4310601.jpg" alt="6♣ Progression"><div class="card-label">6♣ Progression</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_47_93fef268.jpg" alt="7♣ Harrison Grid"><div class="card-label">7♣ Harrison Grid</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_48_fde9c17d.jpg" alt="8♣ D100 IP"><div class="card-label">8♣ D100 IP</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_49_4a5942bd.jpg" alt="9♣ DIKW IP"><div class="card-label">9♣ DIKW IP</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_50_dc9f0e30.jpg" alt="10♣ WALKBY IP"><div class="card-label">10♣ WALKBY IP</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_51_d0fbe073.jpg" alt="J♣ Gov Cube IP"><div class="card-label">J♣ Gov Cube IP</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_52_9cb7a77f.jpg" alt="Q♣ Seesaw IP"><div class="card-label">Q♣ Seesaw IP</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_53_7153bd38.jpg" alt="K♣ SAP-001 IP"><div class="card-label">K♣ SAP-001 IP</div></div>
+            </div>
+        </section>
+
+        <!-- SPECIAL CARDS -->
+        <section class="suit-section">
+            <h2>&#9733; Special Cards</h2>
+            <p class="suit-desc">The Jokers, Cover Card, and Mendeleev Bonus — the cards that frame the entire collection.</p>
+            <div class="card-grid">
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_54_952c3386.jpg" alt="Joker Red — iCard"><div class="card-label">Joker Red — iCard</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_55_486b1aed.jpg" alt="Joker Black — Register"><div class="card-label">Joker Black — Register</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_01_4154e11f.jpg" alt="Cover — iAAi"><div class="card-label">Cover — iAAi</div></div>
+                <div class="card-item" onclick="openLightbox(this.querySelector('img').src)"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/card_56_2e71fb94.jpg" alt="Bonus — Mendeleev Transform"><div class="card-label">Bonus — Mendeleev 4/3</div></div>
+            </div>
+        </section>
+
+        <!-- Bottom CTA -->
+        <section style="text-align:center; padding:3rem 2rem; max-width:600px; margin:0 auto;">
+            <h2 style="font-family:var(--font-heading); color:var(--color-accent-gold); font-size:1.6rem; margin-bottom:1rem;">Own the Complete Collection</h2>
+            <p style="color:var(--color-text-secondary); margin-bottom:1.5rem;">55 cards. 38 equations. 15 IP assets. One connected system from Calories to Consciousness.</p>
+            <button class="btn-buy" onclick="buyDeck('DECK_BETA')" style="font-size:1.1rem; padding:1rem 3rem;">Pre-Order — $29.95</button>
+            <p style="color:var(--color-text-secondary); font-size:0.8rem; margin-top:1rem;">4 Elements Consulting Limited &middot; The Dearden Field &middot; D52 &middot; March 2026</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-inner">
+            <p>&copy; 2026 Infrastructure Academy &middot; 4 Elements Consulting Limited &middot; All Rights Reserved</p>
+            <p style="font-size:0.8rem; color:var(--color-text-secondary); margin-top:0.5rem;">
+                <a href="/site.html" style="color:var(--color-accent-gold);">Home</a> &middot;
+                <a href="/equations-register.html" style="color:var(--color-accent-gold);">Equations</a> &middot;
+                <a href="/icard-gallery.html" style="color:var(--color-accent-gold);">iCards</a> &middot;
+                <a href="/finance-admin.html" style="color:var(--color-accent-gold);">Formation</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+        <div class="lightbox-inner">
+            <button class="lightbox-nav" onclick="event.stopPropagation(); navigateCard(-1)">&#8249;</button>
+            <img id="lightboxImg" src="" alt="Card preview" onclick="event.stopPropagation()">
+            <button class="lightbox-nav" onclick="event.stopPropagation(); navigateCard(1)">&#8250;</button>
+        </div>
+        <div class="lightbox-label" id="lightboxLabel"></div>
+        <div class="lightbox-counter" id="lightboxCounter"></div>
+    </div>
+
+    <script>
+        // Lightbox with navigation
+        let allCards = [];
+        let currentCardIndex = 0;
+
+        // Build card array on load
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.card-item').forEach(function(item) {
+                allCards.push({
+                    src: item.querySelector('img').src,
+                    label: item.querySelector('.card-label').textContent
+                });
+            });
+        });
+
+        function openLightbox(src) {
+            // Find index of this card
+            currentCardIndex = allCards.findIndex(c => c.src === src);
+            if (currentCardIndex === -1) currentCardIndex = 0;
+            showCard(currentCardIndex);
+            document.getElementById('lightbox').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function showCard(index) {
+            if (index < 0) index = allCards.length - 1;
+            if (index >= allCards.length) index = 0;
+            currentCardIndex = index;
+            document.getElementById('lightboxImg').src = allCards[index].src;
+            document.getElementById('lightboxLabel').textContent = allCards[index].label;
+            document.getElementById('lightboxCounter').textContent = (index + 1) + ' / ' + allCards.length;
+        }
+
+        function navigateCard(dir) {
+            showCard(currentCardIndex + dir);
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Click outside image to close
+        document.getElementById('lightbox').addEventListener('click', function(e) {
+            if (e.target === this) closeLightbox();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (!document.getElementById('lightbox').classList.contains('active')) return;
+            if (e.key === 'Escape') closeLightbox();
+            if (e.key === 'ArrowLeft') navigateCard(-1);
+            if (e.key === 'ArrowRight') navigateCard(1);
+        });
+
+        // Swipe gesture support for mobile
+        (function() {
+            var lb = document.getElementById('lightbox');
+            var touchStartX = 0;
+            var touchStartY = 0;
+            var touchEndX = 0;
+            var touchEndY = 0;
+            var minSwipe = 50;
+
+            lb.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+                touchStartY = e.changedTouches[0].screenY;
+            }, { passive: true });
+
+            lb.addEventListener('touchend', function(e) {
+                touchEndX = e.changedTouches[0].screenX;
+                touchEndY = e.changedTouches[0].screenY;
+                var dx = touchEndX - touchStartX;
+                var dy = touchEndY - touchStartY;
+                // Only trigger if horizontal swipe is dominant
+                if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > minSwipe) {
+                    if (dx > 0) {
+                        navigateCard(-1); // swipe right = previous
+                    } else {
+                        navigateCard(1);  // swipe left = next
+                    }
+                }
+            }, { passive: true });
+        })();
+
+        // Purchase status from URL params
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('purchase') === 'success') {
+            document.getElementById('purchaseSuccess').style.display = 'block';
+        } else if (params.get('purchase') === 'cancelled') {
+            document.getElementById('purchaseCancelled').style.display = 'block';
+        }
+
+        // Buy Deck — calls Stripe checkout via tRPC
+        async function buyDeck(productKey) {
+            try {
+                const resp = await fetch('/api/trpc/checkout.createDeckCheckout', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    credentials: 'include',
+                    body: JSON.stringify({
+                        json: {
+                            productKey: productKey,
+                            origin: window.location.origin
+                        }
+                    })
+                });
+
+                const data = await resp.json();
+
+                if (data.result?.data?.json?.checkoutUrl) {
+                    window.open(data.result.data.json.checkoutUrl, '_blank');
+                } else if (resp.status === 401 || (data.error && data.error.message && data.error.message.includes('login'))) {
+                    // Not logged in — redirect to login
+                    alert('Please log in to purchase the deck. You will be redirected to the login page.');
+                    window.location.href = '/';
+                } else {
+                    alert('Unable to start checkout. Please try again or contact support.');
+                    console.error('Checkout error:', data);
+                }
+            } catch (err) {
+                console.error('Checkout error:', err);
+                alert('Unable to connect to payment system. Please try again.');
+            }
+        }
+    </script>
+    <div style="text-align:center; padding:1.5rem 1rem; border-top:1px solid rgba(255,215,0,0.2); margin-top:2rem;">
+        <!-- Social Cross-Links -->
+        <div style="margin-top:0.75rem; display:flex; justify-content:center; gap:1.2rem; flex-wrap:wrap; align-items:center;">
+            <a href="https://x.com/dearden_ni37258" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.35rem; color:#ffd700; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="Follow on X">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                X
+            </a>
+            <a href="https://www.linkedin.com/in/nigeldearden" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.35rem; color:#0077B5; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="Connect on LinkedIn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+            </a>
+            <a href="/site.html" style="display:inline-flex; align-items:center; gap:0.35rem; color:#25D366; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="WhatsApp QR on Homepage">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                WhatsApp
+            </a>
+        </div>
+    </div>
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement -->
+
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement (v2 fixed) -->
+<script>
+(function() {
+  try {
+    var sid = sessionStorage.getItem('iaai_sid');
+    if (!sid) {
+      sid = 'ses_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 9);
+      sessionStorage.setItem('iaai_sid', sid);
+    }
+    var data = {
+      path: window.location.pathname + (window.location.hash || ''),
+      pageTitle: document.title || 'Untitled',
+      referrer: document.referrer || '',
+      sessionId: sid
+    };
+    fetch('/api/trpc/analytics.track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ json: data }),
+      credentials: 'include'
+    }).catch(function() {});
+    window.addEventListener('hashchange', function() {
+      var hashData = {
+        path: window.location.pathname + (window.location.hash || ''),
+        pageTitle: document.title || 'Untitled',
+        referrer: window.location.href,
+        sessionId: sid
+      };
+      fetch('/api/trpc/analytics.track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ json: hashData }),
+        credentials: 'include'
+      }).catch(function() {});
+    });
+  } catch(e) {}
+})();
+</script>
+
+    <!-- Back-to-Top Button Logic -->
+    <script>
+    (function() {
+        var btn = document.getElementById('back-to-top-btn');
+        if (!btn) return;
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                btn.style.display = 'flex';
+            } else {
+                btn.style.display = 'none';
+            }
+        }, { passive: true });
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    })();
+    </script>
+
+</body>
+</html>

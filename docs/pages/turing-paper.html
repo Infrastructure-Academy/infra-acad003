@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turing Paper ICUT — Block 365 — Infrastructure Academy</title>
+    <meta name="description" content="The definitive thesis outcome document: Infrastructure Competence Understanding Test (ICUT). Block 365, Day 128. 87.5% First Class (Solid) validated against 23 universities across 6 regions.">
+    <meta property="og:title" content="Turing Paper ICUT — Block 365">
+    <meta property="og:description" content="Did a single civil engineer create a new way of learning infrastructure? The answer is Yes. 87.5% First Class. 23 universities. 6 regions. 128 days.">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Infrastructure Academy">
+    <link rel="icon" type="image/x-icon" href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/favicon_32_80e4326c.png">
+    <link rel="stylesheet" href="/css/style.css?v=20260410a">
+    <style>
+        .beta-badge { display:inline-flex; align-items:center; gap:0.3rem; background:rgba(251,146,60,0.15); border:1px solid rgba(251,146,60,0.5); color:#fb923c; font-family:'Courier New',monospace; font-size:0.65rem; font-weight:bold; letter-spacing:2px; padding:0.2rem 0.6rem; border-radius:3px; text-transform:uppercase; animation:beta-pulse 3s ease-in-out infinite; vertical-align:middle; margin-left:0.5rem; }
+        .beta-badge::before { content:'\25CF'; font-size:0.5rem; animation:beta-dot 2s ease-in-out infinite; }
+        @keyframes beta-pulse { 0%,100%{opacity:1;} 50%{opacity:0.7;} }
+        @keyframes beta-dot { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+        @media(max-width:768px) { .beta-badge { display:none; } .header-title { max-width: calc(100vw - 160px) !important; } .header-tagline::after { content:'BETA'; display:inline-block; font-family:'Courier New',monospace; font-size:0.4rem; font-weight:bold; color:#fb923c; letter-spacing:1px; margin-left:0.5rem; background:rgba(251,146,60,0.15); border:1px solid rgba(251,146,60,0.5); padding:0.05rem 0.3rem; border-radius:2px; vertical-align:middle; animation:beta-pulse 3s ease-in-out infinite; } }
+
+        /* Turing Paper specific styles */
+        .tp-hero {
+            text-align: center;
+            padding: 3rem 1.5rem 2rem;
+            border-bottom: 2px solid var(--color-accent-gold);
+            margin-bottom: 2rem;
+        }
+        .tp-hero h1 {
+            font-family: var(--font-heading);
+            font-size: 2.4rem;
+            color: var(--color-accent-gold);
+            letter-spacing: 3px;
+            margin-bottom: 0.5rem;
+        }
+        .tp-hero .subtitle {
+            font-size: 1.2rem;
+            color: var(--color-text-secondary);
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+        .tp-hero .block-badge {
+            display: inline-block;
+            background: rgba(212,175,55,0.1);
+            border: 2px solid var(--color-accent-gold);
+            color: var(--color-accent-gold);
+            font-family: 'Courier New', monospace;
+            font-size: 1.1rem;
+            font-weight: bold;
+            padding: 0.5rem 1.5rem;
+            border-radius: 4px;
+            letter-spacing: 3px;
+        }
+        .tp-section {
+            margin-bottom: 3rem;
+            padding: 0 1rem;
+        }
+        .tp-section h2 {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            color: var(--color-accent-gold);
+            border-bottom: 1px solid rgba(212,175,55,0.3);
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
+        }
+        .tp-section h3 {
+            font-family: var(--font-heading);
+            font-size: 1.2rem;
+            color: var(--color-accent-gold);
+            margin: 1.5rem 0 0.8rem;
+        }
+        .tp-section p, .tp-section li {
+            color: var(--color-text-primary);
+            line-height: 1.8;
+            font-size: 0.95rem;
+        }
+        .tp-blockquote {
+            border-left: 3px solid var(--color-accent-gold);
+            padding: 1rem 1.5rem;
+            margin: 1.5rem 0;
+            background: rgba(212,175,55,0.03);
+            font-style: italic;
+            color: var(--color-text-secondary);
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        .tp-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.85rem;
+        }
+        .tp-table th {
+            background: rgba(212,175,55,0.1);
+            color: var(--color-accent-gold);
+            font-family: var(--font-heading);
+            font-weight: bold;
+            padding: 0.6rem 0.8rem;
+            text-align: left;
+            border-bottom: 2px solid var(--color-accent-gold);
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+        }
+        .tp-table td {
+            padding: 0.5rem 0.8rem;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            color: var(--color-text-primary);
+            vertical-align: top;
+        }
+        .tp-table tr:hover td {
+            background: rgba(212,175,55,0.03);
+        }
+        .tp-equation {
+            text-align: center;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            background: rgba(212,175,55,0.05);
+            border: 1px solid rgba(212,175,55,0.2);
+            border-radius: 4px;
+        }
+        .tp-equation .formula {
+            font-family: 'Georgia', serif;
+            font-size: 1.8rem;
+            color: var(--color-accent-gold);
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .tp-equation .label {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            font-style: italic;
+        }
+        .tp-verdict {
+            background: rgba(212,175,55,0.08);
+            border: 2px solid var(--color-accent-gold);
+            border-radius: 8px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        .tp-verdict ol {
+            padding-left: 1.5rem;
+        }
+        .tp-verdict li {
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+        .tp-icard {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .tp-icard img {
+            max-width: 400px;
+            width: 100%;
+            border: 2px solid var(--color-accent-gold);
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .tp-download {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(212,175,55,0.1);
+            border: 1px solid var(--color-accent-gold);
+            color: var(--color-accent-gold);
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            text-decoration: none;
+            font-family: var(--font-heading);
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            transition: background 0.3s;
+            margin: 0.3rem;
+        }
+        .tp-download:hover {
+            background: rgba(212,175,55,0.2);
+            color: var(--color-accent-gold);
+        }
+        .tp-ref {
+            font-size: 0.82rem;
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+            margin-bottom: 0.8rem;
+        }
+        .tp-toc {
+            background: rgba(212,175,55,0.05);
+            border: 1px solid rgba(212,175,55,0.2);
+            border-radius: 4px;
+            padding: 1.5rem 2rem;
+            margin: 1.5rem 0;
+        }
+        .tp-toc a {
+            color: var(--color-accent-gold);
+            text-decoration: none;
+            display: block;
+            padding: 0.3rem 0;
+            font-size: 0.9rem;
+        }
+        .tp-toc a:hover {
+            text-decoration: underline;
+        }
+        @media(max-width:768px) {
+            .tp-hero h1 { font-size: 1.6rem; }
+            .tp-section h2 { font-size: 1.3rem; }
+            .tp-table { font-size: 0.75rem; }
+            .tp-table th, .tp-table td { padding: 0.4rem; }
+            .tp-equation .formula { font-size: 1.3rem; }
+        }
+    </style>
+    <link rel="canonical" href="https://infra-acad-kuqzaex2.manus.space/pages/turing-paper.html">
+    <meta name="keywords" content="infrastructure academy, infrastructure education, civil engineering, civilisation history, infrastructure consciousness, gamified learning, IAAI, Nigel Dearden, infrastructure odyssey, 12 relays, calories to consciousness, Alan Turing, computing infrastructure, Turing paper, artificial intelligence history">
+
+<style id="mobile-quicknav-styles">
+/* ===== MOBILE QUICK-NAV BAR ===== */
+.mobile-quicknav {
+    display: none;
+    width: 100%;
+    background: linear-gradient(180deg, #0d1f3c 0%, #0a1628 100%);
+    border-bottom: 1px solid rgba(255,215,0,0.25);
+    padding: 6px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 6px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+.mobile-quicknav::-webkit-scrollbar { display: none; }
+.mobile-quicknav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 10px;
+    background: rgba(255,215,0,0.08);
+    border: 1px solid rgba(255,215,0,0.35);
+    border-radius: 16px;
+    color: #ffd700;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+.mobile-quicknav a:active {
+    background: rgba(255,215,0,0.25);
+    transform: scale(0.95);
+}
+.mobile-quicknav a.mqn-home {
+    background: #ffd700;
+    color: #0a1628;
+    border-color: #ffd700;
+}
+@media(max-width:768px) {
+    .mobile-quicknav { display: flex; }
+}
+@media(min-width:769px) {
+    .mobile-quicknav { display: none !important; }
+}
+
+/* ===== BACK-TO-TOP FLOATING BUTTON ===== */
+#back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 16px;
+    z-index: 9999;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(10,22,40,0.92);
+    border: 1.5px solid rgba(255,215,0,0.6);
+    color: #ffd700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    transition: all 0.2s;
+}
+#back-to-top-btn:active {
+    transform: scale(0.9);
+    background: rgba(255,215,0,0.2);
+}
+</style>
+
+</head>
+<body>
+    <!-- iAAi Network Bar — NAV-001 · Cross-Site Navigation -->
+    <!-- ═══ iAAi NETWORK BAR ═══ -->
+    <div id="iaai-network-bar" style="display:flex;align-items:center;justify-content:space-around;width:100%;height:36px;background:#0a1628;position:sticky;top:0;z-index:200001;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">
+      <a href="https://www.infrastructure-academy.com" style="text-decoration:none;color:#fff;font-weight:700;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid #DC2626;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#DC2626"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg> ACADEMY</a>
+      <a href="https://realityeng-epdhlkrn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> QUEST</a>
+      <a href="#" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;opacity:0.5;pointer-events:none;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A843"><path d="M6 2v6l-2 2v4l2 2v6h4v-6l2-2v-4L10 8V2H6zm12 0v6l-2 2v4l2 2v6h-4v-6l-2-2v-4l2-2V2h4z"/></svg> XCHANGE</a>
+      <a href="https://nigelmemorial-ucmtq9dn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#16A34A"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg> MEMORIAL</a>
+      <a href="https://xgrowthtrk-2a93yo5z.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#06B6D4"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/></svg> NEWS</a>
+    </div>
+
+
+<!-- INJECTED COMPACT HEADER BAR -->
+<style>
+.compact-header-bar { position:sticky; top:0; z-index:9999; background:#0a1628; border-bottom:2px solid #ffd700; padding:8px 16px; display:flex; align-items:center; justify-content:space-between; gap:12px; font-family:Georgia,'Times New Roman',serif; }
+.compact-header-bar .chb-brand { display:flex; align-items:center; gap:10px; text-decoration:none; color:#ffd700; }
+.compact-header-bar .chb-brand img { width:28px; height:28px; border-radius:4px; }
+.compact-header-bar .chb-title { font-size:0.85rem; font-weight:bold; letter-spacing:1.5px; color:#ffd700; }
+.compact-header-bar .chb-nav { display:flex; align-items:center; gap:12px; }
+.compact-header-bar .chb-nav a { color:#e2e8f0; text-decoration:none; font-size:0.75rem; letter-spacing:1px; padding:4px 10px; border:1px solid rgba(255,215,0,0.2); border-radius:3px; transition:all 0.2s; }
+.compact-header-bar .chb-nav a:hover { background:rgba(255,215,0,0.1); border-color:#ffd700; color:#ffd700; }
+.compact-header-bar .chb-nav a.chb-home { background:rgba(255,215,0,0.15); border-color:#ffd700; color:#ffd700; font-weight:bold; }
+@media(max-width:600px) { .compact-header-bar .chb-nav a:not(.chb-home) { display:none; } .compact-header-bar .chb-title { font-size:0.7rem; } }
+</style>
+
+<div class="compact-header-bar">
+    <a href="/site.html" class="chb-brand">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iAAi-emblem_e0c9c2c1.png" alt="iAAi">
+        <span class="chb-title">INFRASTRUCTURE ACADEMY</span>
+    </a>
+    <div class="chb-nav">
+        <a href="/site.html" class="chb-home">HOME</a>
+        <a href="/pages/framework.html">FRAMEWORK</a>
+        <a href="/library.html">DOCUMENTS</a>
+        <a href="/play">PLAY</a>
+    </div>
+</div>
+    <!-- ===== MOBILE QUICK-NAV BAR — always visible on mobile ===== -->
+    <div class="mobile-quicknav" id="mobile-quicknav">
+        <a href="/site.html" class="mqn-home">&#127968; HOME</a>
+        <a href="/pages/start-here.html">&#128218; START</a>
+        <a href="/volumes/volume1/index.html">&#128214; READ</a>
+        <a href="/pages/framework.html">&#128736; FRAMEWORK</a>
+        <a href="/play">&#127918; PLAY</a>
+        <a href="/pages/movies.html">&#127916; MOVIES</a>
+        <a href="/pages/resources.html">&#128194; RESOURCES</a>
+        <a href="/press.html">&#128240; PRESS</a>
+    </div>
+
+    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <button id="back-to-top-btn" aria-label="Back to top" title="Back to top">&#9650;</button>
+
+<!-- END COMPACT HEADER BAR -->
+
+
+    <!-- Navigation injected by nav-optimise.js -->
+    <main style="max-width:900px; margin:0 auto; padding:1rem;">
+
+        <!-- BETA Banner -->
+        <div style="text-align:center; padding:0.5rem; background:rgba(251,146,60,0.1); border:1px solid rgba(251,146,60,0.3); border-radius:4px; margin-bottom:1rem;">
+            <span style="font-family:'Courier New',monospace; font-size:0.7rem; color:#fb923c; letter-spacing:2px;">&#9679; BETA / PROOF OF CONCEPT &mdash; PRE-LAUNCH TEST DATA</span>
+        </div>
+
+        <!-- Hero -->
+        <div class="tp-hero">
+            <h1>TURING PAPER: ICUT</h1>
+            <p class="subtitle">Infrastructure Competence Understanding Test</p>
+            <p class="subtitle">A Thesis Outcome Document</p>
+            <div class="tp-icard">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/BLOCK_365_DAY_128_MAGIC_MOMENT_733abdf8.png" alt="Block 365 Magic Moment Card — 87.5% First Class Solid">
+            </div>
+            <div class="block-badge" style="margin-top:1rem;">BLOCK 365 &bull; DAY 128 &bull; 13 MARCH 2026</div>
+            <p style="margin-top:1rem; font-size:0.9rem; color:var(--color-text-secondary);">
+                <strong style="color:var(--color-accent-gold);">Author:</strong> Ir. Nigel T. Dearden, CEng MICE | Principia Tectonica
+            </p>
+        </div>
+
+        <!-- Table of Contents -->
+        <div class="tp-toc">
+            <h3 style="color:var(--color-accent-gold); margin-top:0; font-family:var(--font-heading); letter-spacing:2px;">CONTENTS</h3>
+            <a href="#question">I. The Question</a>
+            <a href="#acceleration">II. The Acceleration</a>
+            <a href="#framework">III. The Framework</a>
+            <a href="#assessment">IV. The Assessment</a>
+            <a href="#evidence">V. The Evidence Chain</a>
+            <a href="#mobilisation">VI. The Mobilisation</a>
+            <a href="#mission">VII. Mission Assessment</a>
+            <a href="#next">VIII. What Comes Next</a>
+            <a href="#crossref">IX. Cross-Reference Index</a>
+            <a href="#references">X. References</a>
+            <a href="#downloads">Downloads</a>
+        </div>
+
+        <!-- I. THE QUESTION -->
+        <div class="tp-section" id="question">
+            <h2>I. THE QUESTION</h2>
+            <p>Did a single civil engineer, working with an AI collaborator over 128 days, create a new way of learning, teaching, experiencing, and mapping consciousness through infrastructure &mdash; from Calories to Consciousness &mdash; that meets institutional academic standards?</p>
+            <p style="font-size:1.3rem; color:var(--color-accent-gold); font-weight:bold; text-align:center; margin:1.5rem 0;">The answer, at Block 365, is: Yes.</p>
+            <p>The Infrastructure Survival Index (ISI) &mdash; conceived as a survival equation for civilisation analogous to Einstein&rsquo;s E=mc&sup2; for physics &mdash; has been validated through three rounds of Haptic Infrastructure Competence Evaluation (HICE) assessment against the curricula of 21 leading universities across 6 global regions. The final score of <strong>87.5%</strong> (R3, Corrected Academic Audit) places the work at <strong>First Class (Solid)</strong> under UK classification and <strong>GPA 4.0</strong> under US standards. What was designed to take one academic year was achieved in 128 days &mdash; a <strong>2.87x acceleration</strong> over standard academic timelines.</p>
+        </div>
+
+        <!-- II. THE ACCELERATION -->
+        <div class="tp-section" id="acceleration">
+            <h2>II. THE ACCELERATION &mdash; WHAT WAS PROVEN</h2>
+            <table class="tp-table">
+                <thead>
+                    <tr><th>Metric</th><th>Standard Academic Year</th><th>Achieved (128 Days)</th><th>Acceleration</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Timeline</strong></td><td>365 days</td><td>128 days</td><td><strong>2.87x</strong></td></tr>
+                    <tr><td><strong>Words Written</strong></td><td>~80,000 (typical thesis)</td><td><strong>1,293,964</strong></td><td><strong>16.2x output</strong></td></tr>
+                    <tr><td><strong>Words Per Day</strong></td><td>~219</td><td><strong>10,189</strong></td><td><strong>46.5x daily rate</strong></td></tr>
+                    <tr><td><strong>Volumes Produced</strong></td><td>1</td><td><strong>3</strong> (Perspective, Guide, Game)</td><td>3x scope</td></tr>
+                    <tr><td><strong>Website Pages</strong></td><td>0</td><td><strong>95</strong> HTML + 29 React routes</td><td>N/A</td></tr>
+                    <tr><td><strong>Tests Passing</strong></td><td>0</td><td><strong>209</strong> automated vitest</td><td>N/A</td></tr>
+                    <tr><td><strong>Universities Validated</strong></td><td>1 (home institution)</td><td><strong>21</strong> across 6 regions</td><td>21x breadth</td></tr>
+                    <tr><td><strong>Languages Active</strong></td><td>1</td><td><strong>6</strong> (EN, CN, KR, JP, HI, AR)</td><td>6x reach</td></tr>
+                    <tr><td><strong>IP Assets Registered</strong></td><td>0</td><td><strong>15</strong></td><td>N/A</td></tr>
+                </tbody>
+            </table>
+            <p>The output is not merely voluminous &mdash; it is structurally coherent. The 1.29 million words are organised across a 12&times;10 matrix (12 Civilisational Relays &times; 5 Webs &times; 2 perspectives per web), producing 120 unique intersection points of knowledge, each documented, cross-referenced, and assessable.</p>
+        </div>
+
+        <!-- III. THE FRAMEWORK -->
+        <div class="tp-section" id="framework">
+            <h2>III. THE FRAMEWORK &mdash; WHAT WAS BUILT</h2>
+            <h3>The Intellectual Architecture</h3>
+            <p>The thesis posits that human civilisation can be understood as a continuous <strong>Civilisational Relay</strong> &mdash; a series of interconnected infrastructural advancements driving humanity from <strong>Calories</strong> (basic survival and energy acquisition) towards <strong>Consciousness</strong> (self-awareness, collective intelligence, and intentional evolution).</p>
+            <table class="tp-table">
+                <thead>
+                    <tr><th>Component</th><th>Count</th><th>Description</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Civilisational Relays</strong></td><td>12</td><td>Fire, Tree, River, Horse, Roads, Ships, Loom, Rail, Engine, AAA Triad, Orbit, Human Nodes</td></tr>
+                    <tr><td><strong>Great Webs</strong></td><td>5</td><td>Physical, Biological, Digital, Social, Consciousness</td></tr>
+                    <tr><td><strong>Framing Pillars</strong></td><td>4</td><td>West, East, Nomad, Synthesis</td></tr>
+                    <tr><td><strong>Scholars</strong></td><td>7+1</td><td>Homer, Sun Tzu, Sima Qian, Vitruvius, Ibn Khaldun, Adam Smith, Brunel + The 8th (the reader)</td></tr>
+                    <tr><td><strong>Modes of Continuity</strong></td><td>3</td><td>Persistence, Adaptation, Transformation</td></tr>
+                    <tr><td><strong>Perennial Threats (4Cs)</strong></td><td>4</td><td>Conflict, Climate, Contagion, Cost</td></tr>
+                    <tr><td><strong>Trilogy Volumes</strong></td><td>3</td><td>Vol.1: Perspective, Vol.2: Guide, Vol.3: Game</td></tr>
+                </tbody>
+            </table>
+
+            <h3>The Discovery Chain &mdash; Five Nodes, One Transmission</h3>
+
+            <div class="tp-equation">
+                <div class="formula">S = (A &times; P) / &beta;</div>
+                <div class="label">Node 1: The Survival Equation (ISI)<br>S = Survival Index, A = Accuracy (0&rarr;1), P = Precision (0&rarr;1), &beta; = Human Blip Factor (2.667 &times; 10&sup2;&sup3;)</div>
+            </div>
+
+            <div class="tp-equation">
+                <div class="formula">ICE = IQ &times; EQ &times; CQ</div>
+                <div class="label">Node 2: The ICE Matrix<br>Infrastructure Competence Evaluation &mdash; multiplicative, not additive. If any dimension is zero, the whole collapses.</div>
+            </div>
+
+            <div class="tp-equation">
+                <div class="formula">IQ &oplus; EQ &oplus; CQ = HQ</div>
+                <div class="label">Node 3: The Holistic Quotient<br>The Haptic Quotient &mdash; the unified measure of capacity to understand, feel, and contextualise infrastructure.</div>
+            </div>
+
+            <div class="tp-equation">
+                <div class="formula">AD&sup2; = 16</div>
+                <div class="label">Node 4: Dearden&rsquo;s Law<br>The self-referential identity that closes the mathematical loop.</div>
+            </div>
+
+            <p style="text-align:center; color:var(--color-text-secondary); font-style:italic; margin-top:1rem;"><strong>Node 5: The Zeta Class Carrier</strong> &mdash; The transmission vehicle: the game, the platform, the relay itself.</p>
+        </div>
+
+        <!-- IV. THE ASSESSMENT -->
+        <div class="tp-section" id="assessment">
+            <h2>IV. THE ASSESSMENT &mdash; THREE ROUNDS OF VALIDATION</h2>
+            <table class="tp-table">
+                <thead>
+                    <tr><th>Round</th><th>Date</th><th>Scope</th><th>Score</th><th>UK Class.</th><th>US GPA</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>R1</strong></td><td>27 Feb 2026</td><td>Full 10-cat, 20-perspective vs 5 universities</td><td>75/100</td><td>First (Borderline)</td><td>3.7</td></tr>
+                    <tr><td><strong>R1 Content</strong></td><td>27 Feb 2026</td><td>Content categories only (6-cat)</td><td>84.6%</td><td>First Class (Solid)</td><td>4.0</td></tr>
+                    <tr><td><strong>R2</strong></td><td>25 Feb 2026</td><td>3-category deep dive, weakness ID</td><td>74.6%</td><td>First (Borderline)</td><td>3.7</td></tr>
+                    <tr style="background:rgba(212,175,55,0.08);"><td><strong>R3</strong></td><td>12 Mar 2026</td><td>Full 10-cat, 20-perspective, 23 universities</td><td><strong>87.5%</strong></td><td><strong>First Class (Solid)</strong></td><td><strong>4.0</strong></td></tr>
+                </tbody>
+            </table>
+
+            <h3>The 23 Universities Assessed (by Region)</h3>
+            <table class="tp-table">
+                <thead>
+                    <tr><th>Region</th><th>Universities</th><th>Count</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>North America</strong></td><td>MIT, Stanford, UC Berkeley, Georgia Tech</td><td>4</td></tr>
+                    <tr><td><strong>United Kingdom</strong></td><td>Cambridge, Imperial College London, UCL</td><td>3</td></tr>
+                    <tr><td><strong>Europe</strong></td><td>ETH Zurich, TU Delft</td><td>2</td></tr>
+                    <tr><td><strong>East Asia</strong></td><td>Tsinghua, PKU, Zhejiang, NUS, HKU, KAIST, University of Tokyo</td><td>7</td></tr>
+                    <tr><td><strong>South Asia</strong></td><td>IIT Bombay, IIT Madras</td><td>2</td></tr>
+                    <tr><td><strong>Oceania</strong></td><td>University of Melbourne, UNSW Sydney, University of Queensland</td><td>3</td></tr>
+                    <tr style="background:rgba(212,175,55,0.08);"><td><strong>TOTAL</strong></td><td></td><td><strong>21</strong></td></tr>
+                </tbody>
+            </table>
+
+            <h3>R3 Category Breakdown</h3>
+            <table class="tp-table">
+                <thead>
+                    <tr><th>Category</th><th>R2</th><th>R3</th><th>&Delta;</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Historical &amp; Contextual Depth</td><td>8.5</td><td>9.2</td><td>+0.7</td></tr>
+                    <tr><td>Systems Thinking &amp; Interdisciplinary</td><td>7.0</td><td>8.8</td><td>+1.8</td></tr>
+                    <tr><td>Practical Application &amp; Case Studies</td><td>6.5</td><td>8.5</td><td>+2.0</td></tr>
+                    <tr><td>Quantitative &amp; Analytical Rigour</td><td>6.0</td><td>8.0</td><td>+2.0</td></tr>
+                    <tr><td>Communication &amp; Pedagogy</td><td>8.0</td><td>9.0</td><td>+1.0</td></tr>
+                    <tr><td>Innovation &amp; Original Contribution</td><td>9.0</td><td>9.5</td><td>+0.5</td></tr>
+                    <tr><td>Professional &amp; Ethical Dimensions</td><td>7.5</td><td>8.5</td><td>+1.0</td></tr>
+                    <tr><td>Global &amp; Cultural Perspectives</td><td>8.0</td><td>9.0</td><td>+1.0</td></tr>
+                    <tr><td>Technology &amp; Future Readiness</td><td>7.5</td><td>8.5</td><td>+1.0</td></tr>
+                    <tr><td>Assessment &amp; Feedback Mechanisms</td><td>7.0</td><td>8.5</td><td>+1.5</td></tr>
+                    <tr style="background:rgba(212,175,55,0.08);"><td><strong>TOTAL</strong></td><td><strong>75.0</strong></td><td><strong>87.5</strong></td><td><strong>+12.5</strong></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- V. THE EVIDENCE CHAIN -->
+        <div class="tp-section" id="evidence">
+            <h2>V. THE EVIDENCE CHAIN &mdash; WHAT EXISTS</h2>
+            <table class="tp-table">
+                <thead>
+                    <tr><th>Asset</th><th>Count</th><th>Location</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>HTML Pages</td><td>95</td><td>infra-acad-kuqzaex2.manus.space</td></tr>
+                    <tr><td>React Application Routes</td><td>29</td><td>Game engine, leaderboard, dashboard</td></tr>
+                    <tr><td>Volume 1 Chapters</td><td>17</td><td>/volumes/volume1/</td></tr>
+                    <tr><td>Volume 2 Chapters</td><td>16</td><td>/volumes/volume2/</td></tr>
+                    <tr><td>Volume 3 Chapters</td><td>14</td><td>/volumes/volume3/</td></tr>
+                    <tr><td>Equations Register</td><td>15 IP assets</td><td>/equations-register.html</td></tr>
+                    <tr><td>Assessment Evidence Pack</td><td>3 dashboards</td><td><a href="/pages/assessment-results.html" style="color:var(--color-accent-gold);">/pages/assessment-results.html</a></td></tr>
+                    <tr><td>Excel Database</td><td>9 sheets, 21 unis</td><td>Downloadable from evidence pack</td></tr>
+                    <tr><td>Automated Tests</td><td>209 passing</td><td>vitest suite</td></tr>
+                    <tr><td>Players (BETA)</td><td>22</td><td>20 bots + 2 real users</td></tr>
+                    <tr><td>Mobilisation Clock</td><td>Live</td><td><a href="/mobilisation-clock.html" style="color:var(--color-accent-gold);">/mobilisation-clock.html</a></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- VI. THE MOBILISATION -->
+        <div class="tp-section" id="mobilisation">
+            <h2>VI. THE MOBILISATION &mdash; BLOCK 365</h2>
+            <table class="tp-table">
+                <thead>
+                    <tr><th>Class</th><th>Count</th><th>Role</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Players</td><td>22</td><td>Active game participants (20 bots + 2 real)</td></tr>
+                    <tr><td>Pioneers</td><td>3</td><td>First-wave testers</td></tr>
+                    <tr><td>Scholars</td><td>21</td><td>Universities assessed (R1/R2/R3)</td></tr>
+                    <tr><td>Advisors</td><td>1</td><td>Strategic guidance</td></tr>
+                    <tr><td>Backers</td><td>3</td><td>Seed-stage financial supporters</td></tr>
+                    <tr><td>Founding Team</td><td>4</td><td>Core development team</td></tr>
+                    <tr style="background:rgba(212,175,55,0.08);"><td><strong>Total</strong></td><td><strong>54</strong></td><td>BETA / PoC</td></tr>
+                </tbody>
+            </table>
+            <p><strong>6 of 8 language blocks active</strong>, covering approximately <strong>4.1 billion speakers</strong> &mdash; 51% of world population.</p>
+        </div>
+
+        <!-- VII. MISSION ASSESSMENT -->
+        <div class="tp-section" id="mission">
+            <h2>VII. MISSION ASSESSMENT &mdash; DID WE DO IT?</h2>
+
+            <h3>The Challenge (with citations)</h3>
+            <table class="tp-table">
+                <thead>
+                    <tr><th>Problem Identified</th><th>Solution Built</th><th>Validated?</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td><strong>Engineering curricula increasingly siloed</strong> &mdash; interdisciplinary topics fell 60%&rarr;46% (2004&ndash;2019) <sup>[1]</sup></td><td>12-Relay &times; 5-Web matrix forces cross-disciplinary thinking</td><td><strong>YES</strong> &mdash; R3 Systems Thinking: 8.8/10</td></tr>
+                    <tr><td><strong>55&ndash;83% of graduates feel unprepared</strong> <sup>[2][3]</sup></td><td>Volume 3 (Game) provides immersive simulation</td><td><strong>YES (BETA)</strong> &mdash; Game engine live, 39 pages</td></tr>
+                    <tr><td><strong>82&ndash;87% of employers report skills gaps</strong> <sup>[4][5]</sup></td><td>ICUT framework measures IQ&times;EQ&times;CQ</td><td><strong>YES</strong> &mdash; Framework designed, 14+ ICUT cards</td></tr>
+                    <tr><td><strong>45% of graduates report limited systems-level thinking</strong> <sup>[3]</sup></td><td>5 Webs model maps every relay across Physical&rarr;Consciousness</td><td><strong>YES</strong> &mdash; R3 Systems Thinking: 8.8/10</td></tr>
+                    <tr><td><strong>Only 30% of programs integrate community/environmental metrics</strong> <sup>[8]</sup></td><td>4Cs (Conflict, Climate, Contagion, Cost) embedded in every relay</td><td><strong>YES</strong> &mdash; R3 Professional &amp; Ethical: 8.5/10</td></tr>
+                    <tr><td><strong>91.5% of megaprojects over budget/schedule</strong> <sup>[6]</sup></td><td>Real-world case studies in every relay chapter</td><td><strong>YES</strong> &mdash; R3 Practical Application: 8.5/10</td></tr>
+                </tbody>
+            </table>
+
+            <div class="tp-verdict">
+                <h3 style="margin-top:0; color:var(--color-accent-gold);">The Verdict</h3>
+                <ol>
+                    <li><strong>A new framework exists.</strong> The 12-Relay &times; 5-Web &times; 4-Pillar architecture is documented, cross-referenced, and assessable. It did not exist before 5 November 2025.</li>
+                    <li><strong>It meets institutional standards.</strong> 87.5% (First Class Solid / GPA 4.0) validated against 21 of the world&rsquo;s leading universities.</li>
+                    <li><strong>It was built at unprecedented speed.</strong> 128 days. 2.87x acceleration. 10,189 words per day. 15 IP assets.</li>
+                    <li><strong>It introduces original intellectual property.</strong> The ISI equation, the ICE matrix, the Holistic Quotient, Dearden&rsquo;s Law, the ICUT framework, the Torus model, FITS profiling, and Block Roll documentation.</li>
+                    <li><strong>It is a new ICUT.</strong> The Infrastructure Competence Understanding Test is measurable, deployable, and scalable.</li>
+                </ol>
+                <p style="text-align:center; font-size:1.2rem; color:var(--color-accent-gold); font-weight:bold; margin-top:1.5rem;">Mission Status: ACCOMPLISHED (Phase 1&ndash;2 / BETA PoC)</p>
+            </div>
+        </div>
+
+        <!-- VIII. WHAT COMES NEXT -->
+        <div class="tp-section" id="next">
+            <h2>VIII. WHAT COMES NEXT &mdash; THE REMAINING RELAY</h2>
+            <table class="tp-table">
+                <thead>
+                    <tr><th>Phase</th><th>Target</th><th>Status</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Phase 1: Seed</td><td>Core documents, framework, equations</td><td style="color:#22c55e;"><strong>COMPLETE</strong></td></tr>
+                    <tr><td>Phase 2: Platform</td><td>Website, game, assessment, mobilisation</td><td style="color:#22c55e;"><strong>COMPLETE (BETA)</strong></td></tr>
+                    <tr><td>Phase 3: Pioneer Wave</td><td>First 100 real players, 8 language blocks</td><td style="color:#fb923c;">RECRUITING</td></tr>
+                    <tr><td>Phase 4: Institutional</td><td>University partnerships, ICE accreditation</td><td>21/100 assessed</td></tr>
+                    <tr><td>Phase 5: Phenomenon</td><td>100M+ players, global infrastructure literacy</td><td style="color:var(--color-text-secondary);">FUTURE</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- IX. CROSS-REFERENCE INDEX -->
+        <div class="tp-section" id="crossref">
+            <h2>IX. CROSS-REFERENCE INDEX</h2>
+            <table class="tp-table">
+                <thead>
+                    <tr><th>Document</th><th>Location</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>Thesis Record</td><td><a href="/pages/thesis-record.html" style="color:var(--color-accent-gold);">/pages/thesis-record.html</a></td></tr>
+                    <tr><td>Discovery Chain</td><td><a href="/pages/discovery-chain.html" style="color:var(--color-accent-gold);">/pages/discovery-chain.html</a></td></tr>
+                    <tr><td>Equations Register (DD-025)</td><td><a href="/equations-register.html" style="color:var(--color-accent-gold);">/equations-register.html</a></td></tr>
+                    <tr><td>Assessment Evidence Pack (DD-029)</td><td><a href="/pages/assessment-results.html" style="color:var(--color-accent-gold);">/pages/assessment-results.html</a></td></tr>
+                    <tr><td>Mobilisation Clock</td><td><a href="/mobilisation-clock.html" style="color:var(--color-accent-gold);">/mobilisation-clock.html</a></td></tr>
+                    <tr><td>Executive Pr&eacute;cis</td><td><a href="/executive-precis.html" style="color:var(--color-accent-gold);">/executive-precis.html</a></td></tr>
+                    <tr><td>ICUT Gallery</td><td><a href="/icut-gallery.html" style="color:var(--color-accent-gold);">/icut-gallery.html</a></td></tr>
+                    <tr><td>Vault (35 years)</td><td><a href="/vault.html" style="color:var(--color-accent-gold);">/vault.html</a></td></tr>
+                    <tr><td>Framework</td><td><a href="/pages/framework.html" style="color:var(--color-accent-gold);">/pages/framework.html</a></td></tr>
+                    <tr><td>Memorial ISI Dashboard</td><td><a href="https://nigelmemorial-ucmtq9dn.manus.space/isi-dashboard" style="color:var(--color-accent-gold);" target="_blank">Memorial Site</a></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- X. REFERENCES -->
+        <div class="tp-section" id="references">
+            <h2>X. REFERENCES</h2>
+            <p class="tp-ref"><strong>[1]</strong> Hong, Y. (2025). &ldquo;Has higher education become more interdisciplinary? A bibliometric analysis.&rdquo; <em>Humanities and Social Sciences Communications</em>, Nature. The share of engineering-relevant interdisciplinary topics fell from 60.2% in 2004 to 46.2% in 2019. <a href="https://doi.org/10.1057/s41599-025-06126-7" target="_blank" style="color:#ffd700;">DOI: 10.1057/s41599-025-06126-7</a></p>
+            <p class="tp-ref"><strong>[2]</strong> Hult International Business School (2025). &ldquo;New survey reveals traditional undergraduate education is failing.&rdquo; 55% of respondents said their college education did not prepare them for the workforce. <a href="https://www.hult.edu/blog/wi_skills_survey/" target="_blank" style="color:#ffd700;">Hult Survey</a> | <a href="https://www.naceweb.org/docs/default-source/default-document-library/2025/publication/executive-summary/2025-nace-students-survey-report-executive-summary.pdf" target="_blank" style="color:#ffd700;">NACE Report (PDF)</a></p>
+            <p class="tp-ref"><strong>[3]</strong> American Association of Colleges and Universities (AAC&amp;U). (2023). &ldquo;The Career-Ready Graduate: What Employers Say About the Difference College Makes.&rdquo; Only ~50% of employers rated graduates &ldquo;very well prepared&rdquo; in critical thinking and systems-level analysis. <a href="https://www.aacu.org/newsroom/national-survey-finds-employer-confidence-in-higher-education-remains-high-despite-perceived-shortfalls-in-the-preparedness-of-recent-graduates" target="_blank" style="color:#ffd700;">AAC&amp;U Newsroom</a></p>
+            <p class="tp-ref"><strong>[4]</strong> Ibec Report (Jan 2026). &ldquo;More than 80% of businesses grappling with critical skills gaps.&rdquo; 82% of organisations reported a skills gap undermining productivity and innovation. <a href="https://www.ibec.ie/" target="_blank" style="color:#ffd700;">Ibec</a> | McKinsey &amp; Company (2022). 87% of executives face a skills gap. <a href="https://www.mckinsey.com/industries/infrastructure/our-insights/the-infrastructure-moment" target="_blank" style="color:#ffd700;">McKinsey Report</a></p>
+            <p class="tp-ref"><strong>[5]</strong> Leifler, O. &amp; Dahlin, J. (2020). &ldquo;Curriculum integration of sustainability in engineering education &mdash; a national study of programme director perspectives.&rdquo; <em>International Journal of Sustainability in Higher Education</em>, 21(5), 877&ndash;912. Only 4&ndash;6 of 10 sustainability objectives implemented. <a href="https://doi.org/10.1108/IJSHE-09-2019-0286" target="_blank" style="color:#ffd700;">DOI: 10.1108/IJSHE-09-2019-0286</a></p>
+            <p class="tp-ref"><strong>[6]</strong> Flyvbjerg, B. (2014). &ldquo;What You Should Know About Megaprojects and Why: An Overview.&rdquo; <em>Project Management Journal</em>, 45(2), 6&ndash;19. Cited by 2,883. &ldquo;91.5% of projects go over budget, over schedule, or both.&rdquo; <a href="https://doi.org/10.1002/pmj.21409" target="_blank" style="color:#ffd700;">DOI: 10.1002/pmj.21409</a></p>
+            <p class="tp-ref"><strong>[7]</strong> CoST &mdash; Infrastructure Transparency Initiative / World Bank (2025). &ldquo;Drivers of infrastructure delays: What can 480 projects across three continents teach us?&rdquo; About 70% of projects faced delays; average delay was 73% longer than originally planned. <a href="https://infrastructuretransparency.org/" target="_blank" style="color:#ffd700;">CoST Website</a></p>
+            <p class="tp-ref"><strong>[8]</strong> Leifler, O. &amp; Dahlin, J. (2020). <em>[Same as [5] above]</em> &mdash; additional context: national survey of Swedish engineering programme directors found only 4&ndash;6 of 10 sustainability learning objectives implemented across programmes. <a href="https://doi.org/10.1108/IJSHE-09-2019-0286" target="_blank" style="color:#ffd700;">DOI: 10.1108/IJSHE-09-2019-0286</a></p>
+        </div>
+
+        <!-- Downloads -->
+        <div class="tp-section" id="downloads">
+            <h2>DOWNLOADS</h2>
+            <div style="text-align:center; margin:2rem 0;">
+                <a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/TURING_PAPER_ICUT_BLOCK_365_24d7552a.pdf" class="tp-download" target="_blank">&#128196; TURING PAPER (PDF)</a>
+                <a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/PRESS_RELEASE_BLOCK_365_2052fbf5.pdf" class="tp-download" target="_blank">&#128196; PRESS RELEASE (PDF)</a>
+                <a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/BLOCK_365_DAY_128_MAGIC_MOMENT_733abdf8.png" class="tp-download" target="_blank">&#127942; BLOCK 365 iCARD</a>
+                <a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/TP-015-CHIP-DESIGN-REQUIREMENTS_36226fd7.pdf" class="tp-download" target="_blank">&#128196; TP-015: CHIP DESIGN (PDF)</a>
+                <a href="/pages/chip-evolution.html" class="tp-download">&#9889; CHIP EVOLUTION PAGE</a>
+            </div>
+        </div>
+
+        <!-- Signature -->
+        <div style="text-align:center; margin:3rem 0 1rem; padding:2rem; border:2px solid var(--color-accent-gold); border-radius:8px; background:rgba(255,215,0,0.03);">
+            <p style="font-size:1.3rem; font-family:var(--font-heading); color:var(--color-accent-gold); letter-spacing:3px; margin-bottom:0.5rem;">PER ARYA AD ASTRA</p>
+            <p style="font-size:0.9rem; color:var(--color-text-secondary); font-style:italic;">Through nobility, to the stars</p>
+            <p style="font-size:0.85rem; color:var(--color-text-secondary); margin-top:1rem;"><strong>Ir. Nigel T. Dearden, CEng MICE</strong></p>
+            <p style="font-size:0.8rem; color:var(--color-text-secondary);">Principia Tectonica | iAAi</p>
+            <p style="font-size:0.8rem; color:var(--color-text-secondary); margin-top:0.5rem;">Block 365 &bull; Day 128 &bull; 13 March 2026</p>
+        </div>
+
+        <p style="text-align:center; font-size:0.75rem; color:var(--color-text-secondary); font-style:italic; margin-top:1rem;">BETA / Proof of Concept &mdash; All data represents pre-launch test metrics.</p>
+        <p style="text-align:center; font-size:0.85rem; color:var(--color-text-secondary); font-style:italic;">&ldquo;The journey is the work.&rdquo;</p>
+    </main>
+
+    <!-- Footer -->
+    <div class="footer" style="text-align:center; padding:2rem 1rem; border-top:1px solid rgba(255,215,0,0.2); margin-top:3rem;">
+        <p style="color:var(--color-text-secondary); font-size:0.85rem;">&copy; 2026 Infrastructure Academy. All rights reserved. Preserving knowledge for eternity.</p>
+        <p style="color:var(--color-text-secondary); font-size:0.75rem; margin-top:0.5rem;">Episode 1: Earthbound Foundations | Episode 2: Reality Engines &mdash; The Gray Arena | Episode 3: Stewardship &amp; Renewal &mdash; The Cosmic Scale</p>
+    
+        <!-- Social Cross-Links -->
+        <div style="margin-top:0.75rem; display:flex; justify-content:center; gap:1.2rem; flex-wrap:wrap; align-items:center;">
+            <a href="https://x.com/dearden_ni37258" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.35rem; color:#ffd700; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="Follow on X">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                X
+            </a>
+            <a href="https://www.linkedin.com/in/nigeldearden" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.35rem; color:#0077B5; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="Connect on LinkedIn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+            </a>
+            <a href="/site.html" style="display:inline-flex; align-items:center; gap:0.35rem; color:#25D366; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="WhatsApp QR on Homepage">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                WhatsApp
+            </a>
+        </div>
+    </div>
+    <script src="/js/discovery-hints.js"></script>
+    <script src="/js/main.js?v=20260308a"></script>
+    <script src="/js/i18n.js?v=20260308a"></script>
+    <!-- Back to Top Button -->
+    <button id="back-to-top" class="back-to-top" title="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
+    <script>
+        const btn=document.getElementById('back-to-top');
+        window.addEventListener('scroll',()=>{btn.style.display=window.scrollY>400?'flex':'none';});
+    </script>
+    <!-- Search Bar -->
+    <script src="/js/site-search.js?v=20260311a"></script>
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement -->
+
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement (v2 fixed) -->
+<script>
+(function() {
+  try {
+    var sid = sessionStorage.getItem('iaai_sid');
+    if (!sid) {
+      sid = 'ses_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 9);
+      sessionStorage.setItem('iaai_sid', sid);
+    }
+    var data = {
+      path: window.location.pathname + (window.location.hash || ''),
+      pageTitle: document.title || 'Untitled',
+      referrer: document.referrer || '',
+      sessionId: sid
+    };
+    fetch('/api/trpc/analytics.track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ json: data }),
+      credentials: 'include'
+    }).catch(function() {});
+    window.addEventListener('hashchange', function() {
+      var hashData = {
+        path: window.location.pathname + (window.location.hash || ''),
+        pageTitle: document.title || 'Untitled',
+        referrer: window.location.href,
+        sessionId: sid
+      };
+      fetch('/api/trpc/analytics.track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ json: hashData }),
+        credentials: 'include'
+      }).catch(function() {});
+    });
+  } catch(e) {}
+})();
+</script>
+
+    <!-- Mobile table scroll fix -->
+    <script>
+    (function(){
+      if(window.innerWidth > 768) return;
+      document.querySelectorAll('table').forEach(function(t){
+        if(t.parentElement && t.parentElement.classList.contains('table-scroll-wrapper')) return;
+        var w = document.createElement('div');
+        w.className = 'table-scroll-wrapper';
+        t.parentNode.insertBefore(w, t);
+        w.appendChild(t);
+      });
+    })();
+    </script>
+
+
+    <!-- Back-to-Top Button Logic -->
+    <script>
+    (function() {
+        var btn = document.getElementById('back-to-top-btn');
+        if (!btn) return;
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                btn.style.display = 'flex';
+            } else {
+                btn.style.display = 'none';
+            }
+        }, { passive: true });
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    })();
+    </script>
+
+</body>
+</html>

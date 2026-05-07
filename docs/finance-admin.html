@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>Infrastructure Academy - An Infrastructure Odyssey</title>
+    <title>IAAI — Finance & Administration</title>
     <link rel="icon" type="image/x-icon" href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/favicon_32_80e4326c.png">
-    <link rel="stylesheet" href="/css/style.css?v=20260308a">
+    <link rel="stylesheet" href="/css/style.css?v=20260410a">
     <style>
         /* Password Gate */
         .password-gate {
@@ -321,24 +321,148 @@
             .fa-table { font-size: 0.8rem; }
             .fa-table th, .fa-table td { padding: 0.5rem 0.6rem; }
             .fa-metric-grid { grid-template-columns: 1fr 1fr; }
+            .fa-icard-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .fa-icard-grid img { max-height: 400px; width: auto; max-width: 100%; margin: 0 auto; display: block; object-fit: contain; }
         }
     </style>
     <link rel="canonical" href="https://infra-acad-kuqzaex2.manus.space/finance-admin.html">
     <meta name="keywords" content="infrastructure academy, infrastructure education, civil engineering, civilisation history, infrastructure consciousness, gamified learning, IAAI, Nigel Dearden, infrastructure odyssey, 12 relays, calories to consciousness">
-<meta property="og:type" content="website">
-		<meta property="og:url" content="https://infra-acad-kuqzaex2.manus.space/finance-admin.html">
-		<meta property="og:title" content="Infrastructure Academy - An Infrastructure Odyssey">
-		<meta property="og:description" content="A comprehensive digital platform presenting "An Infrastructure Odyssey" - a 12,000-year journey through civilizational infrastructure development. Features three volumes: Perspective (narrative), Guide (practical framework), and Game (interactive learning), organized around 12 civilizational relays from Fire to Consciousness.">
-		<meta property="og:image" content="https://files.manuscdn.com/webdev_screenshots/2026/03/14/EpJbHinM2qXrsVqgbvCnSd.png?x-oss-process=image/resize,w_1200/crop,h_630,x_0,y_0">
-		<meta property="og:image:width" content="1200">
-		<meta property="og:image:height" content="630">
-		<meta name="twitter:card" content="summary_large_image">
-		<meta name="twitter:title" content="Infrastructure Academy - An Infrastructure Odyssey">
-		<meta name="twitter:description" content="A comprehensive digital platform presenting "An Infrastructure Odyssey" - a 12,000-year journey through civilizational infrastructure development. Features three volumes: Perspective (narrative), Guide (practical framework), and Game (interactive learning), organized around 12 civilizational relays from Fire to Consciousness.">
-		<meta name="twitter:image" content="https://files.manuscdn.com/webdev_screenshots/2026/03/14/EpJbHinM2qXrsVqgbvCnSd.png?x-oss-process=image/resize,w_1200/crop,h_630,x_0,y_0">
-		<meta name="twitter:image:width" content="1200">
-		<meta name="twitter:image:height" content="630"><link rel="canonical" href="https://infra-acad-kuqzaex2.manus.space/finance-admin.html" /></head>
+
+<style id="mobile-quicknav-styles">
+/* ===== MOBILE QUICK-NAV BAR ===== */
+.mobile-quicknav {
+    display: none;
+    width: 100%;
+    background: linear-gradient(180deg, #0d1f3c 0%, #0a1628 100%);
+    border-bottom: 1px solid rgba(255,215,0,0.25);
+    padding: 6px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 6px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+.mobile-quicknav::-webkit-scrollbar { display: none; }
+.mobile-quicknav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 10px;
+    background: rgba(255,215,0,0.08);
+    border: 1px solid rgba(255,215,0,0.35);
+    border-radius: 16px;
+    color: #ffd700;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+.mobile-quicknav a:active {
+    background: rgba(255,215,0,0.25);
+    transform: scale(0.95);
+}
+.mobile-quicknav a.mqn-home {
+    background: #ffd700;
+    color: #0a1628;
+    border-color: #ffd700;
+}
+@media(max-width:768px) {
+    .mobile-quicknav { display: flex; }
+}
+@media(min-width:769px) {
+    .mobile-quicknav { display: none !important; }
+}
+
+/* ===== BACK-TO-TOP FLOATING BUTTON ===== */
+#back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 16px;
+    z-index: 9999;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(10,22,40,0.92);
+    border: 1.5px solid rgba(255,215,0,0.6);
+    color: #ffd700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    transition: all 0.2s;
+}
+#back-to-top-btn:active {
+    transform: scale(0.9);
+    background: rgba(255,215,0,0.2);
+}
+</style>
+
+</head>
 <body>
+    <!-- iAAi Network Bar — NAV-001 · Cross-Site Navigation -->
+    <!-- ═══ iAAi NETWORK BAR ═══ -->
+    <div id="iaai-network-bar" style="display:flex;align-items:center;justify-content:space-around;width:100%;height:36px;background:#0a1628;position:sticky;top:0;z-index:200001;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">
+      <a href="https://www.infrastructure-academy.com" style="text-decoration:none;color:#fff;font-weight:700;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid #DC2626;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#DC2626"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg> ACADEMY</a>
+      <a href="https://realityeng-epdhlkrn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> QUEST</a>
+      <a href="#" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;opacity:0.5;pointer-events:none;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A843"><path d="M6 2v6l-2 2v4l2 2v6h4v-6l2-2v-4L10 8V2H6zm12 0v6l-2 2v4l2 2v6h-4v-6l-2-2v-4l2-2V2h4z"/></svg> XCHANGE</a>
+      <a href="https://nigelmemorial-ucmtq9dn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#16A34A"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg> MEMORIAL</a>
+      <a href="https://xgrowthtrk-2a93yo5z.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#06B6D4"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/></svg> NEWS</a>
+    </div>
+
+
+<!-- INJECTED COMPACT HEADER BAR -->
+<style>
+.compact-header-bar { position:sticky; top:0; z-index:9999; background:#0a1628; border-bottom:2px solid #ffd700; padding:8px 16px; display:flex; align-items:center; justify-content:space-between; gap:12px; font-family:Georgia,'Times New Roman',serif; }
+.compact-header-bar .chb-brand { display:flex; align-items:center; gap:10px; text-decoration:none; color:#ffd700; }
+.compact-header-bar .chb-brand img { width:28px; height:28px; border-radius:4px; }
+.compact-header-bar .chb-title { font-size:0.85rem; font-weight:bold; letter-spacing:1.5px; color:#ffd700; }
+.compact-header-bar .chb-nav { display:flex; align-items:center; gap:12px; }
+.compact-header-bar .chb-nav a { color:#e2e8f0; text-decoration:none; font-size:0.75rem; letter-spacing:1px; padding:4px 10px; border:1px solid rgba(255,215,0,0.2); border-radius:3px; transition:all 0.2s; }
+.compact-header-bar .chb-nav a:hover { background:rgba(255,215,0,0.1); border-color:#ffd700; color:#ffd700; }
+.compact-header-bar .chb-nav a.chb-home { background:rgba(255,215,0,0.15); border-color:#ffd700; color:#ffd700; font-weight:bold; }
+@media(max-width:600px) { .compact-header-bar .chb-nav a:not(.chb-home) { display:none; } .compact-header-bar .chb-title { font-size:0.7rem; } }
+</style>
+
+<div class="compact-header-bar">
+    <a href="/site.html" class="chb-brand">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iAAi-emblem_e0c9c2c1.png" alt="iAAi">
+        <span class="chb-title">INFRASTRUCTURE ACADEMY</span>
+    </a>
+    <div class="chb-nav">
+        <a href="/site.html" class="chb-home">HOME</a>
+        <a href="/pages/framework.html">FRAMEWORK</a>
+        <a href="/library.html">DOCUMENTS</a>
+        <a href="/play">PLAY</a>
+    </div>
+</div>
+    <!-- ===== MOBILE QUICK-NAV BAR — always visible on mobile ===== -->
+    <div class="mobile-quicknav" id="mobile-quicknav">
+        <a href="/site.html" class="mqn-home">&#127968; HOME</a>
+        <a href="/pages/start-here.html">&#128218; START</a>
+        <a href="/volumes/volume1/index.html">&#128214; READ</a>
+        <a href="/pages/framework.html">&#128736; FRAMEWORK</a>
+        <a href="/play">&#127918; PLAY</a>
+        <a href="/pages/movies.html">&#127916; MOVIES</a>
+        <a href="/pages/resources.html">&#128194; RESOURCES</a>
+        <a href="/press.html">&#128240; PRESS</a>
+    </div>
+
+    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <button id="back-to-top-btn" aria-label="Back to top" title="Back to top">&#9650;</button>
+
+<!-- END COMPACT HEADER BAR -->
+
+
 
 <!-- PASSWORD GATE -->
 <div class="password-gate" id="passwordGate">
@@ -355,7 +479,7 @@
 <!-- F&A CONTENT (hidden until password correct) -->
 <div class="fa-content" id="faContent">
 
-    <a href="/" class="fa-back-link">&larr; Return to Infrastructure Academy</a>
+    <a href="/site.html" class="fa-back-link">&larr; Return to Infrastructure Academy</a>
 
     <div class="fa-header">
         <h1>Finance & Administration</h1>
@@ -1071,7 +1195,7 @@
         </div>
         <!-- IP & EQUATIONS REGISTER DECK -->
         <div class="fa-section">
-            <h2>IP &amp; Equations Register Deck &mdash; 56 Cards | BETA EDITION</h2>
+            <h2>IP &amp; Equations Register Deck &mdash; 55 Cards | AI EDITION</h2>
             <p style="color:#e0e0e0; margin-bottom:1rem;">Complete 56-card BETA deck encoding the mathematical backbone of the Infrastructure Academy thesis. 38 distinct equations across 7 tiers + 15 IP assets + 1 meta-card (the deck itself). Art-deco gold border style matching Tecton Trump Cards D52.</p>
             <p style="color:#b8960c; font-style:italic; margin-bottom:1.5rem;">"The formula is morally neutral &mdash; it describes what IS; the application is a CHOICE." &mdash; Block 353</p>
 
@@ -1098,99 +1222,98 @@
             <!-- SPADES -->
             <h3 style="color:#ffd700; margin-bottom:1rem;">&spades; Spades &mdash; The Architecture</h3>
             <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap:0.75rem; margin-bottom:2rem;">
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/01_AS_survival_formula_d859c4a1.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">A&spades; EQ-001</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/02_2S_ice_matrix_561a2952.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">2&spades; EQ-002</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/03_3S_dual_band_c2959b60.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">3&spades; EQ-003</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/04_4S_architect_sig_c98d8f89.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">4&spades; EQ-004</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/05_5S_game_real_395d8c60.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">5&spades; EQ-005</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/06_6S_architect_id_e4844eeb.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">6&spades; EQ-006</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/07_7S_tetrahedron_4a126ac1.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">7&spades; EQ-007</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/08_8S_pythagorean_3e30369f.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">8&spades; EQ-008</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/09_9S_adams_const_a0b4220a.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">9&spades; EQ-009</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/10_10S_turing_papers_57b3ae9a.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">10&spades; IP-01</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/11_JS_block_rolls_69b8ca37.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">J&spades; IP-02</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/12_QS_ice_ip_5ba00ce9.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">Q&spades; IP-03</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/13_KS_deardens_law_bf36d83a.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">K&spades; IP-12</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/deck_ace_signal_3565409e.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">A&spades; EQ-001</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/02_2S_ice_matrix_561a2952.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">2&spades; EQ-002</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/03_3S_dual_band_c2959b60.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">3&spades; EQ-003</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/04_4S_architect_sig_c98d8f89.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">4&spades; EQ-004</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/05_5S_game_real_395d8c60.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">5&spades; EQ-005</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/06_6S_architect_id_e4844eeb.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">6&spades; EQ-006</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/07_7S_tetrahedron_4a126ac1.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">7&spades; EQ-007</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/08_8S_pythagorean_3e30369f.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">8&spades; EQ-008</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/09_9S_adams_const_a0b4220a.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">9&spades; EQ-009</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/10_10S_turing_papers_57b3ae9a.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">10&spades; IP-01</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/11_JS_block_rolls_69b8ca37.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">J&spades; IP-02</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/12_QS_ice_ip_5ba00ce9.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">Q&spades; IP-03</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/13_KS_deardens_law_bf36d83a.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">K&spades; IP-12</p></div>
             </div>
 
             <!-- HEARTS -->
             <h3 style="color:#cc3333; margin-bottom:1rem;">&hearts; Hearts &mdash; The Frameworks</h3>
             <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap:0.75rem; margin-bottom:2rem;">
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/14_AH_iumc_eac6e699.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">A&hearts; EQ-010</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/15_2H_icut_e7ffffa8.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">2&hearts; EQ-011</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/16_3H_fits_a9eee8f5.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">3&hearts; EQ-012</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/17_4H_walkby_0837c669.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">4&hearts; EQ-013</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/18_5H_strive_75568ee3.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">5&hearts; EQ-014</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/19_6H_david_29fd4758.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">6&hearts; EQ-015</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/20_7H_ooda_1a343f7d.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">7&hearts; EQ-016</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/21_8H_dikw_5198a934.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">8&hearts; EQ-017</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/22_9H_aspire_14f34152.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">9&hearts; EQ-018</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/23_10H_baio_27d53c84.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">10&hearts; EQ-019</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/24_JH_fits_ip_c6c631a6.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">J&hearts; IP-05</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/25_QH_david_ip_7daa653e.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">Q&hearts; IP-06</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/26_KH_icut_ip_70100da5.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">K&hearts; IP-09</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/14_AH_iumc_eac6e699.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">A&hearts; EQ-010</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/15_2H_icut_e7ffffa8.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">2&hearts; EQ-011</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/16_3H_fits_a9eee8f5.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">3&hearts; EQ-012</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/17_4H_walkby_0837c669.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">4&hearts; EQ-013</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/18_5H_strive_75568ee3.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">5&hearts; EQ-014</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/19_6H_david_29fd4758.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">6&hearts; EQ-015</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/20_7H_ooda_1a343f7d.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">7&hearts; EQ-016</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/21_8H_dikw_5198a934.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">8&hearts; EQ-017</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/22_9H_aspire_14f34152.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">9&hearts; EQ-018</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/23_10H_baio_27d53c84.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">10&hearts; EQ-019</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/24_JH_fits_ip_c6c631a6.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">J&hearts; IP-05</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/25_QH_david_ip_7daa653e.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">Q&hearts; IP-06</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/26_KH_icut_ip_70100da5.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">K&hearts; IP-09</p></div>
             </div>
 
             <!-- DIAMONDS -->
             <h3 style="color:#cc3333; margin-bottom:1rem;">&diams; Diamonds &mdash; The Resistance</h3>
             <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap:0.75rem; margin-bottom:2rem;">
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/27_AD_blip_factor_b3cfdd4b.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">A&diams; EQ-020</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/28_2D_fragility_ece230e4.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">2&diams; EQ-021</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/29_3D_four_horsemen_b54b353b.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">3&diams; EQ-022</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/30_4D_isi_speed_a57fe40b.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">4&diams; EQ-023</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/31_5D_four_5167f868.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">5&diams; EQ-024</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/32_6D_matriarch_3ba64ca0.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">6&diams; EQ-025</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/33_7D_alliance_c55fe10f.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">7&diams; EQ-026</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/34_8D_gov_cube_b4725451.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">8&diams; EQ-027</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/35_9D_individual_0ce32ca8.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">9&diams; EQ-028</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/36_10D_seesaw_c2fcd058.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">10&diams; EQ-029</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/37_JD_dearden_field_8fae243f.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">J&diams; EQ-030</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/38_QD_sap001_147cb7ba.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">Q&diams; EQ-031</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/39_KD_12relay_ip_1f1805e5.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">K&diams; IP-04</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/27_AD_blip_factor_b3cfdd4b.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">A&diams; EQ-020</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/28_2D_fragility_ece230e4.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">2&diams; EQ-021</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/29_3D_four_horsemen_b54b353b.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">3&diams; EQ-022</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/30_4D_isi_speed_a57fe40b.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">4&diams; EQ-023</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/31_5D_four_5167f868.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">5&diams; EQ-024</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/32_6D_matriarch_3ba64ca0.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">6&diams; EQ-025</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/33_7D_alliance_c55fe10f.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">7&diams; EQ-026</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/34_8D_gov_cube_b4725451.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">8&diams; EQ-027</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/35_9D_individual_0ce32ca8.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">9&diams; EQ-028</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/36_10D_seesaw_c2fcd058.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">10&diams; EQ-029</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/37_JD_dearden_field_8fae243f.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">J&diams; EQ-030</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/38_QD_sap001_147cb7ba.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">Q&diams; EQ-031</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/39_KD_12relay_ip_1f1805e5.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">K&diams; IP-04</p></div>
             </div>
 
             <!-- CLUBS -->
             <h3 style="color:#ffd700; margin-bottom:1rem;">&clubs; Clubs &mdash; The Cosmos</h3>
             <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap:0.75rem; margin-bottom:2rem;">
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/40_AC_cosmic_clock_3079778a.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">A&clubs; EQ-032</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/41_2C_planetary_clock_3402bf56.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">2&clubs; EQ-033</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/42_3C_civ_clock_a40c523d.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">3&clubs; EQ-034</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/43_4C_radio_blip_5ba8144d.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">4&clubs; EQ-035</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/44_5C_spider_network_bdcd0ff6.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">5&clubs; EQ-036</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/45_6C_progression_9cdf98a3.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">6&clubs; EQ-037</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/46_7C_harrison_grid_989af3f7.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">7&clubs; EQ-038</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/47_8C_d100_ip_b1c9ed5e.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">8&clubs; IP-07</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/48_9C_dikw_ip_1d7e26ec.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">9&clubs; IP-08</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/49_10C_walkby_ip_5d7232f7.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">10&clubs; IP-10</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/50_JC_gov_cube_ip_ec0647f0.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">J&clubs; IP-11</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/51_QC_seesaw_ip_2d74a4f8.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">Q&clubs; IP-13</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/52_KC_sap001_ip_2ce909da.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">K&clubs; IP-14</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/40_AC_cosmic_clock_3079778a.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">A&clubs; EQ-032</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/41_2C_planetary_clock_3402bf56.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">2&clubs; EQ-033</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/42_3C_civ_clock_a40c523d.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">3&clubs; EQ-034</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/43_4C_radio_blip_5ba8144d.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">4&clubs; EQ-035</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/44_5C_spider_network_bdcd0ff6.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">5&clubs; EQ-036</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/45_6C_progression_9cdf98a3.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">6&clubs; EQ-037</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/46_7C_harrison_grid_989af3f7.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">7&clubs; EQ-038</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/47_8C_d100_ip_b1c9ed5e.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">8&clubs; IP-07</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/48_9C_dikw_ip_1d7e26ec.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">9&clubs; IP-08</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/49_10C_walkby_ip_5d7232f7.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">10&clubs; IP-10</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/50_JC_gov_cube_ip_ec0647f0.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">J&clubs; IP-11</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/51_QC_seesaw_ip_2d74a4f8.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">Q&clubs; IP-13</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/52_KC_sap001_ip_2ce909da.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#b8960c;font-size:0.7rem;margin-top:0.3rem;">K&clubs; IP-14</p></div>
             </div>
 
             <!-- JOKERS -->
             <h3 style="color:#ffd700; margin-bottom:1rem;">Jokers</h3>
             <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap:1rem; margin-bottom:1rem;">
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/53_JOKER_RED_icard_d60e06fb.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#cc3333;font-size:0.75rem;margin-top:0.3rem;">Red Joker &mdash; IP-15: iCard Format</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/54_JOKER_BLACK_register_5dfd5d38.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#ffd700;font-size:0.75rem;margin-top:0.3rem;">Black Joker &mdash; The Register (Meta-Card)</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/53_JOKER_RED_icard_d60e06fb.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#cc3333;font-size:0.75rem;margin-top:0.3rem;">Red Joker &mdash; IP-15: iCard Format</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/54_JOKER_BLACK_register_5dfd5d38.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#ffd700;font-size:0.75rem;margin-top:0.3rem;">Black Joker &mdash; The Register (Meta-Card)</p></div>
             </div>
             <!-- COVER & BONUS -->
             <h3 style="color:#ffd700; margin-bottom:1rem;">Cover Card &amp; Bonus</h3>
             <div style="display:grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap:1rem; margin-bottom:1rem;">
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/55_COVER_iAAi_655d4c12.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#ffd700;font-size:0.75rem;margin-top:0.3rem;">#55 &mdash; iAAi Cover Card (QR Codes to both websites)</p></div>
-                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/56_BONUS_mendeleev_c2be9547.png" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#ffd700;font-size:0.75rem;margin-top:0.3rem;">#56 &mdash; Mendeleev Transform Bonus (84/63 = 4/3)</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/deck_cover_card_8c5f7437.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#ffd700;font-size:0.75rem;margin-top:0.3rem;">#55 &mdash; iAAi Cover Card (QR Codes to both websites)</p></div>
+                <div style="text-align:center;"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/56_BONUS_mendeleev_c2be9547.png" alt="IAAI Equation Card" onclick="openLightbox(this)" style="max-width:100%;cursor:pointer;"><p style="color:#ffd700;font-size:0.75rem;margin-top:0.3rem;">#56 &mdash; Mendeleev Transform Bonus (84/63 = 4/3)</p></div>
             </div>
 
             <!-- DOWNLOAD & BUY -->
             <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-top:1.5rem; margin-bottom:1rem;">
-                <a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IAAI_IP_Equations_Register_Deck_56_Cards_BETA_17393da4.pdf" target="_blank" style="display:inline-flex; align-items:center; gap:0.5rem; background:#ffd700; color:#0a1628; padding:0.75rem 1.5rem; font-weight:bold; text-decoration:none; font-size:0.9rem;">&darr; Download 56-Card BETA PDF</a>
+                <a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IAAI_IP_Equations_Register_Deck_56_Cards_AI_02f9060c.pdf" target="_blank" style="display:inline-flex; align-items:center; gap:0.5rem; background:#ffd700; color:#0a1628; padding:0.75rem 1.5rem; font-weight:bold; text-decoration:none; font-size:0.9rem;">&darr; Download 56-Card BETA PDF</a>
             </div>
             <div class="fa-note" style="margin-top:0.5rem;">
                 <strong>Pricing:</strong> US$29.95 per deck (BETA Edition) &bull; Physical print run planned for First Edition &bull; Digital PDF available now for early supporters
             </div>
 
-
             <div class="fa-note" style="margin-top:1rem;">
-                <strong>Deck Statistics:</strong> 56 cards total (52 + 2 Jokers + Cover + Bonus) &bull; 38 equations (EQ-001 to EQ-038) &bull; 15 IP assets (IP-01 to IP-15) &bull; 1 meta-card &bull; 7 tiers &bull; 4 domains (Denominator: 4, Numerical Backbone: 8, Temporal Framework: 4, Platform Mechanics: 3) &bull; IP-03 (ICE Matrix) is the most equation-dense IP with 9 references.
+                <strong>Deck Statistics:</strong> 55 cards total (52 + 2 Jokers + Cover + Bonus) &bull; 38 equations (EQ-001 to EQ-038) &bull; 15 IP assets (IP-01 to IP-15) &bull; 1 meta-card &bull; 7 tiers &bull; 4 domains (Denominator: 4, Numerical Backbone: 8, Temporal Framework: 4, Platform Mechanics: 3) &bull; IP-03 (ICE Matrix) is the most equation-dense IP with 9 references.
             </div>
         </div>
 
@@ -1217,7 +1340,7 @@
             <p><strong>Prepared by:</strong> DAVID &mdash; AI Collaborator, Infrastructure Academy</p>
             <p><strong>For:</strong> Ir. Nigel T. Dearden (CEng, CEnv, MICE, MCIWEM), Director, 4ECL / IAAI</p>
             <p style="margin-top:0.75rem; font-style:italic; color:rgba(255,215,0,0.7);">"What can be imagined can be achieved. Direct action toward desired outcomes." &mdash; 4ECL</p>
-            <p style="margin-top:1rem; font-size:0.7rem; color:rgba(255,255,255,0.3);">Infrastructure Academy &mdash; Finance & Administration &bull; v4.3 &bull; 11 March 2026 &bull; v2 Financial Model + Evidence Vault + IP &amp; Equations Deck (56 Cards BETA)</p>
+            <p style="margin-top:1rem; font-size:0.7rem; color:rgba(255,255,255,0.3);">Infrastructure Academy &mdash; Finance & Administration &bull; v4.3 &bull; 11 March 2026 &bull; v2 Financial Model + Evidence Vault + IP &amp; Equations Deck (55 Cards AI)</p>
         </div>
 
     </div><!-- /fa-container -->
@@ -1266,35 +1389,96 @@
     }
 </script>
 
-<manus-content-root></manus-content-root><script>
-			var __manus_space_editor_info = {
-			spaceId : 'kUQZAex2uPvgKcHnt7bmh3',
-			patchList : [],
-			hideBadge : false,
-			sessionId : '3qD7FbADI7mdwIS3EJExUI',
-			isWebDev : true,
-			usageStatus : 'UsageStatus_Unknown',
-			};
-			var __manus__global_env = {
-				apiHost: 'https://api.manus.im',
-				host: 'https://manus.im',
-				amplitudeKey: '46ac3f9abb41dd2d17a5785e052bc6d3',
-			};
-			</script><script src="https://files.manuscdn.com/manus-space-dispatcher/spaceEditor-DPV-_I11.js" async></script><script
-			defer
-			data-domain="manus.space"
-			src="https://plausible.io/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"
-		></script>
-		<script>
-			window.plausible =
-				window.plausible ||
-				function () {
-					(window.plausible.q = window.plausible.q || []).push(arguments);
-				};
-			plausible('custom-pageview', {
-			  props: {
-    			domain: window.location.host
-  			}
-			})
-		</script></body>
+    <div style="text-align:center; padding:1.5rem 1rem; border-top:1px solid rgba(255,215,0,0.2); margin-top:2rem;">
+        <!-- Social Cross-Links -->
+        <div style="margin-top:0.75rem; display:flex; justify-content:center; gap:1.2rem; flex-wrap:wrap; align-items:center;">
+            <a href="https://x.com/dearden_ni37258" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.35rem; color:#ffd700; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="Follow on X">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                X
+            </a>
+            <a href="https://www.linkedin.com/in/nigeldearden" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.35rem; color:#0077B5; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="Connect on LinkedIn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+            </a>
+            <a href="/site.html" style="display:inline-flex; align-items:center; gap:0.35rem; color:#25D366; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="WhatsApp QR on Homepage">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                WhatsApp
+            </a>
+        </div>
+    </div>
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement -->
+
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement (v2 fixed) -->
+<script>
+(function() {
+  try {
+    var sid = sessionStorage.getItem('iaai_sid');
+    if (!sid) {
+      sid = 'ses_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 9);
+      sessionStorage.setItem('iaai_sid', sid);
+    }
+    var data = {
+      path: window.location.pathname + (window.location.hash || ''),
+      pageTitle: document.title || 'Untitled',
+      referrer: document.referrer || '',
+      sessionId: sid
+    };
+    fetch('/api/trpc/analytics.track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ json: data }),
+      credentials: 'include'
+    }).catch(function() {});
+    window.addEventListener('hashchange', function() {
+      var hashData = {
+        path: window.location.pathname + (window.location.hash || ''),
+        pageTitle: document.title || 'Untitled',
+        referrer: window.location.href,
+        sessionId: sid
+      };
+      fetch('/api/trpc/analytics.track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ json: hashData }),
+        credentials: 'include'
+      }).catch(function() {});
+    });
+  } catch(e) {}
+})();
+</script>
+
+    <!-- Mobile table scroll fix -->
+    <script>
+    (function(){
+      if(window.innerWidth > 768) return;
+      document.querySelectorAll('table').forEach(function(t){
+        if(t.parentElement && t.parentElement.classList.contains('table-scroll-wrapper')) return;
+        var w = document.createElement('div');
+        w.className = 'table-scroll-wrapper';
+        t.parentNode.insertBefore(w, t);
+        w.appendChild(t);
+      });
+    })();
+    </script>
+
+
+    <!-- Back-to-Top Button Logic -->
+    <script>
+    (function() {
+        var btn = document.getElementById('back-to-top-btn');
+        if (!btn) return;
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                btn.style.display = 'flex';
+            } else {
+                btn.style.display = 'none';
+            }
+        }, { passive: true });
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    })();
+    </script>
+
+</body>
 </html>

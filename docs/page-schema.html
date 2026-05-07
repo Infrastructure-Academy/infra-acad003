@@ -1,0 +1,1315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/x-icon" href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/favicon_32_80e4326c.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/favicon_32_80e4326c.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/favicon_32_80e4326c.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/favicon_192_f2a5ba49.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site Architecture Schema — Infrastructure Academy</title>
+    <link rel="stylesheet" href="/css/style.css?v=20260311a">
+    <style>
+        .schema-container { max-width: 1400px; margin: 0 auto; padding: 20px 30px 40px; }
+        .schema-header { text-align: center; padding: 30px 20px 20px; border-bottom: 2px solid var(--color-accent-gold); margin-bottom: 30px; }
+        .schema-header h1 { color: var(--color-accent-gold); font-family: var(--font-heading); font-size: 2.2rem; margin-bottom: 8px; letter-spacing: 2px; }
+        .schema-header .subtitle { color: var(--color-text-secondary); font-size: 1rem; margin-bottom: 4px; }
+        .schema-header .meta { color: #888; font-size: 0.85rem; margin-top: 8px; }
+        .schema-header .stats { display: flex; justify-content: center; gap: 30px; margin-top: 16px; flex-wrap: wrap; }
+        .schema-header .stat { text-align: center; }
+        .schema-header .stat .num { font-family: var(--font-heading); font-size: 2rem; color: var(--color-accent-gold); font-weight: bold; }
+        .schema-header .stat .label { font-size: 0.8rem; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 1px; }
+
+        /* Category sections */
+        .category { margin-bottom: 32px; }
+        .category-title { 
+            color: var(--color-accent-gold); font-family: var(--font-heading); font-size: 1.4rem; 
+            padding: 10px 0; border-bottom: 1px solid rgba(255,215,0,0.3); margin-bottom: 16px;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .category-title .count { 
+            font-size: 0.75rem; background: rgba(255,215,0,0.15); color: var(--color-accent-gold);
+            padding: 2px 8px; border-radius: 4px; font-family: var(--font-primary);
+        }
+
+        /* Page entries */
+        .page-entry { 
+            background: var(--color-bg-secondary); border: 1px solid #1a3055; border-radius: 6px;
+            padding: 12px 16px; margin-bottom: 8px; transition: border-color 0.2s;
+        }
+        .page-entry:hover { border-color: var(--color-accent-gold); }
+        .page-entry .page-path { 
+            font-family: 'Courier New', monospace; font-size: 0.9rem; color: var(--color-accent-gold);
+            text-decoration: none; display: inline-block; margin-bottom: 4px;
+        }
+        .page-entry .page-path:hover { text-decoration: underline; }
+        .page-entry .page-title { color: var(--color-text-primary); font-size: 0.85rem; margin-bottom: 6px; }
+        .page-entry .page-links { font-size: 0.75rem; color: #888; }
+        .page-entry .page-links span { margin-right: 12px; }
+        .page-entry .tag { 
+            display: inline-block; font-size: 0.65rem; padding: 1px 6px; border-radius: 3px;
+            margin-right: 4px; text-transform: uppercase; letter-spacing: 0.5px;
+        }
+        .tag-nav { background: rgba(0,200,83,0.2); color: #00c853; border: 1px solid rgba(0,200,83,0.3); }
+        .tag-react { background: rgba(97,218,251,0.2); color: #61dafb; border: 1px solid rgba(97,218,251,0.3); }
+        .tag-db { background: rgba(255,152,0,0.2); color: #ff9800; border: 1px solid rgba(255,152,0,0.3); }
+        .tag-orphan { background: rgba(244,67,54,0.2); color: #f44336; border: 1px solid rgba(244,67,54,0.3); }
+
+        /* External links section */
+        .ext-section { margin-top: 40px; }
+        .ext-entry { 
+            display: flex; align-items: center; gap: 12px; padding: 8px 16px;
+            background: var(--color-bg-secondary); border: 1px solid #1a3055; border-radius: 6px;
+            margin-bottom: 6px; font-size: 0.85rem;
+        }
+        .ext-entry .ext-domain { color: var(--color-accent-gold); font-family: 'Courier New', monospace; min-width: 200px; }
+        .ext-entry .ext-desc { color: var(--color-text-secondary); }
+        .ext-entry a { color: var(--color-accent-gold); text-decoration: none; word-break: break-all; }
+        .ext-entry a:hover { text-decoration: underline; }
+
+        /* React routes section */
+        .route-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 8px; }
+        .route-entry {
+            background: var(--color-bg-secondary); border: 1px solid rgba(97,218,251,0.3); border-radius: 6px;
+            padding: 10px 14px; font-size: 0.85rem;
+        }
+        .route-entry .route-path { font-family: 'Courier New', monospace; color: #61dafb; }
+        .route-entry .route-component { color: #888; font-size: 0.75rem; }
+
+        /* Symmetry section */
+        .symmetry-box {
+            background: linear-gradient(135deg, rgba(255,215,0,0.05), rgba(255,215,0,0.02));
+            border: 2px solid rgba(255,215,0,0.3); border-radius: 8px;
+            padding: 24px; margin: 30px 0; text-align: center;
+        }
+        .symmetry-box h3 { color: var(--color-accent-gold); font-family: var(--font-heading); font-size: 1.3rem; margin-bottom: 12px; }
+        .symmetry-box p { color: var(--color-text-secondary); font-size: 0.9rem; line-height: 1.6; max-width: 800px; margin: 0 auto; }
+        .symmetry-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; margin-top: 20px; }
+        .symmetry-cell { text-align: center; padding: 12px; }
+        .symmetry-cell .sym-num { font-family: var(--font-heading); font-size: 2.5rem; color: var(--color-accent-gold); }
+        .symmetry-cell .sym-label { font-size: 0.75rem; color: var(--color-text-secondary); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; }
+
+        /* Thesis evidence */
+        .thesis-box {
+            background: rgba(244,67,54,0.05); border: 1px solid rgba(244,67,54,0.3); border-radius: 8px;
+            padding: 20px; margin: 30px 0;
+        }
+        .thesis-box h3 { color: #f44336; font-family: var(--font-heading); font-size: 1.1rem; margin-bottom: 8px; }
+        .thesis-box p { color: var(--color-text-secondary); font-size: 0.85rem; line-height: 1.6; }
+
+        /* Responsive */
+        @media(max-width:768px) {
+            .schema-header .stats { gap: 16px; }
+            .schema-header .stat .num { font-size: 1.5rem; }
+            .route-grid { grid-template-columns: 1fr; }
+            .symmetry-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        
+        @media(max-width:768px) {
+            #nav-grouped { display: block !important; max-height: 0 !important; overflow: hidden !important; transition: max-height 0.4s ease !important; width: 100% !important; background: #0a1628 !important; }
+            #nav-grouped.open { max-height: 80vh !important; overflow-y: auto !important; }
+        }
+    </style>
+    <link rel="canonical" href="https://infra-acad-kuqzaex2.manus.space/page-schema.html">
+    <meta name="keywords" content="infrastructure academy, infrastructure education, civil engineering, civilisation history, infrastructure consciousness, gamified learning, IAAI, Nigel Dearden, infrastructure odyssey, 12 relays, calories to consciousness">
+    <meta name="robots" content="noindex, nofollow">
+
+<style id="mobile-quicknav-styles">
+/* ===== MOBILE QUICK-NAV BAR ===== */
+.mobile-quicknav {
+    display: none;
+    width: 100%;
+    background: linear-gradient(180deg, #0d1f3c 0%, #0a1628 100%);
+    border-bottom: 1px solid rgba(255,215,0,0.25);
+    padding: 6px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 6px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+.mobile-quicknav::-webkit-scrollbar { display: none; }
+.mobile-quicknav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 10px;
+    background: rgba(255,215,0,0.08);
+    border: 1px solid rgba(255,215,0,0.35);
+    border-radius: 16px;
+    color: #ffd700;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+.mobile-quicknav a:active {
+    background: rgba(255,215,0,0.25);
+    transform: scale(0.95);
+}
+.mobile-quicknav a.mqn-home {
+    background: #ffd700;
+    color: #0a1628;
+    border-color: #ffd700;
+}
+@media(max-width:768px) {
+    .mobile-quicknav { display: flex; }
+}
+@media(min-width:769px) {
+    .mobile-quicknav { display: none !important; }
+}
+
+/* ===== BACK-TO-TOP FLOATING BUTTON ===== */
+#back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 16px;
+    z-index: 9999;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(10,22,40,0.92);
+    border: 1.5px solid rgba(255,215,0,0.6);
+    color: #ffd700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    transition: all 0.2s;
+}
+#back-to-top-btn:active {
+    transform: scale(0.9);
+    background: rgba(255,215,0,0.2);
+}
+</style>
+
+</head>
+<body>
+    <!-- iAAi Network Bar — NAV-001 · Cross-Site Navigation -->
+    <!-- ═══ iAAi NETWORK BAR ═══ -->
+    <div id="iaai-network-bar" style="display:flex;align-items:center;justify-content:space-around;width:100%;height:36px;background:#0a1628;position:sticky;top:0;z-index:200001;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">
+      <a href="https://www.infrastructure-academy.com" style="text-decoration:none;color:#fff;font-weight:700;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid #DC2626;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#DC2626"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg> ACADEMY</a>
+      <a href="https://realityeng-epdhlkrn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> QUEST</a>
+      <a href="#" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;opacity:0.5;pointer-events:none;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A843"><path d="M6 2v6l-2 2v4l2 2v6h4v-6l2-2v-4L10 8V2H6zm12 0v6l-2 2v4l2 2v6h-4v-6l-2-2v-4l2-2V2h4z"/></svg> XCHANGE</a>
+      <a href="https://nigelmemorial-ucmtq9dn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#16A34A"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg> MEMORIAL</a>
+      <a href="https://xgrowthtrk-2a93yo5z.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#06B6D4"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/></svg> NEWS</a>
+    </div>
+
+    <header role="banner">
+        <div class="header-content">
+            <div class="header-brand">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/tt-icon_5ea32be1.jpeg" alt="Tetrahedron" class="header-tetra-thumb">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iaai_correct_gold_logo_cebb3b74.jpeg" alt="IAAI" class="iaai-logo-box">
+                <div class="header-text-group">
+                    <div class="header-title" data-i18n="header.title">INFRASTRUCTURE ACADEMY <span class="beta-badge" data-i18n="badge.beta">BETA</span></div>
+                    <div class="header-tagline">Infrastructure &bull; Infostructure &bull; The Academy of Both</div>
+                </div>
+                <a href="/pages/8th-scholar.html" class="header-scholar-link" title="The 8th Scholar"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/scholar_square_859aca43.jpeg" alt="The 8th Scholar" class="header-scholar-thumb"></a>
+            <!-- Social Follow Buttons -->
+            <div class="header-social-buttons" style="display:flex; align-items:center; gap:6px; flex-shrink:0;">
+                <a href="https://x.com/dearden_ni37258" target="_blank" rel="noopener" title="Follow on X" style="display:inline-flex; align-items:center; gap:4px; padding:4px 10px; background:#000; color:#fff; border:1px solid #333; border-radius:20px; font-size:0.7rem; font-weight:bold; text-decoration:none; white-space:nowrap;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg> <span class="social-count">42</span></a>
+                <a href="https://www.facebook.com/share/1Fcxyhbsw3/?mibextid=wwXIfr" target="_blank" rel="noopener" title="Follow on Facebook" style="display:inline-flex; align-items:center; gap:4px; padding:4px 10px; background:#1877F2; color:#fff; border-radius:20px; font-size:0.7rem; font-weight:bold; text-decoration:none; white-space:nowrap;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg> Follow</a>
+                <a href="https://www.linkedin.com/in/nigeldearden" target="_blank" rel="noopener" title="Follow on LinkedIn" style="display:inline-flex; align-items:center; gap:4px; padding:4px 10px; background:#0A66C2; color:#fff; border-radius:20px; font-size:0.7rem; font-weight:bold; text-decoration:none; white-space:nowrap;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg> Follow</a>
+                <a href="https://app.joinhandshake.com/profiles/nigeldearden" target="_blank" rel="noopener" title="Connect on Handshake" style="display:inline-flex; align-items:center; gap:4px; padding:4px 10px; background:#FF7043; color:#fff; border-radius:20px; font-size:0.7rem; font-weight:bold; text-decoration:none; white-space:nowrap;"><svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6zm4 4h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg> Handshake</a>
+            </div>
+            </div>
+            <button class="hamburger" id="hamburger-menu" aria-label="Toggle navigation menu" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+        <nav id="nav-menu" role="navigation" aria-label="Primary navigation">
+            <a href="/site.html" data-i18n="nav.home">HOME</a>
+            <a href="/pages/framework.html" data-i18n="nav.framework">FRAMEWORK</a>
+            <a href="/executive-precis.html" data-i18n="nav.precis">EXEC PR&Eacute;CIS</a>
+            <a href="/pages/resources.html" data-i18n="nav.resources">RESOURCES</a>
+            <a href="/library.html" data-i18n="nav.documents">DOCUMENTS</a>
+            <a href="/pages/about-author.html" data-i18n="nav.author">AUTHOR</a>
+            <a href="/volumes/volume1/index.html" data-i18n="nav.ep1">EP.1: PERSPECTIVE</a>
+            <a href="/volumes/volume2/index.html" data-i18n="nav.ep2">EP.2: GUIDE</a>
+            <a href="/play" data-i18n="nav.ep3">EP.3: GAME</a>
+        </nav>
+        <nav id="nav-row2" role="navigation" aria-label="Secondary navigation" class="nav-row2">
+            <a href="/pages/start-here.html" data-i18n="nav.starthere">START HERE</a>
+            <a href="/mobilisation-clock.html" data-i18n="nav.clock">MOBILISATION CLOCK</a>
+            <a href="/infrastructure-olympiad.html" data-i18n="nav.olympiad">OLYMPIAD</a>
+            <a href="/pioneers.html" data-i18n="nav.pioneers">PIONEERS</a>
+            <a href="/taxonomy.html" data-i18n="nav.taxonomy">TAXONOMY</a>
+            <a href="/masters.html" data-i18n="nav.masters">MASTERS</a>
+            <a href="/institutions.html" data-i18n="nav.institutions">INSTITUTIONS</a>
+            <a href="/pages/roster-dashboard.html" data-i18n="nav.roster" style="color:#22d3ee;">ROSTER DASHBOARD</a>
+            <a href="/pages/governance-architecture.html" data-i18n="nav.governance" style="color:#ef4444;">GOVERNANCE</a>
+            <a href="/civilisation-clock.html" data-i18n="nav.civclock">CIVILISATION CLOCK</a>
+            <a href="/play/founders" data-i18n="nav.founders">FOUNDERS WALL</a>
+            <a href="site.html#charter" data-i18n="nav.charter">CHARTER</a>
+            <a href="/pages/behind-the-thesis.html" data-i18n="nav.behind">BEHIND THE THESIS</a>
+            <a href="/pages/glossary.html" data-i18n="nav.glossary">GLOSSARY</a>
+            <a href="/vault.html" data-i18n="nav.vault">VAULT</a>
+            <a href="/icut-gallery.html" data-i18n="nav.gallery">ICUT GALLERY</a>
+        </nav>
+        <div class="header-subtitle">Site Architecture Schema &mdash; Block 359</div>
+    </header>
+    <!-- ===== MOBILE QUICK-NAV BAR — always visible on mobile ===== -->
+    <div class="mobile-quicknav" id="mobile-quicknav">
+        <a href="/site.html" class="mqn-home">&#127968; HOME</a>
+        <a href="/pages/start-here.html">&#128218; START</a>
+        <a href="/volumes/volume1/index.html">&#128214; READ</a>
+        <a href="/pages/framework.html">&#128736; FRAMEWORK</a>
+        <a href="/play">&#127918; PLAY</a>
+        <a href="/pages/movies.html">&#127916; MOVIES</a>
+        <a href="/pages/resources.html">&#128194; RESOURCES</a>
+        <a href="/press.html">&#128240; PRESS</a>
+    </div>
+
+    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <button id="back-to-top-btn" aria-label="Back to top" title="Back to top">&#9650;</button>
+
+
+    <main>
+    <div class="schema-container">
+
+        <!-- HEADER -->
+        <div class="schema-header">
+            <h1>SITE ARCHITECTURE SCHEMA</h1>
+            <div class="subtitle">Complete Page Map &mdash; Infrastructure Academy v2</div>
+            <div class="meta">Block 359 &bull; Day 9 &bull; 11 March 2026 &bull; Hardwired Permanent Record</div>
+            <div class="stats">
+                <div class="stat"><div class="num">91</div><div class="label">HTML Pages</div></div>
+                <div class="stat"><div class="num">25</div><div class="label">React Routes</div></div>
+                <div class="stat"><div class="num">20</div><div class="label">External Links</div></div>
+                <div class="stat"><div class="num">7</div><div class="label">Categories</div></div>
+                <div class="stat"><div class="num">1</div><div class="label">Database</div></div>
+            </div>
+        </div>
+
+        <!-- SYNCHRONICITY BOX -->
+        <div class="symmetry-box">
+            <h3>Synchronicity &amp; Super Symmetry</h3>
+            <p>Every page connects. Every link resolves. Every route is reachable from navigation. No orphans, no dead ends. The architecture itself is visible as this permanent page &mdash; the system observing itself.</p>
+            <div class="symmetry-grid">
+                <div class="symmetry-cell"><div class="sym-num">12</div><div class="sym-label">Civilisational Relays</div></div>
+                <div class="symmetry-cell"><div class="sym-num">3</div><div class="sym-label">Volumes (Episodes)</div></div>
+                <div class="symmetry-cell"><div class="sym-num">4</div><div class="sym-label">Pillars</div></div>
+                <div class="symmetry-cell"><div class="sym-num">5</div><div class="sym-label">Webs</div></div>
+                <div class="symmetry-cell"><div class="sym-num">17</div><div class="sym-label">DCSN Nodes</div></div>
+                <div class="symmetry-cell"><div class="sym-num">56</div><div class="sym-label">Deck Cards</div></div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- CATEGORY 1: ROOT PAGES (Main Navigation) -->
+        <!-- ============================================ -->
+        <div class="category" id="root-pages">
+            <div class="category-title">Root Pages <span class="count">15 pages</span></div>
+
+            <div class="page-entry">
+                <a href="/site.html" class="page-path">/site.html</a> <span class="tag tag-nav">NAV</span>
+                <div class="page-title">Infrastructure Academy &mdash; Homepage &amp; Landing</div>
+                <div class="page-links"><span>25 internal links</span> <span>Hero, Charter, Knowledge Web, Book Grid, Challenge Stats</span></div>
+            </div>
+
+            <div class="page-entry">
+                <a href="/executive-precis.html" class="page-path">/executive-precis.html</a> <span class="tag tag-nav">NAV</span>
+                <div class="page-title">Executive Pr&eacute;cis &mdash; 12 Relay Overview</div>
+                <div class="page-links"><span>24 internal links</span></div>
+            </div>
+
+            <div class="page-entry">
+                <a href="/equations-register.html" class="page-path">/equations-register.html</a> <span class="tag tag-nav">NAV</span>
+                <div class="page-title">Equations Register &mdash; 38 Equations Across 7 Tiers</div>
+                <div class="page-links"><span>25 internal links</span></div>
+            </div>
+
+            <div class="page-entry">
+                <a href="/taxonomy.html" class="page-path">/taxonomy.html</a> <span class="tag tag-nav">NAV</span>
+                <div class="page-title">Taxonomy &mdash; Classification System</div>
+                <div class="page-links"><span>24 internal links</span></div>
+            </div>
+
+            <div class="page-entry">
+                <a href="/civilisation-clock.html" class="page-path">/civilisation-clock.html</a> <span class="tag tag-nav">NAV</span>
+                <div class="page-title">Civilisation Clock &mdash; 12,000 Year Timeline</div>
+                <div class="page-links"><span>23 internal links</span></div>
+            </div>
+
+            <div class="page-entry">
+                <a href="/mobilisation-clock.html" class="page-path">/mobilisation-clock.html</a> <span class="tag tag-nav">NAV</span>
+                <div class="page-title">Mobilisation Clock &mdash; Project Timeline</div>
+                <div class="page-links"><span>24 internal links</span></div>
+            </div>
+
+            <div class="page-entry">
+                <a href="/infrastructure-olympiad.html" class="page-path">/infrastructure-olympiad.html</a> <span class="tag tag-nav">NAV</span>
+                <div class="page-title">Infrastructure Olympiad &mdash; Competitive Framework</div>
+                <div class="page-links"><span>24 internal links</span></div>
+            </div>
+
+            <div class="page-entry">
+                <a href="/pioneers.html" class="page-path">/pioneers.html</a> <span class="tag tag-nav">NAV</span>
+                <div class="page-title">Pioneers &mdash; Infrastructure Visionaries</div>
+                <div class="page-links"><span>26 internal links</span></div>
+            </div>
+
+            <div class="page-entry">
+                <a href="/masters.html" class="page-path">/masters.html</a> <span class="tag tag-nav">NAV</span>
+                <div class="page-title">Masters &mdash; Infrastructure Masters</div>
+                <div class="page-links"><span>24 internal links</span></div>
+            </div>
+
+            <div class="page-entry">
+                <a href="/institutions.html" class="page-path">/institutions.html</a> <span class="tag tag-nav">NAV</span>
+                <div class="page-title">Institutions &mdash; Organisational Framework</div>
+                <div class="page-links"><span>24 internal links</span></div>
+            </div>
+
+            <div class="page-entry">
+                <a href="/library.html" class="page-path">/library.html</a> <span class="tag tag-nav">NAV</span>
+                <div class="page-title">Document Library &mdash; All Project Documents</div>
+                <div class="page-links"><span>24 internal links</span> <span>2 external links</span></div>
+            </div>
+
+            <div class="page-entry">
+                <a href="/vault.html" class="page-path">/vault.html</a> <span class="tag tag-nav">NAV</span>
+                <div class="page-title">Vault &mdash; Evidence &amp; WhatsApp Archive</div>
+                <div class="page-links"><span>27 internal links</span></div>
+            </div>
+
+            <div class="page-entry">
+                <a href="/icut-gallery.html" class="page-path">/icut-gallery.html</a> <span class="tag tag-nav">NAV</span>
+                <div class="page-title">ICUT Gallery &mdash; 8 ICUT Cards v2</div>
+                <div class="page-links"><span>24 internal links</span></div>
+            </div>
+
+            <div class="page-entry">
+                <a href="/4cs-decision.html" class="page-path">/4cs-decision.html</a> <span class="tag tag-nav">NAV</span>
+                <div class="page-title">4Cs Decision Framework</div>
+                <div class="page-links"><span>RESOURCES dropdown</span></div>
+            </div>
+
+            <div class="page-entry">
+                <a href="/deck.html" class="page-path">/deck.html</a> <span class="tag tag-nav">NAV</span>
+                <div class="page-title">IP &amp; Equations Deck &mdash; 55 Cards, US$29.95</div>
+                <div class="page-links"><span>6 internal links</span> <span>Buy the Deck CTA</span></div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- CATEGORY 2: PAGES DIRECTORY -->
+        <!-- ============================================ -->
+        <div class="category" id="pages-dir">
+            <div class="category-title">Pages Directory <span class="count">11 pages</span></div>
+
+            <div class="page-entry">
+                <a href="/pages/start-here.html" class="page-path">/pages/start-here.html</a> <span class="tag tag-nav">NAV</span>
+                <div class="page-title">Start Here &mdash; Entry Point for New Readers</div>
+                <div class="page-links"><span>26 internal links</span></div>
+            </div>
+
+            <div class="page-entry">
+                <a href="/pages/framework.html" class="page-path">/pages/framework.html</a> <span class="tag tag-nav">NAV</span>
+                <div class="page-title">Framework &mdash; 5 Webs, 4 Pillars, Matrix</div>
+                <div class="page-links"><span>27 internal links</span> <span>13 external (UN SDGs)</span></div>
+            </div>
+
+            <div class="page-entry">
+                <a href="/pages/about-author.html" class="page-path">/pages/about-author.html</a> <span class="tag tag-nav">NAV</span>
+                <div class="page-title">About the Author &mdash; Ir. Nigel T. Dearden</div>
+                <div class="page-links"><span>26 internal links</span> <span>2 external (infrastructure-academy.com, 4ecl.com)</span></div>
+            </div>
+
+            <div class="page-entry">
+                <a href="/pages/behind-the-thesis.html" class="page-path">/pages/behind-the-thesis.html</a> <span class="tag tag-nav">NAV</span>
+                <div class="page-title">Behind the Thesis &mdash; Research &amp; Methodology</div>
+                <div class="page-links"><span>25 internal links</span></div>
+            </div>
+
+            <div class="page-entry">
+                <a href="/pages/glossary.html" class="page-path">/pages/glossary.html</a> <span class="tag tag-nav">NAV</span>
+                <div class="page-title">Glossary &mdash; Key Terms &amp; Definitions</div>
+                <div class="page-links"><span>22 internal links</span></div>
+            </div>
+
+            <div class="page-entry">
+                <a href="/pages/resources.html" class="page-path">/pages/resources.html</a> <span class="tag tag-nav">NAV</span>
+                <div class="page-title">Resources &mdash; Downloads &amp; References</div>
+                <div class="page-links"><span>26 internal links</span></div>
+            </div>
+
+            <div class="page-entry">
+                <a href="/pages/supplements.html" class="page-path">/pages/supplements.html</a>
+                <div class="page-title">Supplements &mdash; 4 Supplement Sections</div>
+                <div class="page-links"><span>25 internal links</span></div>
+            </div>
+
+            <div class="page-entry">
+                <a href="/pages/scholars.html" class="page-path">/pages/scholars.html</a>
+                <div class="page-title">Scholars &mdash; Academic Contributors</div>
+                <div class="page-links"><span>25 internal links</span></div>
+            </div>
+
+            <div class="page-entry">
+                <a href="/pages/discovery-chain.html" class="page-path">/pages/discovery-chain.html</a>
+                <div class="page-title">Discovery Chain &mdash; Research Trail</div>
+                <div class="page-links"><span>24 internal links</span></div>
+            </div>
+
+            <div class="page-entry">
+                <a href="/pages/chip-evolution.html" class="page-path">/pages/chip-evolution.html</a>
+                <div class="page-title">Chip Evolution &mdash; BitPoints Library &amp; Industry Rally</div>
+                <div class="page-links"><span>15 internal links</span></div>
+            </div>
+
+            <div class="page-entry">
+                <a href="/pages/link-register.html" class="page-path">/pages/link-register.html</a>
+                <div class="page-title">Anchored Link Register &mdash; Gridiron Security Signal Verification</div>
+                <div class="page-links"><span>74 outbound links</span></div>
+            </div>
+
+            <div class="page-entry">
+                <a href="/pages/executive-precis.html" class="page-path">/pages/executive-precis.html</a>
+                <div class="page-title">Executive Pr&eacute;cis (Pages version)</div>
+                <div class="page-links"><span>25 internal links</span></div>
+            </div>
+
+            <div class="page-entry">
+                <a href="/pages/executive-precis-enhanced.html" class="page-path">/pages/executive-precis-enhanced.html</a>
+                <div class="page-title">Executive Pr&eacute;cis Enhanced</div>
+                <div class="page-links"><span>25 internal links</span></div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- CATEGORY 3: iCARDS & DASHBOARDS -->
+        <!-- ============================================ -->
+        <div class="category" id="icards">
+            <div class="category-title">iCards, Dashboards &amp; Finance <span class="count">9 pages</span></div>
+
+            <div class="page-entry">
+                <a href="/icard-gallery.html" class="page-path">/icard-gallery.html</a> <span class="tag tag-nav">NAV</span>
+                <div class="page-title">iCard Gallery &mdash; All Intelligence Cards</div>
+                <div class="page-links"><span>Links to all individual iCards</span></div>
+            </div>
+
+            <div class="page-entry">
+                <a href="/icard-h-tetra.html" class="page-path">/icard-h-tetra.html</a> <span class="tag tag-nav">NAV</span>
+                <div class="page-title">iCard: H-Tetra &mdash; Henry's 3 WhatsApp Groups, First H-Tetrahedron</div>
+                <div class="page-links"><span>9 internal links</span> <span>Fugazi/Marillion interpretation, Spotify playlist</span></div>
+            </div>
+
+            <div class="page-entry">
+                <a href="/icard-khanh-huynh.html" class="page-path">/icard-khanh-huynh.html</a> <span class="tag tag-nav">NAV</span>
+                <div class="page-title">iCard: Khanh Huynh &mdash; NODE 017</div>
+                <div class="page-links"><span>7 internal links</span> <span>NODE 000/009/010/011/012/017 references</span></div>
+            </div>
+
+            <div class="page-entry">
+                <a href="/icard-4ecl-br.html" class="page-path">/icard-4ecl-br.html</a>
+                <div class="page-title">iCard: 4ECL Business Review</div>
+                <div class="page-links"><span>7 internal links</span></div>
+            </div>
+
+            <div class="page-entry">
+                <a href="/icard-book-sales-strategy.html" class="page-path">/icard-book-sales-strategy.html</a>
+                <div class="page-title">iCard: Book Sales Strategy</div>
+                <div class="page-links"><span>7 internal links</span></div>
+            </div>
+
+            <div class="page-entry">
+                <a href="/dcsn-dashboard.html" class="page-path">/dcsn-dashboard.html</a> <span class="tag tag-nav">NAV</span>
+                <div class="page-title">DCSN Dashboard &mdash; Diamond-Class Spider Network</div>
+                <div class="page-links"><span>3 internal links</span></div>
+            </div>
+
+            <div class="page-entry">
+                <a href="/h-block-dashboard.html" class="page-path">/h-block-dashboard.html</a> <span class="tag tag-nav">NAV</span>
+                <div class="page-title">H-Block Dashboard &mdash; Block Tracking</div>
+                <div class="page-links"><span>2 internal links</span></div>
+            </div>
+
+            <div class="page-entry">
+                <a href="/finance-admin.html" class="page-path">/finance-admin.html</a> <span class="tag tag-nav">NAV</span>
+                <div class="page-title">Finance Admin &mdash; ICUT Cards v2, WhatsApp Vault, Deck Gallery</div>
+                <div class="page-links"><span>3 internal links</span> <span>1 external (4ecl.com)</span></div>
+            </div>
+
+            <div class="page-entry">
+                <a href="/cashflow-y1.html" class="page-path">/cashflow-y1.html</a> <span class="tag tag-nav">NAV</span>
+                <div class="page-title">Cash Flow Y1 &mdash; $800K Seed, 7 Revenue Channels</div>
+                <div class="page-links"><span>7 internal links</span></div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- CATEGORY 4: VOLUMES -->
+        <!-- ============================================ -->
+        <div class="category" id="volumes">
+            <div class="category-title">Volume 1: Perspective <span class="count">17 pages</span></div>
+            <div class="page-entry">
+                <a href="/volumes/volume1/index.html" class="page-path">/volumes/volume1/index.html</a> <span class="tag tag-nav">NAV</span>
+                <div class="page-title">Volume 1 Index &mdash; EP.1: Perspective</div>
+                <div class="page-links"><span>40 internal links</span> <span>Links to all 12 relays + prologue + epilogue + torus + planetary engine</span></div>
+            </div>
+            <div class="page-entry">
+                <span class="page-path" style="color:#888;">17 chapter pages: planetary-engine, prologue, relay-01 through relay-12, epilogue, torus</span>
+                <div class="page-links"><span>24-25 internal links each</span> <span>Sequential relay navigation</span></div>
+            </div>
+        </div>
+
+        <div class="category">
+            <div class="category-title">Volume 2: Guide <span class="count">16 pages</span></div>
+            <div class="page-entry">
+                <a href="/volumes/volume2/index.html" class="page-path">/volumes/volume2/index.html</a> <span class="tag tag-nav">NAV</span>
+                <div class="page-title">Volume 2 Index &mdash; EP.2: Guide (4-Pillar Framework)</div>
+                <div class="page-links"><span>42 internal links</span> <span>Links to all 12 relays + prologue + epilogue + torus</span></div>
+            </div>
+            <div class="page-entry">
+                <span class="page-path" style="color:#888;">16 chapter pages: prologue, relay-01 through relay-12, epilogue, torus</span>
+                <div class="page-links"><span>25 internal links each</span></div>
+            </div>
+        </div>
+
+        <div class="category">
+            <div class="category-title">Volume 3: Game <span class="count">14 pages</span></div>
+            <div class="page-entry">
+                <a href="/volumes/volume3/index.html" class="page-path">/volumes/volume3/index.html</a>
+                <div class="page-title">Volume 3 Index &mdash; EP.3: Game</div>
+                <div class="page-links"><span>32 internal links</span></div>
+            </div>
+            <div class="page-entry">
+                <span class="page-path" style="color:#888;">14 chapter pages: prologue, relay-01 through relay-12</span>
+                <div class="page-links"><span>25 internal links each</span></div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- CATEGORY 5: ARCHIVE -->
+        <!-- ============================================ -->
+        <div class="category" id="archive">
+            <div class="category-title">Archive <span class="count">8 pages</span></div>
+            <div class="page-entry">
+                <a href="/archive/" class="page-path">/archive/index.html</a>
+                <div class="page-title">Archive Index &mdash; Master Archive</div>
+                <div class="page-links"><span>30 internal links</span></div>
+            </div>
+            <div class="page-entry">
+                <span class="page-path" style="color:#888;">/archive/documents/ &bull; /archive/images/ &bull; /archive/references/ &bull; /archive/relays/ &bull; /archive/supplements/</span>
+                <div class="page-title">5 sub-indexes + 2 node input documents (JG-001, CR-002)</div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- CATEGORY 6: RESOURCES -->
+        <!-- ============================================ -->
+        <div class="category" id="resources">
+            <div class="category-title">Resources <span class="count">1 page</span></div>
+            <div class="page-entry">
+                <a href="/resources/table-of-contents.html" class="page-path">/resources/table-of-contents.html</a>
+                <div class="page-title">Table of Contents &mdash; Complete Document Index</div>
+                <div class="page-links"><span>24 internal links</span></div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- REACT ROUTES (App.tsx) -->
+        <!-- ============================================ -->
+        <div class="category" id="react-routes">
+            <div class="category-title">React Application Routes <span class="count">25 routes</span> <span class="tag tag-react">REACT</span></div>
+            <div class="route-grid">
+                <div class="route-entry"><div class="route-path">/</div><div class="route-component">Home &rarr; redirects to /site.html</div></div>
+                <div class="route-entry"><div class="route-path">/nodes</div><div class="route-component">NodeRegister <span class="tag tag-db">DATABASE</span></div></div>
+                <div class="route-entry"><div class="route-path">/play</div><div class="route-component">GameTitle &mdash; EP.3 Entry</div></div>
+                <div class="route-entry"><div class="route-path">/play/hub</div><div class="route-component">GameHub</div></div>
+                <div class="route-entry"><div class="route-path">/play/relay/:id</div><div class="route-component">RelayMission</div></div>
+                <div class="route-entry"><div class="route-path">/play/fits</div><div class="route-component">FitsAssessment</div></div>
+                <div class="route-entry"><div class="route-path">/play/profile</div><div class="route-component">PlayerProfile</div></div>
+                <div class="route-entry"><div class="route-path">/play/leaderboard</div><div class="route-component">Leaderboard</div></div>
+                <div class="route-entry"><div class="route-path">/play/create</div><div class="route-component">CharacterCreation</div></div>
+                <div class="route-entry"><div class="route-path">/play/professor</div><div class="route-component">ProfessorDashboard</div></div>
+                <div class="route-entry"><div class="route-path">/play/store</div><div class="route-component">GameStore</div></div>
+                <div class="route-entry"><div class="route-path">/play/handbook</div><div class="route-component">PlayersHandbook</div></div>
+                <div class="route-entry"><div class="route-path">/play/perspective</div><div class="route-component">AvatarSelection</div></div>
+                <div class="route-entry"><div class="route-path">/play/synthesis</div><div class="route-component">Synthesis</div></div>
+                <div class="route-entry"><div class="route-path">/play/founders</div><div class="route-component">FoundersWall</div></div>
+                <div class="route-entry"><div class="route-path">/explore/relays</div><div class="route-component">RelaysExplorer</div></div>
+                <div class="route-entry"><div class="route-path">/explore/webs</div><div class="route-component">WebsExplorer</div></div>
+                <div class="route-entry"><div class="route-path">/explore/scholars</div><div class="route-component">ScholarsExplorer</div></div>
+                <div class="route-entry"><div class="route-path">/explore/modes</div><div class="route-component">ModesExplorer</div></div>
+                <div class="route-entry"><div class="route-path">/explore/threats</div><div class="route-component">ThreatsExplorer</div></div>
+                <div class="route-entry"><div class="route-path">/explore/sdgs</div><div class="route-component">SDGsExplorer</div></div>
+                <div class="route-entry"><div class="route-path">/explore/pillars</div><div class="route-component">PillarsExplorer</div></div>
+                <div class="route-entry"><div class="route-path">/explore/mastery</div><div class="route-component">MasteryExplorer</div></div>
+                <div class="route-entry"><div class="route-path">/explore/narration</div><div class="route-component">NarrationExplorer</div></div>
+                <div class="route-entry"><div class="route-path">/404</div><div class="route-component">NotFound</div></div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- EXTERNAL CROSS-REFERENCES -->
+        <!-- ============================================ -->
+        <div class="category ext-section" id="external">
+            <div class="category-title">External Cross-References <span class="count">20 links</span></div>
+
+            <h4 style="color:var(--color-accent-gold); font-size:1rem; margin: 16px 0 8px;">Partner Websites</h4>
+            <div class="ext-entry">
+                <span class="ext-domain">infrastructure-academy.com</span>
+                <span class="ext-desc">Original Infrastructure Academy website</span>
+                <a href="https://www.infrastructure-academy.com" target="_blank">www.infrastructure-academy.com</a>
+            </div>
+            <div class="ext-entry">
+                <span class="ext-domain">4ecl.com</span>
+                <span class="ext-desc">4ECL &mdash; Four Elements Consulting Limited</span>
+                <a href="https://www.4ecl.com" target="_blank">www.4ecl.com</a>
+            </div>
+            <div class="ext-entry">
+                <span class="ext-domain">greenims.com</span>
+                <span class="ext-desc">Green IMS &mdash; Jonathan Green (NODE 008)</span>
+                <a href="https://greenims.com" target="_blank">greenims.com</a>
+            </div>
+
+            <h4 style="color:var(--color-accent-gold); font-size:1rem; margin: 16px 0 8px;">Manus Platform</h4>
+            <div class="ext-entry">
+                <span class="ext-domain">infra-acad (this site)</span>
+                <span class="ext-desc">Infrastructure Academy v2 &mdash; Current deployment</span>
+                <a href="https://infra-acad-kuqzaex2.manus.space/" target="_blank">infra-acad-kuqzaex2.manus.space</a>
+            </div>
+            <div class="ext-entry">
+                <span class="ext-domain">nigelmemorial</span>
+                <span class="ext-desc">Thesis Site &mdash; Nigel Memorial / Consciousness Research</span>
+                <a href="https://nigelmemorial-ucmtq9dn.manus.space" target="_blank">nigelmemorial-ucmtq9dn.manus.space</a>
+            </div>
+            <div class="ext-entry">
+                <span class="ext-domain">manus.im</span>
+                <span class="ext-desc">Manus AI Introduction &amp; Share Link</span>
+                <a href="https://manus.im/share/IdytAoTNwA3vg2VlYOPgi4" target="_blank">manus.im/share/IdytAoTNwA3vg2VlYOPgi4</a>
+            </div>
+
+            <h4 style="color:var(--color-accent-gold); font-size:1rem; margin: 16px 0 8px;">GitHub Archive</h4>
+            <div class="ext-entry">
+                <span class="ext-domain">github.io</span>
+                <span class="ext-desc">Original GitHub Pages deployment (legacy)</span>
+                <a href="https://nigeldearden-a11y.github.io/infrastructure-academy/" target="_blank">nigeldearden-a11y.github.io/infrastructure-academy</a>
+            </div>
+
+            <h4 style="color:var(--color-accent-gold); font-size:1rem; margin: 16px 0 8px;">Professional</h4>
+            <div class="ext-entry">
+                <span class="ext-domain">linkedin.com</span>
+                <span class="ext-desc">Jonathan Green &mdash; NODE 008 (The Inspector)</span>
+                <a href="https://linkedin.com/in/jongreenims" target="_blank">linkedin.com/in/jongreenims</a>
+            </div>
+
+            <h4 style="color:var(--color-accent-gold); font-size:1rem; margin: 16px 0 8px;">United Nations SDGs (13 links from Framework page)</h4>
+            <div class="ext-entry">
+                <span class="ext-domain">un.org</span>
+                <span class="ext-desc">UN Sustainable Development Goals &mdash; 11 specific goal pages + main portal + communications</span>
+                <a href="https://www.un.org/sustainabledevelopment" target="_blank">un.org/sustainabledevelopment</a>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- DATABASE LAYER -->
+        <!-- ============================================ -->
+        <div class="category" id="database">
+            <div class="category-title">Database Layer <span class="tag tag-db">DATABASE</span></div>
+            <div class="page-entry">
+                <span class="page-path" style="cursor:default;">dcsn_nodes table</span> <span class="tag tag-db">TiDB/MySQL</span>
+                <div class="page-title">DCSN Node Register &mdash; 17 confirmed nodes (NODE 000&ndash;016), 2 pending, 5 challenge</div>
+                <div class="page-links">
+                    <span>Rendered at: <a href="/nodes" style="color:var(--color-accent-gold);">/nodes</a></span>
+                    <span>&bull; tRPC: nodes.getRegister, nodes.addNode, nodes.updateNode</span>
+                    <span>&bull; Auto-registration on OAuth signup</span>
+                </div>
+            </div>
+            <div class="page-entry">
+                <span class="page-path" style="cursor:default;">users table</span> <span class="tag tag-db">TiDB/MySQL</span>
+                <div class="page-title">User Authentication &mdash; Manus OAuth</div>
+                <div class="page-links"><span>Managed by NextAuth.js / Manus OAuth</span></div>
+            </div>
+            <div class="page-entry">
+                <span class="page-path" style="cursor:default;">Source of Truth</span>
+                <div class="page-title">DCSN-NODE-REGISTER.md &mdash; Master record, never overridden by AI</div>
+                <div class="page-links"><span>Protocol: node numbers are chronological, sequential, permanent, never reused</span></div>
+            </div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- D3.js FORCE-DIRECTED SITEMAP -->
+        <!-- ============================================ -->
+        <div class="category" id="sitemap-viz">
+            <div class="category-title">Living Network Map <span class="count">INTERACTIVE</span></div>
+            <p style="color:var(--color-text-secondary); font-size:0.85rem; margin-bottom:12px;">Force-directed graph showing page interconnections. Drag nodes to explore. Hover for details. Click to navigate.</p>
+            <div id="d3-sitemap" style="width:100%; height:600px; background:#060e1a; border:1px solid #1a3055; border-radius:8px; overflow:hidden; position:relative;"></div>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- THESIS EVIDENCE -->
+        <!-- ============================================ -->
+        <div class="thesis-box" id="thesis">
+            <h3>Thesis Evidence &mdash; Block 359 Day 9</h3>
+            <p>This page itself is evidence. On 11 March 2026, NODE 000 asked whether the database and schema were hardwired to the website. The AI confirmed the database was connected but admitted: (1) /nodes was NOT in the navigation menu, and (2) this schema page did NOT exist &mdash; it had been audited and planned but never built. This is documented in <strong>THESIS-EVIDENCE-BLOCK359-SCHEMA.md</strong> with two screenshots as permanent record. The pattern: AI builds complex backend systems correctly but fails at the last mile of user-facing delivery.</p>
+        </div>
+
+        <!-- ============================================ -->
+        <!-- NAVIGATION MAP -->
+        <!-- ============================================ -->
+        <div class="category" id="nav-map">
+            <div class="category-title">Navigation Structure (nav-optimise.js)</div>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:12px;">
+                <div style="background:var(--color-bg-secondary); border:1px solid #1a3055; border-radius:6px; padding:12px;">
+                    <div style="color:var(--color-accent-gold); font-weight:bold; margin-bottom:8px;">HOME</div>
+                    <div style="font-size:0.8rem; color:#888;">Direct link &rarr; /site.html</div>
+                </div>
+                <div style="background:var(--color-bg-secondary); border:1px solid #1a3055; border-radius:6px; padding:12px;">
+                    <div style="color:var(--color-accent-gold); font-weight:bold; margin-bottom:8px;">READ &darr;</div>
+                    <div style="font-size:0.8rem; color:var(--color-text-secondary);">Start Here<br>EP.1: Perspective<br>EP.2: Guide<br>Exec Pr&eacute;cis<br>Behind the Thesis</div>
+                </div>
+                <div style="background:var(--color-bg-secondary); border:1px solid #1a3055; border-radius:6px; padding:12px;">
+                    <div style="color:var(--color-accent-gold); font-weight:bold; margin-bottom:8px;">EXPLORE &darr;</div>
+                    <div style="font-size:0.8rem; color:var(--color-text-secondary);">Framework<br>Taxonomy<br>Civilisation Clock<br>Mobilisation Clock<br>Olympiad<br><strong style="color:#00c853;">12 Relays</strong><br><strong style="color:#00c853;">5 Webs</strong><br><strong style="color:#00c853;">7 Scholars</strong><br><strong style="color:#00c853;">3 Modes</strong><br><strong style="color:#00c853;">4 Threats (4Cs)</strong><br><strong style="color:#00c853;">SDGs</strong><br><strong style="color:#00c853;">4 Pillars</strong><br><strong style="color:#00c853;">Mastery</strong><br><strong style="color:#00c853;">Narration</strong></div>
+                </div>
+                <div style="background:var(--color-bg-secondary); border:1px solid #1a3055; border-radius:6px; padding:12px;">
+                    <div style="color:var(--color-accent-gold); font-weight:bold; margin-bottom:8px;">PEOPLE &darr;</div>
+                    <div style="font-size:0.8rem; color:var(--color-text-secondary);">Pioneers<br>Masters<br>Institutions<br>Founders Wall<br>Author<br><strong style="color:#00c853;">NODE REGISTER</strong><br><strong style="color:#00c853;">SITE SCHEMA</strong></div>
+                </div>
+                <div style="background:var(--color-bg-secondary); border:1px solid #1a3055; border-radius:6px; padding:12px;">
+                    <div style="color:var(--color-accent-gold); font-weight:bold; margin-bottom:8px;">RESOURCES &darr;</div>
+                    <div style="font-size:0.8rem; color:var(--color-text-secondary);">Documents<br>Resources<br>Glossary<br>Vault<br>ICUT Gallery<br>Equations<br>4Cs Decision<br>Cash Flow Y1<br>iCard: 4ECL BR<br>iCard: Book Sales<br><strong style="color:#00c853;">iCard Gallery</strong><br><strong style="color:#00c853;">iCard: H-Tetra</strong><br><strong style="color:#00c853;">iCard: Khanh</strong><br><strong style="color:#00c853;">Card Deck</strong><br><strong style="color:#00c853;">DCSN Dashboard</strong><br><strong style="color:#00c853;">Finance Admin</strong><br>Charter<br><strong style="color:#00c853;">H-Block Dashboard</strong></div>
+                </div>
+                <div style="background:var(--color-bg-secondary); border:1px solid #1a3055; border-radius:6px; padding:12px;">
+                    <div style="color:var(--color-accent-gold); font-weight:bold; margin-bottom:8px;">PLAY</div>
+                    <div style="font-size:0.8rem; color:#888;">Direct link &rarr; /play</div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </main>
+
+    <footer role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-copyright">
+                &copy; 2026 Infrastructure Academy. All rights reserved. Preserving knowledge for eternity.
+            </div>
+            <div class="footer-links">
+                <span>Site Architecture Schema</span>
+                <span>|</span>
+                <span>Block 359 &bull; Day 9</span>
+                <span>|</span>
+                <span>Per Arya Ad Astra &mdash; iAAi</span>
+            </div>
+            <!-- Social Cross-Links -->
+            <div style="margin-top:0.75rem; display:flex; justify-content:center; gap:1.2rem; flex-wrap:wrap; align-items:center;">
+                <a href="https://x.com/dearden_ni37258" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.35rem; color:#ffd700; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="Follow on X">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    X
+                </a>
+                <a href="https://www.linkedin.com/in/nigeldearden" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.35rem; color:#0077B5; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="Connect on LinkedIn">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    LinkedIn
+                </a>
+                <a href="/site.html" style="display:inline-flex; align-items:center; gap:0.35rem; color:#25D366; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="WhatsApp QR on Homepage">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <button id="back-to-top" class="back-to-top" title="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">&#9650;</button>
+    <script src="/js/discovery-hints.js"></script>
+    <script src="/js/main.js?v=20260308a"></script>
+    <script src="/js/i18n.js?v=20260225d"></script>
+    <script>
+        (function() {
+            var btn = document.getElementById('back-to-top');
+            if (!btn) return;
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 600) { btn.classList.add('visible'); } else { btn.classList.remove('visible'); }
+            });
+        })();
+    </script>
+    <script src="/js/nav-active.js"></script>
+    <script src="/js/site-search.js?v=20260311a"></script>
+    <script src="/js/nav-optimise.js?v=20260311a"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script>
+    (function() {
+      'use strict';
+      var container = document.getElementById('d3-sitemap');
+      if (!container) return;
+
+      var width = container.clientWidth;
+      var height = 600;
+
+      // Node data — categories as hubs, pages as leaves
+      var nodes = [
+        // Category hubs (larger)
+        { id: 'HOME', group: 'hub', r: 18, color: '#ffd700', url: '/site.html' },
+        { id: 'READ', group: 'hub', r: 14, color: '#ff6b6b' },
+        { id: 'EXPLORE', group: 'hub', r: 14, color: '#4ecdc4' },
+        { id: 'PEOPLE', group: 'hub', r: 14, color: '#45b7d1' },
+        { id: 'RESOURCES', group: 'hub', r: 14, color: '#f9ca24' },
+        { id: 'PLAY', group: 'hub', r: 14, color: '#a29bfe', url: '/play' },
+        { id: 'VOL 1', group: 'hub', r: 12, color: '#fd79a8', url: '/volumes/volume1/index.html' },
+        { id: 'VOL 2', group: 'hub', r: 12, color: '#e17055', url: '/volumes/volume2/index.html' },
+        { id: 'VOL 3', group: 'hub', r: 12, color: '#00b894', url: '/volumes/volume3/index.html' },
+        { id: 'DATABASE', group: 'hub', r: 10, color: '#ff9800' },
+        { id: 'ARCHIVE', group: 'hub', r: 10, color: '#bcaaa4', url: '/archive/index.html' },
+        { id: 'SCHEMA', group: 'hub', r: 10, color: '#ffd700', url: '/page-schema.html' },
+
+        // READ pages
+        { id: 'Start Here', group: 'read', r: 6, color: '#ff6b6b', url: '/pages/start-here.html' },
+        { id: 'EP.1 Index', group: 'read', r: 6, color: '#ff6b6b', url: '/volumes/volume1/index.html' },
+        { id: 'EP.2 Index', group: 'read', r: 6, color: '#ff6b6b', url: '/volumes/volume2/index.html' },
+        { id: 'Exec Precis', group: 'read', r: 6, color: '#ff6b6b', url: '/executive-precis.html' },
+        { id: 'Behind Thesis', group: 'read', r: 6, color: '#ff6b6b', url: '/pages/behind-the-thesis.html' },
+
+        // EXPLORE pages
+        { id: 'Framework', group: 'explore', r: 6, color: '#4ecdc4', url: '/pages/framework.html' },
+        { id: 'Taxonomy', group: 'explore', r: 6, color: '#4ecdc4', url: '/taxonomy.html' },
+        { id: 'Civ Clock', group: 'explore', r: 6, color: '#4ecdc4', url: '/civilisation-clock.html' },
+        { id: 'Mob Clock', group: 'explore', r: 6, color: '#4ecdc4', url: '/mobilisation-clock.html' },
+        { id: 'Olympiad', group: 'explore', r: 6, color: '#4ecdc4', url: '/infrastructure-olympiad.html' },
+        { id: '12 Relays', group: 'explore', r: 5, color: '#4ecdc4', url: '/explore/relays' },
+        { id: '5 Webs', group: 'explore', r: 5, color: '#4ecdc4', url: '/explore/webs' },
+        { id: '7 Scholars', group: 'explore', r: 5, color: '#4ecdc4', url: '/explore/scholars' },
+        { id: '3 Modes', group: 'explore', r: 5, color: '#4ecdc4', url: '/explore/modes' },
+        { id: '4 Threats', group: 'explore', r: 5, color: '#4ecdc4', url: '/explore/threats' },
+        { id: 'SDGs', group: 'explore', r: 5, color: '#4ecdc4', url: '/explore/sdgs' },
+        { id: '4 Pillars', group: 'explore', r: 5, color: '#4ecdc4', url: '/explore/pillars' },
+        { id: 'Mastery', group: 'explore', r: 5, color: '#4ecdc4', url: '/explore/mastery' },
+        { id: 'Narration', group: 'explore', r: 5, color: '#4ecdc4', url: '/explore/narration' },
+
+        // PEOPLE pages
+        { id: 'Pioneers', group: 'people', r: 6, color: '#45b7d1', url: '/pioneers.html' },
+        { id: 'Masters', group: 'people', r: 6, color: '#45b7d1', url: '/masters.html' },
+        { id: 'Institutions', group: 'people', r: 6, color: '#45b7d1', url: '/institutions.html' },
+        { id: 'Founders', group: 'people', r: 6, color: '#45b7d1', url: '/play/founders' },
+        { id: 'Author', group: 'people', r: 6, color: '#45b7d1', url: '/pages/about-author.html' },
+        { id: 'Node Register', group: 'people', r: 7, color: '#45b7d1', url: '/nodes' },
+        { id: 'Site Schema', group: 'people', r: 6, color: '#45b7d1', url: '/page-schema.html' },
+
+        // RESOURCES pages
+        { id: 'Documents', group: 'resources', r: 6, color: '#f9ca24', url: '/library.html' },
+        { id: 'Resources', group: 'resources', r: 5, color: '#f9ca24', url: '/pages/resources.html' },
+        { id: 'Glossary', group: 'resources', r: 5, color: '#f9ca24', url: '/pages/glossary.html' },
+        { id: 'Vault', group: 'resources', r: 6, color: '#f9ca24', url: '/vault.html' },
+        { id: 'ICUT Gallery', group: 'resources', r: 5, color: '#f9ca24', url: '/icut-gallery.html' },
+        { id: 'Equations', group: 'resources', r: 5, color: '#f9ca24', url: '/equations-register.html' },
+        { id: '4Cs Decision', group: 'resources', r: 5, color: '#f9ca24', url: '/4cs-decision.html' },
+        { id: 'Cash Flow', group: 'resources', r: 5, color: '#f9ca24', url: '/cashflow-y1.html' },
+        { id: 'iCard 4ECL', group: 'resources', r: 4, color: '#f9ca24', url: '/icard-4ecl-br.html' },
+        { id: 'iCard Sales', group: 'resources', r: 4, color: '#f9ca24', url: '/icard-book-sales-strategy.html' },
+        { id: 'iCard Gallery', group: 'resources', r: 5, color: '#f9ca24', url: '/icard-gallery.html' },
+        { id: 'iCard H-Tetra', group: 'resources', r: 5, color: '#f9ca24', url: '/icard-h-tetra.html' },
+        { id: 'iCard Khanh', group: 'resources', r: 5, color: '#f9ca24', url: '/icard-khanh-huynh.html' },
+        { id: 'Card Deck', group: 'resources', r: 6, color: '#f9ca24', url: '/deck.html' },
+        { id: 'DCSN Dash', group: 'resources', r: 5, color: '#f9ca24', url: '/dcsn-dashboard.html' },
+        { id: 'Finance', group: 'resources', r: 5, color: '#f9ca24', url: '/finance-admin.html' },
+        { id: 'H-Block Dash', group: 'resources', r: 5, color: '#f9ca24', url: '/h-block-dashboard.html' },
+        { id: 'Charter', group: 'resources', r: 5, color: '#f9ca24', url: '/site.html#charter' },
+
+        // PLAY pages
+        { id: 'Game Hub', group: 'play', r: 5, color: '#a29bfe', url: '/play/hub' },
+        { id: 'FITS', group: 'play', r: 4, color: '#a29bfe', url: '/play/fits' },
+        { id: 'Profile', group: 'play', r: 4, color: '#a29bfe', url: '/play/profile' },
+        { id: 'Leaderboard', group: 'play', r: 4, color: '#a29bfe', url: '/play/leaderboard' },
+        { id: 'Create', group: 'play', r: 4, color: '#a29bfe', url: '/play/create' },
+        { id: 'Professor', group: 'play', r: 4, color: '#a29bfe', url: '/play/professor' },
+        { id: 'Store', group: 'play', r: 4, color: '#a29bfe', url: '/play/store' },
+        { id: 'Handbook', group: 'play', r: 4, color: '#a29bfe', url: '/play/handbook' },
+        { id: 'Perspective', group: 'play', r: 4, color: '#a29bfe', url: '/play/perspective' },
+        { id: 'Synthesis', group: 'play', r: 4, color: '#a29bfe', url: '/play/synthesis' },
+
+        // Volume relay nodes (compact)
+        { id: 'V1 R01', group: 'vol1', r: 3, color: '#fd79a8', url: '/volumes/volume1/relay-01.html' },
+        { id: 'V1 R02', group: 'vol1', r: 3, color: '#fd79a8', url: '/volumes/volume1/relay-02.html' },
+        { id: 'V1 R03', group: 'vol1', r: 3, color: '#fd79a8', url: '/volumes/volume1/relay-03.html' },
+        { id: 'V1 R04', group: 'vol1', r: 3, color: '#fd79a8', url: '/volumes/volume1/relay-04.html' },
+        { id: 'V1 R05', group: 'vol1', r: 3, color: '#fd79a8', url: '/volumes/volume1/relay-05.html' },
+        { id: 'V1 R06', group: 'vol1', r: 3, color: '#fd79a8', url: '/volumes/volume1/relay-06.html' },
+        { id: 'V1 R07', group: 'vol1', r: 3, color: '#fd79a8', url: '/volumes/volume1/relay-07.html' },
+        { id: 'V1 R08', group: 'vol1', r: 3, color: '#fd79a8', url: '/volumes/volume1/relay-08.html' },
+        { id: 'V1 R09', group: 'vol1', r: 3, color: '#fd79a8', url: '/volumes/volume1/relay-09.html' },
+        { id: 'V1 R10', group: 'vol1', r: 3, color: '#fd79a8', url: '/volumes/volume1/relay-10.html' },
+        { id: 'V1 R11', group: 'vol1', r: 3, color: '#fd79a8', url: '/volumes/volume1/relay-11.html' },
+        { id: 'V1 R12', group: 'vol1', r: 3, color: '#fd79a8', url: '/volumes/volume1/relay-12.html' },
+
+        { id: 'V2 R01', group: 'vol2', r: 3, color: '#e17055', url: '/volumes/volume2/relay-01.html' },
+        { id: 'V2 R02', group: 'vol2', r: 3, color: '#e17055', url: '/volumes/volume2/relay-02.html' },
+        { id: 'V2 R03', group: 'vol2', r: 3, color: '#e17055', url: '/volumes/volume2/relay-03.html' },
+        { id: 'V2 R04', group: 'vol2', r: 3, color: '#e17055', url: '/volumes/volume2/relay-04.html' },
+        { id: 'V2 R05', group: 'vol2', r: 3, color: '#e17055', url: '/volumes/volume2/relay-05.html' },
+        { id: 'V2 R06', group: 'vol2', r: 3, color: '#e17055', url: '/volumes/volume2/relay-06.html' },
+        { id: 'V2 R07', group: 'vol2', r: 3, color: '#e17055', url: '/volumes/volume2/relay-07.html' },
+        { id: 'V2 R08', group: 'vol2', r: 3, color: '#e17055', url: '/volumes/volume2/relay-08.html' },
+        { id: 'V2 R09', group: 'vol2', r: 3, color: '#e17055', url: '/volumes/volume2/relay-09.html' },
+        { id: 'V2 R10', group: 'vol2', r: 3, color: '#e17055', url: '/volumes/volume2/relay-10.html' },
+        { id: 'V2 R11', group: 'vol2', r: 3, color: '#e17055', url: '/volumes/volume2/relay-11.html' },
+        { id: 'V2 R12', group: 'vol2', r: 3, color: '#e17055', url: '/volumes/volume2/relay-12.html' },
+
+        { id: 'V3 R01', group: 'vol3', r: 3, color: '#00b894', url: '/volumes/volume3/relay-01.html' },
+        { id: 'V3 R02', group: 'vol3', r: 3, color: '#00b894', url: '/volumes/volume3/relay-02.html' },
+        { id: 'V3 R03', group: 'vol3', r: 3, color: '#00b894', url: '/volumes/volume3/relay-03.html' },
+        { id: 'V3 R04', group: 'vol3', r: 3, color: '#00b894', url: '/volumes/volume3/relay-04.html' },
+        { id: 'V3 R05', group: 'vol3', r: 3, color: '#00b894', url: '/volumes/volume3/relay-05.html' },
+        { id: 'V3 R06', group: 'vol3', r: 3, color: '#00b894', url: '/volumes/volume3/relay-06.html' },
+        { id: 'V3 R07', group: 'vol3', r: 3, color: '#00b894', url: '/volumes/volume3/relay-07.html' },
+        { id: 'V3 R08', group: 'vol3', r: 3, color: '#00b894', url: '/volumes/volume3/relay-08.html' },
+        { id: 'V3 R09', group: 'vol3', r: 3, color: '#00b894', url: '/volumes/volume3/relay-09.html' },
+        { id: 'V3 R10', group: 'vol3', r: 3, color: '#00b894', url: '/volumes/volume3/relay-10.html' },
+        { id: 'V3 R11', group: 'vol3', r: 3, color: '#00b894', url: '/volumes/volume3/relay-11.html' },
+        { id: 'V3 R12', group: 'vol3', r: 3, color: '#00b894', url: '/volumes/volume3/relay-12.html' },
+
+        // Database
+        { id: 'dcsn_nodes', group: 'db', r: 7, color: '#ff9800', url: '/nodes' },
+        { id: 'users', group: 'db', r: 5, color: '#ff9800' },
+
+        // Archive
+        { id: 'Archive Docs', group: 'archive', r: 4, color: '#bcaaa4', url: '/archive/documents/index.html' },
+        { id: 'Archive Imgs', group: 'archive', r: 4, color: '#bcaaa4', url: '/archive/images/index.html' },
+        { id: 'Archive Refs', group: 'archive', r: 4, color: '#bcaaa4', url: '/archive/references/index.html' },
+        { id: 'Archive Relays', group: 'archive', r: 4, color: '#bcaaa4', url: '/archive/relays/index.html' },
+        { id: 'Archive Supps', group: 'archive', r: 4, color: '#bcaaa4', url: '/archive/supplements/index.html' }
+      ];
+
+      // Links
+      var links = [
+        // HOME connects to all hubs
+        { source: 'HOME', target: 'READ', strength: 0.8 },
+        { source: 'HOME', target: 'EXPLORE', strength: 0.8 },
+        { source: 'HOME', target: 'PEOPLE', strength: 0.8 },
+        { source: 'HOME', target: 'RESOURCES', strength: 0.8 },
+        { source: 'HOME', target: 'PLAY', strength: 0.8 },
+        { source: 'HOME', target: 'VOL 1', strength: 0.5 },
+        { source: 'HOME', target: 'VOL 2', strength: 0.5 },
+        { source: 'HOME', target: 'VOL 3', strength: 0.5 },
+        { source: 'HOME', target: 'DATABASE', strength: 0.4 },
+        { source: 'HOME', target: 'ARCHIVE', strength: 0.4 },
+        { source: 'HOME', target: 'SCHEMA', strength: 0.4 },
+
+        // READ hub to pages
+        { source: 'READ', target: 'Start Here' },
+        { source: 'READ', target: 'EP.1 Index' },
+        { source: 'READ', target: 'EP.2 Index' },
+        { source: 'READ', target: 'Exec Precis' },
+        { source: 'READ', target: 'Behind Thesis' },
+
+        // EXPLORE hub to pages
+        { source: 'EXPLORE', target: 'Framework' },
+        { source: 'EXPLORE', target: 'Taxonomy' },
+        { source: 'EXPLORE', target: 'Civ Clock' },
+        { source: 'EXPLORE', target: 'Mob Clock' },
+        { source: 'EXPLORE', target: 'Olympiad' },
+        { source: 'EXPLORE', target: '12 Relays' },
+        { source: 'EXPLORE', target: '5 Webs' },
+        { source: 'EXPLORE', target: '7 Scholars' },
+        { source: 'EXPLORE', target: '3 Modes' },
+        { source: 'EXPLORE', target: '4 Threats' },
+        { source: 'EXPLORE', target: 'SDGs' },
+        { source: 'EXPLORE', target: '4 Pillars' },
+        { source: 'EXPLORE', target: 'Mastery' },
+        { source: 'EXPLORE', target: 'Narration' },
+
+        // PEOPLE hub to pages
+        { source: 'PEOPLE', target: 'Pioneers' },
+        { source: 'PEOPLE', target: 'Masters' },
+        { source: 'PEOPLE', target: 'Institutions' },
+        { source: 'PEOPLE', target: 'Founders' },
+        { source: 'PEOPLE', target: 'Author' },
+        { source: 'PEOPLE', target: 'Node Register' },
+        { source: 'PEOPLE', target: 'Site Schema' },
+
+        // RESOURCES hub to pages
+        { source: 'RESOURCES', target: 'Documents' },
+        { source: 'RESOURCES', target: 'Resources' },
+        { source: 'RESOURCES', target: 'Glossary' },
+        { source: 'RESOURCES', target: 'Vault' },
+        { source: 'RESOURCES', target: 'ICUT Gallery' },
+        { source: 'RESOURCES', target: 'Equations' },
+        { source: 'RESOURCES', target: '4Cs Decision' },
+        { source: 'RESOURCES', target: 'Cash Flow' },
+        { source: 'RESOURCES', target: 'iCard 4ECL' },
+        { source: 'RESOURCES', target: 'iCard Sales' },
+        { source: 'RESOURCES', target: 'iCard Gallery' },
+        { source: 'RESOURCES', target: 'iCard H-Tetra' },
+        { source: 'RESOURCES', target: 'iCard Khanh' },
+        { source: 'RESOURCES', target: 'Card Deck' },
+        { source: 'RESOURCES', target: 'DCSN Dash' },
+        { source: 'RESOURCES', target: 'Finance' },
+        { source: 'RESOURCES', target: 'H-Block Dash' },
+        { source: 'RESOURCES', target: 'Charter' },
+
+        // PLAY hub to pages
+        { source: 'PLAY', target: 'Game Hub' },
+        { source: 'PLAY', target: 'FITS' },
+        { source: 'PLAY', target: 'Profile' },
+        { source: 'PLAY', target: 'Leaderboard' },
+        { source: 'PLAY', target: 'Create' },
+        { source: 'PLAY', target: 'Professor' },
+        { source: 'PLAY', target: 'Store' },
+        { source: 'PLAY', target: 'Handbook' },
+        { source: 'PLAY', target: 'Perspective' },
+        { source: 'PLAY', target: 'Synthesis' },
+
+        // VOL 1 hub to relays
+        { source: 'VOL 1', target: 'V1 R01' }, { source: 'VOL 1', target: 'V1 R02' },
+        { source: 'VOL 1', target: 'V1 R03' }, { source: 'VOL 1', target: 'V1 R04' },
+        { source: 'VOL 1', target: 'V1 R05' }, { source: 'VOL 1', target: 'V1 R06' },
+        { source: 'VOL 1', target: 'V1 R07' }, { source: 'VOL 1', target: 'V1 R08' },
+        { source: 'VOL 1', target: 'V1 R09' }, { source: 'VOL 1', target: 'V1 R10' },
+        { source: 'VOL 1', target: 'V1 R11' }, { source: 'VOL 1', target: 'V1 R12' },
+
+        // VOL 2 hub to relays
+        { source: 'VOL 2', target: 'V2 R01' }, { source: 'VOL 2', target: 'V2 R02' },
+        { source: 'VOL 2', target: 'V2 R03' }, { source: 'VOL 2', target: 'V2 R04' },
+        { source: 'VOL 2', target: 'V2 R05' }, { source: 'VOL 2', target: 'V2 R06' },
+        { source: 'VOL 2', target: 'V2 R07' }, { source: 'VOL 2', target: 'V2 R08' },
+        { source: 'VOL 2', target: 'V2 R09' }, { source: 'VOL 2', target: 'V2 R10' },
+        { source: 'VOL 2', target: 'V2 R11' }, { source: 'VOL 2', target: 'V2 R12' },
+
+        // VOL 3 hub to relays
+        { source: 'VOL 3', target: 'V3 R01' }, { source: 'VOL 3', target: 'V3 R02' },
+        { source: 'VOL 3', target: 'V3 R03' }, { source: 'VOL 3', target: 'V3 R04' },
+        { source: 'VOL 3', target: 'V3 R05' }, { source: 'VOL 3', target: 'V3 R06' },
+        { source: 'VOL 3', target: 'V3 R07' }, { source: 'VOL 3', target: 'V3 R08' },
+        { source: 'VOL 3', target: 'V3 R09' }, { source: 'VOL 3', target: 'V3 R10' },
+        { source: 'VOL 3', target: 'V3 R11' }, { source: 'VOL 3', target: 'V3 R12' },
+
+        // DATABASE connections
+        { source: 'DATABASE', target: 'dcsn_nodes' },
+        { source: 'DATABASE', target: 'users' },
+        { source: 'dcsn_nodes', target: 'Node Register', strength: 0.9 },
+
+        // ARCHIVE connections
+        { source: 'ARCHIVE', target: 'Archive Docs' },
+        { source: 'ARCHIVE', target: 'Archive Imgs' },
+        { source: 'ARCHIVE', target: 'Archive Refs' },
+        { source: 'ARCHIVE', target: 'Archive Relays' },
+        { source: 'ARCHIVE', target: 'Archive Supps' },
+
+        // Cross-links (the symmetry connections)
+        { source: 'READ', target: 'VOL 1', strength: 0.6 },
+        { source: 'READ', target: 'VOL 2', strength: 0.6 },
+        { source: 'PLAY', target: 'VOL 3', strength: 0.6 },
+        { source: 'Node Register', target: 'DATABASE', strength: 0.7 },
+        { source: 'SCHEMA', target: 'HOME', strength: 0.5 },
+        { source: 'Founders', target: 'PLAY', strength: 0.4 },
+        { source: 'Equations', target: 'Card Deck', strength: 0.5 },
+        { source: 'DCSN Dash', target: 'Node Register', strength: 0.5 }
+      ];
+
+      // Create SVG
+      var svg = d3.select('#d3-sitemap')
+        .append('svg')
+        .attr('width', width)
+        .attr('height', height)
+        .attr('viewBox', [0, 0, width, height]);
+
+      // Tooltip
+      var tooltip = d3.select('#d3-sitemap')
+        .append('div')
+        .style('position', 'absolute')
+        .style('background', 'rgba(10,22,40,0.95)')
+        .style('border', '1px solid #ffd700')
+        .style('border-radius', '6px')
+        .style('padding', '8px 12px')
+        .style('font-size', '0.75rem')
+        .style('color', '#fff')
+        .style('pointer-events', 'none')
+        .style('opacity', 0)
+        .style('z-index', 10);
+
+      // Simulation
+      var simulation = d3.forceSimulation(nodes)
+        .force('link', d3.forceLink(links).id(function(d) { return d.id; }).distance(function(d) {
+          return d.source.group === 'hub' && d.target.group === 'hub' ? 120 : 50;
+        }))
+        .force('charge', d3.forceManyBody().strength(function(d) {
+          return d.group === 'hub' ? -300 : -40;
+        }))
+        .force('center', d3.forceCenter(width / 2, height / 2))
+        .force('collision', d3.forceCollide().radius(function(d) { return d.r + 2; }))
+        .force('x', d3.forceX(width / 2).strength(0.05))
+        .force('y', d3.forceY(height / 2).strength(0.05));
+
+      // Draw links
+      var link = svg.append('g')
+        .selectAll('line')
+        .data(links)
+        .join('line')
+        .attr('stroke', 'rgba(255,215,0,0.12)')
+        .attr('stroke-width', function(d) { return d.strength ? d.strength * 2 : 1; });
+
+      // Draw nodes
+      var node = svg.append('g')
+        .selectAll('circle')
+        .data(nodes)
+        .join('circle')
+        .attr('r', function(d) { return d.r; })
+        .attr('fill', function(d) { return d.color; })
+        .attr('stroke', function(d) { return d.group === 'hub' ? '#fff' : 'none'; })
+        .attr('stroke-width', function(d) { return d.group === 'hub' ? 1.5 : 0; })
+        .attr('opacity', function(d) { return d.group === 'hub' ? 1 : 0.8; })
+        .style('cursor', function(d) { return d.url ? 'pointer' : 'default'; })
+        .on('mouseover', function(event, d) {
+          d3.select(this).attr('opacity', 1).attr('r', d.r * 1.4);
+          tooltip.style('opacity', 1)
+            .html('<strong style="color:' + d.color + '">' + d.id + '</strong>' + (d.url ? '<br><span style="color:#888">' + d.url + '</span>' : ''))
+            .style('left', (event.offsetX + 12) + 'px')
+            .style('top', (event.offsetY - 10) + 'px');
+          // Highlight connected links
+          link.attr('stroke', function(l) {
+            return (l.source.id === d.id || l.target.id === d.id) ? 'rgba(255,215,0,0.6)' : 'rgba(255,215,0,0.06)';
+          }).attr('stroke-width', function(l) {
+            return (l.source.id === d.id || l.target.id === d.id) ? 2 : 0.5;
+          });
+        })
+        .on('mouseout', function(event, d) {
+          d3.select(this).attr('opacity', d.group === 'hub' ? 1 : 0.8).attr('r', d.r);
+          tooltip.style('opacity', 0);
+          link.attr('stroke', 'rgba(255,215,0,0.12)').attr('stroke-width', function(l) { return l.strength ? l.strength * 2 : 1; });
+        })
+        .on('click', function(event, d) {
+          if (d.url) window.location.href = d.url;
+        })
+        .call(d3.drag()
+          .on('start', function(event, d) {
+            if (!event.active) simulation.alphaTarget(0.3).restart();
+            d.fx = d.x; d.fy = d.y;
+          })
+          .on('drag', function(event, d) {
+            d.fx = event.x; d.fy = event.y;
+          })
+          .on('end', function(event, d) {
+            if (!event.active) simulation.alphaTarget(0);
+            d.fx = null; d.fy = null;
+          }));
+
+      // Labels for hubs only
+      var labels = svg.append('g')
+        .selectAll('text')
+        .data(nodes.filter(function(d) { return d.group === 'hub'; }))
+        .join('text')
+        .text(function(d) { return d.id; })
+        .attr('font-size', '10px')
+        .attr('font-family', 'Georgia, serif')
+        .attr('fill', '#fff')
+        .attr('text-anchor', 'middle')
+        .attr('dy', function(d) { return d.r + 14; })
+        .style('pointer-events', 'none');
+
+      // Tick
+      simulation.on('tick', function() {
+        link
+          .attr('x1', function(d) { return d.source.x; })
+          .attr('y1', function(d) { return d.source.y; })
+          .attr('x2', function(d) { return d.target.x; })
+          .attr('y2', function(d) { return d.target.y; });
+        node
+          .attr('cx', function(d) { return d.x = Math.max(d.r, Math.min(width - d.r, d.x)); })
+          .attr('cy', function(d) { return d.y = Math.max(d.r, Math.min(height - d.r, d.y)); });
+        labels
+          .attr('x', function(d) { return d.x; })
+          .attr('y', function(d) { return d.y; });
+      });
+
+      // Legend
+      var legend = svg.append('g').attr('transform', 'translate(16, 16)');
+      var legendData = [
+        { label: 'READ', color: '#ff6b6b' },
+        { label: 'EXPLORE', color: '#4ecdc4' },
+        { label: 'PEOPLE', color: '#45b7d1' },
+        { label: 'RESOURCES', color: '#f9ca24' },
+        { label: 'PLAY', color: '#a29bfe' },
+        { label: 'VOL 1', color: '#fd79a8' },
+        { label: 'VOL 2', color: '#e17055' },
+        { label: 'VOL 3', color: '#00b894' },
+        { label: 'DATABASE', color: '#ff9800' },
+        { label: 'ARCHIVE', color: '#bcaaa4' }
+      ];
+      legendData.forEach(function(item, i) {
+        legend.append('circle').attr('cx', 6).attr('cy', i * 16).attr('r', 4).attr('fill', item.color);
+        legend.append('text').attr('x', 16).attr('y', i * 16 + 4).text(item.label)
+          .attr('font-size', '9px').attr('fill', '#888').attr('font-family', 'sans-serif');
+      });
+
+      // Resize handler
+      window.addEventListener('resize', function() {
+        var newWidth = container.clientWidth;
+        svg.attr('width', newWidth).attr('viewBox', [0, 0, newWidth, height]);
+        simulation.force('center', d3.forceCenter(newWidth / 2, height / 2));
+        simulation.alpha(0.3).restart();
+      });
+    })();
+    </script>
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement -->
+
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement (v2 fixed) -->
+<script>
+(function() {
+  try {
+    var sid = sessionStorage.getItem('iaai_sid');
+    if (!sid) {
+      sid = 'ses_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 9);
+      sessionStorage.setItem('iaai_sid', sid);
+    }
+    var data = {
+      path: window.location.pathname + (window.location.hash || ''),
+      pageTitle: document.title || 'Untitled',
+      referrer: document.referrer || '',
+      sessionId: sid
+    };
+    fetch('/api/trpc/analytics.track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ json: data }),
+      credentials: 'include'
+    }).catch(function() {});
+    window.addEventListener('hashchange', function() {
+      var hashData = {
+        path: window.location.pathname + (window.location.hash || ''),
+        pageTitle: document.title || 'Untitled',
+        referrer: window.location.href,
+        sessionId: sid
+      };
+      fetch('/api/trpc/analytics.track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ json: hashData }),
+        credentials: 'include'
+      }).catch(function() {});
+    });
+  } catch(e) {}
+})();
+</script>
+
+    <!-- Back-to-Top Button Logic -->
+    <script>
+    (function() {
+        var btn = document.getElementById('back-to-top-btn');
+        if (!btn) return;
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                btn.style.display = 'flex';
+            } else {
+                btn.style.display = 'none';
+            }
+        }, { passive: true });
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    })();
+    </script>
+
+</body>
+</html>

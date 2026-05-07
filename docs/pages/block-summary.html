@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Block Summary — Master Audit Chain — Infrastructure Academy</title>
+  <link rel="icon" type="image/x-icon" href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/favicon_32_80e4326c.png">
+  <link rel="canonical" href="https://infra-acad-kuqzaex2.manus.space/pages/block-summary.html">
+  <meta name="description" content="Master Audit Chain — Complete block-by-block record of all deliverables, checkpoints, and proof-of-work for the Infrastructure Academy beta test.">
+  <style>
+    :root {
+      --navy: #0a1628;
+      --navy-light: #0f1f3a;
+      --gold: #ffd700;
+      --gold-dim: rgba(255,215,0,0.4);
+      --text: #e0e0e0;
+      --text-dim: #999;
+      --green: #22c55e;
+      --blue: #60a5fa;
+      --copper: #b87333;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:var(--navy); color:var(--text); font-family:Georgia,'Times New Roman',serif; min-height:100vh; }
+
+    /* Header */
+    .page-header { text-align:center; padding:40px 20px 24px; border-bottom:2px solid var(--gold); }
+    .page-header h1 { color:var(--gold); font-size:2rem; letter-spacing:2px; margin-bottom:6px; }
+    .page-header .subtitle { color:var(--text-dim); font-size:0.95rem; font-style:italic; }
+    .page-header .domain { color:var(--gold); font-size:0.8rem; margin-top:10px; opacity:0.7; }
+
+    /* Back nav */
+    .back-nav { max-width:1200px; margin:20px auto 0; padding:0 30px; }
+    .back-nav a { color:var(--gold); text-decoration:none; font-size:0.9rem; opacity:0.8; }
+    .back-nav a:hover { opacity:1; text-decoration:underline; }
+
+    /* Summary stats */
+    .stats-bar { max-width:1200px; margin:24px auto; padding:0 30px; display:grid; grid-template-columns:repeat(auto-fit, minmax(140px, 1fr)); gap:12px; }
+    .stat-card { background:var(--navy-light); border:1px solid var(--gold-dim); padding:16px; text-align:center; }
+    .stat-card .stat-num { color:var(--gold); font-size:1.8rem; font-weight:bold; }
+    .stat-card .stat-label { color:var(--text-dim); font-size:0.75rem; text-transform:uppercase; letter-spacing:1px; margin-top:4px; }
+
+    /* Timeline */
+    .timeline { max-width:1200px; margin:30px auto; padding:0 30px; }
+    .timeline-line { position:relative; padding-left:40px; border-left:2px solid var(--gold-dim); }
+
+    /* Block entry */
+    .block-entry { position:relative; margin-bottom:40px; }
+    .block-entry::before { content:''; position:absolute; left:-47px; top:6px; width:14px; height:14px; background:var(--gold); border-radius:50%; border:2px solid var(--navy); }
+    .block-entry.complete::before { background:var(--green); }
+
+    .block-header { display:flex; align-items:baseline; gap:12px; flex-wrap:wrap; margin-bottom:8px; }
+    .block-id { color:var(--gold); font-size:1.4rem; font-weight:bold; letter-spacing:1px; }
+    .block-title { color:var(--text); font-size:1.1rem; }
+    .block-date { color:var(--text-dim); font-size:0.8rem; font-style:italic; }
+    .block-status { display:inline-block; padding:2px 10px; font-size:0.7rem; font-weight:bold; letter-spacing:1px; text-transform:uppercase; }
+    .block-status.complete { background:rgba(34,197,94,0.2); color:var(--green); }
+    .block-status.active { background:rgba(96,165,250,0.2); color:var(--blue); }
+
+    .block-body { background:var(--navy-light); border:1px solid rgba(255,215,0,0.15); padding:20px; margin-top:10px; }
+    .block-body p { font-size:0.9rem; line-height:1.6; margin-bottom:12px; color:var(--text); }
+
+    /* Sub-blocks */
+    .sub-blocks { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:10px; margin-top:12px; }
+    .sub-block { background:rgba(255,215,0,0.03); border:1px solid rgba(255,215,0,0.1); padding:12px; }
+    .sub-block-id { color:var(--gold); font-weight:bold; font-size:0.85rem; margin-bottom:4px; }
+    .sub-block-desc { color:var(--text-dim); font-size:0.8rem; line-height:1.5; }
+
+    /* Checkpoint hash */
+    .checkpoint { display:inline-flex; align-items:center; gap:6px; background:rgba(255,215,0,0.06); border:1px solid rgba(255,215,0,0.2); padding:3px 10px; font-family:'Courier New',monospace; font-size:0.75rem; color:var(--gold); margin-top:8px; }
+    .checkpoint::before { content:'\1F512'; font-size:0.7rem; }
+
+    /* Deliverables table */
+    .deliverables { width:100%; border-collapse:collapse; margin-top:12px; font-size:0.85rem; }
+    .deliverables th { text-align:left; color:var(--gold); font-size:0.75rem; text-transform:uppercase; letter-spacing:1px; padding:8px 10px; border-bottom:1px solid var(--gold-dim); }
+    .deliverables td { padding:8px 10px; border-bottom:1px solid rgba(255,255,255,0.05); color:var(--text); }
+    .deliverables tr:hover { background:rgba(255,215,0,0.03); }
+
+    /* PDF link */
+    .audit-link { display:inline-block; background:var(--gold); color:var(--navy); padding:6px 16px; font-weight:bold; text-decoration:none; font-size:0.8rem; margin-top:10px; }
+    .audit-link:hover { opacity:0.9; }
+
+    /* Milestone Timeline */
+    .milestone-timeline { max-width:1200px; margin:40px auto; padding:0 30px; }
+    .milestone-timeline h2 { color:var(--gold); font-size:1.5rem; margin-bottom:16px; border-bottom:1px solid var(--gold-dim); padding-bottom:8px; }
+    .mt-track { position:relative; overflow-x:auto; padding:30px 0 20px; }
+    .mt-line { display:flex; align-items:flex-start; position:relative; min-width:max-content; padding:0 20px; }
+    .mt-line::before { content:''; position:absolute; top:48px; left:20px; right:20px; height:3px; background:linear-gradient(90deg, var(--gold-dim), var(--gold), var(--gold-dim)); }
+    .mt-node { display:flex; flex-direction:column; align-items:center; min-width:120px; max-width:140px; position:relative; cursor:pointer; }
+    .mt-dot { width:16px; height:16px; border-radius:50%; border:3px solid var(--navy); position:relative; z-index:2; margin-top:40px; transition:transform 0.2s; }
+    .mt-node:hover .mt-dot { transform:scale(1.3); }
+    .mt-dot.gold { background:var(--gold); }
+    .mt-dot.green { background:var(--green); }
+    .mt-dot.blue { background:var(--blue); }
+    .mt-dot.copper { background:var(--copper); }
+    .mt-day { font-size:0.7rem; color:var(--gold); font-weight:bold; margin-top:8px; }
+    .mt-date { font-size:0.6rem; color:var(--text-dim); margin-top:2px; }
+    .mt-label { font-size:0.65rem; color:var(--text); text-align:center; margin-top:6px; line-height:1.3; max-width:120px; }
+    .mt-above { position:absolute; top:0; left:50%; transform:translateX(-50%); font-size:0.6rem; color:var(--gold); font-weight:bold; text-align:center; white-space:nowrap; }
+    .mt-hint { text-align:center; color:var(--text-dim); font-size:0.75rem; margin-top:12px; font-style:italic; }
+
+    /* Milestone Detail Expansion */
+    .mt-node { transition:transform 0.2s; }
+    .mt-node.active { transform:translateY(-4px); }
+    .mt-detail { display:none; position:absolute; top:100%; left:50%; transform:translateX(-50%); z-index:10; width:280px; margin-top:10px; background:var(--navy-light); border:1px solid var(--gold-dim); padding:16px; box-shadow:0 8px 24px rgba(0,0,0,0.5); }
+    .mt-detail.show { display:block; }
+    .mt-detail::before { content:''; position:absolute; top:-6px; left:50%; transform:translateX(-50%) rotate(45deg); width:12px; height:12px; background:var(--navy-light); border-left:1px solid var(--gold-dim); border-top:1px solid var(--gold-dim); }
+    .mt-detail h5 { color:var(--gold); font-size:0.8rem; margin:0 0 8px; text-transform:uppercase; letter-spacing:1px; }
+    .mt-detail p { color:var(--text); font-size:0.75rem; line-height:1.5; margin:0 0 8px; }
+    .mt-detail .detail-row { display:flex; justify-content:space-between; font-size:0.7rem; color:var(--text-dim); padding:4px 0; border-top:1px solid rgba(255,215,0,0.1); }
+    .mt-detail .detail-row span:last-child { color:var(--gold); font-family:'Courier New',monospace; }
+    .mt-detail .detail-chips { display:flex; flex-wrap:wrap; gap:4px; margin-top:6px; }
+    .mt-detail .detail-chip { font-size:0.6rem; padding:2px 8px; background:rgba(255,215,0,0.1); border:1px solid var(--gold-dim); color:var(--gold); white-space:nowrap; }
+
+    /* Roadmap */
+    .roadmap { max-width:1200px; margin:40px auto; padding:0 30px; }
+    .roadmap h2 { color:var(--gold); font-size:1.5rem; margin-bottom:16px; border-bottom:1px solid var(--gold-dim); padding-bottom:8px; }
+    .roadmap-intro { font-size:0.9rem; line-height:1.6; color:var(--text); margin-bottom:20px; }
+    .roadmap-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(320px, 1fr)); gap:16px; }
+    .roadmap-card { background:var(--navy-light); border:1px solid rgba(96,165,250,0.25); padding:20px; position:relative; }
+    .roadmap-card::before { content:''; position:absolute; top:0; left:0; width:4px; height:100%; }
+    .roadmap-card.content::before { background:var(--blue); }
+    .roadmap-card.observer::before { background:var(--green); }
+    .roadmap-card.milestone::before { background:var(--gold); }
+    .roadmap-card.tech::before { background:var(--copper); }
+    .roadmap-label { font-size:0.7rem; text-transform:uppercase; letter-spacing:1.5px; margin-bottom:6px; font-weight:bold; }
+    .roadmap-label.content { color:var(--blue); }
+    .roadmap-label.observer { color:var(--green); }
+    .roadmap-label.milestone { color:var(--gold); }
+    .roadmap-label.tech { color:var(--copper); }
+    .roadmap-card h4 { color:var(--text); font-size:1rem; margin-bottom:6px; }
+    .roadmap-card p { color:var(--text-dim); font-size:0.82rem; line-height:1.5; }
+    .roadmap-status { display:inline-block; padding:2px 8px; font-size:0.65rem; font-weight:bold; letter-spacing:1px; text-transform:uppercase; margin-top:8px; }
+    .roadmap-status.planned { background:rgba(96,165,250,0.15); color:var(--blue); }
+    .roadmap-status.in-progress { background:rgba(255,215,0,0.15); color:var(--gold); }
+
+    /* Footer */
+    .page-footer { max-width:1200px; margin:40px auto 0; padding:30px; border-top:1px solid var(--gold-dim); text-align:center; }
+    .page-footer p { color:var(--text-dim); font-size:0.8rem; font-style:italic; }
+
+    @media(max-width:768px) {
+      .stats-bar { grid-template-columns:repeat(3, 1fr); }
+      .sub-blocks { grid-template-columns:1fr; }
+      .block-header { flex-direction:column; gap:4px; }
+      .page-header h1 { font-size:1.4rem; }
+    }
+  </style>
+
+<style id="mobile-quicknav-styles">
+/* ===== MOBILE QUICK-NAV BAR ===== */
+.mobile-quicknav {
+    display: none;
+    width: 100%;
+    background: linear-gradient(180deg, #0d1f3c 0%, #0a1628 100%);
+    border-bottom: 1px solid rgba(255,215,0,0.25);
+    padding: 6px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 6px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+.mobile-quicknav::-webkit-scrollbar { display: none; }
+.mobile-quicknav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 10px;
+    background: rgba(255,215,0,0.08);
+    border: 1px solid rgba(255,215,0,0.35);
+    border-radius: 16px;
+    color: #ffd700;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+.mobile-quicknav a:active {
+    background: rgba(255,215,0,0.25);
+    transform: scale(0.95);
+}
+.mobile-quicknav a.mqn-home {
+    background: #ffd700;
+    color: #0a1628;
+    border-color: #ffd700;
+}
+@media(max-width:768px) {
+    .mobile-quicknav { display: flex; }
+}
+@media(min-width:769px) {
+    .mobile-quicknav { display: none !important; }
+}
+
+/* ===== BACK-TO-TOP FLOATING BUTTON ===== */
+#back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 16px;
+    z-index: 9999;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(10,22,40,0.92);
+    border: 1.5px solid rgba(255,215,0,0.6);
+    color: #ffd700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    transition: all 0.2s;
+}
+#back-to-top-btn:active {
+    transform: scale(0.9);
+    background: rgba(255,215,0,0.2);
+}
+</style>
+
+</head>
+<body>
+    <!-- iAAi Network Bar — NAV-001 · Cross-Site Navigation -->
+    <!-- ═══ iAAi NETWORK BAR ═══ -->
+    <div id="iaai-network-bar" style="display:flex;align-items:center;justify-content:space-around;width:100%;height:36px;background:#0a1628;position:sticky;top:0;z-index:200001;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">
+      <a href="https://www.infrastructure-academy.com" style="text-decoration:none;color:#fff;font-weight:700;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid #DC2626;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#DC2626"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg> ACADEMY</a>
+      <a href="https://realityeng-epdhlkrn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> QUEST</a>
+      <a href="#" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;opacity:0.5;pointer-events:none;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A843"><path d="M6 2v6l-2 2v4l2 2v6h4v-6l2-2v-4L10 8V2H6zm12 0v6l-2 2v4l2 2v6h-4v-6l-2-2v-4l2-2V2h4z"/></svg> XCHANGE</a>
+      <a href="https://nigelmemorial-ucmtq9dn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#16A34A"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg> MEMORIAL</a>
+      <a href="https://xgrowthtrk-2a93yo5z.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#06B6D4"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/></svg> NEWS</a>
+    </div>
+
+
+<!-- INJECTED COMPACT HEADER BAR -->
+<style>
+.compact-header-bar { position:sticky; top:0; z-index:9999; background:#0a1628; border-bottom:2px solid #ffd700; padding:8px 16px; display:flex; align-items:center; justify-content:space-between; gap:12px; font-family:Georgia,'Times New Roman',serif; }
+.compact-header-bar .chb-brand { display:flex; align-items:center; gap:10px; text-decoration:none; color:#ffd700; }
+.compact-header-bar .chb-brand img { width:28px; height:28px; border-radius:4px; }
+.compact-header-bar .chb-title { font-size:0.85rem; font-weight:bold; letter-spacing:1.5px; color:#ffd700; }
+.compact-header-bar .chb-nav { display:flex; align-items:center; gap:12px; }
+.compact-header-bar .chb-nav a { color:#e2e8f0; text-decoration:none; font-size:0.75rem; letter-spacing:1px; padding:4px 10px; border:1px solid rgba(255,215,0,0.2); border-radius:3px; transition:all 0.2s; }
+.compact-header-bar .chb-nav a:hover { background:rgba(255,215,0,0.1); border-color:#ffd700; color:#ffd700; }
+.compact-header-bar .chb-nav a.chb-home { background:rgba(255,215,0,0.15); border-color:#ffd700; color:#ffd700; font-weight:bold; }
+@media(max-width:600px) { .compact-header-bar .chb-nav a:not(.chb-home) { display:none; } .compact-header-bar .chb-title { font-size:0.7rem; } }
+</style>
+
+<div class="compact-header-bar">
+    <a href="/site.html" class="chb-brand">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iAAi-emblem_e0c9c2c1.png" alt="iAAi">
+        <span class="chb-title">INFRASTRUCTURE ACADEMY</span>
+    </a>
+    <div class="chb-nav">
+        <a href="/site.html" class="chb-home">HOME</a>
+        <a href="/pages/framework.html">FRAMEWORK</a>
+        <a href="/library.html">DOCUMENTS</a>
+        <a href="/play">PLAY</a>
+    </div>
+</div>
+    <!-- ===== MOBILE QUICK-NAV BAR — always visible on mobile ===== -->
+    <div class="mobile-quicknav" id="mobile-quicknav">
+        <a href="/site.html" class="mqn-home">&#127968; HOME</a>
+        <a href="/pages/start-here.html">&#128218; START</a>
+        <a href="/volumes/volume1/index.html">&#128214; READ</a>
+        <a href="/pages/framework.html">&#128736; FRAMEWORK</a>
+        <a href="/play">&#127918; PLAY</a>
+        <a href="/pages/movies.html">&#127916; MOVIES</a>
+        <a href="/pages/resources.html">&#128194; RESOURCES</a>
+        <a href="/press.html">&#128240; PRESS</a>
+    </div>
+
+    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <button id="back-to-top-btn" aria-label="Back to top" title="Back to top">&#9650;</button>
+
+<!-- END COMPACT HEADER BAR -->
+
+
+
+  <div class="page-header">
+    <h1>BLOCK SUMMARY</h1>
+    <p class="subtitle">Master Audit Chain &mdash; Infrastructure Academy Beta Test</p>
+    <p class="domain">www.infrastructure-academy.com/pages/block-summary.html</p>
+  </div>
+
+  <div class="back-nav">
+    <a href="/site.html">&larr; Back to Home</a> &nbsp;|&nbsp;
+    <a href="/library.html">Library</a> &nbsp;|&nbsp;
+    <a href="/icard-gallery.html">iCard Gallery</a> &nbsp;|&nbsp;
+    <a href="/pages/observer-register.html">Observer Register</a>
+  </div>
+
+  <!-- Summary Stats -->
+  <div class="stats-bar">
+    <div class="stat-card">
+      <div class="stat-num">3</div>
+      <div class="stat-label">Blocks Complete</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">14</div>
+      <div class="stat-label">Sub-blocks</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">8</div>
+      <div class="stat-label">Checkpoints</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">133</div>
+      <div class="stat-label">Days Elapsed</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">30</div>
+      <div class="stat-label">iCards</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-num">239</div>
+      <div class="stat-label">Tests Passing</div>
+    </div>
+  </div>
+
+  <!-- Timeline -->
+  <div class="timeline">
+    <div class="timeline-line">
+
+      <!-- BLOCK 385 -->
+      <div class="block-entry complete">
+        <div class="block-header">
+          <span class="block-id">BLOCK 385</span>
+          <span class="block-title">Principia Tectonica &mdash; Foundation</span>
+          <span class="block-status complete">Complete</span>
+          <span class="block-date">November 2025 &mdash; February 2026</span>
+        </div>
+        <div class="block-body">
+          <p>The foundational block establishing the Infrastructure Academy platform. Built the complete website architecture, 12-chapter book structure (Calories to Consciousness), game engine with scoring system, and initial content framework. Established the Principia Tectonica knowledge base with 110 entries, 41 iCards, and 65 evidence photographs.</p>
+
+          <table class="deliverables">
+            <tr><th>Deliverable</th><th>Metric</th></tr>
+            <tr><td>Website Architecture</td><td>Full static site with nav, Library, Framework pages</td></tr>
+            <tr><td>Book Structure</td><td>12 chapters, 2 volumes (Perspective + Guide)</td></tr>
+            <tr><td>Game Engine</td><td>Scoring system, character creation, relay mechanics</td></tr>
+            <tr><td>Principia Tectonica</td><td>110 entries, 41 iCards, 65 evidence photos</td></tr>
+            <tr><td>Inventions Database</td><td>579 rows, 9 sheets, all 13 relays</td></tr>
+            <tr><td>Taxonomy</td><td>Complete classification system</td></tr>
+          </table>
+
+          <div class="checkpoint">Checkpoint: 876a1dd6 (cross-agent verified)</div>
+        </div>
+      </div>
+
+      <!-- BLOCK 387 -->
+      <div class="block-entry complete">
+        <div class="block-header">
+          <span class="block-id">BLOCK 387</span>
+          <span class="block-title">iAAi Chip &amp; Consciousness Architecture</span>
+          <span class="block-status complete">Complete</span>
+          <span class="block-date">March 2026</span>
+        </div>
+        <div class="block-body">
+          <p>The consciousness architecture block. Designed the iAAi Chip specification (6.8B transistors, 5,292-pin BGA, ICE engine), established the 4 Laws of iAAi (Asimov 3 becomes 4), created the BitPoints Library concept (Getty model), and produced key Thinking Points including TP-013 (The Walkby), TP-015 (Chip Design), and TP-017 (The Master Builder).</p>
+
+          <table class="deliverables">
+            <tr><th>Deliverable</th><th>Metric</th></tr>
+            <tr><td>iAAi Chip Specification</td><td>TP-015: 6.8B transistors, ICE engine (IQ&times;EQ&times;CQ)</td></tr>
+            <tr><td>4 Laws of iAAi</td><td>Framework iCard: Asimov 3 &rarr; 4 (The Missing Law)</td></tr>
+            <tr><td>The Master Builder</td><td>Discovery + TP-017: Martinez Arias (2023)</td></tr>
+            <tr><td>The Walkby</td><td>TP-013: 4-Level Control Hierarchy</td></tr>
+            <tr><td>Procrastination = Beta</td><td>Discovery: S = (A&times;P) / Beta</td></tr>
+            <tr><td>BitPoints Library</td><td>Getty model concept, tier-gated access design</td></tr>
+          </table>
+
+          <div class="checkpoint">Checkpoint: 876a1dd6 (Principia Tectonica sync)</div>
+        </div>
+      </div>
+
+      <!-- BLOCK 391 -->
+      <div class="block-entry complete">
+        <div class="block-header">
+          <span class="block-id">BLOCK 391</span>
+          <span class="block-title">60-Card Marketplace &amp; Observer Verification</span>
+          <span class="block-status complete">Complete</span>
+          <span class="block-date">16 &mdash; 18 March 2026</span>
+        </div>
+        <div class="block-body">
+          <p>The marketplace and verification block. Delivered a complete 60-card BitPoints deck across 4 suits (Relay, Scholar, Blueprint, Epoch), Stripe payment integration with tier-gated access, 30 iCards in gallery, 3 confirmed stakeholder observers, and the Observer Register. Concluded with a full audit trail PDF documenting all 6 sub-blocks.</p>
+
+          <div class="sub-blocks">
+            <div class="sub-block">
+              <div class="sub-block-id">391a</div>
+              <div class="sub-block-desc">60-card BitPoints marketplace (4 suits &times; 15 cards), Stripe checkout, tier gating, 72MB PDF deck</div>
+            </div>
+            <div class="sub-block">
+              <div class="sub-block-id">391b</div>
+              <div class="sub-block-desc">Marketplace readability fix, 3 agentic verification iCards (Police Check, Dual Agentic, Checklist)</div>
+            </div>
+            <div class="sub-block">
+              <div class="sub-block-id">391c</div>
+              <div class="sub-block-desc">Reece Wemyss spelling fix, 7 new iCards (observers, SDG, milestone), CDN upload batch</div>
+            </div>
+            <div class="sub-block">
+              <div class="sub-block-id">391d</div>
+              <div class="sub-block-desc">Observer Register page, Uticome (SDG 6), Block 391 Completion Summary iCard</div>
+            </div>
+            <div class="sub-block">
+              <div class="sub-block-id">391e</div>
+              <div class="sub-block-desc">What&rsquo;s New changelog, Uticome in Link Register (#113), Day 133 iCard</div>
+            </div>
+            <div class="sub-block">
+              <div class="sub-block-id">391f</div>
+              <div class="sub-block-desc">5 legacy iCards preserved, gallery cross-link, Uticome SDG 7, audit trail PDF</div>
+            </div>
+          </div>
+
+          <table class="deliverables">
+            <tr><th>Deliverable</th><th>Metric</th></tr>
+            <tr><td>BitPoints Cards (Series 1)</td><td>60 cards, 4 suits, 72MB PDF</td></tr>
+            <tr><td>Stripe Payment</td><td>Webhook verified, tier-gated checkout</td></tr>
+            <tr><td>iCards in Gallery</td><td>30 total (25 new + 5 legacy preserved)</td></tr>
+            <tr><td>Confirmed Observers</td><td>3 (Menenzes UAE, Stephen HK, Wemyss HK)</td></tr>
+            <tr><td>Outbound Links</td><td>113 nodes, 97 LIVE</td></tr>
+            <tr><td>Automated Tests</td><td>239/239 passing</td></tr>
+            <tr><td>New Pages</td><td>Marketplace, Observer Register, Block Summary</td></tr>
+            <tr><td>Institutions Updated</td><td>Uticome dual-SDG (6 + 7)</td></tr>
+          </table>
+
+          <div style="margin-top:12px;">
+            <div class="checkpoint">114ac8ae (391a)</div>
+            <div class="checkpoint">c72e4e70 (391c)</div>
+            <div class="checkpoint">08cfcfd7 (391d)</div>
+            <div class="checkpoint">f105f62f (391e)</div>
+            <div class="checkpoint">4c943765 (391f)</div>
+          </div>
+
+          <a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/block-391-audit-trail_4419b969.pdf" target="_blank" class="audit-link">Download Full Audit Trail PDF &rarr;</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Milestone Timeline -->
+  <div class="milestone-timeline">
+    <h2>Milestone Timeline</h2>
+    <div class="mt-track">
+      <div class="mt-line">
+        <div class="mt-node" data-milestone="genesis">
+          <div class="mt-above">GENESIS</div>
+          <div class="mt-dot gold"></div>
+          <div class="mt-day">Day 1</div>
+          <div class="mt-date">5 Nov 2025</div>
+          <div class="mt-label">The Odyssey Begins</div>
+          <div class="mt-detail">
+            <h5>Genesis &mdash; Day 1</h5>
+            <p>Infrastructure Academy website launched. Book manuscript &ldquo;Calories to Consciousness&rdquo; published. The 365-day Odyssey clock starts.</p>
+            <div class="detail-row"><span>Block</span><span>Genesis</span></div>
+            <div class="detail-row"><span>Checkpoint</span><span>N/A</span></div>
+            <div class="detail-chips"><span class="detail-chip">Website Launch</span><span class="detail-chip">Book Published</span></div>
+          </div>
+        </div>
+        <div class="mt-node" data-milestone="docs">
+          <div class="mt-dot green"></div>
+          <div class="mt-day">Day 14</div>
+          <div class="mt-date">18 Nov 2025</div>
+          <div class="mt-label">Docs 1-8 Complete</div>
+          <div class="mt-detail">
+            <h5>Documentation &mdash; Day 14</h5>
+            <p>All 8 core documents completed: Doc 0 (TOC) through Doc 7 (Lessons). Full manuscript structure established with 12 relays mapped.</p>
+            <div class="detail-row"><span>Deliverables</span><span>8 Documents</span></div>
+            <div class="detail-chips"><span class="detail-chip">Doc 0-7</span><span class="detail-chip">12 Relays</span><span class="detail-chip">Manuscript</span></div>
+          </div>
+        </div>
+        <div class="mt-node" data-milestone="tre">
+          <div class="mt-dot copper"></div>
+          <div class="mt-day">Day 58</div>
+          <div class="mt-date">1 Jan 2026</div>
+          <div class="mt-label">TRE Platform Starts</div>
+          <div class="mt-detail">
+            <h5>TRE Platform &mdash; Day 58</h5>
+            <p>Turbo Reality Engine game platform development begins. Player progression, XP system, and relay-based scenarios designed.</p>
+            <div class="detail-row"><span>Platform</span><span>TRE v1</span></div>
+            <div class="detail-chips"><span class="detail-chip">Game Engine</span><span class="detail-chip">XP System</span><span class="detail-chip">Scenarios</span></div>
+          </div>
+        </div>
+        <div class="mt-node" data-milestone="centenary">
+          <div class="mt-above">CENTENARY</div>
+          <div class="mt-dot gold"></div>
+          <div class="mt-day">Day 100</div>
+          <div class="mt-date">12 Feb 2026</div>
+          <div class="mt-label">100-Day Milestone</div>
+          <div class="mt-detail">
+            <h5>Centenary &mdash; Day 100</h5>
+            <p>100-day milestone reached. Website fully operational with 12 relay chapters, institutions page, library, and game platform live.</p>
+            <div class="detail-row"><span>Pages Live</span><span>15+</span></div>
+            <div class="detail-row"><span>Relays Mapped</span><span>12/12</span></div>
+            <div class="detail-chips"><span class="detail-chip">Centenary</span><span class="detail-chip">Full Platform</span></div>
+          </div>
+        </div>
+        <div class="mt-node" data-milestone="b385">
+          <div class="mt-dot green"></div>
+          <div class="mt-day">Day 120</div>
+          <div class="mt-date">4 Mar 2026</div>
+          <div class="mt-label">Block 385 &mdash; First Verification</div>
+          <div class="mt-detail">
+            <h5>Block 385 &mdash; Day 120</h5>
+            <p>First verification block. Certificate verification system, governance proofs, and audit trail infrastructure established.</p>
+            <div class="detail-row"><span>Checkpoint</span><span>Block 385</span></div>
+            <div class="detail-chips"><span class="detail-chip">Verification</span><span class="detail-chip">Certificates</span><span class="detail-chip">Audit Trail</span></div>
+          </div>
+        </div>
+        <div class="mt-node" data-milestone="b380">
+          <div class="mt-above" style="color:#ef4444;">BREACH FOUND</div>
+          <div class="mt-dot" style="background:#ef4444;"></div>
+          <div class="mt-day">Day 115</div>
+          <div class="mt-date">15 Mar 2026</div>
+          <div class="mt-label">Block 380 &mdash; TP-009 Permanence Crisis</div>
+          <div class="mt-detail">
+            <h5>Block 380 &mdash; TP-009: The Permanence Crisis</h5>
+            <p>Turing Paper on AI agent data governance under legal scrutiny. SAP-001 marked &ldquo;DONE&rdquo; but artefact was never surfaced on the live site. Breach identified Block 393c, remediated Block 393d. ACAD Agent Handshake cross-verification confirmed.</p>
+            <div class="detail-row"><span>Status</span><span style="color:#ef4444;">Breach &rarr; Remediated</span></div>
+            <div class="detail-row"><span>iCard</span><span>TP-009 Cover + ACAD Handshake</span></div>
+            <div class="detail-chips"><span class="detail-chip">TP-009</span><span class="detail-chip">Permanence</span><span class="detail-chip">SAP-001</span><span class="detail-chip">Remediated</span></div>
+          </div>
+        </div>
+        <div class="mt-node" data-milestone="b387">
+          <div class="mt-dot blue"></div>
+          <div class="mt-day">Day 125</div>
+          <div class="mt-date">9 Mar 2026</div>
+          <div class="mt-label">Block 387 &mdash; 60 Cards Created</div>
+          <div class="mt-detail">
+            <h5>Block 387 &mdash; Day 125</h5>
+            <p>60-card marketplace created with full relay coverage. iCard archive system, category filtering, and CDN hosting established.</p>
+            <div class="detail-row"><span>Checkpoint</span><span>Block 387</span></div>
+            <div class="detail-row"><span>Cards Created</span><span>60</span></div>
+            <div class="detail-chips"><span class="detail-chip">60 Cards</span><span class="detail-chip">Marketplace</span><span class="detail-chip">CDN</span></div>
+          </div>
+        </div>
+        <div class="mt-node" data-milestone="b391a">
+          <div class="mt-dot green"></div>
+          <div class="mt-day">Day 130</div>
+          <div class="mt-date">14 Mar 2026</div>
+          <div class="mt-label">Block 391a &mdash; Marketplace Live</div>
+          <div class="mt-detail">
+            <h5>Block 391a &mdash; Day 130</h5>
+            <p>Card marketplace goes live with Stripe payments, tier-gated access, and full browse/purchase flow.</p>
+            <div class="detail-row"><span>Checkpoint</span><span>391a</span></div>
+            <div class="detail-chips"><span class="detail-chip">Marketplace</span><span class="detail-chip">Stripe</span><span class="detail-chip">Payments</span></div>
+          </div>
+        </div>
+        <div class="mt-node" data-milestone="observers1">
+          <div class="mt-above">OBSERVERS</div>
+          <div class="mt-dot gold"></div>
+          <div class="mt-day">Day 132</div>
+          <div class="mt-date">16 Mar 2026</div>
+          <div class="mt-label">Craig &amp; Reece Confirmed</div>
+          <div class="mt-detail">
+            <h5>First Observers &mdash; Day 132</h5>
+            <p>Craig Stephen (HK) and Reece Wemyss (HK) confirmed as stakeholder observers. iCards generated, witness items documented.</p>
+            <div class="detail-row"><span>Observers</span><span>2 Confirmed</span></div>
+            <div class="detail-chips"><span class="detail-chip">Craig Stephen</span><span class="detail-chip">Reece Wemyss</span><span class="detail-chip">Hong Kong</span></div>
+          </div>
+        </div>
+        <div class="mt-node" data-milestone="menenzes">
+          <div class="mt-dot gold"></div>
+          <div class="mt-day">Day 133</div>
+          <div class="mt-date">17 Mar 2026</div>
+          <div class="mt-label">Richard Menenzes &mdash; UAE Observer</div>
+          <div class="mt-detail">
+            <h5>The Menenzes Moment &mdash; Day 133</h5>
+            <p>Richard Menenzes (Uticome, UAE) confirmed as 3rd observer. Water-Power Nexus connection established. &ldquo;Doing Good&rdquo; testimony recorded.</p>
+            <div class="detail-row"><span>Observer #</span><span>3</span></div>
+            <div class="detail-row"><span>Region</span><span>UAE</span></div>
+            <div class="detail-chips"><span class="detail-chip">Menenzes</span><span class="detail-chip">Uticome</span><span class="detail-chip">SDG 6+7</span></div>
+          </div>
+        </div>
+        <div class="mt-node" data-milestone="b392">
+          <div class="mt-above">CURRENT</div>
+          <div class="mt-dot blue"></div>
+          <div class="mt-day">Day 134</div>
+          <div class="mt-date">18 Mar 2026</div>
+          <div class="mt-label">Block 392 &mdash; SDG Matrix + FEW Nexus</div>
+          <div class="mt-detail">
+            <h5>Block 392 &mdash; Day 134</h5>
+            <p>SDG Alignment Matrix, FEW Nexus case study, Day Counter widget, relay detail panels, milestone timeline, and gallery search/filter.</p>
+            <div class="detail-row"><span>Checkpoint</span><span>6e681dd3</span></div>
+            <div class="detail-row"><span>Gallery</span><span>31 iCards</span></div>
+            <div class="detail-chips"><span class="detail-chip">SDG Matrix</span><span class="detail-chip">FEW Nexus</span><span class="detail-chip">Day Counter</span></div>
+          </div>
+        </div>
+        <div class="mt-node" data-milestone="halfyear">
+          <div class="mt-dot copper" style="opacity:0.4;"></div>
+          <div class="mt-day" style="opacity:0.5;">Day 183</div>
+          <div class="mt-date" style="opacity:0.5;">6 May 2026</div>
+          <div class="mt-label" style="opacity:0.5;">Half-Year Mark</div>
+          <div class="mt-detail">
+            <h5>Half-Year &mdash; Day 183</h5>
+            <p>Projected half-year milestone. Target: 50+ iCards, 6+ observers, full relay documentation, TRE Phase 2 complete.</p>
+            <div class="detail-row"><span>Status</span><span>FUTURE</span></div>
+            <div class="detail-chips"><span class="detail-chip">Projected</span><span class="detail-chip">50% Complete</span></div>
+          </div>
+        </div>
+        <div class="mt-node" data-milestone="complete">
+          <div class="mt-dot copper" style="opacity:0.4;"></div>
+          <div class="mt-day" style="opacity:0.5;">Day 365</div>
+          <div class="mt-date" style="opacity:0.5;">4 Nov 2026</div>
+          <div class="mt-label" style="opacity:0.5;">Odyssey Complete</div>
+          <div class="mt-detail">
+            <h5>Odyssey Complete &mdash; Day 365</h5>
+            <p>The full 365-day Infrastructure Odyssey concludes. All relays documented, all observers recorded, all blocks sealed.</p>
+            <div class="detail-row"><span>Status</span><span>FUTURE</span></div>
+            <div class="detail-chips"><span class="detail-chip">Finale</span><span class="detail-chip">100% Complete</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="mt-hint">Click any milestone to expand details &bull; Scroll horizontally for full timeline &bull; Gold = major &bull; Green = deliverable &bull; Blue = active &bull; Copper = future</p>
+  </div>
+
+  <script>
+  (function() {
+    var nodes = document.querySelectorAll('.mt-node[data-milestone]');
+    nodes.forEach(function(node) {
+      node.addEventListener('click', function(e) {
+        e.stopPropagation();
+        var detail = this.querySelector('.mt-detail');
+        var wasOpen = detail && detail.classList.contains('show');
+        // Close all
+        document.querySelectorAll('.mt-detail.show').forEach(function(d) { d.classList.remove('show'); });
+        document.querySelectorAll('.mt-node.active').forEach(function(n) { n.classList.remove('active'); });
+        // Toggle
+        if (!wasOpen && detail) {
+          detail.classList.add('show');
+          this.classList.add('active');
+        }
+      });
+    });
+    document.addEventListener('click', function() {
+      document.querySelectorAll('.mt-detail.show').forEach(function(d) { d.classList.remove('show'); });
+      document.querySelectorAll('.mt-node.active').forEach(function(n) { n.classList.remove('active'); });
+    });
+  })();
+  </script>
+
+  <!-- Block 392 Roadmap -->
+  <div class="roadmap">
+    <h2>Block 392 Roadmap &mdash; Current Sprint</h2>
+    <p class="roadmap-intro">Block 392 opened on 18 March 2026 (Day 133). The focus shifts from observer acquisition and iCard production (Block 391) to content deepening, platform refinement, and expanding the stakeholder network. Target completion: Block 400 by Day 150.</p>
+
+    <div class="roadmap-grid">
+
+      <div class="roadmap-card content">
+        <div class="roadmap-label content">Content Pipeline</div>
+        <h4>Water-Power Nexus Case Study</h4>
+        <p>Full case study page expanding the Uticome/SDG 6+7 connection with data, nexus diagram, and observer testimony from Richard Menenzes. Upgraded to FEW Trilemma (SDG 2+6+7).</p>
+        <span class="roadmap-status" style="background:rgba(34,197,94,0.15);color:var(--green);">Complete</span>
+      </div>
+
+      <div class="roadmap-card content">
+        <div class="roadmap-label content">Content Pipeline</div>
+        <h4>Relay Deep Dives</h4>
+        <p>Expand individual relay pages (Fire, Tree, River, Stone) with richer historical content, equation references, and cross-links to the IP Register.</p>
+        <span class="roadmap-status planned">Planned</span>
+      </div>
+
+      <div class="roadmap-card observer">
+        <div class="roadmap-label observer">Observer Targets</div>
+        <h4>Observer #4 &mdash; Academic Sector</h4>
+        <p>Target an academic observer from one of the 23 universities in the assessment ecosystem to validate the educational framework and GLP methodology.</p>
+        <span class="roadmap-status planned">Planned</span>
+      </div>
+
+      <div class="roadmap-card observer">
+        <div class="roadmap-label observer">Observer Targets</div>
+        <h4>Observer #5 &mdash; Engineering Institution</h4>
+        <p>Target a representative from ICE, IStructE, or equivalent professional body to review the CPD alignment and professional development pathway.</p>
+        <span class="roadmap-status planned">Planned</span>
+      </div>
+
+      <div class="roadmap-card milestone">
+        <div class="roadmap-label milestone">Milestones</div>
+        <h4>Day 150 &mdash; 41% Odyssey Checkpoint</h4>
+        <p>Major milestone at 150/365 days. Target: 5 observers confirmed, 40+ iCards, all 12 relay pages enriched, Block 400 reached.</p>
+        <span class="roadmap-status planned">Planned</span>
+      </div>
+
+      <div class="roadmap-card milestone">
+        <div class="roadmap-label milestone">Milestones</div>
+        <h4>iCard Collection &mdash; 50 Card Target</h4>
+        <p>Expand the iCard gallery from 31 to 50 cards, covering all relay topics, key equations, and observer documentation.</p>
+        <span class="roadmap-status in-progress">In Progress</span>
+      </div>
+
+      <div class="roadmap-card tech">
+        <div class="roadmap-label tech">Platform</div>
+        <h4>Gallery Search &amp; Sort</h4>
+        <p>Search bar, type-based filter chips, and date sort toggle added to iCard Gallery. 31 cards indexed and filterable.</p>
+        <span class="roadmap-status" style="background:rgba(34,197,94,0.15);color:var(--green);">Complete</span>
+      </div>
+
+      <div class="roadmap-card tech">
+        <div class="roadmap-label tech">Platform</div>
+        <h4>TRE Game Engine &mdash; Phase 2</h4>
+        <p>Expand the Turbo Reality Engine with additional relay scenarios, improved XP tracking, and leaderboard refinements.</p>
+        <span class="roadmap-status planned">Planned</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Block 393 Roadmap -->
+  <div class="roadmap" style="margin-top:50px;">
+    <h2>Block 393 Roadmap &mdash; Next Sprint</h2>
+    <p class="roadmap-intro">Block 393 opened on 19 March 2026 (Day 134). Focus: SEO infrastructure, analytics refinement, content gap analysis, and relay documentation deepening. Target: complete by Day 145.</p>
+
+    <div class="roadmap-grid">
+
+      <div class="roadmap-card tech">
+        <div class="roadmap-label tech">Platform</div>
+        <h4>SEO Infrastructure</h4>
+        <p>XML sitemap (109 URLs), robots.txt with crawl directives, meta descriptions on all pages. Referrer breakdown chart on Analytics dashboard.</p>
+        <span class="roadmap-status" style="background:rgba(34,197,94,0.15);color:var(--green);">Complete</span>
+      </div>
+
+      <div class="roadmap-card tech">
+        <div class="roadmap-label tech">Platform</div>
+        <h4>Relay Completion Certificates</h4>
+        <p>Auto-generated printable certificates for relays reaching 80%+ completion. Unique certificate IDs for verification.</p>
+        <span class="roadmap-status" style="background:rgba(34,197,94,0.15);color:var(--green);">Complete</span>
+      </div>
+
+      <div class="roadmap-card content">
+        <div class="roadmap-label content">Content Pipeline</div>
+        <h4>Content Gap Analysis</h4>
+        <p>Identify relays below 60% documentation coverage on the Relay Tracker. Prioritise Fire, Tree, and River for enrichment with equations, timelines, and institution cross-links.</p>
+        <span class="roadmap-status planned">Planned</span>
+      </div>
+
+      <div class="roadmap-card content">
+        <div class="roadmap-label content">Content Pipeline</div>
+        <h4>Equation Register Expansion</h4>
+        <p>Add 10+ new equations from Volume 3 thesis chapters. Cross-link each equation to its relay, iCard, and institution references.</p>
+        <span class="roadmap-status planned">Planned</span>
+      </div>
+
+      <div class="roadmap-card observer">
+        <div class="roadmap-label observer">Observer Targets</div>
+        <h4>Observer #4 &mdash; Academic Sector</h4>
+        <p>Target an academic observer from the university ecosystem. Focus on validating the educational framework and GLP methodology alignment.</p>
+        <span class="roadmap-status planned">Planned</span>
+      </div>
+
+      <div class="roadmap-card observer">
+        <div class="roadmap-label observer">Observer Targets</div>
+        <h4>Observer #5 &mdash; Government/Policy</h4>
+        <p>Target a government or policy observer to validate the SDG alignment matrix and FEW Nexus case study against national infrastructure strategies.</p>
+        <span class="roadmap-status planned">Planned</span>
+      </div>
+
+      <div class="roadmap-card milestone">
+        <div class="roadmap-label milestone">Milestones</div>
+        <h4>40 iCards Target</h4>
+        <p>Expand gallery from 31 to 40 cards. Priority: relay-specific cards, equation cards, and observer documentation for new confirmations.</p>
+        <span class="roadmap-status in-progress">In Progress</span>
+      </div>
+
+      <div class="roadmap-card milestone">
+        <div class="roadmap-label milestone">Milestones</div>
+        <h4>Site Map &mdash; 120 Pages Target</h4>
+        <p>Grow the site from 113 to 120+ pages through relay enrichment, new case studies, and expanded archive documentation.</p>
+        <span class="roadmap-status in-progress">In Progress</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="page-footer">
+    <p>&ldquo;Per Arya Ad Astra&rdquo; &mdash; Day 134 of 365</p>
+    <p style="margin-top:8px;">Infrastructure Academy &bull; Ir. Nigel T. Dearden CEng MICE MHKIE &bull; Block 392</p>
+  </div>
+
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement -->
+
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement (v2 fixed) -->
+<script>
+(function() {
+  try {
+    var sid = sessionStorage.getItem('iaai_sid');
+    if (!sid) {
+      sid = 'ses_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 9);
+      sessionStorage.setItem('iaai_sid', sid);
+    }
+    var data = {
+      path: window.location.pathname + (window.location.hash || ''),
+      pageTitle: document.title || 'Untitled',
+      referrer: document.referrer || '',
+      sessionId: sid
+    };
+    fetch('/api/trpc/analytics.track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ json: data }),
+      credentials: 'include'
+    }).catch(function() {});
+    window.addEventListener('hashchange', function() {
+      var hashData = {
+        path: window.location.pathname + (window.location.hash || ''),
+        pageTitle: document.title || 'Untitled',
+        referrer: window.location.href,
+        sessionId: sid
+      };
+      fetch('/api/trpc/analytics.track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ json: hashData }),
+        credentials: 'include'
+      }).catch(function() {});
+    });
+  } catch(e) {}
+})();
+</script>
+
+    <!-- Mobile table scroll fix -->
+    <script>
+    (function(){
+      if(window.innerWidth > 768) return;
+      document.querySelectorAll('table').forEach(function(t){
+        if(t.parentElement && t.parentElement.classList.contains('table-scroll-wrapper')) return;
+        var w = document.createElement('div');
+        w.className = 'table-scroll-wrapper';
+        t.parentNode.insertBefore(w, t);
+        w.appendChild(t);
+      });
+    })();
+    </script>
+
+
+    <!-- Back-to-Top Button Logic -->
+    <script>
+    (function() {
+        var btn = document.getElementById('back-to-top-btn');
+        if (!btn) return;
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                btn.style.display = 'flex';
+            } else {
+                btn.style.display = 'none';
+            }
+        }, { passive: true });
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    })();
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies &amp; Films — Infrastructure Academy</title>
+    <meta name="description" content="The complete film catalogue of Infrastructure Academy — documentaries, architecture movies, trailers, and social media cuts covering 12,000 years of civilisational infrastructure.">
+    <meta property="og:title" content="Movies &amp; Films — Infrastructure Academy">
+    <meta property="og:description" content="Watch the complete film library: La Menara Documentary, Principia Tectonica, iGO Architecture Movie, Katana 13-Fold, Dearden Dynamics, and more.">
+    <meta property="og:image" content="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/principia_poster_a3090690.jpg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="icon" type="image/x-icon" href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/favicon_32_80e4326c.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/favicon_32_80e4326c.png">
+    <link rel="stylesheet" href="/css/style.css?v=20260420a">
+    <style>
+        .movies-hero {
+            text-align: center;
+            padding: 3rem 1.5rem 2rem;
+            background: linear-gradient(135deg, rgba(10,22,40,0.95) 0%, rgba(15,31,58,0.95) 100%);
+            border-bottom: 2px solid var(--color-accent-gold);
+        }
+        .movies-hero h1 {
+            font-family: var(--font-heading);
+            color: var(--color-accent-gold);
+            font-size: 2.5rem;
+            letter-spacing: 4px;
+            margin-bottom: 0.5rem;
+        }
+        .movies-hero p {
+            color: var(--color-text-secondary);
+            font-size: 1.05rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .movies-section {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+        .movies-section h2 {
+            font-family: var(--font-heading);
+            color: var(--color-accent-gold);
+            font-size: 1.5rem;
+            letter-spacing: 3px;
+            text-align: center;
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid rgba(255,215,0,0.2);
+        }
+        .movies-section .section-desc {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 2rem;
+        }
+        .movie-card {
+            margin-bottom: 2.5rem;
+            border: 2px solid rgba(255,215,0,0.3);
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--color-bg-secondary);
+            transition: border-color 0.3s;
+        }
+        .movie-card:hover {
+            border-color: var(--color-accent-gold);
+        }
+        .movie-card.premiere {
+            border: 3px solid var(--color-accent-gold);
+            background: linear-gradient(135deg, #0a1628 0%, #1a2a4a 100%);
+            box-shadow: 0 0 30px rgba(255,215,0,0.1);
+        }
+        .movie-card .video-wrapper {
+            position: relative;
+            cursor: pointer;
+            width: 100%;
+            background: #000;
+            max-height: 540px;
+            overflow: hidden;
+        }
+        .movie-card .video-wrapper img {
+            width: 100%;
+            display: block;
+        }
+        .movie-card .video-wrapper .play-overlay {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0,0,0,0.3);
+            transition: background 0.3s;
+        }
+        .movie-card .video-wrapper:hover .play-overlay {
+            background: rgba(0,0,0,0.15);
+        }
+        .movie-card .play-btn {
+            width: 64px;
+            height: 64px;
+            background: rgba(255,215,0,0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 20px rgba(255,215,0,0.4);
+            transition: transform 0.2s;
+        }
+        .movie-card .video-wrapper:hover .play-btn {
+            transform: scale(1.1);
+        }
+        .movie-card .card-info {
+            padding: 1.25rem 1.5rem;
+        }
+        .movie-card .card-info h3 {
+            font-family: var(--font-heading);
+            color: var(--color-accent-gold);
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            margin-bottom: 0.4rem;
+        }
+        .movie-card .card-info .meta {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin-bottom: 0.6rem;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+        }
+        .movie-card .card-info .meta span {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+        }
+        .movie-card .card-info p {
+            color: var(--color-text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .movie-card .card-info .badge {
+            display: inline-block;
+            padding: 2px 10px;
+            border-radius: 3px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        .badge-premiere { background: var(--color-accent-gold); color: #0a1628; }
+        .badge-flagship { background: rgba(255,215,0,0.15); color: var(--color-accent-gold); border: 1px solid rgba(255,215,0,0.3); }
+        .badge-featured { background: rgba(0,212,255,0.15); color: #00d4ff; border: 1px solid rgba(0,212,255,0.3); }
+        .badge-social { background: rgba(100,200,100,0.15); color: #64c864; border: 1px solid rgba(100,200,100,0.3); }
+        .badge-trailer { background: rgba(255,100,100,0.15); color: #ff6464; border: 1px solid rgba(255,100,100,0.3); }
+        .badge-game { background: rgba(255,165,0,0.15); color: #ffa500; border: 1px solid rgba(255,165,0,0.3); }
+
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            padding: 1.5rem;
+            margin: 0 auto 1rem;
+            max-width: 700px;
+        }
+        .stats-bar .stat {
+            text-align: center;
+        }
+        .stats-bar .stat .num {
+            font-family: var(--font-heading);
+            color: var(--color-accent-gold);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+        .stats-bar .stat .lbl {
+            font-size: 0.7rem;
+            color: rgba(255,255,255,0.5);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Social grid for smaller videos */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+        .social-grid .movie-card .card-info {
+            padding: 1rem;
+        }
+        .social-grid .movie-card .card-info h3 {
+            font-size: 1rem;
+        }
+        .social-grid .movie-card .play-btn {
+            width: 48px;
+            height: 48px;
+        }
+
+        /* Filter bar */
+        .filter-bar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+            padding: 0 1.5rem;
+        }
+        .filter-btn {
+            padding: 0.4rem 1rem;
+            background: rgba(255,215,0,0.08);
+            color: rgba(255,215,0,0.6);
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 4px;
+            font-family: var(--font-heading);
+            font-size: 0.7rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .filter-btn:hover {
+            background: rgba(255,215,0,0.15);
+            color: var(--color-accent-gold);
+            border-color: rgba(255,215,0,0.4);
+        }
+        .filter-btn.active {
+            background: var(--color-accent-gold);
+            color: #0a1628;
+            border-color: var(--color-accent-gold);
+        }
+        .movie-card.hidden-by-filter {
+            display: none !important;
+        }
+        .movies-section.hidden-by-filter {
+            display: none !important;
+        }
+        .social-grid .movie-card.hidden-by-filter {
+            display: none !important;
+        }
+
+        @media (max-width: 768px) {
+            .movies-hero h1 { font-size: 1.8rem; letter-spacing: 2px; }
+            .stats-bar { gap: 1rem; }
+            .stats-bar .stat .num { font-size: 1.4rem; }
+            .social-grid { grid-template-columns: 1fr; }
+            .filter-bar { gap: 0.35rem; }
+            .filter-btn { font-size: 0.6rem; padding: 0.3rem 0.7rem; }
+        }
+    </style>
+
+<style id="mobile-quicknav-styles">
+/* ===== MOBILE QUICK-NAV BAR ===== */
+.mobile-quicknav {
+    display: none;
+    width: 100%;
+    background: linear-gradient(180deg, #0d1f3c 0%, #0a1628 100%);
+    border-bottom: 1px solid rgba(255,215,0,0.25);
+    padding: 6px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 6px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+.mobile-quicknav::-webkit-scrollbar { display: none; }
+.mobile-quicknav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 10px;
+    background: rgba(255,215,0,0.08);
+    border: 1px solid rgba(255,215,0,0.35);
+    border-radius: 16px;
+    color: #ffd700;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+.mobile-quicknav a:active {
+    background: rgba(255,215,0,0.25);
+    transform: scale(0.95);
+}
+.mobile-quicknav a.mqn-home {
+    background: #ffd700;
+    color: #0a1628;
+    border-color: #ffd700;
+}
+@media(max-width:768px) {
+    .mobile-quicknav { display: flex; }
+}
+@media(min-width:769px) {
+    .mobile-quicknav { display: none !important; }
+}
+
+/* ===== BACK-TO-TOP FLOATING BUTTON ===== */
+#back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 16px;
+    z-index: 9999;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(10,22,40,0.92);
+    border: 1.5px solid rgba(255,215,0,0.6);
+    color: #ffd700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    transition: all 0.2s;
+}
+#back-to-top-btn:active {
+    transform: scale(0.9);
+    background: rgba(255,215,0,0.2);
+}
+</style>
+
+</head>
+<body>
+    <!-- iAAi Network Bar — NAV-001 · Cross-Site Navigation -->
+    <!-- ═══ iAAi NETWORK BAR ═══ -->
+    <div id="iaai-network-bar" style="display:flex;align-items:center;justify-content:space-around;width:100%;height:36px;background:#0a1628;position:sticky;top:0;z-index:200001;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">
+      <a href="https://www.infrastructure-academy.com" style="text-decoration:none;color:#fff;font-weight:700;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid #DC2626;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#DC2626"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg> ACADEMY</a>
+      <a href="https://realityeng-epdhlkrn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> QUEST</a>
+      <a href="#" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;opacity:0.5;pointer-events:none;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A843"><path d="M6 2v6l-2 2v4l2 2v6h4v-6l2-2v-4L10 8V2H6zm12 0v6l-2 2v4l2 2v6h-4v-6l-2-2v-4l2-2V2h4z"/></svg> XCHANGE</a>
+      <a href="https://nigelmemorial-ucmtq9dn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#16A34A"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg> MEMORIAL</a>
+      <a href="https://xgrowthtrk-2a93yo5z.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#06B6D4"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/></svg> NEWS</a>
+    </div>
+
+    <header role="banner">
+        <div class="header-content">
+            <div class="header-brand">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/tt-icon_5ea32be1.jpeg" alt="Tetrahedron" class="header-tetra-thumb">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iaai_correct_gold_logo_cebb3b74.jpeg" alt="IAAI" class="iaai-logo-box">
+                <div class="header-text-group">
+                    <div class="header-title">INFRASTRUCTURE ACADEMY <span class="beta-badge">BETA</span></div>
+                    <div class="header-tagline">Infrastructure &bull; Infostructure &bull; The Academy of Both</div>
+                </div>
+            </div>
+            <a href="/pages/8th-scholar.html" class="header-scholar-link" title="The 8th Scholar"><img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/scholar_square_859aca43.jpeg" alt="The 8th Scholar" class="header-scholar-thumb"></a>
+        </div>
+        <nav id="nav-menu" role="navigation">
+            <a href="/site.html">HOME</a>
+            <a href="/pages/start-here.html">START HERE</a>
+            <a href="/executive-precis.html">EXEC PR&Eacute;CIS</a>
+            <a href="/play">PLAY</a>
+            <a href="/pages/movies.html" class="active" style="color:#ffd700;">MOVIES</a>
+            <a href="/press.html">PRESS KIT</a>
+        </nav>
+    </header>
+    <!-- ===== MOBILE QUICK-NAV BAR — always visible on mobile ===== -->
+    <div class="mobile-quicknav" id="mobile-quicknav">
+        <a href="/site.html" class="mqn-home">&#127968; HOME</a>
+        <a href="/pages/start-here.html">&#128218; START</a>
+        <a href="/volumes/volume1/index.html">&#128214; READ</a>
+        <a href="/pages/framework.html">&#128736; FRAMEWORK</a>
+        <a href="/play">&#127918; PLAY</a>
+        <a href="/pages/movies.html">&#127916; MOVIES</a>
+        <a href="/pages/resources.html">&#128194; RESOURCES</a>
+        <a href="/press.html">&#128240; PRESS</a>
+    </div>
+
+    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <button id="back-to-top-btn" aria-label="Back to top" title="Back to top">&#9650;</button>
+
+
+    <main>
+        <!-- HERO -->
+        <div class="movies-hero">
+            <h1>MOVIES &amp; FILMS</h1>
+            <p>The complete film library of Infrastructure Academy &mdash; documentaries, architecture movies, trailers, and social media cuts covering 12,000 years of civilisational infrastructure.</p>
+        </div>
+
+        <!-- STATS -->
+        <div class="stats-bar">
+            <div class="stat"><div class="num" id="film-count">16</div><div class="lbl">Films</div></div>
+            <div class="stat"><div class="num">40+</div><div class="lbl">Minutes</div></div>
+            <div class="stat"><div class="num">6</div><div class="lbl">Categories</div></div>
+        </div>
+
+        <!-- FILTER BAR -->
+        <div class="filter-bar" id="filterBar">
+            <button class="filter-btn active" data-filter="all">ALL</button>
+            <button class="filter-btn" data-filter="documentary">DOCUMENTARY</button>
+            <button class="filter-btn" data-filter="flagship">FLAGSHIP</button>
+            <button class="filter-btn" data-filter="trailer">TRAILER</button>
+            <button class="filter-btn" data-filter="cinematic">CINEMATIC</button>
+            <button class="filter-btn" data-filter="investor">INVESTOR</button>
+            <button class="filter-btn" data-filter="social">SOCIAL</button>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════ -->
+        <!-- SECTION 1: DOCUMENTARIES & FLAGSHIP FILMS      -->
+        <!-- ═══════════════════════════════════════════════ -->
+        <div class="movies-section">
+            <h2>DOCUMENTARIES &amp; FLAGSHIP FILMS</h2>
+            <p class="section-desc">The definitive long-form films of the Infrastructure Odyssey</p>
+
+            <!-- 1. LA MENARA DOCUMENTARY -->
+            <div class="movie-card premiere" data-category="documentary">
+                <div class="video-wrapper" onclick="playVideo(this, 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/wHlzVXzMODYYdntg.mp4')">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/la_menara_doc_poster_7851b3f9.jpg" alt="La Menara Documentary" loading="eager">
+                    <div class="play-overlay">
+                        <div class="play-btn">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="#0a1628"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <span class="badge badge-premiere">WORLD PREMIERE</span>
+                    <h3>LA MENARA &mdash; AN INFRASTRUCTURE ODYSSEY</h3>
+                    <div class="meta">
+                        <span>&#128337; 10:00</span>
+                        <span>&#127916; 16:9 Landscape</span>
+                        <span>Day 153 &mdash; 5 April 2026</span>
+                    </div>
+                    <p>From Calories to Consciousness &mdash; 12,000 years, 12 Relays, 120,000 hours, 3 Acts, 7 Scholars. The complete documentary narrated by DAVID AI with original artwork and the Enigma ambient score.</p>
+                </div>
+            </div>
+            <!-- 2. PRINCIPIA TECTONICA -->
+            <div class="movie-card" data-category="flagship">premiere">
+                <div class="video-wrapper" onclick="playVideo(this, 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/PRINCIPIA-TECTONICA-V5-MEGA-MOVIE(2)_f41e7154.mp4')">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/principia_poster_a3090690.jpg" alt="Principia Tectonica" loading="lazy">
+                    <div class="play-overlay">
+                        <div class="play-btn">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="#0a1628"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <span class="badge badge-flagship">FLAGSHIP</span>
+                    <h3>PRINCIPIA TECTONICA</h3>
+                    <div class="meta">
+                        <span>&#128337; 10:33</span>
+                        <span>&#127916; 16:9 Landscape</span>
+                    </div>
+                    <p>The complete Infrastructure Odyssey in 10 minutes &mdash; 12 Civilizational Relays, the 60-Node Dearden Field, BioAura suit, and the Flight Deck. The definitive visual companion to the thesis.</p>
+                </div>
+            </div>
+            <!-- 3. iGO ARCHITECTURE MOVIE -->
+            <div class="movie-card" data-category="flagship">premiere">
+                <div class="video-wrapper" onclick="playVideo(this, 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iGO_Movie_SHARE_WITH_TEAM_16x9_7c72b3fe.mp4')">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/igo_architecture_poster_4d90f4a7.jpg" alt="iGO Architecture Movie" loading="lazy">
+                    <div class="play-overlay">
+                        <div class="play-btn">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="#0a1628"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <span class="badge badge-flagship">FLAGSHIP</span>
+                    <h3>iGO ARCHITECTURE MOVIE</h3>
+                    <div class="meta">
+                        <span>&#128337; 1:40</span>
+                        <span>&#127916; 16:9 Landscape</span>
+                        <span>April 2026</span>
+                    </div>
+                    <p>The complete iGO framework in 100 seconds &mdash; 12 Relays, 5 Great Webs, 60-Node Dearden Field, 12 Game Formats (A&ndash;L), DAVID AI, and the iCard system. Ages 8&ndash;65+. Music: &ldquo;At Launch&rdquo; by Kevin MacLeod (CC BY 4.0).</p>
+                </div>
+            </div>
+
+            <!-- 4. KATANA 13-FOLD -->
+            <div class="movie-card" data-category="documentary">
+                <div class="video-wrapper" onclick="playVideo(this, 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/katana_13fold_v2_155b15a1.mp4')">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/katana_poster_01e586bd.jpg" alt="The Blade and the Bridge" loading="lazy">
+                    <div class="play-overlay">
+                        <div class="play-btn">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="#0a1628"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <span class="badge badge-featured">FEATURED</span>
+                    <h3>THE BLADE AND THE BRIDGE &mdash; KATANA 13-FOLD</h3>
+                    <div class="meta">
+                        <span>&#128337; 4:04</span>
+                        <span>&#127916; 16:9 Landscape</span>
+                    </div>
+                    <p>How Japanese sword forging illuminates infrastructure governance. The cross-approach thinking methodology &mdash; 13 folds of steel, 13 layers of insight.</p>
+                </div>
+            </div>
+
+            <!-- 5. DEARDEN DYNAMICS -->
+            <div class="movie-card" data-category="flagship">
+                <div class="video-wrapper" onclick="playVideo(this, 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/MASTER-VIDEO-DEARDEN-DYNAMICS(2)_fdde8442.mp4')">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/dearden_poster_e4495e95.jpg" alt="Dearden Dynamics" loading="lazy">
+                    <div class="play-overlay">
+                        <div class="play-btn">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="#0a1628"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <span class="badge badge-featured">FEATURED</span>
+                    <h3>DEARDEN DYNAMICS</h3>
+                    <div class="meta">
+                        <span>&#128337; 2:40</span>
+                        <span>&#127916; 16:9 Landscape</span>
+                    </div>
+                    <p>The Flight Deck revealed &mdash; Dearden Field Matrix, Neural Diagnostics, Biometric panels, and the cockpit of civilisational navigation.</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="max-width:1000px; margin:0 auto; padding:0 1.5rem;">
+            <div style="border-top:1px solid rgba(255,215,0,0.15); margin:1rem 0;"></div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════ -->
+        <!-- SECTION 2: TRAILERS & TEASERS                  -->
+        <!-- ═══════════════════════════════════════════════ -->
+        <div class="movies-section">
+            <h2>TRAILERS &amp; TEASERS</h2>
+            <p class="section-desc">Quick-fire introductions to the Infrastructure Odyssey universe</p>
+
+            <!-- LA MENARA TRAILER -->
+            <div class="movie-card" data-category="trailer">
+                <div class="video-wrapper" onclick="playVideo(this, 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/iqkMXujGPgKFLVkB.mp4')">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/la_menara_trailer_poster_2a54c010.jpg" alt="La Menara Trailer" loading="lazy">
+                    <div class="play-overlay">
+                        <div class="play-btn">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="#0a1628"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <span class="badge badge-trailer">TRAILER</span>
+                    <h3>LA MENARA &mdash; TRAILER</h3>
+                    <div class="meta">
+                        <span>&#128337; 2:11</span>
+                        <span>&#127916; 16:9 Landscape</span>
+                    </div>
+                    <p>Act I cinematic preview with narration and original artwork. The first glimpse of the Infrastructure Odyssey.</p>
+                </div>
+            </div>
+
+            <!-- REALITY ENGINE TRAILER -->
+            <div class="movie-card" data-category="trailer">
+                <div class="video-wrapper" onclick="playVideo(this, 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/reality-engine-trailer_7e837497.mp4')">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/reality_engine_poster_bd73f47b.jpg" alt="Reality Engine Trailer" loading="lazy">
+                    <div class="play-overlay">
+                        <div class="play-btn">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="#0a1628"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <span class="badge badge-trailer">TRAILER</span>
+                    <h3>THE REALITY ENGINE &mdash; GUIDED LEARNING PLATFORM</h3>
+                    <div class="meta">
+                        <span>&#128337; ~1:00</span>
+                        <span>&#127916; 16:9 Landscape</span>
+                    </div>
+                    <p>The TRE Guided Learning Platform trailer &mdash; showing the interactive game environment, relay missions, and DAVID AI narrator.</p>
+                </div>
+            </div>
+
+            <!-- iGO TRAILER -->
+            <div class="movie-card" data-category="trailer">
+                <div class="video-wrapper" onclick="playVideo(this, 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iGO_trailer_v7_6a22857c.mp4')">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/igo_poster_9e81af3b.jpg" alt="iGO Game Trailer" loading="lazy">
+                    <div class="play-overlay">
+                        <div class="play-btn">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="#0a1628"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <span class="badge badge-game">GAME</span>
+                    <h3>iGO &mdash; WOULD YOU LIKE TO PLAY A GAME?</h3>
+                    <div class="meta">
+                        <span>&#128337; 0:50</span>
+                        <span>&#127916; 4:5 Portrait</span>
+                    </div>
+                    <p>144 species. 12 Relays. 60 Nodes. A survival guide to the infrastructure that keeps civilisation alive &mdash; and the game that helps you remember what was always there. Amazing Race energy.</p>
+                </div>
+            </div>
+
+            <!-- INVESTOR COMPANION -->
+            <div class="movie-card" data-category="investor">
+                <div class="video-wrapper" onclick="playVideo(this, 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/final_investor_companion_5aa32eb1.mp4')">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/investor_companion_poster_7943cb02.jpg" alt="Investor Companion" loading="lazy">
+                    <div class="play-overlay">
+                        <div class="play-btn">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="#0a1628"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <span class="badge badge-game">INVESTOR</span>
+                    <h3>INVESTOR COMPANION</h3>
+                    <div class="meta">
+                        <span>&#128337; ~2:00</span>
+                        <span>&#127916; 16:9 Landscape</span>
+                    </div>
+                    <p>The investor-facing companion video &mdash; the Infrastructure Odyssey thesis, market opportunity, and the vision for a civilisational education platform. From the hero Game panel rotation.</p>
+                </div>
+            </div>
+
+            <!-- CALORIES TO CONSCIOUSNESS -->
+            <div class="movie-card" data-category="trailer">
+                <div class="video-wrapper" onclick="playVideo(this, 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/BhohCnRNKxGTfvlS.mp4')">
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/OcXXMLdnmQbhMWui.jpg" alt="Calories to Consciousness" loading="lazy">
+                    <div class="play-overlay">
+                        <div class="play-btn">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="#0a1628"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <span class="badge badge-trailer">PITCH</span>
+                    <h3>CALORIES TO CONSCIOUSNESS &mdash; MAIN PITCH</h3>
+                    <div class="meta">
+                        <span>&#128337; 4:22</span>
+                        <span>&#127916; 16:9 Landscape</span>
+                    </div>
+                    <p>The original pitch video &mdash; the full narrative arc from fire to consciousness, introducing the 12 Civilisational Relays and the Infrastructure Odyssey thesis.</p>
+                </div>
+            </div>
+
+            <!-- SNAPSHOT TRAILER -->
+            <div class="movie-card" data-category="trailer">
+                <div class="video-wrapper" onclick="playVideo(this, 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/lXPMPIyzekwVrToI.MP4')">
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/rMRwaBvDONNyHqpS.jpg" alt="Snapshot Trailer" loading="lazy">
+                    <div class="play-overlay">
+                        <div class="play-btn">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="#0a1628"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <span class="badge badge-trailer">TRAILER</span>
+                    <h3>SNAPSHOT TRAILER</h3>
+                    <div class="meta">
+                        <span>&#128337; ~0:35</span>
+                        <span>&#127916; 16:9 Landscape</span>
+                    </div>
+                    <p>A rapid-fire snapshot of the Infrastructure Odyssey &mdash; key visuals and concepts compressed into 35 seconds of cinematic intensity.</p>
+                </div>
+            </div>
+
+            <!-- RIVER VALLEY CIVILIZATION -->
+            <div class="movie-card" data-category="cinematic">
+                <div class="video-wrapper" onclick="playVideo(this, 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/river_plain_perfect_e99879d1.mp4')">
+                    <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/zWxgmErsajJzpeNj.jpg" alt="River Valley Civilization" loading="lazy">
+                    <div class="play-overlay">
+                        <div class="play-btn">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="#0a1628"><path d="M8 5v14l11-7z"/></svg>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-info">
+                    <span class="badge badge-trailer">CINEMATIC</span>
+                    <h3>RIVER VALLEY CIVILIZATION</h3>
+                    <div class="meta">
+                        <span>&#128337; ~0:06</span>
+                        <span>&#127916; 16:9 Landscape</span>
+                    </div>
+                    <p>A six-second cinematic vignette &mdash; the river valley where civilisation began. Water, agriculture, and the first permanent settlements that launched the infrastructure story.</p>
+                </div>
+            </div>
+        </div>
+
+        <div style="max-width:1000px; margin:0 auto; padding:0 1.5rem;">
+            <div style="border-top:1px solid rgba(255,215,0,0.15); margin:1rem 0;"></div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════ -->
+        <!-- SECTION 3: SOCIAL MEDIA CUTS                   -->
+        <!-- ═══════════════════════════════════════════════ -->
+        <div class="movies-section">
+            <h2>SOCIAL MEDIA CUTS</h2>
+            <p class="section-desc">Platform-optimised versions for sharing across LinkedIn, X, WhatsApp, and Stories</p>
+
+            <div class="social-grid">
+                <!-- LinkedIn Professional -->
+                <div class="movie-card" data-category="social">
+                    <div class="video-wrapper" onclick="playVideo(this, 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IAAI_LinkedIn_Professional_16x9_fd21eefc.mp4')">
+                        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iaai_linkedin_pro_poster-huZHGojJEQdCzLuRsKmiBT.webp" alt="LinkedIn Professional" loading="lazy">
+                        <div class="play-overlay">
+                            <div class="play-btn">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="#0a1628"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <span class="badge badge-social">SOCIAL</span>
+                        <h3>LinkedIn Professional</h3>
+                        <div class="meta">
+                            <span>&#128337; ~1:00</span>
+                            <span>16:9</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- LinkedIn Professional v2 -->
+                <div class="movie-card" data-category="social">
+                    <div class="video-wrapper" onclick="playVideo(this, 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IAAI_LinkedIn_Professional_16x9(1)_72fb0c21.mp4')">
+                        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iaai_linkedin_pro_v2_poster-g5B7CMVQWQKgqVs2EHeiTB.webp" alt="LinkedIn Professional v2" loading="lazy">
+                        <div class="play-overlay">
+                            <div class="play-btn">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="#0a1628"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <span class="badge badge-social">SOCIAL</span>
+                        <h3>LinkedIn Professional v2</h3>
+                        <div class="meta">
+                            <span>&#128337; ~1:00</span>
+                            <span>16:9</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- X / Twitter Teaser -->
+                <div class="movie-card" data-category="social">
+                    <div class="video-wrapper" onclick="playVideo(this, 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IAAI_Twitter_Teaser_16x9_9cddb68c.mp4')">
+                        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iaai_twitter_teaser_poster-5JFY2f5MNeJV9XUV3NVNz3.webp" alt="X/Twitter Teaser" loading="lazy">
+                        <div class="play-overlay">
+                            <div class="play-btn">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="#0a1628"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <span class="badge badge-social">SOCIAL</span>
+                        <h3>X / Twitter Teaser</h3>
+                        <div class="meta">
+                            <span>&#128337; ~0:30</span>
+                            <span>16:9</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- WhatsApp / Stories -->
+                <div class="movie-card" data-category="social">
+                    <div class="video-wrapper" onclick="playVideo(this, 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IAAI_WhatsApp_Stories_9x16_8c7aca76.mp4')">
+                        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iaai_whatsapp_stories_poster-JM2VSRDHdWUe9G5jfXeTpk.webp" alt="WhatsApp Stories" loading="lazy" style="max-height:400px; object-fit:cover;">
+                        <div class="play-overlay">
+                            <div class="play-btn">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="#0a1628"><path d="M8 5v14l11-7z"/></svg>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <span class="badge badge-social">SOCIAL</span>
+                        <h3>WhatsApp / Stories</h3>
+                        <div class="meta">
+                            <span>&#128337; ~0:30</span>
+                            <span>9:16 Portrait</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="max-width:1000px; margin:0 auto; padding:0 1.5rem;">
+            <div style="border-top:1px solid rgba(255,215,0,0.15); margin:1rem 0;"></div>
+        </div>
+
+        <!-- ALSO SEE -->
+        <div class="movies-section" style="text-align:center; padding-bottom:3rem;">
+            <h2>ALSO SEE</h2>
+            <p style="color:var(--color-text-secondary); margin-bottom:1.5rem;">More video content across the Infrastructure Academy ecosystem</p>
+            <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:1rem;">
+                <a href="/videos" style="display:inline-block; padding:0.6rem 1.5rem; background:rgba(255,215,0,0.1); color:var(--color-accent-gold); border:1px solid rgba(255,215,0,0.3); border-radius:4px; text-decoration:none; font-size:0.85rem; font-weight:700; letter-spacing:1px; transition:all 0.3s;">VIDEO PLAYROOM</a>
+                <a href="/press.html" style="display:inline-block; padding:0.6rem 1.5rem; background:rgba(255,215,0,0.1); color:var(--color-accent-gold); border:1px solid rgba(255,215,0,0.3); border-radius:4px; text-decoration:none; font-size:0.85rem; font-weight:700; letter-spacing:1px; transition:all 0.3s;">PRESS KIT</a>
+                <a href="/play/igo" style="display:inline-block; padding:0.6rem 1.5rem; background:rgba(255,215,0,0.1); color:var(--color-accent-gold); border:1px solid rgba(255,215,0,0.3); border-radius:4px; text-decoration:none; font-size:0.85rem; font-weight:700; letter-spacing:1px; transition:all 0.3s;">PLAY iGO</a>
+                <a href="/site.html" style="display:inline-block; padding:0.6rem 1.5rem; background:rgba(255,215,0,0.1); color:var(--color-accent-gold); border:1px solid rgba(255,215,0,0.3); border-radius:4px; text-decoration:none; font-size:0.85rem; font-weight:700; letter-spacing:1px; transition:all 0.3s;">HOME</a>
+            </div>
+        </div>
+    </main>
+
+    <footer style="background:var(--color-bg-primary); border-top:1px solid rgba(255,215,0,0.2); padding:2rem; text-align:center;">
+        <p style="font-size:0.85rem; color:var(--color-text-secondary);">&copy; 2025&ndash;2026 Infrastructure Academy &mdash; An Infrastructure Odyssey</p>
+        <p style="font-size:0.75rem; color:rgba(255,255,255,0.3); margin-top:0.5rem;">Created by Ir. Nigel T. Dearden CEng CWEM &mdash; 4ECL &bull; Built with Manus AI</p>
+        <p style="font-size:0.7rem; color:rgba(255,255,255,0.25); margin-top:0.3rem;">BETA &bull; Proof of Concept &bull; No warranties expressed or implied</p>
+    </footer>
+
+    <script>
+    function playVideo(wrapper, url) {
+        var video = document.createElement('video');
+        video.controls = true;
+        video.autoplay = true;
+        video.style.width = '100%';
+        video.style.display = 'block';
+        video.style.backgroundColor = '#000';
+        video.innerHTML = '<source src="' + url + '" type="video/mp4">';
+        wrapper.innerHTML = '';
+        wrapper.style.cursor = 'default';
+        wrapper.onclick = null;
+        wrapper.appendChild(video);
+    }
+
+    // Category filter
+    (function() {
+        var filterBar = document.getElementById('filterBar');
+        if (!filterBar) return;
+        var buttons = filterBar.querySelectorAll('.filter-btn');
+        var allCards = document.querySelectorAll('.movie-card[data-category]');
+        var sections = document.querySelectorAll('.movies-section');
+        var filmCount = document.getElementById('film-count');
+
+        buttons.forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var filter = btn.getAttribute('data-filter');
+                // Update active button
+                buttons.forEach(function(b) { b.classList.remove('active'); });
+                btn.classList.add('active');
+
+                var visibleCount = 0;
+                allCards.forEach(function(card) {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.classList.remove('hidden-by-filter');
+                        visibleCount++;
+                    } else {
+                        card.classList.add('hidden-by-filter');
+                    }
+                });
+
+                // Show/hide section headers based on whether they have visible cards
+                sections.forEach(function(section) {
+                    var cards = section.querySelectorAll('.movie-card[data-category]');
+                    var hasVisible = false;
+                    cards.forEach(function(c) {
+                        if (!c.classList.contains('hidden-by-filter')) hasVisible = true;
+                    });
+                    if (hasVisible || filter === 'all') {
+                        section.classList.remove('hidden-by-filter');
+                    } else {
+                        section.classList.add('hidden-by-filter');
+                    }
+                });
+
+                // Update count
+                if (filmCount) {
+                    filmCount.textContent = filter === 'all' ? '16' : visibleCount;
+                }
+            });
+        });
+    })();
+    </script>
+
+    <!-- Back-to-Top Button Logic -->
+    <script>
+    (function() {
+        var btn = document.getElementById('back-to-top-btn');
+        if (!btn) return;
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                btn.style.display = 'flex';
+            } else {
+                btn.style.display = 'none';
+            }
+        }, { passive: true });
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    })();
+    </script>
+
+</body>
+</html>

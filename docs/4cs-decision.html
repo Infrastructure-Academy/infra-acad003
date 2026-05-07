@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="The 4Cs Decision Page — resolving the evolution of the Four Horsemen of Resistance from Conflagration/Consumption/Conflict/Climate to Conflict/Climate/Contagion/Cost.">
+    <meta property="og:title" content="The 4Cs Decision — Infrastructure Academy">
+    <meta property="og:description" content="Evidence trail resolving the 4Cs evolution. From the original Four Horsemen to the emergent formulation.">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Infrastructure Academy">
+    <title>The 4Cs Decision — Infrastructure Academy</title>
+    <link rel="stylesheet" href="/css/style.css?v=20260310a">
+    <style>
+        /* BETA Badge */
+        .beta-badge { display:inline-flex; align-items:center; gap:0.3rem; background:rgba(251,146,60,0.15); border:1px solid rgba(251,146,60,0.5); color:#fb923c; font-family:'Courier New',monospace; font-size:0.65rem; font-weight:bold; letter-spacing:2px; padding:0.2rem 0.6rem; border-radius:3px; text-transform:uppercase; animation:beta-pulse 3s ease-in-out infinite; vertical-align:middle; margin-left:0.5rem; }
+        .beta-badge::before { content:'\25CF'; font-size:0.5rem; animation:beta-dot 2s ease-in-out infinite; }
+        @keyframes beta-pulse { 0%,100%{opacity:1;} 50%{opacity:0.7;} }
+        @keyframes beta-dot { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+        @media(max-width:768px) { .beta-badge { display:none; } }
+
+        /* ============================================
+           4Cs DECISION PAGE STYLES
+           ============================================ */
+        .fcs-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 40px 20px 60px;
+        }
+
+        /* HERO */
+        .fcs-hero {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, rgba(15,31,58,0.95) 0%, rgba(10,22,40,0.98) 100%);
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        .fcs-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 30px,
+                rgba(255,215,0,0.03) 30px,
+                rgba(255,215,0,0.03) 31px
+            );
+            pointer-events: none;
+        }
+        .fcs-hero h1 {
+            font-size: 2.6rem;
+            font-family: var(--font-heading);
+            color: var(--color-accent-gold);
+            margin-bottom: 10px;
+            letter-spacing: 0.06em;
+        }
+        .fcs-hero .hero-subtitle {
+            font-size: 1.2rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 8px;
+            font-style: italic;
+        }
+        .fcs-hero .hero-equation {
+            font-size: 2rem;
+            font-family: 'Courier New', monospace;
+            color: #e74c3c;
+            font-weight: bold;
+            margin: 20px 0;
+            letter-spacing: 0.1em;
+        }
+        .fcs-hero .hero-meta {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 15px;
+        }
+
+        /* VERDICT BOX */
+        .verdict-box {
+            background: linear-gradient(135deg, rgba(39,174,96,0.15) 0%, rgba(46,204,113,0.08) 100%);
+            border: 2px solid rgba(46,204,113,0.5);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .verdict-box h2 {
+            color: #2ecc71;
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            font-family: var(--font-heading);
+        }
+        .verdict-box .verdict-text {
+            font-size: 1.3rem;
+            color: var(--color-accent-gold);
+            font-weight: bold;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+        }
+        .verdict-box p {
+            color: var(--color-text-secondary);
+            line-height: 1.7;
+        }
+
+        /* EVOLUTION TIMELINE */
+        .evolution-timeline {
+            position: relative;
+            margin: 40px 0;
+            padding-left: 40px;
+        }
+        .evolution-timeline::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(to bottom, rgba(255,215,0,0.1), rgba(255,215,0,0.6), rgba(46,204,113,0.6));
+        }
+        .evo-node {
+            position: relative;
+            margin-bottom: 30px;
+            padding: 20px 25px;
+            background: rgba(15,31,58,0.6);
+            border: 1px solid rgba(255,215,0,0.15);
+            border-radius: 8px;
+            transition: border-color 0.3s;
+        }
+        .evo-node:hover {
+            border-color: rgba(255,215,0,0.4);
+        }
+        .evo-node::before {
+            content: '';
+            position: absolute;
+            left: -33px;
+            top: 25px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            border: 2px solid var(--color-accent-gold);
+            background: var(--color-bg-primary);
+        }
+        .evo-node.active::before {
+            background: #2ecc71;
+            border-color: #2ecc71;
+            box-shadow: 0 0 10px rgba(46,204,113,0.5);
+        }
+        .evo-node .evo-source {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 8px;
+        }
+        .evo-node .evo-label {
+            font-size: 1.1rem;
+            font-weight: bold;
+            margin-bottom: 6px;
+        }
+        .evo-node .evo-cs {
+            font-family: 'Courier New', monospace;
+            font-size: 1rem;
+            color: #e74c3c;
+            margin: 10px 0;
+            padding: 8px 12px;
+            background: rgba(231,76,60,0.1);
+            border-left: 3px solid #e74c3c;
+            border-radius: 0 4px 4px 0;
+        }
+        .evo-node .evo-notes {
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+
+        /* COMPARISON TABLE */
+        .comparison-section {
+            margin: 40px 0;
+        }
+        .comparison-section h2 {
+            color: var(--color-accent-gold);
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(255,215,0,0.2);
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .comparison-table th {
+            background: rgba(255,215,0,0.1);
+            color: var(--color-accent-gold);
+            padding: 12px 15px;
+            text-align: left;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid rgba(255,215,0,0.3);
+        }
+        .comparison-table td {
+            padding: 12px 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            color: var(--color-text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+        .comparison-table tr:hover td {
+            background: rgba(255,215,0,0.03);
+        }
+        .comparison-table .winner {
+            color: #2ecc71;
+            font-weight: bold;
+        }
+        .comparison-table .rejected {
+            color: #e74c3c;
+            opacity: 0.7;
+        }
+
+        /* EVIDENCE CARDS */
+        .evidence-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .evidence-card {
+            background: rgba(15,31,58,0.6);
+            border: 1px solid rgba(255,215,0,0.15);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .evidence-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 1px solid rgba(255,215,0,0.15);
+            cursor: pointer;
+        }
+        .evidence-card .ev-body {
+            padding: 15px;
+        }
+        .evidence-card .ev-title {
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: var(--color-accent-gold);
+            margin-bottom: 6px;
+        }
+        .evidence-card .ev-desc {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            line-height: 1.5;
+        }
+        .evidence-card .ev-timestamp {
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.4);
+            margin-top: 8px;
+            font-family: 'Courier New', monospace;
+        }
+
+        /* ARGUMENT SECTIONS */
+        .argument-section {
+            margin: 40px 0;
+            padding: 25px;
+            background: rgba(15,31,58,0.4);
+            border-radius: 8px;
+            border-left: 4px solid;
+        }
+        .argument-section.for-cost {
+            border-left-color: #2ecc71;
+        }
+        .argument-section.for-corruption {
+            border-left-color: #e74c3c;
+        }
+        .argument-section h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            font-family: var(--font-heading);
+        }
+        .argument-section.for-cost h3 { color: #2ecc71; }
+        .argument-section.for-corruption h3 { color: #e74c3c; }
+        .argument-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .argument-section ul li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+            font-size: 0.9rem;
+        }
+        .argument-section.for-cost ul li::before {
+            content: '\2713';
+            position: absolute;
+            left: 0;
+            color: #2ecc71;
+            font-weight: bold;
+        }
+        .argument-section.for-corruption ul li::before {
+            content: '\2717';
+            position: absolute;
+            left: 0;
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        /* SIGNAL EQUATION */
+        .signal-equation-box {
+            text-align: center;
+            padding: 30px;
+            margin: 30px 0;
+            background: linear-gradient(135deg, rgba(231,76,60,0.1) 0%, rgba(231,76,60,0.05) 100%);
+            border: 1px solid rgba(231,76,60,0.3);
+            border-radius: 8px;
+        }
+        .signal-equation-box .eq-formula {
+            font-size: 2.5rem;
+            font-family: 'Courier New', monospace;
+            color: var(--color-accent-gold);
+            margin-bottom: 15px;
+        }
+        .signal-equation-box .eq-expanded {
+            font-size: 1.1rem;
+            color: var(--color-text-secondary);
+            margin-bottom: 10px;
+        }
+        .signal-equation-box .eq-imperative {
+            font-size: 1rem;
+            color: #e74c3c;
+            font-style: italic;
+            margin-top: 15px;
+        }
+
+        /* VARIABLE TABLE */
+        .var-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .var-table th {
+            background: rgba(231,76,60,0.15);
+            color: #e74c3c;
+            padding: 10px 15px;
+            text-align: left;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .var-table td {
+            padding: 10px 15px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            color: var(--color-text-secondary);
+            font-size: 0.9rem;
+        }
+        .var-table td:first-child {
+            font-family: 'Courier New', monospace;
+            color: var(--color-accent-gold);
+            font-weight: bold;
+            width: 60px;
+        }
+
+        /* IMPLICATIONS */
+        .implications-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .implication-card {
+            padding: 20px;
+            background: rgba(15,31,58,0.5);
+            border: 1px solid rgba(255,215,0,0.15);
+            border-radius: 8px;
+        }
+        .implication-card .imp-number {
+            font-size: 2rem;
+            font-family: 'Courier New', monospace;
+            color: rgba(255,215,0,0.3);
+            margin-bottom: 8px;
+        }
+        .implication-card h4 {
+            color: var(--color-accent-gold);
+            font-size: 1rem;
+            margin-bottom: 8px;
+        }
+        .implication-card p {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+        }
+
+        /* CROSS-REFERENCE */
+        .xref-section {
+            margin: 40px 0;
+            padding: 20px;
+            background: rgba(15,31,58,0.3);
+            border: 1px solid rgba(255,215,0,0.1);
+            border-radius: 8px;
+        }
+        .xref-section h3 {
+            color: var(--color-accent-gold);
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+        .xref-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .xref-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            background: rgba(255,215,0,0.08);
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 4px;
+            color: var(--color-accent-gold);
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 0.5px;
+            transition: all 0.2s;
+        }
+        .xref-link:hover {
+            background: rgba(255,215,0,0.15);
+            border-color: rgba(255,215,0,0.4);
+        }
+
+        /* LIGHTBOX */
+        .lightbox-overlay {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.92);
+            z-index: 9999;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+        }
+        .lightbox-overlay.active {
+            display: flex;
+        }
+        .lightbox-overlay img {
+            max-width: 90%;
+            max-height: 90vh;
+            border: 2px solid rgba(255,215,0,0.3);
+            border-radius: 4px;
+        }
+
+        /* BACK TO TOP */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 44px;
+            height: 44px;
+            background: var(--color-accent-gold);
+            color: var(--color-bg-primary);
+            border: none;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity 0.3s;
+            z-index: 100;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .back-to-top.visible { opacity: 1; }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .fcs-hero h1 { font-size: 1.8rem; }
+            .fcs-hero .hero-equation { font-size: 1.4rem; }
+            .signal-equation-box .eq-formula { font-size: 1.6rem; }
+            .evolution-timeline { padding-left: 30px; }
+            .evidence-grid { grid-template-columns: 1fr; }
+            .implications-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+    <link rel="canonical" href="https://infra-acad-kuqzaex2.manus.space/4cs-decision.html">
+    <meta name="keywords" content="infrastructure academy, infrastructure education, civil engineering, civilisation history, infrastructure consciousness, gamified learning, IAAI, Nigel Dearden, infrastructure odyssey, 12 relays, calories to consciousness, 4Cs decision, threats framework, conflagration consumption conflict climate">
+
+<style id="mobile-quicknav-styles">
+/* ===== MOBILE QUICK-NAV BAR ===== */
+.mobile-quicknav {
+    display: none;
+    width: 100%;
+    background: linear-gradient(180deg, #0d1f3c 0%, #0a1628 100%);
+    border-bottom: 1px solid rgba(255,215,0,0.25);
+    padding: 6px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 6px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+.mobile-quicknav::-webkit-scrollbar { display: none; }
+.mobile-quicknav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 10px;
+    background: rgba(255,215,0,0.08);
+    border: 1px solid rgba(255,215,0,0.35);
+    border-radius: 16px;
+    color: #ffd700;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+.mobile-quicknav a:active {
+    background: rgba(255,215,0,0.25);
+    transform: scale(0.95);
+}
+.mobile-quicknav a.mqn-home {
+    background: #ffd700;
+    color: #0a1628;
+    border-color: #ffd700;
+}
+@media(max-width:768px) {
+    .mobile-quicknav { display: flex; }
+}
+@media(min-width:769px) {
+    .mobile-quicknav { display: none !important; }
+}
+
+/* ===== BACK-TO-TOP FLOATING BUTTON ===== */
+#back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 16px;
+    z-index: 9999;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(10,22,40,0.92);
+    border: 1.5px solid rgba(255,215,0,0.6);
+    color: #ffd700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    transition: all 0.2s;
+}
+#back-to-top-btn:active {
+    transform: scale(0.9);
+    background: rgba(255,215,0,0.2);
+}
+</style>
+
+</head>
+<body>
+    <!-- iAAi Network Bar — NAV-001 · Cross-Site Navigation -->
+    <!-- ═══ iAAi NETWORK BAR ═══ -->
+    <div id="iaai-network-bar" style="display:flex;align-items:center;justify-content:space-around;width:100%;height:36px;background:#0a1628;position:sticky;top:0;z-index:200001;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">
+      <a href="https://www.infrastructure-academy.com" style="text-decoration:none;color:#fff;font-weight:700;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid #DC2626;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#DC2626"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg> ACADEMY</a>
+      <a href="https://realityeng-epdhlkrn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> QUEST</a>
+      <a href="#" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;opacity:0.5;pointer-events:none;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A843"><path d="M6 2v6l-2 2v4l2 2v6h4v-6l2-2v-4L10 8V2H6zm12 0v6l-2 2v4l2 2v6h-4v-6l-2-2v-4l2-2V2h4z"/></svg> XCHANGE</a>
+      <a href="https://nigelmemorial-ucmtq9dn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#16A34A"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg> MEMORIAL</a>
+      <a href="https://xgrowthtrk-2a93yo5z.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#06B6D4"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/></svg> NEWS</a>
+    </div>
+
+
+<!-- INJECTED COMPACT HEADER BAR -->
+<style>
+.compact-header-bar { position:sticky; top:0; z-index:9999; background:#0a1628; border-bottom:2px solid #ffd700; padding:8px 16px; display:flex; align-items:center; justify-content:space-between; gap:12px; font-family:Georgia,'Times New Roman',serif; }
+.compact-header-bar .chb-brand { display:flex; align-items:center; gap:10px; text-decoration:none; color:#ffd700; }
+.compact-header-bar .chb-brand img { width:28px; height:28px; border-radius:4px; }
+.compact-header-bar .chb-title { font-size:0.85rem; font-weight:bold; letter-spacing:1.5px; color:#ffd700; }
+.compact-header-bar .chb-nav { display:flex; align-items:center; gap:12px; }
+.compact-header-bar .chb-nav a { color:#e2e8f0; text-decoration:none; font-size:0.75rem; letter-spacing:1px; padding:4px 10px; border:1px solid rgba(255,215,0,0.2); border-radius:3px; transition:all 0.2s; }
+.compact-header-bar .chb-nav a:hover { background:rgba(255,215,0,0.1); border-color:#ffd700; color:#ffd700; }
+.compact-header-bar .chb-nav a.chb-home { background:rgba(255,215,0,0.15); border-color:#ffd700; color:#ffd700; font-weight:bold; }
+@media(max-width:600px) { .compact-header-bar .chb-nav a:not(.chb-home) { display:none; } .compact-header-bar .chb-title { font-size:0.7rem; } }
+</style>
+
+<div class="compact-header-bar">
+    <a href="/site.html" class="chb-brand">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iAAi-emblem_e0c9c2c1.png" alt="iAAi">
+        <span class="chb-title">INFRASTRUCTURE ACADEMY</span>
+    </a>
+    <div class="chb-nav">
+        <a href="/site.html" class="chb-home">HOME</a>
+        <a href="/pages/framework.html">FRAMEWORK</a>
+        <a href="/library.html">DOCUMENTS</a>
+        <a href="/play">PLAY</a>
+    </div>
+</div>
+    <!-- ===== MOBILE QUICK-NAV BAR — always visible on mobile ===== -->
+    <div class="mobile-quicknav" id="mobile-quicknav">
+        <a href="/site.html" class="mqn-home">&#127968; HOME</a>
+        <a href="/pages/start-here.html">&#128218; START</a>
+        <a href="/volumes/volume1/index.html">&#128214; READ</a>
+        <a href="/pages/framework.html">&#128736; FRAMEWORK</a>
+        <a href="/play">&#127918; PLAY</a>
+        <a href="/pages/movies.html">&#127916; MOVIES</a>
+        <a href="/pages/resources.html">&#128194; RESOURCES</a>
+        <a href="/press.html">&#128240; PRESS</a>
+    </div>
+
+    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <button id="back-to-top-btn" aria-label="Back to top" title="Back to top">&#9650;</button>
+
+<!-- END COMPACT HEADER BAR -->
+
+
+    <!-- NAV PLACEHOLDER -->
+    <div id="nav-placeholder"></div>
+
+    <div class="fcs-container">
+        <!-- HERO -->
+        <div class="fcs-hero">
+            <h1>THE 4Cs DECISION <span class="beta-badge">EVIDENCE TRAIL</span></h1>
+            <div class="hero-subtitle">Resolving the Fourth Horseman: Corruption vs Cost</div>
+            <div class="hero-equation">&beta; = Conflict &middot; Climate &middot; Contagion &middot; ?</div>
+            <div class="hero-meta">Evidence compiled from 5 source documents &bull; 9&ndash;10 March 2026 &bull; Infrastructure Academy</div>
+        </div>
+
+        <!-- VERDICT -->
+        <div class="verdict-box">
+            <h2>VERDICT</h2>
+            <div class="verdict-text">&beta; = Conflict &middot; Climate &middot; Contagion &middot; Cost</div>
+            <p>The fourth C is <strong>Cost</strong>, not Corruption. Cost is the sharpest, most universal, and most actionable formulation. Every infrastructure decision is ultimately a cost decision. Corruption is a <em>subset</em> of Cost &mdash; it is cost imposed by governance failure. Cost subsumes Corruption while remaining measurable, mappable, and directly connected to the engineering and economic reality of infrastructure.</p>
+            <p style="margin-top:12px; font-size:0.85rem; color:rgba(255,255,255,0.5);">This verdict emerged through natural iteration across 5 documents, not by design. The evidence trail below documents the evolution.</p>
+        </div>
+
+        <!-- THE SIGNAL EQUATION -->
+        <div class="signal-equation-box">
+            <div class="eq-formula">S = (A &times; P) / &beta;</div>
+            <div class="eq-expanded">Signal = (Amplitude &times; Persistence) / Resistance</div>
+            <table class="var-table" style="max-width:600px; margin:20px auto;">
+                <thead>
+                    <tr><th>Var</th><th>Meaning</th><th>D100 Definition</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>S</td><td>Signal Strength</td><td>How far the civilisational signal travels</td></tr>
+                    <tr><td>A</td><td>Amplitude = REACH</td><td>The breadth of influence. The radius of impact.</td></tr>
+                    <tr><td>P</td><td>Persistence = DURATION</td><td>How long the signal endures. Measured in centuries.</td></tr>
+                    <tr><td>&beta;</td><td>Resistance = THE 4Cs</td><td>Conflict &middot; Climate &middot; Contagion &middot; Cost</td></tr>
+                </tbody>
+            </table>
+            <div class="eq-imperative">&ldquo;Maximise reach. Maximise duration. Minimise resistance. This is the infrastructure imperative.&rdquo;</div>
+        </div>
+
+        <!-- EVOLUTION TIMELINE -->
+        <h2 style="color:var(--color-accent-gold); font-family:var(--font-heading); font-size:1.6rem; margin:40px 0 20px; padding-bottom:10px; border-bottom:1px solid rgba(255,215,0,0.2);">Evolution Timeline</h2>
+        <p style="color:var(--color-text-secondary); margin-bottom:20px; font-size:0.9rem; line-height:1.6;">The 4Cs were not designed in a single sitting. They emerged through iterative extraction across multiple documents over months. Each formulation refined the previous one through natural selection &mdash; exactly as the ICUT framework predicts.</p>
+
+        <div class="evolution-timeline">
+            <!-- Node 1: Original -->
+            <div class="evo-node">
+                <div class="evo-source">PRE-2026 &bull; GAME DATA / ORIGINAL FRAMEWORK</div>
+                <div class="evo-label" style="color:var(--color-text-primary);">Version 1: The Original Four Horsemen</div>
+                <div class="evo-cs">Conflagration &middot; Consumption &middot; Conflict &middot; Climate</div>
+                <div class="evo-notes">The first formulation. Classical language drawn from historical catastrophe categories. <strong>Conflagration</strong> (War), <strong>Consumption</strong> (Famine), <strong>Conflict</strong> (general strife), <strong>Climate</strong> (existential). Poetic but imprecise &mdash; Conflagration and Conflict overlap. Consumption is too broad.</div>
+            </div>
+
+            <!-- Node 2: Glossary -->
+            <div class="evo-node">
+                <div class="evo-source">PRE-2026 &bull; GLOSSARY (glossary.html)</div>
+                <div class="evo-label" style="color:var(--color-text-primary);">Version 1b: Glossary Codification</div>
+                <div class="evo-cs">Conflagration &middot; Crisis &middot; Consumption &middot; Climate</div>
+                <div class="evo-notes">The glossary replaced <em>Conflict</em> with <em>Crisis</em> &mdash; a broader term. This was the first sign of natural selection: the framework was already trying to sharpen itself. Crisis subsumes Conflict but adds systemic failure.</div>
+            </div>
+
+            <!-- Node 3: Framework -->
+            <div class="evo-node">
+                <div class="evo-source">PRE-2026 &bull; FRAMEWORK PAGE (framework.html)</div>
+                <div class="evo-label" style="color:var(--color-text-primary);">Version 1c: Framework Refinement</div>
+                <div class="evo-cs">Conflagration (War) &middot; Contagion (Disease) &middot; Consumption (Famine) &middot; Climate (Existential)</div>
+                <div class="evo-notes">The framework page introduced <strong>Contagion</strong> as the academic term for Disease. This was the first appearance of the word that would survive into the final formulation. Contagion attacks <em>biological intelligence assets directly</em> &mdash; the operators, not the infrastructure.</div>
+            </div>
+
+            <!-- Node 4: Market Matrix -->
+            <div class="evo-node">
+                <div class="evo-source">2025&ndash;2026 &bull; GLOBAL MARKET MATRIX (Page 21)</div>
+                <div class="evo-label" style="color:var(--color-text-primary);">Version 2: The Corruption Variant</div>
+                <div class="evo-cs">Conflict &middot; Contagion &middot; Climate &middot; Corruption</div>
+                <div class="evo-notes">The Market Matrix introduced <strong>Corruption</strong> as the fourth C, replacing Consumption. This was a significant evolution: Corruption addresses governance failure, institutional decay, and the human factor in infrastructure collapse. Conflagration was also replaced by the sharper <strong>Conflict</strong>. Three of the four final terms are now in place.</div>
+            </div>
+
+            <!-- Node 5: D100 Extraction -->
+            <div class="evo-node active">
+                <div class="evo-source">9 MARCH 2026 &bull; D100_PRINCIPIA_EXTRACTION (Page 9)</div>
+                <div class="evo-label" style="color:#2ecc71;">Version 3: The Emergent Formulation (FINAL)</div>
+                <div class="evo-cs" style="border-left-color:#2ecc71; background:rgba(46,204,113,0.1);">Conflict &middot; Climate &middot; Contagion &middot; Cost</div>
+                <div class="evo-notes">The D100 extraction produced the final formulation: <strong>Cost</strong> replaces Corruption. This was not designed &mdash; it emerged through the extraction process. Cost is the sharpest upgrade: it connects the 4Cs directly to the engineering and economic reality of infrastructure. Every infrastructure project in history can be analysed through these four lenses.</div>
+            </div>
+        </div>
+
+        <!-- THE CASE: CORRUPTION vs COST -->
+        <h2 style="color:var(--color-accent-gold); font-family:var(--font-heading); font-size:1.6rem; margin:40px 0 20px; padding-bottom:10px; border-bottom:1px solid rgba(255,215,0,0.2);">The Case: Corruption vs Cost</h2>
+
+        <div class="argument-section for-cost">
+            <h3>The Case for COST (Selected)</h3>
+            <ul>
+                <li><strong>Universal applicability:</strong> Every infrastructure project has a cost dimension. From the Pyramids to the Channel Tunnel, cost is the constant. Corruption is context-dependent &mdash; some civilisations had minimal corruption but massive cost challenges.</li>
+                <li><strong>Measurability:</strong> Cost is quantifiable in every currency, every era, every context. Corruption is subjective, culturally relative, and difficult to measure consistently across 12,000 years of civilisation.</li>
+                <li><strong>Subsumption:</strong> Cost subsumes Corruption. Corruption is cost imposed by governance failure &mdash; it is a <em>type</em> of cost, not a separate category. Bribery, graft, and institutional decay all manifest as cost overruns.</li>
+                <li><strong>Engineering connection:</strong> Cost connects directly to the engineering reality. S = (A &times; P) / &beta; becomes actionable when &beta; includes Cost &mdash; because cost is what engineers and planners actually manage.</li>
+                <li><strong>Signal equation alignment:</strong> In the signal equation, &beta; represents resistance. Cost is resistance in its purest form &mdash; the economic friction that attenuates every civilisational signal.</li>
+                <li><strong>Temporal consistency:</strong> Cost applies equally to Relay 1 (Fire, 10,000 BCE) and Relay 12 (Consciousness, 2026). Corruption requires institutional structures that did not exist in early relays.</li>
+                <li><strong>Emergent validity:</strong> Cost emerged through natural iteration, not design. The framework refined itself through use &mdash; exactly as the ICUT system predicts.</li>
+            </ul>
+        </div>
+
+        <div class="argument-section for-corruption">
+            <h3>The Case for CORRUPTION (Rejected)</h3>
+            <ul>
+                <li><strong>Governance specificity:</strong> Corruption directly addresses institutional failure, which is a distinct threat category. But it is too narrow &mdash; it only captures one mode of governance failure.</li>
+                <li><strong>Modern relevance:</strong> Corruption is a major factor in contemporary infrastructure failure (Transparency International data). But modern relevance does not equal universal applicability across 12,000 years.</li>
+                <li><strong>Human factor:</strong> Corruption captures the uniquely human dimension of infrastructure failure &mdash; greed, power, self-interest. But these are better modelled as cost drivers than as a separate category.</li>
+                <li><strong>Overlap with Conflict:</strong> Corruption and Conflict share significant overlap. Wars are often caused by corruption; corruption thrives in conflict zones. Cost avoids this overlap.</li>
+                <li><strong>Cultural bias:</strong> What constitutes "corruption" varies dramatically across cultures and eras. The Roman patronage system, Chinese guanxi, and modern lobbying are all "corruption" by some definitions but not others.</li>
+            </ul>
+        </div>
+
+        <!-- COMPARISON TABLE -->
+        <div class="comparison-section">
+            <h2>Head-to-Head Comparison</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Criterion</th>
+                        <th>Cost</th>
+                        <th>Corruption</th>
+                        <th>Winner</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Universal applicability (all 12 relays)</td>
+                        <td class="winner">Applies to every relay, every era</td>
+                        <td class="rejected">Requires institutional structures</td>
+                        <td class="winner">Cost</td>
+                    </tr>
+                    <tr>
+                        <td>Measurability</td>
+                        <td class="winner">Quantifiable in any currency/era</td>
+                        <td class="rejected">Subjective, culturally relative</td>
+                        <td class="winner">Cost</td>
+                    </tr>
+                    <tr>
+                        <td>Engineering connection</td>
+                        <td class="winner">Direct &mdash; engineers manage cost</td>
+                        <td class="rejected">Indirect &mdash; governance domain</td>
+                        <td class="winner">Cost</td>
+                    </tr>
+                    <tr>
+                        <td>Signal equation fit (&beta;)</td>
+                        <td class="winner">Pure economic resistance</td>
+                        <td class="rejected">Governance resistance only</td>
+                        <td class="winner">Cost</td>
+                    </tr>
+                    <tr>
+                        <td>Subsumption test</td>
+                        <td class="winner">Subsumes Corruption as a subset</td>
+                        <td class="rejected">Does not subsume Cost</td>
+                        <td class="winner">Cost</td>
+                    </tr>
+                    <tr>
+                        <td>Overlap with other 3Cs</td>
+                        <td class="winner">Minimal overlap</td>
+                        <td class="rejected">Overlaps with Conflict</td>
+                        <td class="winner">Cost</td>
+                    </tr>
+                    <tr>
+                        <td>Modern policy relevance</td>
+                        <td>Strong (budget, ROI, lifecycle)</td>
+                        <td>Strong (TI index, governance)</td>
+                        <td style="color:rgba(255,255,255,0.5);">Draw</td>
+                    </tr>
+                    <tr>
+                        <td>Emotional/narrative power</td>
+                        <td>Moderate (technical)</td>
+                        <td>Strong (moral outrage)</td>
+                        <td class="rejected">Corruption</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p style="color:rgba(255,255,255,0.5); font-size:0.8rem; margin-top:10px;">Score: Cost 6 &ndash; Corruption 1 &ndash; Draw 1. Cost wins decisively on analytical grounds.</p>
+        </div>
+
+        <!-- EVIDENCE SCREENSHOTS -->
+        <div class="comparison-section">
+            <h2>Evidence Screenshots</h2>
+            <p style="color:var(--color-text-secondary); margin-bottom:20px; font-size:0.9rem;">Real-time captures documenting the moment of discovery. Click to enlarge.</p>
+
+            <div class="evidence-grid">
+                <div class="evidence-card">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_0188_81a13845.PNG" alt="D100 Extraction Evidence" onclick="openLightbox(this.src)">
+                    <div class="ev-body">
+                        <div class="ev-title">D100 Extraction &mdash; Page 9</div>
+                        <div class="ev-desc">THE FOUR HORSEMEN OF RESISTANCE (&beta;). The D100_PRINCIPIA_EXTRACTION page where the emergent 4Cs first appeared: Conflict, Climate, Contagion, Cost.</div>
+                        <div class="ev-timestamp">9 Mar 2026, 17:21 &bull; IMG_0188</div>
+                    </div>
+                </div>
+
+                <div class="evidence-card">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_0189_6d27557a.PNG" alt="Visual Timestamp" onclick="openLightbox(this.src)">
+                    <div class="ev-body">
+                        <div class="ev-title">Visual Timestamp &mdash; Moment of Recognition</div>
+                        <div class="ev-desc">Manus 1.6 Max, 17:28, 9 March 2026. 126 suggestions. The exact moment the 4Cs evolution was identified and documented.</div>
+                        <div class="ev-timestamp">9 Mar 2026, 17:28 &bull; IMG_0189</div>
+                    </div>
+                </div>
+
+                <div class="evidence-card">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_0190_69d4acb3.PNG" alt="Intervention Check" onclick="openLightbox(this.src)">
+                    <div class="ev-body">
+                        <div class="ev-title">Intervention Check &mdash; QA in Action</div>
+                        <div class="ev-desc">&ldquo;Was it 19 did you check or are you quoting me.&rdquo; The moment the human caught the machine parroting. Quality control validates the process.</div>
+                        <div class="ev-timestamp">9 Mar 2026 &bull; IMG_0190</div>
+                    </div>
+                </div>
+
+                <div class="evidence-card">
+                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_0509_cf06e831.PNG" alt="Action Evidence" onclick="openLightbox(this.src)">
+                    <div class="ev-body">
+                        <div class="ev-title">Action Evidence &mdash; Database Audit</div>
+                        <div class="ev-desc">Captured at 2:26, 56% battery, 126 suggestions. Database algorithm audit in progress. Systematic approach to data architecture mapping.</div>
+                        <div class="ev-timestamp">10 Mar 2026, 02:26 &bull; IMG_0509</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- WHAT CHANGED AND WHY -->
+        <div class="comparison-section">
+            <h2>What Changed and Why</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Original Term</th>
+                        <th>Replaced By</th>
+                        <th>Reason</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Conflagration</td>
+                        <td class="winner">Conflict</td>
+                        <td>Sharper. Conflict covers all forms of organised violence, not just fire/destruction. Conflagration was poetic but imprecise.</td>
+                    </tr>
+                    <tr>
+                        <td>Consumption</td>
+                        <td class="winner">Cost</td>
+                        <td>More universal. Cost captures resource depletion (Consumption) plus economic friction, opportunity cost, and governance overhead. Cost subsumes Consumption.</td>
+                    </tr>
+                    <tr>
+                        <td>Crisis</td>
+                        <td class="winner">Contagion</td>
+                        <td>More specific. Contagion targets the unique threat of self-replicating destructive patterns &mdash; biological, ideological, and informational. Crisis was too broad.</td>
+                    </tr>
+                    <tr>
+                        <td>Climate</td>
+                        <td style="color:#2ecc71;">Climate (retained)</td>
+                        <td>Already at the right level of abstraction. The slow horseman that reshapes everything over decades and centuries. Stable across all formulations.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- IMPLICATIONS -->
+        <div class="comparison-section">
+            <h2>Implications for the Thesis</h2>
+            <div class="implications-grid">
+                <div class="implication-card">
+                    <div class="imp-number">01</div>
+                    <h4>The Framework is Alive</h4>
+                    <p>The 4Cs were not imposed from above &mdash; they evolved through use. This is exactly what the ICUT system predicts: knowledge that survives iteration becomes stronger. &ldquo;What survives destruction becomes indestructible&rdquo; (D100, Page 12 &mdash; THE PHOENIX).</p>
+                </div>
+                <div class="implication-card">
+                    <div class="imp-number">02</div>
+                    <h4>The 4Cs Are Now Actionable</h4>
+                    <p>Conflict, Climate, Contagion, and Cost are measurable, mappable, and manageable. Every infrastructure project in history can be analysed through these four lenses. Every future project should be.</p>
+                </div>
+                <div class="implication-card">
+                    <div class="imp-number">03</div>
+                    <h4>The Signal Equation Unifies</h4>
+                    <p>S = (A &times; P) / &beta; is not just a formula &mdash; it is a philosophy. The entire Infrastructure Odyssey &mdash; 12 relays, 12,000 years &mdash; is the story of humanity trying to maximise S.</p>
+                </div>
+                <div class="implication-card">
+                    <div class="imp-number">04</div>
+                    <h4>Corruption Lives Inside Cost</h4>
+                    <p>Corruption is not eliminated &mdash; it is properly classified. It is cost imposed by governance failure. This makes it analysable within the Cost framework rather than requiring a separate category.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- DOCUMENT CROSS-REFERENCE -->
+        <div class="comparison-section">
+            <h2>Source Document Cross-Reference</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Document</th>
+                        <th>4Cs Variant</th>
+                        <th>4th C</th>
+                        <th>Context</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Game Data (original)</td>
+                        <td>Conflagration, Consumption, Conflict, Climate</td>
+                        <td>Climate</td>
+                        <td>Original framework &mdash; all 4 terms later replaced or refined</td>
+                    </tr>
+                    <tr>
+                        <td>Glossary (glossary.html)</td>
+                        <td>Conflagration, Crisis, Consumption, Climate</td>
+                        <td>Climate</td>
+                        <td>First mutation: Crisis replaces Conflict</td>
+                    </tr>
+                    <tr>
+                        <td>Framework (framework.html)</td>
+                        <td>Conflagration, Contagion, Consumption, Climate</td>
+                        <td>Climate</td>
+                        <td>Contagion introduced as academic term for Disease</td>
+                    </tr>
+                    <tr>
+                        <td>Global Market Matrix (p.21)</td>
+                        <td>Conflict, Contagion, Climate, <span class="rejected">Corruption</span></td>
+                        <td class="rejected">Corruption</td>
+                        <td>Corruption variant &mdash; governance-focused market analysis</td>
+                    </tr>
+                    <tr>
+                        <td>D100_PRINCIPIA_EXTRACTION (p.9)</td>
+                        <td>Conflict, Climate, Contagion, <span class="winner">Cost</span></td>
+                        <td class="winner">Cost</td>
+                        <td>Emergent formulation &mdash; the final, selected variant</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- CROSS-REFERENCES -->
+        <div class="xref-section">
+            <h3>Cross-References</h3>
+            <div class="xref-links">
+                <a href="/pages/framework.html" class="xref-link">&rarr; Framework (4Cs Section)</a>
+                <a href="/pages/glossary.html#4cs" class="xref-link">&rarr; Glossary (4 Perennial Threats)</a>
+                <a href="/equations-register.html" class="xref-link">&rarr; Equations Register (Signal Equation)</a>
+                <a href="/vault.html" class="xref-link">&rarr; Vault (Evidence Screenshots)</a>
+                <a href="/icut-gallery.html" class="xref-link">&rarr; ICUT Gallery</a>
+                <a href="/pages/scholars.html" class="xref-link">&rarr; The 7 Scholars</a>
+            </div>
+        </div>
+
+        <!-- FOOTER NOTE -->
+        <div style="text-align:center; margin-top:50px; padding:20px; color:rgba(255,255,255,0.4); font-size:0.8rem;">
+            <p>This decision page was compiled from evidence across 5 source documents on 9&ndash;10 March 2026.</p>
+            <p>The 4Cs evolution was not retrospectively designed. It emerged through iterative extraction.</p>
+            <p style="margin-top:10px; color:var(--color-accent-gold); font-style:italic;">&ldquo;What survives destruction becomes indestructible.&rdquo;</p>
+        </div>
+    </div>
+
+    <!-- LIGHTBOX -->
+    <div class="lightbox-overlay" id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="Evidence">
+    </div>
+
+    <!-- BACK TO TOP -->
+    <button class="back-to-top" id="back-to-top" title="Back to top">&uarr;</button>
+
+    <!-- NAV SCRIPT -->
+    <script src="/js/site-search.js?v=20260311a"></script>
+    <script src="/js/page-tracker.js" defer></script>
+    <script src="/js/nav-optimise.js"></script>
+    <script>
+        // LIGHTBOX
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').classList.add('active');
+        }
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+        }
+        document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeLightbox(); });
+
+        // BACK TO TOP
+        (function() {
+            var btn = document.getElementById('back-to-top');
+            window.addEventListener('scroll', function() {
+                btn.classList.toggle('visible', window.scrollY > 400);
+            });
+            btn.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        })();
+    </script>
+    <div style="text-align:center; padding:1.5rem 1rem; border-top:1px solid rgba(255,215,0,0.2); margin-top:2rem;">
+        <!-- Social Cross-Links -->
+        <div style="margin-top:0.75rem; display:flex; justify-content:center; gap:1.2rem; flex-wrap:wrap; align-items:center;">
+            <a href="https://x.com/dearden_ni37258" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.35rem; color:#ffd700; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="Follow on X">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                X
+            </a>
+            <a href="https://www.linkedin.com/in/nigeldearden" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.35rem; color:#0077B5; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="Connect on LinkedIn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+            </a>
+            <a href="/site.html" style="display:inline-flex; align-items:center; gap:0.35rem; color:#25D366; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="WhatsApp QR on Homepage">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                WhatsApp
+            </a>
+        </div>
+    </div>
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement -->
+
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement (v2 fixed) -->
+<script>
+(function() {
+  try {
+    var sid = sessionStorage.getItem('iaai_sid');
+    if (!sid) {
+      sid = 'ses_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 9);
+      sessionStorage.setItem('iaai_sid', sid);
+    }
+    var data = {
+      path: window.location.pathname + (window.location.hash || ''),
+      pageTitle: document.title || 'Untitled',
+      referrer: document.referrer || '',
+      sessionId: sid
+    };
+    fetch('/api/trpc/analytics.track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ json: data }),
+      credentials: 'include'
+    }).catch(function() {});
+    window.addEventListener('hashchange', function() {
+      var hashData = {
+        path: window.location.pathname + (window.location.hash || ''),
+        pageTitle: document.title || 'Untitled',
+        referrer: window.location.href,
+        sessionId: sid
+      };
+      fetch('/api/trpc/analytics.track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ json: hashData }),
+        credentials: 'include'
+      }).catch(function() {});
+    });
+  } catch(e) {}
+})();
+</script>
+
+    <!-- Mobile table scroll fix -->
+    <script>
+    (function(){
+      if(window.innerWidth > 768) return;
+      document.querySelectorAll('table').forEach(function(t){
+        if(t.parentElement && t.parentElement.classList.contains('table-scroll-wrapper')) return;
+        var w = document.createElement('div');
+        w.className = 'table-scroll-wrapper';
+        t.parentNode.insertBefore(w, t);
+        w.appendChild(t);
+      });
+    })();
+    </script>
+
+
+    <!-- Back-to-Top Button Logic -->
+    <script>
+    (function() {
+        var btn = document.getElementById('back-to-top-btn');
+        if (!btn) return;
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                btn.style.display = 'flex';
+            } else {
+                btn.style.display = 'none';
+            }
+        }, { passive: true });
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    })();
+    </script>
+
+</body>
+</html>

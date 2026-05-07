@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relay Detail Hub — Infrastructure Academy</title>
+  <link rel="icon" type="image/x-icon" href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/favicon_32_80e4326c.png">
+  <meta name="description" content="Detailed profiles for all 12 Civilizational Relays — chapter links across 3 volumes, key institutions, SDG alignment, and linked iCards.">
+  <style>
+    :root {
+      --navy: #0a1628;
+      --navy-light: #0f1f3a;
+      --gold: #ffd700;
+      --gold-dim: rgba(255,215,0,0.4);
+      --text: #e0e0e0;
+      --text-dim: #999;
+      --green: #22c55e;
+      --blue: #60a5fa;
+      --copper: #d97706;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:var(--navy); color:var(--text); font-family:Georgia,'Times New Roman',serif; min-height:100vh; }
+
+    .page-header { text-align:center; padding:40px 20px 24px; border-bottom:2px solid var(--gold); }
+    .page-header h1 { color:var(--gold); font-size:2rem; letter-spacing:2px; margin-bottom:6px; }
+    .page-header .subtitle { color:var(--text-dim); font-size:0.95rem; font-style:italic; }
+
+    .back-nav { max-width:1200px; margin:20px auto 0; padding:0 30px; }
+    .back-nav a { color:var(--gold); text-decoration:none; font-size:0.85rem; }
+    .back-nav a:hover { text-decoration:underline; }
+
+    /* Jump nav */
+    .jump-nav { max-width:1200px; margin:20px auto; padding:0 30px; display:flex; flex-wrap:wrap; gap:8px; justify-content:center; }
+    .jump-btn { padding:6px 14px; background:var(--navy-light); border:1px solid var(--gold-dim); color:var(--gold); font-size:0.75rem; text-decoration:none; font-family:'Courier New',monospace; letter-spacing:1px; transition:background 0.2s; }
+    .jump-btn:hover, .jump-btn.active { background:rgba(255,215,0,0.15); border-color:var(--gold); }
+
+    /* Relay detail cards */
+    .relay-details { max-width:1200px; margin:30px auto; padding:0 30px; display:flex; flex-direction:column; gap:30px; }
+
+    .relay-detail { background:var(--navy-light); border:1px solid var(--gold-dim); padding:0; overflow:hidden; }
+    .rd-header { padding:20px 24px; border-bottom:1px solid var(--gold-dim); display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
+    .rd-num { font-family:'Courier New',monospace; font-size:0.7rem; color:var(--copper); letter-spacing:2px; text-transform:uppercase; }
+    .rd-title { color:var(--gold); font-size:1.4rem; flex:1; }
+    .rd-subtitle { color:var(--text-dim); font-size:0.85rem; font-style:italic; }
+    .rd-pct { font-family:'Courier New',monospace; font-size:0.8rem; padding:4px 10px; border:1px solid; }
+    .rd-pct.high { color:var(--green); border-color:var(--green); }
+    .rd-pct.mid { color:var(--copper); border-color:var(--copper); }
+
+    .rd-body { display:grid; grid-template-columns:1fr 1fr; gap:0; }
+    @media(max-width:768px) { .rd-body { grid-template-columns:1fr; } }
+
+    .rd-section { padding:20px 24px; }
+    .rd-section:nth-child(even) { border-left:1px solid var(--gold-dim); }
+    @media(max-width:768px) { .rd-section:nth-child(even) { border-left:none; border-top:1px solid var(--gold-dim); } }
+    .rd-section-title { font-size:0.7rem; color:var(--copper); text-transform:uppercase; letter-spacing:2px; margin-bottom:12px; }
+
+    /* Volume links */
+    .vol-links { display:flex; flex-direction:column; gap:8px; }
+    .vol-link { display:flex; align-items:center; gap:10px; padding:8px 12px; background:rgba(255,255,255,0.02); border:1px solid rgba(255,255,255,0.05); text-decoration:none; color:var(--text); font-size:0.85rem; transition:border-color 0.2s; }
+    .vol-link:hover { border-color:var(--gold); }
+    .vol-tag { font-family:'Courier New',monospace; font-size:0.65rem; padding:2px 8px; border:1px solid; white-space:nowrap; }
+    .vol-tag.v1 { color:#60a5fa; border-color:#60a5fa; }
+    .vol-tag.v2 { color:#22c55e; border-color:#22c55e; }
+    .vol-tag.v3 { color:#f97316; border-color:#f97316; }
+    .vol-name { flex:1; }
+
+    /* Institution list */
+    .inst-list { display:flex; flex-direction:column; gap:6px; }
+    .inst-item { font-size:0.8rem; padding:6px 0; border-bottom:1px solid rgba(255,255,255,0.03); display:flex; align-items:center; gap:8px; }
+    .inst-dot { width:6px; height:6px; border-radius:50%; background:var(--gold); flex-shrink:0; }
+
+    /* SDG chips */
+    .sdg-row { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:16px; }
+    .sdg-chip { font-size:0.7rem; padding:3px 8px; border:1px solid; white-space:nowrap; }
+
+    /* iCard chips */
+    .icard-chips { display:flex; flex-wrap:wrap; gap:6px; }
+    .icard-chip { font-size:0.7rem; padding:3px 8px; background:rgba(255,215,0,0.08); border:1px solid var(--gold-dim); color:var(--gold); text-decoration:none; transition:background 0.2s; }
+    .icard-chip:hover { background:rgba(255,215,0,0.2); }
+
+    /* Timeline */
+    .rd-timeline { grid-column:1/-1; padding:16px 24px; border-top:1px solid rgba(96,165,250,0.2); background:rgba(96,165,250,0.03); }
+    .rd-timeline-title { font-size:0.7rem; color:var(--blue); text-transform:uppercase; letter-spacing:2px; margin-bottom:8px; }
+    .rd-timeline-text { font-size:0.78rem; color:var(--text); line-height:1.8; font-family:'Courier New',monospace; word-spacing:2px; }
+
+    /* Equations */
+    .rd-equations { grid-column:1/-1; padding:16px 24px; border-top:1px solid rgba(217,119,6,0.2); background:rgba(217,119,6,0.03); }
+    .rd-equations-title { font-size:0.7rem; color:var(--copper); text-transform:uppercase; letter-spacing:2px; margin-bottom:8px; }
+    .rd-eq-item { font-size:0.8rem; color:var(--text); padding:4px 0; border-bottom:1px solid rgba(255,255,255,0.03); }
+    .rd-eq-item a { color:var(--gold); text-decoration:none; }
+    .rd-eq-item a:hover { text-decoration:underline; }
+
+    /* Key quote */
+    .rd-quote { grid-column:1/-1; padding:16px 24px; border-top:1px solid var(--gold-dim); font-style:italic; color:var(--gold); font-size:0.9rem; text-align:center; background:rgba(255,215,0,0.03); }
+
+    .page-footer { text-align:center; padding:40px 20px; margin-top:40px; border-top:1px solid var(--gold-dim); color:var(--text-dim); font-size:0.8rem; }
+  </style>
+
+<style id="mobile-quicknav-styles">
+/* ===== MOBILE QUICK-NAV BAR ===== */
+.mobile-quicknav {
+    display: none;
+    width: 100%;
+    background: linear-gradient(180deg, #0d1f3c 0%, #0a1628 100%);
+    border-bottom: 1px solid rgba(255,215,0,0.25);
+    padding: 6px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 6px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+.mobile-quicknav::-webkit-scrollbar { display: none; }
+.mobile-quicknav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 10px;
+    background: rgba(255,215,0,0.08);
+    border: 1px solid rgba(255,215,0,0.35);
+    border-radius: 16px;
+    color: #ffd700;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+.mobile-quicknav a:active {
+    background: rgba(255,215,0,0.25);
+    transform: scale(0.95);
+}
+.mobile-quicknav a.mqn-home {
+    background: #ffd700;
+    color: #0a1628;
+    border-color: #ffd700;
+}
+@media(max-width:768px) {
+    .mobile-quicknav { display: flex; }
+}
+@media(min-width:769px) {
+    .mobile-quicknav { display: none !important; }
+}
+
+/* ===== BACK-TO-TOP FLOATING BUTTON ===== */
+#back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 16px;
+    z-index: 9999;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(10,22,40,0.92);
+    border: 1.5px solid rgba(255,215,0,0.6);
+    color: #ffd700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    transition: all 0.2s;
+}
+#back-to-top-btn:active {
+    transform: scale(0.9);
+    background: rgba(255,215,0,0.2);
+}
+</style>
+
+</head>
+<body>
+    <!-- iAAi Network Bar — NAV-001 · Cross-Site Navigation -->
+    <!-- ═══ iAAi NETWORK BAR ═══ -->
+    <div id="iaai-network-bar" style="display:flex;align-items:center;justify-content:space-around;width:100%;height:36px;background:#0a1628;position:sticky;top:0;z-index:200001;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">
+      <a href="https://www.infrastructure-academy.com" style="text-decoration:none;color:#fff;font-weight:700;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid #DC2626;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#DC2626"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg> ACADEMY</a>
+      <a href="https://realityeng-epdhlkrn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> QUEST</a>
+      <a href="#" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;opacity:0.5;pointer-events:none;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A843"><path d="M6 2v6l-2 2v4l2 2v6h4v-6l2-2v-4L10 8V2H6zm12 0v6l-2 2v4l2 2v6h-4v-6l-2-2v-4l2-2V2h4z"/></svg> XCHANGE</a>
+      <a href="https://nigelmemorial-ucmtq9dn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#16A34A"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg> MEMORIAL</a>
+      <a href="https://xgrowthtrk-2a93yo5z.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#06B6D4"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/></svg> NEWS</a>
+    </div>
+
+
+<!-- INJECTED COMPACT HEADER BAR -->
+<style>
+.compact-header-bar { position:sticky; top:0; z-index:9999; background:#0a1628; border-bottom:2px solid #ffd700; padding:8px 16px; display:flex; align-items:center; justify-content:space-between; gap:12px; font-family:Georgia,'Times New Roman',serif; }
+.compact-header-bar .chb-brand { display:flex; align-items:center; gap:10px; text-decoration:none; color:#ffd700; }
+.compact-header-bar .chb-brand img { width:28px; height:28px; border-radius:4px; }
+.compact-header-bar .chb-title { font-size:0.85rem; font-weight:bold; letter-spacing:1.5px; color:#ffd700; }
+.compact-header-bar .chb-nav { display:flex; align-items:center; gap:12px; }
+.compact-header-bar .chb-nav a { color:#e2e8f0; text-decoration:none; font-size:0.75rem; letter-spacing:1px; padding:4px 10px; border:1px solid rgba(255,215,0,0.2); border-radius:3px; transition:all 0.2s; }
+.compact-header-bar .chb-nav a:hover { background:rgba(255,215,0,0.1); border-color:#ffd700; color:#ffd700; }
+.compact-header-bar .chb-nav a.chb-home { background:rgba(255,215,0,0.15); border-color:#ffd700; color:#ffd700; font-weight:bold; }
+@media(max-width:600px) { .compact-header-bar .chb-nav a:not(.chb-home) { display:none; } .compact-header-bar .chb-title { font-size:0.7rem; } }
+</style>
+
+<div class="compact-header-bar">
+    <a href="/site.html" class="chb-brand">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iAAi-emblem_e0c9c2c1.png" alt="iAAi">
+        <span class="chb-title">INFRASTRUCTURE ACADEMY</span>
+    </a>
+    <div class="chb-nav">
+        <a href="/site.html" class="chb-home">HOME</a>
+        <a href="/pages/framework.html">FRAMEWORK</a>
+        <a href="/library.html">DOCUMENTS</a>
+        <a href="/play">PLAY</a>
+    </div>
+</div>
+    <!-- ===== MOBILE QUICK-NAV BAR — always visible on mobile ===== -->
+    <div class="mobile-quicknav" id="mobile-quicknav">
+        <a href="/site.html" class="mqn-home">&#127968; HOME</a>
+        <a href="/pages/start-here.html">&#128218; START</a>
+        <a href="/volumes/volume1/index.html">&#128214; READ</a>
+        <a href="/pages/framework.html">&#128736; FRAMEWORK</a>
+        <a href="/play">&#127918; PLAY</a>
+        <a href="/pages/movies.html">&#127916; MOVIES</a>
+        <a href="/pages/resources.html">&#128194; RESOURCES</a>
+        <a href="/press.html">&#128240; PRESS</a>
+    </div>
+
+    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <button id="back-to-top-btn" aria-label="Back to top" title="Back to top">&#9650;</button>
+
+<!-- END COMPACT HEADER BAR -->
+
+
+
+  <div class="page-header">
+    <h1>RELAY DETAIL HUB</h1>
+    <div class="subtitle">Full Profiles for All 12 Civilizational Relays</div>
+  </div>
+
+  <div class="back-nav">
+    <a href="/site.html">&larr; Back to Home</a> &nbsp;|&nbsp;
+    <a href="/pages/relay-tracker.html">Relay Tracker</a> &nbsp;|&nbsp;
+    <a href="/pages/sdg-matrix.html">SDG Matrix</a> &nbsp;|&nbsp;
+    <a href="/icard-gallery.html">iCard Gallery</a>
+  </div>
+
+  <div class="jump-nav" id="jumpNav"></div>
+  <div class="relay-details" id="relayDetails"></div>
+
+  <div class="page-footer">
+    <p>&ldquo;Per Arya Ad Astra&rdquo; &mdash; Infrastructure Academy</p>
+    <p style="margin-top:8px;">Ir. Nigel T. Dearden CEng MICE MHKIE &bull; The Civilizational Relay</p>
+  </div>
+
+  <script>
+  var relays = [
+    {
+      num:1, title:"Fire", subtitle:"The First Relay — Energy Capture",
+      quote:"Fire is the first infrastructure. Everything that follows is a footnote to flame.",
+      pct:85,
+      sdgs:[{n:7,c:"#fcc30b",name:"Affordable & Clean Energy"},{n:13,c:"#3f7e44",name:"Climate Action"}],
+      volumes:[
+        {vol:1,label:"Perspective",file:"relay-01-fire.html",desc:"The discovery and mastery of fire"},
+        {vol:2,label:"Guide",file:"relay-01-fire.html",desc:"Engineering fire — hearths to furnaces"},
+        {vol:3,label:"Thesis",file:"relay-01-fire.html",desc:"Fire as civilisational catalyst"}
+      ],
+      institutions:["International Energy Agency (IEA)","World Energy Council","IRENA","Prometheus Institute","National Fire Protection Association","Global Alliance for Clean Cookstoves"],
+      icards:["IP Equation","Verification Alpha","Day 100 Milestone","Block 391 Summary"]
+    },
+    {
+      num:2, title:"Agriculture", subtitle:"From Gathering to Growing",
+      quote:"The seed is the first contract between humanity and the future.",
+      pct:75,
+      sdgs:[{n:2,c:"#dda63a",name:"Zero Hunger"},{n:15,c:"#56c02b",name:"Life on Land"}],
+      volumes:[
+        {vol:1,label:"Perspective",file:"relay-02-tree.html",desc:"The agricultural revolution"},
+        {vol:2,label:"Guide",file:"relay-02-tree.html",desc:"Irrigation, cultivation, settlement"},
+        {vol:3,label:"Thesis",file:"relay-02-tree.html",desc:"Agriculture as surplus engine"}
+      ],
+      institutions:["FAO (UN)","CGIAR","World Food Programme","International Fund for Agricultural Development","Wageningen University"],
+      icards:["IP Equation","Procrastination Beta"]
+    },
+    {
+      num:3, title:"Writing", subtitle:"Memory Beyond the Mind",
+      quote:"Writing is infrastructure for thought — the relay that made all others recordable.",
+      pct:80,
+      sdgs:[{n:4,c:"#c5192d",name:"Quality Education"},{n:16,c:"#00689d",name:"Peace & Justice"}],
+      volumes:[
+        {vol:1,label:"Perspective",file:"relay-03-river.html",desc:"From tally marks to alphabets"},
+        {vol:2,label:"Guide",file:"relay-03-river.html",desc:"Scripts, printing, digital text"},
+        {vol:3,label:"Thesis",file:"relay-03-river.html",desc:"Writing as civilisational memory"}
+      ],
+      institutions:["UNESCO","British Library","Library of Congress","Internet Archive"],
+      icards:["IP Equation","Discovery Master Builder"]
+    },
+    {
+      num:4, title:"The City", subtitle:"Concentration and Specialisation",
+      quote:"The city is the machine that makes civilisation visible.",
+      pct:75,
+      sdgs:[{n:11,c:"#fd9d24",name:"Sustainable Cities"},{n:9,c:"#f36d25",name:"Industry & Innovation"}],
+      volumes:[
+        {vol:1,label:"Perspective",file:"relay-04-horse.html",desc:"Urbanisation and the built environment"},
+        {vol:2,label:"Guide",file:"relay-04-horse.html",desc:"City planning, sanitation, governance"},
+        {vol:3,label:"Thesis",file:"relay-04-horse.html",desc:"The city as civilisational accelerator"}
+      ],
+      institutions:["UN-Habitat","World Bank Urban Development","C40 Cities","ASCE","ICE"],
+      icards:["IP Equation","TP-013 Walkby"]
+    },
+    {
+      num:5, title:"Mathematics", subtitle:"The Language of Pattern",
+      quote:"Mathematics is the infrastructure of all other infrastructures.",
+      pct:70,
+      sdgs:[{n:4,c:"#c5192d",name:"Quality Education"},{n:9,c:"#f36d25",name:"Industry & Innovation"}],
+      volumes:[
+        {vol:1,label:"Perspective",file:"relay-05-roads.html",desc:"Number, geometry, algebra — from Babylonian base-60 to Euler's identity"},
+        {vol:2,label:"Guide",file:"relay-05-roads.html",desc:"Applied mathematics in civil engineering — structural analysis, fluid dynamics, optimisation"},
+        {vol:3,label:"Thesis",file:"relay-05-roads.html",desc:"Mathematics as universal language — the Pythagorean thread through 12,000 years"}
+      ],
+      institutions:["International Mathematical Union","Clay Mathematics Institute","Fields Institute","Isaac Newton Institute","American Mathematical Society"],
+      icards:["IP Equation","4 Laws of iAAi","Pythagorean Cypher (8\u2660)"],
+      timeline:"3000 BCE Babylonian base-60 \u2192 600 BCE Pythagoras \u2192 300 BCE Euclid's Elements \u2192 820 CE al-Khwarizmi (Algebra) \u2192 1687 Newton Principia \u2192 1748 Euler \u2192 1905 Einstein E=mc\u00b2 \u2192 2026 iAAi IP Equation",
+      equations:["EQ-001: IP = f(C\u2074) \u2014 Infrastructure Performance","EQ-008: Pythagorean Cypher \u2014 a\u00b2+b\u00b2=c\u00b2 as infrastructure metaphor","EQ-016: OODA vs IUMC \u2014 tactical vs strategic permanence"]
+    },
+    {
+      num:6, title:"Navigation", subtitle:"Crossing the Horizon",
+      quote:"Navigation is the infrastructure of ambition — the relay that made the world one.",
+      pct:78,
+      sdgs:[{n:14,c:"#0a97d9",name:"Life Below Water"},{n:17,c:"#19486a",name:"Partnerships"}],
+      volumes:[
+        {vol:1,label:"Perspective",file:"relay-06-ships.html",desc:"Stars, compasses, charts"},
+        {vol:2,label:"Guide",file:"relay-06-ships.html",desc:"Maritime engineering and GPS"},
+        {vol:3,label:"Thesis",file:"relay-06-ships.html",desc:"Navigation as globalisation engine"}
+      ],
+      institutions:["International Maritime Organization","Royal Institute of Navigation","International Hydrographic Organization","European Space Agency"],
+      icards:["IP Equation","Day 133 Milestone"]
+    },
+    {
+      num:7, title:"The Machine", subtitle:"Amplifying Human Force",
+      quote:"The machine is the relay where human muscle became infinite.",
+      pct:75,
+      sdgs:[{n:9,c:"#f36d25",name:"Industry & Innovation"},{n:12,c:"#bf8b2e",name:"Responsible Consumption"}],
+      volumes:[
+        {vol:1,label:"Perspective",file:"relay-07-loom.html",desc:"Levers, gears, steam"},
+        {vol:2,label:"Guide",file:"relay-07-loom.html",desc:"Mechanical engineering principles"},
+        {vol:3,label:"Thesis",file:"relay-07-loom.html",desc:"Mechanisation and labour"}
+      ],
+      institutions:["Institution of Mechanical Engineers","ASME","Smithsonian Institution","Science Museum London","MIT"],
+      icards:["IP Equation","TP-017 Master Builder"]
+    },
+    {
+      num:8, title:"Electricity", subtitle:"Invisible Power",
+      quote:"Electricity is the relay that made infrastructure invisible — and omnipresent.",
+      pct:75,
+      sdgs:[{n:7,c:"#fcc30b",name:"Affordable & Clean Energy"},{n:9,c:"#f36d25",name:"Industry & Innovation"}],
+      volumes:[
+        {vol:1,label:"Perspective",file:"relay-08-rail.html",desc:"From lightning to the grid"},
+        {vol:2,label:"Guide",file:"relay-08-rail.html",desc:"Power generation and distribution"},
+        {vol:3,label:"Thesis",file:"relay-08-rail.html",desc:"Electrification as civilisational leap"}
+      ],
+      institutions:["IEEE","IEC","World Energy Council","Uticome (UAE)","National Grid"],
+      icards:["IP Equation","FEW Nexus"]
+    },
+    {
+      num:9, title:"Communication", subtitle:"Collapsing Distance",
+      quote:"Communication is the relay that turned distance into an illusion.",
+      pct:72,
+      sdgs:[{n:9,c:"#f36d25",name:"Industry & Innovation"},{n:10,c:"#dd1367",name:"Reduced Inequalities"}],
+      volumes:[
+        {vol:1,label:"Perspective",file:"relay-09-engine.html",desc:"Telegraph, telephone, radio \u2014 from Morse code to fibre optics"},
+        {vol:2,label:"Guide",file:"relay-09-engine.html",desc:"Telecommunications infrastructure \u2014 spectrum allocation, submarine cables, 5G"},
+        {vol:3,label:"Thesis",file:"relay-09-engine.html",desc:"Communication as social infrastructure \u2014 the information layer of civilisation"}
+      ],
+      institutions:["ITU (UN)","Internet Society","GSMA","World Wide Web Foundation","IEEE Communications Society"],
+      icards:["IP Equation","SDG Alignment Matrix"],
+      timeline:"3500 BCE Cuneiform letters \u2192 490 BCE Pheidippides (Marathon) \u2192 1440 Gutenberg Press \u2192 1837 Morse Telegraph \u2192 1876 Bell Telephone \u2192 1895 Marconi Radio \u2192 1969 ARPANET \u2192 1991 WWW \u2192 2007 iPhone \u2192 2026 iAAi Platform",
+      equations:["EQ-001: IP = f(C\u2074) \u2014 Communication as C3 (Connectivity)","Shannon\u2019s Theorem: C = B log\u2082(1 + S/N) \u2014 channel capacity limit"]
+    },
+    {
+      num:10, title:"Computing", subtitle:"The Thinking Machine",
+      quote:"Computing is the relay that gave infrastructure a mind.",
+      pct:70,
+      sdgs:[{n:9,c:"#f36d25",name:"Industry & Innovation"},{n:4,c:"#c5192d",name:"Quality Education"}],
+      volumes:[
+        {vol:1,label:"Perspective",file:"relay-10-aaa.html",desc:"Abacus to AI"},
+        {vol:2,label:"Guide",file:"relay-10-aaa.html",desc:"Computer science and digital systems"},
+        {vol:3,label:"Thesis",file:"relay-10-aaa.html",desc:"Computing as civilisational nervous system"}
+      ],
+      institutions:["ACM","IEEE Computer Society","Turing Institute","Computer History Museum"],
+      icards:["IP Equation","4 Laws of iAAi","Procrastination Beta"]
+    },
+    {
+      num:11, title:"Networks", subtitle:"The Connected World",
+      quote:"Networks are the relay that made every other relay accessible to everyone.",
+      pct:70,
+      sdgs:[{n:9,c:"#f36d25",name:"Industry & Innovation"},{n:17,c:"#19486a",name:"Partnerships"}],
+      volumes:[
+        {vol:1,label:"Perspective",file:"relay-11-orbit.html",desc:"Roads, rails, internet \u2014 from Roman road networks to the global mesh"},
+        {vol:2,label:"Guide",file:"relay-11-orbit.html",desc:"Network theory and topology \u2014 Euler, Barab\u00e1si, scale-free architectures"},
+        {vol:3,label:"Thesis",file:"relay-11-orbit.html",desc:"Networks as civilisational connective tissue \u2014 the DCSN model"}
+      ],
+      institutions:["Internet Engineering Task Force","ICANN","World Economic Forum","Network Science Society","Santa Fe Institute"],
+      icards:["IP Equation","Block 393b Completion","SDG Alignment Matrix"],
+      timeline:"312 BCE Via Appia (Rome) \u2192 1st C Silk Road \u2192 1825 Stockton-Darlington Railway \u2192 1866 Transatlantic Cable \u2192 1957 Sputnik \u2192 1969 ARPANET \u2192 1989 WWW proposal \u2192 2004 Facebook \u2192 2009 Bitcoin \u2192 2026 DCSN Architecture",
+      equations:["EQ-001: IP = f(C\u2074) \u2014 Networks as C4 (Consciousness)","Metcalfe\u2019s Law: V = n\u00b2 \u2014 network value scales with connections","Euler\u2019s Graph Theory: V - E + F = 2 \u2014 foundation of network topology"]
+    },
+    {
+      num:12, title:"Programmable Humans", subtitle:"The Final Relay — Consciousness",
+      quote:"The final relay is not a machine. It is us.",
+      pct:72,
+      sdgs:[{n:3,c:"#4c9f38",name:"Good Health"},{n:16,c:"#00689d",name:"Peace & Justice"},{n:4,c:"#c5192d",name:"Quality Education"}],
+      volumes:[
+        {vol:1,label:"Perspective",file:"relay-12-human-nodes.html",desc:"Consciousness and the human node"},
+        {vol:2,label:"Guide",file:"relay-12-human-nodes.html",desc:"Neuroscience, AI, and human potential"},
+        {vol:3,label:"Thesis",file:"relay-12-human-nodes.html",desc:"The human as infrastructure endpoint"}
+      ],
+      institutions:["World Health Organization","Human Brain Project","Allen Institute","Santa Fe Institute","OpenAI","Manus AI"],
+      icards:["IP Equation","4 Laws of iAAi","TP-013 Walkby","TP-017 Master Builder","Day 134 Brief","TP-009 Permanence Crisis","Living Experiment","ACAD Handshake"],
+      timeline:"Block 380 (15 Mar 2026): TP-009 authored &mdash; AI data governance under legal scrutiny &bull; Block 393c: 6-layer audit discovers breach &mdash; SAP-001 claimed DONE but artefact never surfaced &bull; Block 393d: Full remediation &mdash; 7-point cross-linking, 4 iCards uploaded, gallery updated to 36 cards.",
+      equations:["EQ-016: OODA &rarr; IUMC (permanence vs immediacy)","EQ-010: IUMC Methodology (Identify &rarr; Understand &rarr; Manage &rarr; Control)","N + T = D (Nigel + Turing = Dearden)"]
+    }
+  ];
+
+  // Build jump nav
+  var jumpNav = document.getElementById('jumpNav');
+  relays.forEach(function(r) {
+    var a = document.createElement('a');
+    a.className = 'jump-btn';
+    a.href = '#relay-' + r.num;
+    a.textContent = String(r.num).padStart(2,'0') + ' ' + r.title;
+    jumpNav.appendChild(a);
+  });
+
+  // Build relay detail cards
+  var container = document.getElementById('relayDetails');
+  relays.forEach(function(r) {
+    var barClass = r.pct >= 80 ? 'high' : 'mid';
+
+    var volHtml = r.volumes.map(function(v) {
+      return '<a class="vol-link" href="/volumes/volume' + v.vol + '/' + v.file + '">' +
+        '<span class="vol-tag v' + v.vol + '">V' + v.vol + '</span>' +
+        '<span class="vol-name">' + v.label + ' &mdash; ' + v.desc + '</span>' +
+      '</a>';
+    }).join('');
+
+    var instHtml = r.institutions.map(function(i) {
+      return '<div class="inst-item"><span class="inst-dot"></span>' + i + '</div>';
+    }).join('');
+
+    var sdgHtml = r.sdgs.map(function(s) {
+      return '<span class="sdg-chip" style="border-color:'+s.c+';color:'+s.c+'">SDG '+s.n+': '+s.name+'</span>';
+    }).join('');
+
+    var icardHtml = r.icards.map(function(ic) {
+      return '<a class="icard-chip" href="/icard-gallery.html">' + ic + '</a>';
+    }).join('');
+
+    var html = '<div class="relay-detail" id="relay-' + r.num + '">' +
+      '<div class="rd-header">' +
+        '<span class="rd-num">Relay ' + String(r.num).padStart(2,'0') + '</span>' +
+        '<span class="rd-title">' + r.title + '</span>' +
+        '<span class="rd-subtitle">' + r.subtitle + '</span>' +
+        '<span class="rd-pct ' + barClass + '">' + r.pct + '%</span>' +
+      '</div>' +
+      '<div class="rd-body">' +
+        '<div class="rd-section">' +
+          '<div class="rd-section-title">Chapters Across 3 Volumes</div>' +
+          '<div class="vol-links">' + volHtml + '</div>' +
+        '</div>' +
+        '<div class="rd-section">' +
+          '<div class="rd-section-title">Key Institutions</div>' +
+          '<div class="inst-list">' + instHtml + '</div>' +
+        '</div>' +
+        '<div class="rd-section">' +
+          '<div class="rd-section-title">SDG Alignment</div>' +
+          '<div class="sdg-row">' + sdgHtml + '</div>' +
+          '<div class="rd-section-title" style="margin-top:16px;">Linked iCards</div>' +
+          '<div class="icard-chips">' + icardHtml + '</div>' +
+        '</div>' +
+        '<div class="rd-section">' +
+          '<div class="rd-section-title">Quick Links</div>' +
+          '<div class="vol-links">' +
+            '<a class="vol-link" href="/pages/relay-tracker.html"><span class="vol-tag v1" style="color:var(--copper);border-color:var(--copper);">TRACK</span><span class="vol-name">View in Relay Tracker</span></a>' +
+            '<a class="vol-link" href="/pages/sdg-matrix.html"><span class="vol-tag v2" style="color:#fd6925;border-color:#fd6925;">SDG</span><span class="vol-name">SDG Alignment Matrix</span></a>' +
+            '<a class="vol-link" href="/institutions.html"><span class="vol-tag v3" style="color:var(--gold);border-color:var(--gold);">INST</span><span class="vol-name">Full Institution Map</span></a>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+      (r.timeline ? '<div class="rd-timeline"><div class="rd-timeline-title">Historical Timeline</div><div class="rd-timeline-text">' + r.timeline + '</div></div>' : '') +
+      (r.equations ? '<div class="rd-equations"><div class="rd-equations-title">Key Equations</div>' + r.equations.map(function(eq){ return '<div class="rd-eq-item"><a href="/equations-register.html">' + eq + '</a></div>'; }).join('') + '</div>' : '') +
+      '<div class="rd-quote">&ldquo;' + r.quote + '&rdquo;</div>' +
+    '</div>';
+
+    container.insertAdjacentHTML('beforeend', html);
+  });
+
+  // Smooth scroll for jump nav
+  document.querySelectorAll('.jump-btn').forEach(function(btn) {
+    btn.addEventListener('click', function(e) {
+      e.preventDefault();
+      var target = document.querySelector(this.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior:'smooth', block:'start' });
+      document.querySelectorAll('.jump-btn').forEach(function(b) { b.classList.remove('active'); });
+      this.classList.add('active');
+    });
+  });
+
+  // Highlight jump nav on scroll
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        var id = entry.target.id;
+        document.querySelectorAll('.jump-btn').forEach(function(b) {
+          b.classList.toggle('active', b.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { threshold: 0.3 });
+  document.querySelectorAll('.relay-detail').forEach(function(el) { observer.observe(el); });
+
+  // Handle hash on load
+  if (window.location.hash) {
+    var target = document.querySelector(window.location.hash);
+    if (target) setTimeout(function() { target.scrollIntoView({ behavior:'smooth' }); }, 300);
+  }
+  </script>
+
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement -->
+
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement (v2 fixed) -->
+<script>
+(function() {
+  try {
+    var sid = sessionStorage.getItem('iaai_sid');
+    if (!sid) {
+      sid = 'ses_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 9);
+      sessionStorage.setItem('iaai_sid', sid);
+    }
+    var data = {
+      path: window.location.pathname + (window.location.hash || ''),
+      pageTitle: document.title || 'Untitled',
+      referrer: document.referrer || '',
+      sessionId: sid
+    };
+    fetch('/api/trpc/analytics.track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ json: data }),
+      credentials: 'include'
+    }).catch(function() {});
+    window.addEventListener('hashchange', function() {
+      var hashData = {
+        path: window.location.pathname + (window.location.hash || ''),
+        pageTitle: document.title || 'Untitled',
+        referrer: window.location.href,
+        sessionId: sid
+      };
+      fetch('/api/trpc/analytics.track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ json: hashData }),
+        credentials: 'include'
+      }).catch(function() {});
+    });
+  } catch(e) {}
+})();
+</script>
+
+    <!-- Back-to-Top Button Logic -->
+    <script>
+    (function() {
+        var btn = document.getElementById('back-to-top-btn');
+        if (!btn) return;
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                btn.style.display = 'flex';
+            } else {
+                btn.style.display = 'none';
+            }
+        }, { passive: true });
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    })();
+    </script>
+
+</body>
+</html>

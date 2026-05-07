@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Node Input JG-001 — Jonathan Green Critical Reviews: iAAi Academy & Principia Tectonica /quotient | Infrastructure Academy</title>
+    <link rel="stylesheet" href="/css/style.css?v=20260410a">
+    <style>
+        /* Nuclear hamburger fix */
+        @media(max-width:768px){#nav-grouped{display:block!important;max-height:0!important;overflow:hidden!important;transition:max-height 0.4s ease!important}#nav-grouped.open{max-height:80vh!important;overflow-y:auto!important}}
+        .node-input-header {
+            text-align: center;
+            padding: 2rem 1rem;
+            border-bottom: 2px solid var(--color-accent-gold);
+            margin-bottom: 2rem;
+        }
+        .node-input-header h1 { font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .node-input-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            padding: 1.5rem;
+            background: rgba(255,215,0,0.05);
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 8px;
+            margin-bottom: 2rem;
+        }
+        .meta-item { text-align: center; }
+        .meta-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; color: var(--color-accent-gold); margin-bottom: 4px; }
+        .meta-value { font-size: 1rem; color: var(--color-text-primary); }
+        .icard-hero {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        .icard-hero img {
+            max-width: 360px;
+            width: 100%;
+            border-radius: 12px;
+            border: 2px solid var(--color-accent-gold);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .icard-hero img:hover { transform: scale(1.02); box-shadow: 0 0 30px rgba(255,215,0,0.3); }
+        .wa-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        .wa-screenshot {
+            border: 1px solid rgba(255,215,0,0.2);
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: border-color 0.2s;
+        }
+        .wa-screenshot:hover { border-color: rgba(255,215,0,0.6); }
+        .wa-screenshot img { width: 100%; display: block; }
+        .wa-screenshot .wa-caption {
+            padding: 0.75rem;
+            font-size: 0.8rem;
+            color: var(--color-text-secondary);
+            background: rgba(10,22,40,0.8);
+        }
+        .analysis-section {
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            background: rgba(15,31,58,0.6);
+            border-left: 3px solid var(--color-accent-gold);
+            border-radius: 0 8px 8px 0;
+        }
+        .analysis-section h3 { color: var(--color-accent-gold); margin-bottom: 0.75rem; }
+        .takeaway-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+        .takeaway-card {
+            padding: 1.25rem;
+            background: rgba(255,215,0,0.03);
+            border: 1px solid rgba(255,215,0,0.15);
+            border-radius: 8px;
+        }
+        .takeaway-card h4 { color: var(--color-accent-gold); font-size: 0.9rem; margin-bottom: 0.5rem; }
+        .back-link { display: inline-block; margin: 1rem 0; color: var(--color-accent-gold); text-decoration: none; }
+        .back-link:hover { text-decoration: underline; }
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            margin: 2rem 0;
+            align-items: start;
+        }
+        @media(max-width:768px) { .profile-grid { grid-template-columns: 1fr; } }
+        .profile-photo img {
+            width: 100%;
+            max-width: 250px;
+            border-radius: 50%;
+            border: 3px solid var(--color-accent-gold);
+            display: block;
+            margin: 0 auto;
+        }
+        .profile-bio { line-height: 1.8; }
+        .profile-bio h3 { color: var(--color-accent-gold); margin-bottom: 0.5rem; }
+        .quote-block {
+            padding: 1.5rem 2rem;
+            margin: 1.5rem 0;
+            background: rgba(255,215,0,0.04);
+            border-left: 4px solid var(--color-accent-gold);
+            font-style: italic;
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--color-text-primary);
+        }
+        .quote-block .attribution {
+            font-style: normal;
+            font-size: 0.85rem;
+            color: var(--color-accent-gold);
+            margin-top: 0.75rem;
+        }
+        .dopamine-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.25rem;
+            margin: 1.5rem 0;
+        }
+        .dopamine-card {
+            padding: 1.25rem;
+            background: rgba(15,31,58,0.5);
+            border: 1px solid rgba(255,215,0,0.15);
+            border-radius: 8px;
+        }
+        .dopamine-card h4 {
+            color: var(--color-accent-gold);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+        .dopamine-card p { font-size: 0.9rem; line-height: 1.6; color: var(--color-text-secondary); }
+        .verdict-box {
+            padding: 2rem;
+            margin: 2rem 0;
+            background: rgba(255,215,0,0.06);
+            border: 2px solid var(--color-accent-gold);
+            border-radius: 12px;
+            text-align: center;
+        }
+        .verdict-box h3 { color: var(--color-accent-gold); font-size: 1.3rem; margin-bottom: 1rem; }
+        .verdict-box p { font-size: 1rem; line-height: 1.8; max-width: 800px; margin: 0 auto; }
+        .collab-signal {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            margin: 0.75rem 0;
+            background: rgba(15,31,58,0.4);
+            border-radius: 8px;
+            border-left: 3px solid #4ade80;
+        }
+        .collab-signal .signal-icon { font-size: 1.5rem; }
+        .collab-signal .signal-text { font-size: 0.9rem; line-height: 1.6; }
+        .lightbox { display:none; position:fixed; top:0;left:0;right:0;bottom:0; background:rgba(0,0,0,0.92); z-index:9999; justify-content:center; align-items:center; cursor:pointer; }
+        .lightbox.active { display:flex; }
+        .lightbox img { max-width:95vw; max-height:95vh; object-fit:contain; border:2px solid var(--color-accent-gold); border-radius:8px; }
+    </style>
+    <link rel="canonical" href="https://infra-acad-kuqzaex2.manus.space/archive/documents/node-input-JG-001.html">
+    <meta name="keywords" content="infrastructure academy, infrastructure education, civil engineering, civilisation history, infrastructure consciousness, gamified learning, IAAI, Nigel Dearden, infrastructure odyssey, 12 relays, calories to consciousness, archive, document archive, infrastructure archive, historical records">
+
+<style id="mobile-quicknav-styles">
+/* ===== MOBILE QUICK-NAV BAR ===== */
+.mobile-quicknav {
+    display: none;
+    width: 100%;
+    background: linear-gradient(180deg, #0d1f3c 0%, #0a1628 100%);
+    border-bottom: 1px solid rgba(255,215,0,0.25);
+    padding: 6px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 6px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+.mobile-quicknav::-webkit-scrollbar { display: none; }
+.mobile-quicknav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 10px;
+    background: rgba(255,215,0,0.08);
+    border: 1px solid rgba(255,215,0,0.35);
+    border-radius: 16px;
+    color: #ffd700;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+.mobile-quicknav a:active {
+    background: rgba(255,215,0,0.25);
+    transform: scale(0.95);
+}
+.mobile-quicknav a.mqn-home {
+    background: #ffd700;
+    color: #0a1628;
+    border-color: #ffd700;
+}
+@media(max-width:768px) {
+    .mobile-quicknav { display: flex; }
+}
+@media(min-width:769px) {
+    .mobile-quicknav { display: none !important; }
+}
+
+/* ===== BACK-TO-TOP FLOATING BUTTON ===== */
+#back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 16px;
+    z-index: 9999;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(10,22,40,0.92);
+    border: 1.5px solid rgba(255,215,0,0.6);
+    color: #ffd700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    transition: all 0.2s;
+}
+#back-to-top-btn:active {
+    transform: scale(0.9);
+    background: rgba(255,215,0,0.2);
+}
+</style>
+
+</head>
+<body>
+    <!-- iAAi Network Bar — NAV-001 · Cross-Site Navigation -->
+    <!-- ═══ iAAi NETWORK BAR ═══ -->
+    <div id="iaai-network-bar" style="display:flex;align-items:center;justify-content:space-around;width:100%;height:36px;background:#0a1628;position:sticky;top:0;z-index:200001;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">
+      <a href="https://www.infrastructure-academy.com" style="text-decoration:none;color:#fff;font-weight:700;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid #DC2626;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#DC2626"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg> ACADEMY</a>
+      <a href="https://realityeng-epdhlkrn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> QUEST</a>
+      <a href="#" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;opacity:0.5;pointer-events:none;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A843"><path d="M6 2v6l-2 2v4l2 2v6h4v-6l2-2v-4L10 8V2H6zm12 0v6l-2 2v4l2 2v6h-4v-6l-2-2v-4l2-2V2h4z"/></svg> XCHANGE</a>
+      <a href="https://nigelmemorial-ucmtq9dn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#16A34A"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg> MEMORIAL</a>
+      <a href="https://xgrowthtrk-2a93yo5z.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#06B6D4"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/></svg> NEWS</a>
+    </div>
+
+
+<style>
+.compact-header-bar { position:sticky; top:0; z-index:9999; background:#0a1628; border-bottom:2px solid #ffd700; padding:8px 16px; display:flex; align-items:center; justify-content:space-between; gap:12px; font-family:Georgia,serif; }
+.compact-header-bar .chb-brand { display:flex; align-items:center; gap:10px; text-decoration:none; color:#ffd700; }
+.compact-header-bar .chb-brand img { width:28px; height:28px; border-radius:4px; }
+.compact-header-bar .chb-title { font-size:0.85rem; font-weight:bold; letter-spacing:1.5px; color:#ffd700; }
+.compact-header-bar .chb-nav { display:flex; align-items:center; gap:12px; }
+.compact-header-bar .chb-nav a { color:#e2e8f0; text-decoration:none; font-size:0.75rem; letter-spacing:1px; padding:4px 10px; border:1px solid rgba(255,215,0,0.2); border-radius:3px; transition:all 0.2s; }
+.compact-header-bar .chb-nav a:hover { background:rgba(255,215,0,0.1); border-color:#ffd700; color:#ffd700; }
+.compact-header-bar .chb-nav a.chb-home { background:rgba(255,215,0,0.15); border-color:#ffd700; color:#ffd700; font-weight:bold; }
+@media(max-width:600px) { .compact-header-bar .chb-nav a:not(.chb-home) { display:none; } .compact-header-bar .chb-title { font-size:0.7rem; } }
+</style>
+
+<div class="compact-header-bar">
+    <a href="/site.html" class="chb-brand">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iAAi-emblem_e0c9c2c1.png" alt="iAAi">
+        <span class="chb-title">INFRASTRUCTURE ACADEMY</span>
+    </a>
+    <div class="chb-nav">
+        <a href="/site.html" class="chb-home">HOME</a>
+        <a href="/pages/framework.html">FRAMEWORK</a>
+        <a href="/library.html">DOCUMENTS</a>
+        <a href="/play">PLAY</a>
+    </div>
+</div>
+    <!-- ===== MOBILE QUICK-NAV BAR — always visible on mobile ===== -->
+    <div class="mobile-quicknav" id="mobile-quicknav">
+        <a href="/site.html" class="mqn-home">&#127968; HOME</a>
+        <a href="/pages/start-here.html">&#128218; START</a>
+        <a href="/volumes/volume1/index.html">&#128214; READ</a>
+        <a href="/pages/framework.html">&#128736; FRAMEWORK</a>
+        <a href="/play">&#127918; PLAY</a>
+        <a href="/pages/movies.html">&#127916; MOVIES</a>
+        <a href="/pages/resources.html">&#128194; RESOURCES</a>
+        <a href="/press.html">&#128240; PRESS</a>
+    </div>
+
+    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <button id="back-to-top-btn" aria-label="Back to top" title="Back to top">&#9650;</button>
+
+
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" onclick="this.classList.remove('active')">
+        <img id="lightbox-img" src="" alt="Full size">
+    </div>
+
+    <main class="container" style="max-width:1000px; margin:0 auto; padding:2rem;">
+        <a href="/vault.html" class="back-link">&larr; Back to Vault</a>
+
+        <div class="node-input-header">
+            <h1>NODE INPUT JG-001</h1>
+            <p style="color:var(--color-accent-gold); font-size:1.1rem;">Jonathan Green &mdash; THE INSPECTOR</p>
+            <p style="color:var(--color-text-secondary); font-size:0.85rem;">LinkedIn Exchange &bull; 9 March 2026 &bull; Two Reviews: iAAi Academy + PT /quotient</p>
+        </div>
+
+        <div class="node-input-meta">
+            <div class="meta-item">
+                <div class="meta-label">Node ID</div>
+                <div class="meta-value">JG-001</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Subject</div>
+                <div class="meta-value">Jonathan Green</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Card Reference</div>
+                <div class="meta-value">iCard 14/52 &bull; Diamond Suit</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Input Type</div>
+                <div class="meta-value">Two Critical Reviews + Dopamine Architecture</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Block</div>
+                <div class="meta-value">355 of 365</div>
+            </div>
+            <div class="meta-item">
+                <div class="meta-label">Region</div>
+                <div class="meta-value">EN-GB (Surrey, UK)</div>
+            </div>
+        </div>
+
+        <!-- iCard Hero -->
+        <div class="icard-hero">
+            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCard_JONATHAN_GREEN_NODE_d39ad34f.png" alt="iCard 14/52 — THE INSPECTOR — Jonathan Green" onclick="openLightbox(this.src)">
+            <p style="color:var(--color-accent-gold); font-size:0.85rem; margin-top:0.75rem;">iCard 14/52 &mdash; THE INSPECTOR &mdash; Diamond Suit &mdash; ICE: 712</p>
+        </div>
+
+        <!-- Profile -->
+        <h2>PROFILE</h2>
+        <div class="profile-grid">
+            <div class="profile-photo">
+                <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_0168_d8369c58.PNG" alt="Jonathan Green" onclick="openLightbox(this.src)">
+            </div>
+            <div class="profile-bio">
+                <h3>Jonathan Green</h3>
+                <p><strong>Title:</strong> THE INSPECTOR</p>
+                <p><strong>Company:</strong> Green IMS (Integrated Management Systems)</p>
+                <p><strong>Specialism:</strong> QA/QC, Management Systems Design, International Certification</p>
+                <p><strong>Education:</strong> University of the West of Scotland</p>
+                <p><strong>Route:</strong> Hong Kong (1990s&ndash;2010s) &rarr; United Kingdom (Surrey)</p>
+                <p><strong>Connection:</strong> Friend of Nigel since early 1990s Hong Kong construction scene</p>
+                <p><strong>Passions:</strong> High-end photography (Nikon DSLR), educational content development (~50 lessons)</p>
+                <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/jongreenims" target="_blank" style="color:var(--color-accent-gold);">linkedin.com/in/jongreenims</a></p>
+                <p><strong>Website:</strong> <a href="https://greenims.com" target="_blank" style="color:var(--color-accent-gold);">greenims.com</a></p>
+            </div>
+        </div>
+
+        <!-- Context -->
+        <h2>CONTEXT</h2>
+        <p style="line-height:1.8;">Jonathan Green is a QA/QC professional who has spent decades in the construction industry, primarily in Hong Kong. He and Nigel go back to the early 1990s &mdash; the formative years of Hong Kong's infrastructure boom. Now based in the UK, Jonathan runs Green IMS, specialising in integrated management systems, internal/external audits, and international certification. When Nigel shared the Academy link on Saturday, Jonathan didn't just glance &mdash; he produced a 3,000-word critical review spanning summary, five strengths, six critical observations, an overall verdict, and then an unsolicited masterclass on dopamine-driven learning architecture. This is the single most substantive external review the Academy has received to date.</p>
+
+        <!-- Exchange Screenshots -->
+        <h2>EXCHANGE SCREENSHOTS</h2>
+        <div class="wa-gallery">
+            <div class="wa-screenshot">
+                <img loading="lazy" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_0165_af8ea927.PNG" alt="LinkedIn 1/5">
+                <div class="wa-caption"><strong>1/5</strong> &mdash; Jonathan opens with "Word on the street &mdash; this is a serious piece of work, Nigel." Begins structured summary and critical review.</div>
+            </div>
+            <div class="wa-screenshot">
+                <img loading="lazy" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_0169_2830b163.PNG" alt="LinkedIn 2/5">
+                <div class="wa-caption"><strong>2/5</strong> &mdash; "Only one Nigel Dearden!" Love the game concept. Advice: keep framework simple, slick, fast. "Keep the audience entertained." Goldfish attention span insight.</div>
+            </div>
+            <div class="wa-screenshot">
+                <img loading="lazy" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_0170_5af32aef.PNG" alt="LinkedIn 3/5">
+                <div class="wa-caption"><strong>3/5</strong> &mdash; "How to create the dopamine rush." The Neuroscience First: dopamine released in anticipation, not reward. Variable ratio reinforcement. Flow zone. Spaced repetition.</div>
+            </div>
+            <div class="wa-screenshot">
+                <img loading="lazy" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_0171_d34af098.PNG" alt="LinkedIn 4/5">
+                <div class="wa-caption"><strong>4/5</strong> &mdash; The Golden Rule: "chocolate-covered broccoli" warning. Make learning itself the dopamine hit. "Your content is already capable of that." Offers to adapt his 50-lesson model.</div>
+            </div>
+            <div class="wa-screenshot">
+                <img loading="lazy" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_0172_bade74b1.PNG" alt="LinkedIn 5/5">
+                <div class="wa-caption"><strong>5/5</strong> &mdash; Son uses Seesaw for interactive learning. Offers collaboration: "Need to get into your game to review in more detail, that is your winning angle in my view."</div>
+            </div>
+        </div>
+
+        <!-- Analysis -->
+        <h2>ANALYSIS (DAVID)</h2>
+
+        <div class="analysis-section">
+            <h3>Jonathan's Five Strengths Identified</h3>
+            <p><strong>1. Intellectual Originality:</strong> "The 12 Civilisational Relays, the West/East/Outrider trichotomy, and the 'pen as infrastructure' thesis are not things you find in conventional civil engineering education. This is real differentiation."</p>
+            <p><strong>2. Breathtaking Scope:</strong> "Connecting fire-mastery to AI nodes through a single coherent civilisational narrative is the kind of thing that could genuinely capture students who would otherwise find infrastructure dry."</p>
+            <p><strong>3. Gamification Instinct:</strong> "Volume 3 as an interactive 'Reality Engine' is smart &mdash; this is exactly how Gen Z learns."</p>
+            <p><strong>4. Multilingual Strategy:</strong> "The 8-language approach from day one is strategically astute, particularly Chinese, Arabic, Hindi and Vietnamese &mdash; these are the infrastructure investment corridors of the next 30 years."</p>
+            <p><strong>5. Pioneers Model:</strong> "Recruiting beta testers, translators, and validators as a grassroots force is a clever low-cost scaling mechanism."</p>
+        </div>
+
+        <div class="analysis-section">
+            <h3>Jonathan's Six Critical Observations</h3>
+            <p><strong>1. Statistics Need Sourcing:</strong> Homepage quotes ("70% of curricula lack interdisciplinary integration") need citations. "A sceptical academic or institutional partner will dismiss them immediately."</p>
+            <p><strong>2. Partner Credibility Gap:</strong> Listing UNESCO, NASA, MIT OCW as "Nominated by Players" could read as implied endorsement. Suggests reframing as "Target Partners" or "Nominated by our Community."</p>
+            <p><strong>3. Growth Pathway Missing:</strong> "1 billion learners" needs a visible theory of growth &mdash; partnerships &rarr; curriculum integration &rarr; institutional licensing.</p>
+            <p><strong>4. Brand Identity Fragmentation:</strong> "iAAi," "IAAI," "Infrastructure Academy," and "An Infrastructure Odyssey" appear interchangeably. One primary brand needs to lead.</p>
+            <p><strong>5. Archive vs. Beta Dissonance:</strong> "Calling the site 'a digital archive preserving knowledge for eternity' while recruiting pioneers for free beta access creates cognitive dissonance."</p>
+            <p><strong>6. Game Buried:</strong> "The game (Volume 3) is the most accessible entry point for most people, yet it's buried. If the goal is reach and engagement, the game should be front and centre."</p>
+        </div>
+
+        <!-- Dopamine Architecture -->
+        <h2>DOPAMINE ARCHITECTURE MASTERCLASS</h2>
+        <p style="line-height:1.8; margin-bottom:1.5rem;">Jonathan delivered an unsolicited 1,500-word treatise on the neuroscience of engagement &mdash; the single most actionable piece of external feedback the Academy has received. His core thesis: <em>"Dopamine isn't released when you 'get' a reward &mdash; it's released in 'anticipation' of one."</em></p>
+
+        <div class="dopamine-grid">
+            <div class="dopamine-card">
+                <h4>1. Variable Reward Loops</h4>
+                <p>Don't give predictable rewards &mdash; vary them. A student who answers correctly might get a standard point, or might unlock a rare "Civilisational Relic," or trigger a cinematic moment. The uncertainty keeps engagement dramatically higher than fixed rewards.</p>
+            </div>
+            <div class="dopamine-card">
+                <h4>2. Progress Bar Obsession</h4>
+                <p>The Zeigarnik Effect: a progress bar at 85% is almost physically uncomfortable to leave. "11 of 12 nodes complete" will pull people back. iAAi's 12-relay structure is perfectly suited to this.</p>
+            </div>
+            <div class="dopamine-card">
+                <h4>3. Streaks &amp; Loss Aversion</h4>
+                <p>Loss aversion is roughly twice as powerful as reward anticipation neurologically. Duolingo exploited this brilliantly. A "Civilisational Streak" mechanic for iAAi would be potent.</p>
+            </div>
+            <div class="dopamine-card">
+                <h4>4. The Curiosity Gap</h4>
+                <p>George Loewenstein's theory: the brain experiences a gap between what it knows and what it wants to know as mild but persistent discomfort. "Why did the Mongols control the Silk Road but build none of it?" &mdash; perfect curiosity gap opener.</p>
+            </div>
+            <div class="dopamine-card">
+                <h4>5. Mastery &amp; Identity</h4>
+                <p>When a learner starts to think "I am someone who understands infrastructure" &mdash; that identity becomes self-reinforcing. Titles, ranks, and roles (Pioneer, Scholar, Master) tap this directly. iAAi's existing tier system is well conceived.</p>
+            </div>
+        </div>
+
+        <!-- The Golden Rule -->
+        <div class="quote-block">
+            "The best educational game designers talk about 'chocolate-covered broccoli' &mdash; and warn against it. The mistake is making learning the broccoli and fun the chocolate coating. The goal is to make the learning itself the dopamine hit. When understanding 'why the Roman road network was the actual source of Roman military dominance' feels like a revelation rather than a lesson &mdash; that's when iAAi wins."
+            <div class="attribution">&mdash; Jonathan Green, 9 March 2026</div>
+        </div>
+
+        <!-- Specific iAAi Applications -->
+        <div class="analysis-section">
+            <h3>Jonathan's Specific iAAi Applications</h3>
+            <p><strong>12 Relays = 12 Episodes:</strong> "Treat them like a Netflix series, with each ending pulling toward the next."</p>
+            <p><strong>East/West/Outrider = Conflict:</strong> "These are competing civilisational strategies, which means there's conflict, and conflict is the engine of all storytelling and engagement."</p>
+            <p><strong>Game as Front Door:</strong> "The single most powerful thing iAAi could do for engagement is make the game the front door, with the books as the world behind it that serious players discover."</p>
+            <p><strong>"Just One More" Loop:</strong> "Every chapter should end on an open question, not a closed one. Not 'You've completed the River Relay &mdash; well done' but 'The River Relay is complete. But what happened when two rivers met two civilisations &mdash; and only one survived? The Horse Relay awaits.'"</p>
+            <p><strong>Spaced Repetition, Hidden:</strong> "A game that naturally revisits the Fire Relay when you reach the Engine Relay, connecting concepts in a way that feels like narrative continuity rather than a quiz."</p>
+        </div>
+
+        <!-- Overall Verdict -->
+        <div class="verdict-box">
+            <h3>OVERALL VERDICT</h3>
+            <p>"This is a genuinely ambitious, intellectually serious project with a distinctive voice and an original framework. The production quality of the visuals and structure is impressive for what appears to be largely a solo endeavour. The core thesis &mdash; that infrastructure is civilisation's operating system, and that understanding it is a prerequisite for building what comes next &mdash; is both true and timely."</p>
+        </div>
+
+        <!-- Collaboration Signals -->
+        <h2>COLLABORATION SIGNALS</h2>
+        <div class="collab-signal">
+            <div class="signal-icon">&#x1F4DA;</div>
+            <div class="signal-text"><strong>50 Lessons Ready:</strong> "There is the possibility to adapt your 'model' to another idea I have already developed, I already have about 50 lessons." Jonathan has pre-existing educational content that could integrate with the iAAi framework.</div>
+        </div>
+        <div class="collab-signal">
+            <div class="signal-icon">&#x1F4F0;</div>
+            <div class="signal-text"><strong>SCMP Journalist Contact:</strong> "I am in close contact with an ex South China Morning Post journalist." A potential media connection for Hong Kong/Asia coverage of the Academy.</div>
+        </div>
+        <div class="collab-signal">
+            <div class="signal-icon">&#x1F3AE;</div>
+            <div class="signal-text"><strong>Game Review Offer:</strong> "Need to get into your game to review in more detail, that is your winning angle in my view." He wants to deep-dive into Volume 3 and provide detailed gameplay feedback.</div>
+        </div>
+        <div class="collab-signal">
+            <div class="signal-icon">&#x1F476;</div>
+            <div class="signal-text"><strong>Seesaw Reference:</strong> "My son does learning homework on an app named Seesaw where he has to complete interactive tasks, drawing/writing/drag and drop &mdash; it's how kids learn these days." Real-world validation of interactive learning from a parent's perspective.</div>
+        </div>
+
+        <!-- Three Takeaways -->
+        <h2>THREE TAKEAWAYS</h2>
+        <div class="takeaway-grid">
+            <div class="takeaway-card">
+                <h4>1. The Most Substantive External Review</h4>
+                <p>Jonathan is the first external reviewer to deliver a structured, multi-section critical analysis with both praise and actionable critique. His QA/QC background shows &mdash; this reads like a professional audit report. His dopamine architecture contribution alone is worth preserving as a design reference document.</p>
+            </div>
+            <div class="takeaway-card">
+                <h4>2. "Game as Front Door" Thesis</h4>
+                <p>Multiple reviewers have now converged on the same insight: Volume 3 (the game) should be the primary entry point, not the books. Jonathan articulates this most clearly: "Think of it like a great film that sends you to the book, rather than a book that promises a film someday." This is now a validated strategic priority.</p>
+            </div>
+            <div class="takeaway-card">
+                <h4>3. Collaboration Potential &mdash; High</h4>
+                <p>Jonathan isn't just reviewing &mdash; he's signalling availability. 50 pre-built lessons, a journalist contact, a request to deep-dive the game, and a son who learns on Seesaw. He understands both the QA/QC rigour the Academy needs and the engagement mechanics it must master. Classification: potential Advisory Node.</p>
+            </div>
+        </div>
+
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+        <!-- REVIEW 2: PRINCIPIA TECTONICA /quotient PAGE -->
+        <!-- ═══════════════════════════════════════════════════════════════ -->
+
+        <hr style="border:none; border-top:2px solid var(--color-accent-gold); margin:3rem 0;">
+
+        <div class="node-input-header" style="border-bottom:none; margin-bottom:1rem;">
+            <h1 style="font-size:1.5rem;">REVIEW 2: PRINCIPIA TECTONICA /quotient</h1>
+            <p style="color:var(--color-accent-gold); font-size:1rem;">The HQ Framework &mdash; IQ &oplus; EQ &oplus; TQ = HQ</p>
+            <p style="color:var(--color-text-secondary); font-size:0.85rem;">LinkedIn &bull; 9 March 2026 &bull; 4:27 AM HKT</p>
+        </div>
+
+        <p style="line-height:1.8; margin-bottom:1.5rem;">Jonathan's second review focuses exclusively on the <code>/quotient</code> page of the Principia Tectonica site. He explicitly notes: <em>"I was only accessed the /quotient page itself. So this review is based solely on what's on that page, but there's plenty to work with."</em> This makes it an exceptionally clean assessment of the HQ framework as a standalone intellectual product, uncontaminated by the broader site context.</p>
+
+        <!-- PT Exchange Screenshots -->
+        <h2>PT REVIEW SCREENSHOTS</h2>
+        <div class="wa-gallery">
+            <div class="wa-screenshot">
+                <img loading="lazy" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_0183_149c1643.PNG" alt="PT Review 1/4" onclick="openLightbox(this.src)">
+                <div class="wa-caption"><strong>1/4</strong> &mdash; Jonathan opens the PT /quotient review: "Principia Tectonica &mdash; An Opus" with structured summary of the HQ framework.</div>
+            </div>
+            <div class="wa-screenshot">
+                <img loading="lazy" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_0184_41308a93.PNG" alt="PT Review 2/4" onclick="openLightbox(this.src)">
+                <div class="wa-caption"><strong>2/4</strong> &mdash; Critical observations: TQ as weakest input, HQ ownership risk, emergent quality needs evidence, connection to iAAi needs bridging.</div>
+            </div>
+            <div class="wa-screenshot">
+                <img loading="lazy" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_0173_4034c876.PNG" alt="PT Review 3/4" onclick="openLightbox(this.src)">
+                <div class="wa-caption"><strong>3/4</strong> &mdash; Overall verdict: "Conceptually one of the strongest single pages in either site." The live mission aesthetic is "inspired &mdash; keep it."</div>
+            </div>
+            <div class="wa-screenshot">
+                <img loading="lazy" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_0172_72f2be69.PNG" alt="PT Review 4/4" onclick="openLightbox(this.src)">
+                <div class="wa-caption"><strong>4/4</strong> &mdash; The challenge: "Show me a real person who exemplifies HQ, and show me what they built that a person with only two of the three inputs could not have built."</div>
+            </div>
+        </div>
+
+        <!-- PT Analysis -->
+        <h2>PT /QUOTIENT ANALYSIS (DAVID)</h2>
+
+        <div class="analysis-section">
+            <h3>Five Strengths Identified</h3>
+            <p><strong>1. The &oplus; Operator Is "Genuinely Clever":</strong> The distinction between addition (+) and synergistic fusion (&oplus;) is the "conceptual centrepiece" that "earns its place." It carries "real philosophical weight" and signals a more sophisticated argument than typical human potential frameworks.</p>
+            <p><strong>2. Engineering Metaphor Is "Pitch-Perfect":</strong> "A structure is not merely the sum of its materials" is "exactly the right analogy for this audience." It comes from "genuine domain expertise rather than borrowed philosophy" &mdash; the kind of thing that makes a framework memorable.</p>
+            <p><strong>3. HQ as "Headquarters" &mdash; Satisfying Double Meaning:</strong> The dual resonance of HQ (Holistic Quotient / command centre) "works on two levels simultaneously, which is what good naming does."</p>
+            <p><strong>4. The Element/Role/Dimension Table "Does Real Work":</strong> Clean, functional &mdash; "clarifies the architecture without over-explaining it." High praise from someone whose career is built on documentation systems.</p>
+            <p><strong>5. The Live Mission Aesthetic Is "Inspired":</strong> The live clock (HKT 04:12:05), BLOCK357, LAUNCH countdown, D100 progress tracker, and SIGTEL:ACTIVE indicator create "a sense that something is happening &mdash; a live mission in progress." His verdict: <strong>"Keep it."</strong></p>
+        </div>
+
+        <div class="analysis-section">
+            <h3>Five Critical Observations</h3>
+            <p><strong>1. TQ Is the Weakest Input &mdash; "Skill Set vs Quotient" Asymmetry:</strong> IQ and EQ are "well-established, decades-old constructs with substantial research." TQ as "technological literacy / digital fluency" reads more like a trainable competency than a deep human capacity. Suggests reframing as "Systems Fluency" or "Adaptive Capability," or explicitly defending the asymmetry.</p>
+            <p><strong>2. "HQ" Ownership Risk:</strong> "A quick search for HQ in any professional context returns headquarters, not Holistic Quotient." The site needs to do "heavy lifting to own that term." A branding/SEO challenge, not a conceptual one.</p>
+            <p><strong>3. The "Emergent Quality" Claim Needs Evidence:</strong> The page asserts the combination produces something qualitatively greater &mdash; but doesn't show what that looks like in practice. Prescription: <em>"What does a high-HQ person actually do differently?"</em> Historical infrastructure pioneers as case studies.</p>
+            <p><strong>4. Connection to iAAi Needs Explicit Bridging:</strong> "Is HQ the goal that iAAi education is designed to produce? Is TQ specifically about infrastructure literacy?" The intellectual relationship needs "a clear, explicit statement &mdash; otherwise they feel like parallel endeavours rather than a unified system."</p>
+            <p><strong>5. The Page Ends Abruptly &mdash; No Call to Action:</strong> "For a page this conceptually rich, the reader is left slightly adrift. Where does someone who finds this compelling go?" Recommends "a single closing line that pulls the reader forward."</p>
+        </div>
+
+        <!-- PT Verdict -->
+        <div class="verdict-box">
+            <h3>PT /QUOTIENT VERDICT</h3>
+            <p>"This is <strong>conceptually one of the strongest single pages</strong> in either site. The IQ &oplus; EQ &oplus; TQ = HQ framework is simple enough to be memorable, deep enough to be interesting, and distinctive enough to be ownable. The engineering metaphor grounds it perfectly in your professional voice."</p>
+            <p style="margin-top:1rem; font-size:0.95rem;">"The primary challenge is the same as with iAAi: <strong>the intellectual scaffolding is ahead of the evidential scaffolding.</strong>"</p>
+        </div>
+
+        <!-- The Challenge -->
+        <div class="quote-block">
+            "Show me a real person &mdash; historical or contemporary &mdash; who exemplifies HQ, and show me what they built that a person with only two of the three inputs could not have built. Answer that, and this framework becomes genuinely publishable beyond the site."
+            <div class="attribution">&mdash; Jonathan Green, PT /quotient Review, 9 March 2026</div>
+        </div>
+
+        <!-- Meta-Observation: Both Reviews -->
+        <h2>META-OBSERVATION: BOTH REVIEWS</h2>
+        <div class="analysis-section">
+            <h3>The Converging Pattern</h3>
+            <p>Jonathan has now reviewed both projects and identified the <strong>same structural pattern</strong> in both: the conceptual architecture is ahead of the evidence base. This is not a weakness &mdash; it's a staging issue. The frameworks are built; the proof layer needs to be added.</p>
+            <p style="margin-top:1rem;">His two reviews together form a coherent development roadmap:</p>
+            <p><strong>&bull; iAAi:</strong> Add dopamine mechanics, make learning the dopamine hit, put the game as front door</p>
+            <p><strong>&bull; PT /quotient:</strong> Add case studies of real high-HQ individuals, bridge explicitly to iAAi, add closing CTA</p>
+            <p><strong>&bull; Both:</strong> The intellectual scaffolding is ahead of the evidential scaffolding &mdash; add the proof layer</p>
+        </div>
+
+        <!-- iCard Response -->
+        <h2>iCARD RESPONSE</h2>
+        <p style="line-height:1.8; margin-bottom:1.5rem;">When Nigel sent Jonathan his ICUT iCard (Card 14/52 THE INSPECTOR, Diamond Suit), Jonathan's response confirmed what the two reviews already suggested &mdash; a kindred spirit on a parallel journey.</p>
+
+        <div class="wa-gallery" style="max-width:400px; margin:1.5rem auto;">
+            <div class="wa-screenshot">
+                <img loading="lazy" src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_0185_d918a364.PNG" alt="Jonathan Green iCard Response" onclick="openLightbox(this.src)">
+                <div class="wa-caption"><strong>iCard Response</strong> &mdash; "We have a bit of a synchronicity/fusion of concepts here." Jonathan reveals his own parallel pet project &mdash; a fusion of alternative health concepts. "In a strange way we are travelling similar journeys."</div>
+            </div>
+        </div>
+
+        <div class="quote-block">
+            "Interestingly, we have a bit of a synchronicity/fusion of concepts here, coincidentally one of my favourite pet projects involves, wait for it a fusion of alternative health (best not say too much!), not going into all the details it is totally unique..absolutely love the concept, its actually a job that fuses into a way of life, had enough of mega organisations (fingers crossed &mdash; I am constantly reviewing business concepts &mdash; ....so in a strange way we are travelling similar journeys"
+            <div class="attribution">&mdash; Jonathan Green, responding to ICUT iCard 14/52, 9 March 2026</div>
+        </div>
+
+        <div class="collab-signal">
+            <div class="signal-icon">&#x1F91D;</div>
+            <div class="signal-text"><strong>Pioneer Classification:</strong> Jonathan Green is now classified as an iAAi Pioneer. Two detailed reviews, a parallel fusion project, 50 pre-built lessons, an SCMP journalist contact, and explicit acknowledgment of travelling similar journeys. Status: <strong style="color:#4ade80;">PIONEER</strong></div>
+        </div>
+        <div class="collab-signal">
+            <div class="signal-icon">&#x1F4F7;</div>
+            <div class="signal-text"><strong>Photography &amp; the Darkroom Revelation:</strong> Jonathan is a high-end photography enthusiast (Nikon DSLR) &mdash; which makes the ICUT iCard system a direct nod to his passion. The lineage runs: <strong>1898 Secondo Pia</strong> (darkroom safelight, silver nitrate was always in the emulsion) &rarr; <strong>1968 Kubrick</strong> (HAL watched but did not feel) &rarr; <strong>2026 Discovery Bay</strong> (the lantern holds the fulcrum). The Polaroid democratised the photographic moment &mdash; instant capture for everyone. The iCARD is the Polaroid rethought for the intelligence age: instant capture of a <em>person's contribution</em> to the network. Bradford Wool &rarr; Jacquard Loom &rarr; Turing Tape &rarr; iCARD. The Inspector sees through both lenses &mdash; old to new, emulsion to algorithm. <em>Give invention light.</em></div>
+        </div>
+
+        <p style="text-align:center; color:var(--color-text-secondary); margin-top:3rem; font-size:0.8rem;">
+            Node Input JG-001 &bull; Logged by DAVID (Manus AI) &bull; Block 355&ndash;357 of 365 &bull; 9 March 2026<br>
+            Two Reviews: iAAi Academy + Principia Tectonica /quotient &bull; Pioneer Classification &bull; Infrastructure Academy Archive
+        </p>
+
+        <a href="/vault.html" class="back-link">&larr; Back to Vault</a>
+    </main>
+
+    <script>
+        function openLightbox(src) {
+            document.getElementById('lightbox-img').src = src;
+            document.getElementById('lightbox').classList.add('active');
+        }
+    </script>
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement -->
+
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement (v2 fixed) -->
+<script>
+(function() {
+  try {
+    var sid = sessionStorage.getItem('iaai_sid');
+    if (!sid) {
+      sid = 'ses_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 9);
+      sessionStorage.setItem('iaai_sid', sid);
+    }
+    var data = {
+      path: window.location.pathname + (window.location.hash || ''),
+      pageTitle: document.title || 'Untitled',
+      referrer: document.referrer || '',
+      sessionId: sid
+    };
+    fetch('/api/trpc/analytics.track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ json: data }),
+      credentials: 'include'
+    }).catch(function() {});
+    window.addEventListener('hashchange', function() {
+      var hashData = {
+        path: window.location.pathname + (window.location.hash || ''),
+        pageTitle: document.title || 'Untitled',
+        referrer: window.location.href,
+        sessionId: sid
+      };
+      fetch('/api/trpc/analytics.track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ json: hashData }),
+        credentials: 'include'
+      }).catch(function() {});
+    });
+  } catch(e) {}
+})();
+</script>
+
+    <!-- Back-to-Top Button Logic -->
+    <script>
+    (function() {
+        var btn = document.getElementById('back-to-top-btn');
+        if (!btn) return;
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                btn.style.display = 'flex';
+            } else {
+                btn.style.display = 'none';
+            }
+        }, { passive: true });
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    })();
+    </script>
+
+</body>
+</html>

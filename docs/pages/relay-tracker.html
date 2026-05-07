@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relay Progress Tracker — Infrastructure Academy</title>
+  <link rel="icon" type="image/x-icon" href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/favicon_32_80e4326c.png">
+  <meta name="description" content="Track documentation progress across all 12 Civilizational Relays — chapters, institutions, iCards, and SDG alignment.">
+  <style>
+    :root {
+      --navy: #0a1628;
+      --navy-light: #0f1f3a;
+      --gold: #ffd700;
+      --gold-dim: rgba(255,215,0,0.4);
+      --text: #e0e0e0;
+      --text-dim: #999;
+      --green: #22c55e;
+      --blue: #60a5fa;
+      --copper: #d97706;
+      --red: #ef4444;
+    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    body { background:var(--navy); color:var(--text); font-family:Georgia,'Times New Roman',serif; min-height:100vh; }
+
+    .page-header { text-align:center; padding:40px 20px 24px; border-bottom:2px solid var(--gold); }
+    .page-header h1 { color:var(--gold); font-size:2rem; letter-spacing:2px; margin-bottom:6px; }
+    .page-header .subtitle { color:var(--text-dim); font-size:0.95rem; font-style:italic; }
+
+    .back-nav { max-width:1200px; margin:20px auto 0; padding:0 30px; }
+    .back-nav a { color:var(--gold); text-decoration:none; font-size:0.85rem; }
+    .back-nav a:hover { text-decoration:underline; }
+
+    /* Summary bar */
+    .summary-bar { display:flex; justify-content:center; gap:2rem; flex-wrap:wrap; padding:24px 20px; max-width:1000px; margin:0 auto; }
+    .sum-box { text-align:center; min-width:100px; }
+    .sum-num { font-size:2rem; color:var(--gold); font-weight:bold; line-height:1; }
+    .sum-label { font-size:0.7rem; color:var(--text-dim); margin-top:4px; text-transform:uppercase; letter-spacing:1px; }
+
+    /* Overall progress */
+    .overall-progress { max-width:900px; margin:20px auto; padding:0 30px; }
+    .op-bar { height:24px; background:var(--navy-light); border:1px solid var(--gold-dim); overflow:hidden; position:relative; }
+    .op-fill { height:100%; background:linear-gradient(90deg, var(--gold), var(--copper)); transition:width 0.8s ease; }
+    .op-text { position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); font-size:0.75rem; font-weight:bold; color:var(--navy); z-index:2; }
+    .op-label { text-align:center; font-size:0.75rem; color:var(--text-dim); margin-top:6px; font-style:italic; }
+
+    /* Relay grid */
+    .relay-grid { max-width:1200px; margin:30px auto; padding:0 30px; display:grid; grid-template-columns:repeat(auto-fill, minmax(340px, 1fr)); gap:20px; }
+
+    .relay-card { background:var(--navy-light); border:1px solid var(--gold-dim); padding:20px; position:relative; overflow:hidden; }
+    .relay-card::before { content:''; position:absolute; top:0; left:0; width:100%; height:3px; }
+    .relay-card.complete::before { background:var(--green); }
+    .relay-card.partial::before { background:var(--copper); }
+    .relay-card.minimal::before { background:var(--red); }
+
+    .relay-num { font-size:0.7rem; color:var(--gold); text-transform:uppercase; letter-spacing:2px; margin-bottom:4px; }
+    .relay-title { color:var(--gold); font-size:1.1rem; margin-bottom:10px; }
+    .relay-subtitle { color:var(--text-dim); font-size:0.8rem; font-style:italic; margin-bottom:14px; }
+
+    /* Progress items */
+    .progress-items { display:flex; flex-direction:column; gap:8px; }
+    .prog-item { display:flex; align-items:center; gap:10px; font-size:0.8rem; }
+    .prog-icon { width:20px; height:20px; display:flex; align-items:center; justify-content:center; font-size:0.75rem; flex-shrink:0; }
+    .prog-icon.done { color:var(--green); }
+    .prog-icon.partial { color:var(--copper); }
+    .prog-icon.todo { color:var(--red); opacity:0.5; }
+    .prog-label { flex:1; color:var(--text); }
+    .prog-value { color:var(--gold); font-family:'Courier New',monospace; font-size:0.75rem; min-width:50px; text-align:right; }
+
+    /* Relay progress bar */
+    .relay-bar { margin-top:14px; }
+    .rb-track { height:6px; background:rgba(255,255,255,0.05); overflow:hidden; }
+    .rb-fill { height:100%; transition:width 0.6s ease; }
+    .rb-fill.high { background:var(--green); }
+    .rb-fill.mid { background:var(--copper); }
+    .rb-fill.low { background:var(--red); }
+    .rb-pct { font-size:0.7rem; color:var(--text-dim); margin-top:4px; text-align:right; }
+
+    /* SDG chips */
+    .sdg-chips { display:flex; flex-wrap:wrap; gap:4px; margin-top:10px; }
+    .sdg-chip { font-size:0.6rem; padding:2px 6px; border:1px solid; white-space:nowrap; }
+
+    /* Legend */
+    .legend { max-width:900px; margin:30px auto; padding:0 30px; text-align:center; }
+    .legend span { display:inline-block; margin:0 12px; font-size:0.75rem; color:var(--text-dim); }
+    .legend .dot { display:inline-block; width:10px; height:10px; border-radius:50%; margin-right:4px; vertical-align:middle; }
+    .legend .dot.g { background:var(--green); }
+    .legend .dot.c { background:var(--copper); }
+    .legend .dot.r { background:var(--red); }
+
+    .page-footer { text-align:center; padding:40px 20px; margin-top:40px; border-top:1px solid var(--gold-dim); color:var(--text-dim); font-size:0.8rem; }
+  </style>
+
+<style id="mobile-quicknav-styles">
+/* ===== MOBILE QUICK-NAV BAR ===== */
+.mobile-quicknav {
+    display: none;
+    width: 100%;
+    background: linear-gradient(180deg, #0d1f3c 0%, #0a1628 100%);
+    border-bottom: 1px solid rgba(255,215,0,0.25);
+    padding: 6px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 6px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+.mobile-quicknav::-webkit-scrollbar { display: none; }
+.mobile-quicknav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 10px;
+    background: rgba(255,215,0,0.08);
+    border: 1px solid rgba(255,215,0,0.35);
+    border-radius: 16px;
+    color: #ffd700;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+.mobile-quicknav a:active {
+    background: rgba(255,215,0,0.25);
+    transform: scale(0.95);
+}
+.mobile-quicknav a.mqn-home {
+    background: #ffd700;
+    color: #0a1628;
+    border-color: #ffd700;
+}
+@media(max-width:768px) {
+    .mobile-quicknav { display: flex; }
+}
+@media(min-width:769px) {
+    .mobile-quicknav { display: none !important; }
+}
+
+/* ===== BACK-TO-TOP FLOATING BUTTON ===== */
+#back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 16px;
+    z-index: 9999;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(10,22,40,0.92);
+    border: 1.5px solid rgba(255,215,0,0.6);
+    color: #ffd700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    transition: all 0.2s;
+}
+#back-to-top-btn:active {
+    transform: scale(0.9);
+    background: rgba(255,215,0,0.2);
+}
+</style>
+
+</head>
+<body>
+    <!-- iAAi Network Bar — NAV-001 · Cross-Site Navigation -->
+    <!-- ═══ iAAi NETWORK BAR ═══ -->
+    <div id="iaai-network-bar" style="display:flex;align-items:center;justify-content:space-around;width:100%;height:36px;background:#0a1628;position:sticky;top:0;z-index:200001;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">
+      <a href="https://www.infrastructure-academy.com" style="text-decoration:none;color:#fff;font-weight:700;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid #DC2626;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#DC2626"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg> ACADEMY</a>
+      <a href="https://realityeng-epdhlkrn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> QUEST</a>
+      <a href="#" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;opacity:0.5;pointer-events:none;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A843"><path d="M6 2v6l-2 2v4l2 2v6h4v-6l2-2v-4L10 8V2H6zm12 0v6l-2 2v4l2 2v6h-4v-6l-2-2v-4l2-2V2h4z"/></svg> XCHANGE</a>
+      <a href="https://nigelmemorial-ucmtq9dn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#16A34A"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg> MEMORIAL</a>
+      <a href="https://xgrowthtrk-2a93yo5z.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#06B6D4"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/></svg> NEWS</a>
+    </div>
+
+<!-- INJECTED COMPACT HEADER BAR -->
+<style>
+.compact-header-bar { position:sticky; top:0; z-index:9999; background:#0a1628; border-bottom:2px solid #ffd700; padding:8px 16px; display:flex; align-items:center; justify-content:space-between; gap:12px; font-family:Georgia,"Times New Roman",serif; }
+.compact-header-bar .chb-brand { display:flex; align-items:center; gap:10px; text-decoration:none; color:#ffd700; }
+.compact-header-bar .chb-brand img { width:28px; height:28px; border-radius:4px; }
+.compact-header-bar .chb-title { font-size:0.85rem; font-weight:bold; letter-spacing:1.5px; color:#ffd700; }
+.compact-header-bar .chb-nav { display:flex; align-items:center; gap:12px; }
+.compact-header-bar .chb-nav a { color:#e2e8f0; text-decoration:none; font-size:0.75rem; letter-spacing:1px; padding:4px 10px; border:1px solid rgba(255,215,0,0.2); border-radius:3px; transition:all 0.2s; }
+.compact-header-bar .chb-nav a:hover { background:rgba(255,215,0,0.1); border-color:#ffd700; color:#ffd700; }
+.compact-header-bar .chb-nav a.chb-home { background:rgba(255,215,0,0.15); border-color:#ffd700; color:#ffd700; font-weight:bold; }
+@media(max-width:600px) { .compact-header-bar .chb-nav a:not(.chb-home) { display:none; } .compact-header-bar .chb-title { font-size:0.7rem; } }
+</style>
+<div class="compact-header-bar">
+    <a href="/site.html" class="chb-brand">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iAAi-emblem_e0c9c2c1.png" alt="iAAi">
+        <span class="chb-title">INFRASTRUCTURE ACADEMY</span>
+    </a>
+    <div class="chb-nav">
+        <a href="/site.html" class="chb-home">HOME</a>
+        <a href="/pages/framework.html">FRAMEWORK</a>
+        <a href="/library.html">DOCUMENTS</a>
+        <a href="/play">PLAY</a>
+    </div>
+</div>
+    <!-- ===== MOBILE QUICK-NAV BAR — always visible on mobile ===== -->
+    <div class="mobile-quicknav" id="mobile-quicknav">
+        <a href="/site.html" class="mqn-home">&#127968; HOME</a>
+        <a href="/pages/start-here.html">&#128218; START</a>
+        <a href="/volumes/volume1/index.html">&#128214; READ</a>
+        <a href="/pages/framework.html">&#128736; FRAMEWORK</a>
+        <a href="/play">&#127918; PLAY</a>
+        <a href="/pages/movies.html">&#127916; MOVIES</a>
+        <a href="/pages/resources.html">&#128194; RESOURCES</a>
+        <a href="/press.html">&#128240; PRESS</a>
+    </div>
+
+    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <button id="back-to-top-btn" aria-label="Back to top" title="Back to top">&#9650;</button>
+
+<- [ ] MAJOR: Identify and address pixelated images in MEDIA END COMPACT HEADER BAR -->
+
+  <div class="page-header">
+    <h1>RELAY PROGRESS TRACKER</h1>
+    <div class="subtitle">Documentation Status Across All 12 Civilizational Relays</div>
+  </div>
+
+  <div class="back-nav">
+    <a href="/site.html">&larr; Back to Home</a> &nbsp;|&nbsp;
+    <a href="/pages/block-summary.html">Block Summary</a> &nbsp;|&nbsp;
+    <a href="/pages/sdg-matrix.html">SDG Matrix</a>
+  </div>
+
+  <div class="summary-bar">
+    <div class="sum-box"><div class="sum-num">12</div><div class="sum-label">Relays</div></div>
+    <div class="sum-box"><div class="sum-num" id="chapDone">12</div><div class="sum-label">Chapters Written</div></div>
+    <div class="sum-box"><div class="sum-num" id="instMapped">45+</div><div class="sum-label">Institutions</div></div>
+    <div class="sum-box"><div class="sum-num" id="cardCount">31</div><div class="sum-label">iCards</div></div>
+    <div class="sum-box"><div class="sum-num">17</div><div class="sum-label">SDGs Aligned</div></div>
+  </div>
+
+  <div class="overall-progress">
+    <div class="op-bar">
+      <div class="op-fill" id="opFill" style="width:0%"></div>
+      <div class="op-text" id="opText">0%</div>
+    </div>
+    <div class="op-label">Overall Documentation Completeness</div>
+  </div>
+
+  <div class="legend">
+    <span><span class="dot g"></span> Complete (80%+)</span>
+    <span><span class="dot c"></span> Partial (40-79%)</span>
+    <span><span class="dot r"></span> Minimal (&lt;40%)</span>
+  </div>
+
+  <div class="relay-grid" id="relayGrid"></div>
+
+  <!-- ═══════════════════════════════════════════════════ -->
+  <!-- DISCONTINUOUS BRANCHES — PARALLEL CIVILISATIONS -->
+  <!-- ═══════════════════════════════════════════════════ -->
+  <div style="max-width:1200px;margin:50px auto 0;padding:0 30px;">
+    <div style="text-align:center;margin-bottom:30px;border-top:2px solid var(--gold);padding-top:30px;">
+      <h2 style="color:var(--gold);font-size:1.6rem;letter-spacing:2px;margin-bottom:8px;">DISCONTINUOUS BRANCHES</h2>
+      <div style="color:var(--text-dim);font-size:0.9rem;font-style:italic;max-width:800px;margin:0 auto;">Parallel civilisations that developed sophisticated infrastructure independently but did not feed directly into the continuous East-West relay chain. They represent parallel infrastructure consciousness &mdash; discontinuous paths.</div>
+      <div style="color:var(--copper);font-size:0.75rem;margin-top:10px;letter-spacing:1px;">ADDED FOLLOWING FEEDBACK FROM LUDVIK THORSTEINSSON &bull; LINKEDIN &bull; 24 MAR 2026</div>
+    </div>
+  </div>
+
+  <div class="relay-grid" id="branchGrid"></div>
+
+  <div style="max-width:900px;margin:20px auto 0;padding:0 30px;text-align:center;">
+    <div style="font-size:0.8rem;color:var(--text-dim);font-style:italic;border:1px solid var(--gold-dim);padding:16px;">
+      <strong style="color:var(--gold);">Why &ldquo;Discontinuous&rdquo;?</strong><br>
+      The relay model tracks the continuous handoff of infrastructure knowledge from one civilisation to the next. These branches rose independently, developed sophisticated infrastructure (proving universal human capacity), but declined without passing their innovations to the next link in the chain. The educational question: &ldquo;What conditions create continuity vs. discontinuity?&rdquo; &mdash; Geography, trade routes, and connectivity.
+    </div>
+    <div style="margin-top:12px;font-size:0.75rem;color:var(--text-dim);">Reference: The Byzantium Blogger (Powee Celdran) &mdash; byzantium-blogger.blog &bull; <a href="/pages/governance-architecture.html" style="color:var(--gold);">Governance Architecture</a></div>
+  </div>
+
+  <div class="page-footer">
+    <p>&ldquo;Per Arya Ad Astra&rdquo; &mdash; Infrastructure Academy</p>
+    <p style="margin-top:8px;">Ir. Nigel T. Dearden CEng MICE MHKIE &bull; The Civilizational Relay</p>
+  </div>
+
+  <script>
+  var relays = [
+    {
+      num: 1, title: "Fire", subtitle: "The First Relay — Energy Capture",
+      chapter: true, guide: true, thesis: true,
+      institutions: 6, institutionTarget: 8,
+      icards: 4, icardTarget: 5,
+      sdgs: [{n:7,c:"#fcc30b"},{n:13,c:"#3f7e44"}],
+      pct: 85, status: "complete"
+    },
+    {
+      num: 2, title: "Agriculture", subtitle: "From Gathering to Growing",
+      chapter: true, guide: true, thesis: true,
+      institutions: 5, institutionTarget: 8,
+      icards: 3, icardTarget: 5,
+      sdgs: [{n:2,c:"#dda63a"},{n:15,c:"#56c02b"}],
+      pct: 75, status: "partial"
+    },
+    {
+      num: 3, title: "Writing", subtitle: "Memory Beyond the Mind",
+      chapter: true, guide: true, thesis: true,
+      institutions: 4, institutionTarget: 6,
+      icards: 3, icardTarget: 5,
+      sdgs: [{n:4,c:"#c5192d"},{n:16,c:"#00689d"}],
+      pct: 80, status: "complete"
+    },
+    {
+      num: 4, title: "The City", subtitle: "Concentration and Specialisation",
+      chapter: true, guide: true, thesis: true,
+      institutions: 5, institutionTarget: 8,
+      icards: 3, icardTarget: 5,
+      sdgs: [{n:11,c:"#fd9d24"},{n:9,c:"#f36d25"}],
+      pct: 75, status: "partial"
+    },
+    {
+      num: 5, title: "Mathematics", subtitle: "The Language of Pattern",
+      chapter: true, guide: true, thesis: true,
+      institutions: 5, institutionTarget: 6,
+      icards: 3, icardTarget: 5,
+      sdgs: [{n:4,c:"#c5192d"},{n:9,c:"#f36d25"}],
+      pct: 70, status: "partial"
+    },
+    {
+      num: 6, title: "Navigation", subtitle: "Crossing the Horizon",
+      chapter: true, guide: true, thesis: true,
+      institutions: 4, institutionTarget: 6,
+      icards: 3, icardTarget: 5,
+      sdgs: [{n:14,c:"#0a97d9"},{n:17,c:"#19486a"}],
+      pct: 78, status: "partial"
+    },
+    {
+      num: 7, title: "The Machine", subtitle: "Amplifying Human Force",
+      chapter: true, guide: true, thesis: true,
+      institutions: 5, institutionTarget: 8,
+      icards: 3, icardTarget: 5,
+      sdgs: [{n:9,c:"#f36d25"},{n:12,c:"#bf8b2e"}],
+      pct: 75, status: "partial"
+    },
+    {
+      num: 8, title: "Electricity", subtitle: "Invisible Power",
+      chapter: true, guide: true, thesis: true,
+      institutions: 5, institutionTarget: 8,
+      icards: 3, icardTarget: 5,
+      sdgs: [{n:7,c:"#fcc30b"},{n:9,c:"#f36d25"}],
+      pct: 75, status: "partial"
+    },
+    {
+      num: 9, title: "Communication", subtitle: "Collapsing Distance",
+      chapter: true, guide: true, thesis: true,
+      institutions: 5, institutionTarget: 6,
+      icards: 3, icardTarget: 5,
+      sdgs: [{n:9,c:"#f36d25"},{n:10,c:"#dd1367"}],
+      pct: 72, status: "partial"
+    },
+    {
+      num: 10, title: "Computing", subtitle: "The Thinking Machine",
+      chapter: true, guide: true, thesis: true,
+      institutions: 4, institutionTarget: 8,
+      icards: 3, icardTarget: 5,
+      sdgs: [{n:9,c:"#f36d25"},{n:4,c:"#c5192d"}],
+      pct: 70, status: "partial"
+    },
+    {
+      num: 11, title: "Networks", subtitle: "The Connected World",
+      chapter: true, guide: true, thesis: true,
+      institutions: 5, institutionTarget: 6,
+      icards: 3, icardTarget: 5,
+      sdgs: [{n:9,c:"#f36d25"},{n:17,c:"#19486a"}],
+      pct: 70, status: "partial"
+    },
+    {
+      num: 12, title: "Programmable Humans", subtitle: "The Final Relay — Consciousness",
+      chapter: true, guide: true, thesis: true,
+      institutions: 3, institutionTarget: 6,
+      icards: 3, icardTarget: 5,
+      sdgs: [{n:3,c:"#4c9f38"},{n:16,c:"#00689d"},{n:4,c:"#c5192d"}],
+      pct: 72, status: "partial"
+    }
+  ];
+
+  var grid = document.getElementById('relayGrid');
+  var totalPct = 0;
+
+  relays.forEach(function(r) {
+    totalPct += r.pct;
+    var statusClass = r.pct >= 80 ? 'complete' : (r.pct >= 40 ? 'partial' : 'minimal');
+    var barClass = r.pct >= 80 ? 'high' : (r.pct >= 40 ? 'mid' : 'low');
+
+    var sdgHtml = r.sdgs.map(function(s) {
+      return '<span class="sdg-chip" style="border-color:'+s.c+';color:'+s.c+'">SDG '+s.n+'</span>';
+    }).join('');
+
+    var html = '<div class="relay-card '+statusClass+'">' +
+      '<div class="relay-num">Relay '+String(r.num).padStart(2,'0')+'</div>' +
+      '<div class="relay-title">'+r.title+'</div>' +
+      '<div class="relay-subtitle">'+r.subtitle+'</div>' +
+      '<div class="progress-items">' +
+        '<div class="prog-item"><span class="prog-icon '+(r.chapter?'done':'todo')+'">'+(r.chapter?'&#10003;':'&#9675;')+'</span><span class="prog-label">Chapter Written</span><span class="prog-value">'+(r.chapter?'Yes':'No')+'</span></div>' +
+        '<div class="prog-item"><span class="prog-icon '+(r.guide?'done':'todo')+'">'+(r.guide?'&#10003;':'&#9675;')+'</span><span class="prog-label">Guide Section</span><span class="prog-value">'+(r.guide?'Yes':'No')+'</span></div>' +
+        '<div class="prog-item"><span class="prog-icon '+(r.thesis?'done':'todo')+'">'+(r.thesis?'&#10003;':'&#9675;')+'</span><span class="prog-label">Thesis Framework</span><span class="prog-value">'+(r.thesis?'Yes':'No')+'</span></div>' +
+        '<div class="prog-item"><span class="prog-icon '+(r.institutions>=r.institutionTarget?'done':'partial')+'">'+(r.institutions>=r.institutionTarget?'&#10003;':'&#9679;')+'</span><span class="prog-label">Institutions Mapped</span><span class="prog-value">'+r.institutions+'/'+r.institutionTarget+'</span></div>' +
+        '<div class="prog-item"><span class="prog-icon '+(r.icards>=r.icardTarget?'done':'partial')+'">'+(r.icards>=r.icardTarget?'&#10003;':'&#9679;')+'</span><span class="prog-label">iCards Created</span><span class="prog-value">'+r.icards+'/'+r.icardTarget+'</span></div>' +
+      '</div>' +
+      '<div class="sdg-chips">'+sdgHtml+'</div>' +
+      '<div class="relay-bar"><div class="rb-track"><div class="rb-fill '+barClass+'" style="width:'+r.pct+'%"></div></div><div class="rb-pct">'+r.pct+'% Complete</div></div>' +
+      '<a href="/pages/relay-detail.html#relay-'+r.num+'" style="display:block;text-align:center;margin-top:12px;color:var(--gold);font-size:0.75rem;text-decoration:none;letter-spacing:1px;padding:6px;border:1px solid var(--gold-dim);transition:background 0.2s;" onmouseover="this.style.background=\'rgba(255,215,0,0.1)\'" onmouseout="this.style.background=\'transparent\'">VIEW FULL DETAIL &rarr;</a>' +
+      (r.pct >= 80 ? '<button onclick="generateCert('+r.num+')" style="display:block;width:100%;margin-top:8px;padding:8px;background:linear-gradient(135deg,#ffd700,#d97706);color:#0a1628;border:none;font-family:Georgia,serif;font-size:0.75rem;font-weight:bold;letter-spacing:1px;cursor:pointer;">&#127942; DOWNLOAD CERTIFICATE</button>' : '') +
+    '</div>';
+
+    grid.insertAdjacentHTML('beforeend', html);
+  });
+
+  var avgPct = Math.round(totalPct / relays.length);
+  var opFill = document.getElementById('opFill');
+  var opText = document.getElementById('opText');
+  if (opFill) setTimeout(function() { opFill.style.width = avgPct + '%'; }, 300);
+  if (opText) opText.textContent = avgPct + '%';
+
+  function generateCert(relayNum) {
+    var relay = relays.find(function(r) { return r.num === relayNum; });
+    if (!relay) return;
+    var certId = 'IA-RELAY-' + String(relayNum).padStart(2,'0') + '-' + Date.now().toString(36).toUpperCase();
+    var certDate = new Date().toISOString().split('T')[0];
+    var certHtml = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Relay Certificate - ' + relay.title + '</title>' +
+      '<style>' +
+      '@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap");' +
+      'body{margin:0;padding:40px;background:#0a1628;display:flex;justify-content:center;align-items:center;min-height:100vh;}' +
+      '.cert{width:800px;background:linear-gradient(135deg,#0a1628 0%,#0f1f3a 50%,#0a1628 100%);border:3px solid #ffd700;padding:60px;position:relative;box-shadow:0 0 40px rgba(255,215,0,0.15);}' +
+      '.cert::before{content:"";position:absolute;inset:8px;border:1px solid rgba(255,215,0,0.3);pointer-events:none;}' +
+      '.cert::after{content:"";position:absolute;inset:14px;border:1px solid rgba(255,215,0,0.15);pointer-events:none;}' +
+      '.header{text-align:center;margin-bottom:40px;}' +
+      '.header .org{font-family:"Cormorant Garamond",serif;font-size:14px;color:#999;letter-spacing:4px;text-transform:uppercase;}' +
+      '.header h1{font-family:"Playfair Display",serif;font-size:36px;color:#ffd700;margin:12px 0 8px;letter-spacing:2px;}' +
+      '.header .sub{font-family:"Cormorant Garamond",serif;font-size:16px;color:#d97706;font-style:italic;}' +
+      '.divider{height:1px;background:linear-gradient(90deg,transparent,#ffd700,transparent);margin:30px 0;}' +
+      '.body{text-align:center;font-family:"Cormorant Garamond",serif;}' +
+      '.relay-badge{display:inline-block;padding:12px 30px;border:2px solid #ffd700;margin:20px 0;font-size:24px;color:#ffd700;font-family:"Playfair Display",serif;letter-spacing:3px;}' +
+      '.statement{font-size:16px;color:#e0e0e0;line-height:1.8;max-width:600px;margin:20px auto;font-style:italic;}' +
+      '.criteria{display:flex;justify-content:center;gap:20px;flex-wrap:wrap;margin:24px 0;}' +
+      '.crit{font-size:12px;color:#22c55e;padding:4px 12px;border:1px solid rgba(34,197,94,0.3);letter-spacing:1px;}' +
+      '.footer{display:flex;justify-content:space-between;align-items:flex-end;margin-top:40px;padding-top:20px;border-top:1px solid rgba(255,215,0,0.2);}' +
+      '.footer .issuer{font-family:"Cormorant Garamond",serif;font-size:14px;color:#e0e0e0;}' +
+      '.footer .issuer .name{font-size:18px;color:#ffd700;font-style:italic;margin-bottom:4px;}' +
+      '.footer .cert-id{font-family:monospace;font-size:11px;color:#666;text-align:right;}' +
+      '.motto{text-align:center;margin-top:30px;font-family:"Cormorant Garamond",serif;font-size:14px;color:#d97706;font-style:italic;letter-spacing:2px;}' +
+      '@media print{body{background:white;padding:0;}.cert{box-shadow:none;border-color:#333;background:#fff;}.header h1{color:#333;}.relay-badge{color:#333;border-color:#333;}.statement{color:#333;}.footer .issuer .name{color:#333;}.motto{color:#666;}}' +
+      '</style></head><body>' +
+      '<div class="cert">' +
+      '<div class="header">' +
+      '<div class="org">Infrastructure Academy</div>' +
+      '<h1>CERTIFICATE OF COMPLETION</h1>' +
+      '<div class="sub">Civilizational Relay Documentation</div>' +
+      '</div>' +
+      '<div class="divider"></div>' +
+      '<div class="body">' +
+      '<div class="relay-badge">RELAY ' + String(relayNum).padStart(2,'0') + ': ' + relay.title.toUpperCase() + '</div>' +
+      '<div class="statement">This certifies that Relay ' + String(relayNum).padStart(2,'0') + ': ' + relay.title + ' has achieved documentation completeness across all five verification criteria.</div>' +
+      '<div class="criteria">' +
+      '<div class="crit">\u2713 Chapter Written</div>' +
+      '<div class="crit">\u2713 Guide Section</div>' +
+      '<div class="crit">\u2713 Thesis Framework</div>' +
+      '<div class="crit">\u2713 Institutions Mapped</div>' +
+      '<div class="crit">\u2713 iCards Created</div>' +
+      '</div>' +
+      '</div>' +
+      '<div class="divider"></div>' +
+      '<div class="footer">' +
+      '<div class="issuer"><div class="name">Ir. Nigel T. Dearden CEng MICE MHKIE</div>Author &amp; Principal Investigator</div>' +
+      '<div class="cert-id">Certificate ID: ' + certId + '<br>Date: ' + certDate + '<br>Infrastructure Academy \u2014 An Infrastructure Odyssey</div>' +
+      '</div>' +
+      '<div class="motto">Per Arya Ad Astra</div>' +
+      '</div>';
+    var certWindow = window.open('', '_blank');
+    if (certWindow) { certWindow.document.write(certHtml); certWindow.document.close(); }
+  }
+
+  // ═══════════════════════════════════════════════════
+  // DISCONTINUOUS BRANCHES — RENDER CARDS
+  // ═══════════════════════════════════════════════════
+  var branches = [
+    {
+      id: 'ghana-empire', name: 'Ghana Empire', region: 'West Africa (modern Mauritania / Mali)',
+      period: 'c. 300–1200 AD', type: 'Metallurgy & Trade',
+      desc: 'Iron tool production and trans-Saharan gold-salt trade. Koumbi Saleh was one of the largest cities in the world.',
+      achievements: ['Iron smelting & tool production', 'Trans-Saharan trade routes', 'Koumbi Saleh — major urban centre'],
+      figures: 'Tunka Manin (r. c. 1062–1076)',
+      whyDisc: 'Conquered by Almoravids (1076); no relay handoff to successor civilisations.',
+      keyFact: 'Ghana controlled the gold-salt trade that financed much of medieval Mediterranean commerce.',
+      group: 'african', color: '#22c55e'
+    },
+    {
+      id: 'mali-timbuktu', name: 'Mali Empire / Timbuktu', region: 'West Africa (modern Mali / Senegal)',
+      period: 'c. 1235–1600 AD', type: 'Knowledge & Astronomy',
+      desc: 'Sankore University in Timbuktu housed 700,000+ manuscripts. Mansa Musa\'s pilgrimage (1324) destabilised gold markets across the Mediterranean.',
+      achievements: ['Sankore University — 700,000+ manuscripts', 'Astronomy & mathematics', 'Mansa Musa\'s gold pilgrimage (1324)'],
+      figures: 'Mansa Musa (r. 1312–1337)',
+      whyDisc: 'Declined after Moroccan invasion (1591); manuscripts scattered, institutional knowledge fragmented.',
+      keyFact: 'Mansa Musa is considered the wealthiest person in history — his gold distribution crashed Mediterranean economies.',
+      group: 'african', color: '#22c55e'
+    },
+    {
+      id: 'songhai-empire', name: 'Songhai Empire', region: 'West Africa (modern Niger / Nigeria / Mali)',
+      period: 'c. 1430–1591 AD', type: 'Governance & Justice',
+      desc: 'Sophisticated taxation, provincial administration, and justice systems. Largest empire in African history at its peak.',
+      achievements: ['Taxation & provincial administration', 'Professional army & navy on Niger River', 'Justice system with appeals courts'],
+      figures: 'Askia Muhammad (r. 1493–1528)',
+      whyDisc: 'Destroyed by Moroccan musket-armed invasion (1591); governance infrastructure dismantled.',
+      keyFact: 'Songhai\'s administrative system divided the empire into provinces with appointed governors — mirroring Roman provincial governance.',
+      group: 'african', color: '#22c55e'
+    },
+    {
+      id: 'maya', name: 'Maya Civilisation', region: 'Central America (modern Guatemala / Mexico / Belize)',
+      period: 'c. 2000 BC–1500 AD', type: 'Astronomy & Hydraulics',
+      desc: 'Advanced astronomical calendars, hydraulic engineering, and monumental architecture. The Long Count calendar calculated dates millions of years into the future.',
+      achievements: ['Long Count calendar — astronomical precision', 'Hydraulic reservoirs at Tikal', 'Sacbe road network connecting cities'],
+      figures: 'K\'inich Janaab Pakal (r. 615–683)',
+      whyDisc: 'Classic Maya collapse (c. 900 AD) — cities abandoned. No relay handoff; knowledge was not transmitted.',
+      keyFact: 'Maya astronomers calculated the length of the solar year to 365.2420 days — closer to the true value than the Gregorian calendar.',
+      group: 'mesoamerican', color: '#f97316'
+    },
+    {
+      id: 'aztec', name: 'Aztec Empire', region: 'Central Mexico',
+      period: 'c. 1300–1521 AD', type: 'Urban Engineering',
+      desc: 'Tenochtitlan\'s chinampas, aqueducts, and causeways rivalled or exceeded contemporary European cities.',
+      achievements: ['Chinampas — floating garden agriculture', 'Chapultepec aqueduct — 5 km dual-pipe', 'Causeways connecting island to mainland'],
+      figures: 'Moctezuma I (r. 1440–1469)',
+      whyDisc: 'Physically destroyed by Spanish conquest (1521). Tenochtitlan razed; Mexico City built on its ruins.',
+      keyFact: 'Conquistadors thought they were dreaming when they first saw Tenochtitlan — it was larger than any European city.',
+      group: 'mesoamerican', color: '#f97316'
+    },
+    {
+      id: 'mesopotamia', name: 'Mesopotamia (Sumer / Babylon)', region: 'Modern Iraq / Syria',
+      period: 'c. 3500–539 BC', type: 'Foundational Systems',
+      desc: 'Irrigation, writing, law, the wheel, and base-60 mathematics all originated here. Partially continuous — some innovations entered the relay via Persia and Greece.',
+      achievements: ['Irrigation canals — first large-scale water management', 'Cuneiform — first writing system', 'Code of Hammurabi — first written legal code'],
+      figures: 'Hammurabi (r. c. 1792–1750 BC)',
+      whyDisc: 'Partially discontinuous. Some innovations adopted by Persia/Greece; Sumerian/Babylonian civilisations themselves were conquered.',
+      keyFact: 'Base-60 from Sumer: still used today in 60 seconds, 60 minutes, 360 degrees.',
+      group: 'neareast', color: '#a78bfa'
+    },
+    {
+      id: 'byzantine', name: 'Byzantine Empire (Eastern Rome)', region: 'Eastern Mediterranean / Turkey / Balkans',
+      period: 'c. 330–1453 AD', type: 'Preservation & Engineering',
+      desc: 'Preserved Roman engineering, law, and administration for over 1,000 years. Theodosian Walls unbreached for a millennium. Hagia Sophia was the world\'s largest cathedral for nearly 1,000 years.',
+      achievements: ['Theodosian Walls — unbreached 1,000 years', 'Hagia Sophia (537 AD)', 'Justinian\'s Codex — foundation of European law'],
+      figures: 'Justinian I (r. 527–565)',
+      whyDisc: 'Did not pass baton directly to Britain. Byzantine scholars fleeing 1453 carried texts to Italy, indirectly fuelling the Renaissance — a delayed handoff.',
+      keyFact: 'Constantinople\'s walls protected the city for over 1,000 years — the longest-serving defensive infrastructure in history.',
+      group: 'european_gap', color: '#60a5fa'
+    },
+    {
+      id: 'islamic-golden', name: 'Islamic Golden Age', region: 'Middle East / North Africa / Iberia',
+      period: 'c. 750–1258 AD', type: 'Knowledge & Innovation',
+      desc: 'Algebra, optics, hospitals, astronomy, and irrigation engineering. The House of Wisdom preserved Greek, Persian, and Indian texts.',
+      achievements: ['Algebra — al-Khwarizmi (c. 820 AD)', 'House of Wisdom, Baghdad', 'Bimaristans — world\'s first hospitals'],
+      figures: 'al-Khwarizmi (c. 780–850)',
+      whyDisc: 'Partially discontinuous. Some innovations flowed to Europe via Al-Andalus. Abbasid civilisation destroyed by Mongol sack of Baghdad (1258).',
+      keyFact: '\'Algorithm\' derives from al-Khwarizmi\'s name; \'algebra\' from his book \'al-Jabr\' — two foundations of modern computing from 9th-century Baghdad.',
+      group: 'european_gap', color: '#60a5fa'
+    },
+    {
+      id: 'viking', name: 'Viking / Norse Civilisation', region: 'Scandinavia / North Atlantic',
+      period: 'c. 793–1066 AD', type: 'Shipbuilding & Navigation',
+      desc: 'Master shipbuilders whose longships crossed the North Atlantic. Reached America (Vinland, c. 1000 AD) five centuries before Columbus.',
+      achievements: ['Longship — clinker-built, ocean-crossing', 'Vinland (c. 1000 AD) — pre-Columbus America', 'Varangian trade routes to Constantinople'],
+      figures: 'Leif Erikson (c. 970–1020)',
+      whyDisc: 'Temporary works — built for mobility, not permanence. Absorbed into Christian European kingdoms by 11th century.',
+      keyFact: 'Viking longships could sail in water as shallow as 50 cm — a dual-mode vessel unmatched until modern amphibious craft.',
+      group: 'european_gap', color: '#60a5fa'
+    },
+    {
+      id: 'medieval-europe', name: 'Medieval European Kingdoms', region: 'Western and Central Europe',
+      period: 'c. 500–1500 AD', type: 'Cathedrals & Institutions',
+      desc: 'Gothic cathedrals, university founding, castle engineering, water mills, and the Hanseatic League. Fragmented — no single empire carried the relay.',
+      achievements: ['Gothic cathedrals — flying buttresses', 'Universities: Bologna (1088), Oxford (1096)', 'Gutenberg printing press (c. 1440)'],
+      figures: 'Charlemagne (r. 768–814)',
+      whyDisc: 'Fragmented — no single civilisation carried the relay baton. Infrastructure was local, not continental. The relay resumed when Britain emerged in the 1600s.',
+      keyFact: 'Domesday Book (1086) records 6,000+ water mills in England — one per 300 people — the most mechanised pre-industrial society.',
+      group: 'european_gap', color: '#60a5fa'
+    }
+  ];
+
+  var groupLabels = {
+    african: '\u{1F30D} WEST AFRICAN EMPIRES',
+    mesoamerican: '\u{1F3DB} MESOAMERICAN CIVILISATIONS',
+    neareast: '\u{1F3FA} ANCIENT NEAR EAST',
+    european_gap: '\u{1F3F0} EUROPEAN GAP (300-1600 AD)'
+  };
+
+  var branchGrid = document.getElementById('branchGrid');
+  var currentGroup = '';
+
+  branches.forEach(function(b) {
+    if (b.group !== currentGroup) {
+      currentGroup = b.group;
+      var label = groupLabels[b.group] || b.group;
+      branchGrid.insertAdjacentHTML('beforeend',
+        '<div style="grid-column:1/-1;text-align:center;padding:16px 0 4px;">' +
+        '<span style="color:' + b.color + ';font-size:0.85rem;letter-spacing:2px;font-weight:bold;">' + label + '</span>' +
+        '</div>'
+      );
+    }
+
+    var achHtml = b.achievements.map(function(a) {
+      return '<div class="prog-item"><span class="prog-icon" style="color:' + b.color + ';">&#9670;</span><span class="prog-label">' + a + '</span></div>';
+    }).join('');
+
+    var html = '<div class="relay-card" style="border-color:' + b.color + '44;">' +
+      '<div style="position:absolute;top:0;left:0;width:100%;height:3px;background:' + b.color + ';"></div>' +
+      '<div class="relay-num" style="color:' + b.color + ';">BRANCH &bull; ' + b.type.toUpperCase() + '</div>' +
+      '<div class="relay-title" style="color:' + b.color + ';">' + b.name + '</div>' +
+      '<div class="relay-subtitle">' + b.region + ' &bull; ' + b.period + '</div>' +
+      '<div style="font-size:0.8rem;color:var(--text);margin-bottom:12px;line-height:1.5;">' + b.desc + '</div>' +
+      '<div class="progress-items">' + achHtml + '</div>' +
+      '<div style="margin-top:10px;font-size:0.75rem;color:var(--text-dim);"><strong style="color:' + b.color + ';">Key Figure:</strong> ' + b.figures + '</div>' +
+      '<div style="margin-top:8px;padding:8px;background:rgba(255,255,255,0.03);border:1px solid ' + b.color + '22;font-size:0.75rem;color:var(--text-dim);font-style:italic;">' +
+      '<strong style="color:' + b.color + ';">Why Discontinuous:</strong> ' + b.whyDisc + '</div>' +
+      '<div style="margin-top:8px;font-size:0.7rem;color:var(--gold);font-style:italic;">&#9733; ' + b.keyFact + '</div>' +
+    '</div>';
+
+    branchGrid.insertAdjacentHTML('beforeend', html);
+  });
+  </script>
+
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement -->
+
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement (v2 fixed) -->
+<script>
+(function() {
+  try {
+    var sid = sessionStorage.getItem('iaai_sid');
+    if (!sid) {
+      sid = 'ses_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 9);
+      sessionStorage.setItem('iaai_sid', sid);
+    }
+    var data = {
+      path: window.location.pathname + (window.location.hash || ''),
+      pageTitle: document.title || 'Untitled',
+      referrer: document.referrer || '',
+      sessionId: sid
+    };
+    fetch('/api/trpc/analytics.track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ json: data }),
+      credentials: 'include'
+    }).catch(function() {});
+    window.addEventListener('hashchange', function() {
+      var hashData = {
+        path: window.location.pathname + (window.location.hash || ''),
+        pageTitle: document.title || 'Untitled',
+        referrer: window.location.href,
+        sessionId: sid
+      };
+      fetch('/api/trpc/analytics.track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ json: hashData }),
+        credentials: 'include'
+      }).catch(function() {});
+    });
+  } catch(e) {}
+})();
+</script>
+
+    <!-- Back-to-Top Button Logic -->
+    <script>
+    (function() {
+        var btn = document.getElementById('back-to-top-btn');
+        if (!btn) return;
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                btn.style.display = 'flex';
+            } else {
+                btn.style.display = 'none';
+            }
+        }, { passive: true });
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    })();
+    </script>
+
+</body>
+</html>
