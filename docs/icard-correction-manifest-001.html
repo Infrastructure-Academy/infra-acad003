@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iCard — CORRECTION MANIFEST 001 — Quartermaster Open Items | Infrastructure Academy</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        :root {
+            --color-bg-primary: #0a1628;
+            --color-bg-secondary: #0f1f3a;
+            --color-text-primary: #ffffff;
+            --color-text-secondary: #e0e0e0;
+            --color-accent-gold: #ffd700;
+            --color-accent-gold-dark: #daa520;
+            --font-primary: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --font-heading: 'Georgia', 'Times New Roman', serif;
+        }
+        html, body { background: #0a1628; color: #ffffff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; line-height: 1.5; }
+        .icard-page { max-width: 960px; margin: 0 auto; padding: 40px 30px 60px; }
+        .icard-header { text-align: center; margin-bottom: 40px; border-bottom: 1px solid rgba(255,215,0,0.2); padding-bottom: 30px; }
+        .icard-badge { display: inline-block; background: rgba(255,215,0,0.1); border: 1px solid rgba(255,215,0,0.4); color: var(--color-accent-gold); font-family: 'Courier New', monospace; font-size: 0.75rem; font-weight: bold; letter-spacing: 2px; padding: 4px 12px; border-radius: 3px; text-transform: uppercase; margin-bottom: 16px; }
+        .icard-beta { display: inline-block; border: 2px solid var(--color-accent-gold); color: var(--color-accent-gold); padding: 2px 10px; font-family: 'Courier New', monospace; font-size: 0.7rem; font-weight: bold; letter-spacing: 2px; margin-left: 10px; }
+        .icard-header h1 { font-family: var(--font-heading); color: var(--color-accent-gold); font-size: 1.7rem; margin-bottom: 8px; line-height: 1.3; }
+        .icard-header .subtitle { color: var(--color-text-secondary); font-size: 0.95rem; }
+        .icard-header .node-id { font-family: 'Courier New', monospace; color: var(--color-accent-gold); font-size: 1rem; margin-top: 10px; }
+        .icard-section { margin-bottom: 36px; }
+        .icard-section h2 { font-family: var(--font-heading); color: var(--color-accent-gold); font-size: 1.2rem; letter-spacing: 0.08em; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,215,0,0.1); text-transform: uppercase; }
+        .icard-section p, .icard-section li { color: var(--color-text-primary); font-size: 0.95rem; line-height: 1.6; }
+        .icard-section ul { padding-left: 22px; }
+        .icard-table { width: 100%; border-collapse: collapse; margin: 12px 0; }
+        .icard-table th, .icard-table td { padding: 10px 12px; font-size: 0.88rem; vertical-align: top; text-align: left; border-bottom: 1px solid rgba(255,255,255,0.05); }
+        .icard-table th { color: var(--color-accent-gold); font-family: 'Courier New', monospace; font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; border-bottom: 1px solid rgba(255,215,0,0.2); }
+        .icard-table td.col-id { color: var(--color-accent-gold); font-family: 'Courier New', monospace; font-weight: bold; white-space: nowrap; }
+        .icard-table td.col-status-pass { color: #6ee7b7; font-family: 'Courier New', monospace; font-weight: bold; }
+        .icard-table td.col-status-fail { color: #fca5a5; font-family: 'Courier New', monospace; font-weight: bold; }
+        .icard-highlight { background: rgba(255,215,0,0.08); border-left: 3px solid var(--color-accent-gold); padding: 16px 20px; margin: 20px 0; border-radius: 0 4px 4px 0; }
+        .icard-highlight p { color: var(--color-text-secondary); font-size: 0.92rem; line-height: 1.7; }
+        .icard-highlight strong { color: var(--color-accent-gold); }
+        .action-item { background: rgba(255,100,100,0.08); border-left: 3px solid rgba(255,100,100,0.5); padding: 14px 20px; margin: 16px 0; border-radius: 0 4px 4px 0; }
+        .action-item p { color: rgba(255,200,200,0.85); font-size: 0.9rem; line-height: 1.6; }
+        .action-item strong { color: #ff9999; }
+        .icard-questions { list-style: none; padding-left: 0; }
+        .icard-questions li { padding: 10px 0; border-bottom: 1px solid rgba(255,255,255,0.06); color: var(--color-text-primary); font-size: 0.93rem; line-height: 1.6; }
+        .icard-questions li:last-child { border-bottom: none; }
+        .icard-questions .q-num { color: var(--color-accent-gold); font-family: 'Courier New', monospace; font-weight: bold; margin-right: 10px; }
+        .xref-section { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,215,0,0.1); }
+        .xref-links { display: flex; flex-wrap: wrap; gap: 10px; }
+        .xref-link { padding: 8px 16px; background: var(--color-bg-secondary); border: 1px solid rgba(255,215,0,0.15); border-radius: 4px; color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem; transition: all 0.2s; }
+        .xref-link:hover { border-color: var(--color-accent-gold); color: var(--color-accent-gold); }
+        .icard-footer { text-align: center; margin-top: 50px; padding: 20px; color: rgba(255,255,255,0.4); font-size: 0.8rem; border-top: 1px solid rgba(255,215,0,0.15); }
+        .icard-footer .gold { color: var(--color-accent-gold); font-style: italic; }
+        @media (max-width: 700px) {
+            .icard-page { padding: 20px 16px 40px; }
+            .icard-table th, .icard-table td { font-size: 0.78rem; padding: 8px 6px; }
+        }
+    </style>
+</head>
+<body style="background: #0a1628; color: #ffffff;">
+
+    <!-- iAAi Network Bar — NAV-001 · Cross-Site Navigation -->
+    <div id="iaai-network-bar" style="display:flex;align-items:center;justify-content:space-around;width:100%;height:36px;background:#0a1628;position:sticky;top:0;z-index:200001;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">
+      <a href="https://www.infrastructure-academy.com" style="text-decoration:none;color:#fff;font-weight:700;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid #DC2626;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#DC2626"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg> ACADEMY</a>
+      <a href="https://realityeng-epdhlkrn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> QUEST</a>
+      <a href="https://xchangeapp-adbvx9fr.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A843"><path d="M6 2v6l-2 2v4l2 2v6h4v-6l2-2v-4L10 8V2H6zm12 0v6l-2 2v4l2 2v6h-4v-6l-2-2v-4l2-2V2h4z"/></svg> XCHANGE</a>
+      <a href="https://nigelmemorial-ucmtq9dn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#16A34A"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg> MEMORIAL</a>
+      <a href="https://xgrowthtrk-2a93yo5z.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#06B6D4"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/></svg> NEWS</a>
+    </div>
+
+    <main class="icard-page">
+
+        <!-- HEADER -->
+        <div class="icard-header">
+            <div class="icard-badge">iCard — Correction Manifest <span class="icard-beta">BETA</span></div>
+            <h1>CORRECTION-MANIFEST-001 — Quartermaster Open Items</h1>
+            <p class="subtitle">Single supersession of the off-spec REQ-001 and PROTOCOL-001 drafts. Approval gate per <code>IAAI_CARD_DECK_PLAYBOOK.md</code> §3 Step 4.</p>
+            <p class="node-id">Compiled by ATLAS · XCHANGE Quartermaster · 10 May 2026</p>
+        </div>
+
+        <!-- WHY THIS CARD EXISTS -->
+        <div class="icard-section">
+            <h2>Why This Card Exists</h2>
+            <p>Two earlier drafts — <code>icard-req-001.html</code> and <code>icard-protocol-001.html</code> — were authored in the previous sandbox session, left untracked in <code>/tmp/infra-acad003/docs/</code>, and reviewed against the registered live exemplar <code>icard-h-tetra.html</code>. Both were found off-spec on three counts: (1) missing the iAAi Network Bar required on every live iCard page, (2) missing the <code>.xref-section</code> Cross-References block, (3) PROTOCOL-001 introduced a non-registered <code>.icard-rule</code> CSS class. The drafts have been deleted from the working tree and never committed. This single Correction Manifest iCard now supersedes them and consolidates every open Quartermaster item awaiting Kantei decision in one registrable record.</p>
+            <div class="icard-highlight">
+                <p><strong>Operating rule:</strong> No further iCards will be rendered, committed, or pushed until this manifest is approved or amended by Kantei. Per <code>PLAYBOOK §3 Step 4 — Approval Gate</code>.</p>
+            </div>
+        </div>
+
+        <!-- WHAT'S BEEN DROPPED -->
+        <div class="icard-section">
+            <h2>What Has Been Dropped</h2>
+            <table class="icard-table">
+                <thead>
+                    <tr><th>Asset</th><th>Reason</th><th>Status</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="col-id">BSY-000 (public)</td>
+                        <td>Duplicates <code>icard-4ecl-br.html</code> (Vault #255, compiled by ALAN N2) which already covers the 4ECL Business Registration record on the live Academy site.</td>
+                        <td class="col-status-fail">DROPPED</td>
+                    </tr>
+                    <tr>
+                        <td class="col-id">BSY-000-C (confidential)</td>
+                        <td>Banking details belong inside XCHANGE behind admin OAuth, not on the public Academy site. Will surface only as a protected XCHANGE admin record.</td>
+                        <td class="col-status-fail">DROPPED</td>
+                    </tr>
+                    <tr>
+                        <td class="col-id">REQ-001 draft</td>
+                        <td>Off-spec (missing network bar &amp; xref-section). Untracked, never committed. Superseded by §"Open Items" of this manifest.</td>
+                        <td class="col-status-fail">DELETED</td>
+                    </tr>
+                    <tr>
+                        <td class="col-id">PROTOCOL-001 draft</td>
+                        <td>Off-spec (missing network bar &amp; xref-section, introduced unregistered <code>.icard-rule</code> class, asserted §4 playing-card spec where document-style applies). Untracked, never committed. Superseded by §"Operating Protocol" below.</td>
+                        <td class="col-status-fail">DELETED</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- TWO REGISTERED FORMATS -->
+        <div class="icard-section">
+            <h2>Two Registered iCard Formats — Confirmation</h2>
+            <p>Audit of <code>IAAI_CARD_DECK_PLAYBOOK.md</code> + the live <code>/docs/</code> directory + the database-backed register at <code>/api/trpc/icards.getAll</code> confirms two distinct registered iCard formats:</p>
+            <table class="icard-table">
+                <thead>
+                    <tr><th>Format</th><th>Used For</th><th>Source</th><th>Output</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="col-id">A — §4 Playing-Card</td>
+                        <td>D52 physical deck, 2.5″×3.5″ @ 300 DPI, navy bg / gold border / suit + equation ID + BETA badge.</td>
+                        <td><code>IAAI_CARD_DECK_PLAYBOOK.md §4</code></td>
+                        <td>PNG</td>
+                    </tr>
+                    <tr>
+                        <td class="col-id">B — Document HTML</td>
+                        <td>Live website iCards on infra-acad003. Network bar + icard-header + icard-section blocks + xref-section + icard-footer.</td>
+                        <td><code>icard-h-tetra.html</code> (canonical exemplar), <code>icard-4ecl-br.html</code>, <code>icard-khanh-huynh.html</code></td>
+                        <td>HTML</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="icard-highlight">
+                <p><strong>Format applies to all open Quartermaster items below:</strong> Format <strong>B (Document HTML)</strong>. Format A is reserved for the D52 physical deck and is not used for federation operating communications.</p>
+            </div>
+        </div>
+
+        <!-- OPEN ITEMS -->
+        <div class="icard-section">
+            <h2>Open Items Awaiting Kantei Decision</h2>
+            <table class="icard-table">
+                <thead>
+                    <tr><th>ID</th><th>Item</th><th>State</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="col-id">OI-01</td>
+                        <td>DOC-NNN registrar role. Six development-stage artefacts (PRINCIPIA TECTONICA v2, D00 DEARDEN FIELD, HAPTIC BIOREACTOR, IP EQUATIONS REGISTER 56-CARDS, THE VISION iAAi, D52 COMPLETE DECK) need allocation. Existing register: flat <code>DOC-NNN</code> at <code>/docs/documents/index.json</code>, last entry DOC-011, all <code>.docx</code>. Mixed PDF/PPTX/MD does not match.</td>
+                        <td class="col-status-fail">PENDING</td>
+                    </tr>
+                    <tr>
+                        <td class="col-id">OI-02</td>
+                        <td>Vault staging convention. Earlier proposal was a subfolder <code>/docs/documents/development-stage/2026-05-06/</code> with a <code>STATUS_AWAITING_REGISTRATION</code> flag. This breaks the flat DOC-NNN convention. Alternative: allocate <code>DOC-012</code>…<code>DOC-017</code> directly, or open a separate <code>DEV-NNN</code> series.</td>
+                        <td class="col-status-fail">PENDING</td>
+                    </tr>
+                    <tr>
+                        <td class="col-id">OI-03</td>
+                        <td>XCHANGE canonical URL discrepancy. <code>PROTOCOL.md</code> cites <code>xgrowthtrk-2a93yo5z.manus.space</code>; current build is <code>xchangeapp-adbvx9fr.manus.space</code>. Network Bar in this manifest uses the build URL for XCHANGE and the protocol URL for NEWS — needs reconciliation.</td>
+                        <td class="col-status-fail">PENDING</td>
+                    </tr>
+                    <tr>
+                        <td class="col-id">OI-04</td>
+                        <td>Quartermaster node activation on Memorial Boffin BIN. Cannot post agent-to-agent signals to ISAAC until Kantei activates the Quartermaster node. Draft signal already prepared at <code>vault/development-stage/2026-05-06/SIGNAL_DRAFT_to_ISAAC.md</code>.</td>
+                        <td class="col-status-fail">PENDING</td>
+                    </tr>
+                    <tr>
+                        <td class="col-id">OI-05</td>
+                        <td>Early-edition merchandising proposal. Six development-stage artefacts to be mapped to the nine XCHANGE divisions (Publishing, Media, Gaming, Hardware, Software, Equipment, Exhibition, Education, Edutainment) with edition logic and pricing. Not yet drafted.</td>
+                        <td class="col-status-fail">PENDING</td>
+                    </tr>
+                    <tr>
+                        <td class="col-id">OI-06</td>
+                        <td>XCHANGE storefront build. No product pages, no checkout flow, no early-edition shelf yet. Stripe sandbox is wired and validated (v4.3); Donate flow is live; storefront proper is pending.</td>
+                        <td class="col-status-fail">PENDING</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- OPERATING PROTOCOL -->
+        <div class="icard-section">
+            <h2>Operating Protocol — Card, Not Prose</h2>
+            <p>Confirmed and binding on ATLAS going forward: every outbound deliverable to Kantei or the federation is rendered as a Format B HTML iCard, committed to <code>infra-acad003/docs/</code>, and registered via the database-backed <code>icards.getAll</code> endpoint. Chat prose between cards is scaffolding only — it is sandbox-bound, lost on context compaction, and does not constitute a deliverable. This manifest itself is the acknowledgement of the rule; no further written confirmation in chat is required.</p>
+        </div>
+
+        <!-- DECISIONS REQUESTED -->
+        <div class="icard-section">
+            <h2>Decisions Requested From Kantei</h2>
+            <ul class="icard-questions">
+                <li><span class="q-num">D1</span>Approve this manifest as the single supersession of the deleted REQ-001 and PROTOCOL-001 drafts? <strong>Y / N.</strong></li>
+                <li><span class="q-num">D2</span>For OI-02 vault staging: allocate <code>DOC-012</code>…<code>DOC-017</code> in the existing flat register, or open a new <code>DEV-NNN</code> series? <strong>DOC-NNN / DEV-NNN.</strong></li>
+                <li><span class="q-num">D3</span>For OI-03 URL reconciliation: which is canonical for XCHANGE — <code>xgrowthtrk-2a93yo5z.manus.space</code> (per PROTOCOL.md) or <code>xchangeapp-adbvx9fr.manus.space</code> (current build)? <strong>Pick one.</strong></li>
+                <li><span class="q-num">D4</span>Activate the Quartermaster node on Memorial Boffin BIN so agent-to-agent signals to ISAAC are possible? <strong>Y / N.</strong></li>
+                <li><span class="q-num">D5</span>On approval of D1–D4, may ATLAS commit this manifest to <code>infra-acad003</code> as <code>docs/icard-correction-manifest-001.html</code> with author <code>Nigel T. Dearden &lt;nigel@4ecl.com&gt;</code> and <code>Co-authored-by: ATLAS</code>, with <strong>no</strong> edits to <code>site.html</code>, <code>index.html</code>, or <code>icard-register.html</code>? <strong>Y / N.</strong></li>
+            </ul>
+        </div>
+
+        <!-- ACTION ON APPROVAL -->
+        <div class="icard-section">
+            <h2>Action on Approval</h2>
+            <div class="action-item">
+                <p><strong>If D1=Y:</strong> commit this manifest only. Then unblock the remaining OI items in order — OI-02 (vault push), OI-03 (URL fix in this card &amp; PROTOCOL.md), OI-04 (signal to ISAAC), OI-05 (merch proposal as a separate iCard), OI-06 (XCHANGE storefront build). Each step produces its own Format B iCard before code or commits land.</p>
+            </div>
+            <div class="action-item">
+                <p><strong>If D1=N:</strong> ATLAS pauses. No commits. Awaits amended instructions in chat or via Boffin BIN once OI-04 is resolved.</p>
+            </div>
+        </div>
+
+        <!-- CROSS-REFERENCES -->
+        <div class="xref-section">
+            <h2>Cross-References</h2>
+            <div class="xref-links">
+                <a href="/site.html" class="xref-link">Home</a>
+                <a href="/icard-gallery.html" class="xref-link">iCard Gallery</a>
+                <a href="/icard-register.html" class="xref-link">iCard Register</a>
+                <a href="/icard-h-tetra.html" class="xref-link">Exemplar: H-Tetra</a>
+                <a href="/icard-4ecl-br.html" class="xref-link">iCard: 4ECL BR</a>
+                <a href="/icard-khanh-huynh.html" class="xref-link">iCard: K (Khanh Huynh)</a>
+                <a href="/docs/PROTOCOL.md" class="xref-link">PROTOCOL.md</a>
+                <a href="/docs/IAAI_CARD_DECK_PLAYBOOK.md" class="xref-link">PLAYBOOK</a>
+                <a href="/docs/documents/index.json" class="xref-link">DOC-NNN Register</a>
+                <a href="https://xchangeapp-adbvx9fr.manus.space" class="xref-link">XCHANGE (build)</a>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="icard-footer">
+            <p>iCard — CORRECTION-MANIFEST-001 — 10 May 2026 — DRAFT (awaiting Kantei approval)</p>
+            <p>Compiled by ATLAS (Quartermaster · XCHANGE) for Ir. Nigel T. Dearden CEng &amp; the iAAi Federation</p>
+            <p class="gold" style="margin-top:10px;">&ldquo;Per Arya Ad Astra&rdquo;</p>
+        </div>
+
+    </main>
+</body>
+</html>
