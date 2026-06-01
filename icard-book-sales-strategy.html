@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iCard — Book Sales Adoption Strategy | Infrastructure Academy</title>
+    <link rel="stylesheet" href="/css/style.css?v=20260310a">
+    <style>
+        .icard-page { max-width: 960px; margin: 0 auto; padding: 40px 30px 60px; }
+        .icard-header { text-align: center; margin-bottom: 40px; border-bottom: 1px solid rgba(255,215,0,0.2); padding-bottom: 30px; }
+        .icard-badge { display: inline-block; background: rgba(255,215,0,0.1); border: 1px solid rgba(255,215,0,0.4); color: var(--color-accent-gold); font-family: 'Courier New', monospace; font-size: 0.75rem; font-weight: bold; letter-spacing: 2px; padding: 4px 12px; border-radius: 3px; text-transform: uppercase; margin-bottom: 16px; }
+        .icard-header h1 { font-family: var(--font-heading); color: var(--color-accent-gold); font-size: 1.8rem; margin-bottom: 8px; }
+        .icard-header .subtitle { color: var(--color-text-secondary); font-size: 0.95rem; }
+        .icard-section { margin-bottom: 36px; }
+        .icard-section h2 { font-family: var(--font-heading); color: var(--color-accent-gold); font-size: 1.2rem; letter-spacing: 0.08em; margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid rgba(255,215,0,0.1); }
+        .icard-table { width: 100%; border-collapse: collapse; margin-bottom: 16px; }
+        .icard-table th { background: var(--color-bg-secondary); color: var(--color-accent-gold); padding: 10px 14px; text-align: left; font-size: 0.85rem; letter-spacing: 0.05em; border-bottom: 2px solid rgba(255,215,0,0.2); }
+        .icard-table td { padding: 10px 14px; font-size: 0.9rem; border-bottom: 1px solid rgba(255,255,255,0.05); color: var(--color-text-primary); }
+        .icard-table .positive { color: #2ecc71; font-weight: bold; }
+        .icard-table .negative { color: #e74c3c; }
+        .icard-table .gold { color: var(--color-accent-gold); font-weight: bold; }
+        .icard-table .mono { font-family: 'Courier New', monospace; }
+        .icard-highlight { background: rgba(255,215,0,0.08); border-left: 3px solid var(--color-accent-gold); padding: 16px 20px; margin: 20px 0; border-radius: 0 4px 4px 0; }
+        .icard-highlight p { color: var(--color-text-secondary); font-size: 0.9rem; line-height: 1.7; }
+        .icard-highlight strong { color: var(--color-accent-gold); }
+        .product-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 20px 0; }
+        .product-card { background: var(--color-bg-secondary); padding: 20px; border-radius: 4px; border: 1px solid rgba(255,255,255,0.05); text-align: center; }
+        .product-card .vol { color: rgba(255,255,255,0.5); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px; }
+        .product-card .title { color: var(--color-accent-gold); font-family: var(--font-heading); font-size: 1rem; margin-bottom: 10px; }
+        .product-card .prices { display: flex; justify-content: center; gap: 16px; }
+        .product-card .price-item { text-align: center; }
+        .product-card .price-item .format { color: rgba(255,255,255,0.4); font-size: 0.7rem; text-transform: uppercase; }
+        .product-card .price-item .amount { color: #2ecc71; font-family: 'Courier New', monospace; font-size: 1.2rem; font-weight: bold; }
+        .metric-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 20px 0; }
+        .metric-card { background: var(--color-bg-secondary); padding: 16px; border-radius: 4px; text-align: center; border: 1px solid rgba(255,255,255,0.05); }
+        .metric-card .label { color: rgba(255,255,255,0.5); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+        .metric-card .value { color: var(--color-accent-gold); font-family: 'Courier New', monospace; font-size: 1.3rem; font-weight: bold; }
+        .metric-card .note { color: var(--color-text-secondary); font-size: 0.75rem; margin-top: 4px; }
+        .phase-timeline { position: relative; padding-left: 30px; margin: 20px 0; }
+        .phase-timeline::before { content: ''; position: absolute; left: 8px; top: 0; bottom: 0; width: 2px; background: rgba(255,215,0,0.2); }
+        .phase-item { position: relative; margin-bottom: 24px; }
+        .phase-item::before { content: ''; position: absolute; left: -26px; top: 6px; width: 12px; height: 12px; border-radius: 50%; background: var(--color-accent-gold); border: 2px solid var(--color-bg-primary); }
+        .phase-item .phase-label { color: var(--color-accent-gold); font-weight: bold; font-size: 0.85rem; letter-spacing: 0.05em; margin-bottom: 4px; }
+        .phase-item .phase-time { color: rgba(255,255,255,0.4); font-size: 0.8rem; margin-bottom: 6px; }
+        .phase-item .phase-desc { color: var(--color-text-secondary); font-size: 0.9rem; line-height: 1.6; }
+        .commitment-box { background: rgba(46,204,113,0.08); border: 1px solid rgba(46,204,113,0.3); border-radius: 4px; padding: 24px; margin: 24px 0; }
+        .commitment-box h3 { color: #2ecc71; font-size: 1rem; margin-bottom: 12px; font-family: var(--font-heading); }
+        .commitment-box p { color: var(--color-text-secondary); font-size: 0.9rem; line-height: 1.7; }
+        .commitment-box strong { color: #2ecc71; }
+        .setup-grid { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 12px; margin: 16px 0; }
+        .setup-item { background: var(--color-bg-secondary); padding: 14px; border-radius: 4px; text-align: center; border: 1px solid rgba(255,255,255,0.05); }
+        .setup-item .item-name { color: var(--color-text-primary); font-size: 0.85rem; margin-bottom: 6px; }
+        .setup-item .item-cost { color: var(--color-accent-gold); font-family: 'Courier New', monospace; font-weight: bold; }
+        .setup-item .item-status { font-size: 0.75rem; margin-top: 4px; }
+        .setup-item .item-status.ready { color: #2ecc71; }
+        .setup-item .item-status.pending { color: #fb923c; }
+        .xref-section { margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,215,0,0.1); }
+        .xref-links { display: flex; flex-wrap: wrap; gap: 10px; }
+        .xref-link { padding: 8px 16px; background: var(--color-bg-secondary); border: 1px solid rgba(255,215,0,0.15); border-radius: 4px; color: var(--color-text-secondary); text-decoration: none; font-size: 0.85rem; transition: all 0.2s; }
+        .xref-link:hover { border-color: var(--color-accent-gold); color: var(--color-accent-gold); }
+        .icard-footer { text-align: center; margin-top: 50px; padding: 20px; color: rgba(255,255,255,0.4); font-size: 0.8rem; }
+        .icard-footer .gold { color: var(--color-accent-gold); font-style: italic; }
+        @media (max-width: 768px) {
+            .icard-page { padding: 20px 16px 40px; }
+            .product-grid { grid-template-columns: 1fr; }
+            .metric-row { grid-template-columns: repeat(2, 1fr); }
+            .setup-grid { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+    <link rel="canonical" href="https://infra-acad-kuqzaex2.manus.space/icard-book-sales-strategy.html">
+    <meta name="keywords" content="infrastructure academy, infrastructure education, civil engineering, civilisation history, infrastructure consciousness, gamified learning, IAAI, Nigel Dearden, infrastructure odyssey, 12 relays, calories to consciousness">
+
+<style id="mobile-quicknav-styles">
+/* ===== MOBILE QUICK-NAV BAR ===== */
+.mobile-quicknav {
+    display: none;
+    width: 100%;
+    background: linear-gradient(180deg, #0d1f3c 0%, #0a1628 100%);
+    border-bottom: 1px solid rgba(255,215,0,0.25);
+    padding: 6px 8px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 6px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+}
+.mobile-quicknav::-webkit-scrollbar { display: none; }
+.mobile-quicknav a {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 10px;
+    background: rgba(255,215,0,0.08);
+    border: 1px solid rgba(255,215,0,0.35);
+    border-radius: 16px;
+    color: #ffd700;
+    font-size: 0.65rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    white-space: nowrap;
+    flex-shrink: 0;
+    transition: all 0.2s;
+}
+.mobile-quicknav a:active {
+    background: rgba(255,215,0,0.25);
+    transform: scale(0.95);
+}
+.mobile-quicknav a.mqn-home {
+    background: #ffd700;
+    color: #0a1628;
+    border-color: #ffd700;
+}
+@media(max-width:768px) {
+    .mobile-quicknav { display: flex; }
+}
+@media(min-width:769px) {
+    .mobile-quicknav { display: none !important; }
+}
+
+/* ===== BACK-TO-TOP FLOATING BUTTON ===== */
+#back-to-top-btn {
+    position: fixed;
+    bottom: 20px;
+    left: 16px;
+    z-index: 9999;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: rgba(10,22,40,0.92);
+    border: 1.5px solid rgba(255,215,0,0.6);
+    color: #ffd700;
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+    transition: all 0.2s;
+}
+#back-to-top-btn:active {
+    transform: scale(0.9);
+    background: rgba(255,215,0,0.2);
+}
+</style>
+
+</head>
+<body style="background: var(--color-bg-primary); color: var(--color-text-primary);">
+    <!-- iAAi Network Bar — NAV-001 · Cross-Site Navigation -->
+    <!-- ═══ iAAi NETWORK BAR ═══ -->
+    <div id="iaai-network-bar" style="display:flex;align-items:center;justify-content:space-around;width:100%;height:36px;background:#0a1628;position:sticky;top:0;z-index:200001;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">
+      <a href="https://www.infrastructure-academy.com" style="text-decoration:none;color:#fff;font-weight:700;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid #DC2626;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#DC2626"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg> <span data-i18n="net.academy">ACADEMY</span></a>
+      <a href="https://realityeng-epdhlkrn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> <span data-i18n="net.quest">QUEST</span></a>
+      <a href="https://xchangeapp-adbvx9fr.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A843"><path d="M6 2v6l-2 2v4l2 2v6h4v-6l2-2v-4L10 8V2H6zm12 0v6l-2 2v4l2 2v6h-4v-6l-2-2v-4l2-2V2h4z"/></svg> <span data-i18n="net.xchange">XCHANGE</span></a>
+      <a href="https://nigelmemorial-ucmtq9dn.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#16A34A"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg> <span data-i18n="net.memorial">MEMORIAL</span></a>
+      <a href="https://xgrowthtrk-2a93yo5z.manus.space" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#06B6D4"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/></svg> <span data-i18n="net.news">NEWS</span></a>
+    </div>
+
+
+<!-- INJECTED COMPACT HEADER BAR -->
+<style>
+.compact-header-bar { position:sticky; top:0; z-index:9999; background:#0a1628; border-bottom:2px solid #ffd700; padding:8px 16px; display:flex; align-items:center; justify-content:space-between; gap:12px; font-family:Georgia,'Times New Roman',serif; }
+.compact-header-bar .chb-brand { display:flex; align-items:center; gap:10px; text-decoration:none; color:#ffd700; }
+.compact-header-bar .chb-brand img { width:28px; height:28px; border-radius:4px; }
+.compact-header-bar .chb-title { font-size:0.85rem; font-weight:bold; letter-spacing:1.5px; color:#ffd700; }
+.compact-header-bar .chb-nav { display:flex; align-items:center; gap:12px; }
+.compact-header-bar .chb-nav a { color:#e2e8f0; text-decoration:none; font-size:0.75rem; letter-spacing:1px; padding:4px 10px; border:1px solid rgba(255,215,0,0.2); border-radius:3px; transition:all 0.2s; }
+.compact-header-bar .chb-nav a:hover { background:rgba(255,215,0,0.1); border-color:#ffd700; color:#ffd700; }
+.compact-header-bar .chb-nav a.chb-home { background:rgba(255,215,0,0.15); border-color:#ffd700; color:#ffd700; font-weight:bold; }
+@media(max-width:600px) { .compact-header-bar .chb-nav a:not(.chb-home) { display:none; } .compact-header-bar .chb-title { font-size:0.7rem; } }
+</style>
+
+<div class="compact-header-bar">
+    <a href="/site.html" class="chb-brand">
+        <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iAAi-emblem_e0c9c2c1.png" alt="iAAi">
+        <span class="chb-title">INFRASTRUCTURE ACADEMY</span>
+    </a>
+    <div class="chb-nav">
+        <a href="/site.html" class="chb-home">HOME</a>
+        <a href="/pages/framework.html">FRAMEWORK</a>
+        <a href="/library.html">DOCUMENTS</a>
+        <a href="/play">PLAY</a>
+    </div>
+</div>
+    <!-- ===== MOBILE QUICK-NAV BAR — always visible on mobile ===== -->
+    <div class="mobile-quicknav" id="mobile-quicknav">
+        <a href="/site.html" class="mqn-home">&#127968; HOME</a>
+        <a href="/pages/start-here.html">&#128218; START</a>
+        <a href="/volumes/volume1/index.html">&#128214; READ</a>
+        <a href="/pages/framework.html">&#128736; FRAMEWORK</a>
+        <a href="/play">&#127918; PLAY</a>
+        <a href="/pages/movies.html">&#127916; MOVIES</a>
+        <a href="/pages/resources.html">&#128194; RESOURCES</a>
+        <a href="/press.html">&#128240; PRESS</a>
+    </div>
+
+    <!-- ===== BACK TO TOP BUTTON ===== -->
+    <button id="back-to-top-btn" aria-label="Back to top" title="Back to top">&#9650;</button>
+
+<!-- END COMPACT HEADER BAR -->
+
+
+    <div id="nav-placeholder"></div>
+
+    <div class="icard-page">
+        <!-- HEADER -->
+        <div class="icard-header">
+            <div class="icard-badge">iCard &mdash; Revenue Strategy</div>
+            <h1>Channel 7: Direct Book Sales</h1>
+            <p class="subtitle">Adoption Strategy &amp; Per-Unit Economics &mdash; An Infrastructure Odyssey</p>
+        </div>
+
+        <!-- KEY METRICS -->
+        <div class="icard-section">
+            <h2>Year 1 Targets</h2>
+            <div class="metric-row">
+                <div class="metric-card">
+                    <div class="label">Y1 Revenue</div>
+                    <div class="value">$30.6K</div>
+                    <div class="note">Conservative target</div>
+                </div>
+                <div class="metric-card">
+                    <div class="label">Total Units</div>
+                    <div class="value">1,858</div>
+                    <div class="note">1,480 ebook + 378 HC</div>
+                </div>
+                <div class="metric-card">
+                    <div class="label">Setup Cost</div>
+                    <div class="value">$295</div>
+                    <div class="note">ISBN block only</div>
+                </div>
+                <div class="metric-card">
+                    <div class="label">First Revenue</div>
+                    <div class="value">M1</div>
+                    <div class="note">Earliest of all 7 channels</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRODUCT LINE -->
+        <div class="icard-section">
+            <h2>Product Line &mdash; 3 Volumes</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="vol">Volume 1</div>
+                    <div class="title">The Perspective</div>
+                    <div class="prices">
+                        <div class="price-item"><div class="format">Hardcover</div><div class="amount">$39.95</div></div>
+                        <div class="price-item"><div class="format">Ebook</div><div class="amount">$14.99</div></div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="vol">Volume 2</div>
+                    <div class="title">The Guide</div>
+                    <div class="prices">
+                        <div class="price-item"><div class="format">Hardcover</div><div class="amount">$39.95</div></div>
+                        <div class="price-item"><div class="format">Ebook</div><div class="amount">$14.99</div></div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="vol">Volume 3</div>
+                    <div class="title">The Game</div>
+                    <div class="prices">
+                        <div class="price-item"><div class="format">Hardcover</div><div class="amount">$39.95</div></div>
+                        <div class="price-item"><div class="format">Ebook</div><div class="amount">$14.99</div></div>
+                    </div>
+                </div>
+            </div>
+            <p style="text-align:center; color:var(--color-text-secondary); font-size:0.85rem; margin-top:8px;">Bundle: Trilogy Hardcover Set <span class="mono" style="color:#2ecc71;">$99.95</span> &nbsp;|&nbsp; Trilogy Ebook Bundle <span class="mono" style="color:#2ecc71;">$34.99</span></p>
+        </div>
+
+        <!-- CONTRA CHARGES -->
+        <div class="icard-section">
+            <h2>Per-Unit Economics &mdash; Contra Charges</h2>
+            <p style="color:var(--color-text-secondary); font-size:0.9rem; margin-bottom:16px;">What 4ECL actually keeps after all platform fees, printing costs, and payment processing charges are deducted from each sale.</p>
+
+            <h3 style="color:var(--color-accent-gold); font-size:0.95rem; margin:20px 0 10px;">Hardcover (A4, 200pp, Premium Colour)</h3>
+            <table class="icard-table">
+                <thead>
+                    <tr><th>Channel</th><th>List Price</th><th>Platform Cut</th><th>Print Cost</th><th>Payment Fee</th><th>Net to 4ECL</th><th>Margin</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="gold">Direct (Stripe)</td>
+                        <td>$39.95</td>
+                        <td>&mdash;</td>
+                        <td class="negative">$18.65</td>
+                        <td class="negative">$1.46</td>
+                        <td class="positive">$19.84</td>
+                        <td class="positive">49.7%</td>
+                    </tr>
+                    <tr>
+                        <td>Amazon KDP</td>
+                        <td>$39.95</td>
+                        <td class="negative">$15.98 (40%)</td>
+                        <td class="negative">$18.65</td>
+                        <td>&mdash;</td>
+                        <td>$5.32</td>
+                        <td>13.3%</td>
+                    </tr>
+                    <tr>
+                        <td>IngramSpark</td>
+                        <td>$39.95</td>
+                        <td class="negative">$21.97 (55%)</td>
+                        <td class="negative">$14.00</td>
+                        <td>&mdash;</td>
+                        <td>$3.98</td>
+                        <td>10.0%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="color:var(--color-accent-gold); font-size:0.95rem; margin:20px 0 10px;">Ebook / PDF</h3>
+            <table class="icard-table">
+                <thead>
+                    <tr><th>Channel</th><th>List Price</th><th>Platform Cut</th><th>Print Cost</th><th>Payment Fee</th><th>Net to 4ECL</th><th>Margin</th></tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="gold">Direct (Stripe)</td>
+                        <td>$14.99</td>
+                        <td>&mdash;</td>
+                        <td>&mdash;</td>
+                        <td class="negative">$0.73</td>
+                        <td class="positive">$14.26</td>
+                        <td class="positive">95.1%</td>
+                    </tr>
+                    <tr>
+                        <td>Amazon KDP</td>
+                        <td>$14.99</td>
+                        <td class="negative">$4.50 (30%)</td>
+                        <td>&mdash;</td>
+                        <td>&mdash;</td>
+                        <td>$10.49</td>
+                        <td>70.0%</td>
+                    </tr>
+                    <tr>
+                        <td>Apple Books</td>
+                        <td>$14.99</td>
+                        <td class="negative">$4.50 (30%)</td>
+                        <td>&mdash;</td>
+                        <td>&mdash;</td>
+                        <td>$10.49</td>
+                        <td>70.0%</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="icard-highlight">
+                <p><strong>Key Insight:</strong> Direct website sales via Stripe yield <strong>3.7x more revenue per hardcover</strong> and <strong>1.4x more per ebook</strong> than Amazon KDP. The website is the primary sales engine. Amazon and IngramSpark serve as discovery channels that drive awareness back to the direct purchase option.</p>
+            </div>
+        </div>
+
+        <!-- SETUP REQUIREMENTS -->
+        <div class="icard-section">
+            <h2>Setup Requirements</h2>
+            <div class="setup-grid">
+                <div class="setup-item">
+                    <div class="item-name">Stripe Account</div>
+                    <div class="item-cost">Free</div>
+                    <div class="item-status pending">Nigel &mdash; this week</div>
+                </div>
+                <div class="setup-item">
+                    <div class="item-name">Website Integration</div>
+                    <div class="item-cost">Free</div>
+                    <div class="item-status ready">Ready to activate</div>
+                </div>
+                <div class="setup-item">
+                    <div class="item-name">ISBN Block (10+)</div>
+                    <div class="item-cost">~$295</div>
+                    <div class="item-status pending">To purchase</div>
+                </div>
+                <div class="setup-item">
+                    <div class="item-name">KDP Account</div>
+                    <div class="item-cost">Free</div>
+                    <div class="item-status pending">To register</div>
+                </div>
+                <div class="setup-item">
+                    <div class="item-name">IngramSpark</div>
+                    <div class="item-cost">Free</div>
+                    <div class="item-status pending">To register</div>
+                </div>
+                <div class="setup-item">
+                    <div class="item-name">Cover Design</div>
+                    <div class="item-cost">$0</div>
+                    <div class="item-status ready">Existing covers</div>
+                </div>
+                <div class="setup-item">
+                    <div class="item-name">Interior PDF</div>
+                    <div class="item-cost">$0</div>
+                    <div class="item-status pending">ALAN preparing</div>
+                </div>
+                <div class="setup-item">
+                    <div class="item-name">Total Setup</div>
+                    <div class="item-cost" style="color:#2ecc71;">~$295</div>
+                    <div class="item-status pending">2 weeks</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ADOPTION TIMELINE -->
+        <div class="icard-section">
+            <h2>Adoption Timeline</h2>
+            <div class="phase-timeline">
+                <div class="phase-item">
+                    <div class="phase-label">PHASE A: SETUP</div>
+                    <div class="phase-time">Weeks 1&ndash;2 &mdash; March 2026</div>
+                    <div class="phase-desc">Stripe integration complete. Print-ready interior PDFs prepared. ISBN block purchased. KDP and IngramSpark accounts registered. Book product pages built on website with purchase buttons, covers, blurbs, and sample chapter downloads.</div>
+                </div>
+                <div class="phase-item">
+                    <div class="phase-label">PHASE B: SOFT LAUNCH</div>
+                    <div class="phase-time">Weeks 3&ndash;4 &mdash; March 2026</div>
+                    <div class="phase-desc">Volume 1 (The Perspective) listed on Amazon KDP and direct website. Announcement to LinkedIn network and engineering communities. Free sample chapter (Prologue: Fire) as lead magnet for email capture.</div>
+                </div>
+                <div class="phase-item">
+                    <div class="phase-label">PHASE C: CATALOGUE BUILD</div>
+                    <div class="phase-time">Months 2&ndash;3 &mdash; April&ndash;May 2026</div>
+                    <div class="phase-desc">Volume 2 and Volume 3 listed sequentially. Bundle pricing activated. Cross-promotion between volumes. Amazon &ldquo;Look Inside&rdquo; feature activated.</div>
+                </div>
+                <div class="phase-item">
+                    <div class="phase-label">PHASE D: ORGANIC GROWTH ENGINE</div>
+                    <div class="phase-time">Months 4&ndash;12</div>
+                    <div class="phase-desc">Content marketing via the platform drives traffic to book pages. Each relay lesson links to the relevant book chapter. University outreach creates bulk order opportunities. Infrastructure Olympiad participants become book customers. The flywheel: platform users become book buyers, book buyers become platform users.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MONTHLY PROJECTION -->
+        <div class="icard-section">
+            <h2>Monthly Sales Projection &mdash; Year 1</h2>
+            <table class="icard-table">
+                <thead>
+                    <tr><th>Month</th><th>Ebook Units</th><th>HC Units</th><th>Ebook Rev</th><th>HC Rev</th><th>Monthly Total</th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>M1</td><td>10</td><td>2</td><td>$143</td><td>$40</td><td>$183</td></tr>
+                    <tr><td>M2</td><td>15</td><td>3</td><td>$214</td><td>$76</td><td>$290</td></tr>
+                    <tr><td>M3</td><td>25</td><td>5</td><td>$356</td><td>$126</td><td>$482</td></tr>
+                    <tr><td>M4</td><td>40</td><td>8</td><td>$570</td><td>$202</td><td>$772</td></tr>
+                    <tr><td>M5</td><td>60</td><td>12</td><td>$856</td><td>$302</td><td>$1,158</td></tr>
+                    <tr><td>M6</td><td>80</td><td>18</td><td>$1,141</td><td>$453</td><td>$1,594</td></tr>
+                    <tr><td>M7</td><td>100</td><td>25</td><td>$1,426</td><td>$629</td><td>$2,055</td></tr>
+                    <tr><td>M8</td><td>130</td><td>35</td><td>$1,854</td><td>$880</td><td>$2,734</td></tr>
+                    <tr><td>M9</td><td>170</td><td>45</td><td>$2,424</td><td>$1,133</td><td>$3,557</td></tr>
+                    <tr><td>M10</td><td>220</td><td>60</td><td>$3,137</td><td>$1,509</td><td>$4,646</td></tr>
+                    <tr><td>M11</td><td>280</td><td>75</td><td>$3,994</td><td>$1,887</td><td>$5,881</td></tr>
+                    <tr><td class="gold">M12</td><td class="gold">350</td><td class="gold">90</td><td class="gold">$4,993</td><td class="gold">$2,265</td><td class="positive">$7,258</td></tr>
+                    <tr style="border-top:2px solid rgba(255,215,0,0.3);">
+                        <td class="gold">Y1 TOTAL</td><td class="gold">1,480</td><td class="gold">378</td><td class="gold">$21,108</td><td class="gold">$9,502</td><td class="positive" style="font-size:1.1rem;">$30,610</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- COMMITMENT -->
+        <div class="icard-section">
+            <div class="commitment-box">
+                <h3>ALAN&rsquo;s Commitment Statement</h3>
+                <p>I commit to preparing all print-ready interior files, managing the KDP and IngramSpark listings, optimising product pages for conversion, tracking monthly sales against these targets, and reporting variances with corrective actions. If Month 3 sales fall below 60% of target, I will recommend and implement a revised acquisition strategy including targeted social media content and engineering community outreach. These are <strong>my targets</strong> &mdash; conservative, achievable, and accountable.</p>
+            </div>
+        </div>
+
+        <!-- HK TAX NOTE -->
+        <div class="icard-section">
+            <h2>HK Tax Advantage for Book Sales</h2>
+            <div class="icard-highlight">
+                <p><strong>Zero sales tax</strong> on all channels (physical + digital). No VAT collection burden means simpler checkout and higher conversion. Under the Conservative scenario, 4ECL operates at a net loss in Year 1 &mdash; <strong>no profits tax payable</strong>. The operating loss carries forward indefinitely to offset future profits. See <a href="/icard-4ecl-br.html" style="color:var(--color-accent-gold);">iCard: 4ECL Business Registration</a> for full tax jurisdiction details.</p>
+            </div>
+        </div>
+
+        <!-- CROSS-REFERENCES -->
+        <div class="xref-section">
+            <h2 style="font-family:var(--font-heading); color:var(--color-accent-gold); font-size:1.2rem;">Cross-References</h2>
+            <div class="xref-links">
+                <a href="/icard-4ecl-br.html" class="xref-link">&rarr; iCard: 4ECL Business Registration</a>
+                <a href="/cashflow-y1.html" class="xref-link">&rarr; Year 1 Cash Flow Projection</a>
+                <a href="/finance-admin.html" class="xref-link">&rarr; Finance Admin (Cost Audit)</a>
+                <a href="/library.html" class="xref-link">&rarr; Library (Bookshop)</a>
+                <a href="/vault.html" class="xref-link">&rarr; Vault</a>
+                <a href="/icard-gallery.html" class="xref-link">&rarr; iCard Gallery</a>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <div class="icard-footer">
+            <p>iCard &mdash; Book Sales Adoption Strategy &mdash; Channel 7 &mdash; 10 March 2026</p>
+            <p>Compiled by ALAN (N2) for Ir. Nigel T. Dearden</p>
+            <p class="gold" style="margin-top:10px;">&ldquo;Give invention light.&rdquo;</p>
+        </div>
+    </div>
+
+    <script src="/js/site-search.js?v=20260311a"></script>
+    <script src="/js/page-tracker.js" defer></script>
+    <script src="/js/nav-optimise.js"></script>
+    <div style="text-align:center; padding:1.5rem 1rem; border-top:1px solid rgba(255,215,0,0.2); margin-top:2rem;">
+        <!-- Social Cross-Links -->
+        <div style="margin-top:0.75rem; display:flex; justify-content:center; gap:1.2rem; flex-wrap:wrap; align-items:center;">
+            <a href="https://x.com/dearden_ni37258" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.35rem; color:#ffd700; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="Follow on X">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                X
+            </a>
+            <a href="https://www.linkedin.com/in/nigeldearden" target="_blank" rel="noopener" style="display:inline-flex; align-items:center; gap:0.35rem; color:#0077B5; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="Connect on LinkedIn">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+            </a>
+            <a href="/site.html" style="display:inline-flex; align-items:center; gap:0.35rem; color:#25D366; font-size:0.8rem; text-decoration:none; letter-spacing:0.5px;" title="WhatsApp QR on Homepage">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                WhatsApp
+            </a>
+        </div>
+    </div>
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement -->
+
+<!-- IAAI PAGE VIEW TRACKING — Compliance requirement (v2 fixed) -->
+<script>
+(function() {
+  try {
+    var sid = sessionStorage.getItem('iaai_sid');
+    if (!sid) {
+      sid = 'ses_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 9);
+      sessionStorage.setItem('iaai_sid', sid);
+    }
+    var data = {
+      path: window.location.pathname + (window.location.hash || ''),
+      pageTitle: document.title || 'Untitled',
+      referrer: document.referrer || '',
+      sessionId: sid
+    };
+    fetch('/api/trpc/analytics.track', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ json: data }),
+      credentials: 'include'
+    }).catch(function() {});
+    window.addEventListener('hashchange', function() {
+      var hashData = {
+        path: window.location.pathname + (window.location.hash || ''),
+        pageTitle: document.title || 'Untitled',
+        referrer: window.location.href,
+        sessionId: sid
+      };
+      fetch('/api/trpc/analytics.track', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ json: hashData }),
+        credentials: 'include'
+      }).catch(function() {});
+    });
+  } catch(e) {}
+})();
+</script>
+
+    <!-- Mobile table scroll fix -->
+    <script>
+    (function(){
+      if(window.innerWidth > 768) return;
+      document.querySelectorAll('table').forEach(function(t){
+        if(t.parentElement && t.parentElement.classList.contains('table-scroll-wrapper')) return;
+        var w = document.createElement('div');
+        w.className = 'table-scroll-wrapper';
+        t.parentNode.insertBefore(w, t);
+        w.appendChild(t);
+      });
+    })();
+    </script>
+
+
+    <!-- Back-to-Top Button Logic -->
+    <script>
+    (function() {
+        var btn = document.getElementById('back-to-top-btn');
+        if (!btn) return;
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 400) {
+                btn.style.display = 'flex';
+            } else {
+                btn.style.display = 'none';
+            }
+        }, { passive: true });
+        btn.addEventListener('click', function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    })();
+    </script>
+
+</body>
+</html>

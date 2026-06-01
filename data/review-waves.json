@@ -1,0 +1,58 @@
+{
+  "meta": {
+    "title": "iAAi Beta Test — UV Data Wave Breakdown",
+    "date": "2026-03-06",
+    "purpose": "Single source of truth for all site counters"
+  },
+  "total": 180,
+  "waves": [
+    {
+      "id": 1,
+      "name": "Development Testing",
+      "period": "Oct 2024 — Jan 2026",
+      "count": 15,
+      "type": "internal",
+      "description": "Author's own play-throughs and AI-assisted testing during development"
+    },
+    {
+      "id": 2,
+      "name": "Pre-Review Beta",
+      "period": "Jan — Feb 2026",
+      "count": 21,
+      "type": "registered",
+      "description": "Mobilisation clock registered players — human accounts"
+    },
+    {
+      "id": 3,
+      "name": "ICE Review Bots",
+      "period": "27 Feb 2026",
+      "count": 20,
+      "type": "dd_testing",
+      "description": "3 briefing packages × ~7 bots each — full site walkthrough and game assessment"
+    },
+    {
+      "id": 4,
+      "name": "12-University Benchmark",
+      "period": "27 Feb 2026",
+      "count": 120,
+      "type": "dd_testing",
+      "description": "12 universities × 10 simulated interactions across the relay framework"
+    },
+    {
+      "id": 5,
+      "name": "Meta VR Assessment",
+      "period": "27 Feb 2026",
+      "count": 1,
+      "type": "dd_testing",
+      "description": "Full platform assessment for Meta/VR integration"
+    },
+    {
+      "id": 6,
+      "name": "Rogue Team Classes",
+      "period": "27 Feb 2026",
+      "count": 3,
+      "type": "dd_testing",
+      "description": "3 Rogue classes: Outriders, Freeform Engineers, Mavericks — Olympiad wildcards"
+    }
+  ]
+}
