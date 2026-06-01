@@ -164,12 +164,12 @@ header {
 
 /* IAAI Logo — Gold iAAi Compass Image */
 .iaai-logo-box {
-  width: 40px;
-  height: 40px;
-  min-width: 40px;
-  border: 2px solid var(--color-accent-gold);
-  border-radius: 6px;
-  object-fit: cover;
+  width: 150px;
+  height: auto;
+  min-width: 150px;
+  border: none;
+  border-radius: 0;
+  object-fit: contain;
   flex-shrink: 0;
 }
 
@@ -635,6 +635,18 @@ footer {
   }
 }
 
+/* Social buttons base styles */
+.desktop-social {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.mobile-social-toggle {
+  display: none;
+}
+
 @media (max-width: 768px) {
   header {
     display: flex;
@@ -687,10 +699,14 @@ footer {
     display: none !important;
   }
   
+  .header-text-group {
+    display: none !important;
+  }
+  
   .iaai-logo-box {
-    width: 40px;
-    height: 40px;
-    min-width: 40px;
+    width: 120px;
+    height: auto;
+    min-width: 120px;
   }
   
   .header-scholar-thumb {
