@@ -4,7 +4,7 @@
 (function() {
     var path = window.location.pathname;
     var hash = window.location.hash;
-    var page = path.split('/').pop() || 'index.html';
+    var page = path.split('/').pop() || 'site.html';
 
     // --- Row 1: Primary Navigation ---
     var nav1 = document.getElementById('nav-menu');
@@ -14,7 +14,7 @@
             a.classList.remove('active');
             var href = a.getAttribute('href') || '';
             var hrefPage = href.split('/').pop().split('#')[0].split('?')[0];
-            if (page === hrefPage || (page === '' && hrefPage === 'index.html' || hrefPage === '') ||
+            if (page === hrefPage || (page === '' && hrefPage === 'site.html') ||
                 (page === 'index.html' && href.indexOf(path.replace('/index.html','')) > -1) ||
                 (path.indexOf('/volumes/volume1/') > -1 && href.indexOf('volume1/index') > -1) ||
                 (path.indexOf('/volumes/volume2/') > -1 && href.indexOf('volume2/index') > -1) ||
@@ -34,7 +34,7 @@
             var href = a.getAttribute('href') || '';
             var hrefPage = href.split('/').pop().split('#')[0].split('?')[0];
             if (page === hrefPage ||
-                (href === 'index.html#charter' || href === '/#charter' && page === 'index.html' || page === '' && hash === '#charter') ||
+                (href === 'site.html#charter' && page === 'site.html' && hash === '#charter') ||
                 (path.indexOf('/play/founders') === 0 && href === '/play/founders') ||
                 (path.indexOf('/archive') > -1 && hrefPage === 'vault.html')) {
                 a.classList.add('active');

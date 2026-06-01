@@ -1,4 +1,33 @@
-User-Agent: *
+User-agent: *
 Allow: /
-Disallow: /api/*
+
+# Infrastructure Academy — An Infrastructure Odyssey
+# 12 Relays. 12,000 Years. One Odyssey.
+# Silicon and Carbon. Together.
+# Per Arya Ad Astra
+
 Sitemap: https://infra-acad-kuqzaex2.manus.space/sitemap.xml
+
+# Disallow admin/internal pages
+Disallow: /finance-admin.html
+Disallow: /pages/analytics-dashboard.html
+Disallow: /vault.html
+Disallow: /page-schema.html
+Disallow: /cashflow-y1.html
+Disallow: /api/
+
+# Social media bots — welcome
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /

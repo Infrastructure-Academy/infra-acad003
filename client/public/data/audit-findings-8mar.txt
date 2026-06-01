@@ -1,0 +1,44 @@
+AUDIT FINDINGS — 8 March 2026
+Previous agent's critical note: "iCard register only on sandbox, MASTER HARD SAVE must deploy to /data/"
+
+WHAT EXISTS ON SANDBOX (TEMPORARY):
+- icard_register/ directory: 37+ cards as PNG files + REGISTER.md + CONTACT_SHEET.png
+- 14 iCard PNGs in /home/ubuntu/ (generated this session)
+- 5 HARD SAVE files (.md)
+- GOVERNANCE_BREACH_LOG.md (11.9KB)
+- THESIS_DEARDEN_EXPERIMENT_8MAR26.md (14.9KB)
+
+WHAT EXISTS ON WEBSITE /data/ (PERMANENT — 19 files):
+- 10-level-why-scan-not-read.txt ✓
+- 10-level-why-stopping.txt ✓
+- beta-test-unis12-dossier.md ✓
+- beta-test-unis12.json ✓
+- bitpoint-vs-icard-definition.json ✓
+- cpm-forward-backward-pass.txt ✓
+- hard-save-session-8mar-c.md ✓
+- icard-gallery.json ✓
+- olympic-brand-guidelines.json ✓
+- previous-session-status.md ✓
+- psychology-winning-vs-losing.txt ✓
+- review-waves.json ✓
+- round2-analysis-findings.md ✓
+- round2-audit-brief.md ✓
+- round2-focused-audit.json ✓
+- task-reconciliation-8mar.md ✓
+- thesis-dearden-experiment-8mar26.md ✓
+- university-scores.json ✓
+
+WHAT IS MISSING FROM WEBSITE (NEEDS DEPLOYING):
+1. MASTER HARD SAVE (HARD_SAVE_MASTER_8MAR26_FINAL.md) — NOT on website
+2. GOVERNANCE_BREACH_LOG.md — NOT on website
+3. iCard register images (37+ PNGs) — NOT on website (too large for /data/, need S3 CDN)
+4. REGISTER.md (metadata) — NOT on website
+5. CONTACT_SHEET.png — NOT on website
+6. Other hard saves (SESSION_B, TEAM_CONTACTS, CONTEXT_SAVING_THROW) — NOT on website
+
+DOCUMENTS LISTED ON MASTER ASSET INDEX CARD:
+1. IAAI_UNIFIED_REVIEW_DOSSIER.md — need to check if exists
+2. ROUND2_FOCUSED_AUDIT_BRIEF.md — need to check if exists
+3. ROUND2_ANALYSIS_FINDINGS.md — need to check if exists
+4. IAAI_Total_Cost_Estimate.md — need to check if exists
+5. grading_equivalency_notes.md — need to check if exists

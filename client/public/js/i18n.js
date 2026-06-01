@@ -58,7 +58,10 @@
      * Inject language selector dropdown into the navigation bar
      */
     function injectLanguageSelector() {
-        const nav = document.getElementById('nav-menu') || document.querySelector('nav');
+        // Place in header-content (always visible) instead of nav (hidden on mobile)
+        const headerContent = document.querySelector('.header-content');
+        const hamburger = document.getElementById('hamburger-menu');
+        const nav = headerContent || document.getElementById('nav-menu') || document.querySelector('nav');
         if (!nav) return;
 
         // Create selector container
@@ -131,7 +134,12 @@
         // Close dropdown when clicking outside
         document.addEventListener('click', () => closeDropdown());
 
-        nav.appendChild(selector);
+        // Insert before hamburger if in header-content, otherwise append
+        if (headerContent && hamburger) {
+            headerContent.insertBefore(selector, hamburger);
+        } else {
+            nav.appendChild(selector);
+        }
     }
 
     /**
