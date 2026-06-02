@@ -444,6 +444,13 @@
         window.IA_i18n.applyLanguage(lang);
       }
     }
+    // Listen for i18n-ready event (translations loaded async after nav built)
+    document.addEventListener('ia-i18n-ready', function(e) {
+      var lang = e.detail && e.detail.lang;
+      if (lang && lang !== 'en' && window.IA_i18n && window.IA_i18n.applyLanguage) {
+        window.IA_i18n.applyLanguage(lang);
+      }
+    });
   }
 
   if (document.readyState === 'loading') {

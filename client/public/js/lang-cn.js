@@ -1203,5 +1203,30 @@ window.IA_LANG_CN = {
     "footer.ep1": "第一集：地球基础",
     "footer.ep2": "第二集：灰色竞技场",
     "footer.ep3": "第三集：宇宙尺度",
-    "footer.copyright": "© 2026 基础设施学院。版权所有。为永恒保存知识。"
+    "footer.copyright": "© 2026 基础设施学院。版权所有。为永恒保存知识。",
+    // ============================================
+    // REMEDIATION: P2 — Additional translations (GP-001)
+    // ============================================
+    "home.relays.title": "第一集 — 12个文明接力 + 分形连接器",
+    "home.media.premiere": "全球首映：拉梅纳拉纪录片",
+    "home.media.lamenara.trailer": "拉梅纳拉 — 预告片",
+    "home.media.lamenara.desc": "第一幕电影预览，配有旁白和原创艺术作品 (2:11)",
+    "home.media.blade": "精选：刀锋与桥梁",
+    "home.media.principia": "构造原理",
+    "home.media.dearden": "迪尔登动力学",
+    "home.media.igo": "iGO 建筑电影",
+    "home.media.social": "社交媒体片段",
+    "home.media.social.desc": "分享奥德赛 — 为 X、LinkedIn 和 WhatsApp 优化",
+    "home.media.author": "迪尔登工程师 特许工程师 CWEM — 4ECL | Per Arya Ad Astra",
+    "home.media.label.reality": "现实引擎",
+    "home.media.label.igo": "iGO 预告片",
+    "home.game.topplayers": "顶尖玩家",
+    "home.equations.title": "知识产权与方程式注册 — BETA 卡组",
+    "home.recent.title": "最近更新",
+    "home.whatsapp.title": "通过 WHATSAPP 联系",
+    "home.fw.infill": "填充地图 — 填补主接力链中间隙的不连续分支",
+    "home.fw.elemental": "元素时钟 — 四个嵌套视图：从大爆炸到领土扩张的终结",
+    "home.fw.territorial": "领土扩张的终结 — 从威斯特伐利亚到人类节点",
+    "home.fw.timeline": "领土扩张终结时间线 — 在我们12,000年时钟的午夜前11分钟展望2050年。但前沿不是陆地或轨道，而是心智、身体和认知的人类前沿。",
+    "home.fw.reading": "解读文明时钟 — 最后43分钟的四个关键时刻：威斯特伐利亚、地图完成、联合国宪章和现在（2026）"
 };
