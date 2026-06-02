@@ -270,7 +270,8 @@
     // Create trigger button (inserted into nav by nav-optimise.js)
     var trigger = document.createElement('button');
     trigger.id = 'site-search-trigger';
-    trigger.innerHTML = '<span class="search-icon">&#128269;</span> SEARCH <span class="search-shortcut">/</span>';
+    trigger.innerHTML = '<span class="search-icon">&#128269;</span> <span data-i18n="home.search">SEARCH</span> <span class="search-shortcut">/</span>';
+    trigger.setAttribute('data-i18n', 'home.search');
     trigger.type = 'button';
 
     // Create overlay

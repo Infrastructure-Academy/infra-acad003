@@ -1,7 +1,7 @@
 // Infrastructure Academy — Service Worker v1
 // Caches static assets for faster repeat visits and offline access
 
-const CACHE_NAME = 'ia-cache-v1';
+const CACHE_NAME = 'ia-cache-v5';
 const CDN_HOSTS = [
   'd2xsxph8kpxj0f.cloudfront.net',
   'files.manuscdn.com'

@@ -1016,34 +1016,192 @@ window.IA_LANG_CN = {
     // ============================================
     "net.academy": "学院",
     "net.quest": "探索",
-    "net.xchange": "交易",
+    "net.xchange": "交易所",
     "net.memorial": "纪念",
     "net.news": "新闻",
 
     // ============================================
-    // MOBILE QUICK-NAV
+    // STATS ROW
     // ============================================
-    "mqn.home": "\ud83c\udfe0 首页",
-    "mqn.start": "\ud83d\udcda 开始",
-    "mqn.read": "\ud83d\udcd6 阅读",
-    "mqn.framework": "\ud83d\udee0 框架",
-    "mqn.play": "\ud83c\udfae 游戏",
-    "mqn.movies": "\ud83c\udfac 影片",
-    "mqn.resources": "\ud83d\udcc2 资源",
-    "mqn.press": "\ud83d\udcf0 新闻稿",
+    "home.stats.blocks": "区块",
+    "home.stats.icards": "知识卡",
+    "home.stats.observers": "观察员",
+    "home.stats.pages": "页面",
+    "home.stats.sdgs": "SDG对标",
 
     // ============================================
-    // HERO SECTION
+    // CTA SECTION
     // ============================================
-    "hero.book": "\ud83d\udcd6 书籍",
-    "hero.movie": "\ud83c\udfac 影片",
-    "hero.game": "\ud83c\udfae 游戏",
-    "hero.tapforsound": "点击开启声音",
-    "hero.allmovies": "\ud83c\udfac 全部影片",
+    "home.cta.title": "第一次来？",
+    "home.cta.btn": "从这里开始 →",
+    "home.cta.desc": "了解使命、结构和从何开始",
 
     // ============================================
-    // UI EXTRAS
+    // ELE PARAGRAPH
     // ============================================
-    "ui.whatsnew": "最新动态",
-    "ui.viewchangelog": "查看完整更新日志 →"
+    "home.ele.paragraph": "地球上的生命已被五次灭绝级事件重置。每一次都抹去了当时的主导系统。每一次都为下一阶段清除了旧迹。人类是第一个能够感知这一模式的物种——也是第一个有能力打断它的物种。",
+
+    // ============================================
+    // HERO PANELS
+    // ============================================
+    "home.hero.book": "📖 书籍",
+    "home.hero.movie": "🎬 电影",
+    "home.hero.game": "🎮 游戏",
+    "home.hero.tapSound": "点击开启声音",
+    "home.hero.allMovies": "🎬 全部电影",
+
+    // ============================================
+    // MOBILE QUICKNAV
+    // ============================================
+    "home.qnav.home": "🏠 首页",
+    "home.qnav.start": "📚 开始",
+    "home.qnav.read": "📖 阅读",
+    "home.qnav.framework": "🔧 框架",
+    "home.qnav.play": "🎮 游戏",
+    "home.qnav.movies": "🎬 电影",
+    "home.qnav.resources": "📂 资源",
+    "home.qnav.press": "📰 媒体",
+
+    // ============================================
+    // MISC
+    // ============================================
+    "home.follow": "关注",
+    "home.popular.title": "最受欢迎页面",
+    // ============================================
+    // NAV PILL MENU (nav-optimise.js)
+    // ============================================
+    "nav.read": "阅读",
+    "nav.explore": "探索",
+    "nav.people": "人物",
+    "nav.resources_group": "资源",
+    "nav.press": "新闻资料包",
+    "nav.search": "搜索",
+    "nav.videos": "视频放映室",
+    "nav.movies": "电影",
+    "nav.relays": "12个接力",
+    "nav.webs": "5大网络",
+    "nav.scholars": "7位学者",
+    "nav.modes": "3种模式",
+    "nav.threats": "4C威胁",
+    "nav.sdgs": "可持续发展目标",
+    "nav.pillars": "4大支柱",
+    "nav.mastery": "精通",
+    "nav.narration": "叙事",
+    "nav.divide": "文明鸿沟",
+    "nav.quotes": "名言",
+    "nav.nodes": "节点注册",
+    "nav.schema": "站点架构",
+    "nav.deck": "卡牌组",
+    "nav.equations": "方程式",
+    "nav.vault": "保险库",
+    "nav.bibliography": "参考文献",
+    "nav.milestones": "里程碑",
+    "nav.assessmentresults": "评估结果",
+    "nav.beforewriting": "写作前",
+    "nav.thesisrecord": "论文记录",
+    "nav.turingpaper": "图灵论文",
+    "nav.icard_gallery": "知识卡画廊",
+    "nav.icard_register": "知识卡注册",
+    "nav.icard_4ecl": "知识卡：4ECL BR",
+    "nav.icard_booksales": "知识卡：图书销售",
+    "nav.icard_htetra": "知识卡：H-四面体",
+    "nav.icard_khanh": "知识卡：Khanh",
+    "nav.icut_gallery": "ICUT画廊",
+    "nav.link_register": "链接注册",
+    "nav.chip_evolution": "芯片演化",
+    "nav.dcsn": "DCSN仪表盘",
+    "nav.hblock": "H区块仪表盘",
+    "nav.finance": "财务管理",
+    "nav.4cs_decision": "4C决策",
+    "nav.cashflow": "现金流Y1",
+    "nav.video_playroom": "视频放映室",
+    // ============================================
+    // ADDITIONAL NAV (site.html nav-row2)
+    // ============================================
+    "nav.lamenara": "拉梅纳拉",
+    "nav.analytics": "分析",
+    "nav.blocks": "区块摘要",
+    "nav.bridge": "桥梁",
+    "nav.gallery": "ICUT画廊",
+    "nav.governance": "治理",
+    "nav.icards": "知识卡注册",
+    "nav.igo": "iGO",
+    "nav.marketplace": "市场",
+    "nav.nexus": "FEW关联",
+    "nav.observers": "观察员注册",
+    "nav.race": "竞赛追踪",
+    "nav.relaytracker": "接力追踪",
+    "nav.roster": "花名册仪表盘",
+    "nav.sdgmatrix": "SDG矩阵",
+    // ============================================
+    // BADGE
+    // ============================================
+    "badge.beta": "PoC 测试版 · 试用站点 | 寻求赞助资金培育世界未来建设者",
+    // ============================================
+    // SITE.HTML SECTIONS (EDUTAINMENT, REALITY ENGINE, ODYSSEY, etc)
+    // ============================================
+    "home.edutainment.title": "寓教于乐",
+    "home.edutainment.subtitle": "通过娱乐进行教育",
+    "home.realityengine.title": "🎮 现实引擎",
+    "home.realityengine.subtitle": "12个接力 · 91+项发明 · 5大网络 · 适合8-65+岁",
+    "home.realityengine.btn": "进入游戏 →",
+    "home.odyssey.title": "奥德赛",
+    "home.odyssey.day": "天",
+    "home.playigo": "▶ 播放 iGO",
+    "home.search": "🔍 搜索",
+    "home.share.title": "分享奥德赛",
+    "home.network.title": "基础设施奥德赛网络",
+    // ============================================
+    // SDG PAGE
+    // ============================================
+    "sdg.5pTitle": "5P框架",
+    "sdg.5pText": "人类、地球、繁荣、和平、伙伴关系",
+    "sdg.col.sdgGoals": "SDG目标",
+    "sdg.disclaimerTitle": "免责声明",
+    "sdg.disclaimerText": "本内容仅供教育参考，不代表联合国官方立场。",
+    "sdg.iconCaption": "联合国可持续发展目标",
+    "sdg.visitUN": "访问联合国SDG网站",
+    // ============================================
+    // EDUTAINMENT DETAIL
+    // ============================================
+    "home.edutainment.facts": "<strong>渊源：</strong> 1933年广播 → 1954年迪士尼电视 → 1973年国家地理 → 2025年基础设施学院<br><strong>三部曲：</strong> 书籍 · 电影 · 游戏 — 三种格式，一个文明课程<br><strong>道德中立。</strong> 桥梁承载军队和救护车。工具服务于所有人。<br><strong>4 × 13 = 52</strong> Tecton Trump — 恐惧 × 恐惧 = 游戏",
+    "home.edutainment.foot": "当你将世界所恐惧的事物相乘，你就得到了拯救它的工具",
+    // ============================================
+    // MEDIA SECTION
+    // ============================================
+    "media.lamenara.subtitle": "基础设施奥德赛 — 从卡路里到意识",
+    "media.lamenara.stats": "12,000年 | 12个接力 | 120,000小时 | 3幕 | 7位学者 | 10分钟（第153天 — 2026年4月5日）",
+    "media.katana.desc": "武士刀13折纪录片 — 日本刀制工艺如何照亮基础设施治理（4:04）",
+    "media.principia.desc": "完整的基础设施奥德赛10分钟版 — 12个文明接力、德尔登场、生物光环套装和飞行甲板（10:33）",
+    "media.dearden.desc": "飞行甲板揭秘 — 德尔登场矩阵、神经诊断、生物计量面板和文明导航驾驶舱（2:40）",
+    "media.igo.desc": "完整的iGO框架 — 12个接力、5大网络、60节点德尔登场、12种游戏格式、DAVID AI和知识卡系统。适合8-65+岁（1:40）",
+    "home.game.viewall": "查看全部 →",
+    // ============================================
+    // ELE DECLARATION
+    // ============================================
+    "home.ele.declaration": "地球上的生命已被灭绝级事件重置五次。每一次都抹去了那个时代的主导系统。每一次都为下一个时代清除了障碍。人类是第一个能够感知这一模式的物种 — 也是第一个能够打断它的物种。",
+    // ============================================
+    // SECTION NAVIGATION
+    // ============================================
+    "sec.top": "顶部",
+    "sec.book": "书籍",
+    "sec.framework": "框架",
+    "sec.volumes": "卷册",
+    "sec.challenge": "挑战",
+    "sec.trilogy": "三部曲",
+    "sec.media": "媒体",
+    "sec.knowledge": "知识",
+    "sec.game": "游戏",
+    "sec.counter": "计数器",
+    "sec.charter": "宪章",
+    "sec.patrons": "赞助人",
+    "sec.archive": "档案",
+    "sec.share": "分享",
+    // ============================================
+    // FOOTER
+    // ============================================
+    "footer.ep1": "第一集：地球基础",
+    "footer.ep2": "第二集：灰色竞技场",
+    "footer.ep3": "第三集：宇宙尺度",
+    "footer.copyright": "© 2026 基础设施学院。版权所有。为永恒保存知识。"
 };

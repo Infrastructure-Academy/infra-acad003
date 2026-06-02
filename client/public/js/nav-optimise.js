@@ -419,6 +419,13 @@
         groupedNav.classList.toggle('open');
         newHamburger.setAttribute('aria-expanded', groupedNav.classList.contains('open'));
       });
+
+      // Ensure lang-selector stays in header-content (visible on mobile)
+      // It may have been appended to nav-grouped by i18n.js fallback
+      var langSel = document.getElementById('lang-selector');
+      if (langSel && headerContent) {
+        headerContent.insertBefore(langSel, newHamburger);
+      }
     }
   }
 
@@ -430,6 +437,13 @@
     initGroupedNav();
     // Delay TOC init to ensure DOM is fully loaded
     setTimeout(initFloatingTOC, 500);
+    // Re-apply i18n translations to dynamically created elements
+    if (window.IA_i18n && window.IA_i18n.applyLanguage) {
+      var lang = window.IA_i18n.getCurrentLang();
+      if (lang && lang !== 'en') {
+        window.IA_i18n.applyLanguage(lang);
+      }
+    }
   }
 
   if (document.readyState === 'loading') {

@@ -370,6 +370,7 @@
 
     // Expose for external use
     window.IA_i18n = {
+        applyLanguage,
         switchLanguage,
         getCurrentLang: () => currentLang,
         getTranslation,
