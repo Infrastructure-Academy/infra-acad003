@@ -271,7 +271,7 @@
     var trigger = document.createElement('button');
     trigger.id = 'site-search-trigger';
     trigger.innerHTML = '<span class="search-icon">&#128269;</span> <span data-i18n="home.search">SEARCH</span> <span class="search-shortcut">/</span>';
-    trigger.setAttribute('data-i18n', 'home.search');
+    
     trigger.type = 'button';
 
     // Create overlay
@@ -403,6 +403,17 @@
 
     // Export trigger for nav-optimise.js to pick up
     window._siteSearchTrigger = trigger;
+
+    // Re-apply translation when i18n loads
+    document.addEventListener('ia-i18n-ready', function() {
+      if (window.IA_i18n && window.IA_i18n.getCurrentLang() !== 'en') {
+        var searchSpan = trigger.querySelector('[data-i18n="home.search"]');
+        if (searchSpan) {
+          var t = window.IA_i18n.getTranslation('home.search');
+          if (t) searchSpan.textContent = t;
+        }
+      }
+    });
   }
 
   // Init

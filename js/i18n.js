@@ -51,6 +51,8 @@
         // Load translations then apply
         loadTranslations().then(() => {
             applyLanguage(currentLang);
+            // Dispatch event so late-loading scripts can re-apply translations
+            document.dispatchEvent(new CustomEvent('ia-i18n-ready', { detail: { lang: currentLang } }));
         });
     }
 
