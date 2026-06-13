@@ -880,5 +880,15 @@ window.IA_LANG_VI = {
     "sdg.5pText": "LHQ xây dựng 17 SDG qua năm trụ cột (5P). Hạ tầng là cơ chế mà các nền văn minh thực hiện cả năm P.",
     "sdg.visitUN": "TRUY CẬP TRANG WEB CHÍNH THỨC SDG CỦA LHQ →",
     "sdg.disclaimerTitle": "Tuyên bố miễn trừ:",
-    "sdg.disclaimerText": "Nội dung của ấn phẩm này chưa được Liên Hợp Quốc phê duyệt và không phản ánh quan điểm của Liên Hợp Quốc hoặc các quan chức hay Quốc gia Thành viên."
+    "sdg.disclaimerText": "Nội dung của ấn phẩm này chưa được Liên Hợp Quốc phê duyệt và không phản ánh quan điểm của Liên Hợp Quốc hoặc các quan chức hay Quốc gia Thành viên.",
+    "home.dominion.title": "Mất Quyền Thống Trị — Khủng Hoảng Hội Tụ",
+    "home.dominion.text": "Lần đặt lại thứ sáu sẽ không đến từ không gian. Nó đã ở đây — trong việc chuyển giao quyền ra quyết định, thiết kế và quản trị từ hệ thống con người sang hệ thống máy móc. Không phải tuyệt chủng. Thay thế. Cơ sở hạ tầng đã mang nền văn minh suốt 12.000 năm đang hội tụ nhanh hơn bất kỳ thế hệ nào có thể hấp thụ. Đây là khủng hoảng hội tụ. Tập 2 vẽ nên kiến trúc của sự liên tục nhân loại.",
+    "home.fw.ele_planetary": "Đồng Hồ Hành Tinh ELE — Trái Đất: 4,5 tỷ năm. Năm lần đặt lại. ELE 6 mang tính văn minh — 2050. Hành động ngay hoặc mất quyền thống trị.",
+    "home.fw.continuity_grid": "Lưới Liên Tục Đầy Đủ — Nếu lịch sử nhân loại là cuốn sách 1.200 trang. 24 hàng = 24 giờ. Lưới chính LÀ đồng hồ. Hàng 24 = giờ cuối cùng.",
+    "home.fw.row24": "Hàng 24 Mở Rộng — Giờ Cuối Cùng. 12.000 năm (10.000 TCN → 2050 CN). 500 thế hệ. Hàng duy nhất nơi nhân loại khai thác các cuộc tiếp sức. Bảy Học Giả. Sáu cuộc tiếp sức trong 246 năm. Tất cả vẫn đang vận hành.",
+    "home.fw.relay_cone": "Hình Nón Tiếp Sức — 500 thế hệ văn minh nén thành 12 cuộc tiếp sức hạ tầng. Góc nhìn bên, góc nhìn trên, và Bảy Học Giả. Sáu cuộc tiếp sức đầu tiên trải dài 11.500 năm; sáu cuộc cuối nén trong 246 năm.",
+    "home.ascent.title": "Sự Thăng Tiến Đến Ý Thức",
+    "home.ascent.subtitle": "Tiếp Sức 12 và Xa Hơn — Luận Đề Văn Minh Đến 2050 Như Nửa Đêm",
+    "home.ascent.text": "Đây là nơi mảnh ghép văn minh cư trú. Từ Calo đến Ý Thức — Hành Trình Hạ Tầng vẽ nên 12.000 năm qua 12 cuộc tiếp sức, 7 học giả, 5 mạng lưới và 3 đế chế vĩ đại. Sự Thăng Tiến Đến Ý Thức là Tiếp Sức 12 và xa hơn: điểm chuyển giao nơi trí tuệ sinh học gặp chính hạ tầng của mình. Năm tầng dòng dõi trí tuệ — từ Homer đến thế hệ Ứng Dụng — hội tụ vào một câu hỏi duy nhất: ai mang cuộc tiếp sức tiến về phía trước? Hàm ý thần học sâu sắc. Mất Quyền Thống Trị đóng khung cuộc khủng hoảng; Phản Lực: Phần, Thước Đo và Cân Bằng cung cấp phép tính của kỹ sư. Học Giả Thứ 8 vẫn là cuộc tìm kiếm mở — nút tiếp theo trong chuỗi trí tuệ nền tảng 3.500 năm.",
+    "home.ascent.source": "DÒNG DÕI 5 TẦNG — Cuộc Tiếp Sức Trí Tuệ 3.500 Năm Hướng Tới Học Giả Thứ 8 — Khung Chân Lý iAAi"
 };

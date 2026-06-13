@@ -879,5 +879,15 @@ window.IA_LANG_ES = {
     "sdg.5pText": "La ONU enmarca los 17 ODS a través de cinco pilares conocidos como las 5P. La infraestructura es el mecanismo por el cual las civilizaciones cumplen con las cinco P.",
     "sdg.visitUN": "VISITAR EL SITIO OFICIAL DE ODS DE LA ONU →",
     "sdg.disclaimerTitle": "Descargo de responsabilidad:",
-    "sdg.disclaimerText": "El contenido de esta publicación no ha sido aprobado por las Naciones Unidas y no refleja las opiniones de las Naciones Unidas ni de sus funcionarios o Estados Miembros."
+    "sdg.disclaimerText": "El contenido de esta publicación no ha sido aprobado por las Naciones Unidas y no refleja las opiniones de las Naciones Unidas ni de sus funcionarios o Estados Miembros.",
+    "home.dominion.title": "Perdiendo el Dominio — La Crisis de Convergencia",
+    "home.dominion.text": "El sexto reinicio no vendrá del espacio. Ya está aquí — en la transferencia de la toma de decisiones, el diseño y la gobernanza de los sistemas humanos a los sistemas de máquinas. No extinción. Desplazamiento. La infraestructura que sostuvo la civilización durante 12.000 años converge ahora más rápido de lo que cualquier generación puede absorber. Esta es la crisis de convergencia. El Episodio 2 traza la arquitectura de la continuidad humana.",
+    "home.fw.ele_planetary": "Reloj Planetario ELE — Tierra: 4.500 millones de años. Cinco reinicios. ELE 6 es civilizacional — 2050. Actúa ahora o pierde el dominio.",
+    "home.fw.continuity_grid": "La Cuadrícula de Continuidad Completa — Si la historia humana fuera un libro de 1.200 páginas. 24 filas = 24 horas. La cuadrícula ES el reloj. Fila 24 = la última hora.",
+    "home.fw.row24": "Fila 24 Expandida — La Última Hora. 12.000 años (10.000 a.C. → 2050 d.C.). 500 generaciones. La única fila donde la humanidad aprovecha los relevos. Siete Eruditos. Seis relevos en 246 años. Todos siguen funcionando.",
+    "home.fw.relay_cone": "El Cono de Relevos — 500 generaciones de civilización comprimidas en 12 relevos de infraestructura. Vista lateral, vista superior y los Siete Eruditos. Los primeros seis relevos abarcan 11.500 años; los últimos seis se comprimen en 246 años.",
+    "home.ascent.title": "El Ascenso a la Consciencia",
+    "home.ascent.subtitle": "Relevo 12 y Más Allá — La Tesis Civilizacional Hasta 2050 como Medianoche",
+    "home.ascent.text": "Aquí es donde reside la pieza civilizacional. De Calorías a Consciencia — Una Odisea de Infraestructura traza 12.000 años a través de 12 relevos, 7 eruditos, 5 redes y 3 grandes imperios. El Ascenso a la Consciencia es el Relevo 12 y más allá: el punto de transferencia donde la inteligencia biológica se encuentra con su propia infraestructura. Cinco niveles de linaje intelectual — de Homero a la generación Aplicada — convergen en una sola pregunta: ¿quién lleva el relevo adelante? Las implicaciones teológicas son profundas. Perdiendo el Dominio enmarca la crisis; Contrafuerza: Partes, Medidas y Equilibrio proporciona el cálculo del ingeniero. El 8º Erudito sigue siendo la búsqueda abierta — el siguiente nodo en una cadena de 3.500 años de sabiduría fundacional.",
+    "home.ascent.source": "LINAJE 5 NIVELES — Un Relevo Intelectual de 3.500 Años Hacia el 8º Erudito — Marco de Verdad iAAi"
 };
