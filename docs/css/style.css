@@ -1127,10 +1127,11 @@ footer {
   border: 1px solid rgba(255, 215, 0, 0.4);
   border-radius: 6px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-  z-index: 99999;
+  z-index: 300002;
 }
 
 .lang-dropdown.lang-dropdown-open {
+  z-index: 300002;
   display: block;
 }
 
@@ -1237,7 +1238,7 @@ footer {
     top: auto;
     right: auto;
     transform: none;
-    z-index: 99999;
+    z-index: 300002;
     margin-left: 0;
     flex-shrink: 0;
   }
@@ -1254,6 +1255,7 @@ footer {
   .lang-dropdown {
     right: 0;
     min-width: 180px;
+    z-index: 300002;
   }
 }
 
