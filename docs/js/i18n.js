@@ -39,6 +39,13 @@
      * Initialize the i18n system
      */
     function init() {
+        // v2 migration: reset all users to English (June 2026 fix)
+        const migrationKey = 'ia-lang-v2';
+        if (!localStorage.getItem(migrationKey)) {
+            localStorage.setItem(STORAGE_KEY, 'en');
+            localStorage.setItem(migrationKey, '1');
+        }
+
         // Load saved preference
         const saved = localStorage.getItem(STORAGE_KEY);
         if (saved && ACTIVE_LANGS.includes(saved)) {
