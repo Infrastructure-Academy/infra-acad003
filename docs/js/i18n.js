@@ -40,7 +40,7 @@
      */
     function init() {
         // v2 migration: reset all users to English (June 2026 fix)
-        const migrationKey = 'ia-lang-v2';
+        const migrationKey = 'ia-lang-v3';
         if (!localStorage.getItem(migrationKey)) {
             localStorage.setItem(STORAGE_KEY, 'en');
             localStorage.setItem(migrationKey, '1');
