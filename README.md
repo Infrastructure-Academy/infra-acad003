@@ -6,7 +6,7 @@
 **Status:** LIVE — serves the production website
 **Discipline:** Civilisational Systems Engineering (CSE)
 **Founder:** Ir. Nigel T. Dearden CEng MICE
-**Last Updated:** June 2026
+**Last Updated:** July 2026
 
 ---
 
@@ -246,6 +246,23 @@ This website represents the **Infrastructure Academy of Artificial Intelligence 
 | Visual Style | Art-deco gold (#FFD700) on navy (#0a1628) |
 
 **iAAi is NOT a career training site.** It is a research institution publishing open-access papers on how civilisational infrastructure survives across millennia.
+
+---
+
+## PRONUNCIATION & NAMING
+
+| Name | Pronunciation | Meaning |
+|------|--------------|----------|
+| **iAAi** | "eye" — one syllable, like the organ of sight | Infrastructure Academy of Artificial Intelligence |
+| **iGO** | "eye-GO" | Infrastructure Ghost Odyssey |
+
+### Why "iAAi"?
+
+The lowercase **i**'s and capital **A**'s form **castellations** — a castle wall silhouette. The visual rhythm of the letterforms (i·A·A·i) mirrors the crenellations of a fortification: low–high–high–low.
+
+> "The invisible can only be seen by opening one's eyes."
+
+The name is both an acronym and a visual symbol. Pronounced as a single syllable — *eye* — it invokes the act of seeing what others overlook: the infrastructure that carries civilisation forward.
 
 ---
 
