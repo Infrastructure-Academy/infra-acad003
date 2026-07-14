@@ -1240,5 +1240,33 @@ window.IA_LANG_CN = {
     "home.ascent.title": "意识的攀升",
     "home.ascent.subtitle": "接力12及更远 — 以2050年为午夜的文明论题",
     "home.ascent.text": "这就是文明论题所在。从卡路里到意识 — 基础设施奥德赛跨越12,000年，涵盖12个接力、7位学者、5个网络和3大帝国。意识的攀升是接力12及更远：生物智能与其自身基础设施相遇的转折点。五个层次的知识谱系 — 从荷马到应用世代 — 汇聚于一个问题：谁来传递接力？其神学意涵深远。失去主权框定了危机；对抗力：部分、度量与平衡提供了工程师的演算。第八位学者仍是开放的探索 — 3,500年基础智慧链中的下一个节点。",
-    "home.ascent.source": "谱系五层 — 通往第八位学者的3,500年知识接力 — iAAi真理框架"
+    "home.ascent.source": "谱系五层 — 通往第八位学者的3,500年知识接力 — iAAi真理框架",
+
+    // ============================================
+    // HOME PAGE BODY CONTENT (v24 patch)
+    // ============================================
+    "home.cse.banner": "文明如何记忆？基础设施如何存续？<br><strong style=\"color:#ffd700;\">文明系统工程（CSE）</strong>以数学方式回答这些问题。<br><strong style=\"color:#ffd700;\">人工智能基础设施学院（iAAi）</strong>公开发表研究成果——<br>面向学者、工程师和下一代文明建设者。",
+    "home.isi.proto.sub": "启动基础设施重要性指数工具 — 在线 v68",
+    "home.isi.mvp.sub": "启动新一代ISI计算器 — 在线",
+    "home.about.title": "关于 iAAi",
+    "home.about.p1": "<strong style=\"color:var(--color-accent-gold);\">人工智能基础设施学院（iAAi）</strong>是<strong style=\"color:var(--color-accent-gold);\">文明系统工程（CSE）</strong>的研究与教学机构——世界上第一个致力于文明延续的工程学科。",
+    "home.about.p2": "由迪尔登工程师（Ir. Nigel T. Dearden CEng MICE）创立，iAAi开发数学框架（42个方程式，包括记忆方程、基础设施存续指数和信号公式），发表开放获取学术论文（图灵论文系列，可通过<a href=\"https://nigelmemorial-ucmtq9dn.manus.space/turing-papers\" style=\"color:var(--color-accent-gold); text-decoration:underline;\">纪念档案馆</a>获取），并以8种语言提供AI引导的基础设施教育。",
+    "home.about.p3": "研究计划通过12个文明接力映射12,000年的人类发展，通过ISI方程<em>ISI = (A×P/β)×(1−e<sup>−n/N</sup>)</em>量化领域整合，并通过4Rs干预框架（启示、韧性、再生、递归）对抗4Cs阻力（冲突、传染、气候、成本）来工程化记忆。",
+    "home.about.p4": "所有研究——包括358+证据区块（RECALL链）、16项注册知识产权资产和完整方程组——均公开可用于同行评审和学术使用。",
+    "home.charter.quote1": "&ldquo;上善若水。水善利万物而不争。&rdquo;",
+    "home.charter.quote1.attr": "—— 老子，《道德经》",
+    "home.charter.quote2": "&ldquo;天下莫柔弱于水，而攻坚强者莫之能胜。&rdquo;",
+    "home.charter.quote2.attr": "—— 老子",
+    "home.charter.quote3": "&ldquo;我们常说拯救地球。但事实是，我们必须做这些事来拯救自己。无论有没有我们，荒野都会回归。&rdquo;",
+    "home.charter.quote3.attr": "—— 大卫·阿滕伯勒",
+    "home.charter.quote4": "&ldquo;如果你面前的道路是清晰的，你可能走在别人的路上。&rdquo;",
+    "home.charter.quote4.attr": "—— 卡尔·荣格",
+    "home.share.quote": "&ldquo;12,000年的文明。12个接力。8种语言。1次奥德赛。由土木工程师撰写。任何人都可以参与。&rdquo;",
+    "home.share.sdg": "对标联合国可持续发展目标：SDG 4 · SDG 9 · SDG 11 · SDG 17",
+    "home.share.cta": "帮助我们触达10亿学习者——一键分享：",
+    "home.deck.desc": "55张卡片编码文明存续的数学骨架。38个方程 · 15项知识产权 · 2张王牌 · 封面 · 门捷列夫变换附赠卡",
+    "home.deck.price": "US$29.95",
+    "home.recent.subtitle": "基础设施学院的最新添加和修改",
+    "home.popular.subtitle": "根据实时流量数据自动填充",
+    "home.network.subtitle": "iAAi 4+1建设治理模型 — 5个站点、5个代理、1个使命"
 };
