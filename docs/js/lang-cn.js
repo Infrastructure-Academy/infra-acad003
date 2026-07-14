@@ -1268,5 +1268,6 @@ window.IA_LANG_CN = {
     "home.deck.price": "US$29.95",
     "home.recent.subtitle": "基础设施学院的最新添加和修改",
     "home.popular.subtitle": "根据实时流量数据自动填充",
-    "home.network.subtitle": "iAAi 4+1建设治理模型 — 5个站点、5个代理、1个使命"
+    "home.network.subtitle": "iAAi 4+1建设治理模型 — 5个站点、5个代理、1个使命",
+    "home.david.sub": "启动DAVID现实引擎 — 下载。探索。决定。"
 };
