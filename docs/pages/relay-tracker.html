@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2V0JTTfM97"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2V0JTTfM97');
+</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Relay Progress Tracker — Infrastructure Academy</title>
@@ -426,7 +434,15 @@
     if (!relay) return;
     var certId = 'IA-RELAY-' + String(relayNum).padStart(2,'0') + '-' + Date.now().toString(36).toUpperCase();
     var certDate = new Date().toISOString().split('T')[0];
-    var certHtml = '<!DOCTYPE html><html><head><meta charset="UTF-8"><title>Relay Certificate - ' + relay.title + '</title>' +
+    var certHtml = '<!DOCTYPE html><html><head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2V0JTTfM97"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2V0JTTfM97');
+</script><meta charset="UTF-8"><title>Relay Certificate - ' + relay.title + '</title>' +
       '<style>' +
       '@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap");' +
       'body{margin:0;padding:40px;background:#0a1628;display:flex;justify-content:center;align-items:center;min-height:100vh;}' +
