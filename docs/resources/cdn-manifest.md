@@ -17,9 +17,18 @@ https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481
 COS-CSE Corpus v1 14 Jul 2026 FINAL (PDF):
 https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/zvilbsozFivuafKA.pdf
 
+COS-CSE Corpus v1 14 Jul 2026 FINAL (DOCX):
+https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/JVsdTbvcsGZijwkK.docx
+
+COS-CSE Corpus v1 14 Jul 2026 FINAL copy (DOCX):
+https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/gijrfoSCXlvdtguT.docx
+
+COS-CSE Corpus v1 14 Jul 2026 copy (DOCX):
+https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/GgUywwkhizstWDne.docx
+
 ---
 
-## CSE Textbook
+## CSE Textbook & Curriculum
 
 CSE Book 1 Foundations Teaching Edition v10 (DOCX):
 https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/rmqMYdmnbPPwNgqo.docx
@@ -29,6 +38,12 @@ https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481
 
 P1 CSE 101 Intro (PDF):
 https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/nTKLqAYfuHCvVTAN.pdf
+
+iAAi CSE Canon R12 (DOCX):
+https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/BMKqBeRirDjvMUDz.docx
+
+Origin Story C3 (DOCX):
+https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/bgozuoGdTicxUlxh.docx
 
 ---
 
@@ -50,11 +65,62 @@ https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481
 Golden Excel v29 (XLSX — latest):
 https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/rwSZlgfFQmMzMvnf.xlsx
 
+Golden Excel v29 copy (XLSX):
+https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/xqmjEKCrVudpWFHx.xlsx
+
+iAAi ISI Golden File v29 check (XLSX):
+https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/cSOpZfywhMcoXnvH.xlsx
+
+iAAi ISI Golden File v29 copy (XLSX):
+https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/JJcrnRNFQdKBygCu.xlsx
+
 GE-ISI Master v1 14 Jul 2026 (PDF):
 https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/qSnFgUXkAKuSBZXN.pdf
 
 GE-ISI Master v1 14 Jul 2026 (XLSX):
 https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/InEPDSjlgaKpgaUh.xlsx
+
+GE-ISI Master v1 14 Jul 2026 copy (XLSX):
+https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/UnWLqYJddPQUzSqR.xlsx
+
+GE-ISI Master v1 14 Jul 2026 alt (XLSX):
+https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/uetlgodDnqvELhxy.xlsx
+
+---
+
+## COSMOS Series
+
+COSMOS Flash Cards 52 (DOCX):
+https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/bGELQlRYxvWHmSRG.docx
+
+COSMOS Summary Intro 15 Jul 2026 (DOCX):
+https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/MXWSXxzLbOkTvajU.docx
+
+COSMOS Intro (DOCX):
+https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/szjGFsToMFMhZDZv.docx
+
+---
+
+## Web Lattice
+
+Web Lattice W1-8 1 Aug 2026 Pt4to4 (DOCX):
+https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/VHElvMGiJbkASnUT.docx
+
+---
+
+## Teaching Decks (PPTX)
+
+CSE Part 5 BEACON Forecast Modelling (PPTX):
+https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/cmuqoJfImYMJQvEt.pptx
+
+Infrastructure Academy — The Disney of Infrastructure (PPTX):
+https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/baNALjqRoiUTRWHG.pptx
+
+The 23 Infrastructure Projects ISI Performance Deck FINAL (PPTX):
+https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/pYttNZuuQxzRRSnt.pptx
+
+iAAi Teaching Deck Part 4 Unified Evidence Base (PPTX):
+https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/HoKmTauIJfzuxRzA.pptx
 
 ---
 
@@ -65,6 +131,9 @@ https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481
 
 THE REALITY ENGINE Explorer Pipeline (PDF):
 https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/rRoBftYvvKDvuOkR.pdf
+
+iAAi Video Collaterals (DOCX):
+https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/eYXNJdprwiKSuAnb.docx
 
 ---
 
@@ -102,3 +171,4 @@ Infrastructure Academy (GitHub Pages): https://www.infrastructure-academy.com
 - The Golden Excel v29 supersedes all earlier versions (v24, v27, etc.)
 - The CSE Academic Paper v26 supersedes v24
 - ISI Calculator Prototype at isicalc-uwdgcubw.manus.space is a legal record — NEVER overwrite
+- This manifest is the single source of truth for all iAAi/CSE public documents
