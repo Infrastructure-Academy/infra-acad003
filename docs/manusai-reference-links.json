@@ -1,0 +1,44 @@
+{
+  "cdn_records": {
+    "cse_paper_v24": {
+      "pdf": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/AGpuEEtPfKQymJcp.pdf",
+      "docx": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/FPYtulVmGcsUPdhq.docx",
+      "markdown": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/NotYtKcMhrHlSXTJ.md"
+    },
+    "golden_excel_v24": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/xqJLJiFySHZpHwxz.xlsx",
+    "alice_cse_v24": {
+      "pdf": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/rHHFZeWSxgYmBVSJ.pdf",
+      "docx": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/gPsSoaGkzrByMWcp.docx",
+      "excel": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/AVjccaiTlnIygGnh.xlsx"
+    },
+    "isi_calculator_v68_archive": {
+      "zip": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/cvgZIwaeOFXQJIWG.zip",
+      "sha256": "aa1fd2531e18d58529e12b590d23e29c44edd51a1c4b3d2489f989d1996c0ebb"
+    }
+  },
+  "live_apps": {
+    "isi_calculator_prototype": "https://isicalc-uwdgcubw.manus.space",
+    "isi_calculator_mvp": "https://isicalcexp-bqjsukv3.manus.space/",
+    "david_reality_engine": "https://cse-reality-nuohpkmp.manus.space",
+    "infrastructure_academy_webdev": "https://infrastructure-academy.com",
+    "infrastructure_academy_github_pages": "https://www.infrastructure-academy.com"
+  },
+  "github": {
+    "repo": "Infrastructure-Academy/infra-acad003",
+    "branch": "main",
+    "serves_from": "docs/",
+    "latest_pushed_commit": "f7ccfee",
+    "unpushed_commit": "b3a0bcf"
+  },
+  "webdev_project": {
+    "project_id": "kUQZAex2uPvgKcHnt7bmh3",
+    "name": "infrastructure-academy-v2",
+    "latest_checkpoint": "fc8c6edf",
+    "features": ["db", "server", "user"]
+  },
+  "pending_fix": {
+    "description": "Move What's New popup from right:24px to left:24px in site.html line 2351",
+    "reason": "Popup overlaps the 3 launch cards on desktop",
+    "status": "committed locally, not pushed (GitHub auth expired)"
+  }
+}
