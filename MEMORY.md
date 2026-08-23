@@ -90,11 +90,21 @@ Only `infra-acad003` feeds the live domain. Others are legacy or separate:
 
 ## Current Open Tasks (as of 2026-08-24)
 
+- [x] Identify 4 MP4s in media/inbound/ → **DONE: 2 are site intro duplicates, 2 are unknown short clips. Block 402 series (20-32s) never arrived.**
 - [ ] Verify Memorial content with browser automation (web_fetch insufficient)
 - [ ] Map 134 pages to iGO lifecycle stages if user requests
-- [ ] Identify 4 MP4s in media/inbound/
 - [ ] Fix any actual bugs in site.html when found
 - [ ] Push any workspace changes to GitHub (police instruction)
 
+## Video Assets
+
+| File | Status | Note |
+|------|--------|------|
+| `docs/assets/videos/intro-1.mp4` | In repo | Website intro, 10s |
+| `docs/assets/videos/intro-2.mp4` | In repo | Website intro, 10s |
+| Block 402 series (8 videos) | **MISSING** | Catalogued but never transferred via Telegram pipe |
+| IMG_3355 (9s, 1.93MB) | In archive only | Unknown content, not Block 402 (duration mismatch) |
+| IMG_3566 (17s, 1.17MB) | In archive only | Unknown content, not Block 402 (duration mismatch) |
+
 ---
-_Last updated: 2026-08-24 04:18+08_
+_Last updated: 2026-08-24 04:20+08_
