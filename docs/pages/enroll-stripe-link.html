@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iAAi — Enrollment</title>
+<style>
+body {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  background: #0A0F2A;
+  color: #FFD700;
+  margin: 0;
+  padding: 1.5rem;
+  min-height: 100vh;
+  box-sizing: border-box;
+  text-align: center;
+}
+.container {
+  max-width: 480px;
+  margin: 0 auto;
+  background: #111835;
+  border: 2px solid #C9A227;
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: 0 0 40px rgba(201, 162, 39, 0.15);
+}
+.logo { font-size: 2.5rem; margin-bottom: 0.3rem; }
+h1 { font-size: 1.5rem; margin: 0 0 0.5rem 0; letter-spacing: 1px; }
+.subtitle { color: #888; font-size: 0.9rem; margin-bottom: 2.5rem; font-style: italic; }
+.price { font-size: 2rem; color: #FFD700; margin: 1.5rem 0; font-weight: bold; }
+.includes { text-align: left; color: #aaa; font-size: 0.85rem; margin: 1.5rem 0; padding-left: 1rem; }
+.includes li { margin-bottom: 0.5rem; }
+.btn {
+  display: inline-block;
+  background: #C9A227;
+  color: #0A0F2A;
+  padding: 1rem 2.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.1rem;
+  border-radius: 6px;
+  margin-top: 1.5rem;
+  transition: background 0.2s;
+}
+.btn:hover { background: #FFD700; }
+.secure { font-size: 0.75rem; color: #555; margin-top: 1.5rem; }
+.footer { font-size: 0.65rem; color: #444; margin-top: 1.5rem; }
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">🏗️</div>
+    <h1>Infrastructure Academy</h1>
+    <p class="subtitle">iAAi Practitioner Course</p>
+
+    <div class="price">HKD $1,950</div>
+
+    <ul class="includes">
+      <li>Complete 12-Relay curriculum access</li>
+      <li>DAVID Reality Engine interactive modules</li>
+      <li>ISI saturation tracking & certification</li>
+      <li>Community access — Human Nodes network</li>
+    </ul>
+
+    <!-- STEP 1: Create a Payment Link in Stripe Dashboard (Live mode)
+         STEP 2: Paste the URL below, replacing PASTE_STRIPE_PAYMENT_LINK_HERE
+         STEP 3: Commit this file to GitHub — no backend needed -->
+    <a href="PASTE_STRIPE_PAYMENT_LINK_HERE" class="btn">Enroll Now</a>
+
+    <p class="secure">🔒 Payments secured by Stripe. iAAi never stores card details.</p>
+    <p class="footer">iAAi COUNTERFORCE v67 — © 2026</p>
+  </div>
+</body>
+</html>

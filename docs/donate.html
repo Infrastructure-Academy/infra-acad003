@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2V0JTTfM97"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2V0JTTfM97');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donate — Infrastructure Academy</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { min-height:100vh; display:flex; align-items:center; justify-content:center; background:#0a1628; color:#fff; font-family:Georgia,serif; padding:1rem; }
+  .container { text-align:center; max-width:700px; width:100%; }
+  h1 { font-family:'Cinzel',serif; color:#ffd700; font-size:1.6rem; margin-bottom:0.8rem; letter-spacing:2px; }
+  .subtitle { color:rgba(255,255,255,0.7); line-height:1.5; margin-bottom:1.5rem; font-size:0.95rem; }
+  .tiers { display:grid; grid-template-columns:repeat(4, 1fr); gap:0.75rem; margin-bottom:1.5rem; }
+  @media(max-width:600px) { .tiers { grid-template-columns:repeat(2, 1fr); } }
+  .tier-btn { display:flex; flex-direction:column; align-items:center; justify-content:center; padding:1rem 0.5rem; background:linear-gradient(135deg, rgba(26,58,92,0.95), rgba(10,22,40,0.98)); border:2px solid rgba(255,215,0,0.4); border-radius:6px; cursor:pointer; transition:border-color 0.2s, background 0.2s; min-height:100px; }
+  .tier-btn:hover, .tier-btn.selected { border-color:#ffd700; background:rgba(255,215,0,0.08); }
+  .tier-btn .amount { font-family:'Cinzel',serif; font-size:1.3rem; color:#ffd700; font-weight:bold; }
+  .tier-btn .web-name { font-size:0.65rem; color:rgba(255,215,0,0.6); letter-spacing:1.5px; text-transform:uppercase; margin-top:0.3rem; }
+  .tier-btn .web-id { font-size:0.55rem; color:rgba(255,255,255,0.35); margin-top:0.2rem; }
+  .custom-input { display:none; margin:1rem auto; max-width:200px; }
+  .custom-input input { width:100%; padding:0.6rem 1rem; background:rgba(10,22,40,0.9); border:2px solid rgba(255,215,0,0.5); border-radius:4px; color:#ffd700; font-size:1.1rem; text-align:center; font-family:'Cinzel',serif; }
+  .custom-input input::placeholder { color:rgba(255,215,0,0.3); }
+  .donate-btn { display:inline-block; padding:0.9rem 3rem; background:linear-gradient(135deg, rgba(26,58,92,0.95), rgba(10,22,40,0.98)); border:2px solid #ffd700; color:#ffd700; font-family:'Cinzel',serif; font-size:1rem; letter-spacing:3px; text-decoration:none; cursor:pointer; border-radius:4px; margin-top:1rem; }
+  .donate-btn:hover { background:rgba(255,215,0,0.12); }
+  .donate-btn:disabled { opacity:0.5; cursor:not-allowed; }
+  .success-msg { display:none; background:rgba(0,128,0,0.2); border:1px solid rgba(0,200,0,0.5); padding:1rem; border-radius:8px; margin-bottom:1rem; color:#4ade80; }
+  .cancel-msg { display:none; background:rgba(200,0,0,0.2); border:1px solid rgba(200,0,0,0.5); padding:1rem; border-radius:8px; margin-bottom:1rem; color:#f87171; }
+  .footer { margin-top:1.5rem; font-size:0.7rem; color:rgba(255,255,255,0.35); }
+  .back-link { display:inline-block; margin-top:1rem; color:rgba(255,215,0,0.5); font-size:0.8rem; text-decoration:none; }
+  .back-link:hover { color:#ffd700; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="success-msg" id="successMsg">&#10004; Thank you for your donation! Your support helps advance civilisational systems research.</div>
+  <div class="cancel-msg" id="cancelMsg">Donation cancelled. No charge was made.</div>
+  <h1>&#10084; Support the Academy</h1>
+  <p class="subtitle">The Infrastructure Academy publishes research openly. Choose your Web level of support.</p>
+  <div class="tiers">
+    <div class="tier-btn selected" data-amount="100" onclick="selectTier(this)">
+      <span class="amount">$1</span>
+      <span class="web-name">Physical Web</span>
+      <span class="web-id">W1</span>
+    </div>
+    <div class="tier-btn" data-amount="500" onclick="selectTier(this)">
+      <span class="amount">$5</span>
+      <span class="web-name">Biological Web</span>
+      <span class="web-id">W2</span>
+    </div>
+    <div class="tier-btn" data-amount="1000" onclick="selectTier(this)">
+      <span class="amount">$10</span>
+      <span class="web-name">Digital Web</span>
+      <span class="web-id">W3</span>
+    </div>
+    <div class="tier-btn" data-amount="2500" onclick="selectTier(this)">
+      <span class="amount">$25</span>
+      <span class="web-name">Social Web</span>
+      <span class="web-id">W4</span>
+    </div>
+    <div class="tier-btn" data-amount="5000" onclick="selectTier(this)">
+      <span class="amount">$50</span>
+      <span class="web-name">Consciousness Web</span>
+      <span class="web-id">W5</span>
+    </div>
+    <div class="tier-btn" data-amount="10000" onclick="selectTier(this)">
+      <span class="amount">$100</span>
+      <span class="web-name">Tecton Web</span>
+      <span class="web-id">W6</span>
+    </div>
+    <div class="tier-btn" data-amount="25000" onclick="selectTier(this)">
+      <span class="amount">$250</span>
+      <span class="web-name">Morphostructure Web</span>
+      <span class="web-id">W7</span>
+    </div>
+    <div class="tier-btn" data-amount="custom" onclick="selectTier(this)">
+      <span class="amount">Other</span>
+      <span class="web-name">Xenostructure Web</span>
+      <span class="web-id">W8</span>
+    </div>
+  </div>
+  <div class="custom-input" id="customInput">
+    <input type="number" id="customAmount" min="1" max="500" placeholder="Enter amount ($)" oninput="updateCustom()">
+  </div>
+  <button class="donate-btn" id="donateBtn" onclick="startDonation()">DONATE $1</button>
+  <p class="footer">Secure payment via Stripe &mdash; 4 Elements Consulting Limited</p>
+  <a href="/site.html" class="back-link">&larr; Back to Academy</a>
+</div>
+<script>
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('donation') === 'success') document.getElementById('successMsg').style.display = 'block';
+  if (params.get('donation') === 'cancelled') document.getElementById('cancelMsg').style.display = 'block';
+
+  let selectedAmount = 100; // cents
+
+  function selectTier(el) {
+    document.querySelectorAll('.tier-btn').forEach(b => b.classList.remove('selected'));
+    el.classList.add('selected');
+    const amt = el.dataset.amount;
+    const customInput = document.getElementById('customInput');
+    if (amt === 'custom') {
+      customInput.style.display = 'block';
+      updateCustom();
+    } else {
+      customInput.style.display = 'none';
+      selectedAmount = parseInt(amt);
+      document.getElementById('donateBtn').textContent = 'DONATE $' + (selectedAmount / 100);
+    }
+  }
+
+  function updateCustom() {
+    const val = parseInt(document.getElementById('customAmount').value);
+    if (val && val >= 1) {
+      selectedAmount = val * 100;
+      document.getElementById('donateBtn').textContent = 'DONATE $' + val;
+    }
+  }
+
+  // GitHub Pages is static, so checkout creation runs on the live Manus backend.
+  // The backend allowlists the public academy origins and returns a live Stripe URL.
+  const PAYMENT_API_ORIGIN = 'https://infra-acad-kuqzaex2.manus.space';
+
+  async function startDonation() {
+    if (!selectedAmount || selectedAmount < 100) { alert('Please select or enter an amount.'); return; }
+    const btn = document.getElementById('donateBtn');
+    btn.textContent = 'REDIRECTING...';
+    btn.disabled = true;
+    // Use a browser navigation rather than fetch: GitHub Pages is static and
+    // top-level redirects do not require CORS preflight permission.
+    const checkoutUrl = PAYMENT_API_ORIGIN + '/api/stripe/donation?amountCents=' + encodeURIComponent(selectedAmount) + '&returnOrigin=' + encodeURIComponent(window.location.origin);
+    window.location.assign(checkoutUrl);
+  }
+</script>
+</body>
+</html>
