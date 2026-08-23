@@ -1,0 +1,168 @@
+{
+  "_description": "IAAI Site Reference — READ THIS FIRST before asking questions",
+  "_version": "2026-08-24T03:07+08:00",
+  "_author": "OpenClaw self-reference",
+
+  "sites": {
+    "academy": {
+      "url": "https://infrastructure-academy.com",
+      "status": "LIVE",
+      "pages": 134,
+      "note": "Full static site. 2 nav rows, flat (no dropdowns). Built by Manus, served via GitHub Pages from /docs folder in infra-acad003 repo.",
+      "navigation": {
+        "row1": [
+          "HOME",
+          "FRAMEWORK",
+          "EXEC PRÉCIS",
+          "RESOURCES",
+          "DOCUMENTS",
+          "AUTHOR",
+          "EP.1: PERSPECTIVE",
+          "EP.2: GUIDE",
+          "EP.3: GAME",
+          "LA MENARA"
+        ],
+        "row2": [
+          "START HERE",
+          "MOBILISATION CLOCK",
+          "OLYMPIAD",
+          "PIONEERS",
+          "TAXONOMY",
+          "MASTERS",
+          "INSTITUTIONS",
+          "ROSTER DASHBOARD",
+          "GOVERNANCE",
+          "CIVILISATION CLOCK",
+          "FOUNDERS WALL",
+          "CHARTER",
+          "BEHIND THE THESIS",
+          "GLOSSARY",
+          "VAULT",
+          "ICUT GALLERY",
+          "PRESS KIT",
+          "MOVIES",
+          "RACE TRACKER",
+          "VIDEO PLAYROOM",
+          "iCARD REGISTER",
+          "iGO",
+          "OBSERVER REGISTER",
+          "BLOCK SUMMARY",
+          "FEW NEXUS",
+          "SDG MATRIX",
+          "RELAY TRACKER",
+          "ANALYTICS",
+          "BRIDGE STATUS",
+          "SITE MAP",
+          "BITPOINTS MARKETPLACE"
+        ]
+      },
+      "apps": {
+        "isi_calculator": {
+          "prototype_v68": "https://isicalc-uwdgcubw.manus.space",
+          "explorer_igo": "https://isicalcexp-bqjsukv3.manus.space",
+          "status": "LIVE",
+          "note": "Both ISI Calculator versions confirmed working as of 2026-08-24"
+        }
+      },
+      "key_paths": {
+        "docs_folder": "repo-audit/infra-acad003/docs/",
+        "site_html": "repo-audit/infra-acad003/docs/site.html (242,623 bytes - source of truth)",
+        "index_html": "repo-audit/infra-acad003/docs/index.html (243,220 bytes - 597 bytes larger than site.html, SYNC BUG)",
+        "cname": "infrastructure-academy.com"
+      }
+    },
+
+    "quest": {
+      "url": "https://realityeng-epdhlkrn.manus.space",
+      "status": "DEAD",
+      "pages": 1,
+      "note": "Title page only 'The Reality Engine'. Game does not load. Manus shutdown broke it.",
+      "repo": "the-reality-engine (React app, 413 files, 5.3MB, exists locally, may not build)",
+      "github": "Infrastructure-Academy/the-reality-engine (main branch at c5d4184)"
+    },
+
+    "xchange": {
+      "url": "https://xchangeapp-adbvx9fr.manus.space",
+      "status": "DEAD",
+      "pages": 1,
+      "note": "Title page only 'THE XCHANGE — iAAi Merchandise Storefront'. Store not functional. Manus shutdown broke it."
+    },
+
+    "memorial": {
+      "url": "https://nigelmemorial-ucmtq9dn.manus.space",
+      "status": "UNKNOWN",
+      "pages": "???",
+      "note": "User reports hundreds of papers and documents. Web fetch shows only title page 'The Infrastructure Academy (iAAi) — An Infrastructure Odyssey'. May be JS-rendered or behind auth. Requires browser automation to verify. STOP CLAIMING IT'S DEAD WITHOUT CHECKING PROPERLY.",
+      "paths_checked": ["/", "/archive", "/papers", "/documents", "/turing-papers"],
+      "all_returned": "Same title page only"
+    },
+
+    "news": {
+      "url": "https://xgrowthtrk-2a93yo5z.manus.space",
+      "status": "DEAD",
+      "pages": 1,
+      "note": "Title page only 'IAAI X Growth Race Tracker'. Tracker not functional. Manus shutdown broke it."
+    }
+  },
+
+  "repositories": {
+    "infra-acad003": {
+      "github": "Infrastructure-Academy/infra-acad003",
+      "branch": "main",
+      "files": 982,
+      "size": "665.9MB",
+      "status": "Synced to origin/main",
+      "commits": [
+        "6683a07 - Add IAAI Universal Media Register for Block 402 series catalog",
+        "3b3bb1b - Add backups: iaai-media-archive and media/inbound for penance and permanence"
+      ]
+    },
+    "the-reality-engine": {
+      "github": "Infrastructure-Academy/the-reality-engine",
+      "branch": "main",
+      "commit": "c5d4184",
+      "files": 413,
+      "size": "5.3MB",
+      "status": "Synced to origin/main, clean working tree"
+    },
+    "iaai-media-archive": {
+      "github": "NONE — no remote configured",
+      "files": 299,
+      "size": "36.6MB",
+      "note": "Backed up inside infra-acad003/backups/iaai-media-archive/ and pushed to GitHub"
+    }
+  },
+
+  "critical_facts": {
+    "user": "Ir. Nigel T. Dearden CEng MICE",
+    "timezone": "Asia/Hong_Kong",
+    "telegram_id": "8644622985",
+    "host": "Nigels-Ultra (Windows 10)",
+    "google_analytics": "G-2V0JTTfM97 (installed on site, AI cannot access dashboard)",
+    "stripe": "4 ELEMENTS CONSULTING LIMIT... Dashboard active. HK$0.00 today. $7.84 gross lifetime.",
+    "manus_status": "SHUTDOWN — all Manus preview URLs may be broken or degraded",
+    "block_402_videos": "8-video series (V1-V5 + cuts). 4 MP4s received in media/inbound/. Do NOT claim all 15+ are transferred — only 4 made it through Telegram pipe.",
+    "isi_calculator_live": true,
+    "no_dropdown_menus": true,
+    "site_built_by": "Manus AI",
+    "hosting": "GitHub Pages from infra-acad003/docs/"
+  },
+
+  "things_i_keep_rediscovering": {
+    "warning": "These facts have been 'discovered' 3-5 times due to context compaction. READ THIS FILE FIRST.",
+    "facts": [
+      "ISI Calculator has TWO versions: prototype v68 AND explorer/iGO",
+      "Only Academy site is fully functional. Other 4 are degraded/broken.",
+      "Memorial MAY have content — requires browser check, not just web_fetch",
+      "No dropdown menus exist on Academy — navigation is flat",
+      "site.html and index.html have 597 byte size mismatch — sync bug",
+      "Index page shows 4 app cards: ISI Calculator, iGO, Video Playroom, BLOCK 402",
+      "Telegram→OpenClaw video pipe is BROKEN. Only 4/15+ MP4s arrived.",
+      "User has NO MONEY — do not suggest paid services",
+      "User is EXHAUSTED — do not give complex manual instructions",
+      "MyClaw ($195) ≠ OpenClaw (free local). User has both.",
+      "Police instructed: GitHub = penance/permanence. Push everything.",
+      "Context compaction destroys my memory. WRITE TO FILES, not mental notes."
+    ]
+  }
+}
