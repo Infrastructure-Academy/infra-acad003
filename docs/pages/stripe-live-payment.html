@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>iAAi — Secure Enrollment</title>
+<script src="https://js.stripe.com/v3/"></script>
+<style>
+/* iAAi Brand: Dark Navy + Gold */
+body {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  background: #0A0F2A;
+  color: #FFD700;
+  margin: 0;
+  padding: 1rem;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+.container {
+  max-width: 420px;
+  margin: 0 auto;
+  background: #111835;
+  border: 2px solid #C9A227;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 0 40px rgba(201, 162, 39, 0.15);
+}
+.logo {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 0.3rem;
+}
+.title {
+  text-align: center;
+  font-size: 1.4rem;
+  margin: 0 0 0.3rem 0;
+  letter-spacing: 1px;
+}
+.subtitle {
+  text-align: center;
+  color: #888;
+  font-size: 0.85rem;
+  margin-bottom: 2rem;
+  font-style: italic;
+}
+.form-group {
+  margin-bottom: 1.3rem;
+}
+label {
+  display: block;
+  font-size: 0.8rem;
+  margin-bottom: 0.4rem;
+  color: #C9A227;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+input[type="text"], input[type="email"] {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #333;
+  background: #0A0F2A;
+  color: #FFD700;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.2s;
+}
+input:focus {
+  outline: none;
+  border-color: #C9A227;
+}
+input::placeholder { color: #555; }
+#card-element {
+  background: #0A0F2A;
+  padding: 0.8rem;
+  border: 1px solid #333;
+  border-radius: 6px;
+  transition: border-color 0.2s;
+}
+#card-element.StripeElement--focus {
+  border-color: #C9A227;
+}
+#card-errors {
+  color: #ff6b6b;
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  min-height: 1.2rem;
+}
+button {
+  width: 100%;
+  padding: 1rem;
+  background: #C9A227;
+  color: #0A0F2A;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  transition: background 0.2s;
+}
+button:hover { background: #FFD700; }
+button:disabled {
+  background: #444;
+  color: #777;
+  cursor: not-allowed;
+}
+button.success {
+  background: #2d6a4f;
+  color: #fff;
+}
+button.error {
+  background: #6a2d2d;
+  color: #fff;
+}
+.result {
+  margin-top: 1rem;
+  padding: 1rem;
+  border-radius: 6px;
+  text-align: center;
+  display: none;
+}
+.result.success {
+  display: block;
+  background: rgba(45, 106, 79, 0.2);
+  border: 1px solid #2d6a4f;
+  color: #6fcf97;
+}
+.result.error {
+  display: block;
+  background: rgba(106, 45, 45, 0.2);
+  border: 1px solid #6a2d2d;
+  color: #ff6b6b;
+}
+.secure-note {
+  text-align: center;
+  font-size: 0.7rem;
+  color: #555;
+  margin-top: 1.5rem;
+}
+.footer {
+  text-align: center;
+  font-size: 0.65rem;
+  color: #444;
+  margin-top: 1rem;
+}
+</style>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">🏗️</div>
+    <h1 class="title">Infrastructure Academy</h1>
+    <p class="subtitle">Secure Enrollment — iAAi Practitioner Course</p>
+
+    <form id="payment-form">
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="As on card" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="you@example.com" required>
+      </div>
+
+      <div class="form-group">
+        <label>Card Details</label>
+        <div id="card-element"></div>
+        <div id="card-errors"></div>
+      </div>
+
+      <button type="submit" id="submit-button">
+        Pay HKD $1.00 — Confirm System Live
+      </button>
+    </form>
+
+    <div id="result" class="result"></div>
+
+    <p class="secure-note">🔒 Encrypted by Stripe. iAAi never stores your card.</p>
+    <p class="footer">iAAi COUNTERFORCE v67 — © 2026</p>
+  </div>
+
+<script>
+// === iAAi LIVE STRIPE CONFIG ===
+const stripe = Stripe('pk_live_51T90UtGu6aW29cXy4FfRiQ3JpMGj2fK0cKatLQRb2XfLLrK7LaJiOTstdTStnYFwZIQ2886IpWoSPZ2Z9dWyYJc000yErt2M6k');
+const elements = stripe.elements();
+const card = elements.create('card', {
+  style: {
+    base: {
+      color: '#FFD700',
+      fontFamily: '"Cormorant Garamond", Georgia, serif',
+      fontSize: '16px',
+      '::placeholder': { color: '#555' }
+    },
+    invalid: { color: '#ff6b6b' }
+  }
+});
+card.mount('#card-element');
+
+const form = document.getElementById('payment-form');
+const submitBtn = document.getElementById('submit-button');
+const errorDiv = document.getElementById('card-errors');
+const resultDiv = document.getElementById('result');
+
+// === SET YOUR CLOUDFLARE WORKER URL HERE ===
+// After deploying the backend, replace the line below:
+const WORKER_URL = 'https://iaai-payment.YOURNAME.workers.dev';
+// Example: 'https://iaai-payment.nigel.workers.dev'
+
+card.on('change', ({error}) => {
+  errorDiv.textContent = error ? error.message : '';
+});
+
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Processing...';
+  resultDiv.className = 'result';
+  resultDiv.textContent = '';
+  errorDiv.textContent = '';
+
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+
+  // Create Stripe token from card
+  const {token, error} = await stripe.createToken(card, { name });
+
+  if (error) {
+    errorDiv.textContent = error.message;
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Pay HKD $1.00 — Confirm System Live';
+    return;
+  }
+
+  // Send token to Cloudflare Worker backend
+  try {
+    if (WORKER_URL.includes('YOURNAME')) {
+      // Demo mode: show token, don't charge yet
+      resultDiv.className = 'result error';
+      resultDiv.innerHTML = `<strong>⚠️ Backend not configured</strong><br>Update WORKER_URL in this file, then redeploy.`;
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Pay HKD $1.00 — Confirm System Live';
+      return;
+    }
+
+    const response = await fetch(WORKER_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        token: token,
+        email: email,
+        name: name,
+        amount_hkd: 1.00
+      })
+    });
+
+    const data = await response.json();
+
+    if (data.success) {
+      resultDiv.className = 'result success';
+      resultDiv.innerHTML = `
+        <strong>✅ Payment Confirmed</strong><br>
+        Amount: HKD $${data.amount.toFixed(2)}<br>
+        <a href="${data.receipt_url}" target="_blank" style="color:#6fcf97;">View Receipt</a>
+      `;
+      submitBtn.className = 'success';
+      submitBtn.textContent = '✅ Payment Received';
+    } else {
+      throw new Error(data.error || 'Unknown error');
+    }
+  } catch (err) {
+    errorDiv.textContent = err.message;
+    submitBtn.disabled = false;
+    submitBtn.className = 'error';
+    submitBtn.textContent = '❌ Retry Payment';
+    resultDiv.className = 'result error';
+    resultDiv.textContent = err.message;
+  }
+});
+</script>
+</body>
+</html>
