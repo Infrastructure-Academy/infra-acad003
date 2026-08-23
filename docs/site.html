@@ -59,7 +59,7 @@
         .beta-badge::before { content:'\25CF'; font-size:0.5rem; animation:beta-dot 2s ease-in-out infinite; }
         @keyframes beta-pulse { 0%,100%{opacity:1;} 50%{opacity:0.7;} }
         @keyframes beta-dot { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
-        @media(max-width:768px) { .beta-badge { font-size:0.5rem; padding:0.1rem 0.35rem; letter-spacing:1px; margin-left:0.25rem; vertical-align:middle; display:none; } .header-title { max-width: calc(100vw - 260px) !important; } .header-tagline::after { content:'BETA'; display:inline-block; font-family:'Courier New',monospace; font-size:0.4rem; font-weight:bold; color:#fb923c; letter-spacing:1px; margin-left:0.5rem; background:rgba(251,146,60,0.15); border:1px solid rgba(251,146,60,0.5); padding:0.05rem 0.3rem; border-radius:2px; vertical-align:middle; animation:beta-pulse 3s ease-in-out infinite; } .desktop-social { display:none !important; } .mobile-social-toggle { display:block !important; } }
+        @media(max-width:768px) { .beta-badge { font-size:0.5rem; padding:0.1rem 0.35rem; letter-spacing:1px; margin-left:0.25rem; vertical-align:middle; display:none; } .header-title { max-width: calc(100vw - 260px) !important; } .header-tagline::after { content:'BETA'; display:inline-block; font-family:'Courier New',monospace; font-size:0.4rem; font-weight:bold; color:#fb923c; letter-spacing:1px; margin-left:0.5rem; background:rgba(251,146,60,0.15); border:1px solid rgba(251,146,60,0.5); padding:0.05rem 0.3rem; border-radius:2px; vertical-align:middle; animation:beta-pulse 3s ease-in-out infinite; } .desktop-social { display:none !important; } .mobile-telegram-link { display:block !important; } .mobile-social-toggle { display:block !important; } }
         @media(max-width:480px) { .beta-badge { display:none; } .mobile-social-toggle { display:none !important; } .header-title { max-width: calc(100vw - 180px) !important; } .header-tagline::after { content:'BETA'; font-size:0.35rem; padding:0.04rem 0.2rem; letter-spacing:0.5px; } }
         .hero-img { width:100%; height:auto; display:block; border-radius:8px; border:2px solid var(--color-accent-gold); }
         .hero-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:1rem; align-items:stretch; }
@@ -521,6 +521,10 @@
                     <a href="https://app.joinhandshake.com/profiles/nigeldearden" target="_blank" rel="noopener" style="display:flex; align-items:center; gap:8px; padding:6px 8px; color:#fff; text-decoration:none; font-size:0.75rem; border-radius:4px; white-space:nowrap;" onmouseover="this.style.background='rgba(255,215,0,0.1)'" onmouseout="this.style.background='transparent'"><svg width="14" height="14" viewBox="0 0 24 24" fill="#FF7043"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 15h-2v-2h2v2zm0-4h-2V7h2v6zm4 4h-2v-2h2v2zm0-4h-2V7h2v6z"/></svg> Handshake</a>
                 </div>
             </div>
+            <!-- Mobile Telegram link -->
+            <a href="https://t.me/dearden_ni37258" class="mobile-telegram-link" aria-label="Telegram" style="display:none;padding:6px 8px;" target="_blank" rel="noopener">
+                <img src="assets/images/telegram-logo.jpg" alt="Telegram" style="height:22px;width:22px;border-radius:4px;">
+            </a>
             <button class="hamburger" id="hamburger-menu" aria-label="Toggle navigation menu" aria-expanded="false">
                 <span></span>
                 <span></span>
