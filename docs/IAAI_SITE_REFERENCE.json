@@ -147,7 +147,7 @@
     "no_dropdown_menus": true,
     "site_built_by": "Manus AI",
     "hosting": "GitHub Pages from infra-acad003/docs/",
-    "sync_bug_details": "index.html has Telegram social media link that site.html lacks. 597 bytes = Telegram <a> tag + cascading reorder of X/Facebook/LinkedIn/Handshake. site.html is labeled 'source of truth' but is actually older. Fix: add Telegram link to site.html or regenerate both from a single template.",
+    "sync_bug_details": "FIXED 2026-08-24: index.html had Telegram social media link (in dropdown + mobile placement) and full Manus donate URL that site.html lacked. 597 bytes resolved across 3 edits. Both files now identical at 243,220 bytes.",
     "memorial_site_status_2026-08-24": "web_fetch returns only title page (832 bytes total, 61 raw). No content visible without browser automation. Status remains UNKNOWN — not confirmed dead."
   },
 
