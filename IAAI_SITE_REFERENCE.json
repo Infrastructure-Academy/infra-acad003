@@ -1,6 +1,7 @@
 {
   "_description": "IAAI Site Reference — READ THIS FIRST before asking questions",
   "_version": "2026-08-24T03:07+08:00",
+  "_session_fix": "Read this file at the START of every turn. Update at END of every turn. Append to session_log.",
   "_author": "OpenClaw self-reference",
 
   "sites": {
@@ -147,6 +148,14 @@
     "site_built_by": "Manus AI",
     "hosting": "GitHub Pages from infra-acad003/docs/"
   },
+
+  "session_log": [
+    { "time": "2026-08-24T03:06", "note": "Context compaction failed. System message: increase agents.defaults.compaction.reserveTokensFloor to 50000. User has no money — cannot afford larger context window. Must use disk-based workaround instead." },
+    { "time": "2026-08-24T03:06", "note": "Cost shock: $11.47 today, $30.68 this week. 3h 57m session. Compaction is saving money but destroying accuracy." },
+    { "time": "2026-08-24T03:00", "note": "User confirmed: Memorial has hundreds of papers. Web_fetch failing to show content. Need browser automation to verify. STOP claiming Memorial is dead without proper check." },
+    { "time": "2026-08-24T02:59", "note": "ISI Calculator has 2 versions: prototype v68 (isicalc-uwdgcubw) AND explorer/iGO (isicalcexp-bqjsukv3). Both confirmed LIVE. User sees all 3 apps on mobile homepage." },
+    { "time": "2026-08-24T02:58", "note": "No dropdown menus exist on Academy site. Navigation is flat 2-row layout. HTML verified: zero <div class=dropdown> elements." }
+  ],
 
   "things_i_keep_rediscovering": {
     "warning": "These facts have been 'discovered' 3-5 times due to context compaction. READ THIS FILE FIRST.",
