@@ -146,7 +146,9 @@
     "isi_calculator_live": true,
     "no_dropdown_menus": true,
     "site_built_by": "Manus AI",
-    "hosting": "GitHub Pages from infra-acad003/docs/"
+    "hosting": "GitHub Pages from infra-acad003/docs/",
+    "sync_bug_details": "index.html has Telegram social media link that site.html lacks. 597 bytes = Telegram <a> tag + cascading reorder of X/Facebook/LinkedIn/Handshake. site.html is labeled 'source of truth' but is actually older. Fix: add Telegram link to site.html or regenerate both from a single template.",
+    "memorial_site_status_2026-08-24": "web_fetch returns only title page (832 bytes total, 61 raw). No content visible without browser automation. Status remains UNKNOWN — not confirmed dead."
   },
 
   "session_log": [
