@@ -1,0 +1,20 @@
+CREATE TABLE `press_outreach` (
+	`id` int AUTO_INCREMENT NOT NULL,
+	`contactName` varchar(256) NOT NULL,
+	`outlet` varchar(256) NOT NULL,
+	`category` enum('tech_media','infrastructure','education','gaming','science','general','university') NOT NULL,
+	`email` varchar(320),
+	`contactUrl` text,
+	`region` varchar(32) NOT NULL DEFAULT 'global',
+	`status` enum('not_sent','sent','reminded','responded','interested','declined','no_response') NOT NULL DEFAULT 'not_sent',
+	`sentType` varchar(64),
+	`sentDate` timestamp,
+	`reminderCount` int NOT NULL DEFAULT 0,
+	`lastReminderDate` timestamp,
+	`priority` int NOT NULL DEFAULT 3,
+	`notes` text,
+	`sitesShared` text,
+	`createdAt` timestamp NOT NULL DEFAULT (now()),
+	`updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,
+	CONSTRAINT `press_outreach_id` PRIMARY KEY(`id`)
+);
