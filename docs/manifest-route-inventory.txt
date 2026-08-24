@@ -1,0 +1,633 @@
+﻿iAAi MANUS SOURCE MANIFEST
+Police / Shareholder Verification Record
+Generated 24 August 2026 | Source boundary: Manus AI iAAi development/reference environments only
+Field
+Recorded value
+Source of truth
+The user-provided and observed Manus AI iAAi development/reference environments.
+Academy reference
+https://infra-acad-kuqzaex2.manus.space/site.html
+Memorial reference
+https://nigelmemorial-ucmtq9dn.manus.space/
+Observed route records
+91 Academy + 31 Memorial = 122 observed records
+Available schema evidence
+50 declared MySQL tables in the accessible project schema file
+Status
+Source manifest and reconstruction baseline; not a complete private-account export or clone certification.
+1. Scope and evidentiary rule
+This manifest records only iAAi material supplied or observed in the Manus AI development/reference environments. It is intended to let police, shareholders, or a reconstruction agent compare the Manus source structure against any downstream copy. GitHub and public CDN locations are deliberately excluded from the source counts; they are not treated as the source of truth.
+The label â€œofficialâ€ here means an evidence-labelled manifest of the observed Manus reference environments. It is not a substitute for the official Manus Account Info Backup or Task Data Backup, which are required to establish a complete export of private task, account, database, connector, and attachment state.
+2. Observed counts
+Evidence layer
+Count
+Interpretation
+Academy reference internal routes
+91
+Captured from the live Manus Academy reference page.
+Memorial reference internal routes
+31
+Captured from the live Manus Memorial reference page.
+Combined observed route records
+122
+Observed across two Manus hosts; does not certify the claimed 130+ total.
+Declared project schema tables
+50
+Available source declarations; not a private database dump.
+3. Dropdown and menu schema
+The following labels were observed on the Manus Academy reference page and supplied mobile capture. Exact route targets are listed where captured in the route table; mobile-only labels without a separate DOM capture are recorded as labels, not guessed URLs.
+Top Level
+ACADEMY, QUEST, XCHANGE, MEMORIAL, NEWS
+Main Groups
+HOME, FRAMEWORK, EXEC PRÃ‰CIS, RESOURCES, DOCUMENTS, AUTHOR, EP.1: PERSPECTIVE, EP.2: GUIDE, EP.3: GAME, LA MENARA
+Explore People Groups
+START HERE, MOBILISATION CLOCK, OLYMPIAD, PIONEERS, TAXONOMY, MASTERS, INSTITUTIONS, ROSTER DASHBOARD, GOVERNANCE, CIVILISATION CLOCK, FOUNDERS WALL, CHARTER, BEHIND THE THESIS, GLOSSARY, VAULT, ICUT GALLERY, PRESS KIT, MOVIES, RACE TRACKER, VIDEO PLAYROOM
+Resources Tools Groups
+ICARD REGISTER, IGO, OBSERVER REGISTER, BLOCK SUMMARY, FEW NEXUS, SDG MATRIX, RELAY TRACKER, ANALYTICS, BRIDGE STATUS, SITE MAP, BITPOINTS MARKETPLACE
+Mobile Reference Labels
+HOME, READ, EXPLORE, PEOPLE, RESOURCES, REFERENCE, ICARDS & TOOLS, DOCUMENTS, GLOSSARY, VAULT, EQUATIONS, CHIP EVOLUTION, LINK REGISTER, ICARD GALLERY, ICARD REGISTER, ICARD: 4ECL BR, ICARD: BOOK SALES, ICARD: H-TETRA, ICARD: KHANH, CARD DECK, ICUT GALLERY, PLAY
+4. Academy route inventory
+91 unique internal route records were captured from https://infra-acad-kuqzaex2.manus.space/site.html.
+#
+Path
+Observed label
+1
+/pages/8th-scholar.html
+â€”
+2
+/site.html
+HOME
+3
+/pages/start-here.html
+START HERE
+4
+/volumes/volume1/index.html
+EP.1: PERSPECTIVE
+5
+/volumes/volume2/index.html
+EP.2: GUIDE
+6
+/executive-precis.html
+EXEC PRÃ‰CIS
+7
+/pages/behind-the-thesis.html
+BEHIND THE THESIS
+8
+/pages/thesis-record.html
+THESIS RECORD
+9
+/pages/before-writing.html
+BEFORE WRITING
+10
+/pages/assessment-results.html
+ASSESSMENT RESULTS
+11
+/pages/turing-paper.html
+TURING PAPER
+12
+/pages/milestones.html
+MILESTONES
+13
+/pages/bibliography.html
+BIBLIOGRAPHY
+14
+/pages/civilisational-divide.html
+THE CIVILISATIONAL DIVIDE
+15
+/pages/framework.html
+FRAMEWORK
+16
+/taxonomy.html
+TAXONOMY
+17
+/civilisation-clock.html
+CIVILISATION CLOCK
+18
+/mobilisation-clock.html
+MOBILISATION CLOCK
+19
+/infrastructure-olympiad.html
+OLYMPIAD
+20
+/explore/relays
+12 RELAYS
+21
+/explore/webs
+5 WEBS
+22
+/explore/scholars
+7 SCHOLARS
+23
+/explore/modes
+3 MODES
+24
+/explore/threats
+4 THREATS (4Cs)
+25
+/explore/sdgs
+SDGs
+26
+/explore/pillars
+4 PILLARS
+27
+/explore/mastery
+MASTERY
+28
+/explore/narration
+NARRATION
+29
+/videos
+VIDEO PLAYROOM
+30
+/pages/movies.html
+MOVIES
+31
+/pioneers.html
+PIONEERS
+32
+/masters.html
+MASTERS
+33
+/institutions.html
+INSTITUTIONS
+34
+/play/founders
+FOUNDERS WALL
+35
+/pages/about-author.html
+AUTHOR
+36
+/quotes.html
+QUOTES
+37
+/nodes
+NODE REGISTER
+38
+/page-schema.html
+SITE SCHEMA
+39
+/library.html
+DOCUMENTS
+40
+/pages/resources.html
+RESOURCES
+41
+/pages/glossary.html
+GLOSSARY
+42
+/vault.html
+VAULT
+43
+/equations-register.html
+EQUATIONS
+44
+/pages/chip-evolution.html
+CHIP EVOLUTION
+45
+/pages/link-register.html
+LINK REGISTER
+46
+/icard-gallery.html
+iCARD GALLERY
+47
+/icard-register.html
+iCARD REGISTER
+48
+/icard-4ecl-br.html
+iCARD: 4ECL BR
+49
+/icard-book-sales-strategy.html
+iCARD: BOOK SALES
+50
+/icard-h-tetra.html
+iCARD: H-TETRA
+51
+/icard-khanh-huynh.html
+iCARD: KHANH
+52
+/deck.html
+CARD DECK
+53
+/icut-gallery.html
+ICUT GALLERY
+54
+/dcsn-dashboard.html
+DCSN DASHBOARD
+55
+/h-block-dashboard.html
+H-BLOCK DASHBOARD
+56
+/finance-admin.html
+FINANCE ADMIN
+57
+/4cs-decision.html
+4Cs DECISION
+58
+/cashflow-y1.html
+CASH FLOW Y1
+59
+/site.html#charter
+CHARTER
+60
+/site.html#section-media
+VIDEO PLAYROOM
+61
+/play
+PLAY
+62
+/press.html
+PRESS KIT
+63
+/pages/la-menara.html
+LA MENARA
+64
+/pages/roster-dashboard.html
+ROSTER DASHBOARD
+65
+/pages/governance-architecture.html
+GOVERNANCE
+66
+/race
+RACE TRACKER
+67
+/icards
+iCARD REGISTER
+68
+/play/igo
+iGO
+69
+/pages/observer-register.html
+OBSERVER REGISTER
+70
+/pages/block-summary.html
+BLOCK SUMMARY
+71
+/pages/water-power-nexus.html
+FEW NEXUS
+72
+/pages/sdg-matrix.html
+SDG MATRIX
+73
+/pages/relay-tracker.html
+RELAY TRACKER
+74
+/pages/analytics-dashboard.html
+ANALYTICS
+75
+/pages/bridge-status.html
+BRIDGE STATUS
+76
+/pages/sitemap.html
+SITE MAP
+77
+/pages/bitpoint-marketplace.html
+BITPOINTS MARKETPLACE
+78
+/donate.html
+â¤ SUPPORT THE ACADEMY Donate $1 â€” Help advance civilisational systems research
+79
+/play/leaderboard
+VIEW ALL â†’
+80
+/site.html#section-challenge
+Challenge Section Accordion
+81
+/play/explore/1
+Deep Dives Structural Fix
+82
+/vehicle-hangar
+66-Page Vehicle Card Deck
+83
+/play/handbook
+Player's Handbook PDF
+84
+/pages/g2-integration-brief.html
+Even Realities G2 Brief
+85
+/play/hub
+Relay Completion Certificate
+86
+/site.html#leaderboard
+Homepage Leaderboard Widget
+87
+/site.html#recent-feed
+What's New Toast
+88
+/pages/silk-road.html
+The Silk Road Paradox
+89
+/volumes/volume1/relay-05-roads.html
+The Silk Road Paradox
+90
+/
+AGENT 1 â€” CONTRACTOR ACADEMY Infrastructure Academy MAX â€” The Contractor â€” Hardening YOU ARE HERE
+91
+/press.html#disclaimer
+Full Disclaimer
+5. Memorial route inventory
+31 unique internal route records were captured from https://nigelmemorial-ucmtq9dn.manus.space/.
+#
+Path
+Observed label
+Public URL
+1
+/
+HOME â€” Infrastructure Academy / Principia Tectonica landing page
+https://nigelmemorial-ucmtq9dn.manus.space/
+2
+/quotient
+THE EQUATION / MIND THE EQUATION â€” Opus entry
+https://nigelmemorial-ucmtq9dn.manus.space/quotient
+3
+/inertial-jump
+INERTIAL JUMP â€” Opus section
+https://nigelmemorial-ucmtq9dn.manus.space/inertial-jump
+4
+/thesis
+THE THESIS â€” proof/thesis section
+https://nigelmemorial-ucmtq9dn.manus.space/thesis
+5
+/aim
+AIM â€” network/mission section
+https://nigelmemorial-ucmtq9dn.manus.space/aim
+6
+/tdf
+TDF â€” field section
+https://nigelmemorial-ucmtq9dn.manus.space/tdf
+7
+/vault
+VAULT â€” archive/document area
+https://nigelmemorial-ucmtq9dn.manus.space/vault
+8
+/titans
+TITANS â€” fellowship/people area
+https://nigelmemorial-ucmtq9dn.manus.space/titans
+9
+/turing-papers
+TURING PAPERS â€” academy/explore area
+https://nigelmemorial-ucmtq9dn.manus.space/turing-papers
+10
+/jigsaw
+JIGSAW â€” gaps area
+https://nigelmemorial-ucmtq9dn.manus.space/jigsaw
+11
+/lexicon
+LEXICON â€” dictionary/reference area
+https://nigelmemorial-ucmtq9dn.manus.space/lexicon
+12
+/tecton
+TECTON â€” thesaurus/reference area
+https://nigelmemorial-ucmtq9dn.manus.space/tecton
+13
+/isi
+ISI â€” dashboard/measurement area
+https://nigelmemorial-ucmtq9dn.manus.space/isi
+14
+/journey
+JOURNEY â€” timeline area
+https://nigelmemorial-ucmtq9dn.manus.space/journey
+15
+/ventral-origin
+ORIGIN â€” consciousness/origin area
+https://nigelmemorial-ucmtq9dn.manus.space/ventral-origin
+16
+/episode-2
+EP.II â€” episode area
+https://nigelmemorial-ucmtq9dn.manus.space/episode-2
+17
+/press
+PRESS â€” media/press pack
+https://nigelmemorial-ucmtq9dn.manus.space/press
+18
+/cards
+CARDS â€” card collection area
+https://nigelmemorial-ucmtq9dn.manus.space/cards
+19
+/universe
+UNIVERSE â€” world/content area
+https://nigelmemorial-ucmtq9dn.manus.space/universe
+20
+/hardware
+HARDWARE â€” equipment/technology area
+https://nigelmemorial-ucmtq9dn.manus.space/hardware
+21
+/boffin-bin
+BINARY INTELLIGENCE NETWORK â€” live chat/exchange area
+https://nigelmemorial-ucmtq9dn.manus.space/boffin-bin
+22
+/igo
+iGO â€” game/interactive area
+https://nigelmemorial-ucmtq9dn.manus.space/igo
+23
+/thesis/v2#500-generations
+500 GENERATIONS â€” thesis subsection/anchor
+https://nigelmemorial-ucmtq9dn.manus.space/thesis/v2#500-generations
+24
+/scholar-8
+SCHOLAR 8 â€” scholar/people area
+https://nigelmemorial-ucmtq9dn.manus.space/scholar-8
+25
+/generation-wave
+40-GEN WAVE â€” generation analysis
+https://nigelmemorial-ucmtq9dn.manus.space/generation-wave
+26
+/civilisational-divide
+THE DIVIDE â€” civilisational analysis
+https://nigelmemorial-ucmtq9dn.manus.space/civilisational-divide
+27
+/disclaimer
+BETA POC â€” disclaimer/status page
+https://nigelmemorial-ucmtq9dn.manus.space/disclaimer
+28
+/counterforce
+COUNTERFORCE â€” framework page
+https://nigelmemorial-ucmtq9dn.manus.space/counterforce
+29
+/manus-storage/uADfqhuasNJUHnAo_0311fb87.pdf
+ELE PAPER â€” linked PDF document
+https://nigelmemorial-ucmtq9dn.manus.space/manus-storage/uADfqhuasNJUHnAo_0311fb87.pdf
+30
+/cse
+CSE â€” Civilizational Systems Engineering teaching area
+https://nigelmemorial-ucmtq9dn.manus.space/cse
+31
+/game
+TRE â€” The Reality Engine linked area
+https://nigelmemorial-ucmtq9dn.manus.space/game
+6. Available database-schema evidence
+The accessible Manus full-stack project source declares the following tables. This is schema evidence only. It does not prove that all rows, historical migrations, private Memorial application state, or account-level databases are present in the accessible project directory.
+#
+Source symbol
+Database table
+1
+users
+users
+2
+assetCategories
+asset_categories
+3
+assets
+assets
+4
+players
+players
+5
+relayProgress
+relay_progress
+6
+achievements
+achievements
+7
+weeklyLeaderboard
+weekly_leaderboard
+8
+davidConversations
+david_conversations
+9
+alsGrades
+als_grades
+10
+playerParties
+player_parties
+11
+partyMembers
+party_members
+12
+pioneers
+pioneers
+13
+olympiadRegistrations
+olympiad_registrations
+14
+sponsorEnquiries
+sponsor_enquiries
+15
+playerDiscoveries
+player_discoveries
+16
+scholars
+scholars
+17
+relays
+relays
+18
+dualVocabulary
+dual_vocabulary
+19
+threadWeaves
+thread_weaves
+20
+glossaryEntries
+glossary_entries
+21
+icutCards
+icut_cards
+22
+equations
+equations
+23
+ipAssets
+ip_assets
+24
+vaultEntries
+vault_entries
+25
+fourCsEvidence
+four_cs_evidence
+26
+dataConnections
+data_connections
+27
+dcsnNodes
+dcsn_nodes
+28
+pageViews
+page_views
+29
+certificateVerifications
+certificate_verifications
+30
+followerSnapshots
+follower_snapshots
+31
+auditEvents
+audit_events
+32
+governanceProofs
+governance_proofs
+33
+universityScores
+university_scores
+34
+reviewRounds
+review_rounds
+35
+categoryScores
+category_scores
+36
+packageScores
+package_scores
+37
+perspectiveScores
+perspective_scores
+38
+anchorLinks
+anchor_links
+39
+chatMessages
+chat_messages
+40
+chatLikes
+chat_likes
+41
+icardArchive
+icard_archive
+42
+librarySubscriptions
+library_subscriptions
+43
+tbVehicles
+tb_vehicles
+44
+playerVehicles
+player_vehicles
+45
+cardVersions
+card_versions
+46
+projectExpenses
+project_expenses
+47
+educatorClasses
+educator_classes
+48
+classStudents
+class_students
+49
+igoWaitlist
+igo_waitlist
+50
+figures
+figures
+7. Preservation requirements and limitations
+The claimed 130+ page total is not independently certified by this manifest. The captured evidence contains 91 Academy internal route records and 31 Memorial internal route records, for 122 observed route records across the two Manus hosts; anchors, redirects, related applications, dynamic views, and duplicate paths may affect totals.
+The available drizzle schema contains 50 declared tables, but it is project source evidence and is not proof that every private Manus database, Memorial database, or historical migration state is included.
+This manifest is not the clone itself and does not include private chat history, unexported task attachments, provider connectors, secrets, or a complete database dump.
+A complete clone requires the official unmodified Manus Account Info Backup where applicable and Task Data Backup for all relevant iAAi tasks.
+Official preservation reference: https://manus.im/backup. If the backup tool is dysfunctional, retain screenshots, timestamps, and support correspondence as evidence of the failed export attempt; do not treat a partial GitHub copy as a complete Manus clone.
+8. Exhibits
+Exhibit A â€” Supplied mobile capture of the Manus iAAi dropdown/menu structure.
+Exhibit B â€” Supplied iAAi-FED-001 / SAP-001 Federation Consolidation Plan visual.
+References
+Ref.
+Source
+URL
+1
+Manus Academy reference
+https://infra-acad-kuqzaex2.manus.space/site.html
+2
+Manus Memorial reference
+https://nigelmemorial-ucmtq9dn.manus.space/
+3
+Official Manus backup portal
+https://manus.im/backup
