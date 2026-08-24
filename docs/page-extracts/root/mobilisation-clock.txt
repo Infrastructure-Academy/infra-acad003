@@ -1,0 +1,321 @@
+﻿IAAI Global Mobilisation Clock
+ACADEMY
+QUEST
+XCHANGE
+MEMORIAL
+NEWS
+INFRASTRUCTURE ACADEMY BETA
+Infrastructure &bull; Infostructure &bull; The Academy of Both
+42
+Follow
+Follow
+Handshake
+HOME
+FRAMEWORK
+EXEC PR&Eacute;CIS
+RESOURCES
+DOCUMENTS
+AUTHOR
+EP.1: PERSPECTIVE
+EP.2: GUIDE
+EP.3: GAME
+START HERE
+MOBILISATION CLOCK
+OLYMPIAD
+PIONEERS
+TAXONOMY
+MASTERS
+INSTITUTIONS
+ROSTER DASHBOARD
+GOVERNANCE
+CIVILISATION CLOCK
+FOUNDERS WALL
+CHARTER
+BEHIND THE THESIS
+GLOSSARY
+VAULT
+ICUT GALLERY
+&#127968; HOME
+&#128218; START
+&#128214; READ
+&#128736; FRAMEWORK
+&#127918; PLAY
+&#127916; MOVIES
+&#128194; RESOURCES
+&#128240; PRESS
+&#9650;
+IAAI GLOBAL MOBILISATION CLOCK
+Mankind's Race to Infrastructure Literacy &mdash; The Challenge
+&#9679; BETA / PoC TEST DATA &mdash; Phase 1 &amp; 2 Pre-Launch &mdash; All figures represent beta test environment
+WORLD POPULATION
+8,277,000,000
+UN Real-Time Estimate
+TARGET: 1 BILLION LEARNERS
+1,000,000,000
+12.1% of Humanity &mdash; The Tipping Point
+CURRENTLY MOBILISED
+247
+0.0000000247% of target
+0 â€” Launch
+Pioneers â†’ Ambassadors â†’ Scholars
+1,000,000,000 â€” Mission Complete
+Contributor Classes
+Players (Game)
+22
+Pioneers (Beta Testers)
+3
+Ambassadors (Language Leads)
+0
+Scholars (Academic Validators)
+23
+Advisors (Strategic)
+1
+Patrons (Institutional)
+0
+Backers (Financial)
+3
+Founding Team
+4
+Platform Metrics
+Languages Active
+8
+Languages Planned
+8
+Relays Built
+13
+Website Pages
+95
+Game Pages
+39
+Inventions Catalogued
+148
+Words Written
+1,293,964
+Tests Passing
+209
+Milestones
+GitHub Open Source
+~3 MONTHS
+First Pioneer Wave
+RECRUITING
+Seed Round ($500K)
+IN PROGRESS
+HICE Assessment (23 Universities)
+COMPLETE
+VR Campus (Meta)
+FUTURE
+8 Language Blocks &mdash; The Global Race
+Combined Coverage: ~85% Global Gaming Market &bull; ~80% EdTech Spend
+6 / 8 Active
+Goal: All 8 by 2027
+NOT YET ENGAGED &mdash; The Challenge
+Universities Worldwide
+25,977
+&#9650; 23 assessed &mdash; First Contact
+Engineering Students
+~6,700,000
+CE Firms (Top 100)
+100
+National Governments
+195
+UN Bodies
+15+
+People Who Don't Understand Infrastructure
+~8,276,999,775
+Every number above is a challenge. Every zero is an invitation.
+Patron Challenge Board
+UNESCO
+CHALLENGED
+National Geographic
+CHALLENGED
+NASA
+CHALLENGED
+Royal Society
+CHALLENGED
+Discovery
+CHALLENGED
+Smithsonian
+CHALLENGED
+NOAA
+NOT YET
+World Bank
+NOT YET
+Asian Dev. Bank
+NOT YET
+Chinese Acad. of Sciences
+NOT YET
+Challenged = Nominated by Players &bull; Not Yet = Awaiting Nomination
+Partner Challenge Board
+MIT OpenCourseWare
+CHALLENGED
+Khan Academy
+CHALLENGED
+Meta / Horizon Worlds
+CHALLENGED
+Manus AI
+ENGAGED
+AECOM
+NOT YET
+Arup
+NOT YET
+Bechtel
+NOT YET
+ICE (Institution of Civil Engineers)
+ASSESSED
+Scaling Model
+Phase 1: Founders
+4 / 4
+Phase 2: Pioneers (2-3 per block)
+3 / 16
+Phase 3: Ambassadors (10 per block)
+0 / 80
+Phase 4: GitHub Open Source
+PENDING
+Phase 5: University Adoption
+23 / 100
+Phase 6: Organic Growth
+0 / 1B
+&#9650; UNIVERSITY ASSESSMENT BREAKTHROUGH &mdash; FIRST CONTACT FROM 26,000+ [BETA TEST DATA]
+R1 &mdash; BASELINE
+12 Universities Assessed
+12
+Imperial, MIT, Tsinghua, NUS, ETH, TU Delft, IIT Bombay, Khalifa, KFUPM, Qatar, Tokyo, Queensland
+R2 &mdash; 20-PERSPECTIVE
+HICE Panel Assessment
+20
+ISI + HICE Equation &bull; Category Analysis &bull; D52 Game Validation
+R3 &mdash; EXPANSION
+11 New Universities Added
+23
+Georgia Tech, UCL, PKU, Zhejiang, HKU, KAIST, IIT Madras + ICE Professional Body
+REMAINING
+Universities Not Yet Assessed
+25,977
+View Full Evidence Pack &rarr;
+HICE Assessment System: Haptic Infrastructure Competency Evaluation &bull; 6 Regions &bull; 3 Assessment Rounds &bull; Beta PoC Test Data
+THE FIRST 23 &mdash; BETA PoC UNIVERSITY ROSTER 23 of 26,000
+These institutions participated in beta assessment across 3 rounds (R1&ndash;R3). Not yet formally partnered &mdash; engaged through the PoC validation process.
+&#127468;&#127463;
+UK / EUROPE
+Avg 87.0%
+Imperial College London
+87.5%
+UCL &dagger;
+87.5%
+Cambridge
+87.5%
+Nottingham
+R1 only
+Edinburgh [SUPPLEMENTAL]
+86.0%
+TU Delft (Netherlands) &dagger;
+87.8%
+Language Block: EN &bull; 6 Unis
+&#127482;&#127480;
+UNITED STATES
+Avg 88.2%
+MIT
+88.7%
+Stanford
+88.7%
+UC Berkeley
+R1 only
+Georgia Tech &dagger;
+87.5%
+Language Block: EN
+&#127464;&#127475;
+CHINA
+Avg 88.2%
+Tsinghua
+88.7%
+Peking (PKU) &dagger;
+88.2%
+Zhejiang &dagger;
+88.3%
+HKU &dagger;
+87.8%
+Tongji [SUPPLEMENTAL]
+87.5%
+Language Block: &#20013;&#25991; &bull; 5 Unis
+&#127760;
+APAC
+Avg 87.8%
+NUS (Singapore)
+88.7%
+KAIST (S. Korea) &dagger;
+87.5%
+U of Tokyo (Japan) &dagger;
+87.5%
+Language Blocks: EN + &#54620;&#44397;&#50612; + &#26085;&#26412;&#35486;
+&#127470;&#127475;
+INDIA
+Avg 86.9%
+IIT Bombay
+R1 only
+IIT Madras &dagger;
+87.5%
+Language Block: &#2361;&#2367;&#2344;&#2381;&#2342;&#2368; + EN
+&#127480;&#127462;
+MIDDLE EAST
+R1 Only
+Khalifa University (UAE)
+R1: 80
+Qatar University
+R1: 72
+King Fahd University (KSA)
+R1: 76
+Language Block: &#1575;&#1604;&#1593;&#1585;&#1576;&#1610;&#1577;
+23 Universities
+6 Regions
+12 Countries
+Avg: 87.7%
+FIRST CLASS
+&dagger; = New in R3 &bull; R3 scores are Academic Audit percentages &bull; View Full Evidence Pack &rarr; &bull; Regional Map &rarr;
+GLOBAL ASSESSMENT MAP &mdash; 23 UNIVERSITIES &times; 6 REGIONS
+Source: ISI Methodology DD-025 &bull; Full Evidence Pack &rarr; &bull; Click map to explore regional data
+IAAI INTELLIGENCE NETWORK (INTs) â€” THE SPANS
+HUMINT
+Human Intelligence
+(Pioneers + Ambassadors)
+25
+OSINT
+Open-Source Intelligence
+(GitHub + Public Data)
+PENDING
+SIGINT
+Signals Intelligence
+(DAVID AI Analytics)
+ACTIVE
+GEOINT
+Geospatial Intelligence
+(8 Language Block Mapping)
+8
+COMINT
+Communications Intelligence
+(Translation Networks)
+6
+MASINT
+Measurement Intelligence
+(Learning Analytics)
+ACTIVE
+ELINT
+Electronic Intelligence
+(Platform Distribution)
+PENDING
+"The highest good is like water. Water benefits all things and does not compete." &mdash; Laozi
+IAAI &bull; Infrastructure Academy AI &bull;  &bull; Data refreshes every second
+THE DEARDEN FIELD &mdash; 12 &times; 5 = 60 MATRIX NODES &mdash; WEAPONS OF THE MIND
+12 Civilisational Relays &times; 5 Web Layers &bull; DCSN Spider Network &bull; Explore the Matrix &rarr;
+iAAi SCADA &mdash; SUPERVISORY CONTROL AND DATA ACQUISITION
+HUMAN (Mentally Embodied &bull; Willful Intent) &rarr;
+AI (iAAi SCADA &bull; Guidance + Propulsion) &rarr;
+ROBOT (Digitally Embodied &bull; Man in Machine)
+Ancient Artifact Duality: Sabu Disc vs Antikythera Mechanism &bull; The Perfect Fourth &bull; HUD Integration &bull; 15 March 2026
+JOIN THE RACE &mdash; BECOME A PIONEER
+ENTER THE OLYMPIAD &mdash; THE RACE IS ON
+Every journey of a billion learners begins with one pioneer.
+&copy; 2026 Infrastructure Academy. All rights reserved. Preserving knowledge for eternity.
+X
+LinkedIn
+WhatsApp
+&#9650;

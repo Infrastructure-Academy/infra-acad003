@@ -1,0 +1,396 @@
+﻿Infrastructure Olympiad â€” IAAI
+ACADEMY
+QUEST
+XCHANGE
+MEMORIAL
+NEWS
+INFRASTRUCTURE ACADEMY BETA
+Infrastructure &bull; Infostructure &bull; The Academy of Both
+42
+Follow
+Follow
+Handshake
+HOME
+FRAMEWORK
+EXEC PR&Eacute;CIS
+RESOURCES
+DOCUMENTS
+AUTHOR
+EP.1: PERSPECTIVE
+EP.2: GUIDE
+EP.3: GAME
+START HERE
+MOBILISATION CLOCK
+OLYMPIAD
+PIONEERS
+TAXONOMY
+MASTERS
+INSTITUTIONS
+ROSTER DASHBOARD
+GOVERNANCE
+CIVILISATION CLOCK
+FOUNDERS WALL
+CHARTER
+BEHIND THE THESIS
+GLOSSARY
+VAULT
+ICUT GALLERY
+&#127968; HOME
+&#128218; START
+&#128214; READ
+&#128736; FRAMEWORK
+&#127918; PLAY
+&#127916; MOVIES
+&#128194; RESOURCES
+&#128240; PRESS
+&#9650;
+THE INFRASTRUCTURE OLYMPIAD
+Nations Competing on Civilisational Stewardship
+ONCE THE CLOCK STARTS TICKING, THE RACE IS ON
+8
+Language Blocks
+6
+Competition Categories
+26,000+
+Universities Worldwide
+23 in beta PoC
+24M
+XP Cap (Master Weaver)
+4.5B
+People Reached
+$15T
+Infrastructure Gap
+The Flywheel &mdash; How the Olympiad Grows Itself
+ðŸŽ®
+Players Compete
+Individuals and university teams race through 12 relays. Ego drives performance. Word of mouth spreads. Nations don't want to be last.
+ðŸŽ“
+Professionals Validate
+Universities adopt IAAI to boost their national team. 26,000 engineering departments &times; 50 students = 1.3M players from academia alone. 23 already in beta PoC.
+ðŸ›ï¸
+Patrons Sponsor
+Institutions and firms sponsor national teams for visibility. AECOM, Arup, Bechtel &mdash; they can't let competitors sponsor a winning team while they sit out.
+ðŸŒ
+Platform Scales
+More players &rarr; more data &rarr; more sponsors &rarr; more nations &rarr; more players. The Torus in commercial form. Self-sustaining momentum.
+True democracy &mdash; any nation can compete regardless of GDP. The human condition as apex animal: we hunt, we compete, we want to be recognised.
+Live Medal Table &mdash; Nations Competing on Civilisational Stewardship
+Inclusivity in our exclusive domain. Every nation represented. Multilingual countries compete in multiple blocks.
+India plays in both Hindi and English. Singapore in English and Chinese. The Philippines in English and Spanish.
+All Blocks
+ðŸ‡¬ðŸ‡§ English
+ðŸ‡¨ðŸ‡³ Chinese
+ðŸ‡®ðŸ‡³ Hindi
+ðŸ‡ªðŸ‡¸ Spanish
+ðŸ‡¸ðŸ‡¦ Arabic
+ðŸ‡¯ðŸ‡µ Japanese
+ðŸ‡°ðŸ‡· Korean
+ðŸ‡»ðŸ‡³ Vietnamese
+ðŸ´ Rogues
+ðŸŒ Coming Soon
+#
+Nation
+Block(s)
+Pop (M)
+Gamers (M)
+Infrastructure Story
+ðŸ”¥ Cat.1
+ðŸ›¤ï¸ Cat.2
+âš™ï¸ Cat.3
+ðŸ’» Cat.4
+ðŸŒ± Cat.5
+ðŸŒ Cat.6
+Total
+Status
+Scores derived from: relay completion rates &times; SDG performance &times; infrastructure legacy benchmarks &bull; Data: UN SDG Report 2025, G20 Infrastructure Outlook, Market Matrix (Feb 2026)
+45 nations across 8 active language blocks + 3 Rogue team classes + 11 expansion nations = global coverage
+&#9733; = Multilingual nation (appears in multiple blocks) &bull; &#9889; ROGUE = Unaffiliated talent &bull; &#9671; COMING = Expansion target
+ðŸ´ Rogue Teams &mdash; The Unaffiliated Talent Pool
+Not every player belongs to a university. Not every engineer wants a sponsor. Some play for pure knowledge.
+Rogue teams are the wildcards of the Infrastructure Olympiad &mdash; and they are the engine of growth.
+ðŸ´
+The Outriders
+Independent players exploring relays solo. No university affiliation, no team structure. They discover the game through curiosity, word of mouth, or social media. They play the free tier and start building their relay knowledge.
+Conversion path: Free Explorer â†’ Subscribe â†’ Join a university team or form an independent squad
+ðŸ´â€â˜ ï¸
+Freeform Engineers
+Retired professionals. Autodidacts. Engineers between jobs. People who have built real infrastructure and now want to teach, compete, or validate their experience. They bring domain expertise that university students lack.
+Conversion path: Free Explorer â†’ Professional Subscriber â†’ Mentor role â†’ University team advisor
+ðŸ¦…
+The Mavericks
+Cross-block players who refuse to be categorised. They see the Torus, not the relay. They play across multiple language blocks, understand systems thinking, and are the natural candidates for Mode 4: The Torus when Episode 2 unlocks.
+Conversion path: Free Explorer â†’ Elite Subscriber â†’ Mode 4 candidate â†’ Episode 2 pioneer
+The Rogue-to-Elite Pipeline
+ðŸ´ Play Free
+â†’
+âš¡ See Leaderboard
+â†’
+ðŸ† Want Prestige
+â†’
+ðŸ’³ Subscribe
+â†’
+ðŸŽ“ Join Elite Team
+â†’
+ðŸŒ Compete for Nation
+Universities recruit from the Rogue pool. Sponsors identify talent. The only way from Rogue to Elite is to subscribe and join a sanctioned team.
+Every Rogue player is a future paying customer.
+6 Competition Categories &mdash; Aligned to the 12 Civilisational Relays
+Category I
+Fire &amp; Foundation
+Relay 1&ndash;2 (Tree, River)
+Example Competitors: Egypt vs Mesopotamia vs Indus Valley vs Yellow River
+Scoring: Civilisational origin depth &bull; How deep are your roots?
+Category II
+Mobility &amp; Trade
+Relay 4&ndash;6 (Horse, Roads, Ships)
+Example Competitors: Rome vs China vs Ottoman vs Mongol &bull; Silk Road vs Maritime Silk Road vs Manila Galleon
+Scoring: Network reach &amp; longevity &bull; How far did your roads go?
+Category III
+Industrial Revolution
+Relay 7&ndash;9 (Loom, Rail, Engine)
+Example Competitors: UK vs Germany vs Japan vs Korea &bull; Compressed industrialisation races
+Scoring: Compressed industrialisation speed &bull; How fast did you transform?
+Category IV
+Digital Infrastructure
+Relay 10&ndash;11 (Programmable, Bio)
+Example Competitors: USA vs China vs India vs Taiwan &bull; TSMC, AI leadership, semiconductor sovereignty
+Scoring: Semiconductor &amp; AI leadership &bull; Who controls the digital future?
+Category V
+Sustainable Future
+Relay 12 (Torus)
+Example Competitors: Nordic nations vs Singapore vs UAE &bull; SDG 9 &amp; 11 performance leaders
+Scoring: SDG 9/11 performance &bull; Who is building for eternity?
+Category VI
+Infrastructure Export
+Cross-Relay
+Example Competitors: China (BRI) vs Japan (JICA) vs Korea &bull; Global infrastructure diplomacy
+Scoring: Global infrastructure diplomacy &bull; Who is building the world?
+The University Pipeline &mdash; 26,000 Teams Waiting
+26,000+
+Universities Worldwide
+23 assessed in beta PoC &mdash; MIT, Stanford, Imperial, Tsinghua, NUS, HKU, KAIST &amp; more
+6.7M
+Engineering Students
+Annual global enrolment in engineering programmes
+100
+Top CE Firms
+AECOM, Arup, Bechtel, Jacobs &mdash; sponsor slots open
+195
+National Governments
+SDG reporting creates built-in accountability
+Sponsorship Tiers &mdash; Back a National Team
+Gold Sponsor
+Title sponsor of a national team. Logo on team page, medal ceremonies, and all competition materials. First access to player data and talent pipeline.
+For: Top 100 CE firms, sovereign wealth funds, national development banks
+English BlockOPEN
+Chinese BlockOPEN
+Hindi BlockOPEN
+Spanish BlockOPEN
+Silver Sponsor
+Category sponsor. Own one of the 6 competition categories across all language blocks. Brand associated with a specific civilisational theme.
+For: Engineering consultancies, technology firms, educational publishers
+Cat. I: Fire &amp; FoundationOPEN
+Cat. IV: Digital InfraOPEN
+Cat. V: Sustainable FutureOPEN
+Bronze Sponsor
+University team sponsor. Back a specific university's team within a language block. Direct access to that university's engineering talent.
+For: Regional firms, alumni networks, professional bodies (ICE, IStructE, ASCE)
+26,000 slots availableOPEN
+Patron
+Institutional endorsement. UN bodies, national academies, and international organisations that lend credibility and SDG alignment.
+For: UNESCO, World Bank, Asian Dev. Bank, national academies of engineering
+UNESCOCHALLENGED
+World BankCHALLENGED
+"A Gift from the Geeks."
+IAAI enters markets through the gaming gate &mdash; the world's largest entertainment medium with 3.32 billion active players. But inside the Trojan Horse is a civilisational intelligence framework that teaches systems thinking, infrastructure literacy, and the Four Perennial Threats (War, Famine, Disease, Existential) to every demographic group on earth.
+By the time institutions realise what's inside &mdash; Bloom's Taxonomy-aligned education, SDG-mapped competencies, and a civilisational benchmarking standard &mdash; it's already embedded. The Olympiad transforms IAAI from an educational platform into a global benchmarking framework &mdash; a civilisational league table that governments, universities, and infrastructure firms compete to top.
+Each language block becomes a national team. The Trojan Horse enters through gaming, but what emerges is a civilisational intelligence standard. And the UN can't ignore it &mdash; because the scoring dimensions are the SDGs.
+The Ultimate Unlock
+Start as Player One in your chosen mode &mdash; Western, Eastern, or Outrider. Compete through the Olympiad. Master all 12 relays. Reach 24,000,000 XP.
+The only way to unlock Mode 4 &mdash; The Unified Paradigm (Torus) is to have played and understood all three modes. Competition drives cooperation. The Olympiad forces cross-cultural learning because you compete against the other modes but need to understand them to reach the top.
+Mode 4 is the gateway to Episode 2: Silk to Quantum.
+VR Campus &mdash; Meta Horizon Worlds
+The Olympiad is designed for immersive competition. Walk the Silk Road. Stand beside the aqueducts. Compete in relay challenges in spatial computing. Meta's Quest for Education programme provides distribution to 200M+ Quest devices and potential co-investment in premium educational VR content. The university pipeline is Facebook's original growth playbook &mdash; applied to civilisational infrastructure.
+Subscription &amp; Pricing
+Indicative Rates &mdash; Subject to Founder Review &bull; All prices in USD
+Individual Player Tiers
+ðŸŒ
+Explorer
+FREE
+&bull; 3 starter relays (Fire, Tree, River)
+&bull; Basic DAVID narrator
+&bull; FITS personality assessment
+&bull; Community leaderboard view
+&bull; Freeform mode only
+Start Free
+MOST POPULAR
+âš”ï¸
+Player
+$4.99/mo
+or $39.99/year (save 33%) &bull; Prepaid available
+&bull; All 12 civilisational relays
+&bull; Full DAVID AI narrator
+&bull; All 3 game modes
+&bull; XP tracking &amp; progression to 24M
+&bull; Ability score development
+&bull; Personal relay portfolio
+&bull; Olympiad team eligibility
+Subscribe
+ðŸ›ï¸
+Professional
+$14.99/mo
+or $119.99/year (save 33%) &bull; Prepaid available
+&bull; Everything in Player
+&bull; Accreditation mapping (ABET, JBM, Washington Accord)
+&bull; CPD certificate generation
+&bull; Advanced analytics dashboard
+&bull; Priority DAVID responses
+&bull; Episode 2 early access
+&bull; Research data exports
+Go Pro
+Institutional &amp; University Tiers
+ðŸŽ“
+University Team
+$5/student/yr
+Minimum 25 students &bull; Prepaid annual
+&bull; Bulk Player access
+&bull; Olympiad team entry
+&bull; Professor dashboard
+&bull; Curriculum integration guides
+&bull; Custom relay assignments
+ðŸ«
+Department
+$2,500/yr
+Up to 200 students &bull; Prepaid annual
+&bull; Everything in University Team
+&bull; Branded Olympiad team page
+&bull; Academic liaison support
+&bull; Research data access (anonymised)
+&bull; Inter-department challenges
+ðŸ›ï¸
+Institution
+$10,000/yr
+Unlimited students &bull; Prepaid annual
+&bull; Everything in Department
+&bull; White-label option
+&bull; API for LMS integration
+&bull; Co-branded certificates
+&bull; Priority support &amp; onboarding
+Olympiad Sponsorship Tiers
+ðŸ¤
+Patron
+$1,000/yr
+&bull; Logo on Olympiad page
+&bull; Sponsor 1 team
+&bull; Quarterly impact report
+ðŸ¥‰
+Bronze
+$5,000/yr
+&bull; Everything in Patron
+&bull; Digital team branding
+&bull; Newsletter spotlight
+&bull; 5 Professional accounts
+ðŸ¥ˆ
+Silver
+$15,000/yr
+&bull; Everything in Bronze
+&bull; Named category sponsor
+&bull; Annual ceremony speaker
+&bull; 25 Professional accounts
+&bull; Recruitment access
+ðŸ¥‡
+Gold
+$50,000/yr
+&bull; Everything in Silver
+&bull; Language block title sponsor
+&bull; VIP event access
+&bull; 100 Professional accounts
+&bull; First access to research data
+&bull; Board observer seat
+ðŸ’Ž
+Platinum
+$100K+/yr
+&bull; Everything in Gold
+&bull; Global title sponsor
+&bull; Exclusive industry vertical
+&bull; Unlimited accounts
+&bull; Strategic partnership
+&bull; Episode 2 co-development
+All sponsorships are prepaid annually &bull; Custom packages available on request
+Channel Partners &mdash; The Distribution Network
+The Olympiad scales through strategic channel partnerships. Each partner type amplifies reach into their existing networks, creating multiplicative distribution that no single marketing budget could achieve.
+ðŸ—ï¸
+Engineering Firms
+AECOM, Arup, Bechtel, WSP, Jacobs &mdash; firms sponsor teams as CPD investment. Their engineers play, their brand gets visibility, their recruitment pipeline fills with top performers.
+Revenue: Sponsorship + bulk Professional licences
+ðŸŽ“
+Universities
+26,000 universities worldwide. 23 already assessed in beta PoC across 6 regions &mdash; including MIT, Stanford, Imperial, Tsinghua, NUS, IIT Bombay and 17 more. Engineering departments integrate IAAI into curricula. Students compete in the Olympiad. Each department is a distribution node.
+Revenue: Department/Institutional licences &bull; See The First 23 &rarr;
+ðŸ›ï¸
+Governments &amp; NGOs
+195 governments tracking SDG progress. UN agencies seeking measurable education outcomes. Development banks funding infrastructure literacy. Each adopts IAAI as a national capability benchmark.
+Revenue: Institutional licences + data partnerships
+ðŸ“±
+Tech Platforms
+Meta (VR/Quest), Apple (Education), Google (Classroom), Microsoft (Teams for Education) &mdash; each platform seeking premium educational content. IAAI provides the infrastructure curriculum they lack.
+Revenue: Licensing + co-development + distribution fees
+ðŸ”’ Secure &amp; Encrypted Payments
+All transactions processed via PCI-DSS Level 1 encrypted payment infrastructure. Card data is tokenised end-to-end &mdash; no payment details ever touch IAAI servers. Prepaid subscriptions available for all tiers: purchase annual access codes for individuals, distribute bulk codes to university cohorts, or gift subscriptions to colleagues. Institutional invoicing available for Department and Institution tiers.
+ðŸ” End-to-end encryption
+ðŸ’³ Prepaid &amp; recurring options
+ðŸŽ« Bulk access codes
+ðŸ“„ Institutional invoicing
+The Ecosystem &mdash; Everything Connects
+â±ï¸
+Mobilisation Clock
+Real-time tracking of the race to 1 billion learners. Every Olympiad player feeds the clock.
+ðŸŽ®
+Play the Game
+Join as Player One. Choose your mode. Start your relay journey. 24M XP awaits.
+ðŸ´
+Become a Pioneer
+Join the founding wave. Help build the Olympiad from the ground up.
+REGISTER YOUR UNIVERSITY TEAM
+Enter your university into the Infrastructure Olympiad. Form a team, choose your nation, and compete for glory.
+University Name *
+Country *
+Team Captain Name *
+Captain Email *
+Department / Faculty *
+Team Size
+3â€“5 members
+6â€“10 members
+11â€“20 members
+20+ members
+Message (Optional)
+REGISTER TEAM
+SPONSOR ENQUIRY
+Partner with the Infrastructure Olympiad. Sponsor a team, a nation, or the entire competition. Build your brand on the infrastructure that builds civilisation.
+Organisation Name *
+Contact Name *
+Email *
+Sponsorship Interest
+Bronze â€” $5K (Team Sponsor)
+Silver â€” $25K (National Sponsor)
+Gold â€” $100K (Block Sponsor)
+Platinum â€” $500K (Global Partner)
+Custom / Let's Discuss
+Organisation Type
+Engineering Firm
+University
+Government / Public Sector
+NGO / Development Agency
+Technology Company
+Other
+Country
+Message (Optional)
+SUBMIT ENQUIRY
+ENTER THE OLYMPIAD &mdash; PLAY NOW
+SPONSOR A TEAM &mdash; BECOME A PATRON
+The clock is ticking. The race is on. Which side of history will you be on?
+&copy; 2026 Infrastructure Academy. All rights reserved. Preserving knowledge for eternity.
+X
+LinkedIn
+WhatsApp
+&#9650;

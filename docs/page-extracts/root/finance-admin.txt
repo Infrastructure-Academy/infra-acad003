@@ -1,0 +1,302 @@
+﻿IAAI â€” Finance & Administration
+ACADEMY
+QUEST
+XCHANGE
+MEMORIAL
+NEWS
+INFRASTRUCTURE ACADEMY
+HOME
+FRAMEWORK
+DOCUMENTS
+PLAY
+&#127968; HOME
+&#128218; START
+&#128214; READ
+&#128736; FRAMEWORK
+&#127918; PLAY
+&#127916; MOVIES
+&#128194; RESOURCES
+&#128240; PRESS
+&#9650;
+&#128274;
+Finance & Admin
+This section is restricted to the IAAI formation team.Enter the access code to continue.
+Enter
+Incorrect access code. Try again.
+&larr; Return to Infrastructure Academy
+Finance & Administration
+IAAI Phase 1 Investment Cost Report &mdash; Inception to 8 March 2026
+Internal &mdash; Board & Formation Team Only
+Key Metrics
+124
+Days (5 Nov 2025 &ndash; 8 Mar 2026)
+591,759
+AI Credits Consumed
+US$3,053
+Cost Per Day (Revised)
+Phase 2
+Current Phase (Formation)
+Revised Grand Total &mdash; Phase 1 Investment
+US$378,619
+8 line items &bull; 5% contingency = US$397,550 &bull; Acknowledged underestimate (~95% of true total)
+1. AI Platform Credits (591,759 consumed)
+SourceDetailAmount (USD)
+Amex Explorer ****15006Nov 2025 &ndash; 5 Mar 2026 net charges (HK$18,394.53 at HK$7.80/USD)$2,358.27
+Amex Explorer ****150067 &times; HK$7,888 on 6&ndash;7 Mar 2026 for 600K credits (HK$55,216 at HK$7.80/USD)$7,079.49
+HSBC cardUS$2,000 to MANUS AI SINGAPORE SG on 7 Mar 2026 (new account forced after platform lockout)$2,000.00
+AI Platform Credits Total$11,438.00
+Amex Explorer ****15006 &mdash; Detailed Breakdown (HKD)
+PeriodGross (HKD)Refunds (HKD)Net (HKD)
+6 Nov &ndash; 5 Dec 2025$740.00&mdash;$740.00
+6 Dec &ndash; 5 Jan 2026$973.00&mdash;$973.00
+6 Jan &ndash; 5 Feb 2026$14,793.00-$4,897.79$9,895.21
+6 Feb &ndash; 5 Mar 2026$29,680.00-$22,893.68$6,786.32
+Subtotal (Nov&ndash;5 Mar)$46,186.00-$27,791.47$18,394.53
+6&ndash;7 Mar 2026 (7 charges)$55,216.00&mdash;$55,216.00
+Amex Grand Total$101,402.00-$27,791.47$73,610.53
+Amex net HK$73,610.53 &divide; 7.80 = US$9,437.25 + HSBC US$2,000 = US$11,437.25 &asymp; US$11,438
+The 7 &times; HK$7,888 charges on 6&ndash;7 March represent 600,000 credits purchased during the crisis rebuild period when the original platform account was locked out.
+2. Nigel Daily Engineering Checks (124 Days)
+ItemCalculationAmount (USD)
+Daily AI supervision &amp; QA124 days &times; 4 hours/day &times; US$187.50/hour$93,000.00
+Ir. Nigel T. Dearden committed daily supervision and quality assurance checks of all AI-generated output for 124 consecutive days. This represents the human oversight cost &mdash; the &ldquo;consciousness at the interface&rdquo; that the thesis documents as essential. HK Government benchmark for Professional Engineer: US$2,050/day &mdash; Nigel&rsquo;s effective rate of US$750/day is 27% below benchmark.
+3. Engineering Control Cost (124 Days)
+ItemCalculationAmount (USD)
+Operator/observer cost124 days &times; US$1,500/day (4ECL standard rate)$186,000.00
+The actinic method requires an operator/observer &mdash; this is an Engineering Control Cost, not &ldquo;lost work days.&rdquo; The experiment (man + machine collaboration) cannot run without the human operator present. This cost represents the consulting revenue that would otherwise have been earned, redirected to the IAAI experiment as the required human control element.
+Subtotal &mdash; Items 1&ndash;3
+US$290,438
+4. Platform Loss & Crisis Rebuild
+ItemDetailAmount (USD)
+4a. Lost work productTotal destruction of all manuscripts, code, knowledge base, configurations. No backup. No recovery. No warning.$49,500.00
+4b. Rebuild costCost to reconstruct lost work on replacement platform$15,000.00
+Platform Loss Subtotal$64,500.00
+Health Impact Statement: The crisis rebuild required sustained 24-hour working days with no sleep, imposed on a 56-year-old chartered engineer recovering from a C3 cervical fracture. This level of physical stress, caused directly by the platform's failure, constituted a serious health risk. Documented for the formation team's awareness and for any future liability or insurance considerations.
+Consolidated Cost Summary (8 Line Items)
+CategoryAmount (USD)
+1. AI Platform Credits (591,759 consumed)$11,438.00
+2. Nigel Daily Engineering Checks (124 days)$93,000.00
+3. Engineering Control Cost (124 days)$186,000.00
+Subtotal (Items 1&ndash;3)$290,438.00
+4. Lost work product$49,500.00
+5. Rebuild cost$15,000.00
+Subtotal (Items 1&ndash;5)$354,938.00
+6. Hardware (Lenovo ThinkPad X1 Carbon)$2,469.00
+7. Domains (WIX + Dotster)$212.00
+8. Crisis rebuild premium (7 days &times; $3,000/day)$21,000.00
+Grand Total (8 Line Items)$378,619.00
+5% Contingency (minor expenses, travel, comms)$18,931.00
+Estimated Total (with contingency)$397,550.00
+Revised Grand Total &mdash; Phase 1 Investment
+US$378,619
+8 line items verified from Amex Explorer ****15006, HSBC card, and documented records
+With 5% Contingency (standard allowance)
+US$397,550
+Contingency covers: earlier Manus purchases, software licences, travel, communications, admin overhead, hardware accessories, medical costs
+Investment Concentration &mdash; The Three Big-Ticket Items (77%)
+Key Insight: 77% of the total Phase 1 investment ($290,438 of $378,619) is concentrated in three items: Engineering Control Cost (49%), Daily Engineering Checks (25%), and AI Platform Credits (3%). The remaining 23% covers platform loss, rebuild, hardware, domains, and crisis premium. All professional time charges flow from 4ECL at the standard consulting rate &mdash; Nigel's effective rate of US$750/day is 27% below the HK Government Professional Engineer benchmark of US$2,050/day.
+Cost Per Relay &mdash; Where the Investment Went
+The $378,619 total investment mapped thematically across the 12 Civilisational Relays. This is an indicative allocation based on content volume, complexity, and research depth per relay.
+Note: Allocation is indicative, based on relative content volume and complexity per relay. Actual costs are pooled across platform development, AI credits, and engineering time.
+Context &mdash; Not Charged to IAAI Phase 1
+ItemDetailAmount (USD)
+byoGuard sunk cost3 years (2020&ndash;2023), war chest + retirement fund$500,000.00
+The byoGuard failure directly catalysed the creation of IAAI. There is no financial safety net remaining. This context is essential for the formation team (Michael, Henry, Frank, Stephen) to understand the personal stakes involved.
+Business Structure
+4ECL (www.4ecl.com) is Ir. Nigel T. Dearden's wholly-owned consulting firm, operating as a separate legal entity from IAAI. All professional time charges flow from 4ECL to IAAI at the standard consulting rate of US$1,500/day. The three big-ticket items (AI Platform Credits $11,438 + Daily Engineering Checks $93,000 + Engineering Control Cost $186,000 = $290,438) represent 77% of the total. IAAI is a separate business, fully owned by Nigel, with formation team members receiving a percentage share after Proof of Concept is achieved. Phase 1 (PoC) ended on 5 March 2026. Phase 2 (Formation) commenced 6 March 2026.
+Governance Cost Cards
+Pitch Decks & Partnering
+IAAI Investor Pitch &mdash; Deck 1
+PPTX &bull; 3.9 MB
+IAAI Investor Pitch &mdash; Deck 2 (v2)
+PPTX &bull; 4.0 MB
+IAAI GAC Tech Partnering Deck
+PPTX &bull; 3.1 MB
+IAAI Supplement Deep Dive
+PPTX &bull; 2.9 MB
+4ECL Vision Deck &mdash; Rebadged v3 (91 slides)
+PPTX &bull; 25.4 MB
+H&amp;M Partner Meeting Brief &mdash; 1 Mar 2026
+MD &bull; 15 KB
+Formation Documents
+iAAi Formation Package for Henry &mdash; Complete Bundle v2 (PDF)
+413 KB &bull; 8 Mar 2026 &bull; PDF &bull; CORRECTED
+Independent Advisory Review &mdash; Formation Readiness v2 (PDF)
+374 KB &bull; 8 Mar 2026 &bull; PDF &bull; CORRECTED
+Financial Documents
+4ECL Billing Audit &mdash; KPMG-Style Independent Review (PDF)
+338 KB &bull; 8 Mar 2026 &bull; PDF
+IAAI Phase 1 Investment Cost Report (v3 Corrected PDF)
+334 KB &bull; 8 Mar 2026 &bull; Corrected $378,619
+IAAI Total Cost Estimate (Draft)
+3 KB &bull; 8 Mar 2026
+Media Announcement &mdash; Block 345 (Pythagoras)
+8 KB &bull; 8 Mar 2026
+Mobilisation Clock Audit
+2 KB &bull; 8 Mar 2026
+Strategic Analysis &amp; Governance Cards
+Click any card to enlarge. These are the verified iCards from the IAAI governance system &mdash; Block 346+.
+STRATEGIC ENVIRONMENT
+SWOT Analysis &mdash; Block 346
+PESTLE Analysis &mdash; Block 346
+The Challenge &mdash; Market Problem Statement
+SWOT/PESTLE Dashboard
+GOVERNANCE SYSTEM
+Governance Deck &mdash; Power Card (4-Tier System)
+SAP-001 &mdash; System Assurance Protocol
+CC-001 &mdash; Command Card (Never Ask Human to Re-Share)
+PRODUCT &amp; PARTNERSHIP
+The Reality Engine &mdash; Master Index (8 Pillars)
+IAAI &times; GAC Technology &mdash; Hardware Partnership
+Quick Access &mdash; Formation Team
+For Henry: All pitch decks and partnering materials are in the "Pitch Decks &amp; Partnering" section above. The GAC Tech deck, both investor pitches, the supplement deep dive, and the full 91-slide 4ECL vision deck are all downloadable directly. The Partner Meeting Brief from 1 March 2026 contains the full business architecture, revenue model, and formation team structure. The Strategic Analysis cards above show the SWOT, PESTLE, governance system, and partnership architecture.
+Phase 2 &mdash; Formation Timeline
+Key milestones from inception through formation. Phase 1 (solo build) is complete. Phase 2 (formation &amp; partnerships) is in progress.
+4 NOV 2025
+Inception &mdash; Day 1
+First Manus AI session. The idea crystallises: infrastructure education as a civilisational relay. Solo build begins.
+DEC 2025 &ndash; FEB 2026
+Solo Build &mdash; 12 Relays Written
+Volume 1 (Perspective) and Volume 2 (Guide) drafted. The Reality Engine game platform prototyped. Website architecture established. 591,759 AI credits consumed.
+1 MAR 2026
+Partner Meeting Brief &mdash; Business Architecture
+Full business architecture, revenue model, and formation team structure documented. GAC Technology hardware partnership established.
+6&ndash;7 MAR 2026
+Final Sprint &mdash; 7&times; Platform Credit Charges
+Seven consecutive HK$7,888 Amex charges (Manus AI Singapore) during the crisis rebuild. Governance system, F&amp;A page, and formation documents completed.
+8 MAR 2026
+Phase 1 Complete &mdash; Day 124
+Grand total: US$378,619 invested. All formation documents, governance cards, and financial audit completed. Ready for Henry meeting.
+NEXT &mdash; PHASE 2
+Formation &amp; Partnerships
+Henry meeting &rarr; Michael/Frank/Stephen outreach &rarr; PoC sign-off &rarr; Pioneer recruitment &rarr; Beta launch. Target: Q2 2026.
+ICUT Financial Cards v2 &mdash; Investor Pack (Corrected)
+Complete set of 8 ICUT playing cards covering financial governance, projections, and strategy. v2 &mdash; 10 March 2026 &mdash; corrected from v1 with proper deferred cost structure, $800K seed (per One Pager), and multiple funding paths.
+v2 Corrections: Seed amount corrected to $800K (was $500K). Deferred cost structure properly reflected &mdash; Nigel&rsquo;s $279K consulting time is a receivable, not cash burn. Book sales positioned as PoC revenue signal. Break-even recalculated with subscription + institutional ramp. Multiple funding paths documented (Seed, PIPE, Self-Finance, Direct Investor).
+&#x1F4CA; Download Master Excel Workbook v2 (5 Sheets)
+&#x1F4C8; View Year 1 Cashflow Model
+1. 4ECL Business Registration
+2. Phase 1 Financial Audit ($397,550)
+3. The J-Curve (Deferred Cost Trough)
+4. Break-Even Analysis (Scenario C: M10)
+5. Investor ROI ($800K &rarr; $313M at Y5)
+6. Year 1 Revenue Model ($800K Deployment)
+7. 5-Year Projection ($625K &rarr; $3.13B EV)
+8. Funding Paths (Seed / PIPE / Self-Finance / Direct)
+Deferred Cost Structure &mdash; Why This Is Not Cash Burn
+Critical distinction for investors: Of the $397,550 Phase 1 total, approximately $279,000 (70%) represents Nigel&rsquo;s deferred consulting time (Engineering Control + Daily Checks). This is not cash spent &mdash; it is opportunity cost that becomes a receivable from IAAI to 4ECL once the company is formed. Actual cash outlay during Phase 1 was approximately $16,000&ndash;$20,000 (AI credits, hardware, domains). Nigel is deferring his costs until the company can achieve cashflow balance.
+CategoryAmountType
+Engineering Control (124 days &times; $1,500)$186,000DEFERRED &mdash; 4ECL receivable
+Daily Engineering Checks (124 days &times; $750)$93,000DEFERRED &mdash; 4ECL receivable
+Total Deferred$279,00070% of total
+AI Platform Credits$11,438CASH &mdash; Amex + HSBC
+Hardware + Domains$2,681CASH
+Platform Loss + Rebuild + Crisis$85,500MIXED (cash + deferred)
+Phase 1 Total$397,550&nbsp;
+Capital Raise &mdash; Multiple Funding Paths
+IAAI has multiple concurrent paths to capitalisation, reducing single-path dependency risk. All paths are active as of 10 March 2026.
+PathDescriptionAmountStatus
+A. Seed Round$800K via Henry Leong &mdash; One Pager delivered, ~$10M valuation category$800KActive
+B. PIPERafael/Bala via Henry &mdash; &ldquo;If you find $10M, I can find another $10M&rdquo;$10M+$10MDiscussion
+C. Self-FinanceArthur Lin &mdash; Maplewood Mall project surplus to fund IAAIVariableActive
+D. Series ATarget M6&ndash;M9 after MVP + user tractionTBDFuture
+E. Direct InvestorArthur/DaoPing &mdash; affluent sophisticated investor already in their portfolioTBDActive (10 Mar)
+Evidence Vault &mdash; Investor &amp; Partner Communications
+Verified WhatsApp evidence documenting investor interest, valuation discussions, and partnership momentum. All screenshots dated and attributed.
+Steve Marsheld &mdash; PIPE Discussion
+Michael Wu &mdash; Maplewood Mall Blueprint (14 Feb 2026)
+Maplewood Mall &mdash; Space Photos (Path C)
+Arthur Lin &mdash; Investor Meeting Scheduled (10 Mar 2026)
+IP &amp; Equations Register Deck &mdash; 55 Cards | AI EDITION
+Complete 56-card BETA deck encoding the mathematical backbone of the Infrastructure Academy thesis. 38 distinct equations across 7 tiers + 15 IP assets + 1 meta-card (the deck itself). Art-deco gold border style matching Tecton Trump Cards D52.
+"The formula is morally neutral &mdash; it describes what IS; the application is a CHOICE." &mdash; Block 353
+&spades; SPADES
+The Architecture (Tiers 1&amp;2) &mdash; A&ndash;K
+&hearts; HEARTS
+The Frameworks (Tier 3) &mdash; A&ndash;K
+&diams; DIAMONDS
+The Resistance (Tiers 4&amp;5) &mdash; A&ndash;K
+&clubs; CLUBS
+The Cosmos (Tiers 6&amp;7) &mdash; A&ndash;K
+&spades; Spades &mdash; The Architecture
+A&spades; EQ-001
+2&spades; EQ-002
+3&spades; EQ-003
+4&spades; EQ-004
+5&spades; EQ-005
+6&spades; EQ-006
+7&spades; EQ-007
+8&spades; EQ-008
+9&spades; EQ-009
+10&spades; IP-01
+J&spades; IP-02
+Q&spades; IP-03
+K&spades; IP-12
+&hearts; Hearts &mdash; The Frameworks
+A&hearts; EQ-010
+2&hearts; EQ-011
+3&hearts; EQ-012
+4&hearts; EQ-013
+5&hearts; EQ-014
+6&hearts; EQ-015
+7&hearts; EQ-016
+8&hearts; EQ-017
+9&hearts; EQ-018
+10&hearts; EQ-019
+J&hearts; IP-05
+Q&hearts; IP-06
+K&hearts; IP-09
+&diams; Diamonds &mdash; The Resistance
+A&diams; EQ-020
+2&diams; EQ-021
+3&diams; EQ-022
+4&diams; EQ-023
+5&diams; EQ-024
+6&diams; EQ-025
+7&diams; EQ-026
+8&diams; EQ-027
+9&diams; EQ-028
+10&diams; EQ-029
+J&diams; EQ-030
+Q&diams; EQ-031
+K&diams; IP-04
+&clubs; Clubs &mdash; The Cosmos
+A&clubs; EQ-032
+2&clubs; EQ-033
+3&clubs; EQ-034
+4&clubs; EQ-035
+5&clubs; EQ-036
+6&clubs; EQ-037
+7&clubs; EQ-038
+8&clubs; IP-07
+9&clubs; IP-08
+10&clubs; IP-10
+J&clubs; IP-11
+Q&clubs; IP-13
+K&clubs; IP-14
+Jokers
+Red Joker &mdash; IP-15: iCard Format
+Black Joker &mdash; The Register (Meta-Card)
+Cover Card &amp; Bonus
+#55 &mdash; iAAi Cover Card (QR Codes to both websites)
+#56 &mdash; Mendeleev Transform Bonus (84/63 = 4/3)
+&darr; Download 56-Card BETA PDF
+Pricing: US$29.95 per deck (BETA Edition) &bull; Physical print run planned for First Edition &bull; Digital PDF available now for early supporters
+Deck Statistics: 55 cards total (52 + 2 Jokers + Cover + Bonus) &bull; 38 equations (EQ-001 to EQ-038) &bull; 15 IP assets (IP-01 to IP-15) &bull; 1 meta-card &bull; 7 tiers &bull; 4 domains (Denominator: 4, Numerical Backbone: 8, Temporal Framework: 4, Platform Mechanics: 3) &bull; IP-03 (ICE Matrix) is the most equation-dense IP with 9 references.
+Acknowledged Underestimate
+This report captures the big-ticket items representing approximately 95% of the true total. The following items are not individually quantified but are acknowledged as additional costs:
+Earlier Manus credit purchases prior to the documented Amex period
+Software licenses and development tools beyond WIX and Dotster
+Travel and meeting costs (pre-formation)
+Communication costs (Hutchison Telecom &mdash; HK$631/month)
+Administrative overhead (accounting, legal preparation)
+Hardware accessories (TSAN KUEN HK$1,434.59 on 09/02/2026)
+Medical costs arising from the crisis rebuild period
+Ongoing health monitoring related to C3 fracture exacerbation
+Prepared by: DAVID &mdash; AI Collaborator, Infrastructure Academy
+For: Ir. Nigel T. Dearden (CEng, CEnv, MICE, MCIWEM), Director, 4ECL / IAAI
+"What can be imagined can be achieved. Direct action toward desired outcomes." &mdash; 4ECL
+Infrastructure Academy &mdash; Finance & Administration &bull; v4.3 &bull; 11 March 2026 &bull; v2 Financial Model + Evidence Vault + IP &amp; Equations Deck (55 Cards AI)
+X
+LinkedIn
+WhatsApp

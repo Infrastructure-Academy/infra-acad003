@@ -1,0 +1,44 @@
+﻿Visitor Analytics â€” Infrastructure Academy
+ACADEMY
+QUEST
+XCHANGE
+MEMORIAL
+NEWS
+INFRASTRUCTURE ACADEMY
+HOME
+FRAMEWORK
+DOCUMENTS
+PLAY
+&#127968; HOME
+&#128218; START
+&#128214; READ
+&#128736; FRAMEWORK
+&#127918; PLAY
+&#127916; MOVIES
+&#128194; RESOURCES
+&#128240; PRESS
+&#9650;
+VISITOR ANALYTICS
+Traffic Trends, Top Pages, and Session Heatmap
+infrastructure-academy.com
+&larr; Back to Home &nbsp;|&nbsp;
+Block Summary &nbsp;|&nbsp;
+Relay Tracker
+Admin Access Required
+This dashboard is available to the site owner. Please log in to view analytics data.
+Return to Home
+Loading analytics data...
+â€”Total Page Views
+â€”Unique Sessions
+â€”Pages Tracked
+â€”Avg Views / Session
+Daily Traffic â€” Last 30 Days
+Traffic Sources â€” Content Breakdown
+â€”Total
+Session Heatmap â€” Hour vs Day of Week
+Low traffic
+High traffic
+Top Pages by Views
+#PageViewsSessions
+&ldquo;Per Arya Ad Astra&rdquo; &mdash; Infrastructure Academy
+Ir. Nigel T. Dearden CEng MICE MHKIE &bull; Visitor Analytics Dashboard

@@ -1,0 +1,160 @@
+﻿Start Here - Infrastructure Academy
+ACADEMY
+QUEST
+XCHANGE
+MEMORIAL
+NEWS
+INFRASTRUCTURE ACADEMY BETA
+Infrastructure &bull; Infostructure &bull; The Academy of Both
+42
+Follow
+Follow
+Handshake
+HOME
+FRAMEWORK
+EXEC PR&Eacute;CIS
+RESOURCES
+DOCUMENTS
+AUTHOR
+EP.1: PERSPECTIVE
+EP.2: GUIDE
+EP.3: GAME
+START HERE
+MOBILISATION CLOCK
+OLYMPIAD
+PIONEERS
+TAXONOMY
+MASTERS
+INSTITUTIONS
+ROSTER DASHBOARD
+GOVERNANCE
+CIVILISATION CLOCK
+FOUNDERS WALL
+CHARTER
+BEHIND THE THESIS
+GLOSSARY
+VAULT
+ICUT GALLERY
+&#127968; HOME
+&#128218; START
+&#128214; READ
+&#128736; FRAMEWORK
+&#127918; PLAY
+&#127916; MOVIES
+&#128194; RESOURCES
+&#128240; PRESS
+&#9650;
+START HERE
+Your guide to navigating Infrastructure Academy &mdash; what it is, how it works, and where to begin
+MISSION &amp; VISION
+Mission: To teach infrastructure as the unifying thread of civilisation &mdash; showing how the systems humanity built over 12,000 years (from fire to digital consciousness) form one continuous, interconnected story. We use a civil engineer's analytical lens to make this story accessible, rigorous, and actionable.
+Vision: A world where every student, professional, and citizen understands that the roads, networks, grids, and systems they depend on daily are not separate inventions but chapters in a single 12,000-year relay race &mdash; and that understanding this continuity is the key to building what comes next.
+WHAT IS INFRASTRUCTURE ACADEMY?
+Infrastructure Academy is an educational platform that tells the story of civilisation through its infrastructure. It is structured as three volumes &mdash; a narrative (Perspective), a practical guide (Guide), and an interactive game (Game) &mdash; with integrated analytical frameworks. The entire work is organised around 12 Civilisational Relays spanning from the mastery of fire to the emergence of digital consciousness.
+Beta Notice: This is a proof-of-concept platform under active development. Structure and clarity are prioritised over polish. All images are currently in English only.
+THE STRUCTURE
+Three volumes = one integrated learning system: Perspective + Guide + Game
+Component
+Purpose
+What You'll Find
+Link
+Executive Pr&eacute;cis
+Quick overview of the entire work
+Summary of framework, relays, and key concepts
+VIEW
+Vol. 1: Perspective
+The narrative &mdash; the story
+12 relay chapters from Fire to Human Nodes, told as an epic journey
+READ
+Vol. 2: Guide
+The practical framework
+West/Outrider/East comparative analysis, strategic models, IUMC per-relay diagrams, SDG alignment
+READ
+Vol. 3: Game
+Interactive learning
+IUMC methodology applied to each relay as playable coursework
+PLAY
+Framework
+The analytical backbone
+5 Webs (Warp), 4 Perennial Threats (Weft), 4 Framing Pillars, 3 Modes, Knowledge Web
+VIEW
+Documents Library
+Downloadable resources
+PDFs, DOCX files, reference materials
+VIEW
+THE 12 CIVILISATIONAL RELAYS
+The backbone of the entire work &mdash; 12 chapters spanning 12,000 years, plus a Prologue and Epilogue
+#
+Relay
+Era
+Core Infrastructure
+PProloguePre-historySetting the stage &mdash; before the first relay
+1Fire~10,000 BCEEnergy mastery, cooking, warmth, light
+2Tree~8,000 BCEAgriculture, settlement, timber construction
+3River~5,000 BCEIrrigation, trade routes, early cities
+4Horse~3,500 BCEMobility, warfare, communication speed
+5Roads~3,000 BCEConnectivity, empire, logistics
+6Ships~1,500 BCEMaritime trade, exploration, global reach
+7Loom~1800 CEProgrammable machines, textile industry, Jacquard
+8Rail~1800 CEIndustrial transport, standardisation, time zones
+9Engine~1850 CESteam, combustion, electrification
+10AAA Triad~1950 CEAutomobile, Aviation, Airwaves &mdash; the triple revolution
+11Orbit~1990 CEInternet, networks, digital infrastructure
+12Human Nodes~2020 CEAI, quantum computing, the Torus endpoint
+EEpilogueFutureLooking forward &mdash; the bridge to Episode 2
+KNOW YOUR NUMBERS
+The platform uses several numbered frameworks. Here's how to tell them apart.
+Count
+Name
+Loom Role
+Members
+12Civilisational RelaysThe TimelineFire, Tree, River, Horse, Roads, Ships, Loom, Rail, Engine, AAA Triad, Orbit, Human Nodes
+5Great WebsWARP (vertical threads)Energy, Knowledge, Commerce, Power, Consciousness
+4Framing PillarsAnalytical LensesInfrastructure, Unification, Management, Sustainability
+44 Perennial ThreatsWEFT (horizontal threads)War, Disease, Famine, Existential
+3Modes of ContinuityCivilisational PatternsWestern (discontinuous), Outrider (bridge), Eastern (continuous)
+7The ScholarsThe ObserversHomer, Confucius, Sun Tzu, Aristotle, Sima Qian, Marco Polo, The Modern Scholar
+9The Loom (5+4)The Complete Weave5 Warp threads &times; 4 Weft threads = the analytical matrix
+THE IUMC METHODOLOGY
+A civil engineer's 4-phase approach applied to every relay
+I
+IDENTIFY
+Recognise and classify the infrastructure systems present in each relay. What was built? What existed before?
+U
+UNDERSTAND
+Analyse how the 5 Webs and 4 Pillars interact within each relay. What dynamics drove change?
+M
+MANAGE
+Examine how civilisations managed their infrastructure systems. What worked? What failed?
+C
+CONTROL
+Assess the long-term sustainability and control mechanisms. How was continuity maintained or lost?
+See the full IUMC per-relay diagrams in Volume 2: Guide
+RECOMMENDED LEARNING PATHS
+Choose your entry point based on your background and interest
+&#128214; THE READER
+Start with the Executive Pr&eacute;cis for the overview, then read Volume 1 relay by relay. Use the Framework page as your reference.
+BEGIN
+&#128736; THE ENGINEER
+Start with the Framework page to understand the analytical structure. Then explore Volume 2: Guide for the practical framework, IUMC diagrams, and East-West analysis.
+BEGIN
+&#127918; THE PLAYER
+Jump straight into the Game. Create your character, pick a relay, and learn by doing. The game teaches the framework through play.
+PLAY
+&#128218; THE SCHOLAR
+Start with the 7 Scholars to understand the observational tradition. Then read Volume 1 through their eyes. Cross-reference with Volume 2: Guide.
+BEGIN
+THE DUAL EVOLUTION: NUMBERS &amp; WORDS
+The Knowledge Web on the landing page tells this story through 12 images
+Numbers came first. Sumerian clay tokens &mdash; accounting &mdash; predated cuneiform writing by over a thousand years. Commerce before literature. The ledger before the epic. Writing emerged FROM accounting, not the other way around. The 12 Knowledge Web images on the landing page trace this dual evolution: from pictograms to Unicode, from tally marks to algorithms. Numbers and words co-evolved on the same media &mdash; and each image proves it.
+VIEW THE KNOWLEDGE WEB
+&copy; 2026 Infrastructure Academy. All rights reserved. Preserving knowledge for eternity.
+Episode 1: Earthbound Foundations
+|
+Episode 2: The Gray Arena
+|
+Episode 3: Cosmic Scale
+X
+LinkedIn
+WhatsApp
+&#9650;

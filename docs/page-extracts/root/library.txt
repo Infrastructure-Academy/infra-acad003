@@ -1,0 +1,275 @@
+﻿The Library â€” Infrastructure Academy
+ACADEMY
+QUEST
+XCHANGE
+MEMORIAL
+NEWS
+INFRASTRUCTURE ACADEMY BETA
+Infrastructure &bull; Infostructure &bull; The Academy of Both
+42
+Follow
+Follow
+Handshake
+HOME
+FRAMEWORK
+EXEC PR&Eacute;CIS
+RESOURCES
+DOCUMENTS
+AUTHOR
+EP.1: PERSPECTIVE
+EP.2: GUIDE
+EP.3: GAME
+START HERE
+MOBILISATION CLOCK
+OLYMPIAD
+PIONEERS
+TAXONOMY
+MASTERS
+INSTITUTIONS
+ROSTER DASHBOARD
+GOVERNANCE
+CIVILISATION CLOCK
+FOUNDERS WALL
+CHARTER
+BEHIND THE THESIS
+GLOSSARY
+VAULT
+ICUT GALLERY
+An Infrastructure Odyssey: Episode 1 - Calories to Consciousness
+&#127968; HOME
+&#128218; START
+&#128214; READ
+&#128736; FRAMEWORK
+&#127918; PLAY
+&#127916; MOVIES
+&#128194; RESOURCES
+&#128240; PRESS
+&#9650;
+The Library
+From Calories to Consciousness: An Infrastructure Odyssey
+Episode 1 &mdash; The Civilisational Relay
+Required Reading for Game Players: Volumes 1 &amp; 2 are the source material for The Reality Engine. DAVID will ask if you have read them. Download both before playing.
+REQUIRED
+Volume 1
+The Perspective
+The narrative foundation. Twelve Civilisational Relays told as an epic journey &mdash; from the first spark of Fire to the emergence of Human Nodes. With Planetary Engine prologue, Opening Overture, Epilogue, and The Counterparts Coda.
+130 pages &bull; 34,132 words &bull; v19 â€” 28 March 2026
+PDF
+DOCX (v19)
+REQUIRED
+Volume 2
+The Guide
+The practical framework. Each relay analysed through the 4-Pillar structure: Observational, Educational, Application, and Thesis. With 81 tables, East-West analysis, and UN SDG alignment.
+130 pages &bull; 17,226 words &bull; 81 tables &bull; Complete Edition
+PDF
+DOCX
+GAME
+Volume 3
+The Player&rsquo;s Handbook
+Your complete guide to The Reality Engine. From Spider to Master Weaver &mdash; game mechanics, FITS assessment, IUMC methodology, ability scores, and the path to becoming a Relay Master.
+44 pages &bull; 27 chapters &bull; Complete Game Guide
+PDF
+DOCX
+SUPPLEMENT
+Doc 9
+Thunderbirds Complete Vehicle Manual
+Player Manual Supplement cataloguing all 34 vehicles &mdash; MPNC Fleet designations, pod vehicles, FAB fleet, guest vehicles, and infrastructure relay cross-references. The complete vehicle roster for International Rescue.
+34 vehicles &bull; 5 categories &bull; Complete Roster
+DOCX
+CARD DECK PDF
+Reference Materials
+Handbooks, indices, and supporting material for deeper study
+Executive Pr&eacute;cis
+Board-level summary of the Infrastructure Academy project
+DOCX
+Full Table of Contents
+Complete contents listing for all documents
+PDF
+The Master Engineers Handbook
+Engineering principles, inventions catalogue, and biomimicry connections
+PDF
+Roads &amp; Ships Timeline
+Parallel East-West development of roads and maritime infrastructure
+DOCX
+Three Modes &amp; 4 Perennial Threats
+West (Discontinuous), East (Continuous), Outrider (Temporary Works)
+PDF
+The Counterparts: Thesis &amp; Index
+Complete thesis index and counterpart analysis
+PDF
+Teaching Materials â€” CSE
+Civilisational Systems Engineering framework â€” teaching decks and research papers for academic institutions
+La Menara - The 12 Remarkable Relays
+Teaching Deck 1 â€” Foundation and framework overview
+PDF
+Part 2: Civilisational Systems Engineering
+37 Base Case Examples â€” Real-world infrastructure applications and case studies
+PDF
+CSE Foundational Paper
+Core theoretical framework and methodology for Civilisational Systems Engineering
+PDF
+UVM-DF Narrative Manuscript
+Unified Value Model â€” Dearden Field narrative and implementation guide
+PDF
+Hyper Learning Edutainment
+Educational methodology combining CSE framework with immersive learning experiences
+PDF
+CSE Framework Overview - Video 1
+10-second introduction to Civilisational Systems Engineering principles
+MP4
+CSE Application - Video 2
+10-second demonstration of CSE framework in practice
+MP4
+What Ebbinghaus Could Not Build, iAAi Can
+TP-064 Complete â€” The Remembrance Curve and the iAAi Spacing Engine (Refined: Canonical Relay Names, Scholar Roles, Canonical Equation)
+PDF
+CSE Teaching Materials â€” Table of Contents
+Complete organizational guide with learning paths, material correlations, and usage guidelines
+PDF
+CSE Quick Start Guide
+A concise guide to navigating the CSE teaching materials, suggesting a learning path and highlighting key documents for different learning objectives.
+PDF
+Plate X-A: The Remembrance Equation (Teaching Version)
+Pedagogical plate showing Ebbinghaus forgetting curve vs iAAi remembrance curve with canonical teaching equation
+PNG
+Plate X: The Remembrance Equation (Canonical Form)
+Full canonical equation plate with Signal Equation integration, 4Cs/4Rs mapping, and scholarly apparatus
+PNG
+Plate X-B: The Remembrance Equation Across the 12 Relays
+Domain-specific consolidation profiles showing how the canonical equation behaves across all 12 relays with distinct A, P, Î² parameters
+PNG
+Plate ISI: Infrastructure Survival Index â€” Remembrance Capacity of the 12 Relays
+4-quadrant institutional plate showing ISI equation, 12-relay profiles, ISI curve with asymptotic consolidation, and 4Cs/4Rs overlay
+PNG
+Plate X-C: Mode-Specific Remembrance Curves (Outrider to Unified)
+4-panel institutional plate showing how canonical remembrance equation expresses across 4 modes: Outrider (exploration), Western (application), Eastern (synthesis), Unified (integration)
+PNG
+CSE Quick Start Guide
+A concise guide to navigating the CSE teaching materials, suggesting learning paths and highlighting key documents.
+PDF
+ISI Benchmark Dataset: Reference Remembrance Profiles for 21 Critical Infrastructure Domains
+Comprehensive reference table showing ISI scores, parameters (A, P, beta, n, N), relay anchors, and consolidation bands for critical infrastructure domains
+PNG
+iAAi Formulae & Worked Examples
+The complete formulae and worked examples for HICE, Signal Formula, Seesaw Equation, ISI, and Resistance Framework (4Cs/4Rs)
+PDF
+iAAi ISI Expanded: 37 Worked Examples
+Comprehensive Excel workbook with 37 expanded worked examples for ISI calculations, Dyad Taxonomy, Relay Coverage Map, and Scholar Mapping
+XLSX
+Authors Reference Library
+Comprehensive databases and audit materials for authors, professors, and researchers
+Inventions &amp; Discoveries Database
+Master database: 579 rows, 9 sheets, all 13 relays. Inventions, biomimicry, apprentice guidance, tech specs, UN SDGs, builder guide, relay overview, cross-reference index, audit log.
+XLSX
+Database Audit Report
+AI audit: Doc4 vs game cross-reference, TBC fill methodology, relay mapping, recommendations.
+MD
+Scoring Implications &amp; Corrective Algorithm
+Document Bridging Phase 81: Epoch-normalised scoring formula, expanded discovery pool analysis (247&rarr;448 items), grade band recalibration, bonus XP adjustments, and corrective algorithm foundation for academic vetting.
+MD
+Printable Study Guide
+39-page comprehensive reference: 153 inventions, 67 biomimicry connections, counterpart comparisons, 48 technical specs, 64 builder&rsquo;s guide entries, and 85 apprentice guidance areas &mdash; organised by relay.
+PDF
+Turing Paper 015 &mdash; The iAAi Chip: From Unified Field to Fabrication
+Complete hardware specification for the consciousness architecture processor. 6.8B transistors, 5,292-pin BGA, ICE engine (IQ&times;EQ&times;CQ), chip evolution timeline, BitPoints Library (Getty model), and open challenge to AMD/Intel/TSMC/NVIDIA. Block 385.
+PDF
+Turing Paper 009 &mdash; The Permanence Crisis: AI Agent Data Governance Under Legal Scrutiny
+A live Turing Test of AI agent data governance. Examines the permanence problem in AI-generated content &mdash; when digital artefacts are claimed complete but never surfaced. Phase 2 Beta Hardening, Police Evidence Grade. Block 380, 15 March 2026.
+iCARD
+Project Documentation
+Block 391 &mdash; Full Audit Trail (391a&ndash;391f)
+Complete proof-of-work record: 60-card marketplace, Stripe payments, 30 iCards, 3 observers, 113 outbound links, 239 tests. 16&ndash;18 March 2026.
+PDF
+The Living Experiment &mdash; Evidence Card
+Document journey, financial investment record, promise vs. reality, agent failures log
+DOCX
+ManusAI Commitment Statement
+Official commitment to the Infrastructure Academy project
+PDF
+DOCX
+BitPoints Library &mdash; Access Tiers
+Modelled on Getty Images ($946M annual revenue, 500M+ assets). The BitPoints Library is the Getty Images of the new age of Consciousness &mdash; consciousness architecture assets that appreciate in value.
+Tier 0
+FREE
+$0
+forever
+&#10003; Browse all 12 relay chapters
+&#10003; Framework &amp; Glossary access
+&#10003; Scholars page (6 profiles)
+&#10003; Discovery Chain timeline
+&#10003; Executive Pr&eacute;cis (read-only)
+&#10003; Low-resolution iCard previews
+&#10007; No downloads
+&#10007; No BitPoint collection
+EXPLORE FREE
+Tier 1
+PLAYER
+$9.99
+/month
+&#10003; Everything in Free
+&#10003; Download all 3 volumes (PDF/DOCX)
+&#10003; Full-resolution iCard downloads
+&#10003; BitPoint collection (earn &amp; trade)
+&#10003; TRE game access &mdash; character creation
+&#10003; XP leaderboard participation
+&#10003; 10 asset downloads/month
+&#10007; No Turing Papers access
+SUBSCRIBE &mdash; $9.99/mo
+POPULAR
+Tier 2
+SCHOLAR
+$29.99
+/month
+&#10003; Everything in Player
+&#10003; All 15 Turing Papers (PDF)
+&#10003; Authors Reference Library
+&#10003; Masters page (22 historical profiles)
+&#10003; Chip Evolution gallery (10 designs)
+&#10003; Unlimited asset downloads
+&#10003; Contributor programme eligibility
+&#10003; Scholar badge on leaderboard
+SUBSCRIBE &mdash; $29.99/mo
+Tier 3
+ENTERPRISE
+CUSTOM
+annual licence
+&#10003; Everything in Scholar
+&#10003; White-label curriculum licence
+&#10003; University/institution deployment
+&#10003; Custom relay zone content
+&#10003; Even Realities G2 exhibition kit
+&#10003; API access to BitPoints Library
+&#10003; Dedicated account manager
+&#10003; Priority DAVID AI integration
+CONTACT US
+THE GETTY MODEL &mdash; SIDE BY SIDE
+Getty Images
+iAAi BitPoints Library
+500M stock photographs600+ consciousness architecture assets (growing daily)
+$175&ndash;$499 per image downloadBitPoint value per asset (earned or purchased)
+Subscription plans (58.4% of revenue)Free &rarr; Player &rarr; Scholar &rarr; Enterprise
+AI generation tools ($14.99&ndash;$149/month)AI-assisted consciousness architecture design (DAVID)
+Market Freeze (exclusivity premium)Exclusive BitPoint ownership &mdash; unique, thesis-linked originals
+Print-on-Demand (wall art, apparel)Physical iCards (proven: iCARD 012 &amp; 013 printed)
+Contributor royalties (15&ndash;45%)Scholar and Player contribution rewards
+Legal indemnificationThesis verification chain &mdash; every asset traceable to source block
+Getty sells photographs that depreciate. We sell consciousness architecture blueprints that appreciate.
+CURRENT ASSET INVENTORY
+3
+Complete Volumes
+15
+Turing Papers
+10
+Chip Evolution Designs
+75+
+CDN-Hosted Images
+127
+Outbound Links (93.7% live)
+52
+BitPoint Card Set
+All documents are permanently archived on CDN and available for download.
+Last updated: 16 March 2026 &mdash; Block 388 &mdash; BitPoints Library Tier System live
+X
+LinkedIn
+WhatsApp
+&#9650;

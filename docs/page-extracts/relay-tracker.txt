@@ -1,0 +1,188 @@
+﻿Relay Progress Tracker â€” Infrastructure Academy
+ACADEMY
+QUEST
+XCHANGE
+MEMORIAL
+NEWS
+INFRASTRUCTURE ACADEMY
+HOME
+FRAMEWORK
+DOCUMENTS
+PLAY
+&#127968; HOME
+&#128218; START
+&#128214; READ
+&#128736; FRAMEWORK
+&#127918; PLAY
+&#127916; MOVIES
+&#128194; RESOURCES
+&#128240; PRESS
+&#9650;
+RELAY PROGRESS TRACKER
+Documentation Status Across All 12 Civilizational Relays
+&larr; Back to Home &nbsp;|&nbsp;
+Block Summary &nbsp;|&nbsp;
+SDG Matrix
+12Relays
+12Chapters Written
+45+Institutions
+31iCards
+17SDGs Aligned
+0%
+Overall Documentation Completeness
+Complete (80%+)
+Partial (40-79%)
+Minimal (&lt;40%)
+DISCONTINUOUS BRANCHES
+Parallel civilisations that developed sophisticated infrastructure independently but did not feed directly into the continuous East-West relay chain. They represent parallel infrastructure consciousness &mdash; discontinuous paths.
+ADDED FOLLOWING FEEDBACK FROM LUDVIK THORSTEINSSON &bull; LINKEDIN &bull; 24 MAR 2026
+Why &ldquo;Discontinuous&rdquo;?
+The relay model tracks the continuous handoff of infrastructure knowledge from one civilisation to the next. These branches rose independently, developed sophisticated infrastructure (proving universal human capacity), but declined without passing their innovations to the next link in the chain. The educational question: &ldquo;What conditions create continuity vs. discontinuity?&rdquo; &mdash; Geography, trade routes, and connectivity.
+Reference: The Byzantium Blogger (Powee Celdran) &mdash; byzantium-blogger.blog &bull; Governance Architecture
+&ldquo;Per Arya Ad Astra&rdquo; &mdash; Infrastructure Academy
+Ir. Nigel T. Dearden CEng MICE MHKIE &bull; The Civilizational Relay
+Relay Certificate - ' + relay.title + '' +
+'' +
+'' +
+'' +
+'Infrastructure Academy' +
+'CERTIFICATE OF COMPLETION' +
+'Civilizational Relay Documentation' +
+'' +
+'' +
+'' +
+'RELAY ' + String(relayNum).padStart(2,'0') + ': ' + relay.title.toUpperCase() + '' +
+'This certifies that Relay ' + String(relayNum).padStart(2,'0') + ': ' + relay.title + ' has achieved documentation completeness across all five verification criteria.' +
+'' +
+'\u2713 Chapter Written' +
+'\u2713 Guide Section' +
+'\u2713 Thesis Framework' +
+'\u2713 Institutions Mapped' +
+'\u2713 iCards Created' +
+'' +
+'' +
+'' +
+'' +
+'Ir. Nigel T. Dearden CEng MICE MHKIEAuthor &amp; Principal Investigator' +
+'Certificate ID: ' + certId + 'Date: ' + certDate + 'Infrastructure Academy \u2014 An Infrastructure Odyssey' +
+'' +
+'Per Arya Ad Astra' +
+'';
+var certWindow = window.open('', '_blank');
+if (certWindow) { certWindow.document.write(certHtml); certWindow.document.close(); }
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+// DISCONTINUOUS BRANCHES â€” RENDER CARDS
+// â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+var branches = [
+id: 'ghana-empire', name: 'Ghana Empire', region: 'West Africa (modern Mauritania / Mali)',
+period: 'c. 300â€“1200 AD', type: 'Metallurgy & Trade',
+desc: 'Iron tool production and trans-Saharan gold-salt trade. Koumbi Saleh was one of the largest cities in the world.',
+achievements: ['Iron smelting & tool production', 'Trans-Saharan trade routes', 'Koumbi Saleh â€” major urban centre'],
+figures: 'Tunka Manin (r. c. 1062â€“1076)',
+whyDisc: 'Conquered by Almoravids (1076); no relay handoff to successor civilisations.',
+keyFact: 'Ghana controlled the gold-salt trade that financed much of medieval Mediterranean commerce.',
+group: 'african', color: '#22c55e'
+id: 'mali-timbuktu', name: 'Mali Empire / Timbuktu', region: 'West Africa (modern Mali / Senegal)',
+period: 'c. 1235â€“1600 AD', type: 'Knowledge & Astronomy',
+desc: 'Sankore University in Timbuktu housed 700,000+ manuscripts. Mansa Musa\'s pilgrimage (1324) destabilised gold markets across the Mediterranean.',
+achievements: ['Sankore University â€” 700,000+ manuscripts', 'Astronomy & mathematics', 'Mansa Musa\'s gold pilgrimage (1324)'],
+figures: 'Mansa Musa (r. 1312â€“1337)',
+whyDisc: 'Declined after Moroccan invasion (1591); manuscripts scattered, institutional knowledge fragmented.',
+keyFact: 'Mansa Musa is considered the wealthiest person in history â€” his gold distribution crashed Mediterranean economies.',
+group: 'african', color: '#22c55e'
+id: 'songhai-empire', name: 'Songhai Empire', region: 'West Africa (modern Niger / Nigeria / Mali)',
+period: 'c. 1430â€“1591 AD', type: 'Governance & Justice',
+desc: 'Sophisticated taxation, provincial administration, and justice systems. Largest empire in African history at its peak.',
+achievements: ['Taxation & provincial administration', 'Professional army & navy on Niger River', 'Justice system with appeals courts'],
+figures: 'Askia Muhammad (r. 1493â€“1528)',
+whyDisc: 'Destroyed by Moroccan musket-armed invasion (1591); governance infrastructure dismantled.',
+keyFact: 'Songhai\'s administrative system divided the empire into provinces with appointed governors â€” mirroring Roman provincial governance.',
+group: 'african', color: '#22c55e'
+id: 'maya', name: 'Maya Civilisation', region: 'Central America (modern Guatemala / Mexico / Belize)',
+period: 'c. 2000 BCâ€“1500 AD', type: 'Astronomy & Hydraulics',
+desc: 'Advanced astronomical calendars, hydraulic engineering, and monumental architecture. The Long Count calendar calculated dates millions of years into the future.',
+achievements: ['Long Count calendar â€” astronomical precision', 'Hydraulic reservoirs at Tikal', 'Sacbe road network connecting cities'],
+figures: 'K\'inich Janaab Pakal (r. 615â€“683)',
+whyDisc: 'Classic Maya collapse (c. 900 AD) â€” cities abandoned. No relay handoff; knowledge was not transmitted.',
+keyFact: 'Maya astronomers calculated the length of the solar year to 365.2420 days â€” closer to the true value than the Gregorian calendar.',
+group: 'mesoamerican', color: '#f97316'
+id: 'aztec', name: 'Aztec Empire', region: 'Central Mexico',
+period: 'c. 1300â€“1521 AD', type: 'Urban Engineering',
+desc: 'Tenochtitlan\'s chinampas, aqueducts, and causeways rivalled or exceeded contemporary European cities.',
+achievements: ['Chinampas â€” floating garden agriculture', 'Chapultepec aqueduct â€” 5 km dual-pipe', 'Causeways connecting island to mainland'],
+figures: 'Moctezuma I (r. 1440â€“1469)',
+whyDisc: 'Physically destroyed by Spanish conquest (1521). Tenochtitlan razed; Mexico City built on its ruins.',
+keyFact: 'Conquistadors thought they were dreaming when they first saw Tenochtitlan â€” it was larger than any European city.',
+group: 'mesoamerican', color: '#f97316'
+id: 'mesopotamia', name: 'Mesopotamia (Sumer / Babylon)', region: 'Modern Iraq / Syria',
+period: 'c. 3500â€“539 BC', type: 'Foundational Systems',
+desc: 'Irrigation, writing, law, the wheel, and base-60 mathematics all originated here. Partially continuous â€” some innovations entered the relay via Persia and Greece.',
+achievements: ['Irrigation canals â€” first large-scale water management', 'Cuneiform â€” first writing system', 'Code of Hammurabi â€” first written legal code'],
+figures: 'Hammurabi (r. c. 1792â€“1750 BC)',
+whyDisc: 'Partially discontinuous. Some innovations adopted by Persia/Greece; Sumerian/Babylonian civilisations themselves were conquered.',
+keyFact: 'Base-60 from Sumer: still used today in 60 seconds, 60 minutes, 360 degrees.',
+group: 'neareast', color: '#a78bfa'
+id: 'byzantine', name: 'Byzantine Empire (Eastern Rome)', region: 'Eastern Mediterranean / Turkey / Balkans',
+period: 'c. 330â€“1453 AD', type: 'Preservation & Engineering',
+desc: 'Preserved Roman engineering, law, and administration for over 1,000 years. Theodosian Walls unbreached for a millennium. Hagia Sophia was the world\'s largest cathedral for nearly 1,000 years.',
+achievements: ['Theodosian Walls â€” unbreached 1,000 years', 'Hagia Sophia (537 AD)', 'Justinian\'s Codex â€” foundation of European law'],
+figures: 'Justinian I (r. 527â€“565)',
+whyDisc: 'Did not pass baton directly to Britain. Byzantine scholars fleeing 1453 carried texts to Italy, indirectly fuelling the Renaissance â€” a delayed handoff.',
+keyFact: 'Constantinople\'s walls protected the city for over 1,000 years â€” the longest-serving defensive infrastructure in history.',
+group: 'european_gap', color: '#60a5fa'
+id: 'islamic-golden', name: 'Islamic Golden Age', region: 'Middle East / North Africa / Iberia',
+period: 'c. 750â€“1258 AD', type: 'Knowledge & Innovation',
+desc: 'Algebra, optics, hospitals, astronomy, and irrigation engineering. The House of Wisdom preserved Greek, Persian, and Indian texts.',
+achievements: ['Algebra â€” al-Khwarizmi (c. 820 AD)', 'House of Wisdom, Baghdad', 'Bimaristans â€” world\'s first hospitals'],
+figures: 'al-Khwarizmi (c. 780â€“850)',
+whyDisc: 'Partially discontinuous. Some innovations flowed to Europe via Al-Andalus. Abbasid civilisation destroyed by Mongol sack of Baghdad (1258).',
+keyFact: '\'Algorithm\' derives from al-Khwarizmi\'s name; \'algebra\' from his book \'al-Jabr\' â€” two foundations of modern computing from 9th-century Baghdad.',
+group: 'european_gap', color: '#60a5fa'
+id: 'viking', name: 'Viking / Norse Civilisation', region: 'Scandinavia / North Atlantic',
+period: 'c. 793â€“1066 AD', type: 'Shipbuilding & Navigation',
+desc: 'Master shipbuilders whose longships crossed the North Atlantic. Reached America (Vinland, c. 1000 AD) five centuries before Columbus.',
+achievements: ['Longship â€” clinker-built, ocean-crossing', 'Vinland (c. 1000 AD) â€” pre-Columbus America', 'Varangian trade routes to Constantinople'],
+figures: 'Leif Erikson (c. 970â€“1020)',
+whyDisc: 'Temporary works â€” built for mobility, not permanence. Absorbed into Christian European kingdoms by 11th century.',
+keyFact: 'Viking longships could sail in water as shallow as 50 cm â€” a dual-mode vessel unmatched until modern amphibious craft.',
+group: 'european_gap', color: '#60a5fa'
+id: 'medieval-europe', name: 'Medieval European Kingdoms', region: 'Western and Central Europe',
+period: 'c. 500â€“1500 AD', type: 'Cathedrals & Institutions',
+desc: 'Gothic cathedrals, university founding, castle engineering, water mills, and the Hanseatic League. Fragmented â€” no single empire carried the relay.',
+achievements: ['Gothic cathedrals â€” flying buttresses', 'Universities: Bologna (1088), Oxford (1096)', 'Gutenberg printing press (c. 1440)'],
+figures: 'Charlemagne (r. 768â€“814)',
+whyDisc: 'Fragmented â€” no single civilisation carried the relay baton. Infrastructure was local, not continental. The relay resumed when Britain emerged in the 1600s.',
+keyFact: 'Domesday Book (1086) records 6,000+ water mills in England â€” one per 300 people â€” the most mechanised pre-industrial society.',
+group: 'european_gap', color: '#60a5fa'
+];
+var groupLabels = {
+african: '\u{1F30D} WEST AFRICAN EMPIRES',
+mesoamerican: '\u{1F3DB} MESOAMERICAN CIVILISATIONS',
+neareast: '\u{1F3FA} ANCIENT NEAR EAST',
+european_gap: '\u{1F3F0} EUROPEAN GAP (300-1600 AD)'
+var branchGrid = document.getElementById('branchGrid');
+var currentGroup = '';
+branches.forEach(function(b) {
+if (b.group !== currentGroup) {
+currentGroup = b.group;
+var label = groupLabels[b.group] || b.group;
+branchGrid.insertAdjacentHTML('beforeend',
+'' +
+'' + label + '' +
+''
+);
+var achHtml = b.achievements.map(function(a) {
+return '&#9670;' + a + '';
+var html = '' +
+'' +
+'BRANCH &bull; ' + b.type.toUpperCase() + '' +
+'' + b.name + '' +
+'' + b.region + ' &bull; ' + b.period + '' +
+'' + b.desc + '' +
+'' + achHtml + '' +
+'Key Figure: ' + b.figures + '' +
+'' +
+'Why Discontinuous: ' + b.whyDisc + '' +
+'&#9733; ' + b.keyFact + '' +
+'';
+branchGrid.insertAdjacentHTML('beforeend', html);

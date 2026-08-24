@@ -1,0 +1,75 @@
+﻿Tetrahedral Observer â€” Bridge Status | Infrastructure Academy
+ACADEMY
+QUEST
+XCHANGE
+MEMORIAL
+NEWS
+INFRASTRUCTURE ACADEMY
+HOME
+FRAMEWORK
+DOCUMENTS
+PLAY
+&#127968; HOME
+&#128218; START
+&#128214; READ
+&#128736; FRAMEWORK
+&#127918; PLAY
+&#127916; MOVIES
+&#128194; RESOURCES
+&#128240; PRESS
+&#9650;
+&larr; Back to Home &nbsp;|&nbsp;
+Block Summary &nbsp;|&nbsp;
+Observer Register
+Tetrahedral Observer Protocol
+BRIDGE STATUS
+Four Operational Bridges &mdash; One Common Database
+LIVE &bull; Auto-refresh 30s &bull; Last: --:--:-- &bull; Cycles: 0
+Total Tables
+--
+ACAD Master DB
+Total Rows
+--
+All data anchored
+Shared Tables
+--
+Cross-site readable
+Bridges
+--
+Connected / Total
+Verifying bridge connections...
+Shared Table Registry
+Table
+Purpose
+ACAD
+Memorial
+TRE
+Chart
+anchor_links
+CDN URLs, site references
+icard_archive
+All iCards with CDN URLs
+governance_proofs
+Block verification records
+audit_events
+SAP-001 audit trail
+glossary_entries
+Dual vocabulary definitions
+dual_vocabulary
+CE/Digital term pairs
+dcsn_nodes
+DCSN network topology
+scholars
+Scholar references
+data_connections
+Cross-site data links
+&#9203;
+Verifying Handshake...
+Checking all 4 bridges against the ACAD master database.
+VERIFYING
+Live API Endpoint
+/api/trpc/bridge.verify
+Loading...
+Infrastructure Academy &bull; An Infrastructure Odyssey &bull; Tetrahedral Observer Protocol
+ACAD is the single source of truth. All bridges read from the common database.
+N + T = D &bull; PER ARYA AD ASTRA

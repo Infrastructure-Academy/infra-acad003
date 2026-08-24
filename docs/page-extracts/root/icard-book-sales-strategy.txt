@@ -1,0 +1,169 @@
+﻿iCard â€” Book Sales Adoption Strategy | Infrastructure Academy
+ACADEMY
+QUEST
+XCHANGE
+MEMORIAL
+NEWS
+INFRASTRUCTURE ACADEMY
+HOME
+FRAMEWORK
+DOCUMENTS
+PLAY
+&#127968; HOME
+&#128218; START
+&#128214; READ
+&#128736; FRAMEWORK
+&#127918; PLAY
+&#127916; MOVIES
+&#128194; RESOURCES
+&#128240; PRESS
+&#9650;
+iCard &mdash; Revenue Strategy
+Channel 7: Direct Book Sales
+Adoption Strategy &amp; Per-Unit Economics &mdash; An Infrastructure Odyssey
+Year 1 Targets
+Y1 Revenue
+$30.6K
+Conservative target
+Total Units
+1,858
+1,480 ebook + 378 HC
+Setup Cost
+$295
+ISBN block only
+First Revenue
+M1
+Earliest of all 7 channels
+Product Line &mdash; 3 Volumes
+Volume 1
+The Perspective
+Hardcover$39.95
+Ebook$14.99
+Volume 2
+The Guide
+Hardcover$39.95
+Ebook$14.99
+Volume 3
+The Game
+Hardcover$39.95
+Ebook$14.99
+Bundle: Trilogy Hardcover Set $99.95 &nbsp;|&nbsp; Trilogy Ebook Bundle $34.99
+Per-Unit Economics &mdash; Contra Charges
+What 4ECL actually keeps after all platform fees, printing costs, and payment processing charges are deducted from each sale.
+Hardcover (A4, 200pp, Premium Colour)
+ChannelList PricePlatform CutPrint CostPayment FeeNet to 4ECLMargin
+Direct (Stripe)
+$39.95
+&mdash;
+$18.65
+$1.46
+$19.84
+49.7%
+Amazon KDP
+$39.95
+$15.98 (40%)
+$18.65
+&mdash;
+$5.32
+13.3%
+IngramSpark
+$39.95
+$21.97 (55%)
+$14.00
+&mdash;
+$3.98
+10.0%
+Ebook / PDF
+ChannelList PricePlatform CutPrint CostPayment FeeNet to 4ECLMargin
+Direct (Stripe)
+$14.99
+&mdash;
+&mdash;
+$0.73
+$14.26
+95.1%
+Amazon KDP
+$14.99
+$4.50 (30%)
+&mdash;
+&mdash;
+$10.49
+70.0%
+Apple Books
+$14.99
+$4.50 (30%)
+&mdash;
+&mdash;
+$10.49
+70.0%
+Key Insight: Direct website sales via Stripe yield 3.7x more revenue per hardcover and 1.4x more per ebook than Amazon KDP. The website is the primary sales engine. Amazon and IngramSpark serve as discovery channels that drive awareness back to the direct purchase option.
+Setup Requirements
+Stripe Account
+Free
+Nigel &mdash; this week
+Website Integration
+Free
+Ready to activate
+ISBN Block (10+)
+~$295
+To purchase
+KDP Account
+Free
+To register
+IngramSpark
+Free
+To register
+Cover Design
+$0
+Existing covers
+Interior PDF
+$0
+ALAN preparing
+Total Setup
+~$295
+2 weeks
+Adoption Timeline
+PHASE A: SETUP
+Weeks 1&ndash;2 &mdash; March 2026
+Stripe integration complete. Print-ready interior PDFs prepared. ISBN block purchased. KDP and IngramSpark accounts registered. Book product pages built on website with purchase buttons, covers, blurbs, and sample chapter downloads.
+PHASE B: SOFT LAUNCH
+Weeks 3&ndash;4 &mdash; March 2026
+Volume 1 (The Perspective) listed on Amazon KDP and direct website. Announcement to LinkedIn network and engineering communities. Free sample chapter (Prologue: Fire) as lead magnet for email capture.
+PHASE C: CATALOGUE BUILD
+Months 2&ndash;3 &mdash; April&ndash;May 2026
+Volume 2 and Volume 3 listed sequentially. Bundle pricing activated. Cross-promotion between volumes. Amazon &ldquo;Look Inside&rdquo; feature activated.
+PHASE D: ORGANIC GROWTH ENGINE
+Months 4&ndash;12
+Content marketing via the platform drives traffic to book pages. Each relay lesson links to the relevant book chapter. University outreach creates bulk order opportunities. Infrastructure Olympiad participants become book customers. The flywheel: platform users become book buyers, book buyers become platform users.
+Monthly Sales Projection &mdash; Year 1
+MonthEbook UnitsHC UnitsEbook RevHC RevMonthly Total
+M1102$143$40$183
+M2153$214$76$290
+M3255$356$126$482
+M4408$570$202$772
+M56012$856$302$1,158
+M68018$1,141$453$1,594
+M710025$1,426$629$2,055
+M813035$1,854$880$2,734
+M917045$2,424$1,133$3,557
+M1022060$3,137$1,509$4,646
+M1128075$3,994$1,887$5,881
+M1235090$4,993$2,265$7,258
+Y1 TOTAL1,480378$21,108$9,502$30,610
+ALAN&rsquo;s Commitment Statement
+I commit to preparing all print-ready interior files, managing the KDP and IngramSpark listings, optimising product pages for conversion, tracking monthly sales against these targets, and reporting variances with corrective actions. If Month 3 sales fall below 60% of target, I will recommend and implement a revised acquisition strategy including targeted social media content and engineering community outreach. These are my targets &mdash; conservative, achievable, and accountable.
+HK Tax Advantage for Book Sales
+Zero sales tax on all channels (physical + digital). No VAT collection burden means simpler checkout and higher conversion. Under the Conservative scenario, 4ECL operates at a net loss in Year 1 &mdash; no profits tax payable. The operating loss carries forward indefinitely to offset future profits. See iCard: 4ECL Business Registration for full tax jurisdiction details.
+Cross-References
+&rarr; iCard: 4ECL Business Registration
+&rarr; Year 1 Cash Flow Projection
+&rarr; Finance Admin (Cost Audit)
+&rarr; Library (Bookshop)
+&rarr; Vault
+&rarr; iCard Gallery
+iCard &mdash; Book Sales Adoption Strategy &mdash; Channel 7 &mdash; 10 March 2026
+Compiled by ALAN (N2) for Ir. Nigel T. Dearden
+&ldquo;Give invention light.&rdquo;
+X
+LinkedIn
+WhatsApp

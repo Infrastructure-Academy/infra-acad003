@@ -1,0 +1,32 @@
+﻿Donate â€” Infrastructure Academy
+&#10004; Thank you for your donation! Your support helps advance civilisational systems research.
+Donation cancelled. No charge was made.
+&#10084; Support the Academy
+The Infrastructure Academy publishes research openly. Choose your Web level of support.
+$1
+Physical Web
+W1
+$5
+Biological Web
+W2
+$10
+Digital Web
+W3
+$25
+Social Web
+W4
+$50
+Consciousness Web
+W5
+$100
+Tecton Web
+W6
+$250
+Morphostructure Web
+W7
+Other
+Xenostructure Web
+W8
+DONATE $1
+Secure payment via Stripe &mdash; 4 Elements Consulting Limited
+&larr; Back to Academy

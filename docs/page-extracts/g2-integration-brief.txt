@@ -1,0 +1,136 @@
+﻿Even Realities G2 Exhibition Integration Brief â€” Infrastructure Academy
+ACADEMY
+QUEST
+XCHANGE
+MEMORIAL
+NEWS
+INFRASTRUCTURE ACADEMY
+HOME
+FRAMEWORK
+DOCUMENTS
+PLAY
+&#127968; HOME
+&#128218; START
+&#128214; READ
+&#128736; FRAMEWORK
+&#127918; PLAY
+&#127916; MOVIES
+&#128194; RESOURCES
+&#128240; PRESS
+&#9650;
+EVEN REALITIES G2
+Exhibition Integration Brief &mdash; 12 Relay Zones
+DOC-G2-INT-001 | BLOCK 388 | 16 MARCH 2026
+&larr; Back to Resources
+I. EXECUTIVE SUMMARY
+This brief maps the Even Realities G2 smart glasses hardware to each of the 12 exhibition relay zones in the Infrastructure Academy physical exhibition concept. The G2 represents the lightest display-equipped smart glasses available (approximately 36 grams), featuring micro-LED binocular waveguide optics, BLE 5.4 connectivity, and a two-day battery life. Its privacy-first design (no camera) and prescription lens support make it uniquely suited to museum and exhibition environments where visitor comfort and institutional trust are paramount.
+The integration model positions the G2 as a personal heads-up display (HUD) for exhibition visitors, delivering contextual narration by DAVID (the AI narrator), real-time translation across 29 languages, and teleprompted content overlays as visitors move through the 12 relay zones &mdash; from Fire to Human Nodes.
+II. HARDWARE SPECIFICATIONS
+ParameterSpecificationExhibition Relevance
+DisplayMicro-LED, binocular, green, 640&times;350, 1200 nitsReadable in bright gallery lighting; green mono reduces eye strain over long visits
+Field of View27.5&deg;Sufficient for text overlays and navigation arrows without obstructing artefact viewing
+Refresh Rate60HzSmooth scrolling for DAVID narration text and timeline animations
+Passthrough98%Near-invisible lens tint; visitors see exhibits at full fidelity
+Weight~36g (1.26 oz)Comfortable for 2&ndash;3 hour exhibition visits; lighter than most prescription frames
+Battery192mAh glasses + 2000mAh case (7&times; charges)2-day life exceeds any single-visit duration; case charges between visitor sessions
+ConnectivityBLE 5.4Low-energy beacon detection for zone-based content triggering
+IP RatingIP65Dust/splash resistant; safe for outdoor relay zones (River, Roads, Ships)
+Microphones4&times; arrayVoice commands for DAVID interaction; ambient noise filtering in busy galleries
+Prescription&minus;12 to +12 dioptersVisitors can use their own prescription lenses; no glasses-over-glasses
+Frame StylesG2 A (panto) / G2 B (rectangular)Two aesthetic options for visitor preference
+PriceFrom $599 / &pound;599Fleet pricing TBD; comparable to premium audio guide systems at scale
+Source: Even Realities Official Specs | Tom's Guide Review | Wired Review
+III. G2 FEATURES &times; EXHIBITION CAPABILITIES
+G2 FeatureExhibition Application
+TelepromptDAVID narration text scrolls in visitor's field of view as they examine artefacts. No audio guide needed &mdash; silent, personal, non-disruptive to other visitors.
+Translate (29 languages)Real-time translation of all exhibition text, DAVID narration, and artefact labels. Eliminates the need for multilingual printed signage. Critical for international venues.
+Conversate (AI)Visitors can ask DAVID questions about what they are seeing. Contextual AI generates talking points based on the current relay zone. &ldquo;What did Sima Qian write about this?&rdquo;
+NavigationGeomagnetic sensor provides turn-by-turn wayfinding between relay zones. Arrows overlay the visitor's view, guiding them through the chronological sequence.
+DashboardDisplays visitor's BitPoints balance, current relay progress (e.g., &ldquo;Relay 7/12&rdquo;), time remaining, and next zone preview.
+Even R1 Smart RingDiscreet control without touching glasses. Visitors tap the ring to advance narration, answer quiz questions, or bookmark artefacts. Biometric data (heart rate) could feed into engagement analytics.
+BLE 5.4 BeaconsEach relay zone has BLE beacons that trigger zone-specific content automatically as visitors enter. No manual selection required.
+IV. 12 RELAY ZONE MAPPING
+Each relay zone in the physical exhibition maps to specific G2 features. The table below defines the primary and secondary G2 capabilities activated in each zone, the content type delivered, and the interaction model.
+Relay
+Zone Theme
+Primary G2 Feature
+Content Delivered via HUD
+Interaction Model
+R1
+FireShelter &amp; Calories
+TelepromptConversate
+DAVID narrates the discovery of fire. Overlay shows caloric energy chain: wood &rarr; flame &rarr; cooked food &rarr; brain growth. Visitor sees artefact (flint tools) with text floating beside it.
+Ring tap to hear Prometheus myth vs. archaeological record. Quiz: &ldquo;How many calories did cooking unlock?&rdquo;
+R2
+TreeAgriculture &amp; Settlement
+TelepromptTranslate
+Timeline overlay: Fertile Crescent &rarr; Yellow River &rarr; Indus Valley. Grain storage calculations scroll as visitor examines seed specimens.
+Language toggle for Chinese/English/Arabic agricultural terms. Ring swipe to compare East/West farming techniques.
+R3
+RiverWater &amp; Irrigation
+ConversateDashboard
+Yu the Great flood control narrative. HUD shows water flow diagrams overlaid on physical model of Yellow River delta. Real-time quiz on hydraulic engineering principles.
+&ldquo;Ask DAVID&rdquo; about modern dam engineering. Dashboard shows BitPoints earned so far.
+R4
+HorseStone &amp; Masonry
+TelepromptNavigation
+Imhotep's Step Pyramid construction sequence. HUD overlays structural load paths on physical stone column model. Navigation arrows guide to hidden &ldquo;quarry alcove.&rdquo;
+Ring tap cycles through pyramid cross-sections. Wayfinding to next zone via geomagnetic compass.
+R5
+RoadsTrade &amp; Connection
+TranslateNavigation
+Silk Road trade route map overlaid on floor. HUD translates merchant inscriptions in real-time (Chinese, Persian, Latin). Alexander/Qin Shi Huang/Genghis Khan archetype comparison.
+Walk the physical Silk Road path; G2 navigation guides the route. Ring tap reveals trade goods at each waypoint.
+R6
+ShipsMaritime &amp; Exploration
+TelepromptConversate
+Zheng He's treasure fleet vs. Columbus comparison. HUD shows ship dimensions overlaid on physical model. DAVID narrates the &ldquo;what if&rdquo; of Chinese maritime dominance.
+Ask DAVID: &ldquo;Why did China stop exploring?&rdquo; Ring swipe to compare fleet sizes.
+R7
+LoomTextile &amp; Industry
+DashboardTeleprompt
+Warp/weft metaphor visualised: 5 vertical webs &times; 4 perennial threats = civilisational fabric. HUD shows pattern emerging as visitor examines loom replica.
+Dashboard displays the visitor's &ldquo;civilisational fabric&rdquo; completion percentage. Midpoint progress check.
+R8
+RailNetworks &amp; Speed
+TelepromptNavigation
+Brunel's Great Western Railway timeline. HUD overlays engineering specifications on physical rail section. Zhan Tianyou's Beijing&ndash;Zhangjiakou railway as Eastern counterpart.
+Navigation guides visitor along a miniature rail track. Ring tap reveals speed records at each era.
+R9
+EnginePower &amp; Transformation
+ConversateTranslate
+Tesla vs. Edison narrative. HUD shows AC/DC current flow diagrams on physical generator model. Energy conversion equations float beside artefacts.
+Ask DAVID about modern energy infrastructure. Translate Tesla's Serbian-language notebooks in real-time.
+R10
+AAA TriadAtom, Algorithm, AI
+ConversateDashboard
+Three parallel streams: nuclear (Atom), computing (Algorithm), intelligence (AI). HUD splits into triptych view showing all three timelines simultaneously.
+Deep DAVID conversation mode: &ldquo;Is AI infrastructure?&rdquo; Dashboard shows knowledge graph connections discovered.
+R11
+OrbitSpace &amp; Satellites
+TelepromptNavigation
+Satellite constellation map overlaid on ceiling projection. HUD shows orbital mechanics as visitor stands beneath a suspended satellite model. ISS/Tiangong comparison.
+Ring tap to &ldquo;launch&rdquo; virtual satellites. Navigation guides to the final zone.
+R12
+Human NodesConsciousness &amp; Torus
+ConversateDashboardTranslate
+The Torus question: &ldquo;Can consciousness-level infrastructure achieve what COVID achieved deliberately and permanently, without catastrophe?&rdquo; Full DAVID dialogue. Final BitPoints tally.
+Open conversation with DAVID in any of 29 languages. Dashboard shows complete journey stats. Certificate generation via ring confirmation.
+V. TECHNICAL ARCHITECTURE
+Content Delivery Pipeline
+Exhibition content is served from the Infrastructure Academy platform via BLE beacon triggers. When a visitor wearing the G2 enters a relay zone, the nearest beacon transmits a zone identifier to the companion app (iOS/Android), which fetches the corresponding content package from the platform API. The content is then pushed to the G2 display via BLE 5.4. Latency target: under 500 milliseconds from zone entry to first HUD content.
+Even Hub SDK Integration
+The Even Hub SDK provides high-level APIs for custom app development. The Infrastructure Academy companion app would use the SDK to manage display content, handle beacon events, process ring inputs, and synchronise visitor progress with the platform backend. The SDK supports both iOS and Android, with demo source code available on GitHub.
+Fleet Management
+For exhibition deployment, a fleet of G2 units would be managed through a central charging station (each case supports 7 charges). A rotation of 50 units could serve approximately 200 visitors per day, assuming 2-hour average visit duration and 30-minute inter-session charging. The IP65 rating allows for easy sanitisation between visitors.
+VI. IMPLEMENTATION PHASES
+PhaseMilestoneDeliverable
+Phase 1SDK PrototypeSingle-zone demo (Relay 1: Fire) with Teleprompt narration and ring interaction. Proof of concept for BLE beacon triggering.
+Phase 2Content PipelineAll 12 relay zones content packages built and tested. DAVID narration scripts for each zone. Translation packs for top 10 languages.
+Phase 3Fleet Deployment50-unit fleet with charging infrastructure. Visitor onboarding flow (prescription fitting, tutorial). Staff training programme.
+Phase 4Analytics &amp; IterationVisitor engagement data (time per zone, quiz completion, DAVID interaction frequency). A/B testing of content formats. BitPoints integration with online platform.
+&ldquo;The Web does not just connect machines, it connects people.&rdquo; &mdash; Tim Berners-Lee. The G2 does not just display information; it connects visitors to 12,000 years of civilisation through the most intimate interface possible &mdash; the space between their eyes and the world.
+INFRASTRUCTURE ACADEMY &mdash; AN INFRASTRUCTURE ODYSSEY
+Even Realities G2 Exhibition Integration Brief | DOC-G2-INT-001
+Block 388 | 16 March 2026 | Prepared for exhibition planning
+evenrealities.com | Even Hub SDK
