@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Play — iAAi Infrastructure Games</title>
+  <style>
+    body {
+      background: #0a1628;
+      color: #fff;
+      font-family: Georgia, 'Times New Roman', serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 2rem;
+      text-align: center;
+    }
+    h1 {
+      color: #ffd700;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .subtitle {
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 2rem;
+    }
+    .game-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      max-width: 800px;
+    }
+    .game-card {
+      border: 2px solid rgba(255,215,0,0.5);
+      border-radius: 12px;
+      padding: 2rem;
+      max-width: 320px;
+      text-decoration: none;
+      color: #fff;
+      transition: all 0.3s;
+      background: rgba(26,58,92,0.3);
+    }
+    .game-card:hover {
+      border-color: #ffd700;
+      transform: translateY(-4px);
+    }
+    .game-card h2 {
+      color: #ffd700;
+      margin: 0 0 0.5rem;
+      font-size: 1.3rem;
+    }
+    .game-card .badge {
+      display: inline-block;
+      background: #2563EB;
+      color: #fff;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      margin-bottom: 1rem;
+    }
+    .game-card p {
+      color: rgba(255,255,255,0.7);
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+    .back {
+      margin-top: 2rem;
+      color: #ffd700;
+      text-decoration: none;
+    }
+    .back:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <h1>&#127918; Play iAAi</h1>
+  <p class="subtitle">Choose your entry point into infrastructure education</p>
+  
+  <div class="game-grid">
+    <a href="https://isicalcexp-bqjsukv3.manus.space" class="game-card">
+      <h2>iGO / Ghost Odyssey</h2>
+      <span class="badge">Ages 8–65+</span>
+      <p>Spin the Relay wheel, crawl through history with DAVID, or test your brain in Grey Matter. The gamified learning platform.</p>
+    </a>
+    
+    <a href="https://kmp.manus.space" class="game-card">
+      <h2>David Reality Engine</h2>
+      <span class="badge">3D Observatory</span>
+      <p>Explore 300 nodes across 5 Great Webs and 12 Civilisational Relays. Navigate infrastructure through space and time.</p>
+    </a>
+  </div>
+  
+  <a href="/" class="back">&larr; Back to Academy</a>
+</body>
+</html>
