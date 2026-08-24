@@ -17,7 +17,7 @@ The five personas exist for governance, not for hosting. Which persona you opera
 | # | Site | Subdomain | Persona | Role | Status |
 |---|------|-----------|---------|------|--------|
 | 1 | **ACADEMY** (PRIMARY) | www.infrastructure-academy.com · infra-acad-kuqzaex2.manus.space | **MAX** | The Contractor — Hardening | 200 ALIVE · 28 iCards · 0 TPs · iCard Register: PRIMARY DB |
-| 2 | **QUEST** (TRE-GLP) | realityeng-epdhlkrn.manus.space · www.twinearth.world | **DAVID** | The Checker — Quenching | 200 ALIVE · 8 iCards · 0 TPs · SAP-001 Compliance · cannot self-certify |
+| 2 | **QUEST** (TRE-GLP) | realityeng-epdhlkrn.manus.space | **DAVID** | The Checker — Quenching | 200 ALIVE · 8 iCards · 0 TPs · SAP-001 Compliance · cannot self-certify |
 | 3 | **MEMORIAL** | nigelmemorial-ucmtq9dn.manus.space | **ISAAC** | The Lead — Tempering | 200 ALIVE · 651 iCards · 35 TPs · iCard Register: MASTER DB · ALL AGENTS REPORT TO MEMORIAL |
 | 5 | **XCHANGE** | xchangeapp-adbvx9fr.manus.space (dev) | **ATLAS** | The Supplier — Forging | PENDING BUILD · 0 iCards · 0 TPs · Stripe CONFIGURED · 9 Divisions: Publishing · Media · Gaming · Hardware · Software · Equipment · Exhibition · Education · Edutainment |
 | +1 | **KANTEI** | xgrowthtrk-2a93yo5z.manus.space | **JENNY** | The Client — Kantei (+1 Observer) | 200 ALIVE · 0 iCards · 0 TPs · accepts or rejects |
