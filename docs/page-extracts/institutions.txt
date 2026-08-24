@@ -1,0 +1,474 @@
+﻿IAAI Institutions â€” The Intelligence Map
+ACADEMY
+QUEST
+XCHANGE
+MEMORIAL
+NEWS
+INFRASTRUCTURE ACADEMY BETA
+Infrastructure &bull; Infostructure &bull; The Academy of Both
+42
+Follow
+Follow
+Handshake
+HOME
+FRAMEWORK
+EXEC PR&Eacute;CIS
+RESOURCES
+DOCUMENTS
+AUTHOR
+EP.1: PERSPECTIVE
+EP.2: GUIDE
+EP.3: GAME
+START HERE
+MOBILISATION CLOCK
+OLYMPIAD
+PIONEERS
+TAXONOMY
+MASTERS
+INSTITUTIONS
+CIVILISATION CLOCK
+FOUNDERS WALL
+CHARTER
+BEHIND THE THESIS
+GLOSSARY
+VAULT
+ICUT GALLERY
+&#127968; HOME
+&#128218; START
+&#128214; READ
+&#128736; FRAMEWORK
+&#127918; PLAY
+&#127916; MOVIES
+&#128194; RESOURCES
+&#128240; PRESS
+&#9650;
+INSTITUTIONS
+The Intelligence Map &mdash; Every agency, university, UN body, professional society, NGO, tech provider, and capital body that can be called upon, challenged, or partnered with. Organised by UN Sustainable Development Goals to show alignment with global priorities.
+90
+Institutions Listed
+12
+Challenged
+3
+Engaged
+72
+Target (Not Yet)
+11
+SDG Categories
+4
+Quality Education
+26 institutions
+&#x25BC;
+UNESCO
+UN Body &bull; Education &amp; Culture
+Global education standards, World Heritage sites, infrastructure as cultural heritage. Natural partner for curriculum validation and global distribution.
+CHALLENGED
+Khan Academy
+EdTech &bull; Free Education
+Proven model for free global education at scale. Partnership could integrate infrastructure literacy into existing K-12 and university curricula.
+CHALLENGED
+MIT OpenCourseWare
+University &bull; Open Education
+World's leading open engineering education. IAAI content could complement MIT OCW civil engineering courses with gamified, narrative-driven learning. MIT R3: 88.7%
+BETA PoC
+Coursera
+EdTech &bull; Online Learning
+Distribution platform for university-level infrastructure courses. 130M+ learners. Potential channel for IAAI's guided learning modules.
+TARGET
+edX / 2U
+EdTech &bull; University Partnerships
+Harvard/MIT-founded platform. Infrastructure engineering MOOCs could be enhanced with IAAI's narrative and game layers.
+TARGET
+Imperial College London
+University &bull; Engineering
+World top-10 engineering faculty. Potential academic validation partner and Scholar recruitment ground. R3: 87.5%
+BETA PoC
+Tsinghua University (&#x6E05;&#x534E;&#x5927;&#x5B66;)
+University &bull; Engineering
+China's #1 engineering university. Critical for Chinese language block validation and Scholar recruitment. Belt &amp; Road research alignment. R3: 88.7%
+BETA PoC
+Hong Kong University (HKU)
+University &bull; Civil Engineering
+Bilingual EN/CN engineering faculty. Natural bridge between Western and Chinese infrastructure education traditions. Local to IAAI founder. R3: 87.8%
+BETA PoC
+IIT (Indian Institutes of Technology)
+University Network &bull; Engineering
+23 campuses, 1.4B population. Hindi language block anchor. India's infrastructure boom needs educated engineers who understand civilisational context. IIT Bombay (R1), IIT Madras R3: 87.5%
+BETA PoC
+Stanford University
+University &bull; Engineering &amp; Innovation
+Silicon Valley's engineering school. Potential for AI-education research collaboration and tech-infrastructure crossover. R3: 88.7%
+BETA PoC
+National University of Singapore (NUS)
+University &bull; Engineering
+Asia's top university. Multilingual campus (EN/CN/Malay). Smart city infrastructure research leader. R3: 88.7%
+BETA PoC
+KAIST (Korea)
+University &bull; Technology
+Korea's MIT. Korean language block anchor. Smart infrastructure and AI research leader. R3: 87.5%
+BETA PoC
+University of Tokyo (&#x6771;&#x5927;)
+University &bull; Engineering
+Japan's premier engineering school. Japanese language block anchor. Earthquake engineering and resilient infrastructure expertise. R3: 87.5%
+BETA PoC
+TU Delft
+University &bull; Civil Engineering
+Europe's leading civil engineering faculty. Water management expertise (Dutch tradition). Potential Scholar recruitment. R3: 87.5%
+BETA PoC
+University of Cambridge
+University &bull; Engineering
+800-year institution. World-leading engineering department. Newton's university. UK language block anchor alongside Imperial. R1: 76, R3: 87.5%
+BETA PoC
+University College London (UCL)
+University &bull; Engineering &amp; Built Environment
+London's global university. Bartlett School of Environment, Energy &amp; Resources. Strong built-environment and infrastructure research. R3: 87.5%
+BETA PoC
+University of Nottingham
+University &bull; Civil Engineering
+Strong civil engineering faculty with global campuses (UK, China, Malaysia). Multi-campus model aligns with IAAI's cross-regional approach. R1: 65
+BETA PoC
+University of Edinburgh
+University &bull; Engineering &amp; Informatics
+Scotland's ancient university. AI and informatics research powerhouse. Engineering school with strong infrastructure and sustainability focus. R3: 86.0%
+BETA PoC
+Georgia Institute of Technology
+University &bull; Engineering &amp; Technology
+Top-5 US engineering school. Strong civil and environmental engineering. Atlanta hub for infrastructure innovation. R3: 87.3%
+BETA PoC
+UC Berkeley
+University &bull; Civil &amp; Environmental Engineering
+World #1 in civil engineering (QS). Earthquake engineering and resilient infrastructure research leader. US language block anchor. R1: 72
+BETA PoC
+Tongji University (&#x540C;&#x6D4E;&#x5927;&#x5B66;)
+University &bull; Civil Engineering
+China's #1 civil engineering university. Founded 1907. German-Chinese engineering tradition. Bridge and tunnel engineering expertise. R3: 87.5%
+BETA PoC
+Zhejiang University (&#x6D59;&#x6C5F;&#x5927;&#x5B66;)
+University &bull; Engineering
+China's comprehensive research powerhouse. Strong civil engineering and architecture. Hangzhou innovation corridor. R3: 88.3%
+BETA PoC
+Peking University (&#x5317;&#x4EAC;&#x5927;&#x5B66; / PKU)
+University &bull; Engineering &amp; Sciences
+China's oldest modern university. Interdisciplinary strength across engineering, philosophy, and urban studies. Beijing anchor. R3: 88.2%
+BETA PoC
+Khalifa University (Abu Dhabi)
+University &bull; Engineering &amp; Technology
+UAE's top research university. &ldquo;A nation literally building itself from desert needs the civilisational perspective that iAAi provides.&rdquo; Arabic language block anchor. R1: 80
+BETA PoC
+Qatar University (Doha)
+University &bull; Engineering
+Qatar's national university. $200B+ World Cup infrastructure investment shaped the curriculum &mdash; iAAi provides the historical mirror. Arabic language block. R1: 72
+BETA PoC
+King Fahd University of Petroleum &amp; Minerals (KFUPM)
+University &bull; Engineering &amp; Petroleum
+Saudi Arabia's premier technical university. Sits at the nexus of petroleum infrastructure and Vision 2030. Arabic language block anchor. R1: 76
+BETA PoC
+9
+Industry, Innovation &amp; Infrastructure
+16 institutions
+&#x25BC;
+ASCE (American Society of Civil Engineers)
+Professional Body &bull; Civil Engineering
+150,000+ members. Publishes the US Infrastructure Report Card (D+ grade). Natural ally for infrastructure literacy advocacy.
+CHALLENGED
+ICE (Institution of Civil Engineers)
+Professional Body &bull; UK
+Founded 1818. 95,000 members worldwide. Chartered Engineer pathway. IAAI founder is MICE. Natural validation partner.
+CHALLENGED
+HKIE (Hong Kong Institution of Engineers)
+Professional Body &bull; Hong Kong
+IAAI founder is MHKIE. Local professional body. Bridge between Western and Chinese engineering traditions.
+ENGAGED
+World Bank &mdash; Infrastructure
+Multilateral &bull; Development Finance
+$30B+ annual infrastructure lending. Their "Infrastructure Gap" reports align with IAAI's thesis. Potential funding and distribution partner.
+CHALLENGED
+Asian Development Bank (ADB)
+Multilateral &bull; Development Finance
+$40B annual operations. Asia-Pacific infrastructure focus. HQ in Manila. Natural partner for Asian language blocks.
+TARGET
+Asian Infrastructure Investment Bank (AIIB)
+Multilateral &bull; Infrastructure Finance
+China-initiated, 109 members. $50B+ capital. Dedicated infrastructure bank. Perfect alignment with IAAI's mission.
+TARGET
+FIDIC (International Federation of Consulting Engineers)
+Professional Body &bull; Global
+Global standard for engineering contracts. 100+ member associations. Infrastructure project governance expertise.
+TARGET
+RICS (Royal Institution of Chartered Surveyors)
+Professional Body &bull; Global
+134,000 members. Infrastructure valuation and project management standards. Built environment expertise.
+TARGET
+IStructE (Institution of Structural Engineers)
+Professional Body &bull; UK/Global
+Structural engineering expertise. Bridge, building, and infrastructure design standards.
+TARGET
+CSCE (Chinese Society of Civil Engineering)
+Professional Body &bull; China
+China's premier civil engineering body. Essential for Chinese language block and BRI infrastructure content validation.
+TARGET
+NASA
+Government Agency &bull; Space Infrastructure
+Space infrastructure as the ultimate relay. Artemis programme, lunar base construction. The torus endpoint of IAAI's 12 relays.
+CHALLENGED
+ESA (European Space Agency)
+Government Agency &bull; Space
+European space infrastructure. Moon Village concept. Multilingual organisation aligned with IAAI's language blocks.
+TARGET
+CNSA (China National Space Administration)
+Government Agency &bull; Space
+Tiangong space station, lunar programme. Chinese space infrastructure as modern relay continuation.
+TARGET
+Royal Society
+Learned Society &bull; UK
+Founded 1660. The world's oldest scientific society. Infrastructure science validation and historical credibility.
+CHALLENGED
+National Geographic Society
+Media &amp; Education &bull; Global
+Global reach, visual storytelling expertise. Infrastructure as exploration narrative. Potential media and distribution partner.
+CHALLENGED
+Smithsonian Institution
+Museum &amp; Research &bull; USA
+World's largest museum complex. Infrastructure history archives. Potential exhibition and content partner.
+TARGET
+6
+Clean Water &amp; Sanitation
+7 institutions
+&#x25BC;
+Uticome (Utico)
+Utility &bull; UAE &bull; Water &amp; Power
+UAE utilities sector â€” water desalination, wastewater treatment, power generation. Founder Richard Menenzes confirmed as iAAi Observer (Block 391). Direct alignment with Water-Power Nexus and UN SDG 6 &amp; 7.
+OBSERVER
+UN-Water
+UN Body &bull; Water Coordination
+Coordinates UN water and sanitation efforts. IAAI Relay 2 (Water &amp; Irrigation) directly maps to SDG 6.
+TARGET
+World Water Council
+International Organisation &bull; Water Policy
+Organises World Water Forum. 400+ member organisations. Water infrastructure advocacy.
+TARGET
+IWA (International Water Association)
+Professional Body &bull; Water
+10,000+ members. Water and wastewater engineering standards. Technical validation for water relay content.
+TARGET
+Deltares
+Research Institute &bull; Netherlands
+World-leading water and subsurface infrastructure research. Dutch water management expertise spanning 800 years.
+TARGET
+Three Gorges Corporation
+State Enterprise &bull; China
+Operates the world's largest hydroelectric dam. Modern continuation of Yu the Great's water management legacy.
+TARGET
+Thames Water / Severn Trent
+Utility &bull; UK
+Victorian-era water infrastructure still in use. Living case study for infrastructure lifecycle and renewal.
+TARGET
+7
+Affordable &amp; Clean Energy
+7 institutions
+&#x25BC;
+Uticome (Utico Group, UAE)
+Private Utility &bull; Water &amp; Power
+UAE independent water and power producer. Water-Power Nexus operator. Dual-SDG alignment (SDG 6 + SDG 7). Richard Menenzes, Founder &mdash; confirmed Observer.
+OBSERVER
+IRENA (International Renewable Energy Agency)
+Intergovernmental &bull; Energy
+167 member countries. Renewable energy infrastructure transition data and policy.
+TARGET
+IEA (International Energy Agency)
+Intergovernmental &bull; Energy
+Global energy data and analysis. Infrastructure energy demand forecasting. Net zero pathway modelling.
+TARGET
+State Grid Corporation of China
+State Enterprise &bull; Energy
+World's largest utility company. Ultra-high-voltage transmission grid. Modern electrical infrastructure at continental scale.
+TARGET
+National Grid (UK)
+Utility &bull; Energy
+UK/US electricity and gas transmission. Grid modernisation and smart infrastructure case study.
+TARGET
+Tesla Energy / SpaceX
+Private &bull; Energy &amp; Space
+Battery infrastructure, solar, Starlink satellite network. Modern infrastructure disruption at scale.
+TARGET
+ITER (International Thermonuclear Reactor)
+Research &bull; Fusion Energy
+35-nation fusion energy project. The ultimate energy infrastructure â€” if it works, it changes everything.
+TARGET
+11
+Sustainable Cities &amp; Communities
+8 institutions
+&#x25BC;
+UN-Habitat
+UN Body &bull; Urban Development
+Urban infrastructure planning and sustainable cities. 68% of world population will be urban by 2050.
+TARGET
+C40 Cities
+City Network &bull; Climate
+97 cities representing 700M+ people. Urban infrastructure and climate action network.
+TARGET
+Arup
+Consultancy &bull; Engineering
+Global engineering consultancy. Sydney Opera House, CCTV Beijing. Infrastructure design thought leadership.
+TARGET
+AECOM
+Consultancy &bull; Infrastructure
+World's largest infrastructure consultancy. 50,000+ employees. Global project portfolio.
+TARGET
+China Railway Group (CREC)
+State Enterprise &bull; Construction
+World's largest construction company by revenue. BRI infrastructure builder. Modern relay continuation.
+TARGET
+Bechtel
+Private &bull; Construction
+Hoover Dam, Channel Tunnel, Hong Kong Airport. 125 years of megaproject infrastructure.
+TARGET
+Singapore HDB
+Government Agency &bull; Housing
+Houses 80% of Singapore's population. The world's most successful public housing infrastructure programme.
+TARGET
+Hong Kong MTR Corporation
+Transit &bull; Rail Infrastructure
+99.9% on-time rate. Rail + property development model. World benchmark for transit infrastructure.
+TARGET
+13
+Climate Action
+5 institutions
+&#x25BC;
+IPCC (Intergovernmental Panel on Climate Change)
+UN Body &bull; Climate Science
+Climate infrastructure impact assessment. Infrastructure adaptation and resilience data source.
+TARGET
+UNEP (UN Environment Programme)
+UN Body &bull; Environment
+Environmental infrastructure standards. Green building and sustainable construction guidelines.
+TARGET
+World Green Building Council
+NGO &bull; Sustainable Building
+70+ Green Building Councils worldwide. Sustainable infrastructure certification and standards.
+TARGET
+Global Infrastructure Hub (GI Hub)
+G20 Initiative &bull; Infrastructure
+G20-established. Infrastructure data, benchmarking, and investment facilitation. $15 trillion infrastructure gap analysis.
+TARGET
+Climate Bonds Initiative
+NGO &bull; Green Finance
+$3.5 trillion green bond market. Infrastructure climate finance standards and certification.
+TARGET
+17
+Partnerships for the Goals
+6 institutions
+&#x25BC;
+UNDP (UN Development Programme)
+UN Body &bull; Development
+170 countries. Infrastructure development coordination. Potential distribution and validation partner.
+TARGET
+World Economic Forum
+International Organisation &bull; Policy
+Davos. Infrastructure investment advocacy. "Fourth Industrial Revolution" narrative aligns with IAAI's digital relay.
+TARGET
+Bill &amp; Melinda Gates Foundation
+Foundation &bull; Global Development
+$75B endowment. Water, sanitation, and health infrastructure in developing nations. Potential major backer.
+TARGET
+Rockefeller Foundation
+Foundation &bull; Resilience
+100 Resilient Cities initiative. Infrastructure resilience and urban development funding.
+TARGET
+Bloomberg Philanthropies
+Foundation &bull; Cities &amp; Data
+What Works Cities initiative. Data-driven urban infrastructure improvement. Potential data and analytics partner.
+TARGET
+Open Society Foundations
+Foundation &bull; Education
+Global education and governance funding. Open education advocacy aligned with IAAI's free-access model.
+TARGET
+Technology Providers &amp; Platforms
+Meta (Facebook)
+Tech &bull; Social &amp; AI
+3B+ users. Distribution platform. AI research (LLaMA). Potential for infrastructure education at social media scale.
+TARGET
+NVIDIA
+Tech &bull; AI &amp; Computing
+AI infrastructure hardware. Digital twin technology for infrastructure simulation. Jensen Huang's "English as programming" vision.
+TARGET
+X (Twitter) / xAI
+Tech &bull; Social &amp; AI
+Global real-time communication platform. Grok AI. Elon Musk's infrastructure vision (Boring Company, SpaceX, Tesla).
+TARGET
+Google / DeepMind
+Tech &bull; AI &amp; Education
+Google for Education, YouTube Education. AI for infrastructure optimisation. Translation APIs for 8 language blocks.
+TARGET
+Microsoft
+Tech &bull; AI &amp; Cloud
+Azure infrastructure. LinkedIn Learning distribution. Minecraft Education (gamified learning precedent).
+TARGET
+Manus AI
+Tech &bull; AI Platform
+Built the IAAI platform. DAVID (Digital Augmented Visual Intelligence Display)'s home. The AI that writes alongside the author and guides every player. First digital outrider.
+ENGAGED
+Autodesk
+Tech &bull; Design Software
+AutoCAD, Revit, BIM 360. Infrastructure design tools used by every civil engineer. Potential software partnership.
+TARGET
+Bentley Systems
+Tech &bull; Infrastructure Software
+Infrastructure digital twins. ProjectWise, MicroStation. Dedicated infrastructure software company.
+TARGET
+Unity / Unreal Engine
+Tech &bull; Game Engines
+Game engine technology for infrastructure visualisation and gamified learning. Digital twin rendering.
+TARGET
+Tencent (&#x817E;&#x8BAF;)
+Tech &bull; Gaming &amp; Social
+World's largest gaming company. WeChat (1.3B users). Chinese distribution platform. Game publishing partnership potential.
+TARGET
+Capital &amp; Finance Bodies
+BlackRock
+Asset Manager &bull; Infrastructure
+$10T+ AUM. Global Infrastructure Partners acquisition. Largest infrastructure investor in the world.
+TARGET
+Brookfield Asset Management
+Asset Manager &bull; Infrastructure
+$900B+ AUM. Dedicated infrastructure fund. Toll roads, ports, utilities, data centres.
+TARGET
+Macquarie Group
+Investment Bank &bull; Infrastructure
+"Millionaires' Factory." World's largest infrastructure asset manager. Toll roads, airports, utilities.
+TARGET
+GIC (Singapore Sovereign Wealth Fund)
+Sovereign Wealth &bull; Infrastructure
+$800B+ AUM. Major global infrastructure investor. Singapore government's long-term investment vehicle.
+TARGET
+CIC (China Investment Corporation)
+Sovereign Wealth &bull; China
+$1.2T+ AUM. China's sovereign wealth fund. BRI infrastructure investment alignment.
+TARGET
+IFC (International Finance Corporation)
+World Bank Group &bull; Private Sector
+Private sector arm of World Bank. Infrastructure project finance in developing nations.
+TARGET
+Coming Soon
+&#x23F0; Civilisation Clock
+12,000 years compressed to 24 hours. Humanity is at 11:59:47. A Doomsday Clock for infrastructure literacy &mdash; how much time do we have to educate 1 billion people?
+Coming Soon
+&#x1F3C6; Leaderboard
+When The Reality Engine goes public beta &mdash; real-time player rankings across all 12 relays, all 4 modes, all 8 language blocks.
+Coming Soon
+&#x1F916; DAVID Portal
+Standalone entry point for DAVID &mdash; the AI guide. Ask any infrastructure question across 12,000 years. The Living Spy returns with intelligence.
+Coming Soon
+&#x1F30D; Market Matrix
+8-language market data dashboard. Population, GDP, infrastructure spend, education metrics, digital penetration &mdash; per language block.
+Coming Soon
+&#x1F3F3; Founders Wall
+When Pioneer sign-ups go live &mdash; every name displayed. The first wave who believed before the world knew.
+Coming Soon
+&#x1F4B0; Funding Tracker
+Real-time funding progress. Seed round, grants, institutional backing &mdash; transparent to all. Financiers love numbers.
+Coming Soon
+IAAI &bull; Infrastructure Academy AI &bull; The Intelligence Map &bull; 87 Institutions Across 11 SDG Categories &bull; CC BY-NC-SA 4.0
+&#9650;
+X
+LinkedIn
+WhatsApp
