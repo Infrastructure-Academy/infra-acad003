@@ -1,0 +1,887 @@
+{
+  "source": "drizzle/schema.ts",
+  "tableCount": 19,
+  "tables": [
+    {
+      "exportName": "users",
+      "tableName": "users",
+      "sourceLine": 7,
+      "columns": [
+        {
+          "name": "id",
+          "definition": "int(\"id\").autoincrement().primaryKey()"
+        },
+        {
+          "name": "openId",
+          "definition": "varchar(\"openId\", { length: 64 }).notNull().unique()"
+        },
+        {
+          "name": "name",
+          "definition": "text(\"name\")"
+        },
+        {
+          "name": "email",
+          "definition": "varchar(\"email\", { length: 320 })"
+        },
+        {
+          "name": "loginMethod",
+          "definition": "varchar(\"loginMethod\", { length: 64 })"
+        },
+        {
+          "name": "role",
+          "definition": "mysqlEnum(\"role\", [\"user\", \"admin\"]).default(\"user\").notNull()"
+        },
+        {
+          "name": "stripeCustomerId",
+          "definition": "varchar(\"stripeCustomerId\", { length: 128 })"
+        },
+        {
+          "name": "stripeSubscriptionId",
+          "definition": "varchar(\"stripeSubscriptionId\", { length: 128 })"
+        },
+        {
+          "name": "createdAt",
+          "definition": "timestamp(\"createdAt\").defaultNow().notNull()"
+        },
+        {
+          "name": "updatedAt",
+          "definition": "timestamp(\"updatedAt\").defaultNow().onUpdateNow().notNull()"
+        },
+        {
+          "name": "lastSignedIn",
+          "definition": "timestamp(\"lastSignedIn\").defaultNow().notNull()"
+        }
+      ]
+    },
+    {
+      "exportName": "expenses",
+      "tableName": "expenses",
+      "sourceLine": 29,
+      "columns": [
+        {
+          "name": "id",
+          "definition": "int(\"id\").autoincrement().primaryKey()"
+        },
+        {
+          "name": "userId",
+          "definition": "int(\"userId\").notNull()"
+        },
+        {
+          "name": "category",
+          "definition": "varchar(\"category\", { length: 64 }).notNull()"
+        },
+        {
+          "name": "description",
+          "definition": "text(\"description\")"
+        },
+        {
+          "name": "amount",
+          "definition": "int(\"amount\").notNull()"
+        },
+        {
+          "name": "currency",
+          "definition": "varchar(\"currency\", { length: 3 }).default(\"USD\").notNull()"
+        },
+        {
+          "name": "date",
+          "definition": "timestamp(\"date\").defaultNow().notNull()"
+        },
+        {
+          "name": "createdAt",
+          "definition": "timestamp(\"createdAt\").defaultNow().notNull()"
+        }
+      ]
+    },
+    {
+      "exportName": "tectonEntries",
+      "tableName": "tecton_entries",
+      "sourceLine": 52,
+      "columns": [
+        {
+          "name": "id",
+          "definition": "int(\"id\").autoincrement().primaryKey()"
+        },
+        {
+          "name": "term",
+          "definition": "varchar(\"term\", { length: 256 }).notNull().unique()"
+        },
+        {
+          "name": "partOfSpeech",
+          "definition": "json(\"partOfSpeech\").$type<string[]>().notNull()"
+        },
+        {
+          "name": "morphology",
+          "definition": "text(\"morphology\").notNull()"
+        },
+        {
+          "name": "roots",
+          "definition": "json(\"roots\").$type<string[]>().notNull()"
+        },
+        {
+          "name": "etymology",
+          "definition": "text(\"etymology\").notNull()"
+        },
+        {
+          "name": "hice",
+          "definition": "varchar(\"hice\", { length: 1 }).notNull()"
+        },
+        {
+          "name": "conjugation",
+          "definition": "text(\"conjugation\").notNull()"
+        },
+        {
+          "name": "whyThisWord",
+          "definition": "text(\"whyThisWord\").notNull()"
+        },
+        {
+          "name": "sortOrder",
+          "definition": "int(\"sortOrder\").default(0).notNull()"
+        },
+        {
+          "name": "block",
+          "definition": "int(\"block\")"
+        },
+        {
+          "name": "createdAt",
+          "definition": "timestamp(\"createdAt\").defaultNow().notNull()"
+        },
+        {
+          "name": "updatedAt",
+          "definition": "timestamp(\"updatedAt\").defaultNow().onUpdateNow().notNull()"
+        }
+      ]
+    },
+    {
+      "exportName": "tectonMeta",
+      "tableName": "tecton_meta",
+      "sourceLine": 86,
+      "columns": [
+        {
+          "name": "id",
+          "definition": "int(\"id\").autoincrement().primaryKey()"
+        },
+        {
+          "name": "key",
+          "definition": "varchar(\"key\", { length: 64 }).notNull().unique()"
+        },
+        {
+          "name": "value",
+          "definition": "json(\"value\").$type<any>().notNull()"
+        },
+        {
+          "name": "updatedAt",
+          "definition": "timestamp(\"updatedAt\").defaultNow().onUpdateNow().notNull()"
+        }
+      ]
+    },
+    {
+      "exportName": "dcsnNodes",
+      "tableName": "dcsn_nodes",
+      "sourceLine": 104,
+      "columns": [
+        {
+          "name": "id",
+          "definition": "int(\"id\").autoincrement().primaryKey()"
+        },
+        {
+          "name": "nodeNumber",
+          "definition": "varchar(\"nodeNumber\", { length: 6 }).notNull().unique()"
+        },
+        {
+          "name": "name",
+          "definition": "varchar(\"name\", { length: 256 }).notNull()"
+        },
+        {
+          "name": "designation",
+          "definition": "text(\"designation\")"
+        },
+        {
+          "name": "cell",
+          "definition": "varchar(\"cell\", { length: 256 })"
+        },
+        {
+          "name": "recruitedBy",
+          "definition": "varchar(\"recruitedBy\", { length: 6 })"
+        },
+        {
+          "name": "relation",
+          "definition": "varchar(\"relation\", { length: 256 })"
+        },
+        {
+          "name": "status",
+          "definition": "mysqlEnum(\"status\", [\"ACTIVATED\", \"PENDING\", \"DORMANT\", \"CHALLENGE_ISSUED\"]).default(\"ACTIVATED\").notNull()"
+        },
+        {
+          "name": "icardUrl",
+          "definition": "text(\"icardUrl\")"
+        },
+        {
+          "name": "icardVersion",
+          "definition": "varchar(\"icardVersion\", { length: 16 })"
+        },
+        {
+          "name": "activationBlock",
+          "definition": "int(\"activationBlock\")"
+        },
+        {
+          "name": "activationDay",
+          "definition": "int(\"activationDay\")"
+        },
+        {
+          "name": "activationDate",
+          "definition": "timestamp(\"activationDate\")"
+        },
+        {
+          "name": "intelType",
+          "definition": "varchar(\"intelType\", { length: 64 })"
+        },
+        {
+          "name": "accessLevel",
+          "definition": "varchar(\"accessLevel\", { length: 32 })"
+        },
+        {
+          "name": "spiderLevel",
+          "definition": "varchar(\"spiderLevel\", { length: 64 })"
+        },
+        {
+          "name": "metadata",
+          "definition": "json(\"metadata\").$type<Record<string, string>>()"
+        },
+        {
+          "name": "createdAt",
+          "definition": "timestamp(\"createdAt\").defaultNow().notNull()"
+        },
+        {
+          "name": "updatedAt",
+          "definition": "timestamp(\"updatedAt\").defaultNow().onUpdateNow().notNull()"
+        }
+      ]
+    },
+    {
+      "exportName": "dcsnCardVersions",
+      "tableName": "dcsn_card_versions",
+      "sourceLine": 152,
+      "columns": [
+        {
+          "name": "id",
+          "definition": "int(\"id\").autoincrement().primaryKey()"
+        },
+        {
+          "name": "nodeNumber",
+          "definition": "varchar(\"nodeNumber\", { length: 6 }).notNull()"
+        },
+        {
+          "name": "name",
+          "definition": "varchar(\"name\", { length: 256 }).notNull()"
+        },
+        {
+          "name": "cardVersion",
+          "definition": "varchar(\"cardVersion\", { length: 32 }).notNull()"
+        },
+        {
+          "name": "cdnUrl",
+          "definition": "text(\"cdnUrl\")"
+        },
+        {
+          "name": "blockNumber",
+          "definition": "int(\"blockNumber\")"
+        },
+        {
+          "name": "createdBy",
+          "definition": "varchar(\"createdBy\", { length: 64 }).notNull()"
+        },
+        {
+          "name": "cardData",
+          "definition": "json(\"cardData\").$type<Record<string, string>>()"
+        },
+        {
+          "name": "changeNote",
+          "definition": "text(\"changeNote\")"
+        },
+        {
+          "name": "createdAt",
+          "definition": "timestamp(\"createdAt\").defaultNow().notNull()"
+        }
+      ]
+    },
+    {
+      "exportName": "reviewRounds",
+      "tableName": "review_rounds",
+      "sourceLine": 183,
+      "columns": [
+        {
+          "name": "id",
+          "definition": "int(\"id\").autoincrement().primaryKey()"
+        },
+        {
+          "name": "roundCode",
+          "definition": "varchar(\"roundCode\", { length: 16 }).notNull().unique()"
+        },
+        {
+          "name": "roundName",
+          "definition": "varchar(\"roundName\", { length: 256 }).notNull()"
+        },
+        {
+          "name": "roundDate",
+          "definition": "varchar(\"roundDate\", { length: 32 }).notNull()"
+        },
+        {
+          "name": "methodology",
+          "definition": "text(\"methodology\")"
+        },
+        {
+          "name": "panelSize",
+          "definition": "int(\"panelSize\")"
+        },
+        {
+          "name": "overallScore",
+          "definition": "varchar(\"overallScore\", { length: 32 })"
+        },
+        {
+          "name": "classification",
+          "definition": "varchar(\"classification\", { length: 128 })"
+        },
+        {
+          "name": "verdict",
+          "definition": "varchar(\"verdict\", { length: 64 })"
+        },
+        {
+          "name": "ukBanda",
+          "definition": "varchar(\"ukBanda\", { length: 64 })"
+        },
+        {
+          "name": "usGpa",
+          "definition": "varchar(\"usGpa\", { length: 16 })"
+        },
+        {
+          "name": "indiaCgpa",
+          "definition": "varchar(\"indiaCgpa\", { length: 16 })"
+        },
+        {
+          "name": "apacGrade",
+          "definition": "varchar(\"apacGrade\", { length: 16 })"
+        },
+        {
+          "name": "chinaGrade",
+          "definition": "varchar(\"chinaGrade\", { length: 32 })"
+        },
+        {
+          "name": "block",
+          "definition": "int(\"block\")"
+        },
+        {
+          "name": "createdAt",
+          "definition": "timestamp(\"createdAt\").defaultNow().notNull()"
+        }
+      ]
+    },
+    {
+      "exportName": "reviewUniversityScores",
+      "tableName": "review_university_scores",
+      "sourceLine": 220,
+      "columns": [
+        {
+          "name": "id",
+          "definition": "int(\"id\").autoincrement().primaryKey()"
+        },
+        {
+          "name": "roundCode",
+          "definition": "varchar(\"roundCode\", { length: 16 }).notNull()"
+        },
+        {
+          "name": "university",
+          "definition": "varchar(\"university\", { length: 256 }).notNull()"
+        },
+        {
+          "name": "region",
+          "definition": "varchar(\"region\", { length: 64 }).notNull()"
+        },
+        {
+          "name": "overallScore",
+          "definition": "varchar(\"overallScore\", { length: 32 })"
+        },
+        {
+          "name": "grade",
+          "definition": "varchar(\"grade\", { length: 64 })"
+        },
+        {
+          "name": "verdict",
+          "definition": "varchar(\"verdict\", { length: 32 })"
+        },
+        {
+          "name": "categoryScores",
+          "definition": "json(\"categoryScores\").$type<Record<string, number>>()"
+        },
+        {
+          "name": "ukBanda",
+          "definition": "varchar(\"ukBanda\", { length: 64 })"
+        },
+        {
+          "name": "usGpa",
+          "definition": "varchar(\"usGpa\", { length: 16 })"
+        },
+        {
+          "name": "indiaCgpa",
+          "definition": "varchar(\"indiaCgpa\", { length: 16 })"
+        },
+        {
+          "name": "apacGrade",
+          "definition": "varchar(\"apacGrade\", { length: 16 })"
+        },
+        {
+          "name": "chinaGrade",
+          "definition": "varchar(\"chinaGrade\", { length: 32 })"
+        },
+        {
+          "name": "goldenQuote",
+          "definition": "text(\"goldenQuote\")"
+        },
+        {
+          "name": "createdAt",
+          "definition": "timestamp(\"createdAt\").defaultNow().notNull()"
+        }
+      ]
+    },
+    {
+      "exportName": "reviewCategoryScores",
+      "tableName": "review_category_scores",
+      "sourceLine": 255,
+      "columns": [
+        {
+          "name": "id",
+          "definition": "int(\"id\").autoincrement().primaryKey()"
+        },
+        {
+          "name": "roundCode",
+          "definition": "varchar(\"roundCode\", { length: 16 }).notNull()"
+        },
+        {
+          "name": "category",
+          "definition": "varchar(\"category\", { length: 128 }).notNull()"
+        },
+        {
+          "name": "score",
+          "definition": "varchar(\"score\", { length: 32 }).notNull()"
+        },
+        {
+          "name": "delta",
+          "definition": "varchar(\"delta\", { length: 32 })"
+        },
+        {
+          "name": "notes",
+          "definition": "text(\"notes\")"
+        },
+        {
+          "name": "createdAt",
+          "definition": "timestamp(\"createdAt\").defaultNow().notNull()"
+        }
+      ]
+    },
+    {
+      "exportName": "reviewPackageScores",
+      "tableName": "review_package_scores",
+      "sourceLine": 274,
+      "columns": [
+        {
+          "name": "id",
+          "definition": "int(\"id\").autoincrement().primaryKey()"
+        },
+        {
+          "name": "roundCode",
+          "definition": "varchar(\"roundCode\", { length: 16 }).notNull()"
+        },
+        {
+          "name": "packageName",
+          "definition": "varchar(\"packageName\", { length: 256 }).notNull()"
+        },
+        {
+          "name": "category",
+          "definition": "varchar(\"category\", { length: 256 }).notNull()"
+        },
+        {
+          "name": "score",
+          "definition": "varchar(\"score\", { length: 32 }).notNull()"
+        },
+        {
+          "name": "notes",
+          "definition": "text(\"notes\")"
+        },
+        {
+          "name": "createdAt",
+          "definition": "timestamp(\"createdAt\").defaultNow().notNull()"
+        }
+      ]
+    },
+    {
+      "exportName": "anchorLinks",
+      "tableName": "anchor_links",
+      "sourceLine": 297,
+      "columns": [
+        {
+          "name": "id",
+          "definition": "int(\"id\").autoincrement().primaryKey()"
+        },
+        {
+          "name": "key",
+          "definition": "varchar(\"key\", { length: 128 }).notNull().unique()"
+        },
+        {
+          "name": "title",
+          "definition": "text(\"title\").notNull()"
+        },
+        {
+          "name": "url",
+          "definition": "text(\"url\").notNull()"
+        },
+        {
+          "name": "site",
+          "definition": "varchar(\"site\", { length: 256 }).notNull()"
+        },
+        {
+          "name": "description",
+          "definition": "text(\"description\")"
+        },
+        {
+          "name": "verifiedAt",
+          "definition": "timestamp(\"verifiedAt\")"
+        },
+        {
+          "name": "createdAt",
+          "definition": "timestamp(\"createdAt\").defaultNow().notNull()"
+        }
+      ]
+    },
+    {
+      "exportName": "perspectiveScores",
+      "tableName": "perspective_scores",
+      "sourceLine": 322,
+      "columns": [
+        {
+          "name": "id",
+          "definition": "int(\"id\").autoincrement().primaryKey()"
+        },
+        {
+          "name": "roundCode",
+          "definition": "varchar(\"roundCode\", { length: 16 }).notNull()"
+        },
+        {
+          "name": "role",
+          "definition": "varchar(\"role\", { length: 128 }).notNull()"
+        },
+        {
+          "name": "score",
+          "definition": "varchar(\"score\", { length: 16 }).notNull()"
+        },
+        {
+          "name": "notes",
+          "definition": "text(\"notes\")"
+        },
+        {
+          "name": "createdAt",
+          "definition": "timestamp(\"createdAt\").defaultNow().notNull()"
+        }
+      ]
+    },
+    {
+      "exportName": "chatMessages",
+      "tableName": "chat_messages",
+      "sourceLine": 343,
+      "columns": [
+        {
+          "name": "id",
+          "definition": "int(\"id\").autoincrement().primaryKey()"
+        },
+        {
+          "name": "userId",
+          "definition": "int(\"userId\").notNull()"
+        },
+        {
+          "name": "displayName",
+          "definition": "varchar(\"displayName\", { length: 256 }).notNull()"
+        },
+        {
+          "name": "content",
+          "definition": "text(\"content\").notNull()"
+        },
+        {
+          "name": "messageType",
+          "definition": "mysqlEnum(\"messageType\", [\"message\", \"signal\", \"system\"]).default(\"message\").notNull()"
+        },
+        {
+          "name": "replyToId",
+          "definition": "int(\"replyToId\")"
+        },
+        {
+          "name": "createdAt",
+          "definition": "timestamp(\"createdAt\").defaultNow().notNull()"
+        }
+      ]
+    },
+    {
+      "exportName": "chatLikes",
+      "tableName": "chat_likes",
+      "sourceLine": 365,
+      "columns": [
+        {
+          "name": "id",
+          "definition": "int(\"id\").autoincrement().primaryKey()"
+        },
+        {
+          "name": "messageId",
+          "definition": "int(\"messageId\").notNull()"
+        },
+        {
+          "name": "userId",
+          "definition": "int(\"userId\").notNull()"
+        },
+        {
+          "name": "reactionType",
+          "definition": "mysqlEnum(\"reactionType\", [\"fire\", \"brain\", \"diamond\", \"lightning\"]).default(\"fire\").notNull()"
+        },
+        {
+          "name": "createdAt",
+          "definition": "timestamp(\"createdAt\").defaultNow().notNull()"
+        }
+      ]
+    },
+    {
+      "exportName": "channelFollowers",
+      "tableName": "channel_followers",
+      "sourceLine": 384,
+      "columns": [
+        {
+          "name": "id",
+          "definition": "int(\"id\").autoincrement().primaryKey()"
+        },
+        {
+          "name": "userId",
+          "definition": "int(\"userId\").notNull()"
+        },
+        {
+          "name": "displayName",
+          "definition": "varchar(\"displayName\", { length: 256 }).notNull()"
+        },
+        {
+          "name": "notifyOnSignal",
+          "definition": "int(\"notifyOnSignal\").default(1).notNull()"
+        },
+        {
+          "name": "notifyOnReply",
+          "definition": "int(\"notifyOnReply\").default(1).notNull()"
+        },
+        {
+          "name": "createdAt",
+          "definition": "timestamp(\"createdAt\").defaultNow().notNull()"
+        }
+      ]
+    },
+    {
+      "exportName": "pinnedMessages",
+      "tableName": "pinned_messages",
+      "sourceLine": 403,
+      "columns": [
+        {
+          "name": "id",
+          "definition": "int(\"id\").autoincrement().primaryKey()"
+        },
+        {
+          "name": "messageId",
+          "definition": "int(\"messageId\").notNull()"
+        },
+        {
+          "name": "pinnedBy",
+          "definition": "int(\"pinnedBy\").notNull()"
+        },
+        {
+          "name": "createdAt",
+          "definition": "timestamp(\"createdAt\").defaultNow().notNull()"
+        }
+      ]
+    },
+    {
+      "exportName": "icardRegister",
+      "tableName": "icard_register",
+      "sourceLine": 427,
+      "columns": [
+        {
+          "name": "id",
+          "definition": "int(\"id\").autoincrement().primaryKey()"
+        },
+        {
+          "name": "cardId",
+          "definition": "varchar(\"cardId\", { length: 64 }).notNull().unique()"
+        },
+        {
+          "name": "blockNumber",
+          "definition": "int(\"blockNumber\").notNull()"
+        },
+        {
+          "name": "title",
+          "definition": "varchar(\"title\", { length: 256 }).notNull()"
+        },
+        {
+          "name": "category",
+          "definition": "mysqlEnum(\"category\", ["
+        },
+        {
+          "name": "cdnUrl",
+          "definition": "text(\"cdnUrl\").notNull()"
+        },
+        {
+          "name": "thumbnailUrl",
+          "definition": "text(\"thumbnailUrl\")"
+        },
+        {
+          "name": "pinnedTo",
+          "definition": "varchar(\"pinnedTo\", { length: 128 })"
+        },
+        {
+          "name": "createdBy",
+          "definition": "varchar(\"createdBy\", { length: 128 }).notNull()"
+        },
+        {
+          "name": "syncedToAcad",
+          "definition": "int(\"syncedToAcad\").default(0).notNull()"
+        },
+        {
+          "name": "acadCardId",
+          "definition": "varchar(\"acadCardId\", { length: 64 })"
+        },
+        {
+          "name": "description",
+          "definition": "text(\"description\")"
+        },
+        {
+          "name": "createdAt",
+          "definition": "timestamp(\"createdAt\").defaultNow().notNull()"
+        }
+      ]
+    },
+    {
+      "exportName": "translationSuggestions",
+      "tableName": "translation_suggestions",
+      "sourceLine": 480,
+      "columns": [
+        {
+          "name": "id",
+          "definition": "int(\"id\").autoincrement().primaryKey()"
+        },
+        {
+          "name": "userId",
+          "definition": "int(\"userId\").notNull()"
+        },
+        {
+          "name": "displayName",
+          "definition": "varchar(\"displayName\", { length: 256 }).notNull()"
+        },
+        {
+          "name": "langCode",
+          "definition": "varchar(\"langCode\", { length: 8 }).notNull()"
+        },
+        {
+          "name": "translationKey",
+          "definition": "varchar(\"translationKey\", { length: 256 }).notNull()"
+        },
+        {
+          "name": "originalValue",
+          "definition": "text(\"originalValue\")"
+        },
+        {
+          "name": "suggestedValue",
+          "definition": "text(\"suggestedValue\").notNull()"
+        },
+        {
+          "name": "status",
+          "definition": "mysqlEnum(\"status\", [\"pending\", \"approved\", \"rejected\"]).default(\"pending\").notNull()"
+        },
+        {
+          "name": "reviewNote",
+          "definition": "text(\"reviewNote\")"
+        },
+        {
+          "name": "reviewedBy",
+          "definition": "int(\"reviewedBy\")"
+        },
+        {
+          "name": "reviewedAt",
+          "definition": "timestamp(\"reviewedAt\")"
+        },
+        {
+          "name": "createdAt",
+          "definition": "timestamp(\"createdAt\").defaultNow().notNull()"
+        }
+      ]
+    },
+    {
+      "exportName": "turingPapers",
+      "tableName": "turing_papers",
+      "sourceLine": 521,
+      "columns": [
+        {
+          "name": "id",
+          "definition": "int(\"id\").autoincrement().primaryKey()"
+        },
+        {
+          "name": "paperId",
+          "definition": "varchar(\"paperId\", { length: 64 }).notNull().unique()"
+        },
+        {
+          "name": "title",
+          "definition": "varchar(\"title\", { length: 256 }).notNull()"
+        },
+        {
+          "name": "author",
+          "definition": "varchar(\"author\", { length: 256 }).notNull()"
+        },
+        {
+          "name": "abstract",
+          "definition": "text(\"abstract\")"
+        },
+        {
+          "name": "publicationDate",
+          "definition": "timestamp(\"publicationDate\")"
+        },
+        {
+          "name": "category",
+          "definition": "varchar(\"category\", { length: 64 }).notNull()"
+        },
+        {
+          "name": "status",
+          "definition": "mysqlEnum(\"status\", [\"REGISTERED\", \"VERIFIED\", \"ARCHIVED\"]).default(\"REGISTERED\").notNull()"
+        },
+        {
+          "name": "documentUrl",
+          "definition": "text(\"documentUrl\")"
+        },
+        {
+          "name": "documentHash",
+          "definition": "varchar(\"documentHash\", { length: 256 })"
+        },
+        {
+          "name": "registeredBy",
+          "definition": "varchar(\"registeredBy\", { length: 128 }).notNull()"
+        },
+        {
+          "name": "blockNumber",
+          "definition": "int(\"blockNumber\")"
+        },
+        {
+          "name": "verificationNote",
+          "definition": "text(\"verificationNote\")"
+        },
+        {
+          "name": "verifiedBy",
+          "definition": "varchar(\"verifiedBy\", { length: 128 })"
+        },
+        {
+          "name": "verifiedAt",
+          "definition": "timestamp(\"verifiedAt\")"
+        },
+        {
+          "name": "createdAt",
+          "definition": "timestamp(\"createdAt\").defaultNow().notNull()"
+        }
+      ]
+    }
+  ]
+}
