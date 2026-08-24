@@ -1,0 +1,77 @@
+COUNTDOWN ICARD V5 — EXACT SPECIFICATION FOR FEYNMAN ADDITION
+Generated: 13 June 2026 | For Police Verification
+
+=== ORIGINAL TIMELINE (MUST PRESERVE EXACTLY) ===
+
+1. 1880-1914: MAP FULL
+   Icon: Gears (R9 ENGINE)
+   Description: Global Territorial Expansion Complete. Every landmass claimed. The gears change — from LAND to MAN.
+
+2. 1943: ABRAHAM MASLOW
+   Icon: Pyramid (R10 AAA)
+   Description: A Theory of Human Motivation. Mapped individual survival — could not deliver it at scale
+
+3. 1945: GEORGE PÓLYA
+   Icon: Hexagon (R10 AAA)
+   Description: How to Solve It. Mapped how humans think — could not enforce the method
+
+4. 1950: ALAN TURING
+   Icon: Brain (R10 AAA)
+   Description: Computing Machinery and Intelligence. Asked if machines can think — could not yet build one
+
+5. 1967: EDWARD DE BONO
+   Icon: Spiral galaxy (R11 ORBIT)
+   Description: Lateral Thinking. Escape the groove — could not enforce lateral shift at scale
+
+6. [NEW] 1985: RICHARD FEYNMAN ← ADD HERE BETWEEN DE BONO AND HAWKING
+   Icon: Brain symbol
+   Description: Predicted non-human intelligence and reward-loop failure
+   Relay: R11→R12 TRANSITION
+   
+7. 1988: STEPHEN HAWKING
+   Icon: Spiral galaxy (R11 ORBIT)
+   Description: A Brief History of Time. Mapped the universe — could not map civilisation
+
+8. 1989: TIM BERNERS-LEE
+   Icon: Globe (R11 ORBIT)
+   Description: Information Management: A Proposal. Built the connectivity layer — the web that enables Human Nodes
+
+9. 2020: R12 BEGINS
+   Icon: Human nodes network (R12 HUMAN NODES)
+   Description: Human Nodes — the relay that finally enables delivery
+
+10. 2026: NIGEL T. DEARDEN CEng
+    Icon: Compass (R12 HUMAN NODES)
+    Description: COUNTERFORCE — Parts, Measures & Balance: EU, R-Risk — Survival Paper & Toolkit. The Codification.
+
+=== DESIGN REQUIREMENTS ===
+- Gold circles for year dates on left spine
+- Connecting vertical chain line
+- Icons aligned to right of each entry
+- Relay designations on far right (R9, R10, R11, R12)
+- Title at top: "12,000 YEARS = 24 HOURS / MIDNIGHT = 2050 CE"
+- Subtitle: "The impact horizon — where the extinction trajectory becomes irreversible"
+- Red text: "2026 = 23:57 — 3 MINUTES REMAINING"
+- Right sidebar: "COMPRESSION RATIO 4.6.7" in gold
+
+=== CRITICAL CONSTRAINTS ===
+1. NO DATE ALTERATIONS: Maslow must be 1943 (NOT 1967), Pólya must be 1945 (NOT 1967)
+2. FEYNMAN INSERTION: Add 1985 entry ONLY between de Bono (1967) and Hawking (1988)
+3. NO NEW CONTENT: Do not add, remove, or modify any other entries
+4. PRESERVE DESIGN: Maintain exact visual style, fonts, colors, spacing
+5. HISTORICAL ACCURACY: All dates must match verified historical records
+
+=== VERIFICATION CHECKLIST ===
+☐ Maslow: 1943 (verified)
+☐ Pólya: 1945 (verified)
+☐ Turing: 1950 (verified)
+☐ de Bono: 1967 (verified)
+☐ Feynman: 1985 (NEW - verified from Copilot research)
+☐ Hawking: 1988 (verified)
+☐ Berners-Lee: 1989 (verified)
+☐ All other elements preserved exactly
+☐ Design style matches original
+☐ No fabrication or alterations
+
+=== GENERATION INSTRUCTION ===
+"Regenerate the Countdown iCard v5 exactly as the original, with ONE CHANGE ONLY: Insert Richard Feynman (1985) entry between Edward de Bono (1967) and Stephen Hawking (1988). Use exact dates as specified. Preserve all other content, design, and styling identically. Do not add, remove, or modify any other elements."

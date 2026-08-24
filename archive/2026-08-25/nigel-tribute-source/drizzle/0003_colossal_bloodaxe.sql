@@ -1,0 +1,20 @@
+CREATE TABLE `dcsn_nodes` (
+	`id` int AUTO_INCREMENT NOT NULL,
+	`nodeNumber` varchar(6) NOT NULL,
+	`name` varchar(256) NOT NULL,
+	`designation` text,
+	`cell` varchar(256),
+	`recruitedBy` varchar(6),
+	`relation` varchar(256),
+	`status` enum('ACTIVATED','PENDING','DORMANT') NOT NULL DEFAULT 'ACTIVATED',
+	`icardUrl` text,
+	`icardVersion` varchar(16),
+	`activationBlock` int,
+	`activationDay` int,
+	`activationDate` timestamp,
+	`metadata` json,
+	`createdAt` timestamp NOT NULL DEFAULT (now()),
+	`updatedAt` timestamp NOT NULL DEFAULT (now()) ON UPDATE CURRENT_TIMESTAMP,
+	CONSTRAINT `dcsn_nodes_id` PRIMARY KEY(`id`),
+	CONSTRAINT `dcsn_nodes_nodeNumber_unique` UNIQUE(`nodeNumber`)
+);

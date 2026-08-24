@@ -1,0 +1,114 @@
+/* ═══════════════════════════════════════════
+   MOBILE OPTIMIZATION — Day 129 Block 358
+   Johan flagged "too much scrolling on phone"
+   
+   Strategy:
+   1. Reduce vertical padding on mobile (py-24 → py-12)
+   2. Reduce section margins and spacing
+   3. Tighten table cells on mobile
+   4. Reduce hero section height on mobile
+   5. Collapse grid layouts to single column earlier
+   ═══════════════════════════════════════════ */
+
+/* Mobile hero sections — reduce from 100vh to auto with min-height */
+@media (max-width: 639px) {
+  /* Reduce section padding on mobile */
+  section {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+
+  /* Hero sections — reduce height on mobile */
+  section.relative.h-screen {
+    height: auto !important;
+    min-height: 70vh !important;
+  }
+
+  /* Tighten table cells on mobile */
+  table td,
+  table th {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+    font-size: 0.75rem !important;
+  }
+
+  /* Reduce heading sizes further on mobile */
+  h1 {
+    font-size: 2rem !important;
+    letter-spacing: 0.05em !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
+
+  /* Reduce paragraph line-height on mobile for less scrolling */
+  p {
+    line-height: 1.7 !important;
+  }
+
+  /* Reduce monospace/code block spacing */
+  .font-mono {
+    line-height: 2 !important;
+    font-size: 0.8rem !important;
+  }
+
+  /* Footer padding reduction */
+  footer {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+
+  /* Navigation cards grid — single column on mobile */
+  .grid.grid-cols-1.sm\:grid-cols-2 {
+    gap: 0.75rem !important;
+  }
+
+  /* Reduce image heights on mobile */
+  .aspect-\[3\/4\] {
+    aspect-ratio: 4/3 !important;
+  }
+
+  /* Tighter spacing for mobile card grids */
+  .grid {
+    gap: 0.75rem !important;
+  }
+
+  /* Reduce border/divider spacing */
+  .border-t,
+  .border-b {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Tablet optimization — moderate reduction */
+@media (min-width: 640px) and (max-width: 1023px) {
+  section {
+    padding-top: 4rem !important;
+    padding-bottom: 4rem !important;
+  }
+
+  table td,
+  table th {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}
+
+/* Horizontal scroll prevention */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Table horizontal scroll wrapper */
+@media (max-width: 639px) {
+  table {
+    display: block;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+}

@@ -1,0 +1,64 @@
+BLOCK 615 FEYNMAN NODE ICARD — EXACT SPECIFICATION
+Generated: 13 June 2026 | For Police Verification
+
+=== FEYNMAN NODE CONCEPT ===
+The Feynman Node represents the R11→R12 TRANSITION point in the iAAi Federation architecture. It bridges:
+- Diagnosis (Tier 2: Maslow, Pólya, Turing, de Bono, Hawking, Berners-Lee)
+- Application (Tier 3: The 12 Compositions)
+- Codification (Tier 5: The Applied relay)
+
+=== DESIGN REQUIREMENTS ===
+- Central node: Richard Feynman portrait (1918-1988)
+- Surrounding elements: 6 diagnostic nodes (Maslow, Pólya, Turing, de Bono, Hawking, Berners-Lee)
+- Connection lines: Gold/amber lines connecting all nodes
+- Center text: "RICHARD FEYNMAN 1985 — The Hinge Scholar"
+- Subtitle: "Predicted non-human intelligence and reward-loop failure"
+- Left sidebar: "R11→R12 TRANSITION"
+- Right sidebar: "The Feynman Node — Bridging Diagnosis to Application"
+- Background: Navy/dark blue with gold accents
+- Title: "BLOCK 615 — THE FEYNMAN NODE"
+- Footer: "The bridge between knowing and doing"
+
+=== NODE ARCHITECTURE ===
+Central Node (Feynman):
+- Portrait: Richard Feynman (1918-1988)
+- Year: 1985
+- Contribution: "Predicted non-human intelligence and reward-loop failure"
+- Role: Hinge Scholar
+
+Surrounding Diagnostic Nodes (6):
+1. Abraham Maslow (1943) — Pyramid icon
+2. George Pólya (1945) — Hexagon icon
+3. Alan Turing (1950) — Brain icon
+4. Edward de Bono (1967) — Spiral icon
+5. Stephen Hawking (1988) — Spiral icon
+6. Tim Berners-Lee (1989) — Globe icon
+
+Connection Pattern:
+- All 6 nodes connect to Feynman via gold lines
+- Feynman node is central hub
+- Relay designation: R11→R12 TRANSITION
+
+=== CRITICAL CONSTRAINTS ===
+1. NO FABRICATION: Use only verified historical information
+2. NO FICTIONAL FRAMEWORKS: Do not invent frameworks or relationships
+3. NO UNAUTHORIZED ADDITIONS: Only include specified elements
+4. FEYNMAN DATES: 1918-1988 (life span), 1985 (prediction year)
+5. HISTORICAL ACCURACY: All dates and names must be verified
+6. DESIGN CONSISTENCY: Match existing iCard aesthetic (gold on navy)
+
+=== VERIFICATION CHECKLIST ===
+☐ Feynman portrait: Richard Feynman (1918-1988)
+☐ Feynman year: 1985 (prediction year)
+☐ Feynman description: "Predicted non-human intelligence and reward-loop failure"
+☐ 6 diagnostic nodes present: Maslow, Pólya, Turing, de Bono, Hawking, Berners-Lee
+☐ Connection lines: Gold/amber connecting all nodes to Feynman
+☐ Central node designation: "The Hinge Scholar"
+☐ Relay designation: R11→R12 TRANSITION
+☐ Title: "BLOCK 615 — THE FEYNMAN NODE"
+☐ Footer: "The bridge between knowing and doing"
+☐ Design style: Gold on navy, matching existing iCards
+☐ No fabrication or unauthorized content
+
+=== GENERATION INSTRUCTION ===
+"Generate the Block 615 Feynman Node iCard with the following specifications: Central node is Richard Feynman (1918-1988), with 1985 as the prediction year and description 'Predicted non-human intelligence and reward-loop failure'. Surround with 6 diagnostic nodes (Maslow 1943 pyramid, Pólya 1945 hexagon, Turing 1950 brain, de Bono 1967 spiral, Hawking 1988 spiral, Berners-Lee 1989 globe). Connect all nodes to Feynman with gold lines. Title: 'BLOCK 615 — THE FEYNMAN NODE'. Subtitle: 'The Hinge Scholar — Bridging Diagnosis to Application'. Left sidebar: 'R11→R12 TRANSITION'. Right sidebar: 'The Feynman Node — Bridging Diagnosis to Application'. Footer: 'The bridge between knowing and doing'. Design: Gold text and lines on navy background, matching existing iCard aesthetic. No fabrication or unauthorized additions."
