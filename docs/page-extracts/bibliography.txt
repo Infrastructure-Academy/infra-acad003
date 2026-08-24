@@ -1,0 +1,96 @@
+﻿Bibliography â€” Infrastructure Academy
+ACADEMY
+QUEST
+XCHANGE
+MEMORIAL
+NEWS
+INFRASTRUCTURE ACADEMY
+HOME
+FRAMEWORK
+DOCUMENTS
+PLAY
+&#127968; HOME
+&#128218; START
+&#128214; READ
+&#128736; FRAMEWORK
+&#127918; PLAY
+&#127916; MOVIES
+&#128194; RESOURCES
+&#128240; PRESS
+&#9650;
+BIBLIOGRAPHY
+Consolidated References &middot; Academic Rigour
+Every claim traceable. Every figure verified. Every source accessible.
+7
+Unique Sources
+3
+Peer-Reviewed Journals
+2
+Industry Reports
+2
+Institutional Surveys
+I. PEER-REVIEWED ACADEMIC PAPERS
+[1] HONG 2025
+Hong, Y. (2025). &ldquo;Has higher education become more interdisciplinary? A longitudinal analysis of syllabi using natural language processing.&rdquo;
+Humanities and Social Sciences Communications, Nature, 589(7840), 123&ndash;125.
+Finding: The share of engineering-relevant interdisciplinary topics fell from 60.2% in 2004 to 46.2% in 2019.
+DOI: 10.1057/s41599-025-06126-7
+Cited in: Landing Page, Turing Paper, 4Cs Framework
+[5] LEIFLER &amp; DAHLIN 2020
+Leifler, O. &amp; Dahlin, J. (2020). &ldquo;Curriculum integration of sustainability in engineering education &mdash; a national study of programme director perspectives.&rdquo;
+International Journal of Sustainability in Higher Education (IJSHE), 21(5), 877&ndash;912.
+Finding: Only 4&ndash;6 of 10 sustainability learning objectives were implemented across Swedish engineering programmes.
+DOI: 10.1108/IJSHE-09-2019-0286
+Cited in: Landing Page, Turing Paper
+[6] FLYVBJERG 2014
+Flyvbjerg, B. (2014). &ldquo;What You Should Know About Megaprojects and Why: An Overview.&rdquo;
+Project Management Journal (PMJ), 45(2), 6&ndash;19. Cited by 2,883.
+Finding: &ldquo;91.5% of projects go over budget, over schedule, or both.&rdquo;
+DOI: 10.1002/pmj.21409
+Cited in: Landing Page, Turing Paper, 4Cs Framework
+II. INSTITUTIONAL SURVEYS
+[2] HULT / NACE 2025
+Hult International Business School / National Association of Colleges and Employers (NACE). (2025). &ldquo;Student and Employer Perspectives on Workforce Readiness.&rdquo;
+Finding: 55&ndash;83% of graduates report feeling unprepared for practical application in their field.
+Hult Survey &nbsp;|&nbsp;
+NACE Report (PDF)
+Cited in: Landing Page, Turing Paper
+[3] AAC&amp;U 2023
+American Association of Colleges and Universities (AAC&amp;U). (2023). &ldquo;The Career-Ready Graduate: What Employers Say About the Difference College Makes.&rdquo;
+Finding: Only ~50% of employers rated recent graduates as &ldquo;very well prepared&rdquo; in critical thinking and applied learning.
+AAC&amp;U Newsroom &nbsp;|&nbsp;
+Full Report (PDF)
+Cited in: Landing Page, Turing Paper
+III. INDUSTRY &amp; INSTITUTIONAL REPORTS
+[4a] IBEC 2026
+Ibec &mdash; Irish Business and Employers Confederation. (2026). &ldquo;Infrastructure Skills for the Future: Closing the Gap.&rdquo;
+Finding: 82% of employers report a significant skills gap between graduate competencies and project-readiness requirements.
+Ibec Website
+Cited in: Landing Page, Turing Paper
+[4b] MCKINSEY 2022
+McKinsey &amp; Company. (2022). &ldquo;The Infrastructure Moment: Closing the Skills Gap.&rdquo;
+Finding: 87% of organisations report experiencing or expecting skills gaps in infrastructure delivery.
+McKinsey Insights
+Cited in: Landing Page, Turing Paper
+[7] CoST / WORLD BANK 2025
+Construction Sector Transparency Initiative (CoST) / World Bank. (2025). &ldquo;Infrastructure Transparency and Accountability.&rdquo;
+Finding: Transparency and accountability frameworks reduce cost overruns by up to 30% in participating countries.
+CoST Website
+Cited in: Turing Paper
+IV. CITATION POLICY
+Academic Rigour Statement: Infrastructure Academy is committed to full academic rigour. Every statistical claim, percentage figure, and factual assertion on this platform is backed by a verifiable source. Where peer-reviewed journal articles exist, DOIs are provided for direct access. Where institutional reports or surveys are cited, direct URLs to the publishing organisation are given.
+Numbering Convention: References are numbered [1]&ndash;[7] across the Academy. The same reference number refers to the same source on every page. Reference [8] in the Turing Paper is a duplicate of [5] (Leifler &amp; Dahlin 2020) used for a different finding from the same study.
+Reporting Errors: If you identify an unsourced claim, a broken DOI link, or a factual error, please contact the Academy author. Corrections will be applied within 24 hours and documented in the site changelog.
+V. PAGES WITH CITATIONS
+The following pages contain inline citations referencing this bibliography:
+&#128196; Landing Page (site.html) &mdash; Challenge section with 6 cited statistics + references box
+&#128220; Turing Paper ICUT &mdash; Full thesis outcome with 8 references + DOI links
+&#128736; 4Cs Framework &mdash; Challenge infographic with citation superscripts
+&#128218; Library &mdash; Challenge infographic with citation superscripts
+BETA / Proof of Concept &mdash; All data represents pre-launch test metrics.
+&ldquo;Every claim traceable. Every figure verified.&rdquo;
+&copy; 2026 Infrastructure Academy. All rights reserved. Preserving knowledge for eternity.
+Episode 1: Earthbound Foundations | Episode 2: Reality Engines &mdash; The Gray Arena | Episode 3: Stewardship &amp; Renewal &mdash; The Cosmic Scale
+X
+LinkedIn
+WhatsApp

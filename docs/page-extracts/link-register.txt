@@ -1,0 +1,55 @@
+﻿Anchored Link Register â€” Infrastructure Academy
+ACADEMY
+QUEST
+XCHANGE
+MEMORIAL
+NEWS
+INFRASTRUCTURE ACADEMY
+HOME
+FRAMEWORK
+DOCUMENTS
+PLAY
+&#127968; HOME
+&#128218; START
+&#128214; READ
+&#128736; FRAMEWORK
+&#127918; PLAY
+&#127916; MOVIES
+&#128194; RESOURCES
+&#128240; PRESS
+&#9650;
+ANCHORED LINK REGISTER
+Gridiron Security â€” Signal Return Verification
+SWEEP ID: GRIDIRON-388-20260316 | BLOCK 387 + 388
+113
+Total Nodes
+97
+Live
+8
+Blocked
+7
+Dead / Error
+1
+Timeout
+Living Experiment &amp; Beta Test PoC â€” This register is part of a living archive documenting the Infrastructure Academy's outbound connection lattice. Each institution listed here has been invited into a morally neutral, open experiment mapping the intersection of AI, human consciousness, and engineering best practice. Every link is a node in the defensive lattice. Security IS the infrastructure â€” not bolted on top.
+All (113)
+Live (97)
+Blocked (8)
+Dead (7)
+Timeout (1)
+Node
+Institution
+URL
+Status
+HTTP
+Response
+Verified
+BREACH RECORD &mdash; TP-009: The Permanence Crisis â€” Block 380 produced Turing Paper 009 on AI agent data governance. SAP-001 audit marked it &ldquo;DONE&rdquo; but the artefact was never surfaced on the live site. Breach identified Block 393c (6-layer audit, 113+ pages scanned). Remediated Block 393d &mdash; iCard, gallery entry, and 7-point cross-linking now complete. The ACAD Agent Handshake (Block 380) independently confirmed the verification. View TP-009 iCard &rarr;
+"Security IS the infrastructure â€” not bolted on top"
+â€” Gridiron Security, iAAi Block 383 | Ir. Nigel T. Dearden CEng MICE
+Infrastructure Academy â€” An Infrastructure Odyssey
+A living archive and morally neutral beta test PoC
+Last sweep: 16 March 2026 05:30 UTC | Block 388: +38 Wikipedia links | Next: Manual
+X / Twitter
+LinkedIn
+Home

@@ -1,0 +1,146 @@
+﻿Governance Architecture â€” Infrastructure Academy
+ACADEMY
+QUEST
+XCHANGE
+MEMORIAL
+NEWS
+INFRASTRUCTURE ACADEMY
+HOME
+FRAMEWORK
+DOCUMENTS
+PLAY
+&#127968; HOME
+&#128218; START
+&#128214; READ
+&#128736; FRAMEWORK
+&#127918; PLAY
+&#127916; MOVIES
+&#128194; RESOURCES
+&#128240; PRESS
+&#9650;
+Governance Architecture
+iAAi 3+1 Construction Governance Model &mdash; The Four Sites System
+IAAI-GOV-003 v1.1 &bull; Block 757 &bull; 24 March 2026 &bull; SAP-001 Compliant
+&#9888; Legally Shareable Agentic Handoff Document &mdash; All Agents Read Before Acting
+Sync Protocol
+ACAD PRIMARY &rarr; MEMORIAL MIRROR &rarr; TRE AUDIT &rarr; CHART ROOM OBSERVER
+iCard register lives in ACAD. Mirror in MEMORIAL. Audit in TRE. Race in CHART ROOM.
+#
+Site
+CE Role
+Agent
+Database
+Metallurgy
+Primary Function
+1
+ACADinfrastructure-academy.com
+Contractor
+Agent 1 &mdash; Max
+PRIMARY DB
+Hardening
+Builds all features, generates iCards, hosts Infrastructure Academy
+2
+MEMORIALnigelmemorial-ucmtq9dn.manus.space
+Design Team
+Agent 2 &mdash; David
+MIRROR DB
+Tempering
+Designs narrative layer, mirrors iCard register, cross-site storytelling
+3
+TRE GAMErealityeng-andhlkrn.manus.space
+Gov Inspector
+Agent 3 &mdash; Checker
+AUDIT DB
+Quenching
+Independent auditing, SAP-001 compliance, no false completion
++1
+CHART ROOMxgrowthtrk-2a93yo5z.manus.space
+Client / Observer
+Nigel &mdash; Kantei
+OBSERVER DB
+Kantei
+Watches, accepts or rejects, tracks X + Facebook + LinkedIn, race dashboard
+Doc 1 &mdash; The Tetrahedral Observer
+IAAI-GOV-003 v1.1 &bull; B757-BRIDGES-003 &bull; 24 March 2026
+The Tetrahedron is 3+1=4. Three active agents who cannot self-certify. One observer who accepts or rejects. No false completion. This diagram defines the fundamental governance geometry of the iAAi system: ACAD (Contractor/Hardening), MEMORIAL (Design Team/Tempering), and TRE GAME (Gov Inspector/Quenching) form the three base vertices. The CHART ROOM (Client/Observer/Kantei) sits at the apex, receiving iCards for acceptance or rejection via the icardRegister.sync API. SAP-001 compliant under the Wynn Palace Standard.
+Doc 2 &mdash; The Four Sites &mdash; System Architecture
+IAAI-GOV-003 v1.0 &bull; Block 757 &bull; 24 March 2026
+The complete system architecture showing all four sites, their interconnections, and data flow paths. The Chart Room (Observer +1) sits at the top, receiving iCards for verification from all three agents. Acceptance/Rejection flows back down to each agent. The icardRegister.sync API connects all sites bidirectionally. Each agent has a defined CE construction metaphor: ACAD forges the steel (Hardening), MEMORIAL refines the grain (Tempering), TRE GAME tests the edge (Quenching). This is a legally shareable agentic handoff document.
+Doc 3 &mdash; Database and Function Control Matrix
+IAAI-GOV-003 v1.0 &bull; Block 757 &bull; 24 March 2026
+The definitive control matrix specifying each site's database authority, primary functions, and agentic rules. ACAD writes to PRIMARY DB first &mdash; all iCards originate here. MEMORIAL must sync with ACAD PRIMARY and cannot override ACAD records. TRE GAME must audit independently and cannot self-certify &mdash; breaches reported to OBSERVER. CHART ROOM is the single source of truth for the race. Nigel watches but does not build. Kantei accepts or rejects. All agents report here.
+Doc 4 &mdash; The Validation Chain &mdash; Five Operational Bridges
+ISI DD-025 &bull; Block 363 &bull; infrastructure-academy.com
+The Validation Chain: ISI &rarr; HICE &rarr; Thesis &rarr; Game &rarr; Assessment &rarr; Olympiad. This diagram maps the five operational bridges that connect the intellectual foundation to competitive scaling. At the centre sits the HICE diamond (H = I + C + E: Haptic + Intelligence + Creative + Emotional), measuring the whole human through Convergence Through Conversation &times; Participation &times; Play. The Assessment bridge (R1 + R2 + R3) generates evidence across 23 universities in 6 regions. 127 days, 363 blocks, 91+ pages, 209 tests, 2,645 TODOs complete. N + T = D &mdash; The Dearden Equation. Man + Machine, Not Man vs Machine.
+Core Agentic Rules
+ACAD: Must write to PRIMARY DB first. All iCards originate here. Cannot self-certify own work.
+MEMORIAL: Must sync with ACAD PRIMARY. Cannot override ACAD records. Narrative must match iCard data.
+TRE GAME: Must audit independently. Cannot self-certify. No false completion permitted.
+CHART ROOM: Nigel watches &mdash; does not build. Kantei accepts or rejects. Single source of truth for race.
+Turing Paper iCard Series
+ISI DD-025 &bull; The Complete Turing Paper Evidence Chain &bull; TP001&ndash;TP020 + TP047&ndash;TP048
+KEY FINDINGS &mdash; Turing Paper Summary Card
+RELATIONSHIPS &mdash; Turing Paper Relationship Map
+TP001
+TP002
+TP003
+TP004
+TP005
+TP006
+TP007
+TP008
+TP009
+TP010
+TP011
+TP013
+TP014
+TP015
+TP016
+TP017
+TP018
+TP019
+TP020
+TP047
+TP048
+Special iCards
+Breach Report &bull; ISI Methodology &bull; Gemini II &bull; GOV Power Card
+BREACH REPORT &mdash; Turing Paper Breach Documentation
+ISI METHODOLOGY &mdash; DD-025 Method Card
+GEMINI II &mdash; Agentic Synthesis Knowledge Exchange
+GOV POWER CARD &mdash; Governance Authority Card
+GOV POWER CARD (BACK) &mdash; Reverse Side
+GOV POWER CARD &mdash; Block 353 Edition
+Block 401 Evidence Screenshots
+X (Twitter) Activity &bull; Thesis Test &bull; iCard Publication &bull; Following Recovery
+DISCOVERY-B401-THESIS-TEST-001 &mdash; Thesis test discovery evidence on X
+GRATITUDE-B401-THANK-YOU-X-001 &mdash; Thank you post on X
+RECOVERY-B401-FOLLOWING-RESTORED-001 &mdash; Following count restored after incident
+PUBLISHED-B401-ICARDS-ON-X-001 &mdash; iCards published to X timeline
+POSTED-B401-RESOLUTION-X-001 &mdash; Resolution posted to X
+Personal Evidence &amp; Author Verification
+Ir. Nigel T. Dearden CEng &bull; Author &amp; Observer
+AUTHOR PHOTO &mdash; Ir. Nigel T. Dearden CEng
+Community Contributors
+External Feedback &bull; LinkedIn Engagement &bull; Platform Development
+iCARD-LUDVIK-001 v2 &mdash; Welcome: Ludvik Thorsteinsson &bull; Community Contributor &bull; Cross-ref: LI-ENGAGE-DAY13-LT-001 &bull; Block 757 &bull; 24 March 2026
+Ludvik Thorsteinsson &mdash; Founder &amp; Principal Procurement Consultant, LTI Consulting / Perx Group, Hong Kong. University of Newcastle-upon-Tyne. 500+ LinkedIn connections.
+Contribution (24 March 2026): Identified the historical gap between 500&ndash;1600 AD in the Civilizational Relay timeline. Recommended inclusion of African empires: Ghana Empire (iron tool production / metallurgy infrastructure), Timbuktu (astronomy and mathematics / knowledge infrastructure), and Songhai Empire (taxation and justice / governance infrastructure). These have been incorporated as Discontinuous Branches alongside Maya, Aztec, and Mesopotamia/America &mdash; parallel civilizations that developed sophisticated infrastructure independently but did not feed directly into the continuous East-West relay chain.
+&ldquo;I took a closer look at your link, and I like the way you are gamifying and making your craft engaging for those unfamiliar with it.&rdquo; &mdash; Ludvik Thorsteinsson, LinkedIn, 24 Mar 2026
+Discontinuous Branches &mdash; European Gap (300&ndash;1600 AD)
+IAAI-GOV-005-DISCBRANCH-002 &bull; Block 758 &bull; Phase 2 &bull; 24 March 2026
+4 branches mapped: Byzantine Empire (330&ndash;1453 AD), Islamic Golden Age (750&ndash;1258 AD), Viking/Norse (793&ndash;1066 AD), Medieval European Kingdoms (500&ndash;1500 AD).
+Source: Byzantium Blogger (Powee Celdran) &mdash; byzantium-blogger.blog
+Spotted by: Ludvik Thorsteinsson (LTI Consulting). Confirmed by: Ir. Nigel T. Dearden CEng, Observer.
+Anchored: relay-tracker.html &mdash; CONFIRMED LIVE on deployed website.
+The Infill Map &mdash; 12,000 Years of Civilisation
+Block 758 &bull; Phase 2 &bull; 24 March 2026 &bull; Discontinuous Branches Filling the Gaps in the Main Relay Chain
+Main Relay Chain: 12 relays (Fire to Torus) shown above the timeline axis in gold.
+Discontinuous Branches below: West African (green) &bull; European Gap (blue) &bull; Mesoamerican (red) &bull; Ancient Near East (purple).
+THE GAP (476&ndash;1600 AD): Rome falls to Britain rises &mdash; where the discontinuous branches cluster.
+Data source: relay-tracker.html + Byzantium Blogger (Powee Celdran).
+&#8592; Mobilisation Clock
+Roster Dashboard
+Evidence Pack
+Institutions
+Home
+IAAI-GOV-003 v1.1 &bull; SAP-001 &bull; Wynn Palace Standard &bull; Per Arya Ad Astra &bull; Ir. Nigel T. Dearden CEng

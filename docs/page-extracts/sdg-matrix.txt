@@ -1,0 +1,54 @@
+﻿SDG Alignment Matrix â€” Infrastructure Academy
+ACADEMY
+QUEST
+XCHANGE
+MEMORIAL
+NEWS
+INFRASTRUCTURE ACADEMY
+HOME
+FRAMEWORK
+DOCUMENTS
+PLAY
+&#127968; HOME
+&#128218; START
+&#128214; READ
+&#128736; FRAMEWORK
+&#127918; PLAY
+&#127916; MOVIES
+&#128194; RESOURCES
+&#128240; PRESS
+&#9650;
+SDG ALIGNMENT MATRIX
+17 UN Sustainable Development Goals &times; 12 Civilisational Relays
+www.infrastructure-academy.com/pages/sdg-matrix.html
+&larr; Back to Home &nbsp;|&nbsp;
+FEW Nexus &nbsp;|&nbsp;
+Institutions Map
+17UN SDGs
+12Relays
+0Primary Links
+0Secondary Links
+0%SDG Coverage
+Primary alignment (direct)
+Secondary alignment (indirect)
+No significant link
+Hover cells for details &bull; Click headers to highlight
+How to Read the Matrix
+Rows represent the 12 civilisational relays of the iAAi framework, from Relay 1 (Fire) through Relay 12 (Human Nodes). Columns represent the 17 UN Sustainable Development Goals. Each cell indicates whether a relay has a primary (direct, operational) or secondary (indirect, enabling) relationship with that SDG.
+The matrix reveals that infrastructure is not a single-SDG concern. Every relay touches multiple goals, and every goal requires multiple infrastructure systems. This cross-cutting nature is why the iAAi framework treats infrastructure as a unified field rather than isolated disciplines.
+Key Nexus Points
+The densest cluster appears around SDGs 6, 7, 9, and 11 &mdash; Clean Water, Affordable Energy, Industry &amp; Innovation, and Sustainable Cities. These four goals collectively depend on 10 of the 12 relays, confirming that urban infrastructure is the primary delivery mechanism for sustainable development.
+The Food-Energy-Water (FEW) Nexus (SDGs 2+6+7) is visible as a horizontal band across Relays 2, 3, and 8 &mdash; Tree, River, and Engine. See the dedicated FEW Nexus case study for the full analysis.
+Related Pages
+&#127754; FEW Nexus
+&#127759; Institutions Map
+&#127924; iCard Gallery
+&#128220; Block Summary
+&#127760; UN SDG Portal
+N&#8321; (ALAN/Nigel) + N&#8322; (DAVID/Manus) | Infrastructure Academy | SDG Alignment &mdash; Block 392
+SDG framework: United Nations (2015). Relay-SDG mapping: iAAi analytical framework (2026).
+&times;
+Chapter Summary
+SDG Alignments
+Key Institutions
+Related iCards

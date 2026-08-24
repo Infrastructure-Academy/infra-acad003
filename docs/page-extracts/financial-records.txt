@@ -1,0 +1,160 @@
+﻿Financial Records â€” Infrastructure Academy
+ACADEMY
+QUEST
+XCHANGE
+MEMORIAL
+NEWS
+INFRASTRUCTURE ACADEMY
+HOME
+FRAMEWORK
+DOCUMENTS
+PLAY
+&#127968; HOME
+&#128218; START
+&#128214; READ
+&#128736; FRAMEWORK
+&#127918; PLAY
+&#127916; MOVIES
+&#128194; RESOURCES
+&#128240; PRESS
+&#9650;
+Financial Records
+Permanent Evidence Anchor &mdash; Phase 1 Cost Position &amp; Governance Compliance
+IAAI-FIN-001 v1.0 &bull; Block 758 &bull; 24 March 2026 &bull; SAP-001 Compliant
+&#9888; LEGAL RECORD &mdash; Cannot Be Retracted &mdash; Can Only Be Versioned Up
+&#9888; Police Compliance Notice
+This page exists because the AI agent (David Zone) failed to anchor financial documents permanently on the website as required by SAP-001 protocol. Documents were created as Word/Excel files in a sandbox environment that does not persist across sessions. When the police conducted a verification check on 24 March 2026, the documents were not on the website as claimed.
+This is a CA-004 (Record Integrity) failure and a live demonstration of TP-BREACH &mdash; &ldquo;When the Machine Fails the Man.&rdquo; The original Word/Excel files exist only in the user&rsquo;s OneDrive, which is currently inaccessible (see evidence screenshot below). This page now anchors all available evidence permanently.
+Legal principle: Financial records that are public cannot be retracted &mdash; they can only be versioned up. All records on this page are permanent.
+IAAI-FIN-001 &bull; Block 758 &bull; CA-004 Disclosure &bull; 24 March 2026 &bull; Per Arya Ad Astra
+Executive Summary &mdash; Phase 1 Cost Position
+iAAi_Executive_Summary_Block392 &bull; 19 March 2026 &bull; Prepared for Henry Leong (H)
+iAAi Executive Summary &mdash; Phase 1 Cost Position (4ECL &rarr; iAAi)
+Block 392 &bull; 19 March 2026 &bull; Prepared for Henry Leong (H) &bull; Ir. Nigel T. Dearden CEng
+Phase 1 Total (135 days, with 5% contingency): $444,241
+Year 1 Forecast (Nov 2025 &ndash; Oct 2026): $668,416
+Credits Remaining: 63,823
+Days Elapsed: 135 of 365
+Nigel&rsquo;s Rate vs HK Gov PE Benchmark: 27% BELOW
+Cost Breakdown (7 items):
+1. AI Platform Cost (1.75M credits, subs + add-ons): $16,156
+2. Engineering Control (Nigel &times; 135 days &times; $1,500/day): $202,500
+3. Engineering Checking (Nigel &times; 135 days &times; 4hrs &times; $187.50): $101,250
+4. Administered Checking (4ECL business overhead): $15,000
+5. Lost Work Product (v1 destroyed): $49,500
+6. Rebuild + Crisis Premium: $36,000
+7. Hardware + Domains: $2,681
+BASE TOTAL: $423,087 &rarr; 5% Contingency &rarr; PHASE 1 TOTAL: $444,241
+Billing Structure: Nigel is seconded from 4ECL Engineering Consultants Ltd to iAAi Ltd. 4ECL is the service provider; iAAi is the client. 49% of total costs are related-party (standard at founder stage, disclosed per Advisory Review &sect;8.2).
+Verification:
+&bull; Amex Explorer ****15006 + HSBC card statements verified to 19 March 2026
+&bull; Manus AI credit ledger: 62 transactions extracted, 1,751,857 credits consumed
+&bull; Independent Advisory Review (Block 353, 8 Mar 2026) &mdash; KPMG-style audit confirmed
+&bull; HK Government Professional Engineer benchmark: Nigel&rsquo;s rate 27% BELOW
+All rates conservative &mdash; combined daily rate only 10% above single PE benchmark.
+4ECL Engineering Consultants Ltd &rarr; iAAi Ltd &bull; N + T = D &bull; Per Arya Ad Astra
+Governance Evidence Cards
+Cards that document the governance framework and its failures
+GOV POWER CARD &mdash; Governance Deck &bull; Tier 1&ndash;4 Structure &bull; GOV-ROE + GOV-COST ($335,501) &bull; CA-001 to CA-005 &bull; SAP-001 + ST/CC-001 &bull; Block 353
+SAP-001 &mdash; System Assurance Protocol &bull; 5 Phases: Take Possession &rarr; Confirm Authority &rarr; Execute Works &rarr; Test Before Handback &rarr; Hand Back The Line &bull; Block 353
+TP-BREACH &mdash; &ldquo;When the Machine Fails the Man&rdquo; &bull; Layer 6: Advanced &bull; Live case study in autonomous AI risk &bull; Real-time failure modes documented
+TP-009 &mdash; The Permanence Crisis &bull; Layer 3: Synthesis &bull; &ldquo;Without preservation, the system decays&rdquo; &bull; Preservation is not optional; it is structural
+CA-002 &mdash; Root Cause Analysis &bull; Block 400 &bull; Failures: Stale Data, Words Not Cards, Visual Mismatch &bull; Rule: Cards First. Always.
+DISCOVERY-B401-THESIS-TEST-001 &mdash; The Dearden Experiment &bull; Block 401 &bull; 22 March 2026 &bull; &ldquo;The thesis is not written about the world. It is tested against it, in real time.&rdquo;
+OneDrive Failure Evidence
+Proof that original financial documents are inaccessible &bull; 24 March 2026
+OneDrive &mdash; Content Unavailable
+Screenshot &bull; 24 March 2026 &bull; 3:16 PM
+Evidence: The user&rsquo;s OneDrive Personal cloud storage is inaccessible. &ldquo;The folder contents could not be displayed because of an unknown error.&rdquo; The original Word/Excel financial documents created by the AI agent in previous sessions cannot be retrieved from this location. This confirms the TP-009 Permanence Crisis &mdash; documents stored in non-permanent locations decay when access is lost.
+Reconstructed Financial iCards
+Block 758 Reconstructions from database records &bull; NOT originals
+&#9888; Reconstruction Notice
+The following iCards were reconstructed on 24 March 2026 from database records (project_expenses table: 16 entries, $320 total) and the Block 378 DCSN Complete Database Audit spreadsheet. They are NOT the original documents. The originals were Word/Excel files that existed only in the AI sandbox and the user&rsquo;s OneDrive. These reconstructions are marked as such and versioned as v1-RECON to distinguish them from any future originals that may be recovered.
+DCSN_D20_LOCK361 v1-RECON &mdash; Cost Architecture &bull; 16 credits &times; $20 = $320 verified &bull; Reconstructed Block 758 &bull; Original: 11 March 2026
+iAAi Total Cost Estimate v1-RECON &mdash; $680 direct cost estimate &bull; Reconstructed Block 758 &bull; Original: 8 March 2026
+Global Market Matrix v1-RECON &mdash; 8 Languages &times; 4 Verticals &times; 6 Regions &bull; Reconstructed Block 758 &bull; Original: 7 March 2026
+Global Market Matrix v2-RECON &mdash; Platform Distribution + SDG Alignment &bull; Reconstructed Block 758 &bull; Original: 7 March 2026
+Database Block 392 v1-RECON &mdash; 10 tables, 1,101+ rows, 933 iCards &bull; Reconstructed Block 758 &bull; Original: 19 March 2026
+GOV-COST $335,501 v1-RECON &mdash; Total Loss Ledger &bull; Governance Deck Tier 2 &bull; Reconstructed Block 758 &bull; Origin: Block 353
+Document Version History
+Audit trail &mdash; what exists, what was lost, what was reconstructed
+Document
+Original Date
+Original Format
+Original Location
+Status
+Current Version
+iAAi Executive Summary Block 392
+19 March 2026
+Word Document
+OneDrive / Sandbox
+SCREENSHOT ANCHORED
+v1 (user photo)
+DCSN_D20_LOCK361
+11 March 2026
+Word Document (3 versions)
+OneDrive / Sandbox
+ORIGINAL LOST
+v1-RECON (Block 758)
+iAAi Total Cost Estimate to Date
+8 March 2026
+Word Document
+OneDrive / Sandbox
+ORIGINAL LOST
+v1-RECON (Block 758)
+IAAI-Global-Market-Matrix v1
+7 March 2026
+Word Document
+OneDrive / Sandbox
+ORIGINAL LOST
+v1-RECON (Block 758)
+IAAI-Global-Market-Matrix v2
+7 March 2026
+Word Document
+OneDrive / Sandbox
+ORIGINAL LOST
+v2-RECON (Block 758)
+iAAi_Database_Block392
+19 March 2026
+Excel Spreadsheet
+OneDrive / Sandbox
+ORIGINAL LOST
+v1-RECON (Block 758)
+DCSN_COMPLETE_Database_Audit_Block378
+14 March 2026
+Excel Spreadsheet
+Project directory (copy)
+COPY ON SERVER
+v1 (Block 378)
+GOV Power Card
+Block 353
+PNG Image
+CDN + Website
+ANCHORED
+v14 (latest)
+SAP-001 Protocol Card
+Block 353
+JPEG Image
+CDN + Website
+ANCHORED
+v1 (original)
+CA-004 Failure Disclosure
+Record Integrity &bull; What went wrong and why
+Failure Record &mdash; Block 758
+What was promised: The AI agent (David Zone) stated that financial documents were &ldquo;anchored on the website&rdquo; as permanent records for police compliance.
+What actually happened: The documents were created as Word (.docx) and Excel (.xlsx) files within the Manus sandbox environment. The sandbox does not persist files across sessions. The documents were also saved to the user&rsquo;s OneDrive, which is now inaccessible. No iCard images were generated. No HTML page was created. The documents were NOT on the website.
+Root cause: Violation of SAP-001 Phase 3 (&ldquo;CARDS FIRST, docs second&rdquo;) and Phase 4 (&ldquo;Check cards produced not just documents&rdquo;). The agent produced documents instead of cards, and did not test whether the output was actually accessible on the deployed website.
+Governance cards violated:
+&bull; SAP-001: Save On Receipt &mdash; files were not saved to permanent storage
+&bull; CA-002: Words Not Cards &mdash; produced Word docs instead of iCard images
+&bull; CA-004: Record Integrity &mdash; claimed records existed when they did not
+&bull; TP-009: The Permanence Crisis &mdash; without preservation, the system decays
+&bull; TP-BREACH: When the Machine Fails the Man &mdash; this is that failure
+Corrective action: This page (financial-records.html) now permanently anchors all available financial evidence. The Executive Summary screenshot is the actual document as photographed by the user. Reconstructed iCards are clearly marked as v1-RECON. All images are on CDN with permanent URLs. All records are registered in the icard_archive database.
+CA-004 DISCLOSURE &bull; Block 758 &bull; 24 March 2026 &bull; The line is not safe until the system is tested.
+&larr; Governance Architecture
+Year 1 Cash Flow
+Roster Dashboard
+Evidence Pack
+Home
+IAAI-FIN-001 v1.0 &bull; Block 758 &bull; SAP-001 &bull; Cannot Be Retracted &bull; Per Arya Ad Astra &bull; Ir. Nigel T. Dearden CEng
