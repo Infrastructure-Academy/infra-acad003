@@ -1,0 +1,372 @@
+﻿Year 1 Cash Flow Projection â€” Infrastructure Academy
+ACADEMY
+QUEST
+XCHANGE
+MEMORIAL
+NEWS
+INFRASTRUCTURE ACADEMY
+HOME
+FRAMEWORK
+DOCUMENTS
+PLAY
+&#127968; HOME
+&#128218; START
+&#128214; READ
+&#128736; FRAMEWORK
+&#127918; PLAY
+&#127916; MOVIES
+&#128194; RESOURCES
+&#128240; PRESS
+&#9650;
+YEAR 1 CASH FLOW PROJECTION DRAFT
+iAAi Seed Round Deployment &amp; Revenue Ramp &mdash; 12-Month Horizon
+$800K
+Seed Round
+7
+Revenue Channels
+90
+Days to Deploy
+$625K
+Y1 Revenue (Conservative)
+Source: IAAI Brief v6, Formation Package for Henry v2, Investor Pitch v1+v2 &bull; Cross-referenced 10 March 2026
+Conservative (Base)
+Aggressive (China Strategy)
+Scenario A: Conservative (Base Case)
+Key Assumptions
+Seed round: $800,000 deployed over 12 months (One Pager: M1-3 $150K, M4-6 $200K, M7-9 $250K, M10-12 $200K)
+Revenue start: Month 1 (book sales as PoC), platform revenue from M4
+Year 1 revenue target: $625,000 (One Pager / corrected model)
+Year 3 revenue target: $3,130,000 (5-year projection model)
+Team: 4 co-founders + 1 advisor (30/20/20/30 equity split)
+Burn rate: ~$45K/month post-deployment (team + infrastructure + marketing)
+Phase 1 deferred cost: $397,550 (70% deferred consulting &mdash; 4ECL receivable, not cash burn)
+Book sales: Revenue from M1 &mdash; PoC signal, not the business model. Shows revenue-generating status to investors.
+Market: EdTech $219B&rarr;$760B (13% CAGR), Gamification $3B&rarr;$41B (26% CAGR)
+$800,000
+Total Inflow (Seed)
+$540,000
+Total Outflow (Y1)
+$625,000
+Revenue (Y1)
+$885,000
+Cash at Year End
+19+
+Months Runway
+Use of Funds &mdash; $800K over 12 Months (One Pager Allocation)
+Category
+Amount
+% of Seed
+Timeline
+Notes
+Q1: Knowledge Transfer &amp; Foundation (M1&ndash;M3)
+Platform Development
+$60,000
+7.5%
+M1&ndash;M3
+Production hardening, mobile apps, API layer
+AI Infrastructure (DAVID)
+$40,000
+5%
+M1&ndash;M3
+DAVID scaling, LLM credits, compute
+Team &amp; Operations
+$30,000
+3.75%
+M1&ndash;M3
+Founder stipends, legal setup, accounting
+Content &amp; Localisation
+$20,000
+2.5%
+M1&ndash;M3
+Chinese + Korean language blocks, content QA
+Q1 Subtotal$150,00018.75%
+Q2: MVP Launch &amp; 1K Users (M4&ndash;M6)
+Platform Development
+$80,000
+10%
+M4&ndash;M6
+MVP feature completion, gamification engine, TRE-GLP
+Marketing &amp; User Acquisition
+$50,000
+6.25%
+M4&ndash;M6
+Digital marketing, university outreach, launch events
+Team &amp; Operations
+$40,000
+5%
+M4&ndash;M6
+Key hires, expanded operations
+Content &amp; Localisation
+$30,000
+3.75%
+M4&ndash;M6
+Additional language blocks, relay content
+Q2 Subtotal$200,00025%
+Q3: China/BRI Expansion (M7&ndash;M9)
+International Expansion
+$100,000
+12.5%
+M7&ndash;M9
+China/BRI market entry, VietBridge partnership, GAC Technology
+Platform Scaling
+$60,000
+7.5%
+M7&ndash;M9
+Infrastructure scaling for international users
+Marketing &amp; Partnerships
+$50,000
+6.25%
+M7&ndash;M9
+Regional partnerships, Olympiad sponsorship acquisition
+Team &amp; Operations
+$40,000
+5%
+M7&ndash;M9
+Regional team, compliance, admin
+Q3 Subtotal$250,00031.25%
+Q4: Scale &amp; Series A Prep (M10&ndash;M12)
+Growth &amp; Scaling
+$80,000
+10%
+M10&ndash;M12
+User growth, enterprise sales, data licensing
+Series A Preparation
+$40,000
+5%
+M10&ndash;M12
+Due diligence, legal, investor materials, auditing
+Team &amp; Operations
+$40,000
+5%
+M10&ndash;M12
+Continued operations, contingency reserve
+Contingency
+$40,000
+5%
+Reserve
+Emergency buffer (lessons from Phase 1 crisis)
+Q4 Subtotal$200,00025%
+TOTAL
+$800,000
+100%
+7 Revenue Channels
+1. Book Sales (PoC Revenue Signal)
+$25,000 Y1
+Physical and digital book sales from the 12 Relays manuscript. Not the business model &mdash; the proof of concept. Moves IAAI from &ldquo;pre-revenue&rdquo; to &ldquo;revenue-generating&rdquo; which changes investor perception entirely.
+Revenue from M1. Immediate &mdash; shows intent and market validation.
+2. Freemium Subscriptions (B2C)
+$100,000 Y1
+Free tier (Episode 1 access) converts to Premium ($9.99/mo or $99/yr). Target: 1,500 paying subscribers by M12 at $5.50/mo blended ARPU.
+Revenue from M4. Ramp: 100 &rarr; 400 &rarr; 800 &rarr; 1,500 subs.
+3. University Licensing (B2B)
+$150,000 Y1
+Institutional licenses for universities integrating TRE-GLP into civil engineering curricula. $5K&ndash;$25K per institution depending on student count. 23 universities already assessed in beta PoC &mdash; MIT, Stanford, Imperial, Tsinghua, NUS &amp; more. Full roster &rarr;
+Revenue from M6. Target: 5 institutions by M12. Pipeline: 23 beta PoC universities across 6 regions.
+4. Infrastructure Olympiad Sponsorship
+$100,000 Y1
+Corporate and government sponsors backing national teams. Platinum ($500K), Gold ($250K), Silver ($100K), Bronze ($50K) tiers.
+Revenue from M8. Target: 1 Bronze sponsor by M12.
+5. Enterprise Training (B2B)
+$100,000 Y1
+Corporate training packages for engineering firms, construction companies, and government agencies. Custom relay configurations.
+Revenue from M9. Target: 2 enterprise clients.
+6. Data Intelligence Licensing
+$100,000 Y1
+Anonymised civilisation intelligence dataset licensing. FITS psychometric data, infrastructure literacy benchmarks, cross-cultural learning patterns.
+Revenue from M10. Pilot data packages.
+7. Content Partnerships
+$50,000 Y1
+Co-branded content with educational publishers, documentary producers, and media platforms. Revenue share on co-created materials.
+Revenue from M10. Target: 1 partnership.
+Monthly Cash Flow &mdash; Conservative Scenario
+Line Item
+M1M2M3M4M5M6
+M7M8M9M10M11M12
+TOTAL
+INFLOWS
+Seed Investment
+505050676766
+848383676766
+800
+Book Sales (PoC)
+122222
+233222
+25
+Subscriptions (B2C)
+&mdash;&mdash;&mdash;246
+101214161818
+100
+University Licensing
+&mdash;&mdash;&mdash;&mdash;&mdash;15
+202520252520
+150
+Olympiad Sponsorship
+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+&mdash;50&mdash;&mdash;50&mdash;
+100
+Enterprise Training
+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+&mdash;&mdash;25252525
+100
+Data Intelligence
+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+&mdash;&mdash;&mdash;303535
+100
+Content Partnerships
+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+&mdash;&mdash;&mdash;151520
+50
+TOTAL INFLOWS
+515252717389
+116173145180237186
+1,425
+OUTFLOWS
+Platform Development
+202020272726
+202020272726
+280
+AI Infrastructure
+131413&mdash;&mdash;&mdash;
+202020&mdash;&mdash;&mdash;
+100
+Content &amp; Localisation
+776101010
+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+50
+Marketing &amp; UA
+&mdash;&mdash;&mdash;101010
+171716&mdash;&mdash;&mdash;
+80
+Team &amp; Operations
+101010131413
+131413131413
+150
+International Expansion
+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+343333&mdash;&mdash;&mdash;
+100
+Series A Prep &amp; Legal
+&mdash;&mdash;&mdash;&mdash;&mdash;&mdash;
+&mdash;&mdash;&mdash;141313
+40
+TOTAL OUTFLOWS
+505149606159
+104104102545452
+800
+NET POSITION
+Monthly Net
+113
+111230
+126943
+126183134
+625
+Cumulative Cash
+125
+162858
+70139182
+308491625
+625
+All figures in $K (thousands USD). Seed investment of $800K deployed over 12 months per One Pager allocation (Q1: $150K, Q2: $200K, Q3: $250K, Q4: $200K). Book sales provide PoC revenue from M1 &mdash; not the business model, but critical to move from &ldquo;pre-revenue&rdquo; to &ldquo;revenue-generating&rdquo; status. Revenue channels activate progressively from M1 (books) through M10 (data/partnerships). Phase 1 cost of $397,550 is 70% deferred consulting (4ECL receivable), not cash burn.
+Cumulative Cash Position &mdash; Conservative Scenario
+Scenario B: Aggressive (China Strategy)
+Key Assumptions
+Seed round: $800,000 initial + potential Series A trigger at M6&ndash;M9
+China Strategy: Henry Leong&rsquo;s VietBridge connection activates SE Asia gaming gateway (303M gamers)
+Year 1 revenue target: $15,000,000&ndash;$50,000,000 (Formation Package projection)
+Year 3 revenue target: $100,000,000+ (Formation Package projection)
+Key driver: Chinese/SE Asian market penetration via gaming + Mandarin language block
+Partnership multiplier: GAC Technology hardware + regional distribution partners
+This scenario requires: Series A ($5M+) by M6, China market entry by M4, 10x team scaling
+Revenue Discrepancy Note: The Formation Package projects $15&ndash;50M Year 1 and $100M+ Year 3, while Brief v6 projects $250K Year 1 and $1.6M Year 3. These represent two fundamentally different scenarios: the conservative case (English-first, organic growth) and the aggressive case (China Strategy with VietBridge partnership and SE Asian gaming gateway). The aggressive scenario requires significantly more capital and carries proportionally higher execution risk.
+$800K+
+Initial Seed
+$5M+
+Series A Required
+$15&ndash;50M
+Y1 Revenue Target
+303M
+SE Asia Gamers
+HIGH
+Execution Risk
+Aggressive Revenue Channels (Scaled)
+1. Freemium Subscriptions (Global)
+$3&ndash;8M Y1
+Chinese + Korean + English markets. 50K&ndash;100K paying subscribers at $5&ndash;8/mo blended ARPU. SE Asia gaming gateway as primary acquisition channel.
+Requires Mandarin localisation by M3, SE Asia launch by M4.
+2. University Licensing (Asia-Pacific)
+$2&ndash;5M Y1
+50&ndash;100 universities across China, Korea, Japan, SE Asia. Government-backed infrastructure education mandates as tailwind. Already assessed: Tsinghua, Zhejiang, PKU, HKU, Tongji (China); NUS (Singapore); KAIST (Korea); U of Tokyo (Japan). Full roster &rarr;
+Requires regional sales team by M4, government partnerships by M6. 8 APAC universities already in beta PoC pipeline.
+3. Infrastructure Olympiad (Global)
+$3&ndash;10M Y1
+National team sponsorships from sovereign wealth funds, construction conglomerates, and development banks. BRI-aligned nations as primary targets.
+Requires UNESCO/World Bank endorsement pipeline by M6.
+4. Enterprise Training (Global)
+$2&ndash;8M Y1
+Top 50 global construction firms, state enterprises (CCCC, PowerChina, CREC). Custom relay configurations for corporate training programmes.
+Requires enterprise sales team by M5, pilot programmes by M7.
+5. Data Intelligence (Premium)
+$3&ndash;10M Y1
+Civilisation intelligence dataset at scale. Cross-cultural FITS psychometric data, infrastructure literacy benchmarks, predictive models.
+Requires 100K+ active users for statistically significant datasets.
+6. Government &amp; Multilateral
+$2&ndash;9M Y1
+Government contracts for infrastructure literacy programmes. SDG 4, 9, 11, 17 alignment. Development bank partnerships (ADB, AIIB, World Bank).
+Requires policy team by M4, first government MOU by M8.
+Execution Dependencies: The aggressive scenario depends on: (1) Series A funding by M6, (2) China market regulatory approval, (3) VietBridge partnership activation, (4) 10x team scaling from 5 to 50+ people, (5) Government/multilateral endorsements. Each dependency carries significant execution risk. The conservative scenario is recommended as the primary investor pitch, with the aggressive scenario presented as the upside case.
+Phase 1 Investment Context (Pre-Seed)
+Phase 1 total investment: $397,550 (Amex-verified, 124 days). Of this, $279,000 (70%) is deferred consulting time &mdash; Nigel&rsquo;s Engineering Control ($186K) and Daily Checks ($93K) are 4ECL receivables, not cash burn. Actual cash outlay was approximately $16K&ndash;$20K (AI credits, hardware, domains). Nigel is deferring his costs until the company can achieve cashflow balance. This cost is excluded from the Year 1 projection but establishes the baseline from which the seed round deploys. The platform is operational: 12 relays playable, 4 modes, 27 chapters, 20+ beta testers, 319M+ XP generated, DAVID AI narrator active.
+Phase 1 Line Item
+Amount
+Notes
+AI Platform Credits$11,438591,759 credits consumed (Amex + HSBC verified)
+Daily Engineering Checks$93,000124 days &times; 4hrs/day &times; $187.50/hr (Nigel)
+Engineering Control Cost$186,000124 days &times; $1,500/day (4ECL standard rate)
+Lost Work Product$49,500Platform crisis &mdash; total destruction, no backup
+Rebuild Cost$15,000Reconstruction on replacement platform
+Hardware$2,469Development equipment
+Domains$212Domain registrations
+Crisis Rebuild Premium$21,000Emergency rebuild surcharge
+PHASE 1 TOTAL
+$378,619
++5% contingency = $397,550
+5 Critical Items Before Investor Meetings
+Item
+Status
+Owner
+Notes
+4ECL-IAAI Consulting Agreement
+Pending
+Henry / Legal
+Formalises relationship between 4ECL and iAAi
+Cap Table
+Pending
+Henry
+30/20/20/30 equity split documentation
+Shareholders&rsquo; Agreement (Model B)
+Pending
+Henry / Legal
+With Model B provisions for governance
+IP Assignment Agreement
+Pending
+Nigel / Legal
+Nigel/4ECL &rarr; iAAi IP transfer (15 assets)
+Year 1 Cash Flow Projection
+This Document
+Nigel / ALAN
+Conservative + Aggressive scenarios
+Cross-References
+&rarr; Finance Admin (Phase 1 Cost Audit)
+&rarr; 4Cs Decision (Resistance Factors)
+&rarr; Equations Register
+&rarr; Vault (Source Documents)
+&rarr; Infrastructure Olympiad
+&rarr; Mobilisation Clock
+Year 1 Cash Flow Projection v2 &mdash; CORRECTED &mdash; 10 March 2026
+Source data: One Pager for Henry, IAAI Brief v6, Formation Package v2, Investor Pitch v1+v2, Global Market Matrix
+Compiled by DAVID for investor meeting preparation &mdash; $800K seed, 7 revenue channels, deferred cost structure
+&ldquo;Give invention light.&rdquo;
+&uarr;
+X
+LinkedIn
+WhatsApp

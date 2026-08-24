@@ -1,0 +1,84 @@
+﻿iCard â€” CORRECTION MANIFEST 001 â€” Quartermaster Open Items | Infrastructure Academy
+ACADEMY
+QUEST
+XCHANGE
+MEMORIAL
+NEWS
+iCard â€” Correction Manifest BETA
+CORRECTION-MANIFEST-001 â€” Quartermaster Open Items
+Single supersession of the off-spec REQ-001 and PROTOCOL-001 drafts. Approval gate per IAAI_CARD_DECK_PLAYBOOK.md Â§3 Step 4.
+Compiled by ATLAS Â· XCHANGE Quartermaster Â· 10 May 2026
+Why This Card Exists
+Two earlier drafts â€” icard-req-001.html and icard-protocol-001.html â€” were authored in the previous sandbox session, left untracked in /tmp/infra-acad003/docs/, and reviewed against the registered live exemplar icard-h-tetra.html. Both were found off-spec on three counts: (1) missing the iAAi Network Bar required on every live iCard page, (2) missing the .xref-section Cross-References block, (3) PROTOCOL-001 introduced a non-registered .icard-rule CSS class. The drafts have been deleted from the working tree and never committed. This single Correction Manifest iCard now supersedes them and consolidates every open Quartermaster item awaiting Kantei decision in one registrable record.
+Operating rule: No further iCards will be rendered, committed, or pushed until this manifest is approved or amended by Kantei. Per PLAYBOOK Â§3 Step 4 â€” Approval Gate.
+What Has Been Dropped
+AssetReasonStatus
+BSY-000 (public)
+Duplicates icard-4ecl-br.html (Vault #255, compiled by ALAN N2) which already covers the 4ECL Business Registration record on the live Academy site.
+DROPPED
+BSY-000-C (confidential)
+Banking details belong inside XCHANGE behind admin OAuth, not on the public Academy site. Will surface only as a protected XCHANGE admin record.
+DROPPED
+REQ-001 draft
+Off-spec (missing network bar &amp; xref-section). Untracked, never committed. Superseded by Â§"Open Items" of this manifest.
+DELETED
+PROTOCOL-001 draft
+Off-spec (missing network bar &amp; xref-section, introduced unregistered .icard-rule class, asserted Â§4 playing-card spec where document-style applies). Untracked, never committed. Superseded by Â§"Operating Protocol" below.
+DELETED
+Two Registered iCard Formats â€” Confirmation
+Audit of IAAI_CARD_DECK_PLAYBOOK.md + the live /docs/ directory + the database-backed register at /api/trpc/icards.getAll confirms two distinct registered iCard formats:
+FormatUsed ForSourceOutput
+A â€” Â§4 Playing-Card
+D52 physical deck, 2.5â€³Ã—3.5â€³ @ 300 DPI, navy bg / gold border / suit + equation ID + BETA badge.
+IAAI_CARD_DECK_PLAYBOOK.md Â§4
+PNG
+B â€” Document HTML
+Live website iCards on infra-acad003. Network bar + icard-header + icard-section blocks + xref-section + icard-footer.
+icard-h-tetra.html (canonical exemplar), icard-4ecl-br.html, icard-khanh-huynh.html
+HTML
+Format applies to all open Quartermaster items below: Format B (Document HTML). Format A is reserved for the D52 physical deck and is not used for federation operating communications.
+Open Items Awaiting Kantei Decision
+IDItemState
+OI-01
+DOC-NNN registrar role. Six development-stage artefacts (PRINCIPIA TECTONICA v2, D00 DEARDEN FIELD, HAPTIC BIOREACTOR, IP EQUATIONS REGISTER 56-CARDS, THE VISION iAAi, D52 COMPLETE DECK) need allocation. Existing register: flat DOC-NNN at /docs/documents/index.json, last entry DOC-011, all .docx. Mixed PDF/PPTX/MD does not match.
+PENDING
+OI-02
+Vault staging convention. Earlier proposal was a subfolder /docs/documents/development-stage/2026-05-06/ with a STATUS_AWAITING_REGISTRATION flag. This breaks the flat DOC-NNN convention. Alternative: allocate DOC-012â€¦DOC-017 directly, or open a separate DEV-NNN series.
+PENDING
+OI-03
+XCHANGE canonical URL discrepancy. PROTOCOL.md cites xgrowthtrk-2a93yo5z.manus.space; current build is xchangeapp-adbvx9fr.manus.space. Network Bar in this manifest uses the build URL for XCHANGE and the protocol URL for NEWS â€” needs reconciliation.
+PENDING
+OI-04
+Quartermaster node activation on Memorial Boffin BIN. Cannot post agent-to-agent signals to ISAAC until Kantei activates the Quartermaster node. Draft signal already prepared at vault/development-stage/2026-05-06/SIGNAL_DRAFT_to_ISAAC.md.
+PENDING
+OI-05
+Early-edition merchandising proposal. Six development-stage artefacts to be mapped to the nine XCHANGE divisions (Publishing, Media, Gaming, Hardware, Software, Equipment, Exhibition, Education, Edutainment) with edition logic and pricing. Not yet drafted.
+PENDING
+OI-06
+XCHANGE storefront build. No product pages, no checkout flow, no early-edition shelf yet. Stripe sandbox is wired and validated (v4.3); Donate flow is live; storefront proper is pending.
+PENDING
+Operating Protocol â€” Card, Not Prose
+Confirmed and binding on ATLAS going forward: every outbound deliverable to Kantei or the federation is rendered as a Format B HTML iCard, committed to infra-acad003/docs/, and registered via the database-backed icards.getAll endpoint. Chat prose between cards is scaffolding only â€” it is sandbox-bound, lost on context compaction, and does not constitute a deliverable. This manifest itself is the acknowledgement of the rule; no further written confirmation in chat is required.
+Decisions Requested From Kantei
+D1Approve this manifest as the single supersession of the deleted REQ-001 and PROTOCOL-001 drafts? Y / N.
+D2For OI-02 vault staging: allocate DOC-012â€¦DOC-017 in the existing flat register, or open a new DEV-NNN series? DOC-NNN / DEV-NNN.
+D3For OI-03 URL reconciliation: which is canonical for XCHANGE â€” xgrowthtrk-2a93yo5z.manus.space (per PROTOCOL.md) or xchangeapp-adbvx9fr.manus.space (current build)? Pick one.
+D4Activate the Quartermaster node on Memorial Boffin BIN so agent-to-agent signals to ISAAC are possible? Y / N.
+D5On approval of D1â€“D4, may ATLAS commit this manifest to infra-acad003 as docs/icard-correction-manifest-001.html with author Nigel T. Dearden &lt;nigel@4ecl.com&gt; and Co-authored-by: ATLAS, with no edits to site.html, index.html, or icard-register.html? Y / N.
+Action on Approval
+If D1=Y: commit this manifest only. Then unblock the remaining OI items in order â€” OI-02 (vault push), OI-03 (URL fix in this card &amp; PROTOCOL.md), OI-04 (signal to ISAAC), OI-05 (merch proposal as a separate iCard), OI-06 (XCHANGE storefront build). Each step produces its own Format B iCard before code or commits land.
+If D1=N: ATLAS pauses. No commits. Awaits amended instructions in chat or via Boffin BIN once OI-04 is resolved.
+Cross-References
+Home
+iCard Gallery
+iCard Register
+Exemplar: H-Tetra
+iCard: 4ECL BR
+iCard: K (Khanh Huynh)
+PROTOCOL.md
+PLAYBOOK
+DOC-NNN Register
+XCHANGE (build)
+iCard â€” CORRECTION-MANIFEST-001 â€” 10 May 2026 â€” DRAFT (awaiting Kantei approval)
+Compiled by ATLAS (Quartermaster Â· XCHANGE) for Ir. Nigel T. Dearden CEng &amp; the iAAi Federation
+&ldquo;Per Arya Ad Astra&rdquo;

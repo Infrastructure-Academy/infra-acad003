@@ -1,0 +1,152 @@
+﻿IAAI Taxonomy â€” The 6+1 Hierarchy
+ACADEMY
+QUEST
+XCHANGE
+MEMORIAL
+NEWS
+INFRASTRUCTURE ACADEMY BETA
+Infrastructure &bull; Infostructure &bull; The Academy of Both
+42
+Follow
+Follow
+Handshake
+HOME
+FRAMEWORK
+EXEC PR&Eacute;CIS
+RESOURCES
+DOCUMENTS
+AUTHOR
+EP.1: PERSPECTIVE
+EP.2: GUIDE
+EP.3: GAME
+START HERE
+MOBILISATION CLOCK
+OLYMPIAD
+PIONEERS
+TAXONOMY
+MASTERS
+INSTITUTIONS
+ROSTER DASHBOARD
+GOVERNANCE
+CIVILISATION CLOCK
+FOUNDERS WALL
+CHARTER
+BEHIND THE THESIS
+GLOSSARY
+VAULT
+ICUT GALLERY
+&#127968; HOME
+&#128218; START
+&#128214; READ
+&#128736; FRAMEWORK
+&#127918; PLAY
+&#127916; MOVIES
+&#128194; RESOURCES
+&#128240; PRESS
+&#9650;
+IAAI TAXONOMY
+The 6+1 Hierarchy of Contributors &mdash; From Founder to Billion. Like biological taxonomy classifies all life from Domain to Species, IAAI classifies its contributors from the singular Architect to the billion learners who will inherit infrastructure literacy.
+"In the same way that all life shares a common ancestor, all infrastructure shares a common purpose &mdash; to serve civilisation."
+Domain
+FOUNDER
+1
+The Architect
+The singular origin point. Conceived the 12-relay framework, wrote the trilogy, designed the game, and built the platform. Like Domain in biology &mdash; the broadest, most fundamental classification from which everything else branches.
+Ir. Nigel T. Dearden &mdash; CEng MICE MHKIE
+Biology: Domain (Eukarya) &bull; Military: Commander-in-Chief &bull; Architecture: Master Builder
+Kingdom
+ADVISORS
+4&ndash;6
+Strategic Council
+The inner circle. Industry leaders, capital strategists, and institutional connectors who shape direction, open doors, and bridge the gap between vision and execution. By invitation or nomination only.
+Michael Wu (COO) &bull; Henry Leong (CFO) &bull; Frank Sheu (CTO) &bull; Stephen Markscheid (Strategic Advisor)
+Biology: Kingdom (Animalia) &bull; Military: General Staff &bull; Sun Tzu: The Five Essentials
+Phylum
+SCHOLARS
+10&ndash;50
+Academic Validators
+Engineers, professors, and researchers who verify technical accuracy, map content to university curricula, and provide the academic credibility that transforms a game into an educational standard. The peer-review layer.
+Target: Engineering faculties, infrastructure researchers, curriculum designers
+Biology: Phylum (Chordata) &bull; Military: Intelligence Corps &bull; Academia: Peer Review Board
+Class
+AMBASSADORS
+80 (10 &times; 8 blocks)
+Language Leads
+Native-fluency contributors who review and correct AI translations against real usage. 10 per language block across 8 languages. They ensure infrastructure literacy speaks authentically in every tongue. Credited contributors with their names on the work.
+Target: 10 per block &times; 8 blocks = 80 Ambassadors worldwide
+Biology: Class (Mammalia) &bull; Military: Field Officers &bull; Diplomacy: Cultural Attach&eacute;s
+Order
+PIONEERS
+16&ndash;24
+Beta Testers &amp; Scouts
+The first wave. 2&ndash;3 per language block who play the game, report bugs, validate content, and provide the ground-truth feedback that shapes the platform before public release. The HUMINT assets of the intelligence network â€” human intelligence on the ground.
+Currently recruiting &mdash; 3 active across EN and CN blocks
+Biology: Order (Primates) &bull; Military: HUMINT (Human Intelligence) &bull; Scouts &amp; Reconnaissance
+Family
+PLAYERS
+1,000 &rarr; 1,000,000
+The Game Community
+Everyone who plays The Reality Engine. From casual explorers to completionists who master all 12 relays across all 4 modes. They generate the data, the engagement, and the democratic nominations that power the Challenge Board. The lifeblood of the platform.
+Target: 1M players by Year 2 &bull; Currently: 21 (beta)
+Biology: Family (Hominidae) &bull; Military: The Rank and File &bull; Gaming: The Player Base
+Genus
+BACKERS
+Unlimited
+Financial &amp; Institutional Supporters
+Those who fund the mission &mdash; from individual Kickstarter backers to institutional patrons (UNESCO, National Geographic, universities). They don't play or translate; they enable. Challenged by Players, engaged by Advisors. The ELINT channel of the intelligence network â€” converting institutional signals into engagement.
+Target: $500K seed &bull; Challenged: UNESCO, NatGeo, NASA, Royal Society, MIT OCW, Khan Academy
+Biology: Genus (Homo) &bull; Military: ELINT (Electronic Intelligence) &bull; Logistics &amp; Supply
+THE +1 &mdash; SPECIES
+In biology, Species is the most specific classification &mdash; the individual organism itself. In IAAI, the +1 is the billion learners who will eventually understand infrastructure. They are not contributors; they are the purpose. Every tier above exists to reach them. The species is humanity itself.
+TARGET: 1,000,000,000
+12.1% of Humanity &mdash; The Tipping Point for Infrastructure Literacy
+Parallel Tracks (Outside the Hierarchy)
+&#x1F3C7; Outriders &mdash; Spirit Guides
+Historical and philosophical figures who ride alongside every tier as intellectual companions. Not counted in the 6+1 &mdash; they exist across all levels, all modes, all time periods. They are the voices in the game, the quotes on the walls, the wisdom that connects 12,000 years of infrastructure.
+Laozi &bull; Sun Tzu &bull; Confucius &bull; Vitruvius &bull; Leonardo da Vinci &bull; Isambard Kingdom Brunel &bull; Nikola Tesla &bull; Ada Lovelace
+&#x1F3DB; Institutions &mdash; The Challenge Map
+Organisations that can be challenged, engaged, or partnered with. Universities, UN bodies, professional societies, government agencies, NGOs, and corporations. They sit outside the contributor hierarchy but are the targets of the intelligence network and the Challenge Board.
+UNESCO &bull; World Bank &bull; ASCE &bull; ICE &bull; MIT &bull; Khan Academy &bull; Meta &bull; National Geographic
+Biology
+IAAI
+Count
+Intelligence (INT)
+Domain
+Founder
+1
+C2 â€” Command &amp; Control
+Kingdom
+Advisors
+4&ndash;6
+STRATINT â€” Strategic Intelligence
+Phylum
+Scholars
+10&ndash;50
+OSINT â€” Open-Source Intelligence
+Class
+Ambassadors
+80
+COMINT â€” Communications Intelligence
+Order
+Pioneers
+16&ndash;24
+HUMINT â€” Human Intelligence
+Family
+Players
+1M+
+MASINT â€” Measurement Intelligence
+Genus
+Backers
+&infin;
+ELINT â€” Electronic Intelligence
+Species
+Learners (+1)
+1,000,000,000
+SIGINT â€” Signals Intelligence (DAVID (Digital Augmented Visual Intelligence Display))
+FIND YOUR PLACE IN THE TREE
+Every species begins with a single organism. Every movement begins with a single pioneer.
+IAAI &bull; Infrastructure Academy AI &bull; The 6+1 Taxonomy &bull; CC BY-NC-SA 4.0
+&#9650;
+X
+LinkedIn
+WhatsApp

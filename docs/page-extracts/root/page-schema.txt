@@ -1,0 +1,303 @@
+﻿Site Architecture Schema â€” Infrastructure Academy
+ACADEMY
+QUEST
+XCHANGE
+MEMORIAL
+NEWS
+INFRASTRUCTURE ACADEMY BETA
+Infrastructure &bull; Infostructure &bull; The Academy of Both
+42
+Follow
+Follow
+Handshake
+HOME
+FRAMEWORK
+EXEC PR&Eacute;CIS
+RESOURCES
+DOCUMENTS
+AUTHOR
+EP.1: PERSPECTIVE
+EP.2: GUIDE
+EP.3: GAME
+START HERE
+MOBILISATION CLOCK
+OLYMPIAD
+PIONEERS
+TAXONOMY
+MASTERS
+INSTITUTIONS
+ROSTER DASHBOARD
+GOVERNANCE
+CIVILISATION CLOCK
+FOUNDERS WALL
+CHARTER
+BEHIND THE THESIS
+GLOSSARY
+VAULT
+ICUT GALLERY
+Site Architecture Schema &mdash; Block 359
+&#127968; HOME
+&#128218; START
+&#128214; READ
+&#128736; FRAMEWORK
+&#127918; PLAY
+&#127916; MOVIES
+&#128194; RESOURCES
+&#128240; PRESS
+&#9650;
+SITE ARCHITECTURE SCHEMA
+Complete Page Map &mdash; Infrastructure Academy v2
+Block 359 &bull; Day 9 &bull; 11 March 2026 &bull; Hardwired Permanent Record
+91HTML Pages
+25React Routes
+20External Links
+7Categories
+1Database
+Synchronicity &amp; Super Symmetry
+Every page connects. Every link resolves. Every route is reachable from navigation. No orphans, no dead ends. The architecture itself is visible as this permanent page &mdash; the system observing itself.
+12Civilisational Relays
+3Volumes (Episodes)
+4Pillars
+5Webs
+17DCSN Nodes
+56Deck Cards
+Root Pages 15 pages
+/site.html NAV
+Infrastructure Academy &mdash; Homepage &amp; Landing
+25 internal links Hero, Charter, Knowledge Web, Book Grid, Challenge Stats
+/executive-precis.html NAV
+Executive Pr&eacute;cis &mdash; 12 Relay Overview
+24 internal links
+/equations-register.html NAV
+Equations Register &mdash; 38 Equations Across 7 Tiers
+25 internal links
+/taxonomy.html NAV
+Taxonomy &mdash; Classification System
+24 internal links
+/civilisation-clock.html NAV
+Civilisation Clock &mdash; 12,000 Year Timeline
+23 internal links
+/mobilisation-clock.html NAV
+Mobilisation Clock &mdash; Project Timeline
+24 internal links
+/infrastructure-olympiad.html NAV
+Infrastructure Olympiad &mdash; Competitive Framework
+24 internal links
+/pioneers.html NAV
+Pioneers &mdash; Infrastructure Visionaries
+26 internal links
+/masters.html NAV
+Masters &mdash; Infrastructure Masters
+24 internal links
+/institutions.html NAV
+Institutions &mdash; Organisational Framework
+24 internal links
+/library.html NAV
+Document Library &mdash; All Project Documents
+24 internal links 2 external links
+/vault.html NAV
+Vault &mdash; Evidence &amp; WhatsApp Archive
+27 internal links
+/icut-gallery.html NAV
+ICUT Gallery &mdash; 8 ICUT Cards v2
+24 internal links
+/4cs-decision.html NAV
+4Cs Decision Framework
+RESOURCES dropdown
+/deck.html NAV
+IP &amp; Equations Deck &mdash; 55 Cards, US$29.95
+6 internal links Buy the Deck CTA
+Pages Directory 11 pages
+/pages/start-here.html NAV
+Start Here &mdash; Entry Point for New Readers
+26 internal links
+/pages/framework.html NAV
+Framework &mdash; 5 Webs, 4 Pillars, Matrix
+27 internal links 13 external (UN SDGs)
+/pages/about-author.html NAV
+About the Author &mdash; Ir. Nigel T. Dearden
+26 internal links 2 external (infrastructure-academy.com, 4ecl.com)
+/pages/behind-the-thesis.html NAV
+Behind the Thesis &mdash; Research &amp; Methodology
+25 internal links
+/pages/glossary.html NAV
+Glossary &mdash; Key Terms &amp; Definitions
+22 internal links
+/pages/resources.html NAV
+Resources &mdash; Downloads &amp; References
+26 internal links
+/pages/supplements.html
+Supplements &mdash; 4 Supplement Sections
+25 internal links
+/pages/scholars.html
+Scholars &mdash; Academic Contributors
+25 internal links
+/pages/discovery-chain.html
+Discovery Chain &mdash; Research Trail
+24 internal links
+/pages/chip-evolution.html
+Chip Evolution &mdash; BitPoints Library &amp; Industry Rally
+15 internal links
+/pages/link-register.html
+Anchored Link Register &mdash; Gridiron Security Signal Verification
+74 outbound links
+/pages/executive-precis.html
+Executive Pr&eacute;cis (Pages version)
+25 internal links
+/pages/executive-precis-enhanced.html
+Executive Pr&eacute;cis Enhanced
+25 internal links
+iCards, Dashboards &amp; Finance 9 pages
+/icard-gallery.html NAV
+iCard Gallery &mdash; All Intelligence Cards
+Links to all individual iCards
+/icard-h-tetra.html NAV
+iCard: H-Tetra &mdash; Henry's 3 WhatsApp Groups, First H-Tetrahedron
+9 internal links Fugazi/Marillion interpretation, Spotify playlist
+/icard-khanh-huynh.html NAV
+iCard: Khanh Huynh &mdash; NODE 017
+7 internal links NODE 000/009/010/011/012/017 references
+/icard-4ecl-br.html
+iCard: 4ECL Business Review
+7 internal links
+/icard-book-sales-strategy.html
+iCard: Book Sales Strategy
+7 internal links
+/dcsn-dashboard.html NAV
+DCSN Dashboard &mdash; Diamond-Class Spider Network
+3 internal links
+/h-block-dashboard.html NAV
+H-Block Dashboard &mdash; Block Tracking
+2 internal links
+/finance-admin.html NAV
+Finance Admin &mdash; ICUT Cards v2, WhatsApp Vault, Deck Gallery
+3 internal links 1 external (4ecl.com)
+/cashflow-y1.html NAV
+Cash Flow Y1 &mdash; $800K Seed, 7 Revenue Channels
+7 internal links
+Volume 1: Perspective 17 pages
+/volumes/volume1/index.html NAV
+Volume 1 Index &mdash; EP.1: Perspective
+40 internal links Links to all 12 relays + prologue + epilogue + torus + planetary engine
+17 chapter pages: planetary-engine, prologue, relay-01 through relay-12, epilogue, torus
+24-25 internal links each Sequential relay navigation
+Volume 2: Guide 16 pages
+/volumes/volume2/index.html NAV
+Volume 2 Index &mdash; EP.2: Guide (4-Pillar Framework)
+42 internal links Links to all 12 relays + prologue + epilogue + torus
+16 chapter pages: prologue, relay-01 through relay-12, epilogue, torus
+25 internal links each
+Volume 3: Game 14 pages
+/volumes/volume3/index.html
+Volume 3 Index &mdash; EP.3: Game
+32 internal links
+14 chapter pages: prologue, relay-01 through relay-12
+25 internal links each
+Archive 8 pages
+/archive/index.html
+Archive Index &mdash; Master Archive
+30 internal links
+/archive/documents/ &bull; /archive/images/ &bull; /archive/references/ &bull; /archive/relays/ &bull; /archive/supplements/
+5 sub-indexes + 2 node input documents (JG-001, CR-002)
+Resources 1 page
+/resources/table-of-contents.html
+Table of Contents &mdash; Complete Document Index
+24 internal links
+React Application Routes 25 routes REACT
+/Home &rarr; redirects to /site.html
+/nodesNodeRegister DATABASE
+/playGameTitle &mdash; EP.3 Entry
+/play/hubGameHub
+/play/relay/:idRelayMission
+/play/fitsFitsAssessment
+/play/profilePlayerProfile
+/play/leaderboardLeaderboard
+/play/createCharacterCreation
+/play/professorProfessorDashboard
+/play/storeGameStore
+/play/handbookPlayersHandbook
+/play/perspectiveAvatarSelection
+/play/synthesisSynthesis
+/play/foundersFoundersWall
+/explore/relaysRelaysExplorer
+/explore/websWebsExplorer
+/explore/scholarsScholarsExplorer
+/explore/modesModesExplorer
+/explore/threatsThreatsExplorer
+/explore/sdgsSDGsExplorer
+/explore/pillarsPillarsExplorer
+/explore/masteryMasteryExplorer
+/explore/narrationNarrationExplorer
+/404NotFound
+External Cross-References 20 links
+Partner Websites
+infrastructure-academy.com
+Original Infrastructure Academy website
+www.infrastructure-academy.com
+4ecl.com
+4ECL &mdash; Four Elements Consulting Limited
+www.4ecl.com
+greenims.com
+Green IMS &mdash; Jonathan Green (NODE 008)
+greenims.com
+Manus Platform
+infra-acad (this site)
+Infrastructure Academy v2 &mdash; Current deployment
+infrastructure-academy.com
+nigelmemorial
+Thesis Site &mdash; Nigel Memorial / Consciousness Research
+nigelmemorial-ucmtq9dn.manus.space
+manus.im
+Manus AI Introduction &amp; Share Link
+manus.im/share/IdytAoTNwA3vg2VlYOPgi4
+GitHub Archive
+github.io
+Original GitHub Pages deployment (legacy)
+nigeldearden-a11y.github.io/infrastructure-academy
+Professional
+linkedin.com
+Jonathan Green &mdash; NODE 008 (The Inspector)
+linkedin.com/in/jongreenims
+United Nations SDGs (13 links from Framework page)
+un.org
+UN Sustainable Development Goals &mdash; 11 specific goal pages + main portal + communications
+un.org/sustainabledevelopment
+Database Layer DATABASE
+dcsn_nodes table TiDB/MySQL
+DCSN Node Register &mdash; 17 confirmed nodes (NODE 000&ndash;016), 2 pending, 5 challenge
+Rendered at: /nodes
+&bull; tRPC: nodes.getRegister, nodes.addNode, nodes.updateNode
+&bull; Auto-registration on OAuth signup
+users table TiDB/MySQL
+User Authentication &mdash; Manus OAuth
+Managed by NextAuth.js / Manus OAuth
+Source of Truth
+DCSN-NODE-REGISTER.md &mdash; Master record, never overridden by AI
+Protocol: node numbers are chronological, sequential, permanent, never reused
+Living Network Map INTERACTIVE
+Force-directed graph showing page interconnections. Drag nodes to explore. Hover for details. Click to navigate.
+Thesis Evidence &mdash; Block 359 Day 9
+This page itself is evidence. On 11 March 2026, NODE 000 asked whether the database and schema were hardwired to the website. The AI confirmed the database was connected but admitted: (1) /nodes was NOT in the navigation menu, and (2) this schema page did NOT exist &mdash; it had been audited and planned but never built. This is documented in THESIS-EVIDENCE-BLOCK359-SCHEMA.md with two screenshots as permanent record. The pattern: AI builds complex backend systems correctly but fails at the last mile of user-facing delivery.
+Navigation Structure (nav-optimise.js)
+HOME
+Direct link &rarr; /site.html
+READ &darr;
+Start HereEP.1: PerspectiveEP.2: GuideExec Pr&eacute;cisBehind the Thesis
+EXPLORE &darr;
+FrameworkTaxonomyCivilisation ClockMobilisation ClockOlympiad12 Relays5 Webs7 Scholars3 Modes4 Threats (4Cs)SDGs4 PillarsMasteryNarration
+PEOPLE &darr;
+PioneersMastersInstitutionsFounders WallAuthorNODE REGISTERSITE SCHEMA
+RESOURCES &darr;
+DocumentsResourcesGlossaryVaultICUT GalleryEquations4Cs DecisionCash Flow Y1iCard: 4ECL BRiCard: Book SalesiCard GalleryiCard: H-TetraiCard: KhanhCard DeckDCSN DashboardFinance AdminCharterH-Block Dashboard
+PLAY
+Direct link &rarr; /play
+&copy; 2026 Infrastructure Academy. All rights reserved. Preserving knowledge for eternity.
+Site Architecture Schema
+|
+Block 359 &bull; Day 9
+|
+Per Arya Ad Astra &mdash; iAAi
+X
+LinkedIn
+WhatsApp
+&#9650;
