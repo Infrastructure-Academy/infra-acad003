@@ -1,0 +1,38 @@
+IAAI PRESERVATION MANIFEST — READABLE TEXT COPY
+Date received: 2026-08-25
+Source: Telegram message supplied by project owner
+
+PURPOSE
+The manifest identifies the gap between the live Manus applications and the Infrastructure Academy GitHub repository. It states that the Academy has substantially more routes in Manus than in the static GitHub shell, while the Memorial site is a React application whose runtime-rendered pages are not represented in the static repository.
+
+KEY FINDINGS REPORTED IN THE TELEGRAM MANIFEST
+
+Academy routes:
+91 Academy routes were observed in Manus. Approximately 60 match the GitHub repository. The remaining routes require reconciliation and preservation.
+
+Memorial routes:
+31 Memorial routes were observed in Manus. None were present in the GitHub static shell. The Memorial application is described as JavaScript-rendered content hosted by Manus.
+
+Database:
+50 database tables were reported in the Drizzle schema. The source snapshot inspected in this workspace contains 19 mysqlTable declarations in drizzle/schema.ts. The difference is recorded in the companion REQUEST_RECONCILIATION.md file and must not be resolved by inventing missing definitions.
+
+Unmatched navigation examples:
+/explore/relays
+/explore/webs
+/play/founders
+/race
+/icards
+
+These examples were reported as listed in the manifest but having no matching page in the GitHub repository. They require route-by-route verification before being declared mirrored, redirected, unavailable, or runtime-only.
+
+PRESERVATION ACTION TAKEN
+The Memorial React source snapshot, the verified 19-table Drizzle catalog, the schema source, and an auditable coverage report were added to archive/2026-08-25/ in the infra-acad003 repository.
+
+LIMITATION
+The original DOCX file was not present in the restored workspace, so this file is a readable transcription of the manifest findings supplied in the Telegram message. It is not represented as the original DOCX byte-for-byte conversion. The original DOCX should be added when available.
+
+RELATED FILES
+archive/2026-08-25/memorial-coverage-report.md
+archive/2026-08-25/drizzle-schema-export/tables.md
+archive/2026-08-25/drizzle-schema-export/tables.json
+archive/2026-08-25/drizzle-schema-export/REQUEST_RECONCILIATION.md

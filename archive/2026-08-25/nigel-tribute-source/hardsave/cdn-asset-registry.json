@@ -1,0 +1,161 @@
+{
+  "registry_version": "2.1",
+  "last_updated": "2026-05-14",
+  "total_assets": 455,
+  "cdn_bases": [
+    "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/UcMtq9dnoiXYmXbtNd8s9Y/",
+    "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/"
+  ],
+  "asset_counts_by_type": {
+    "png": 173,
+    "webp": 58,
+    "docx": 50,
+    "jpeg": 48,
+    "pdf": 46,
+    "md": 30,
+    "jpg": 27,
+    "xlsx": 1
+  },
+  "asset_counts_by_category": {
+    "titans_cards": 56,
+    "icards": 86,
+    "bizcards": 20,
+    "magic_moments": 6,
+    "relay_images": 8,
+    "thesis_papers": 15,
+    "other": 260
+  },
+  "key_assets": [
+    {
+      "id": "COUNTER-PAPER-V10",
+      "name": "COUNTER Paper v10 — University Submission (WeasyPrint)",
+      "type": "pdf",
+      "filename": "UcNsJnIwSzUcfjEX.pdf",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/UcNsJnIwSzUcfjEX.pdf",
+      "description": "66 pages, 45 figures, 51 tables, 7 Parts. WeasyPrint HTML→PDF rebuild. Gold headings, academic table borders, full ToC/LoT/LoF. University submission quality. DCS page count '—'. LoF page break clean.",
+      "version": "v10",
+      "source": "Manus agent (WeasyPrint rebuild)",
+      "date_added": "2026-05-14"
+    },
+    {
+      "id": "COUNTER-DESIGN-STD-V10",
+      "name": "COUNTER Paper Design Standards v10",
+      "type": "pdf",
+      "filename": "kSActpdGwmanwutg.pdf",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/kSActpdGwmanwutg.pdf",
+      "description": "University-facing design specification for the COUNTER paper. Defines typography, layout, table styling, figure handling, and quality gates.",
+      "version": "v10",
+      "source": "Manus agent",
+      "date_added": "2026-05-14"
+    },
+    {
+      "id": "ELE-001",
+      "name": "ELE Risk Survival Paper v9 (Academy)",
+      "type": "pdf",
+      "filename": "uADfqhuasNJUHnAo.pdf",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/uADfqhuasNJUHnAo.pdf",
+      "description": "56 pages, 44 sections, 6 Parts incl Part VI Civil Engineering Parallel Thesis",
+      "version": "v9",
+      "source": "Academy agent",
+      "date_added": "2026-05-08"
+    },
+    {
+      "id": "ELE-001-DOCX",
+      "name": "ELE Risk Survival Paper v9 (DOCX)",
+      "type": "docx",
+      "filename": "ERoDUZiTursFfhxo.docx",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/ERoDUZiTursFfhxo.docx",
+      "description": "Editable Word format of v9 paper",
+      "version": "v9",
+      "source": "Academy agent",
+      "date_added": "2026-05-08"
+    },
+    {
+      "id": "ELE-002",
+      "name": "ELE Executive Summary",
+      "type": "pdf",
+      "filename": "nkvWriNvxDnRwgAJ.pdf",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/nkvWriNvxDnRwgAJ.pdf",
+      "description": "Executive summary of ELE v9 paper",
+      "version": "v9",
+      "source": "Academy agent",
+      "date_added": "2026-05-08"
+    },
+    {
+      "id": "ELE-003",
+      "name": "ELE v9 iCard",
+      "type": "png",
+      "filename": "HclsxrKzWmxynMmq.png",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/HclsxrKzWmxynMmq.png",
+      "description": "iCard for ELE v9 paper — Academy generated",
+      "version": "v9",
+      "source": "Academy agent",
+      "date_added": "2026-05-08"
+    },
+    {
+      "id": "ELE-V7",
+      "name": "ELE Risk Survival Thesis v7 (Memorial)",
+      "type": "pdf",
+      "filename": "bNDxIqrxlifeBViV.pdf",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/bNDxIqrxlifeBViV.pdf",
+      "description": "Original v7 thesis authored by Memorial agent — superseded by Academy v9",
+      "version": "v7",
+      "source": "Memorial agent",
+      "date_added": "2026-05-06"
+    },
+    {
+      "id": "SYS-002",
+      "name": "SYS-002 Memorial Vault Card",
+      "type": "png",
+      "filename": "gMxmxJdOYRTugSTM.png",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/gMxmxJdOYRTugSTM.png",
+      "description": "Memorial system card for cross-agent network",
+      "version": "v1",
+      "source": "Memorial agent",
+      "date_added": "2026-05-08"
+    },
+    {
+      "id": "COUNTER-FULL",
+      "name": "COUNTER — Parts, Measures & Balance (Full Page, Block 500)",
+      "type": "png",
+      "filename": "PoJdBTNEsxkhwSOb.png",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/PoJdBTNEsxkhwSOb.png",
+      "webdev_path": "/manus-storage/counter_full_page_59090666.png",
+      "description": "Complete COUNTER reference card — 12 Relays, Signal Formula S=(A×P)/β, 5 Equations, 4Cs Balance, CAPEX vs OPEX.",
+      "version": "v1",
+      "source": "Academy agent",
+      "date_added": "2026-05-10"
+    },
+    {
+      "id": "HICE-SPECTRUM",
+      "name": "THE HICE SPECTRUM — From Kingdom to Dyad",
+      "type": "png",
+      "filename": "sORBKFrVhqpzfWDD.png",
+      "url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/sORBKFrVhqpzfWDD.png",
+      "description": "HICE Score ranked chart (8 levels: Bacteria→Dyad). ICE Cube vs Dyad Polytope geometry.",
+      "version": "v1",
+      "source": "Academy agent",
+      "date_added": "2026-05-10"
+    }
+  ],
+  "full_url_list_file": "all-cdn-urls.txt",
+  "notes": "Full list of all 455 CDN URLs extracted from source. Key assets manually curated above. COUNTER Paper v10 is the primary university submission deliverable."
+}
+    },
+    {
+      "id": "REPO-MAP-V2",
+      "name": "GitHub Repo Map iCard v2.0 (CRITICAL - ALL AGENTS)",
+      "type": "png",
+      "filename": "iCARD_REPO_MAP_v2.0-QRgS7wiS6h6A8eL5pGcwrt.png",
+      "url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/UcMtq9dnoiXYmXbtNd8s9Y/iCARD_REPO_MAP_v2.0-QRgS7wiS6h6A8eL5pGcwrt.png",
+      "webp_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/UcMtq9dnoiXYmXbtNd8s9Y/iCARD_REPO_MAP_v2.0-9HKMFSpKuAAH4gCEKuJgLb.webp",
+      "description": "CRITICAL REFERENCE: Deployment guide for www.infrastructure-academy.com. Includes June 2026 incident analysis, debugging flowchart, and verification commands. ALL AGENTS MUST READ BEFORE DEPLOYMENT.",
+      "version": "v2.0",
+      "source": "Academy agent (Manus AI)",
+      "date_added": "2026-06-11",
+      "critical": true,
+      "for_all_agents": true
+    }
+  ],
+  "notes": "Full list of all 455 CDN URLs extracted from source. Key assets manually curated above. COUNTER Paper v10 is the primary university submission deliverable. iCARD_REPO_MAP_v2.0 is CRITICAL for all agents."
+}

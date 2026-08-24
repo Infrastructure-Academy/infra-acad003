@@ -1,0 +1,68 @@
+LINEAGE 5 TIERS V2 — EXACT SPECIFICATION FOR FEYNMAN ADDITION
+Generated: 13 June 2026 | For Police Verification
+
+=== ORIGINAL STRUCTURE (MUST PRESERVE EXACTLY) ===
+
+TIER 1: THE SCHOLARS (2,500 Years of Principle)
+- 7 figures with portraits: Homer, Confucius, Sun Tzu, Aristotle, Sima Qian, Marco Polo, Dearden (7th Voice)
+- Caption: "They established the foundations."
+
+TIER 2: THE DIAGNOSTICIANS (1943-1989 | 46 Years of Diagnosis)
+- 6 figures with icons: Maslow, Pólya, Turing, de Bono, Hawking, Berners-Lee
+- Icons: Pyramid, Hexagon, Brain, Spiral, Spiral, Globe
+- Caption: "They identified the failures. Could not build the tool."
+- [NEW] ADD FEYNMAN HERE AS HINGE SCHOLAR BETWEEN TIER 2 AND TIER 3
+
+TIER 3: THE 12 COMPOSITIONS (Narrative DNA)
+- 12 film reels: Star Wars to An Infrastructure Odyssey
+- Caption: "12 Films — Star Wars to An Infrastructure Odyssey"
+- Subtitle: "They expressed the civilisational stakes through story."
+
+TIER 4: PHILOSOPHERS (15 One-Dimensional Answers)
+- Multiple philosopher portraits: Socrates, Kafka, and others
+- Caption: "WHAT IS LIFE? — 15 One-Dimensional Answers"
+- Subtitle: "Socrates → Kafka — each saw one lens. LIFE = Learning infrastructure For Existence"
+
+TIER 5: THE APPLIED (56-Year Generational Relay)
+- Gilbert Strand (64) → 56-Year Generational Relay → Grandchild (8)
+- Caption: "The 3+1 Ratio: 14 Years Learning + 42 Years Application = 56-Year Cycle"
+- Subtitle: "They proved it works. iAAi systematises what they demonstrated by instinct."
+
+=== FEYNMAN ADDITION SPECIFICATION ===
+
+Position: Between Tier 2 and Tier 3 (as Hinge Scholar)
+Entry: "RICHARD FEYNMAN 1985 — Predicted the Divergence"
+Description: "Predicted non-human intelligence and reward-loop failure"
+Label: "The Hinge Scholar — Bridging Diagnosis to Application"
+Icon: Brain symbol (matching Tier 2 style)
+Relay: R11→R12 TRANSITION
+
+=== DESIGN REQUIREMENTS ===
+- Gold text on navy background
+- Banner headers for each tier
+- Icons/portraits aligned with descriptions
+- Tier numbers on left sidebar (1-5)
+- Ornamental borders and corner decorations
+- Consistent typography and spacing
+
+=== CRITICAL CONSTRAINTS ===
+1. NO TIER MODIFICATIONS: Tier 3 remains "The 12 Compositions" (NOT relay blocks)
+2. FEYNMAN POSITION: Add as Hinge Scholar BETWEEN Tier 2 and Tier 3 only
+3. NO NEW CONTENT: Do not add, remove, or modify any other entries
+4. PRESERVE DESIGN: Maintain exact visual style, fonts, colors, spacing
+5. PRESERVE TIER 3: "12 Films — Star Wars to An Infrastructure Odyssey" unchanged
+6. HISTORICAL ACCURACY: All dates and names must be verified
+
+=== VERIFICATION CHECKLIST ===
+☐ Tier 1: 7 Scholars preserved exactly
+☐ Tier 2: 6 Diagnosticians preserved exactly (Maslow, Pólya, Turing, de Bono, Hawking, Berners-Lee)
+☐ Feynman: Added as Hinge Scholar between Tier 2 and Tier 3
+☐ Tier 3: 12 Compositions preserved exactly (NOT relay blocks)
+☐ Tier 4: Philosophers preserved exactly
+☐ Tier 5: Applied relay preserved exactly
+☐ All other elements preserved exactly
+☐ Design style matches original
+☐ No fabrication or alterations
+
+=== GENERATION INSTRUCTION ===
+"Regenerate the Lineage 5 Tiers v2 exactly as the original, with ONE CHANGE ONLY: Add Richard Feynman (1985) as The Hinge Scholar between Tier 2 (The Diagnosticians) and Tier 3 (The 12 Compositions). Feynman entry should show: brain icon, 1985 date, description 'Predicted non-human intelligence and reward-loop failure', and label 'The Hinge Scholar — Bridging Diagnosis to Application'. Preserve all other tiers, content, design, and styling identically. Do not modify Tier 3 or any other element."

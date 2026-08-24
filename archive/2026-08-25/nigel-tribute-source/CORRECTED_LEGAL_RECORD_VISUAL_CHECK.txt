@@ -1,0 +1,28 @@
+VISUAL VERIFICATION — CORRECTED LEGAL RECORD
+============================================================
+
+Document checked:
+/home/ubuntu/nigel-tribute/TODO_CLOSEOUT_PLAN_CORRECTED_2460_ROWS.docx
+
+Visual findings from pages 1-5:
+1. Title page clearly states chronological order.
+2. Page 3 heading states: "ALL 2,460 ITEMS — CHRONOLOGICAL EXECUTION RECORD".
+3. Page 3 note states: "Item #1 (oldest) at top → Item #2,460 (newest) at bottom".
+4. First visible table rows confirm chronological start:
+   - #1 Browser tab title is SHORT (1 word: `NIGEL`)
+   - #2 CONVENTIONS.md exists and is current
+   - #3 DONE: All new pages use short nav labels (1-2 words)
+5. Therefore the top of the table now begins with the earliest items, which matches the police chronology requirement.
+
+Programmatic confirmation from source list:
+- Total items: 2,460
+- Item #1 (oldest): Browser tab title is SHORT (1 word: `NIGEL`)
+- Item #2,460 (newest): Database registration — AI Autonomous execution verified (Checkpoint v241dbb0d)
+
+Conclusion:
+The corrected document now presents the sequence in chronological order from oldest to newest, with Item #1 at the top and Item #2,460 at the bottom.
+
+Pending final action:
+Upload corrected file and deliver it to Nigel with a concise explanation of the fix.
+
+Timestamp: 2026-06-14 GMT+8
