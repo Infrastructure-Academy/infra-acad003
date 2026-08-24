@@ -1,0 +1,37 @@
+Memorial browser extraction route inputs
+Snapshot date: 2026-08-25
+Base URL: https://nigelmemorial-ucmtq9dn.manus.space
+
+01 /
+02 /counterforce
+03 /d52
+04 /cse
+05 /about
+06 /quotient
+07 /inertial-jump
+08 /thesis
+09 /thesis/v2
+10 /aim
+11 /tdf
+12 /vault
+13 /titans
+14 /turing-papers
+15 /lexicon
+16 /tecton
+17 /review-matrix
+18 /isi
+19 /journey
+20 /ventral-origin
+21 /episode-2
+22 /game
+23 /universe
+24 /hardware
+25 /jigsaw
+26 /disclaimer
+27 /civilisational-divide
+28 /recall-blocks
+29 /igo
+30 /scholar-8
+31 /generation-wave
+
+Excluded route aliases or operational routes: /counter, /isi-calculator, /subscription, /subscription/success, /subscription/cancel, /admin/universities, /404. These are not counted among the 31 public Memorial content routes in this capture list.
