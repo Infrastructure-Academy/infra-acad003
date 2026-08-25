@@ -1,0 +1,1041 @@
+{
+  "title": "iAAi Manus Source Manifest — Police Verification",
+  "generated": "2026-08-24",
+  "source_boundary": "User-provided and observed Manus AI iAAi development/reference environments only.",
+  "sources": {
+    "academy": "https://infra-acad-kuqzaex2.manus.space/site.html",
+    "memorial": "https://nigelmemorial-ucmtq9dn.manus.space/",
+    "schema_file": "/home/ubuntu/infrastructure-academy-v2/drizzle/schema.ts",
+    "backup_portal": "https://manus.im/backup"
+  },
+  "observed_counts": {
+    "academy_unique_internal_routes": 91,
+    "memorial_unique_internal_routes": 31,
+    "combined_observed_route_records": 122,
+    "available_schema_tables": 50
+  },
+  "menu_schema": {
+    "top_level": [
+      "ACADEMY",
+      "QUEST",
+      "XCHANGE",
+      "MEMORIAL",
+      "NEWS"
+    ],
+    "main_groups": [
+      "HOME",
+      "FRAMEWORK",
+      "EXEC PRÉCIS",
+      "RESOURCES",
+      "DOCUMENTS",
+      "AUTHOR",
+      "EP.1: PERSPECTIVE",
+      "EP.2: GUIDE",
+      "EP.3: GAME",
+      "LA MENARA"
+    ],
+    "explore_people_groups": [
+      "START HERE",
+      "MOBILISATION CLOCK",
+      "OLYMPIAD",
+      "PIONEERS",
+      "TAXONOMY",
+      "MASTERS",
+      "INSTITUTIONS",
+      "ROSTER DASHBOARD",
+      "GOVERNANCE",
+      "CIVILISATION CLOCK",
+      "FOUNDERS WALL",
+      "CHARTER",
+      "BEHIND THE THESIS",
+      "GLOSSARY",
+      "VAULT",
+      "ICUT GALLERY",
+      "PRESS KIT",
+      "MOVIES",
+      "RACE TRACKER",
+      "VIDEO PLAYROOM"
+    ],
+    "resources_tools_groups": [
+      "ICARD REGISTER",
+      "IGO",
+      "OBSERVER REGISTER",
+      "BLOCK SUMMARY",
+      "FEW NEXUS",
+      "SDG MATRIX",
+      "RELAY TRACKER",
+      "ANALYTICS",
+      "BRIDGE STATUS",
+      "SITE MAP",
+      "BITPOINTS MARKETPLACE"
+    ],
+    "mobile_reference_labels": [
+      "HOME",
+      "READ",
+      "EXPLORE",
+      "PEOPLE",
+      "RESOURCES",
+      "REFERENCE",
+      "ICARDS & TOOLS",
+      "DOCUMENTS",
+      "GLOSSARY",
+      "VAULT",
+      "EQUATIONS",
+      "CHIP EVOLUTION",
+      "LINK REGISTER",
+      "ICARD GALLERY",
+      "ICARD REGISTER",
+      "ICARD: 4ECL BR",
+      "ICARD: BOOK SALES",
+      "ICARD: H-TETRA",
+      "ICARD: KHANH",
+      "CARD DECK",
+      "ICUT GALLERY",
+      "PLAY"
+    ]
+  },
+  "academy_routes": [
+    {
+      "number": 1,
+      "path": "/pages/8th-scholar.html",
+      "label": "—",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 2,
+      "path": "/site.html",
+      "label": "HOME",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 3,
+      "path": "/pages/start-here.html",
+      "label": "START HERE",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 4,
+      "path": "/volumes/volume1/index.html",
+      "label": "EP.1: PERSPECTIVE",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 5,
+      "path": "/volumes/volume2/index.html",
+      "label": "EP.2: GUIDE",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 6,
+      "path": "/executive-precis.html",
+      "label": "EXEC PRÉCIS",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 7,
+      "path": "/pages/behind-the-thesis.html",
+      "label": "BEHIND THE THESIS",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 8,
+      "path": "/pages/thesis-record.html",
+      "label": "THESIS RECORD",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 9,
+      "path": "/pages/before-writing.html",
+      "label": "BEFORE WRITING",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 10,
+      "path": "/pages/assessment-results.html",
+      "label": "ASSESSMENT RESULTS",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 11,
+      "path": "/pages/turing-paper.html",
+      "label": "TURING PAPER",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 12,
+      "path": "/pages/milestones.html",
+      "label": "MILESTONES",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 13,
+      "path": "/pages/bibliography.html",
+      "label": "BIBLIOGRAPHY",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 14,
+      "path": "/pages/civilisational-divide.html",
+      "label": "THE CIVILISATIONAL DIVIDE",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 15,
+      "path": "/pages/framework.html",
+      "label": "FRAMEWORK",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 16,
+      "path": "/taxonomy.html",
+      "label": "TAXONOMY",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 17,
+      "path": "/civilisation-clock.html",
+      "label": "CIVILISATION CLOCK",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 18,
+      "path": "/mobilisation-clock.html",
+      "label": "MOBILISATION CLOCK",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 19,
+      "path": "/infrastructure-olympiad.html",
+      "label": "OLYMPIAD",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 20,
+      "path": "/explore/relays",
+      "label": "12 RELAYS",
+      "github_comparison": "NO_MATCH"
+    },
+    {
+      "number": 21,
+      "path": "/explore/webs",
+      "label": "5 WEBS",
+      "github_comparison": "NO_MATCH"
+    },
+    {
+      "number": 22,
+      "path": "/explore/scholars",
+      "label": "7 SCHOLARS",
+      "github_comparison": "NO_MATCH"
+    },
+    {
+      "number": 23,
+      "path": "/explore/modes",
+      "label": "3 MODES",
+      "github_comparison": "NO_MATCH"
+    },
+    {
+      "number": 24,
+      "path": "/explore/threats",
+      "label": "4 THREATS (4Cs)",
+      "github_comparison": "NO_MATCH"
+    },
+    {
+      "number": 25,
+      "path": "/explore/sdgs",
+      "label": "SDGs",
+      "github_comparison": "NO_MATCH"
+    },
+    {
+      "number": 26,
+      "path": "/explore/pillars",
+      "label": "4 PILLARS",
+      "github_comparison": "NO_MATCH"
+    },
+    {
+      "number": 27,
+      "path": "/explore/mastery",
+      "label": "MASTERY",
+      "github_comparison": "NO_MATCH"
+    },
+    {
+      "number": 28,
+      "path": "/explore/narration",
+      "label": "NARRATION",
+      "github_comparison": "NO_MATCH"
+    },
+    {
+      "number": 29,
+      "path": "/videos",
+      "label": "VIDEO PLAYROOM",
+      "github_comparison": "NO_MATCH"
+    },
+    {
+      "number": 30,
+      "path": "/pages/movies.html",
+      "label": "MOVIES",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 31,
+      "path": "/pioneers.html",
+      "label": "PIONEERS",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 32,
+      "path": "/masters.html",
+      "label": "MASTERS",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 33,
+      "path": "/institutions.html",
+      "label": "INSTITUTIONS",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 34,
+      "path": "/play/founders",
+      "label": "FOUNDERS WALL",
+      "github_comparison": "NO_MATCH"
+    },
+    {
+      "number": 35,
+      "path": "/pages/about-author.html",
+      "label": "AUTHOR",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 36,
+      "path": "/quotes.html",
+      "label": "QUOTES",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 37,
+      "path": "/nodes",
+      "label": "NODE REGISTER",
+      "github_comparison": "NO_MATCH"
+    },
+    {
+      "number": 38,
+      "path": "/page-schema.html",
+      "label": "SITE SCHEMA",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 39,
+      "path": "/library.html",
+      "label": "DOCUMENTS",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 40,
+      "path": "/pages/resources.html",
+      "label": "RESOURCES",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 41,
+      "path": "/pages/glossary.html",
+      "label": "GLOSSARY",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 42,
+      "path": "/vault.html",
+      "label": "VAULT",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 43,
+      "path": "/equations-register.html",
+      "label": "EQUATIONS",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 44,
+      "path": "/pages/chip-evolution.html",
+      "label": "CHIP EVOLUTION",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 45,
+      "path": "/pages/link-register.html",
+      "label": "LINK REGISTER",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 46,
+      "path": "/icard-gallery.html",
+      "label": "iCARD GALLERY",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 47,
+      "path": "/icard-register.html",
+      "label": "iCARD REGISTER",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 48,
+      "path": "/icard-4ecl-br.html",
+      "label": "iCARD: 4ECL BR",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 49,
+      "path": "/icard-book-sales-strategy.html",
+      "label": "iCARD: BOOK SALES",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 50,
+      "path": "/icard-h-tetra.html",
+      "label": "iCARD: H-TETRA",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 51,
+      "path": "/icard-khanh-huynh.html",
+      "label": "iCARD: KHANH",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 52,
+      "path": "/deck.html",
+      "label": "CARD DECK",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 53,
+      "path": "/icut-gallery.html",
+      "label": "ICUT GALLERY",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 54,
+      "path": "/dcsn-dashboard.html",
+      "label": "DCSN DASHBOARD",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 55,
+      "path": "/h-block-dashboard.html",
+      "label": "H-BLOCK DASHBOARD",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 56,
+      "path": "/finance-admin.html",
+      "label": "FINANCE ADMIN",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 57,
+      "path": "/4cs-decision.html",
+      "label": "4Cs DECISION",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 58,
+      "path": "/cashflow-y1.html",
+      "label": "CASH FLOW Y1",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 59,
+      "path": "/site.html#charter",
+      "label": "CHARTER",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 60,
+      "path": "/site.html#section-media",
+      "label": "VIDEO PLAYROOM",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 61,
+      "path": "/play",
+      "label": "PLAY",
+      "github_comparison": "NO_MATCH"
+    },
+    {
+      "number": 62,
+      "path": "/press.html",
+      "label": "PRESS KIT",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 63,
+      "path": "/pages/la-menara.html",
+      "label": "LA MENARA",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 64,
+      "path": "/pages/roster-dashboard.html",
+      "label": "ROSTER DASHBOARD",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 65,
+      "path": "/pages/governance-architecture.html",
+      "label": "GOVERNANCE",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 66,
+      "path": "/race",
+      "label": "RACE TRACKER",
+      "github_comparison": "NO_MATCH"
+    },
+    {
+      "number": 67,
+      "path": "/icards",
+      "label": "iCARD REGISTER",
+      "github_comparison": "NO_MATCH"
+    },
+    {
+      "number": 68,
+      "path": "/play/igo",
+      "label": "iGO",
+      "github_comparison": "NO_MATCH"
+    },
+    {
+      "number": 69,
+      "path": "/pages/observer-register.html",
+      "label": "OBSERVER REGISTER",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 70,
+      "path": "/pages/block-summary.html",
+      "label": "BLOCK SUMMARY",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 71,
+      "path": "/pages/water-power-nexus.html",
+      "label": "FEW NEXUS",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 72,
+      "path": "/pages/sdg-matrix.html",
+      "label": "SDG MATRIX",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 73,
+      "path": "/pages/relay-tracker.html",
+      "label": "RELAY TRACKER",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 74,
+      "path": "/pages/analytics-dashboard.html",
+      "label": "ANALYTICS",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 75,
+      "path": "/pages/bridge-status.html",
+      "label": "BRIDGE STATUS",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 76,
+      "path": "/pages/sitemap.html",
+      "label": "SITE MAP",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 77,
+      "path": "/pages/bitpoint-marketplace.html",
+      "label": "BITPOINTS MARKETPLACE",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 78,
+      "path": "/donate.html",
+      "label": "❤ SUPPORT THE ACADEMY Donate $1 — Help advance civilisational systems research",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 79,
+      "path": "/play/leaderboard",
+      "label": "VIEW ALL →",
+      "github_comparison": "NO_MATCH"
+    },
+    {
+      "number": 80,
+      "path": "/site.html#section-challenge",
+      "label": "Challenge Section Accordion",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 81,
+      "path": "/play/explore/1",
+      "label": "Deep Dives Structural Fix",
+      "github_comparison": "NO_MATCH"
+    },
+    {
+      "number": 82,
+      "path": "/vehicle-hangar",
+      "label": "66-Page Vehicle Card Deck",
+      "github_comparison": "NO_MATCH"
+    },
+    {
+      "number": 83,
+      "path": "/play/handbook",
+      "label": "Player's Handbook PDF",
+      "github_comparison": "NO_MATCH"
+    },
+    {
+      "number": 84,
+      "path": "/pages/g2-integration-brief.html",
+      "label": "Even Realities G2 Brief",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 85,
+      "path": "/play/hub",
+      "label": "Relay Completion Certificate",
+      "github_comparison": "NO_MATCH"
+    },
+    {
+      "number": 86,
+      "path": "/site.html#leaderboard",
+      "label": "Homepage Leaderboard Widget",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 87,
+      "path": "/site.html#recent-feed",
+      "label": "What's New Toast",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 88,
+      "path": "/pages/silk-road.html",
+      "label": "The Silk Road Paradox",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 89,
+      "path": "/volumes/volume1/relay-05-roads.html",
+      "label": "The Silk Road Paradox",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 90,
+      "path": "/",
+      "label": "AGENT 1 — CONTRACTOR ACADEMY Infrastructure Academy MAX — The Contractor — Hardening YOU ARE HERE",
+      "github_comparison": "MATCH"
+    },
+    {
+      "number": 91,
+      "path": "/press.html#disclaimer",
+      "label": "Full Disclaimer",
+      "github_comparison": "MATCH"
+    }
+  ],
+  "memorial_routes": [
+    {
+      "number": 1,
+      "path": "/",
+      "url": "https://nigelmemorial-ucmtq9dn.manus.space/",
+      "label": "HOME — Infrastructure Academy / Principia Tectonica landing page"
+    },
+    {
+      "number": 2,
+      "path": "/quotient",
+      "url": "https://nigelmemorial-ucmtq9dn.manus.space/quotient",
+      "label": "THE EQUATION / MIND THE EQUATION — Opus entry"
+    },
+    {
+      "number": 3,
+      "path": "/inertial-jump",
+      "url": "https://nigelmemorial-ucmtq9dn.manus.space/inertial-jump",
+      "label": "INERTIAL JUMP — Opus section"
+    },
+    {
+      "number": 4,
+      "path": "/thesis",
+      "url": "https://nigelmemorial-ucmtq9dn.manus.space/thesis",
+      "label": "THE THESIS — proof/thesis section"
+    },
+    {
+      "number": 5,
+      "path": "/aim",
+      "url": "https://nigelmemorial-ucmtq9dn.manus.space/aim",
+      "label": "AIM — network/mission section"
+    },
+    {
+      "number": 6,
+      "path": "/tdf",
+      "url": "https://nigelmemorial-ucmtq9dn.manus.space/tdf",
+      "label": "TDF — field section"
+    },
+    {
+      "number": 7,
+      "path": "/vault",
+      "url": "https://nigelmemorial-ucmtq9dn.manus.space/vault",
+      "label": "VAULT — archive/document area"
+    },
+    {
+      "number": 8,
+      "path": "/titans",
+      "url": "https://nigelmemorial-ucmtq9dn.manus.space/titans",
+      "label": "TITANS — fellowship/people area"
+    },
+    {
+      "number": 9,
+      "path": "/turing-papers",
+      "url": "https://nigelmemorial-ucmtq9dn.manus.space/turing-papers",
+      "label": "TURING PAPERS — academy/explore area"
+    },
+    {
+      "number": 10,
+      "path": "/jigsaw",
+      "url": "https://nigelmemorial-ucmtq9dn.manus.space/jigsaw",
+      "label": "JIGSAW — gaps area"
+    },
+    {
+      "number": 11,
+      "path": "/lexicon",
+      "url": "https://nigelmemorial-ucmtq9dn.manus.space/lexicon",
+      "label": "LEXICON — dictionary/reference area"
+    },
+    {
+      "number": 12,
+      "path": "/tecton",
+      "url": "https://nigelmemorial-ucmtq9dn.manus.space/tecton",
+      "label": "TECTON — thesaurus/reference area"
+    },
+    {
+      "number": 13,
+      "path": "/isi",
+      "url": "https://nigelmemorial-ucmtq9dn.manus.space/isi",
+      "label": "ISI — dashboard/measurement area"
+    },
+    {
+      "number": 14,
+      "path": "/journey",
+      "url": "https://nigelmemorial-ucmtq9dn.manus.space/journey",
+      "label": "JOURNEY — timeline area"
+    },
+    {
+      "number": 15,
+      "path": "/ventral-origin",
+      "url": "https://nigelmemorial-ucmtq9dn.manus.space/ventral-origin",
+      "label": "ORIGIN — consciousness/origin area"
+    },
+    {
+      "number": 16,
+      "path": "/episode-2",
+      "url": "https://nigelmemorial-ucmtq9dn.manus.space/episode-2",
+      "label": "EP.II — episode area"
+    },
+    {
+      "number": 17,
+      "path": "/press",
+      "url": "https://nigelmemorial-ucmtq9dn.manus.space/press",
+      "label": "PRESS — media/press pack"
+    },
+    {
+      "number": 18,
+      "path": "/cards",
+      "url": "https://nigelmemorial-ucmtq9dn.manus.space/cards",
+      "label": "CARDS — card collection area"
+    },
+    {
+      "number": 19,
+      "path": "/universe",
+      "url": "https://nigelmemorial-ucmtq9dn.manus.space/universe",
+      "label": "UNIVERSE — world/content area"
+    },
+    {
+      "number": 20,
+      "path": "/hardware",
+      "url": "https://nigelmemorial-ucmtq9dn.manus.space/hardware",
+      "label": "HARDWARE — equipment/technology area"
+    },
+    {
+      "number": 21,
+      "path": "/boffin-bin",
+      "url": "https://nigelmemorial-ucmtq9dn.manus.space/boffin-bin",
+      "label": "BINARY INTELLIGENCE NETWORK — live chat/exchange area"
+    },
+    {
+      "number": 22,
+      "path": "/igo",
+      "url": "https://nigelmemorial-ucmtq9dn.manus.space/igo",
+      "label": "iGO — game/interactive area"
+    },
+    {
+      "number": 23,
+      "path": "/thesis/v2#500-generations",
+      "url": "https://nigelmemorial-ucmtq9dn.manus.space/thesis/v2#500-generations",
+      "label": "500 GENERATIONS — thesis subsection/anchor"
+    },
+    {
+      "number": 24,
+      "path": "/scholar-8",
+      "url": "https://nigelmemorial-ucmtq9dn.manus.space/scholar-8",
+      "label": "SCHOLAR 8 — scholar/people area"
+    },
+    {
+      "number": 25,
+      "path": "/generation-wave",
+      "url": "https://nigelmemorial-ucmtq9dn.manus.space/generation-wave",
+      "label": "40-GEN WAVE — generation analysis"
+    },
+    {
+      "number": 26,
+      "path": "/civilisational-divide",
+      "url": "https://nigelmemorial-ucmtq9dn.manus.space/civilisational-divide",
+      "label": "THE DIVIDE — civilisational analysis"
+    },
+    {
+      "number": 27,
+      "path": "/disclaimer",
+      "url": "https://nigelmemorial-ucmtq9dn.manus.space/disclaimer",
+      "label": "BETA POC — disclaimer/status page"
+    },
+    {
+      "number": 28,
+      "path": "/counterforce",
+      "url": "https://nigelmemorial-ucmtq9dn.manus.space/counterforce",
+      "label": "COUNTERFORCE — framework page"
+    },
+    {
+      "number": 29,
+      "path": "/manus-storage/uADfqhuasNJUHnAo_0311fb87.pdf",
+      "url": "https://nigelmemorial-ucmtq9dn.manus.space/manus-storage/uADfqhuasNJUHnAo_0311fb87.pdf",
+      "label": "ELE PAPER — linked PDF document"
+    },
+    {
+      "number": 30,
+      "path": "/cse",
+      "url": "https://nigelmemorial-ucmtq9dn.manus.space/cse",
+      "label": "CSE — Civilizational Systems Engineering teaching area"
+    },
+    {
+      "number": 31,
+      "path": "/game",
+      "url": "https://nigelmemorial-ucmtq9dn.manus.space/game",
+      "label": "TRE — The Reality Engine linked area"
+    }
+  ],
+  "schema_tables": [
+    {
+      "symbol": "users",
+      "table": "users"
+    },
+    {
+      "symbol": "assetCategories",
+      "table": "asset_categories"
+    },
+    {
+      "symbol": "assets",
+      "table": "assets"
+    },
+    {
+      "symbol": "players",
+      "table": "players"
+    },
+    {
+      "symbol": "relayProgress",
+      "table": "relay_progress"
+    },
+    {
+      "symbol": "achievements",
+      "table": "achievements"
+    },
+    {
+      "symbol": "weeklyLeaderboard",
+      "table": "weekly_leaderboard"
+    },
+    {
+      "symbol": "davidConversations",
+      "table": "david_conversations"
+    },
+    {
+      "symbol": "alsGrades",
+      "table": "als_grades"
+    },
+    {
+      "symbol": "playerParties",
+      "table": "player_parties"
+    },
+    {
+      "symbol": "partyMembers",
+      "table": "party_members"
+    },
+    {
+      "symbol": "pioneers",
+      "table": "pioneers"
+    },
+    {
+      "symbol": "olympiadRegistrations",
+      "table": "olympiad_registrations"
+    },
+    {
+      "symbol": "sponsorEnquiries",
+      "table": "sponsor_enquiries"
+    },
+    {
+      "symbol": "playerDiscoveries",
+      "table": "player_discoveries"
+    },
+    {
+      "symbol": "scholars",
+      "table": "scholars"
+    },
+    {
+      "symbol": "relays",
+      "table": "relays"
+    },
+    {
+      "symbol": "dualVocabulary",
+      "table": "dual_vocabulary"
+    },
+    {
+      "symbol": "threadWeaves",
+      "table": "thread_weaves"
+    },
+    {
+      "symbol": "glossaryEntries",
+      "table": "glossary_entries"
+    },
+    {
+      "symbol": "icutCards",
+      "table": "icut_cards"
+    },
+    {
+      "symbol": "equations",
+      "table": "equations"
+    },
+    {
+      "symbol": "ipAssets",
+      "table": "ip_assets"
+    },
+    {
+      "symbol": "vaultEntries",
+      "table": "vault_entries"
+    },
+    {
+      "symbol": "fourCsEvidence",
+      "table": "four_cs_evidence"
+    },
+    {
+      "symbol": "dataConnections",
+      "table": "data_connections"
+    },
+    {
+      "symbol": "dcsnNodes",
+      "table": "dcsn_nodes"
+    },
+    {
+      "symbol": "pageViews",
+      "table": "page_views"
+    },
+    {
+      "symbol": "certificateVerifications",
+      "table": "certificate_verifications"
+    },
+    {
+      "symbol": "followerSnapshots",
+      "table": "follower_snapshots"
+    },
+    {
+      "symbol": "auditEvents",
+      "table": "audit_events"
+    },
+    {
+      "symbol": "governanceProofs",
+      "table": "governance_proofs"
+    },
+    {
+      "symbol": "universityScores",
+      "table": "university_scores"
+    },
+    {
+      "symbol": "reviewRounds",
+      "table": "review_rounds"
+    },
+    {
+      "symbol": "categoryScores",
+      "table": "category_scores"
+    },
+    {
+      "symbol": "packageScores",
+      "table": "package_scores"
+    },
+    {
+      "symbol": "perspectiveScores",
+      "table": "perspective_scores"
+    },
+    {
+      "symbol": "anchorLinks",
+      "table": "anchor_links"
+    },
+    {
+      "symbol": "chatMessages",
+      "table": "chat_messages"
+    },
+    {
+      "symbol": "chatLikes",
+      "table": "chat_likes"
+    },
+    {
+      "symbol": "icardArchive",
+      "table": "icard_archive"
+    },
+    {
+      "symbol": "librarySubscriptions",
+      "table": "library_subscriptions"
+    },
+    {
+      "symbol": "tbVehicles",
+      "table": "tb_vehicles"
+    },
+    {
+      "symbol": "playerVehicles",
+      "table": "player_vehicles"
+    },
+    {
+      "symbol": "cardVersions",
+      "table": "card_versions"
+    },
+    {
+      "symbol": "projectExpenses",
+      "table": "project_expenses"
+    },
+    {
+      "symbol": "educatorClasses",
+      "table": "educator_classes"
+    },
+    {
+      "symbol": "classStudents",
+      "table": "class_students"
+    },
+    {
+      "symbol": "igoWaitlist",
+      "table": "igo_waitlist"
+    },
+    {
+      "symbol": "figures",
+      "table": "figures"
+    }
+  ],
+  "limitations": [
+    "The claimed 130+ page total is not independently certified by this manifest. The captured evidence contains 91 Academy internal route records and 31 Memorial internal route records, for 122 observed route records across the two Manus hosts; anchors, redirects, related applications, dynamic views, and duplicate paths may affect totals.",
+    "The available drizzle schema contains 50 declared tables, but it is project source evidence and is not proof that every private Manus database, Memorial database, or historical migration state is included.",
+    "This manifest is not the clone itself and does not include private chat history, unexported task attachments, provider connectors, secrets, or a complete database dump.",
+    "A complete clone requires the official unmodified Manus Account Info Backup where applicable and Task Data Backup for all relevant iAAi tasks."
+  ]
+}
