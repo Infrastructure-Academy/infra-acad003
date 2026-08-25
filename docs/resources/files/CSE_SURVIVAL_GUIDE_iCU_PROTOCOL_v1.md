@@ -118,6 +118,45 @@ The iCU is not a metaphor. It is a diagnostic gate with three operating modes. E
 
 ---
 
+**Remember:** The iCU is the narrow gate.
+
+---
+
+## The Driver Paradigm (Canonical — Adopted 25 August 2026)
+
+> *Users do not need to master the internal mathematics, tensors, or programmatic infrastructure before engaging with the system. Like driving a car, adoption precedes comprehensive mechanical understanding. Mastery and deeper appreciation emerge organically through use over time.*
+
+### What This Means
+The iAAi system architecture — the Dearden Relay Cone, the ICE tensor, the iCU interface — is designed to be experienced first, understood second. Just as a driver operates a vehicle without first reading the complete engineering manual, a user can dock at Relay 12 (Human Nodes), begin playing iGO, browse the Memorial, or purchase BitPoints without knowing what the 4Cs or the collapse rule are.
+
+The system does not break because the user does not understand it. It breaks because the user cannot override it. The iCU layer exists so that engagement is frictionless, while governance runs silently beneath.
+
+### Implications
+- **Interface before explanation.** The Academy site presents concepts; the Memorial tells the story; iGO lets you play. Understanding deepens through repeated use, not prerequisite study.
+- **The system protects itself.** If the machine detects autonomy drift (Face 2: ICU), it degrades gracefully rather than accelerating into failure. The user feels a slowdown, not a crash.
+- **Mastery is available.** Those who wish to go deeper can — through the CSE papers, the HQ framework, the survival guide. But the entry point is simple by design.
+- **Canon is preserved.** The rigorous engineering underneath is documented, versioned, and auditable. The driver does not need to know all the parts, but the manual exists.
+
+### Maslow ↔ Dearden Correspondence
+| Maslow (Individual Scale) | Dearden (Civilisational Scale) | iCU Function |
+|---|---|---|
+| Physiological | R1-R3 (Fire, Tree, River) | Signal exists but unrecorded |
+| Safety | R4-R6 (Roads, Ships, Loom) | Signal monitored, basic governance |
+| Belonging | R7-R8 (Rail, Engine) | Signal connected, social graph |
+| Esteem | R9-R11 (AAA Triad, Orbit, Human Nodes) | Signal recognised, status logged |
+| Self-Actualisation | R12 + FC13 | **Participant docks** — full ICE-HQ measured, iCU = 1 |
+
+The iCU diamond sits at the zero point between both scales. Zero means nothing compared to 1 that means everything — yet zero makes the system work.
+
+### Visual Reference
+- Fig XX — The Dearden Field: FC13/iCU as the Zero Point (archived 2026-08-25)
+- Fig 54 — The 12-Relay Cone Spiral (archived 2026-08-25)
+- Fig XX — FC13/iCU Mirror: Maslow vs Dearden Relay Cone (archived 2026-08-25)
+- Fig XX — System Node: 0 + 1 = System Node (archived 2026-08-25)
+- Fig XX — Engagement Point (archived 2026-08-25)
+
+---
+
 **Remember:** The iCU is the narrow gate. Civilisation does not survive because machines become intelligent. It survives because humans remain identifiable, accountable, and capable of saying no.
 
 *CSE Survival Guide v1.0 — iAAi — Ir. Nigel T. Dearden CEng MICE*
