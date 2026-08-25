@@ -191,7 +191,7 @@ export default function PressPack() {
             IQ &oplus; EQ &oplus; CQ = HQ
           </p>
           <p className="text-sm sm:text-base" style={{ color: TEXT_SILVER }}>
-            The Haptic Quotient &mdash; Intellectual, Emotional, and Consciousness Intelligence unified.
+            The Human Quotient &mdash; Intellectual, Emotional, and Consciousness Intelligence unified.
           </p>
           <p className="text-xs mt-3 italic" style={{ color: GOLD_DIM }}>
             Where &oplus; denotes synergistic fusion, not simple addition.
