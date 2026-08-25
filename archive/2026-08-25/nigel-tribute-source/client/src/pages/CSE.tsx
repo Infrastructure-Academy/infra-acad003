@@ -5,6 +5,7 @@
 
 import { useState, useMemo, useEffect } from "react";
 import Navigation from "@/components/Navigation";
+import ICUDockingGate from "@/components/ICUDockingGate";
 import { Input } from "@/components/ui/input";
 
 const NAVY = "#0b1a33";
@@ -224,6 +225,8 @@ export default function CSE() {
           </p>
         </div>
       </section>
+
+      <ICUDockingGate />
 
       {/* Filter and Search Section */}
       <section className="py-8 px-4 sm:px-6" style={{ borderBottom: `1px solid ${GOLD}44` }}>
