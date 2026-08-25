@@ -32,7 +32,7 @@ const EQUATION_TIERS = [
   {
     tier: "Tier 1 — Core Equations",
     equations: [
-      { id: "EQ-001", name: "The Haptic Quotient", formula: "IQ ⊗ EQ ⊗ CQ = HQ", block: "353" },
+      { id: "EQ-001", name: "The Human Quotient", formula: "IQ ⊗ EQ ⊗ CQ = HQ", block: "353" },
       { id: "EQ-002", name: "The Dearden Field", formula: "N + T = D", block: "353" },
       { id: "EQ-003", name: "The Signal Equation", formula: "S = (A × P) / β", block: "354" },
       { id: "EQ-004", name: "The Discovery Chain", formula: "D = Σ(Eₙ × Cₙ)", block: "354" },
@@ -120,7 +120,7 @@ const IP_ASSETS = [
   { id: "IP-03", name: "13 Civilizational Relays", protection: "Copyright", status: "Active", desc: "The 12,000-year infrastructure chain from Fire to Programmable Humans — 13 = the fractal connector — the backbone of the thesis", href: "/thesis" },
   { id: "IP-04", name: "Modus Tecton", protection: "Copyright (Published)", status: "Active", desc: "The method of the builder — IQ ⊗ EQ ⊗ CQ = ICE. The published framework for infrastructure intelligence", href: "/tecton" },
   { id: "IP-05", name: "CQ — Consciousness Quotient", protection: "Trademark + Copyright", status: "Active", desc: "The third axis. The foundational discovery that consciousness is a measurable quotient — the variable IQ tests miss and EQ assessments ignore. Precondition for HQ", href: "/quotient" },
-  { id: "IP-06", name: "The Haptic Quotient (HQ)", protection: "Trademark + Copyright", status: "Active", desc: "IQ ⊗ EQ ⊗ CQ = HQ — the synergistic fusion of mind, heart, and consciousness into the Haptic Quotient", href: "/quotient" },
+  { id: "IP-06", name: "The Human Quotient (HQ)", protection: "Trademark + Copyright", status: "Active", desc: "IQ ⊗ EQ ⊗ CQ = HQ — the synergistic fusion of mind, heart, and consciousness into the Human Quotient", href: "/quotient" },
   { id: "IP-07", name: "The Dearden Field (TDF)", protection: "Copyright + Trade Secret", status: "Active", desc: "N + T = D — the field in which all signals propagate. Chip architecture, Discovery Chain, ICE Matrix, Ventral Origin", href: "/tdf" },
   { id: "IP-08", name: "ICUT Framework", protection: "Copyright", status: "Active", desc: "Infrastructure, Consciousness, Utility, Technology — the 4-letter classification for all concepts", href: "/lexicon" },
   { id: "IP-09", name: "DCSN Architecture", protection: "Trade Secret + Copyright", status: "Active", desc: "Diamond-Class Spider Network — the 18-node topology connecting all participants and data", href: "/vault" },

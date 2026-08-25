@@ -35,7 +35,7 @@ export const DATA_MAP_DRILLDOWN: CounterDrillDown[] = [
     summary: "95 HTML pages across both sites — Principia Tectonica (12 main routes + sub-pages) and Infrastructure Academy (83 game/content pages). Anchored to Mobilisation Clock.",
     items: [
       { label: "Home — Guardian of the Stars", href: "/", desc: "Landing page with hero, nav cards, ISI equation" },
-      { label: "The Equation — IQ ⊗ EQ ⊗ CQ = HQ", href: "/quotient", desc: "The Haptic Quotient framework" },
+      { label: "The Equation — IQ ⊗ EQ ⊗ CQ = HQ", href: "/quotient", desc: "The Human Quotient framework" },
       { label: "Inertial Jump — Zero Latency", href: "/inertial-jump", desc: "Parallel rails, supersymmetric construction" },
       { label: "The Thesis — Timestop", href: "/thesis", desc: "12D HyperGrid, AIO Quantum BIOS, moment package splicing" },
       { label: "AIM — Avatar Integration Module", href: "/aim", desc: "Personal nodes, dimensional state creation" },
@@ -189,7 +189,7 @@ export const DATA_MAP_DRILLDOWN: CounterDrillDown[] = [
       { label: "IP-03: 13 Civilizational Relays", desc: "Copyright — 12,000-year chain, 13 = fractal connector" },
       { label: "IP-04: Modus Tecton", desc: "Copyright (Published) — method of the builder" },
       { label: "IP-05: CQ — Consciousness Quotient", desc: "Trademark + Copyright" },
-      { label: "IP-06: The Haptic Quotient (HQ)", desc: "Trademark + Copyright" },
+      { label: "IP-06: The Human Quotient (HQ)", desc: "Trademark + Copyright" },
       { label: "IP-07: The Dearden Field (TDF)", desc: "Copyright + Trade Secret" },
       { label: "IP-08: ICUT Framework", desc: "Copyright" },
       { label: "IP-09: DCSN Architecture", desc: "Trade Secret + Copyright" },

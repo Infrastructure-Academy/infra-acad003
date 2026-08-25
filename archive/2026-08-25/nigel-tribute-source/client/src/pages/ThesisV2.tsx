@@ -704,7 +704,7 @@ export default function ThesisV2() {
 
             {/* The HQ Response */}
             <h3 className={`text-lg md:text-xl font-light tracking-[0.1em] uppercase text-[${gold}] mt-12 mb-4`} style={{ fontFamily: "var(--font-display)" }}>
-              The Haptic Quotient — Widening the Lens
+              The Human Quotient — Widening the Lens
             </h3>
             <BodyText>
               Intelligence Quotient alone operates within the visible fraction — it processes what can be measured, tested, and logically deduced. Emotional Quotient detects the "infrared" of human interaction: trust, intent, social dynamics, the unspoken signals that pure logic cannot capture. Consciousness Quotient reaches further still, into pattern recognition across time, culture, and system behaviour. The Modus Tecton Tensor (⊗) is not additive but multiplicative — it does not stack three narrow views but fuses them into a compound lens, each quotient amplifying the others. A civil engineer with high IQ can calculate a load. One with high HQ can see the political, social, and environmental forces that will determine whether the structure survives its first decade.

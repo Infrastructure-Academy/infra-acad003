@@ -35,7 +35,7 @@ const unifiedModes = [
   { n: 1, mode: "Observation Mode", icon: "👁", desc: "Pure sensory input. The OODA loop begins. Infrastructure is seen, measured, felt. The engineer's first instinct — look before you build." },
   { n: 2, mode: "Analysis Mode", icon: "🧠", desc: "Pattern recognition. IQ-dominant. The ICE Matrix activates. Data becomes structure, noise becomes signal." },
   { n: 3, mode: "Creation Mode", icon: "🔨", desc: "EQ + CQ fusion. The builder's state. Hands and tools and consciousness aligned. Brunel's tunnel, Nigel's thesis." },
-  { n: 4, mode: "Unified Mode", icon: "◆", desc: "The 4th mode — all three collapsed into one. HQ = IQ ⊗ EQ ⊗ CQ. The Haptic Quotient in action. Homo Infrastructus operates here." },
+  { n: 4, mode: "Unified Mode", icon: "◆", desc: "The 4th mode — all three collapsed into one. HQ = IQ ⊗ EQ ⊗ CQ. The Human Quotient in action. Homo Infrastructus operates here." },
 ];
 
 /* TRE Framework */
@@ -267,7 +267,7 @@ export default function Episode2() {
             <SectionTag text="The Modes" />
             <SectionTitle text="The 4th Unified Mode" />
             <BodyText>
-              Three modes of operation have always existed: observation, analysis, and creation. Homo sapiens toggles between them. Homo infrastructus unlocks the <span className={`text-[${gold}]`}>4th mode</span> — where all three collapse into one simultaneous state. This is the Haptic Quotient in action: IQ (analysis) ⊗ EQ (creation) ⊗ CQ (observation through consciousness) = HQ (unified).
+              Three modes of operation have always existed: observation, analysis, and creation. Homo sapiens toggles between them. Homo infrastructus unlocks the <span className={`text-[${gold}]`}>4th mode</span> — where all three collapse into one simultaneous state. This is the Human Quotient in action: IQ (analysis) ⊗ EQ (creation) ⊗ CQ (observation through consciousness) = HQ (unified).
             </BodyText>
 
             <div className="space-y-4 mb-8">

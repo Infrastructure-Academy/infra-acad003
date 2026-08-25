@@ -3,12 +3,22 @@
  * Matches the iAAi navy/gold palette. Fades in/out smoothly.
  */
 import { useState, useEffect } from "react";
+import { useLocation } from "wouter";
 
 const GOLD = "#d4a843";
 const NAVY = "#0b1a33";
 
 export default function ScrollToTop() {
+  const [location] = useLocation();
   const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    const frame = window.requestAnimationFrame(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    });
+    return () => window.cancelAnimationFrame(frame);
+  }, [location]);
 
   useEffect(() => {
     const handleScroll = () => {

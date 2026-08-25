@@ -294,7 +294,7 @@ export default function InertialJump() {
               <span className="text-[oklch(0.78_0.04_75)]"> HQ </span>
               activates. IQ, EQ, and CQ are the inputs — the fuel, the spark, and the engine.
               But the Inertial Jump is the ignition event itself: the moment all three
-              fire simultaneously on parallel, bidirectional rails, and the Haptic Quotient
+              fire simultaneously on parallel, bidirectional rails, and the Human Quotient
               comes alive. Not gradually. Not partially. All at once. Supersymmetrically.
             </p>
 

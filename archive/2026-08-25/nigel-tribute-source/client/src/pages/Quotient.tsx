@@ -7,6 +7,7 @@
 import { motion } from "framer-motion";
 import { useLocation } from "wouter";
 import Navigation from "@/components/Navigation";
+import ICUDockingGate from "@/components/ICUDockingGate";
 import { useTranslation } from "@/contexts/LanguageContext";
 
 const QUOTIENT_BG = "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/UcMtq9dnoiXYmXbtNd8s9Y/quotient-bg-ZKNtEotrSjCkrisL7AVYWD.webp";
@@ -99,6 +100,8 @@ export default function Quotient() {
           </motion.p>
         </div>
       </section>
+
+      <ICUDockingGate />
 
       {/* The Challenge */}
       <section className="py-24 md:py-32 px-6">
