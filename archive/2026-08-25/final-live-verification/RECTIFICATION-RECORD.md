@@ -3,6 +3,7 @@
 **Date:** 25 August 2026
 **Public site:** https://nigelmemorial-ucmtq9dn.manus.space/
 **Equation route:** https://nigelmemorial-ucmtq9dn.manus.space/quotient
+**Renamed entry:** `ICE MIND QUOTIENTS (HQ) — THE EQUATION(s)`
 **Published Manus checkpoint:** `2d06aa9c`
 **Archive repository:** https://github.com/Infrastructure-Academy/infra-acad003
 
@@ -12,7 +13,7 @@ This record documents the final correction of the public Memorial site’s quoti
 
 ## Correction
 
-The Memorial source and translation catalogues were swept for quotient-related legacy labels and corrected across the public route components. The landing page now presents `IQ ⊗ EQ ⊗ CQ = HQ — The Human Quotient` and the legend `H = Human`. The Equation route now presents `The Human Quotient`, `H for Human`, and the interactive `iCU 0/1 Docking Gate` visualization.
+The Memorial source and translation catalogues were swept for quotient-related legacy labels and corrected across the public route components. The landing page now presents `IQ ⊗ EQ ⊗ CQ = HQ — The Human Quotient` and the legend `H = Human`. The equation entry is now named `ICE MIND QUOTIENTS (HQ) — THE EQUATION(s)` in the visible navigation and landing-page card. The route remains `/quotient` and continues to present `The Human Quotient`, `H for Human`, and the interactive `iCU 0/1 Docking Gate` visualization.
 
 ## Live verification
 
@@ -26,4 +27,4 @@ The centralized route-level scroll restoration was also exercised during the sam
 
 ## Archive status
 
-This rectification record and its visual evidence are being committed to the public `Infrastructure-Academy/infra-acad003` archive under `archive/2026-08-25/final-live-verification/`, alongside the previously preserved Memorial source snapshot, route captures, schema catalogues, framework documents, and Golden Excel materials.
+This rectification record and its visual evidence are being committed to the public `Infrastructure-Academy/infra-acad003` archive under `archive/2026-08-25/final-live-verification/`, alongside the previously preserved Memorial source snapshot, route captures, schema catalogues, framework documents, and Golden Excel materials. The new paper-and-plate index is [`ICE-MIND-QUOTIENTS-HQ-THE-EQUATIONS.md`](../nigel-tribute-source/docs/ICE-MIND-QUOTIENTS-HQ-THE-EQUATIONS.md), beside the framework paper and supplied plate.
