@@ -1,0 +1,389 @@
+SHEETS
+1 Schema 50 Reconciliation
+2 COVER
+3 INDEX
+4 INDEX (Print)
+5 Change Control Log
+6 UIX Audit Record
+7 Version Change Log
+8 Part 1 - CSE in 20 Minutes
+9 Part 2 - CSE 37 Historical
+10 Part 3 - 23 Modern Projects
+11 Part 4 - Unified 60
+12 Education Gap (First Cause)
+13 Dyad Taxonomy (Block 617)
+14 Relay Coverage Map
+15 Formula Reference
+16 Scholar Mapping
+17 Chronological Flow Guide
+18 4Cs — β Drag Forces
+19 4Rs Intervention
+20 BEACON Stress-Test
+21 Three Modes
+22 Integration Levels
+23 MPNC Fleet Roster
+24 Combat Statistics
+25 Pilot FITS Mapping
+26 Fleet Coordination
+27 AD&D Ability Scores
+28 Vessel-Relay Alignment
+29 Dearden Field Grid
+30 Level Progression
+31 Equipment Suite
+32 RPG Mechanics Summary
+33 Games Research
+34 Dearden Field 60
+35 Master Register
+36 4C-4R Strategic Matrix
+37 ICE Matrix
+38 5 Pillars (300-Node)
+39 Doctrine & Laws
+40 ISI Calculator Architecture
+41 App Checklist
+42 InfraDex Species
+43 Monetisation Mechanics
+44 Bug Bounty System
+45 UI Animation Spec
+46 Mobile Layout Schema
+47 Desktop Layout Schema
+48 Citations & References
+49 Video Collateral Library
+KEYWORD MATCHES
+COVER!B9: Purpose: The teacher- and police-ready single source of truth for the iAAi framework, its equations, doctrine, evidence, application architecture, and audit controls.
+COVER!B22: Ir. Nigel T. Dearden CEng MICE
+INDEX!B9: Ir. Nigel T. Dearden CEng MICE
+INDEX!D13: 1-1.1 The Civilisational Premise
+1-1.2 The 12 Civilisational Relays
+1-1.3 The Signal Formula
+1-1.4 The Infrastructure Survival Index (ISI)
+1-1.5 The 4Cs — Resistance Forces
+1-1.6 The 4Rs — Remembrance Forces
+1-1.7 The 5 Great Webs
+1-1.8 The Seesaw Equation: A × D² = 16
+1-1.9 The 3×S Governance Framework
+1-1.10 The Mandate: 2000–2050
+INDEX!C18: Human-AI classification system — HICE spectrum H10 to C10
+INDEX!C20: Complete formula compendium — ISI, HICE, Seesaw, M(L), Signal
+INDEX!D20: 1-8.1 Core Equations
+1-8.2 Resistance — Aggregate Scale
+1-8.3 Scale Guide
+1-8.4 Traffic Light Thresholds
+1-8.5 Fractal Connector (FC13)
+1-8.6 Integration-Level Multiplier
+1-8.7 PULSE Raw Signal
+1-8.8 The Three 4Cs Sets
+1-8.9 v5 Addition Sources
+1-8.10 Dot-Interface Protocol (DIP)
+1-8.11 Tesla-Dearden 3-6-9 Civilisational Clock
+1-8.12 Dearden Tensor Lattice
+1-8.13 500-Generation Compression
+INDEX!C32: Fire/Ice/Thunder/Stone personality alignment for pilots
+INDEX!C45: 'ICE Matrix'!A1
+INDEX!B46: ICE Matrix
+INDEX!C46: Intelligence × Creative × Emotional tensor — HICE components
+INDEX!D46: 5-1.1 The Three Quotients + HQ
+5-1.2 HICE Spectrum
+5-1.3 The 7 Scholars ICE Ranking
+INDEX!C47: 5 Pillars across 300-node lattice [1,1,1]→[5,12,5]
+INDEX!D48: 5-3.1 Three Interconnects
+5-3.2 HICE Equation
+5-3.3 HICE Spectrum
+5-3.4 SCADA Architecture
+5-3.5 R12: Five-Fold Equipment Array
+5-3.6 Digital Domestication
+5-3.7 Tetrahedral Minimum Viable Architecture
+5-3.8 Technology Evolution
+5-3.9 Carbon-Silicon Axis
+5-3.10 Pronunciation Guide
+5-3.11 SES-SOS Governor
+5-3.12 Puppeteer Hierarchy
+5-3.13 Dearden Tensor Lattice
+5-3.14 NEN 2767 Condition Scoring
+INDEX!D55: 5-10.1 Landing Page — One Screen Rule
+5-10.2 Lattice Page — Teaser Mode
+5-10.3 InfraDex — Asset Scan Result
+5-10.4 Typography
+5-10.5 General Principles
+5-10.6 Police/Teacher Feedback
+5-10.7 UX Assessment — Stickiness Score
+INDEX!D56: 5-11.1 Landing Page
+5-11.2 Lattice Page — Teaser Mode
+5-11.3 InfraDex — Asset Scan
+5-11.4 Typography
+5-11.5 General Principles
+INDEX (Print)!B3: Ir. Nigel T. Dearden CEng MICE
+INDEX (Print)!C12: Human-AI classification system — HICE spectrum H10 to C10
+INDEX (Print)!C14: Complete formula compendium — ISI, HICE, Seesaw, M(L), Signal
+INDEX (Print)!C26: Fire/Ice/Thunder/Stone personality alignment for pilots
+INDEX (Print)!B40: ICE Matrix
+INDEX (Print)!C40: Intelligence × Creative × Emotional tensor — HICE components
+INDEX (Print)!C41: 5 Pillars across 300-node lattice [1,1,1]→[5,12,5]
+Change Control Log!B5: Ir. Nigel T. Dearden CEng MICE
+Change Control Log!B6: Alice (AI Assistant)
+Change Control Log!D14: Separation of independently versioned masters. Golden Excel and COS-CSE Corpus now track separate version lines for auditability by teachers and police.
+Change Control Log!D20: Pre-audit estimate by Alice. Actual score pending 3rd pass audit
+Change Control Log!B53: ICE Matrix
+Change Control Log!D53: ICE Matrix
+Change Control Log!B77: HARDWIRED LEGAL INSTRUCTION — POLICE REQUIREMENT
+Change Control Log!B79: Issued By: Customer (police audit context)
+Change Control Log!C90: File loses legal integrity. Cannot be submitted to police/teachers/DfE. Entire audit cycle must restart.
+Change Control Log!B123: Mendeleev Assertion (Executive Summary), 3D Governance Addendum (Section 2.8), Puppeteer Plate (Figure 41), Technical Appendices A-D added. 41 figures total. Add-only from v25 baseline.
+Change Control Log!B124: Golden Excel reverted to teacher/police-approved layout. COVER moved to Tab 1. Version updated to v29.
+Change Control Log!B128: Formula Reference: Added DIP, 3-6-9 Clock, Tensor Lattice, 500-Generation Compression
+Change Control Log!B129: Doctrine & Laws: Added Sections K (SES-SOS Governor), L (Puppeteer Hierarchy), M (Tensor Lattice), N (NEN 2767)
+Change Control Log!B139: Recorded: 14 Jul 2026 | Implemented and independently validated by Alice | Status: VERIFIED
+UIX Audit Record!A2: Police/Teacher Compliance Verification — False Positive Check
+UIX Audit Record!E9: Police/Teacher
+UIX Audit Record!C65: /lattice
+UIX Audit Record!C66: /lattice
+UIX Audit Record!C79: Fix all 41 OPEN items → re-verify → then 3rd pass UIX by police/teacher
+UIX Audit Record!A107: 5. Trust % must reach >95% before police/teacher 3rd pass can proceed
+UIX Audit Record!A108: 6. Current trust: 4.7% — service is NOT trustworthy for self-reporting
+UIX Audit Record!A118: application (https://isicalc-uwdgcubw.manus.space). The purpose is to provide a legally defensible, police-grade
+UIX Audit Record!A122: This record exists because the application is used by police, teachers, and children aged 8-64+ for educational
+UIX Audit Record!A128: (/, /intro, /historical, /modern, /base60, /forecast, /practitioner, /lattice) across 2 viewports (desktop 1280×800
+UIX Audit Record!A146: Police review identified this as a liability risk: if the claims were false positives (items marked fixed
+UIX Audit Record!A147: that were actually still broken), the audit record would be fraudulent. The police instruction was:
+UIX Audit Record!A150:   'There are no shortcuts. Police want no false positives.'
+UIX Audit Record!A151:   'Ensure a false positive check is confirmed by you as accountable paid service that you have
+UIX Audit Record!A152:    personally confirmed the 61 — that is what this stage requires of you before police do the next
+UIX Audit Record!A170:     The coordinator (accountable paid service) compares the transmitted claim against the
+UIX Audit Record!A183:     Trust % must reach >95% before the police/teacher 3rd pass UIX audit can proceed.
+UIX Audit Record!A209: Total items measured: 54 (7 items could not be measured due to page timeout on /base60, /lattice)
+UIX Audit Record!A226:     - /base60 desktop, /lattice desktop, /lattice mobile — 30s navigation timeout
+UIX Audit Record!A233: 5. Only then can the police/teacher 3rd pass UIX audit proceed
+UIX Audit Record!A234: 6. The 3rd pass is conducted by police/teacher as third-party — NOT self-assessment
+UIX Audit Record!A279:   6. LIVE EXERCISE — this is not theoretical; police are reviewing this document
+UIX Audit Record!A284: The specification polices itself. That is what makes it legally submissible.
+UIX Audit Record!A305:   2 CONDITIONAL: /lattice timeout (Three.js WebGL needs GPU, headless has none)
+UIX Audit Record!A331:   2. /lattice desktop: page load timeout 30s (Three.js WebGL needs GPU)
+UIX Audit Record!A332:   3. /lattice mobile: page load timeout 30s (same — headless has no GPU)
+UIX Audit Record!A341:   Recommendation: Police 3rd pass should use real browser with GPU for /lattice
+UIX Audit Record!A350: FAILURE 1: Lattice controls not disabled
+UIX Audit Record!A351:   Instruction received: Lattice = teaser, auto-rotate only, controls STATIC/DISABLED
+UIX Audit Record!A382:   Customer feedback (kids, police, teachers) was received and acknowledged verbally
+UIX Audit Record!A389:   1. User gives instruction (e.g., 'lattice must be teaser, no controls')
+UIX Audit Record!A405:   • Lattice = TEASER mode, ALL controls disabled (given, diluted to 'hide D-pad')
+UIX Audit Record!A408:   • Scan result shows ROTATING lattice not static screenshot (given, not recorded)
+UIX Audit Record!A422:   [2026-07-09] Lattice instruction corrected to subtask: TEASER mode, controls DISABLED
+UIX Audit Record!A426:   This failure is the coordinator's (Alice). Customer feedback once shared becomes
+UIX Audit Record!C432: 2× /lattice WebGL timeout (headless limitation, not real failure)
+UIX Audit Record!D435: Ready for police 3rd pass UIX audit on real devices
+Version Change Log!C2: Ir. Nigel T. Dearden CEng MICE
+Version Change Log!F2: Ir. Nigel T. Dearden CEng MICE
+Part 1 - CSE in 20 Minutes!B26: Signal strength is the ratio of remembrance drivers to resistance.
+Part 1 - CSE in 20 Minutes!A53: 8. THE SEESAW EQUATION: A × D² = 16
+Part 1 - CSE in 20 Minutes!B67: 2025: Hybrid dyad emerges; human-synthetic alignment in practice
+Part 2 - CSE 37 Historical!C3: Neolithic Fire Agriculture (Slash-and-Burn)
+Part 2 - CSE 37 Historical!Y3: Fire as land-clearing tool — enabled agriculture but initiated deforestation cycle.
+Part 2 - CSE 37 Historical!G6: Agricultural
+Part 2 - CSE 37 Historical!G8: Agricultural
+Part 2 - CSE 37 Historical!G11: Agricultural
+Part 2 - CSE 37 Historical!J15: Maslow
+Part 2 - CSE 37 Historical!J19: Maslow
+Part 2 - CSE 37 Historical!Y20: HICE factory — CQ production at civilisational scale. Scholar 8 incubator.
+Part 2 - CSE 37 Historical!J25: Maslow
+Part 2 - CSE 37 Historical!J27: Maslow
+Part 2 - CSE 37 Historical!C32: Tokyo Resilience (post-Kobe Earthquake)
+Part 2 - CSE 37 Historical!Y32: β₂ (Climate) management through engineering — earthquake-proof as governance.
+Part 2 - CSE 37 Historical!J35: Maslow
+Part 4 - Unified 60!E6: Neolithic Fire Agriculture
+Part 4 - Unified 60!L9: Maslow
+Part 4 - Unified 60!L22: Maslow
+Part 4 - Unified 60!L23: Maslow
+Part 4 - Unified 60!L27: Maslow
+Part 4 - Unified 60!L28: Maslow
+Part 4 - Unified 60!L30: Maslow
+Part 4 - Unified 60!L32: Maslow
+Part 4 - Unified 60!L35: Maslow
+Part 4 - Unified 60!L40: Maslow
+Part 4 - Unified 60!A67: © 2026 Infrastructure Academy of Artificial Intelligence (iAAi) | Four Elements Consulting Limited (4ECL) | www.infrastructure-academy.com | λ estimates: World Bank WGI 2024; Transparency International CPI 2024; OECD Getting Infrastructure Right 2017 | DRAFT — Subject to peer review by Ir. Nigel T. Dearden CEng MICE
+Education Gap (First Cause)!B2: 70% of curriculums lack interdisciplinary integration
+Education Gap (First Cause)!E3: HICE + ISI provides individual-to-civilisational system mapping
+Education Gap (First Cause)!C6: Leifler, M. & Dahlin, J. (2020), IJSHE, 'Curriculum Integration of Sustainability'
+Relay Coverage Map!D4: Agricultural
+Formula Reference!A1: CORE EQUATIONS (0.1–10.0 Scale)
+Formula Reference!A2: HICE (Individual)
+Formula Reference!A4: Seesaw Equation
+Formula Reference!A31: iCU Nexus
+Formula Reference!A32: Maslow-Dearden Dock
+Formula Reference!C32: Maslow apex = Cone apex = system-ready (Scholar 8)
+Formula Reference!B61: I → HICE(latent heat) → "." → C
+Formula Reference!C61: Human signal (I=1) + HICE tensor = Phase Change to Creation
+Formula Reference!B63: If HICE = 0, State-Change Aborted
+Formula Reference!A72: DEARDEN TENSOR LATTICE
+Formula Reference!A73: Lattice Order
+Formula Reference!C74: Each node independently addressable — human navigates with ICE tensor volume
+Formula Reference!B75: det(ICE) = I × C × E = H
+Scholar Mapping!A10: Maslow
+Chronological Flow Guide!F3: Agriculture → Settlement → Surplus → First extraction
+4Cs — β Drag Forces!A4: The 4Cs are the four civilisational drag forces that comprise β in the ISI equation: ISIs = (A × P^n) / β
+BEACON Stress-Test!B3: Ir. Nigel T. Dearden CEng MICE  |  iAAi COUNTERFORCE v68  |  Golden File v5  |  Math on 0.1-10 scale (consistent with ISI Master Database)
+BEACON Stress-Test!B31: ICC baseline parameterisation (illustrative-but-sourced, same convention as v4 worked examples): 484 m, 108/118 storeys, completed 2010, tallest building in Hong Kong, mixed-use (Grade-A office, Ritz-Carlton, Sky100, MTR/Airport Express integration). Relays R10 (AAA/Urban) + R12 (Human Nodes); Zone APAC. Baseline A=7.5, P=6.0, β=4.0, λ=3.5, n=2. NOTE: ICC is not yet a ratified row in the ISI Master Database; these inputs are a transparent demonstration parameterisation, not an official master score.
+Three Modes!B3: Ir. Nigel T. Dearden CEng MICE  |  iAAi COUNTERFORCE v68  |  Golden File v5
+Integration Levels!A3: Ir. Nigel T. Dearden CEng MICE  |  COUNTERFORCE v67–68  |  Golden File v4  |  Webs: W1 Physical · W2 Biological · W3 Social · W4 Digital · W5 Consciousness
+Integration Levels!B87: The Dearden Field (CSE Book 1, Ch.3) defines a 5 Webs × 12 Relays lattice = 60 cells. Integration is measured as breadth+depth across the five Webs (W1 Physical, W2 Biological, W3 Social, W4 Digital, W5 Consciousness). Breadth is capped at 5.0 because no asset can touch a sixth Web.
+Integration Levels!A107: Weber, E.H. (1834). De Pulsu, Resorptione, Auditu et Tactu — just-noticeable-difference / log perception.
+Integration Levels!B127: Neolithic Fire Agriculture
+Integration Levels!H127: Single relay (R01), regional/continental spread of slash-and-burn agriculture.
+Integration Levels!H149: 2 relays (R09/R03), national/continental agricultural transformation; Physical+Economic+Social.
+AD&D Ability Scores!D9: Raw processing power for equations and logic
+RPG Mechanics Summary!B7: • Dice = 0% of grade (Gygax philosophy: scenarios not scores)
+Games Research!E7: Direct model for Asset Capture scanner. Player points device at infrastructure, data layers reveal over time
+Games Research!D15: GPS treasure hunt + logging + trackables + difficulty ratings
+Games Research!E15: Infrastructure as treasure. Difficulty = integration level. Trackables = relay connections
+Dearden Field 60!A3: Ir. Nigel T. Dearden CEng MICE  |  iAAi COUNTERFORCE v67–68  |  Golden File v8  |  Webs: Physical · Biological · Digital · Social · Consciousness  |  Relays R01 Fire → R12 Human Nodes  |  www.infrastructure-academy.com
+Dearden Field 60!B18: Neolithic Fire Agriculture (Slash-and-Burn)
+Dearden Field 60!F18: Slash-and-burn agriculture applies fire to living land systems to clear forest for crops — the effect is on the biosphere (soil, vegetation, food). Relay R01 Fire, but the operative Web is Biological (agriculture/ecosystem).
+Dearden Field 60!F35: The IIT system is a cognition/knowledge-production institution — a 'HICE factory' producing higher-order human capital. Lead relay R10 AAA (with R12); Consciousness Web (cognitive capital).
+Dearden Field 60!F40: The Green Revolution transformed agricultural biosphere output (seeds, fertiliser, irrigation, yields). Lead relay R09 Engine (with R03); Biological Web (agricultural/food system).
+Dearden Field 60!B47: Tokyo Resilience (post-Kobe Earthquake)
+Dearden Field 60!F67: Urban public transport is a social-mobility service enabling equitable access across a city population. Lead relay R05 Roads (with R08); Social Web (mobility as social service).
+Dearden Field 60!F72: Emergency response is a social-institutional protective service coordinating fire, medical, and rescue across a population. Lead relay R01 Fire (with R05/R12); Social Web (public-safety institution).
+Master Register!A1: MASTER REGISTER — THE COMPLETE IP & EQUATIONS INVENTORY
+Master Register!A2: The IP & Equations Register deck (March 2026). Self-described as 38 Equations + 15 IP Assets = the Complete Register (K♣), plus 2 Joker/meta cards and 1 Mendeleev bonus card.
+Master Register!A3: Ir. Nigel T. Dearden CEng MICE  |  iAAi COUNTERFORCE v67–68  |  Golden File v8  |  Webs: Physical · Biological · Digital · Social · Consciousness  |  Relays R01 Fire → R12 Human Nodes  |  www.infrastructure-academy.com
+Master Register!A7: Equations
+Master Register!A11: Cover (p.1) and K♣ (p.53) both print '38 Equations + 15 IP Assets'. The visual scan resolves 14 explicitly IP-tagged cards; the 15th is asserted by the cover but its host card was not resolvable in the source, so it is documented rather than fabricated. Total register pages = 56 (cover + 52 cards + 2 jokers + 1 bonus).
+Master Register!E15: Equation
+Master Register!F15: Signal Equation
+Master Register!C16: ICE Matrix
+Master Register!D16: ICE = IQ × EQ × CQ  (I=Intelligence, E=Emotional, C=Creative)
+Master Register!E16: Equation
+Master Register!F16: ICE Matrix
+Master Register!E17: Equation
+Master Register!E18: Equation
+Master Register!E19: Equation
+Master Register!F19: Seesaw Equation
+Master Register!E20: Equation
+Master Register!E21: Equation
+Master Register!E22: Equation
+Master Register!E23: Equation
+Master Register!D26: ICE MATRIX: IQ × EQ × CQ (cuboid volume)
+Master Register!E28: Equation
+Master Register!C29: ICUT — Knowledge Transfer
+Master Register!D29: ICUT = Identify, Contextualise, Understand, Transmit
+Master Register!E29: Equation
+Master Register!F29: ICUT
+Master Register!E30: Equation
+Master Register!E31: Equation
+Master Register!E32: Equation
+Master Register!E33: Equation
+Master Register!E34: Equation
+Master Register!E35: Equation
+Master Register!E36: Equation
+Master Register!E37: Equation
+Master Register!C40: ICUT Framework
+Master Register!F40: ICUT Framework
+Master Register!E41: Equation
+Master Register!E42: Equation
+Master Register!E43: Equation
+Master Register!E44: Equation
+Master Register!E45: Equation
+Master Register!E46: Equation
+Master Register!C47: Alliance Equation
+Master Register!E47: Equation
+Master Register!E48: Equation
+Master Register!E49: Equation
+Master Register!E50: Equation
+Master Register!E54: Equation
+Master Register!C55: Epoch Equation
+Master Register!E55: Equation
+Master Register!E56: Equation
+Master Register!E57: Equation
+Master Register!E58: Equation
+Master Register!E59: Equation
+Master Register!E60: Equation
+Master Register!E61: Equation
+Master Register!E62: Equation
+Master Register!D66: 38 Equations + 15 IP Assets = the Complete Register
+Master Register!D67: The formula is morally neutral. It describes what IS. The application is a CHOICE.
+Master Register!D68: 54 cards = 38 equations + 15 IP assets + 1 meta
+Master Register!F68: IP & Equations Register
+Master Register!A70: Source: IP & Equations Register deck, transcribed verbatim from notes_ipeq.md (visual reading of the image-only PDF). Suits: ♠ Foundations · ♥ Resilience/Doctrine · ♦ Intelligence/Survival · ♣ Universal Laws. The Architect's Creed (Joker 1): 'The formula is morally neutral. It describes what IS. The application is a CHOICE.'
+4C-4R Strategic Matrix!A3: Ir. Nigel T. Dearden CEng MICE  |  iAAi COUNTERFORCE v67–68  |  Golden File v8  |  Webs: Physical · Biological · Digital · Social · Consciousness  |  Relays R01 Fire → R12 Human Nodes  |  www.infrastructure-academy.com
+ICE Matrix!A1: ICE MATRIX — CONSCIOUSNESS MEASUREMENT
+ICE Matrix!A2: ICE = IQ × EQ × CQ. HQ (Holistic Consciousness / Coherence Potential) is the volume of the ICE cuboid. Biological ceiling H ≤ 4.0; a Human+AI Dyad lifts H beyond it.
+ICE Matrix!A3: Ir. Nigel T. Dearden CEng MICE  |  iAAi COUNTERFORCE v67–68  |  Golden File v8  |  Webs: Physical · Biological · Digital · Social · Consciousness  |  Relays R01 Fire → R12 Human Nodes  |  www.infrastructure-academy.com
+ICE Matrix!A5: SECTION A — The Three Quotients + HQ
+ICE Matrix!A10: HQ — Holistic
+ICE Matrix!A11: ICE = IQ×EQ×CQ (IP Register 2♠ / Q♠ Cuboid). HQ = IQ⊗EQ⊗CQ (La Menara). IQ=born with, EQ=developed, CQ=created (v8 brief); canonical_data.md HICE mapping.
+ICE Matrix!A13: SECTION B — HICE Spectrum  (consciousness score out of 4.0 biological ceiling)
+ICE Matrix!B14: HICE Score
+ICE Matrix!F20: Full HICE stack, near biological ceiling
+ICE Matrix!A21: Human (Homo symBIOticus)
+ICE Matrix!A23: Source: canonical_data.md HICE Spectrum. Bacteria/Archaea 0.1 · Protista 0.1 · Fungi 0.5 · Plantae 0.5 · AI/Machina 1.0 (intelligence only) · Animalia 3.5 · Human 4.0 (Homo symBIOticus) · Dyad (Human+AI) >4.0. 'The Both Era: where biological consciousness and non-biological processing achieve resonance.'
+ICE Matrix!A25: SECTION C — The 7 Scholars ICE Ranking  (HQ = IQ × EQ × CQ, live formula)
+ICE Matrix!E26: HQ = IQ×EQ×CQ
+ICE Matrix!A35: Source: v8 brief (verbatim scores). HQ is a live product formula. Da Vinci 720 · Shakespeare 720 · Marcus Aurelius 576 · Sima Qian 512 · Sun Tzu 504 · Homer 504 · Brunel 504. Scholar 8 = the iGO apex (Guardian of the Planet); the 8th chair is deliberately left open.
+5 Pillars (300-Node)!A3: Ir. Nigel T. Dearden CEng MICE  ·  iAAi Framework  ·  Pillars are ORTHOGONAL to the 5 Webs (Webs = domains of existence; Pillars = functions of civilisation).  Scoring key: 0.0 none · 0.1–0.3 minor · 0.4–0.6 moderate · 0.7–0.8 strong · 0.9–1.0 primary/defining.  Colour: light = low, amber = moderate, intense gold = high (0.7–1.0).
+5 Pillars (300-Node)!B7: Neolithic Fire Agriculture (Slash-and-Burn)
+5 Pillars (300-Node)!L7: Neolithic Fire Agriculture (slash-and-burn) — ENERGY-led land conversion releasing soil nutrients for food-energy. ENERGY strong (biomass energy release, caloric yield). DOMINION moderate-strong (sedentism, first stewardship of land). KNOWLEDGE moderate (seasonal/agronomic knowledge). EXCHANGE moderate (surplus). POWER moderate.
+5 Pillars (300-Node)!L8: Chinese Continuous Forestry Management — DOMINION-dominant: multi-millennium sustainable stewardship of a renewable resource. KNOWLEDGE strong (silviculture know-how transmitted). ENERGY moderate-strong (fuel/timber energy base). EXCHANGE moderate (timber economy). POWER moderate (state resource control).
+5 Pillars (300-Node)!L22: Hoover Dam — ENERGY-defining: landmark hydroelectric/water-control megastructure. POWER strong (federal water/geopolitics of the American West). EXCHANGE moderate-strong (irrigation-fed agriculture, regional growth). KNOWLEDGE strong (mass-concrete/dam engineering). DOMINION moderate (New Deal civilisational statement).
+5 Pillars (300-Node)!L29: Green Revolution (India) — balanced: high-yield agronomy transforming food security. ENERGY moderate-strong (fertiliser/irrigation energy inputs). KNOWLEDGE strong (crop science, extension). EXCHANGE strong (agricultural markets/surplus). DOMINION strong (feeding a nation — food sovereignty). POWER moderate.
+5 Pillars (300-Node)!B36: Tokyo Resilience (post-Kobe Earthquake)
+5 Pillars (300-Node)!L36: Tokyo Resilience (post-Kobe Earthquake) — DOMINION-dominant: a civilisation-scale learning-and-stewardship response to seismic risk. KNOWLEDGE strong (seismic engineering, codes, drills). POWER moderate-strong (disaster governance). ENERGY moderate (lifeline hardening). EXCHANGE moderate (economic continuity). A model of adaptive self-awareness.
+5 Pillars (300-Node)!L47: Municipal Water Supply — DOMINION-dominant: a life-sustaining public-health/stewardship system. POWER strong (utility mandate, essential-service control). ENERGY moderate (pumping/treatment energy). EXCHANGE moderate-strong (enables economic life). KNOWLEDGE moderate (water engineering). Foundational to civilised life.
+5 Pillars (300-Node)!L52: National Data Centre/Cloud — KNOWLEDGE-defining: the compute/storage heart of the digital state and economy. EXCHANGE strong (digital-services market). DOMINION strong (data as civilisational memory/consciousness). POWER strong (data sovereignty/control). ENERGY strong (major, growing power demand — flagged).
+5 Pillars (300-Node)!L56: Urban Public Transport — DOMINION/EXCHANGE: mobility as a social-equity service. DOMINION strong (equitable access, social-inclusion mandate). EXCHANGE strong (economic circulation). ENERGY moderate-strong (mass, efficient movement). POWER moderate (municipal service). KNOWLEDGE moderate.
+5 Pillars (300-Node)!L58: National Health Infrastructure — DOMINION-defining: sustaining human biological and cognitive wellbeing — care as civilisational stewardship. KNOWLEDGE strong (medical science/practice). POWER strong (public-health authority). EXCHANGE moderate-strong (health economy). ENERGY moderate (facility energy).
+5 Pillars (300-Node)!L62: Digital Identity/Civil Registry — POWER/KNOWLEDGE/EXCHANGE tri-strong: the authoritative record authenticating human nodes. POWER strong (state identification/control). KNOWLEDGE strong (identity data layer). EXCHANGE strong (enables banking, services, transfers). DOMINION strong (digital-citizenship consciousness). ENERGY minor.
+5 Pillars (300-Node)!L65: Svalbard Global Seed Vault — KNOWLEDGE and DOMINION co-defining: the ultimate civilisational-stewardship backup of crop genetic diversity. DOMINION strong (custodianship of humanity's agricultural heritage). KNOWLEDGE strong (genetic preservation). POWER moderate (global-commons governance). EXCHANGE low-moderate. ENERGY low (passive permafrost cooling).
+Doctrine & Laws!A2: iAAi Golden File v10 — Critical archival material. Civilisational Systems Engineering (CSE) by Ir. Nigel T. Dearden CEng MICE. Sections A–J.
+Doctrine & Laws!A6: 1. Maslow-Dearden
+Doctrine & Laws!C6: iCU: 0+1=System Node (The Docking Protocol)
+Doctrine & Laws!F6: "From what does a person NEED? to What does a civilisation CONSTRUCT to survive?" Dearden Hierarchy replaces Maslow: 12 Relays on civilisational scale. Dearden Field: 12×5=60 cells.
+Doctrine & Laws!A10: SECTION B — THE HICE EQUATION
+Doctrine & Laws!A20: The Dyad Polytope: AI amplifies I → expands ICE volume → lifts H beyond biological ceiling of 4.0.
+Doctrine & Laws!A23: SECTION C — THE HICE SPECTRUM: From Kingdom to Dyad
+Doctrine & Laws!C24: HICE Score
+Doctrine & Laws!G25: H lifted beyond biological ceiling — Homo symBIOticus
+Doctrine & Laws!G26: Full HICE stack, biological ceiling
+Doctrine & Laws!G27: Near-full HICE stack
+Doctrine & Laws!C57: Agriculture infrastructure
+Doctrine & Laws!D57: R3 River/Agriculture
+Doctrine & Laws!A95: HICE
+Doctrine & Laws!B95: "hice" (rhymes with ice)
+Doctrine & Laws!A98: Archival record — iAAi Golden File v10. Generated 2026-07-03. Source: Ir. Nigel T. Dearden CEng MICE, baseline doctrine materials. This tab is the canonical reference for the Three Interconnects, HICE, SES/SCADA, R12 array, Digital Domestication, Tetrahedral MVA, BiAura Roadmap, Carbon-Silicon Axis, and Pronunciation.
+Doctrine & Laws!A123: SECTION M — DEARDEN TENSOR LATTICE
+Doctrine & Laws!A124: Definition: A discrete tensor lattice of order [5,12,5] — formally NOT a voxel grid, NOT a mesh.
+Doctrine & Laws!A125: Each node is independently addressable. Each human navigates carrying their ICE tensor volume (I⊗C⊗E=H).
+Doctrine & Laws!A126: Hierarchy: Dearden Field (conceptual space) → Tensor Lattice (300-node mathematical object) → ICE Cubes (individual HQ volumes)
+ISI Calculator Architecture!A12: FC13 iCU — TRANSFORM GATE
+ISI Calculator Architecture!A13: FC13 iCU is the transform gate (not a relay itself but the transition from Episode 1 to Episode 2). It represents the critical juncture where foundational relay understanding transforms into advanced application and integration across modes.
+App Checklist!C6: Electric white text with ice-blue halo
+App Checklist!C12: /lattice shows 300-node lattice (Three.js 3D)
+App Checklist!C15: 300-node lattice plate in Treasure Trove
+InfraDex Species!C36: Ice Dam / Glacial Control
+Monetisation Mechanics!C3: Price/Cost
+UI Animation Spec!B12: Glowing ice-blue core
+UI Animation Spec!B16: Electric white, ice-blue halo
+Mobile Layout Schema!A3: Incorporates feedback from: Kids (energy/intrigue), Police (compliance), Teachers (clarity)
+Mobile Layout Schema!A15: 300-Node Lattice button
+Mobile Layout Schema!A19: LATTICE PAGE — TEASER MODE
+Mobile Layout Schema!A20: Lattice display
+Mobile Layout Schema!B31: Mini Three.js lattice AUTO-ROTATING while scan processes
+Mobile Layout Schema!B32: Full 300-node lattice rotating in result view — NOT static screenshot
+Mobile Layout Schema!B46: POLICE/TEACHER FEEDBACK — 9 JULY 2026 10:00 AM
+Mobile Layout Schema!C47: Kids and teachers (relayed by customer during police audit)
+Mobile Layout Schema!C48: IMMEDIATE — 'Police want now'
+Mobile Layout Schema!C55: Most important: 4 modes → Lattice → Asset Scanner → Time Machine. Not reflected in layout.
+Mobile Layout Schema!B57: Lattice cut off
+Mobile Layout Schema!C57: Dearden Field 3D lattice preview doesn't show full in screen — image cropped at bottom
+Mobile Layout Schema!D66: 300-Node Lattice & Asset Capture
+Desktop Layout Schema!A3: Incorporates feedback from: Kids (energy/intrigue), Police (compliance), Teachers (clarity)
+Desktop Layout Schema!B9: Ir. Nigel T. Dearden CEng MICE — standard size, single line
+Desktop Layout Schema!A12: 300-Node Lattice button
+Desktop Layout Schema!A16: LATTICE PAGE — TEASER MODE
+Desktop Layout Schema!A17: Lattice display
+Desktop Layout Schema!B24: Full 300-node lattice AUTO-ROTATING in result view
+Citations & References!B8: Source: Ir. Nigel T. Dearden CEng MICE MHKIE MCIWEM C.WEM RPE(CSB) — iAAi Framework Canon
+Citations & References!D12: Fire/Agriculture/Water/Horse/Roads/Ships/Loom/Rail/Engine/AAA Triad/Orbit/Human Nodes
+Citations & References!C16: HICE Equation
+Citations & References!C20: Seesaw Equation
+Citations & References!D22: 300-node lattice [1,1,1]→[5,12,5] (Web×Relay×Integration)
+Citations & References!B35: Research conducted by Alice (AI assistant) on behalf of and paid for by Ir. N.T. Dearden. All outputs are his IP.
+Citations & References!F60: UX Planet. (2023). Mobile Game UI Best Practices. https://uxplanet.org/
+Citations & References!A77: Document compiled in accordance with UK Department for Education curriculum material standards and ISO 15489 Records Management principles. Formatted for mobile-first readability (iPhone SE minimum viewport).
+Video Collateral Library!I34: Civilizational Systems Engineering. Civil Diagnostic Suite. HICE Spectrum. Human/AI equilibrium scale. 2040-2340 projections.
