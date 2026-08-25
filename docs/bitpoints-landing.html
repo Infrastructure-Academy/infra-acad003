@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BitPoints — Physical Intellectual Currency | iAAi</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;400;600&display=swap">
+  <style>
+    :root {
+      --navy: #0a1628;
+      --navy-light: #162544;
+      --gold: #ffd700;
+      --gold-dim: #c9a84c;
+      --white: #f4f4f4;
+      --gray: #8a95a5;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      line-height: 1.6;
+    }
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 2rem;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+      border-bottom: 3px solid var(--gold);
+    }
+    .hero h1 {
+      font-family: 'Cinzel', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      color: var(--gold);
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.15em;
+    }
+    .hero .tagline {
+      font-size: 1.25rem;
+      color: var(--gray);
+      max-width: 600px;
+      margin-bottom: 2rem;
+    }
+    .hero .price {
+      font-family: 'Cinzel', serif;
+      font-size: 3rem;
+      color: var(--gold);
+      margin: 1rem 0;
+    }
+    .hero .price span {
+      font-size: 1.25rem;
+      color: var(--gray);
+    }
+    .btn {
+      display: inline-block;
+      padding: 1rem 3rem;
+      background: var(--gold);
+      color: var(--navy);
+      text-decoration: none;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      border: 2px solid var(--gold);
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-family: 'Cinzel', serif;
+    }
+    .btn:hover {
+      background: transparent;
+      color: var(--gold);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--gold);
+      margin-left: 1rem;
+    }
+    .btn-outline:hover {
+      background: var(--gold);
+      color: var(--navy);
+    }
+    .features {
+      padding: 4rem 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .features h2 {
+      font-family: 'Cinzel', serif;
+      color: var(--gold);
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 3rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .card {
+      background: var(--navy-light);
+      border: 1px solid rgba(255, 215, 0, 0.2);
+      padding: 2rem;
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: var(--gold);
+    }
+    .card-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    .card h3 {
+      font-family: 'Cinzel', serif;
+      color: var(--gold);
+      margin-bottom: 0.5rem;
+    }
+    .card p {
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+    .deck-preview {
+      padding: 4rem 2rem;
+      background: linear-gradient(135deg, var(--navy-light) 0%, var(--navy) 100%);
+      text-align: center;
+    }
+    .deck-preview h2 {
+      font-family: 'Cinzel', serif;
+      color: var(--gold);
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+    .deck-stats {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .stat {
+      text-align: center;
+    }
+    .stat .number {
+      font-family: 'Cinzel', serif;
+      font-size: 3rem;
+      color: var(--gold);
+      display: block;
+    }
+    .stat .label {
+      color: var(--gray);
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 0.1em;
+    }
+    .cta {
+      padding: 4rem 2rem;
+      text-align: center;
+      background: var(--navy);
+      border-top: 3px solid var(--gold);
+    }
+    .cta h2 {
+      font-family: 'Cinzel', serif;
+      color: var(--gold);
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .cta p {
+      color: var(--gray);
+      max-width: 500px;
+      margin: 0 auto 2rem;
+    }
+    footer {
+      padding: 2rem;
+      text-align: center;
+      background: var(--navy-light);
+      color: var(--gray);
+      font-size: 0.85rem;
+    }
+    footer a {
+      color: var(--gold-dim);
+      text-decoration: none;
+    }
+    @media (max-width: 768px) {
+      .hero h1 { font-size: 2rem; }
+      .btn { display: block; margin: 0.5rem auto; }
+      .btn-outline { margin-left: auto; }
+      .deck-stats { gap: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <h1>BitPoints</h1>
+    <p class="tagline">Physical Intellectual Currency. A unit of knowledge made tangible, tradeable, collectible. Not crypto. Not blockchain. A bit of point.</p>
+    <div class="price">£29 <span>/ Series 1 Deck</span></div>
+    <div>
+      <a href="#checkout" class="btn">Buy Now</a>
+      <a href="#learn" class="btn btn-outline">Learn More</a>
+    </div>
+  </section>
+
+  <section class="features" id="learn">
+    <h2>What Are BitPoints?</h2>
+    <div class="grid">
+      <div class="card">
+        <div class="card-icon">🃏</div>
+        <h3>60 Cards</h3>
+        <p>48 themed cards covering CSE, ISI, infrastructure survival, and civilisational relays. Plus 12 Jokers.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📐</div>
+        <h3>Educational Tool</h3>
+        <p>Each card teaches a concept from the CSE framework. IQ × EQ × CQ encoded in collectible format.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔒</div>
+        <h3>Canon Verified</h3>
+        <p>Every card cross-referenced against the iAAi canonical framework. No errors, no contradictions.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🎨</div>
+        <h3>Art Deco Design</h3>
+        <p>Gold-on-navy aesthetic matching the Academy visual identity. Built to display, not just play.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🌐</div>
+        <h3>iGO Integrated</h3>
+        <p>Cards map directly into the iGO quest system, DAVID Reality Engine, and ISI scoring.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">📦</div>
+        <h3>Physical & Digital</h3>
+        <p>High-resolution digital deck included with every physical purchase. Print-ready 1792×2400.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="deck-preview">
+    <h2>The Complete Series 1 Deck</h2>
+    <div class="deck-stats">
+      <div class="stat">
+        <span class="number">48</span>
+        <span class="label">Themed Cards</span>
+      </div>
+      <div class="stat">
+        <span class="number">12</span>
+        <span class="label">Jokers</span>
+      </div>
+      <div class="stat">
+        <span class="number">12</span>
+        <span class="label">Relays Covered</span>
+      </div>
+      <div class="stat">
+        <span class="number">3</span>
+        <span class="label">ICE Dimensions</span>
+      </div>
+    </div>
+    <p style="color: var(--gray); max-width: 600px; margin: 0 auto;">Each card carries the full weight of a civilisational concept — from Fire (Relay 1) to Human Nodes (Relay 12). Collect, trade, learn, teach.</p>
+  </section>
+
+  <section class="cta" id="checkout">
+    <h2>Secure Your Deck</h2>
+    <p>Limited first print run. Ships with digital companion pack, iGO integration code, and exclusive Memorial access.</p>
+    <a href="#" class="btn" onclick="stripeCheckout()">Buy Now — £29</a>
+    <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--gray);">Payment processed securely via Stripe. Digital delivery immediate. Physical deck ships within 5 business days.</p>
+  </section>
+
+  <footer>
+    <p>© 2026 Infrastructure Academy of Artificial Intelligence (iAAi)</p>
+    <p>Four Elements Consulting Limited · <a href="https://www.infrastructure-academy.com">infrastructure-academy.com</a></p>
+  </footer>
+
+  <script>
+    function stripeCheckout() {
+      // Placeholder — Stripe integration will be configured with live publishable key
+      alert('Stripe checkout loading... (Integration pending live key configuration)');
+      // window.location.href = 'https://buy.stripe.com/YOUR_LIVE_LINK_HERE';
+    }
+  </script>
+</body>
+</html>
