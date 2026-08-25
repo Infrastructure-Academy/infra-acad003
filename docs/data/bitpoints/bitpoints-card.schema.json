@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://www.infrastructure-academy.com/schemas/bitpoints-card-series1.schema.json",
+  "title": "BitPoints Series 1 Card",
+  "type": "object",
+  "required": [
+    "card_id",
+    "code",
+    "title",
+    "suit_name",
+    "body",
+    "image",
+    "release_status"
+  ],
+  "properties": {
+    "card_id": {
+      "type": "string",
+      "pattern": "^bps1-[a-z0-9]+$"
+    },
+    "code": {
+      "type": "string",
+      "pattern": "^[A-Z]{1,2}J?[0-9]{1,2}$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "suit_name": {
+      "enum": [
+        "The Relay",
+        "The Scholar",
+        "The Blueprint",
+        "The Epoch"
+      ]
+    },
+    "body": {
+      "type": "string",
+      "minLength": 1
+    },
+    "release_status": {
+      "enum": [
+        "READY",
+        "CONDITIONAL",
+        "HOLD"
+      ]
+    },
+    "image": {
+      "type": "object"
+    },
+    "narration_audio_url": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.bitpoints-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 1.5rem; }
+.bitpoints-card { background: #0A0F2A; color: #fff; border: 1px solid #C9A227; padding: 1rem; }
+.bitpoints-card img { display: block; max-width: 100%; }
+.bitpoints-card[data-release-status="HOLD"] { outline: 3px solid #DC143C; }
+.bitpoints-card[data-release-status="CONDITIONAL"] { outline: 3px solid #CCAA00; }
+.bitpoints-card[data-release-status="READY"] { outline: 3px solid #1F7A4C; }
+
+.spider-feedback { margin-top: 1rem; padding: 1rem; border: 1px solid #C9A227; background: #0A0F2A; color: #fff; }
+.spider-feedback label { display: block; margin: .75rem 0; }
+.spider-feedback textarea, .spider-feedback input, .spider-feedback select { width: 100%; margin-top: .35rem; }
+.bitpoints-card[data-experimental-state="DISCOVERY_READY"] { outline: 3px solid #1F7A4C; }
+.bitpoints-card[data-experimental-state="OPEN_EXPERIMENT"] { outline: 3px solid #CCAA00; }
+.bitpoints-card[data-experimental-state="THESIS_CASE"] { outline: 3px solid #8B5CF6; }

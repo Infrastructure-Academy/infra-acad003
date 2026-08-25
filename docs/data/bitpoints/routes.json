@@ -1,0 +1,425 @@
+{
+  "count": 60,
+  "routes": [
+    {
+      "path": "/bitpoints/series-1/r01-the-fire-relay",
+      "card_id": "bps1-r01",
+      "code": "R01",
+      "release_status": "READY",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/r02-the-tree-relay",
+      "card_id": "bps1-r02",
+      "code": "R02",
+      "release_status": "READY",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/r03-the-river-relay",
+      "card_id": "bps1-r03",
+      "code": "R03",
+      "release_status": "READY",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/r04-the-horse-relay",
+      "card_id": "bps1-r04",
+      "code": "R04",
+      "release_status": "READY",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/r05-the-roads-relay",
+      "card_id": "bps1-r05",
+      "code": "R05",
+      "release_status": "CONDITIONAL",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/r06-the-ships-relay",
+      "card_id": "bps1-r06",
+      "code": "R06",
+      "release_status": "CONDITIONAL",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/r07-the-loom-relay",
+      "card_id": "bps1-r07",
+      "code": "R07",
+      "release_status": "READY",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/r08-the-rail-relay",
+      "card_id": "bps1-r08",
+      "code": "R08",
+      "release_status": "CONDITIONAL",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/r09-the-engine-relay",
+      "card_id": "bps1-r09",
+      "code": "R09",
+      "release_status": "HOLD",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/r10-the-aaa-triad",
+      "card_id": "bps1-r10",
+      "code": "R10",
+      "release_status": "READY",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/r11-the-orbit-relay",
+      "card_id": "bps1-r11",
+      "code": "R11",
+      "release_status": "READY",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/r12-human-nodes",
+      "card_id": "bps1-r12",
+      "code": "R12",
+      "release_status": "READY",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/rj1-use-of-spies",
+      "card_id": "bps1-rj1",
+      "code": "RJ1",
+      "release_status": "HOLD",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/rj2-mirror-table",
+      "card_id": "bps1-rj2",
+      "code": "RJ2",
+      "release_status": "HOLD",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/rj3-side-mirror",
+      "card_id": "bps1-rj3",
+      "code": "RJ3",
+      "release_status": "HOLD",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/s01-homer",
+      "card_id": "bps1-s01",
+      "code": "S01",
+      "release_status": "CONDITIONAL",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/s02-confucius",
+      "card_id": "bps1-s02",
+      "code": "S02",
+      "release_status": "CONDITIONAL",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/s03-sun-tzu",
+      "card_id": "bps1-s03",
+      "code": "S03",
+      "release_status": "READY",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/s04-aristotle",
+      "card_id": "bps1-s04",
+      "code": "S04",
+      "release_status": "READY",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/s05-sima-qian",
+      "card_id": "bps1-s05",
+      "code": "S05",
+      "release_status": "CONDITIONAL",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/s06-marco-polo",
+      "card_id": "bps1-s06",
+      "code": "S06",
+      "release_status": "READY",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/s07-imhotep",
+      "card_id": "bps1-s07",
+      "code": "S07",
+      "release_status": "CONDITIONAL",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/s08-vitruvius",
+      "card_id": "bps1-s08",
+      "code": "S08",
+      "release_status": "CONDITIONAL",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/s09-al-jazari",
+      "card_id": "bps1-s09",
+      "code": "S09",
+      "release_status": "CONDITIONAL",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/s10-da-vinci",
+      "card_id": "bps1-s10",
+      "code": "S10",
+      "release_status": "CONDITIONAL",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/s11-brunel",
+      "card_id": "bps1-s11",
+      "code": "S11",
+      "release_status": "CONDITIONAL",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/s12-tesla",
+      "card_id": "bps1-s12",
+      "code": "S12",
+      "release_status": "CONDITIONAL",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/sj1-the-polymath",
+      "card_id": "bps1-sj1",
+      "code": "SJ1",
+      "release_status": "READY",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/sj2-east-west-bridge",
+      "card_id": "bps1-sj2",
+      "code": "SJ2",
+      "release_status": "CONDITIONAL",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/sj3-the-living-library",
+      "card_id": "bps1-sj3",
+      "code": "SJ3",
+      "release_status": "CONDITIONAL",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/b01-the-pyramid",
+      "card_id": "bps1-b01",
+      "code": "B01",
+      "release_status": "CONDITIONAL",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/b02-the-aqueduct",
+      "card_id": "bps1-b02",
+      "code": "B02",
+      "release_status": "HOLD",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/b03-the-great-wall",
+      "card_id": "bps1-b03",
+      "code": "B03",
+      "release_status": "CONDITIONAL",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/b04-the-roman-road",
+      "card_id": "bps1-b04",
+      "code": "B04",
+      "release_status": "READY",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/b05-the-silk-road",
+      "card_id": "bps1-b05",
+      "code": "B05",
+      "release_status": "CONDITIONAL",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/b06-the-canal-lock",
+      "card_id": "bps1-b06",
+      "code": "B06",
+      "release_status": "HOLD",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/b07-the-steam-engine",
+      "card_id": "bps1-b07",
+      "code": "B07",
+      "release_status": "HOLD",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/b08-the-railway-bridge",
+      "card_id": "bps1-b08",
+      "code": "B08",
+      "release_status": "CONDITIONAL",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/b09-the-power-grid",
+      "card_id": "bps1-b09",
+      "code": "B09",
+      "release_status": "CONDITIONAL",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/b10-the-skyscraper",
+      "card_id": "bps1-b10",
+      "code": "B10",
+      "release_status": "READY",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/b11-the-satellite",
+      "card_id": "bps1-b11",
+      "code": "B11",
+      "release_status": "HOLD",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/b12-the-internet",
+      "card_id": "bps1-b12",
+      "code": "B12",
+      "release_status": "CONDITIONAL",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/bj1-the-master-plan",
+      "card_id": "bps1-bj1",
+      "code": "BJ1",
+      "release_status": "CONDITIONAL",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/bj2-form-function",
+      "card_id": "bps1-bj2",
+      "code": "BJ2",
+      "release_status": "CONDITIONAL",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/bj3-the-unbuilt",
+      "card_id": "bps1-bj3",
+      "code": "BJ3",
+      "release_status": "HOLD",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/e01-stone-age",
+      "card_id": "bps1-e01",
+      "code": "E01",
+      "release_status": "READY",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/e02-bronze-age",
+      "card_id": "bps1-e02",
+      "code": "E02",
+      "release_status": "READY",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/e03-iron-age",
+      "card_id": "bps1-e03",
+      "code": "E03",
+      "release_status": "CONDITIONAL",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/e04-classical-era",
+      "card_id": "bps1-e04",
+      "code": "E04",
+      "release_status": "CONDITIONAL",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/e05-silk-road-era",
+      "card_id": "bps1-e05",
+      "code": "E05",
+      "release_status": "READY",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/e06-islamic-golden-age",
+      "card_id": "bps1-e06",
+      "code": "E06",
+      "release_status": "CONDITIONAL",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/e07-renaissance",
+      "card_id": "bps1-e07",
+      "code": "E07",
+      "release_status": "READY",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/e08-age-of-exploration",
+      "card_id": "bps1-e08",
+      "code": "E08",
+      "release_status": "READY",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/e09-industrial-revolution",
+      "card_id": "bps1-e09",
+      "code": "E09",
+      "release_status": "CONDITIONAL",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/e10-electrical-age",
+      "card_id": "bps1-e10",
+      "code": "E10",
+      "release_status": "CONDITIONAL",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/e11-space-age",
+      "card_id": "bps1-e11",
+      "code": "E11",
+      "release_status": "CONDITIONAL",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/e12-digital-age",
+      "card_id": "bps1-e12",
+      "code": "E12",
+      "release_status": "READY",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/ej1-timeline",
+      "card_id": "bps1-ej1",
+      "code": "EJ1",
+      "release_status": "CONDITIONAL",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/ej2-collapse",
+      "card_id": "bps1-ej2",
+      "code": "EJ2",
+      "release_status": "CONDITIONAL",
+      "source_manifest": "/data/cards-all.json"
+    },
+    {
+      "path": "/bitpoints/series-1/ej3-next-epoch",
+      "card_id": "bps1-ej3",
+      "code": "EJ3",
+      "release_status": "READY",
+      "source_manifest": "/data/cards-all.json"
+    }
+  ]
+}

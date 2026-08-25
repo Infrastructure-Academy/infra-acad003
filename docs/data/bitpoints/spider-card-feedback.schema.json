@@ -1,0 +1,77 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://www.infrastructure-academy.com/schemas/spider-card-feedback.schema.json",
+  "title": "Spider Learning Feedback",
+  "type": "object",
+  "required": [
+    "card_id",
+    "category",
+    "observation",
+    "consent_to_publish_anonymously"
+  ],
+  "properties": {
+    "feedback_id": {
+      "type": "string"
+    },
+    "card_id": {
+      "type": "string",
+      "pattern": "^bps1-[a-z0-9]+$"
+    },
+    "card_version": {
+      "type": "string"
+    },
+    "category": {
+      "enum": [
+        "Canon question",
+        "Factual challenge",
+        "Engineering concern",
+        "Visual anomaly",
+        "Accessibility",
+        "Gameplay idea",
+        "New connection",
+        "Other"
+      ]
+    },
+    "observation": {
+      "type": "string",
+      "minLength": 3
+    },
+    "evidence_url": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "format": "uri"
+    },
+    "suggested_synthesis": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "player_scope": {
+      "type": [
+        "string",
+        "null"
+      ],
+      "description": "Optional local context, age band, role, or encounter—not personal identity."
+    },
+    "consent_to_publish_anonymously": {
+      "type": "boolean"
+    },
+    "submitted_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "enum": [
+        "OBSERVED",
+        "TRIAGED",
+        "ANTITHESIS_RECORDED",
+        "SYNTHESIS_DRAFTED",
+        "VERSIONED",
+        "CLOSED"
+      ]
+    }
+  }
+}
