@@ -64,3 +64,14 @@ A real Chromium mobile viewport at 375 x 812 passed on both public image-heavy r
 - `/pages/framework.html`: 79 image elements discovered; the same five checks passed.
 
 This is a live two-route mobile sample, not an assertion that every image on every route was individually opened.
+
+## All-image representative-route pass — 5 September 2026
+
+The live browser pass exercised every eligible image on two representative routes at both viewport sizes:
+
+- 8th Scholar, laptop 1280 x 900: 39/39 opened, contained, and closed; 0 failures.
+- 8th Scholar, mobile 375 x 812: 39/39 opened, contained, and closed; 0 failures.
+- Framework, laptop 1280 x 900: 66/66 opened, contained, and closed; 0 failures.
+- Framework, mobile 375 x 812: 66/66 opened, contained, and closed; 0 failures.
+
+The shared UIX script loaded in all four runs. This confirms 210 image open/contain/close interactions across the two representative routes; it does not replace a route-by-route pass across every public page.
