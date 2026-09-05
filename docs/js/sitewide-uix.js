@@ -57,6 +57,11 @@
     document.addEventListener('click', event => {
       const img = event.target.closest && event.target.closest('img');
       if (!img || img === lbImage || img.getAttribute('data-lightbox') === 'false') return;
+      const inlineHandler = img.getAttribute('onclick') || img.closest('[onclick]')?.getAttribute('onclick') || '';
+      if (typeof window.openLightbox === 'function' && /openLightbox\s*\(/i.test(inlineHandler)) {
+        img.classList.add('uix-image-target');
+        return;
+      }
       const interactive = img.closest('a,button,[role="button"],[data-no-lightbox]');
       if (interactive?.matches('[data-no-lightbox],button,[role="button"]')) return;
       if (interactive?.tagName === 'A') {
