@@ -55,3 +55,12 @@ At the live 8th Scholar page with a 1280 x 1100 browser viewport, the iCARD No.0
 The universal handler was hardened so images linked directly to an image asset open the shared lightbox, while ordinary page links, buttons, and explicit `data-no-lightbox` controls retain their navigation behavior. The shared cache key was raised to `v=20260905c` across all 165 GitHub Pages HTML pages. GitHub commit: `8090750`.
 
 The live 8th Scholar page loaded the new script. A real iCARD image opened within viewport bounds using `object-fit: contain`, exposed the visible `Close enlarged image` button, and closed via Escape with body scrolling restored. The 8th Scholar page did not contain a direct image-asset anchor to exercise the new direct-asset branch; no false pass is recorded for that branch. The Manus staging mirror was separately synchronized with the shared CSS and JavaScript on all 128 public HTML pages and its two targeted regression tests passed.
+
+## Live mobile sample — 5 September 2026
+
+A real Chromium mobile viewport at 375 x 812 passed on both public image-heavy routes tested:
+
+- `/pages/8th-scholar.html`: 41 image elements discovered; shared script loaded; image opened; modal image remained contained; close control was visible; `object-fit: contain`; Escape closed the lightbox.
+- `/pages/framework.html`: 79 image elements discovered; the same five checks passed.
+
+This is a live two-route mobile sample, not an assertion that every image on every route was individually opened.
