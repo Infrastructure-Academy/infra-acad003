@@ -22,6 +22,7 @@
 | Universal image fallback | `7d67c76` |
 | Cache-busting all 165 HTML pages | `fda21c7` |
 | B401 Deep Dive canonical asset correction | `72d4965` |
+| Third-attempt universal UIX hardening and cache-bust | `8090750` |
 
 ## Route Inventory
 

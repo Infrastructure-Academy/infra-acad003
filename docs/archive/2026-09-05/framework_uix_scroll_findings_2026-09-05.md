@@ -45,3 +45,13 @@ The refreshed static audit still reports 39 direct `HEAD` responses in the 403 c
 ## B401 Deep Dive correction
 
 Browser sampling of the 8th Scholar page initially found one real failure: the B401-DEEPDIVE-001 image URL ended in `Lbw9D3PWrVTzuxcpND4hjM.webp` and returned a failed image with zero natural dimensions. The canonical database record identified `B401-DEEPDIVE-001-dQK4ABqT2HtYvS6aUJZqKc.png`; that URL returned HTTP 200 with `image/png`. The replacement was synchronized into the public GitHub Pages source and Manus static mirror, committed as `72d4965`, and propagated to the live domain. The post-fix browser check found the expected URL in the DOM, 40 CDN images checked, 40 loaded with non-zero dimensions, and 0 failures. The regression test `server/sitewide-assets.test.ts` passed.
+
+## Police-requested final check — laptop
+
+At the live 8th Scholar page with a 1280 x 1100 browser viewport, the iCARD No.002 image was clicked. The lightbox opened, used `object-fit: contain`, stayed within the viewport bounds, exposed a visible `Close enlarged image` control, and closed with body overflow restored. Result: PASS for this representative laptop-sized browser check.
+
+## Third-attempt remediation — 5 September 2026
+
+The universal handler was hardened so images linked directly to an image asset open the shared lightbox, while ordinary page links, buttons, and explicit `data-no-lightbox` controls retain their navigation behavior. The shared cache key was raised to `v=20260905c` across all 165 GitHub Pages HTML pages. GitHub commit: `8090750`.
+
+The live 8th Scholar page loaded the new script. A real iCARD image opened within viewport bounds using `object-fit: contain`, exposed the visible `Close enlarged image` button, and closed via Escape with body scrolling restored. The 8th Scholar page did not contain a direct image-asset anchor to exercise the new direct-asset branch; no false pass is recorded for that branch. The Manus staging mirror was separately synchronized with the shared CSS and JavaScript on all 128 public HTML pages and its two targeted regression tests passed.
