@@ -81,3 +81,16 @@ The shared UIX script loaded in all four runs. This confirms 210 image open/cont
 The corrected live route smoke pass covered all 165 public HTML routes at both 1280 x 900 and 375 x 812. It recorded 330 route/viewport jobs, 0 HTTP page failures, 2,750 eligible image elements counted across both viewport runs, and 264 representative image interactions. All 264 tested interactions passed open, contained, close, and body-scroll restoration with 0 smoke failures.
 
 The only two `scriptMissing` jobs were the laptop and mobile runs of `/play/igo/index.html`. That source page contains the shared UIX references but immediately meta-refreshes to the external ISI Calculator app at `isicalcexp-bqjsukv3.manus.space`; it is a redirect launcher with no public-site image content, not a missing UIX reference in the GitHub source.
+
+## Native-gallery compatibility recheck — 5 September 2026
+
+After deploying GitHub commit `cdbe9f8` with cache key `20260905d`, the four routes that exposed native-gallery conflicts were rechecked at both viewports. Every eligible image passed:
+
+- Deck: 57/57 at laptop and 57/57 at mobile.
+- Finance Admin: 79/79 at laptop and 79/79 at mobile.
+- ICUT Gallery: 61/61 at laptop and 61/61 at mobile.
+- BitPoint Marketplace: 60/60 at laptop and 60/60 at mobile.
+
+That is 514 native-gallery image interactions, with 0 open, containment, or close failures. The verifier excluded each page’s modal preview image from the source-image set.
+
+The all-route smoke pass remains the route-level coverage record: 165/165 public routes reached HTTP 200 at both viewport sizes; one eligible source image per route/viewport passed on all routes with image content. The iGO entry route is an intentional external-app redirect launcher and contains no public-site image content after redirect.
