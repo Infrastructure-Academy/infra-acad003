@@ -52,3 +52,45 @@ img.object-cover,
     max-height: none !important;
   }
 }
+
+/* Accessible lightbox return control for laptop and mobile. */
+#lightbox[aria-hidden="true"] { visibility: hidden; }
+#lightbox[aria-hidden="false"] { visibility: visible; }
+#lightbox .uix-lightbox-close {
+  position: fixed;
+  top: max(1rem, env(safe-area-inset-top));
+  right: max(1rem, env(safe-area-inset-right));
+  z-index: 10001;
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid #f5d547;
+  border-radius: 999px;
+  background: rgba(7, 18, 38, 0.94);
+  color: #f5d547;
+  font: 700 2rem/2.6rem system-ui, sans-serif;
+  text-align: center;
+  cursor: pointer;
+}
+#lightbox .uix-lightbox-close:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+}
+#lightbox img {
+  max-width: min(95vw, 1400px) !important;
+  max-height: calc(100vh - 6rem) !important;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+@media (max-width: 900px) {
+  #lightbox .uix-lightbox-close {
+    width: 2.75rem;
+    height: 2.75rem;
+    font-size: 1.75rem;
+    line-height: 2.35rem;
+  }
+  #lightbox img {
+    max-width: 94vw !important;
+    max-height: calc(100vh - 5rem) !important;
+  }
+}
