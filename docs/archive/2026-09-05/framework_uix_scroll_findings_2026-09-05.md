@@ -75,3 +75,9 @@ The live browser pass exercised every eligible image on two representative route
 - Framework, mobile 375 x 812: 66/66 opened, contained, and closed; 0 failures.
 
 The shared UIX script loaded in all four runs. This confirms 210 image open/contain/close interactions across the two representative routes; it does not replace a route-by-route pass across every public page.
+
+## All-route smoke pass — 5 September 2026
+
+The corrected live route smoke pass covered all 165 public HTML routes at both 1280 x 900 and 375 x 812. It recorded 330 route/viewport jobs, 0 HTTP page failures, 2,750 eligible image elements counted across both viewport runs, and 264 representative image interactions. All 264 tested interactions passed open, contained, close, and body-scroll restoration with 0 smoke failures.
+
+The only two `scriptMissing` jobs were the laptop and mobile runs of `/play/igo/index.html`. That source page contains the shared UIX references but immediately meta-refreshes to the external ISI Calculator app at `isicalcexp-bqjsukv3.manus.space`; it is a redirect launcher with no public-site image content, not a missing UIX reference in the GitHub source.
