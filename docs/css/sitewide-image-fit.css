@@ -95,6 +95,9 @@ img.object-cover,
   }
 }
 
+/* Images handled by the universal lightbox expose a clear zoom affordance. */
+img.uix-image-target { cursor: zoom-in; }
+
 /* Shared lightbox fallback for pages whose images were previously non-interactive. */
 #lightbox {
   display: none;

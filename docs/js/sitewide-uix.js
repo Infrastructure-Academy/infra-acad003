@@ -56,10 +56,18 @@
     document.addEventListener('keydown', event => { if (event.key === 'Escape' && lightbox.classList.contains('active')) closeLightboxSafe(); });
     document.addEventListener('click', event => {
       const img = event.target.closest && event.target.closest('img');
-      if (!img || img === lbImage || img.closest('a,button,[role="button"],[data-no-lightbox]')) return;
-      if (img.getAttribute('data-lightbox') === 'false') return;
+      if (!img || img === lbImage || img.getAttribute('data-lightbox') === 'false') return;
+      const interactive = img.closest('a,button,[role="button"],[data-no-lightbox]');
+      if (interactive?.matches('[data-no-lightbox],button,[role="button"]')) return;
+      if (interactive?.tagName === 'A') {
+        const href = interactive.href || '';
+        const src = img.currentSrc || img.src || '';
+        const isDirectAssetLink = href === src || href.split('?')[0].endsWith(src.split('?')[0].split('/').pop());
+        if (!isDirectAssetLink) return;
+      }
       event.preventDefault();
       event.stopPropagation();
+      img.classList.add('uix-image-target');
       window.uixOpenLightbox(img.currentSrc || img.src, img.alt, img);
     }, true);
     new MutationObserver(() => {
