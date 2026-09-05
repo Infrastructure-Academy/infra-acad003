@@ -94,3 +94,19 @@ img.object-cover,
     max-height: calc(100vh - 5rem) !important;
   }
 }
+
+/* Shared lightbox fallback for pages whose images were previously non-interactive. */
+#lightbox {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1rem 1rem;
+  background: rgba(0, 0, 0, 0.92);
+  cursor: pointer;
+}
+#lightbox.active { display: flex; }
+#lightbox[aria-hidden="true"] { visibility: hidden; }
+#lightbox[aria-hidden="false"] { visibility: visible; }
