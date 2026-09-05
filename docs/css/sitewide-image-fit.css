@@ -1,0 +1,54 @@
+/* Infrastructure Academy site-wide image fit correction. */
+/* Preserve complete artwork on laptop and mobile; avoid top cropping. */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+img[style*="object-fit:cover"],
+img[style*="object-fit: cover"],
+img.object-cover,
+.hero-img,
+.fw-img img,
+.kw-gallery img,
+.portrait-cover,
+.video-lazy img,
+.book-grid img,
+.card img,
+.gallery img,
+.media img {
+  object-fit: contain !important;
+  object-position: center center !important;
+}
+
+.hero-img,
+.fw-img img,
+.kw-gallery img,
+.portrait-cover,
+.video-lazy img,
+.book-grid img,
+.card img,
+.gallery img,
+.media img {
+  height: auto !important;
+  max-height: none !important;
+}
+
+@media (max-width: 900px) {
+  img {
+    height: auto;
+  }
+
+  .hero-img,
+  .fw-img img,
+  .kw-gallery img,
+  .portrait-cover,
+  .video-lazy img,
+  .book-grid img,
+  .card img,
+  .gallery img,
+  .media img {
+    height: auto !important;
+    max-height: none !important;
+  }
+}

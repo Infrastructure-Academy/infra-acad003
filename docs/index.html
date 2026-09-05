@@ -477,6 +477,38 @@
     <link rel="canonical" href="https://www.infrastructure-academy.com/">
     <meta name="twitter:site" content="@dearden_ni37258">
     <meta name="twitter:creator" content="@dearden_ni37258">
+
+        /* SITEWIDE IMAGE FIT FIX 2026-09-05 */
+        /* Preserve full artwork on laptop and mobile; do not crop image tops. */
+        .hero-wrapper .hero-img,
+        .fw-img img,
+        .kw-gallery img,
+        .portrait-cover,
+        .video-lazy img,
+        .book-grid img,
+        #section-trilogy .fw-img img,
+        #section-archive img {
+            object-fit: contain !important;
+            object-position: center center !important;
+        }
+        .hero-wrapper .hero-img {
+            max-height: none !important;
+            height: auto !important;
+        }
+        @media (max-width: 900px) {
+            .hero-wrapper .hero-img,
+            .fw-img img,
+            .kw-gallery img,
+            .portrait-cover,
+            .video-lazy img,
+            .book-grid img,
+            #section-trilogy .fw-img img,
+            #section-archive img {
+                max-height: none !important;
+                height: auto !important;
+            }
+        }
+        <link rel="stylesheet" href="/css/sitewide-image-fit.css">
 </head>
 <body>
     <!-- ═══ iAAi NETWORK BAR ═══ -->
