@@ -9,8 +9,8 @@
 | Public HTML routes | 165 |
 | Routes returning HTTP 200 in the audit | 165 |
 | GitHub Pages source | `Infrastructure-Academy/infra-acad003`, `/docs` |
-| UIX cache-busted script | `/js/sitewide-uix.js?v=20260905b` |
-| Final public asset-fix commit | `72d4965` |
+| UIX cache-busted script | `/js/sitewide-uix.js?v=20260905d` |
+| Final public asset-fix commit | `cdbe9f8` |
 
 ## Version Evidence
 
@@ -22,7 +22,8 @@
 | Universal image fallback | `7d67c76` |
 | Cache-busting all 165 HTML pages | `fda21c7` |
 | B401 Deep Dive canonical asset correction | `72d4965` |
-| Third-attempt universal UIX hardening and cache-bust | `8090750` |
+| Native-gallery compatibility fix | `cdbe9f8` |
+| Latest public evidence archive | `faf89df` |
 
 ## Route Inventory
 
@@ -83,7 +84,7 @@
 | 53 | `masters.html` | IAAI Outriders — Historical Spirit Guides | 3 | 3 | 5 | 200 | 0 |
 | 54 | `mobilisation-clock.html` | IAAI Global Mobilisation Clock | 6 | 3 | 4 | 200 | 0 |
 | 55 | `page-schema.html` | Site Architecture Schema — Infrastructure Academy | 3 | 18 | 6 | 200 | 0 |
-| 56 | `pages/8th-scholar.html` | The 8th Scholar — Materials Hub \| Infrastructure Academy | 41 | 68 | 14 | 200 | 1 |
+| 56 | `pages/8th-scholar.html` | The 8th Scholar — Materials Hub \| Infrastructure Academy | 41 | 68 | 14 | 200 | 0 |
 | 57 | `pages/about-author.html` | About the Author - Infrastructure Academy | 21 | 30 | 9 | 200 | 0 |
 | 58 | `pages/analytics-dashboard.html` | Visitor Analytics — Infrastructure Academy | 1 | 0 | 8 | 200 | 1 |
 | 59 | `pages/assessment-results.html` | Assessment Results — HICE Evidence Pack — Infrastructure Academy | 6 | 0 | 4 | 200 | 0 |
@@ -196,7 +197,7 @@
 
 ## Verification Notes
 
-The refreshed audit recorded 165 of 165 HTML routes returning HTTP 200. It recorded 116 pages containing native lightbox/modal/gallery markers and 147 pages containing textual back/return/top/home markers. The shared UI script is linked from all 165 HTML pages. Browser tests on the Framework page and 8th Scholar page verified the fallback/native lightbox open path, explicit close button, `object-fit: contain` sizing, body-scroll restoration, and Escape-key close behavior.
+The refreshed audit recorded 165 of 165 HTML routes returning HTTP 200. It recorded 116 pages containing native lightbox/modal/gallery markers and 147 pages containing textual back/return/top/home markers. The shared UI script is linked from all 165 HTML pages. The all-route smoke pass exercised one eligible source image per route at both laptop and mobile viewports: 264 interactions passed with zero smoke failures. The four native-gallery routes that exposed conflicts were then checked image-by-image: 514 of 514 eligible images passed open, contained display, and close at both viewports. A full image-by-image certification for every image on every route is not claimed because the sequential pass stalled and was stopped.
 
 Direct `HEAD` requests are not treated as definitive end-user image failures because the CDN can reject that request method while allowing browser image loads. Browser-context checks found 79 of 79 sampled Framework-page CDN images loaded and, after the `72d4965` correction, 40 of 40 sampled 8th Scholar CDN images loaded. The corrected B401 Deep Dive asset is recorded in the canonical DB snapshot and is now served as a 200 `image/png` response.
 

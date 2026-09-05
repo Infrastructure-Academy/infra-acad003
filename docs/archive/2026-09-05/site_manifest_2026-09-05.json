@@ -11,7 +11,13 @@
       "universal_lightbox": "7d67c76",
       "cache_bust": "fda21c7",
       "deepdive_asset_fix": "72d4965",
-    "third_attempt_uix_hardening": "8090750"
+      "native_gallery_compatibility": "cdbe9f8",
+      "latest_evidence_archive": "faf89df"
+    },
+    "verification": {
+      "all_route_smoke": "165/165 routes reached HTTP 200 at both laptop and mobile viewports; 264 representative image interactions passed with 0 smoke failures.",
+      "native_gallery_all_images": "514/514 eligible images passed open, contained display, and close at both viewport sizes across four routes.",
+      "full_all_image_pass": "Not certified; the sequential browser pass stalled and is not represented as complete."
     },
     "asset_note": "Direct HEAD checks reported 39 responses in the 403 class across 37 pages; browser verification showed sampled assets loading, and the one browser-confirmed failed B401 Deep Dive URL was replaced with the canonical DB-recorded PNG URL in commit 72d4965."
   },
@@ -1965,7 +1971,7 @@
       "audit_status": 200,
       "audit_lightbox_markers": 68,
       "audit_return_markers": 14,
-      "direct_request_broken_image_count": 1
+      "direct_request_broken_image_count": 0
     },
     {
       "path": "pages/about-author.html",
