@@ -69,6 +69,8 @@ It is NOT a React component. It does NOT use JSX, Tailwind, or any build toolcha
 
 ## DEPLOYMENT WORKFLOW
 
+The only homepage source is `docs/site.html`, which is copied to `docs/index.html`.
+
 ### Standard Edit (Homepage Content)
 
 ```bash
