@@ -9,7 +9,7 @@
 | Field | Detail |
 |-------|--------|
 | **Full Name** | Ir. Nigel T. Dearden |
-| **Title** | CEng MICE, RPE, C.WEM, MHKIE |
+| **Title** | CEng RPE, C.WEM, MHKIE |
 | **Born** | 1969, England |
 | **Residence** | Discovery Bay, Hong Kong |
 | **Company** | 4 Elements Consultancy Limited (4ECL), www.4ecl.com |

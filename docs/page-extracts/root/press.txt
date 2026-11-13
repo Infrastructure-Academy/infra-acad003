@@ -70,7 +70,7 @@ IP &amp; EQUATION CARDS
 FREE
 BETA ACCESS
 WHAT IS INFRASTRUCTURE ACADEMY?
-Infrastructure Academy (IAAI) is the world's first open, multilingual, AI-guided education platform dedicated entirely to infrastructure &mdash; the systems that sustain civilisation. Created by Ir. Nigel T. Dearden, a chartered civil engineer (BSc(Hons) CEng MICE), the platform transforms 12,000 years of human development into an interactive odyssey spanning 12 &ldquo;civilisational relays&rdquo; &mdash; from Fire to Torus.
+Infrastructure Academy (IAAI) is the world's first open, multilingual, AI-guided education platform dedicated entirely to infrastructure &mdash; the systems that sustain civilisation. Created by Ir. Nigel T. Dearden, a chartered civil engineer (BSc(Hons) CEng), the platform transforms 12,000 years of human development into an interactive odyssey spanning 12 &ldquo;civilisational relays&rdquo; &mdash; from Fire to Torus.
 The platform combines three volumes into a single integrated experience: The Perspective (the story of civilisation through infrastructure), The Guide (structured learning with the 4-Pillar IUMC Framework), and The Game (gamified progression with XP, leaderboards, AI narration by DAVID, and completion certificates). It is available in 8 languages and is free during BETA.
 IAAI addresses a documented global skills gap: 87% of executives report workforce skills gaps (McKinsey, 2022), 91.5% of megaprojects exceed budget or schedule (Flyvbjerg, 2014), and 55&ndash;83% of graduates feel unprepared for the workforce (NACE/Resume.org, 2025). Infrastructure Academy exists to close that gap through accessible, rigorous, and engaging education.
 THE 12 CIVILISATIONAL RELAYS
@@ -89,7 +89,7 @@ Each relay represents a transformative infrastructure technology that changed th
 11Orbit1957 CESpace &amp; global systems
 12Human Nodes2000 CEDigital &amp; consciousness
 ABOUT THE AUTHOR
-Ir. Nigel T. Dearden, BSc(Hons) CEng MICE is a chartered civil engineer with decades of international experience in infrastructure development across Asia, the Middle East, and Europe. His career spans megaprojects in transportation, water, and urban development. Infrastructure Academy is the culmination of a lifetime of observing how infrastructure shapes civilisation &mdash; and the conviction that this knowledge should be freely accessible to everyone.
+Ir. Nigel T. Dearden, BSc(Hons) CEng is a chartered civil engineer with decades of international experience in infrastructure development across Asia, the Middle East, and Europe. His career spans megaprojects in transportation, water, and urban development. Infrastructure Academy is the culmination of a lifetime of observing how infrastructure shapes civilisation &mdash; and the conviction that this knowledge should be freely accessible to everyone.
 The project began as a book (&ldquo;An Infrastructure Odyssey&rdquo;) and evolved into a full digital platform with AI narration, gamification, and multilingual support &mdash; built in partnership with Manus AI over 128 days of continuous development.
 READY-TO-SHARE SNIPPETS
 Copy any of these pre-written messages to share on social media, email, or messaging apps.

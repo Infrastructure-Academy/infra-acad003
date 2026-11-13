@@ -9,7 +9,7 @@
 | Document Reference | iAAi-COUNTER-001 |
 | Version | 63 |
 | Date of Issue | 1 June 2026 |
-| Author | Ir. Nigel T. Dearden CEng CWEM MICE MHKIE RPE(CBS) |
+| Author | Ir. Nigel T. Dearden CEng CWEM MHKIE RPE(CBS) |
 | Status | Current |
 
 ---

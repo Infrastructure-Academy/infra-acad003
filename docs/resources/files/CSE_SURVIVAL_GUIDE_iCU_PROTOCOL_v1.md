@@ -159,4 +159,4 @@ The iCU diamond sits at the zero point between both scales. Zero means nothing c
 
 **Remember:** The iCU is the narrow gate. Civilisation does not survive because machines become intelligent. It survives because humans remain identifiable, accountable, and capable of saying no.
 
-*CSE Survival Guide v1.0 — iAAi — Ir. Nigel T. Dearden CEng MICE*
+*CSE Survival Guide v1.0 — iAAi — Ir. Nigel T. Dearden CEng*

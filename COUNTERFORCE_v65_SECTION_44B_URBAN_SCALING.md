@@ -123,5 +123,5 @@ Add Urban Physics (West) as Proof 8 in the convergence table.
 
 ---
 
-*COUNTERFORCE v65 — Ir. Nigel T. Dearden CEng MICE*
+*COUNTERFORCE v65 — Ir. Nigel T. Dearden CEng*
 *iAAi Principia Tectonica — www.infrastructure-academy.com*

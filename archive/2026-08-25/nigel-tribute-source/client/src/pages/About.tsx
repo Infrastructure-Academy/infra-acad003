@@ -197,7 +197,7 @@ export default function About() {
                 Who is Ir. Nigel T. Dearden?
               </h3>
               <p style={{ color: TEXT_WHITE }}>
-                Ir. Nigel T. Dearden BEng(Hons) CEng MICE MHKIE MCIWEM C.WEM RPE(CSB) is the author of "An Infrastructure Odyssey" and the founder of The Infrastructure Academy. He is a civil engineer with extensive experience in infrastructure systems and civilisational thinking.
+                Ir. Nigel T. Dearden BEng(Hons) CEng MHKIE MCIWEM C.WEM RPE(CSB) is the author of "An Infrastructure Odyssey" and the founder of The Infrastructure Academy. He is a civil engineer with extensive experience in infrastructure systems and civilisational thinking.
               </p>
             </div>
             <div>

@@ -44,7 +44,7 @@ The Infrastructure Academy is dedicated to **infrastructure education as civilis
 
 ## 7. Author Credentials
 
-- **Ir. Nigel T. Dearden BEng(Hons) CEng MICE MHKIE MCIWEM C.WEM RPE(CSB)**
+- **Ir. Nigel T. Dearden BEng(Hons) CEng MHKIE MCIWEM C.WEM RPE(CSB)**
 
 ## 8. Corrections Protocol
 

@@ -135,11 +135,11 @@
   },
 
   "critical_facts": {
-    "user": "Ir. Nigel T. Dearden CEng MICE",
+    "user": "Ir. Nigel T. Dearden CEng",
     "timezone": "Asia/Hong_Kong",
     "telegram_id": "8644622985",
     "host": "Nigels-Ultra (Windows 10)",
-    "google_analytics": "G-2V0JTTfM97 (installed on site, AI cannot access dashboard)",
+    "google_analytics": "G-2V0JTTFM97 (installed on site, AI cannot access dashboard)",
     "stripe": "4 ELEMENTS CONSULTING LIMIT... Dashboard active. HK$0.00 today. $7.84 gross lifetime.",
     "manus_status": "SHUTDOWN — all Manus preview URLs may be broken or degraded",
     "block_402_videos": "8-video series (V1-V5 + cuts). 4 MP4s received in media/inbound/. Do NOT claim all 15+ are transferred — only 4 made it through Telegram pipe.",

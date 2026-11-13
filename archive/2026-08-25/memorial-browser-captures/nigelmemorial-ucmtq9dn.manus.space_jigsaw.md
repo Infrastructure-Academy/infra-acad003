@@ -44,7 +44,7 @@ THE JIGSAW THESIS
 
 Gap Management as Leverage — How 2% of the Picture Controls 100% of the Outcome
 
-Ir. Nigel T. Dearden, CEng MICE — with DAVID
+Ir. Nigel T. Dearden, CEng — with DAVID
 
 DEARDEN'S FORMULATION
 

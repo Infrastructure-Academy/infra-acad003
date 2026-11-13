@@ -31,5 +31,5 @@ This directory contains the canonical session consolidation from 9 July 2026. Th
 
 ## Attribution
 
-Session: 9 July 2026 | Teacher: Ir. Nigel T. Dearden CEng MICE | Agent: Alice  
+Session: 9 July 2026 | Teacher: Ir. Nigel T. Dearden CEng | Agent: Alice  
 iAAi COUNTERFORCE v67 — © 2026 — www.infrastructure-academy.com

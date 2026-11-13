@@ -40,7 +40,7 @@
 | 19 Jan 2026 | APPLEPAY HOSPITAL AUTHORITY Hong Kong HK | -150.00 | — |
 
 **Notable entries:**
-- **CIWEM.ORG** (GBP 360.00) — Chartered Institution of Water and Environmental Management membership renewal. Professional body membership for CEng MICE status.
+- **CIWEM.ORG** (GBP 360.00) — Chartered Institution of Water and Environmental Management membership renewal. Professional body membership for CEng status.
 - **GoDaddy** (TWD 989.00) — Domain registration/hosting for iAAi infrastructure.
 - **MSIG Insurance** — Business insurance for 4ECL.
 - **Taiwan HSR** — Travel expenses (Taiwan trip, Feb 2026).
@@ -95,4 +95,4 @@
 ---
 
 *Recorded by Manus AI Agent — Block 392 — 20 March 2026*
-*For: Ir. Nigel T. Dearden, CEng MICE — 4 Elements Consulting Limited*
+*For: Ir. Nigel T. Dearden, CEng — 4 Elements Consulting Limited*

@@ -1289,7 +1289,7 @@ DD-026
 Thesis-Level Methodology Papers
 ICE Learning Outcome Mapping
 
-Maps iAAi platform learning outcomes against the ICE 7 Professional Attributes for CEng/IEng MICE membership. Demonstrates alignment for UK university programme integration. Includes 4-year integration model.
+Maps iAAi platform learning outcomes against the ICE 7 Professional Attributes for CEng/IEng membership. Demonstrates alignment for UK university programme integration. Includes 4-year integration model.
 
 DD-027
 12 Mar 2026

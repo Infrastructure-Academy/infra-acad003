@@ -991,7 +991,7 @@
       "title": "Explore — Scholars & Researchers — Infrastructure Academy",
       "headings": [
         "SCHOLARS & RESEARCHERS",
-        "NIGEL T. DEARDEN CEng MICE",
+        "NIGEL T. DEARDEN CEng",
         "4ELEMENTS CONSULTING"
       ],
       "internal_links": [
@@ -1716,7 +1716,7 @@
         "https://www.infrastructure-academy.com/manus-storage/gemini_generated_video_3EAF1DAC_0f38505a.mp4",
         "https://www.infrastructure-academy.com/manus-storage/TP-064_Complete_4df8d75d.pdf",
         "https://www.infrastructure-academy.com/manus-storage/CSE_Teaching_Materials_TOC_4115a955.pdf",
-        "https://www.infrastructure-academy.com/manus-storage/CSE_Quick_Start_Guide_0821035b.pdf",
+        "https://www.infrastructure-academy.com/teaching-cse/Civilisational_Systems_Engineering_in_20_Minutes.pdf",
         "https://www.infrastructure-academy.com/manus-storage/Plate_XA_Remembrance_Teaching_9ecf0449.png",
         "https://www.infrastructure-academy.com/manus-storage/Plate_X_Canonical_Full_2279762a.png",
         "https://www.infrastructure-academy.com/manus-storage/Plate_XB_Relays_Consolidation_19eaa53f.png",
@@ -3834,8 +3834,8 @@
         "https://www.infrastructure-academy.com/icut-gallery.html",
         "https://www.infrastructure-academy.com/vault.html",
         "https://www.infrastructure-academy.com/pages/chip-evolution.html",
-        "https://www.infrastructure-academy.com/manus-storage/THE_21_INFRASTRUCTURE_PROJECTS___ISI_PERFORMANCE_DECK_d8fb9fbf.pptx",
-        "https://www.infrastructure-academy.com/manus-storage/iAAi_ISI_EXPANDED_GOLDEN_FILE_v2_09215c25.xlsx"
+        "https://www.infrastructure-academy.com/teaching-cse/Teaching_Deck_3_ISI_Performance_iAAi_Nigel_v2.pptx",
+        "https://www.infrastructure-academy.com/teaching-cse/iAAi_ISI_EXPANDED_GOLDEN_FILE_v2.xlsx"
       ],
       "image_count_local": 2,
       "audit_status": 200,
@@ -6319,13 +6319,13 @@
         "https://www.infrastructure-academy.com/pages/movies.html",
         "https://www.infrastructure-academy.com/press.html",
         "https://www.infrastructure-academy.com/play/handbook",
-        "https://www.infrastructure-academy.com/play/professor",
+        "https://infrastructure-academy.com/play/hub",
         "https://www.infrastructure-academy.com/explore/threats",
         "https://www.infrastructure-academy.com/explore/relays",
         "https://www.infrastructure-academy.com/explore/scholars",
         "https://www.infrastructure-academy.com/explore/webs",
         "https://www.infrastructure-academy.com/play/leaderboard",
-        "https://www.infrastructure-academy.com/play/store"
+        "https://infrastructure-academy.com/pages/bitpoint-marketplace.html"
       ],
       "image_count_local": 3,
       "audit_status": 200,

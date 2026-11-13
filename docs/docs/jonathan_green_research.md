@@ -2,7 +2,7 @@
 
 ## Company: Green IMS (Integrated Management Systems)
 - Website: greenims.com
-- Phone: (+44) 01483761891 (UK-based, Surrey area code)
+- Phone: ([removed — held privately] (UK-based, Surrey area code)
 - Services: Design, development and international certification assistance for company management systems
 - Tagline: "Global Management Solutions"
 - "Green IMS employ world leaders in the design, development and international certification assistance for a range of company management systems"

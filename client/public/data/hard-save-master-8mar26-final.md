@@ -6,7 +6,7 @@
 
 ## WHO
 - **User**: Nigel T. Dearden, Chartered Civil Engineer, 36 years experience
-- **Credentials**: BEng(Hons) CEng MICE MHKIE MCIWEM C.WEM RPE(CSB)
+- **Credentials**: BEng(Hons) CEng MHKIE MCIWEM C.WEM RPE(CSB)
 - **Key role**: Wynn Palace Macau — Principal Engineer
 - **Company**: 4 Elements Consulting Ltd
 - **Project**: Infrastructure Academy — An Infrastructure Odyssey (IAAI)

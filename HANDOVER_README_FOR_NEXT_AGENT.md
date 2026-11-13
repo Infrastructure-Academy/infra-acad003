@@ -2,7 +2,7 @@
 
 ## READ THIS BEFORE DOING ANYTHING
 
-**Authority:** Nigel T. Dearden CEng MICE MHKIE RPE(CBS)
+**Authority:** Nigel T. Dearden CEng MHKIE RPE(CBS)
 **Last Updated:** 1 June 2026 — Block 521
 **Written By:** ISAAC (Memorial TDF chip session)
 **Reason:** Credits running out. Owner cannot access Manus help. Police investigation active. This file exists so the next agent does not repeat the failures of previous agents.
