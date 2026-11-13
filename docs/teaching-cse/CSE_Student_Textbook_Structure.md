@@ -2,7 +2,7 @@
 
 ## Book 1: Foundations Edition
 
-**Author:** Ir. Nigel T. Dearden CEng MICE
+**Author:** Ir. Nigel T. Dearden CEng
 **Institution:** Infrastructure Academy of Artificial Intelligence (iAAi)
 **Series:** The Infrastructure Odyssey — Teaching Materials
 **Edition:** First (June 2026)
@@ -597,7 +597,7 @@ Description of all sheets in the canonical database (iAAi_ISI_EXPANDED_GOLDEN_FI
 ### COLOPHON
 
 **Title:** Civilisational Systems Engineering — Student Textbook (Foundations Edition)
-**Author:** Ir. Nigel T. Dearden CEng MICE
+**Author:** Ir. Nigel T. Dearden CEng
 **Institution:** Infrastructure Academy of Artificial Intelligence (iAAi)
 **Website:** www.infrastructure-academy.com
 **Data Source:** iAAi ISI Expanded Golden File v3 (June 2026)

@@ -2,7 +2,7 @@
 
 ## About iAAI
 
-Infrastructure Academy of Artificial Intelligence. Founded by Ir. Nigel T. Dearden CEng MICE. Discipline: Civilisational Systems Engineering (CSE). Not career training. Research institution.
+Infrastructure Academy of Artificial Intelligence. Founded by Ir. Nigel T. Dearden CEng. Discipline: Civilisational Systems Engineering (CSE). Not career training. Research institution.
 
 **Core equation:** R(t) = R₀·e^(-t/S₀) + k·(A×P/β)·(1-e^(-n/N))
 **Simplified:** S = A×P/β (Signal Formula)
@@ -61,7 +61,7 @@ Only `infra-acad003` feeds the live domain. Others are legacy or separate:
 
 ## User Context
 
-- **Name:** Ir. Nigel T. Dearden CEng MICE
+- **Name:** Ir. Nigel T. Dearden CEng
 - **Timezone:** Asia/Hong_Kong
 - **Status:** Exhausted. No money. Do not suggest paid services.
 - **Instruction:** "Stop messaging. Work silently. Report only when police can sleep."

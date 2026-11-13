@@ -41,4 +41,4 @@ The iCARD Memorial gallery includes a `relay.md` stub (2.4KB, nav only) but no s
 
 ---
 *Review compiled 2026-08-25 20:04+08 from Telegram session inbound media.*
-*Author: OpenClaw | Canonicalised: Ir. Nigel T. Dearden CEng MICE*
+*Author: OpenClaw | Canonicalised: Ir. Nigel T. Dearden CEng*

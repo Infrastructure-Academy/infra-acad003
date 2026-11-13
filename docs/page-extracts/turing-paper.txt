@@ -23,7 +23,7 @@ TURING PAPER: ICUT
 Infrastructure Competence Understanding Test
 A Thesis Outcome Document
 BLOCK 365 &bull; DAY 128 &bull; 13 MARCH 2026
-Author: Ir. Nigel T. Dearden, CEng MICE | Principia Tectonica
+Author: Ir. Nigel T. Dearden, CEng | Principia Tectonica
 CONTENTS
 I. The Question
 II. The Acceleration
@@ -183,7 +183,7 @@ DOWNLOADS
 &#128202; GOLDEN EXCEL v24 (XLSX)
 PER ARYA AD ASTRA
 Through nobility, to the stars
-Ir. Nigel T. Dearden, CEng MICE
+Ir. Nigel T. Dearden, CEng
 Principia Tectonica | iAAi
 Block 365 &bull; Day 128 &bull; 13 March 2026
 BETA / Proof of Concept &mdash; All data represents pre-launch test metrics.

@@ -2,7 +2,7 @@
 
 **Date of Record:** 9 July 2026
 **Compiled by:** Alice (Manus AI)
-**Principal:** Ir. Nigel T. Dearden CEng MICE — Infrastructure Academy (iAAi)
+**Principal:** Ir. Nigel T. Dearden CEng — Infrastructure Academy (iAAi)
 **Framework Alignment:** Civilisational Systems Engineering (CSE)
 **Companion Document:** `iaai_interpretation_jul9.md` — The Interlaced Context
 

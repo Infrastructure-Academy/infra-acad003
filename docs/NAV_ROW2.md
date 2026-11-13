@@ -17,7 +17,6 @@
             <a href="/icut-gallery.html" data-i18n="nav.gallery">ICUT GALLERY</a>
             <a href="/press.html" data-i18n="nav.press">PRESS KIT</a>
             <a href="/pages/movies.html" data-i18n="nav.movies" style="color:#ffd700;">MOVIES</a>
-            <a href="/race" data-i18n="nav.race" style="color:#00c8ff;">RACE TRACKER</a>
             <a href="/videos" data-i18n="nav.videos" style="color:#ffd700;">VIDEO PLAYROOM</a>
             <a href="/icards" data-i18n="nav.icards" style="color:#ffd700;">iCARD REGISTER</a>
             <a href="/play/igo" data-i18n="nav.igo" style="color:#ffd700; font-weight:bold;">iGO</a>

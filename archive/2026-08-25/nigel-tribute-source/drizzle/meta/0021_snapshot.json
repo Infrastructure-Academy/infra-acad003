@@ -1667,7 +1667,7 @@
           "primaryKey": false,
           "notNull": true,
           "autoincrement": false,
-          "default": "'Ir. Nigel T. Dearden, CEng MICE'"
+          "default": "'Ir. Nigel T. Dearden, CEng'"
         },
         "block": {
           "name": "block",

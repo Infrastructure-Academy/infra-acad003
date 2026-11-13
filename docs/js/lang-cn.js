@@ -205,8 +205,8 @@ window.IA_LANG_CN = {
     // ============================================
     "author.title": "关于作者",
     "author.name": "迪尔登工程师 (Ir. Nigel T. Dearden)",
-    "author.credentials": "特许工程师 (CEng)，英国土木工程师学会会员 (MICE)，香港工程师学会会员 (MHKIE)",
-    "author.bio": "鄧禮祖工程師（Ir. Nigel T Dearden）是特許土木及結構工程師、特許水務及環境管理師，擁有33年以上香港基礎設施經驗。四元素顧問有限公司創辦人（2006年成立，www.4ecl.com）。BEng (Hon's), CEng, C.WEM, RPE (CSB), MICE, MHKIE, MCIWEM。",
+    "author.credentials": "特许工程师 (CEng)，香港工程师学会会员 (MHKIE)",
+    "author.bio": "鄧禮祖工程師（Ir. Nigel T Dearden）是特許土木及結構工程師、特許水務及環境管理師，擁有33年以上香港基礎設施經驗。四元素顧問有限公司創辦人（2006年成立，www.4ecl.com）。BEng (Hon's), CEng, C.WEM, RPE (CSB), MHKIE, MCIWEM。",
 
     // ============================================
     // LIBRARY / DOCUMENTS PAGE
@@ -846,7 +846,7 @@ window.IA_LANG_CN = {
     "tax.tier1.desc": "The singular origin point. Conceived the 12-relay framework, wrote the trilogy, designed the game, and built the platform. Like Domain in biology &mdash; the broadest, most fundamental classification from which everything else branches.",
     "tax.tier1.name": "创始人",
     "tax.tier1.title": "建筑师",
-    "tax.tier1.who": "Ir. Nigel T. Dearden &mdash; CEng MICE MHKIE",
+    "tax.tier1.who": "Ir. Nigel T. Dearden &mdash; CEng MHKIE",
     "tax.tier2.analogy": "Biology: Kingdom (Animalia) &bull; Military: General Staff &bull; Sun Tzu: The Five Essentials",
     "tax.tier2.desc": "The inner circle. Industry leaders, capital strategists, and institutional connectors who shape direction, open doors, and bridge the gap between vision and execution. By invitation or nomination only.",
     "tax.tier2.name": "顾问",
@@ -1250,7 +1250,7 @@ window.IA_LANG_CN = {
     "home.isi.mvp.sub": "启动新一代ISI计算器 — 在线",
     "home.about.title": "关于 iAAi",
     "home.about.p1": "<strong style=\"color:var(--color-accent-gold);\">人工智能基础设施学院（iAAi）</strong>是<strong style=\"color:var(--color-accent-gold);\">文明系统工程（CSE）</strong>的研究与教学机构——世界上第一个致力于文明延续的工程学科。",
-    "home.about.p2": "由迪尔登工程师（Ir. Nigel T. Dearden CEng MICE）创立，iAAi开发数学框架（42个方程式，包括记忆方程、基础设施存续指数和信号公式），发表开放获取学术论文（图灵论文系列，可通过<a href=\"https://nigelmemorial-ucmtq9dn.manus.space/turing-papers\" style=\"color:var(--color-accent-gold); text-decoration:underline;\">纪念档案馆</a>获取），并以8种语言提供AI引导的基础设施教育。",
+    "home.about.p2": "由迪尔登工程师（Ir. Nigel T. Dearden CEng）创立，iAAi开发数学框架（42个方程式，包括记忆方程、基础设施存续指数和信号公式），发表开放获取学术论文（图灵论文系列，可通过<a href=\"https://nigelmemorial-ucmtq9dn.manus.space/turing-papers\" style=\"color:var(--color-accent-gold); text-decoration:underline;\">纪念档案馆</a>获取），并以8种语言提供AI引导的基础设施教育。",
     "home.about.p3": "研究计划通过12个文明接力映射12,000年的人类发展，通过ISI方程<em>ISI = (A×P/β)×(1−e<sup>−n/N</sup>)</em>量化领域整合，并通过4Rs干预框架（启示、韧性、再生、递归）对抗4Cs阻力（冲突、传染、气候、成本）来工程化记忆。",
     "home.about.p4": "所有研究——包括358+证据区块（RECALL链）、16项注册知识产权资产和完整方程组——均公开可用于同行评审和学术使用。",
     "home.charter.quote1": "&ldquo;上善若水。水善利万物而不争。&rdquo;",

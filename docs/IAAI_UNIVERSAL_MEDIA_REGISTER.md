@@ -91,7 +91,7 @@
 | TP-064 What Ebbinghaus Could Not Build | PDF | CDN + `docs/assets/papers/` | ✅ Recovered |
 | COS-CSE Corpus v1 | PDF/DOCX | CDN + `docs/assets/papers/` | ✅ Recovered |
 | CSE Book 1 Foundations | DOCX | CDN | ⚠️ CDN only |
-| Origin Story C3 | DOCX | CDN + `docs/recovered/` | ✅ Recovered |
+| Origin Story C3 | DOCX | Withdrawn 13 November 2026 | Held privately |
 | La Menara v27 | PDF/DOCX/MD | CDN + `docs/recovered/` | ✅ Recovered |
 
 ---

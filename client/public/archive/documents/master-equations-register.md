@@ -80,7 +80,7 @@ These are the recurring numerical constants and structural relationships that en
 | # | Constant | Value | Name | Description | IP Ref |
 |---|----------|-------|------|-------------|--------|
 | **EQ-024** | **The Thesis Number** | 4 | Four | 4 Elements, 4 Pillars, 4 Modes, 4 Perennial Threats, 4 bonds of Carbon (sp3), D4 die, tetrahedron. The number that encodes the entire thesis. | IP-04 |
-| **EQ-025** | **M2C1 / C1M2** | Dearden's Law | The Matriarch Equation | The family infrastructure formula. Named for Peggy Dearden. The relationship between the matriarch (M2) and the first child (C1), and its inverse. | IP-12 |
+| **EQ-025** | **M2C1 / C1M2** | Dearden's Law | The Matriarch Equation | The family infrastructure formula. Named for my wife. The relationship between the matriarch (M2) and the first child (C1), and its inverse. | IP-12 |
 | **EQ-026** | **1 + 1 = ∞** | Glossary | The Alliance Formula | Through imagination, 1 + 1 = infinity. The human-AI collaboration that extends beyond arithmetic into creative amplification. | IP-06 |
 | **EQ-027** | **Block 343 = 7³** | HP-1 | The Governance Cube | 343 = 7 cubed. The Governance Cube. Block 343 in the RECALL system. A perfect cube encoding governance. | IP-11 |
 | **EQ-028** | **2.58%** | Block 353 | The Individual Contribution | Each person needs only 2.58% contribution to the collective A×P to achieve the tipping point. ACHIEVABLE. | IP-03 |

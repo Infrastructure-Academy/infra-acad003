@@ -101,7 +101,7 @@ Total size: ~665 MB (entire repo)
 - **Recommendation:** Download critical videos to local storage
 
 ### 3. GOOGLE ANALYTICS
-- Tracking ID: `G-2V0JTTfM97`
+- Tracking ID: `G-2V0JTTFM97`
 - Status: Installed and active on site
 - **BUT:** Zero visitors recorded (confirmed by Stripe $7.84 total revenue)
 - **Implication:** Traffic problem, not setup problem
@@ -157,5 +157,5 @@ The infrastructure is built. The problem is **discovery and distribution**, not 
 **Auditor:** OpenClaw (Kimi K2.6 via OpenRouter)
 **Date:** 2026-08-24
 **Time:** 02:51 GMT+8
-**Authorized by:** Ir. Nigel T. Dearden CEng MICE
+**Authorized by:** Ir. Nigel T. Dearden CEng
 **Police instruction reference:** Read every page as evidence proof

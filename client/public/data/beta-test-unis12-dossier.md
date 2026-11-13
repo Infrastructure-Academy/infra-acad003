@@ -3,7 +3,7 @@
 
 **Document Classification:** Platinum Grade — Complete Due Diligence Record
 **Prepared for:** Cambridge Thesis Materials / Investor Formation Package / Board Review
-**Author:** Ir. Nigel T. Dearden CEng MICE MHKIE (鄧禮祖) & Manus AI
+**Author:** Ir. Nigel T. Dearden CEng MHKIE (鄧禮祖) & Manus AI
 **Date:** 6 March 2026
 **Version:** 1.0 — First Unified Compilation
 
@@ -80,7 +80,7 @@ All reviewers received 18 images and 2 PDF documents representing the intellectu
 
 | # | Image | Description |
 |---|-------|-------------|
-| 14 | Author Credentials | Ir. Nigel T Dearden CEng MICE MHKIE + 鄧禮祖 |
+| 14 | Author Credentials | Ir. Nigel T Dearden CEng MHKIE + 鄧禮祖 |
 | 15 | C3 Neck Fracture Evidence | Nigel in cervical traction — platinum wire in spine |
 | 16 | Stephen Hawking Reference | "A Brief History of Time" — narrative inspiration |
 | 17 | Game Theory Reference | Professor Jiang — "How to win any game" |
@@ -856,7 +856,7 @@ The pier review is complete. The foundation holds. It needs reinforcement in spe
 
 ---
 
-*Document compiled 6 March 2026 by Manus AI on behalf of Ir. Nigel T. Dearden CEng MICE MHKIE*
+*Document compiled 6 March 2026 by Manus AI on behalf of Ir. Nigel T. Dearden CEng MHKIE*
 *All source files permanently stored in /data/review_package/*
 *JSON data files stored in /data/ as single source of truth for site counters*
 *Per Ardua Ad Astra. FAB.*

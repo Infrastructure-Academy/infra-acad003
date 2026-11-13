@@ -36,9 +36,9 @@ The following errors in v66 must be resolved in v67:
 | Subtitle | Principia Tectonica — The Infrastructure Thesis |
 | Version | 67 |
 | Date | 4 June 2026 |
-| Author | Ir. Nigel T. Dearden CEng MICE |
+| Author | Ir. Nigel T. Dearden CEng |
 | Classification | iAAi COUNTERFORCE v67 |
-| Footer | iAAi COUNTERFORCE v67 — www.infrastructure-academy.com — Ir. Nigel T. Dearden CEng MICE |
+| Footer | iAAi COUNTERFORCE v67 — www.infrastructure-academy.com — Ir. Nigel T. Dearden CEng |
 
 ---
 

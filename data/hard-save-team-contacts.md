@@ -13,11 +13,11 @@
 | **LinkedIn** | linkedin.com/in/nigeldearden |
 | **Website 1** | 4ecl.com (Company — Four Elements Consulting Limited) |
 | **Website 2** | byoGuard.com (Company) |
-| **Phone** | +852 96000541 (Mobile) |
-| **Address** | 20C Glamour Court, Discovery Bay, Lantau Island, Hong Kong |
-| **Email** | nigel@4ecl.com |
+| **Phone** | [removed — held privately] |
+| **Address** | [removed — held privately] |
+| **Email** | [removed — held privately] |
 | **Birthday** | June 16 (1969 — age 56) |
-| **Credentials** | Ir., CEng, CEnv, MICE, MCIWEM |
+| **Credentials** | Ir., CEng, CEnv, MCIWEM |
 | **Career** | 36 years (1989-2026), 33 years HK-based, $4B+ infrastructure |
 
 ---
@@ -76,8 +76,8 @@
 |-------|--------|
 | **Website** | www.aerioncapital.com/managingpartner |
 | **LinkedIn** | Available via Aerion Capital team page |
-| **Email** | smarkscheid@gmail.com |
-| **Phone** | +1 312-376-7888 |
+| **Email** | [removed — held privately] |
+| **Phone** | [removed — held privately] |
 | **Company** | Aerion Capital (Family Office, Delaware) — Managing Partner |
 | **Education** | Princeton BA (East Asian Studies, 1976), Johns Hopkins MA (International Affairs, 1980), Columbia MBA (1991, class valedictorian) |
 | **Experience** | 35 years Asia, recognized China expert |

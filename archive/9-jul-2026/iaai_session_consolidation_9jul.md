@@ -178,7 +178,7 @@ All future iAAi documents, plates, decks, and reports MUST read and follow:
 - Accent: Counterforce Gold #C9A227
 - Typography: Cinzel (headings), Cormorant Garamond (deck titles), Montserrat (plate labels)
 - Border: 4px gold, inset ~40px, art-deco corners
-- Footer: `iAAi COUNTERFORCE v67 — © 2026 — www.infrastructure-academy.com — Ir. Nigel T. Dearden CEng MICE`
+- Footer: `iAAi COUNTERFORCE v67 — © 2026 — www.infrastructure-academy.com — Ir. Nigel T. Dearden CEng`
 
 ---
 
@@ -224,6 +224,6 @@ Explorer first. Fix children's experience. Once they pass → teachers pass → 
 
 ## Footer
 
-iAAi COUNTERFORCE v67 — © 2026 — www.infrastructure-academy.com — Ir. Nigel T. Dearden CEng MICE
+iAAi COUNTERFORCE v67 — © 2026 — www.infrastructure-academy.com — Ir. Nigel T. Dearden CEng
 
 Session: 9 July 2026 | Agent: Alice | Status: Consolidation complete, awaiting mirror-clone to Golden Excel and app backup verification

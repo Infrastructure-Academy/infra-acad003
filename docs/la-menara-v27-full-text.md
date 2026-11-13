@@ -42,7 +42,7 @@ La Menara â€” The Remarkable Relays
 
 A Civil Engineer's Perspective and Guide â€” An Infrastructure Odyssey: Episode 1 â€” Calories to Consciousness
 
-By Ir. Nigel T. Dearden BEng(Hons) CEng MICE MHKIE MCIWEM C.WEM RPE(CSB)
+By Ir. Nigel T. Dearden BEng(Hons) CEng MHKIE MCIWEM C.WEM RPE(CSB)
 
 The Challenge
 
@@ -236,7 +236,7 @@ An Infrastructure Odyssey presents a 12,000-year journey through human civilisat
 
 *La Menara â€” The Remarkable Relays. Volume 1: The Perspective. An Infrastructure Odyssey.*
 
-*Ir. Nigel T. Dearden BEng(Hons) CEng MICE MHKIE MCIWEM C.WEM RPE(CSB)*
+*Ir. Nigel T. Dearden BEng(Hons) CEng MHKIE MCIWEM C.WEM RPE(CSB)*
 
 infrastructure-academy.com  |  infra-acad-kuqzaex2.manus.space
 
@@ -510,7 +510,7 @@ Reference Document REF-TREE-001
 
 Prepared by: DAVID â€” AI Collaborator, Infrastructure Academy
 
-For: Ir. Nigel T. Dearden (CEng, CEnv, MICE, MCIWEM), Director, 4ECL / IAAI
+For: Ir. Nigel T. Dearden (CEng, CEnv, MCIWEM), Director, 4ECL / IAAI
 
 27 March 2026 â€” Block 416
 

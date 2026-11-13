@@ -177,7 +177,7 @@ export default function ThesisV2() {
             className="mt-10 space-y-1"
           >
             <p className={`text-sm text-[${sandMid}] font-light tracking-wide`}>
-              Ir. Nigel T. Dearden, MIStructE, MICE, RPE, CEng
+              Ir. Nigel T. Dearden, MIStructE, RPE, CEng
             </p>
             <p className={`text-xs text-[oklch(0.45_0.03_240)] font-light tracking-wide`}>
               4ECL Limited, Hong Kong (BR 36480303) · 5 Nov 2025 — 13 Mar 2026 (128 days)
