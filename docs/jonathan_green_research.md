@@ -2,7 +2,7 @@
 
 ## Company: Green IMS (Integrated Management Systems)
 - Website: greenims.com
-- Phone: ([removed — held privately] (UK-based, Surrey area code)
+- Phone: [removed — held privately]
 - Services: Design, development and international certification assistance for company management systems
 - Tagline: "Global Management Solutions"
 - "Green IMS employ world leaders in the design, development and international certification assistance for a range of company management systems"
@@ -23,7 +23,7 @@
 - Has ~50 educational lessons developed
 - Son uses Seesaw app for learning
 - Knows ex-South China Morning Post journalist
-- Email: jongreenhk@gmail.com
+- Email: [removed — held privately]
 - Connected on LinkedIn since 18 April 2011
 
 ## Photo: Professional headshot provided by Nigel (IMG_0168.PNG)

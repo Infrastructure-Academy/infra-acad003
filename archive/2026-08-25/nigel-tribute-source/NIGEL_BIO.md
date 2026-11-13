@@ -16,7 +16,7 @@
 | **Education** | BEng (Hons) Civil & Structural Engineering, University of Bradford, UK |
 | **Experience** | 35+ years international infrastructure (1991–2026) |
 | **Portfolio** | US$5Bn+ combined project portfolio across 4 roles (Client, Contractor, Consultant, Advisor) |
-| **Email** | nigel.dearden@gmail.com |
+| **Email** | [removed — held privately] |
 | **iAAi Node** | 000 — The Architect (FOUNDER) |
 
 ---
