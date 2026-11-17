@@ -165,6 +165,15 @@
             box-shadow: 0 0 20px rgba(255,215,0,0.5);
             transform: translateY(-2px);
         }
+        .btn-buy:disabled,
+        .btn-buy:disabled:hover {
+            background: #444;
+            color: #aaa;
+            border-color: #444;
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+        }
         .btn-buy-secondary {
             background: transparent;
             border: 2px solid var(--color-accent-gold);
@@ -539,10 +548,10 @@
     <main>
         <!-- Purchase Status Messages -->
         <div class="purchase-msg success" id="purchaseSuccess">
-            Thank you for your purchase! Your AI Edition deck PDF will be delivered to your email shortly.
+            The deck is not yet for sale. No charge was made from this page.
         </div>
         <div class="purchase-msg cancelled" id="purchaseCancelled">
-            Purchase cancelled. No charge was made. You can try again anytime.
+            The deck is not yet for sale. No charge was made from this page.
         </div>
 
         <!-- Hero Section -->
@@ -575,14 +584,14 @@
                         <div class="price">$29.95</div>
                         <div class="price-sub">USD + shipping</div>
                         <div class="desc">55 printed cards, premium card stock, collector's box</div>
-                        <button class="btn-buy" onclick="buyDeck('DECK_BETA')">Pre-Order Now</button>
+                        <button class="btn-buy" type="button" disabled>Not yet for sale</button>
                     </div>
                     <div class="price-card">
                         <h3>Digital PDF</h3>
                         <div class="price">$9.95</div>
                         <div class="price-sub">USD — instant download</div>
                         <div class="desc">High-resolution PDF of all 55 cards, print-at-home ready</div>
-                        <button class="btn-buy btn-buy-secondary" onclick="buyDeck('DECK_DIGITAL')">Buy Digital</button>
+                        <button class="btn-buy btn-buy-secondary" type="button" disabled>Not yet for sale</button>
                     </div>
                 </div>
                 <a href="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IAAI_IP_Equations_Register_Deck_56_Cards_AI_02f9060c.pdf" class="btn-download" target="_blank">Preview PDF (Free)</a>
@@ -716,7 +725,7 @@
         <section style="text-align:center; padding:3rem 2rem; max-width:600px; margin:0 auto;">
             <h2 style="font-family:var(--font-heading); color:var(--color-accent-gold); font-size:1.6rem; margin-bottom:1rem;">Own the Complete Collection</h2>
             <p style="color:var(--color-text-secondary); margin-bottom:1.5rem;">55 cards. 38 equations. 15 IP assets. One connected system from Calories to Consciousness.</p>
-            <button class="btn-buy" onclick="buyDeck('DECK_BETA')" style="font-size:1.1rem; padding:1rem 3rem;">Pre-Order — $29.95</button>
+            <button class="btn-buy" type="button" disabled style="font-size:1.1rem; padding:1rem 3rem;">Not yet for sale</button>
             <p style="color:var(--color-text-secondary); font-size:0.8rem; margin-top:1rem;">4 Elements Consulting Limited &middot; The Dearden Field &middot; D52 &middot; March 2026</p>
         </section>
     </main>
@@ -838,37 +847,9 @@
             document.getElementById('purchaseCancelled').style.display = 'block';
         }
 
-        // Buy Deck — calls Stripe checkout via tRPC
-        async function buyDeck(productKey) {
-            try {
-                const resp = await fetch('/api/trpc/checkout.createDeckCheckout', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    credentials: 'include',
-                    body: JSON.stringify({
-                        json: {
-                            productKey: productKey,
-                            origin: window.location.origin
-                        }
-                    })
-                });
-
-                const data = await resp.json();
-
-                if (data.result?.data?.json?.checkoutUrl) {
-                    window.open(data.result.data.json.checkoutUrl, '_blank');
-                } else if (resp.status === 401 || (data.error && data.error.message && data.error.message.includes('login'))) {
-                    // Not logged in — redirect to login
-                    alert('Please log in to purchase the deck. You will be redirected to the login page.');
-                    window.location.href = '/';
-                } else {
-                    alert('Unable to start checkout. Please try again or contact support.');
-                    console.error('Checkout error:', data);
-                }
-            } catch (err) {
-                console.error('Checkout error:', err);
-                alert('Unable to connect to payment system. Please try again.');
-            }
+        // Deck sales are closed on this static page. This function must not open a checkout.
+        function buyDeck() {
+            return;
         }
     </script>
     <div style="text-align:center; padding:1.5rem 1rem; border-top:1px solid rgba(255,215,0,0.2); margin-top:2rem;">

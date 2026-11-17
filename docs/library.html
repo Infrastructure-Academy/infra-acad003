@@ -490,6 +490,14 @@
             transform: translateY(-1px);
             box-shadow: 0 4px 16px rgba(212,175,55,0.3);
         }
+        .tier-lock-overlay .lock-btn:disabled,
+        .tier-lock-overlay .lock-btn:disabled:hover {
+            background: #444;
+            color: #aaa;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
         .tier-unlocked .tier-lock-overlay,
         .tier-unlocked::after {
             display: none !important;
@@ -1456,12 +1464,10 @@
                     var overlay = document.createElement('div');
                     overlay.className = 'tier-lock-overlay';
                     var tierName = requiredTier.charAt(0).toUpperCase() + requiredTier.slice(1);
-                    var price = requiredTier === 'player' ? '$9.99/mo' : requiredTier === 'scholar' ? '$29.99/mo' : 'Custom';
                     overlay.innerHTML = '<div class="lock-icon">&#128274;</div>' +
                         '<div class="lock-title">' + tierName.toUpperCase() + ' TIER CONTENT</div>' +
-                        '<div class="lock-desc">Subscribe to ' + tierName + ' (' + price + ') to unlock this section</div>' +
-                        '<button class="lock-btn" onclick="subscribeToTier(\'' + requiredTier + '\')">' +
-                        'UNLOCK ' + tierName.toUpperCase() + ' ACCESS</button>';
+                        '<div class="lock-desc">This section is not yet for sale. No payment can be started from this page.</div>' +
+                        '<button class="lock-btn" type="button" disabled>Not yet for sale</button>';
                     section.appendChild(overlay);
                 }
             }
@@ -1488,11 +1494,8 @@
 (function() {
     // Check for purchase result in URL
     var params = new URLSearchParams(window.location.search);
-    if (params.get('purchase') === 'success') {
-        showLibraryToast('Subscription activated! Welcome to the BitPoints Library.', 'success');
-        history.replaceState(null, '', window.location.pathname);
-    } else if (params.get('purchase') === 'cancelled') {
-        showLibraryToast('Checkout cancelled. You can subscribe any time.', 'info');
+    if (params.get('purchase') === 'success' || params.get('purchase') === 'cancelled') {
+        showLibraryToast('Library enrolment is not yet open. No payment was taken on this page.', 'info');
         history.replaceState(null, '', window.location.pathname);
     }
 
@@ -1507,59 +1510,8 @@
     }
 })();
 
-async function subscribeToTier(tier) {
-    var btn = event.target;
-    var originalText = btn.textContent;
-    btn.textContent = 'Redirecting...';
-    btn.disabled = true;
-
-    try {
-        var response = await fetch('/api/trpc/checkout.createLibraryCheckout', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            credentials: 'include',
-            body: JSON.stringify({
-                json: {
-                    tier: tier,
-                    origin: window.location.origin
-                }
-            })
-        });
-
-        if (response.status === 401) {
-            // Not logged in — redirect to login
-            var loginUrl = window.OAUTH_PORTAL_URL || '/api/oauth/login';
-            var state = btoa(JSON.stringify({ origin: window.location.origin, returnPath: '/library.html' }));
-            window.location.href = loginUrl + '?state=' + encodeURIComponent(state);
-            return;
-        }
-
-        var data = await response.json();
-        var checkoutUrl = data && data.result && data.result.data && data.result.data.json && data.result.data.json.checkoutUrl;
-
-        if (checkoutUrl) {
-            window.open(checkoutUrl, '_blank');
-            showLibraryToast('Redirecting to Stripe checkout...', 'info');
-        } else {
-            throw new Error('No checkout URL returned');
-        }
-    } catch (err) {
-        console.error('[Library] Checkout error:', err);
-        showLibraryToast('Please log in first to subscribe. Click the login button in the top right.', 'info');
-    } finally {
-        btn.textContent = originalText;
-        btn.disabled = false;
-    }
-
-    function showLibraryToast(msg, type) {
-        var toast = document.createElement('div');
-        toast.style.cssText = 'position:fixed;top:20px;right:20px;z-index:99999;padding:1rem 1.5rem;border-radius:8px;font-family:var(--font-body);font-size:0.9rem;max-width:400px;box-shadow:0 4px 20px rgba(0,0,0,0.4);transition:opacity 0.3s;';
-        toast.style.background = type === 'success' ? 'rgba(34,197,94,0.95)' : 'rgba(59,130,246,0.95)';
-        toast.style.color = '#fff';
-        toast.textContent = msg;
-        document.body.appendChild(toast);
-        setTimeout(function() { toast.style.opacity = '0'; setTimeout(function() { toast.remove(); }, 300); }, 5000);
-    }
+function subscribeToTier() {
+    return;
 }
 </script>
 <!-- IAAI PAGE VIEW TRACKING — Compliance requirement -->
