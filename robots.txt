@@ -25,9 +25,3 @@ Allow: /
 
 User-agent: LinkedInBot
 Allow: /
-
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /

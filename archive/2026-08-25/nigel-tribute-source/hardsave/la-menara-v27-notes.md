@@ -4,7 +4,7 @@
 - **Full Title:** La Menara — The Remarkable Relays
 - **Subtitle:** An Infrastructure Odyssey
 - **Episode:** Episode 1: Calories to Consciousness — From Planetary Engine to Human Nodes
-- **Author:** Ir. Nigel T. Dearden BEng(Hons) CEng MICE MHKIE MCIWEM C.WEM RPE(CSB)
+- **Author:** Ir. Nigel T. Dearden BEng(Hons) CEng MHKIE MCIWEM C.WEM RPE(CSB)
 - **Pages:** 297
 - **Version:** v27.2, 29 March 2026
 

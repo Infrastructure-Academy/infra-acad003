@@ -2,7 +2,7 @@
 ## ZH COMPLIANCE & MULTI-DOMAIN INTEGRATION PROTOCOL
 
 **Issued:** 2 June 2026
-**Authority:** Ir. Nigel T. Dearden CEng MICE
+**Authority:** Ir. Nigel T. Dearden CEng
 **Lead Agent:** ISAAC
 **Status:** ACTIVE
 **Block:** 611

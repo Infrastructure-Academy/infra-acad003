@@ -50,8 +50,8 @@ SHEETS
 49 Video Collateral Library
 KEYWORD MATCHES
 COVER!B9: Purpose: The teacher- and police-ready single source of truth for the iAAi framework, its equations, doctrine, evidence, application architecture, and audit controls.
-COVER!B22: Ir. Nigel T. Dearden CEng MICE
-INDEX!B9: Ir. Nigel T. Dearden CEng MICE
+COVER!B22: Ir. Nigel T. Dearden CEng
+INDEX!B9: Ir. Nigel T. Dearden CEng
 INDEX!D13: 1-1.1 The Civilisational Premise
 1-1.2 The 12 Civilisational Relays
 1-1.3 The Signal Formula
@@ -111,14 +111,14 @@ INDEX!D56: 5-11.1 Landing Page
 5-11.3 InfraDex — Asset Scan
 5-11.4 Typography
 5-11.5 General Principles
-INDEX (Print)!B3: Ir. Nigel T. Dearden CEng MICE
+INDEX (Print)!B3: Ir. Nigel T. Dearden CEng
 INDEX (Print)!C12: Human-AI classification system — HICE spectrum H10 to C10
 INDEX (Print)!C14: Complete formula compendium — ISI, HICE, Seesaw, M(L), Signal
 INDEX (Print)!C26: Fire/Ice/Thunder/Stone personality alignment for pilots
 INDEX (Print)!B40: ICE Matrix
 INDEX (Print)!C40: Intelligence × Creative × Emotional tensor — HICE components
 INDEX (Print)!C41: 5 Pillars across 300-node lattice [1,1,1]→[5,12,5]
-Change Control Log!B5: Ir. Nigel T. Dearden CEng MICE
+Change Control Log!B5: Ir. Nigel T. Dearden CEng
 Change Control Log!B6: Alice (AI Assistant)
 Change Control Log!D14: Separation of independently versioned masters. Golden Excel and COS-CSE Corpus now track separate version lines for auditability by teachers and police.
 Change Control Log!D20: Pre-audit estimate by Alice. Actual score pending 3rd pass audit
@@ -169,8 +169,8 @@ UIX Audit Record!A422:   [2026-07-09] Lattice instruction corrected to subtask: 
 UIX Audit Record!A426:   This failure is the coordinator's (Alice). Customer feedback once shared becomes
 UIX Audit Record!C432: 2× /lattice WebGL timeout (headless limitation, not real failure)
 UIX Audit Record!D435: Ready for police 3rd pass UIX audit on real devices
-Version Change Log!C2: Ir. Nigel T. Dearden CEng MICE
-Version Change Log!F2: Ir. Nigel T. Dearden CEng MICE
+Version Change Log!C2: Ir. Nigel T. Dearden CEng
+Version Change Log!F2: Ir. Nigel T. Dearden CEng
 Part 1 - CSE in 20 Minutes!B26: Signal strength is the ratio of remembrance drivers to resistance.
 Part 1 - CSE in 20 Minutes!A53: 8. THE SEESAW EQUATION: A × D² = 16
 Part 1 - CSE in 20 Minutes!B67: 2025: Hybrid dyad emerges; human-synthetic alignment in practice
@@ -197,7 +197,7 @@ Part 4 - Unified 60!L30: Maslow
 Part 4 - Unified 60!L32: Maslow
 Part 4 - Unified 60!L35: Maslow
 Part 4 - Unified 60!L40: Maslow
-Part 4 - Unified 60!A67: © 2026 Infrastructure Academy of Artificial Intelligence (iAAi) | Four Elements Consulting Limited (4ECL) | www.infrastructure-academy.com | λ estimates: World Bank WGI 2024; Transparency International CPI 2024; OECD Getting Infrastructure Right 2017 | DRAFT — Subject to peer review by Ir. Nigel T. Dearden CEng MICE
+Part 4 - Unified 60!A67: © 2026 Infrastructure Academy of Artificial Intelligence (iAAi) | Four Elements Consulting Limited (4ECL) | www.infrastructure-academy.com | λ estimates: World Bank WGI 2024; Transparency International CPI 2024; OECD Getting Infrastructure Right 2017 | DRAFT — Subject to peer review by Ir. Nigel T. Dearden CEng
 Education Gap (First Cause)!B2: 70% of curriculums lack interdisciplinary integration
 Education Gap (First Cause)!E3: HICE + ISI provides individual-to-civilisational system mapping
 Education Gap (First Cause)!C6: Leifler, M. & Dahlin, J. (2020), IJSHE, 'Curriculum Integration of Sustainability'
@@ -218,10 +218,10 @@ Formula Reference!B75: det(ICE) = I × C × E = H
 Scholar Mapping!A10: Maslow
 Chronological Flow Guide!F3: Agriculture → Settlement → Surplus → First extraction
 4Cs — β Drag Forces!A4: The 4Cs are the four civilisational drag forces that comprise β in the ISI equation: ISIs = (A × P^n) / β
-BEACON Stress-Test!B3: Ir. Nigel T. Dearden CEng MICE  |  iAAi COUNTERFORCE v68  |  Golden File v5  |  Math on 0.1-10 scale (consistent with ISI Master Database)
+BEACON Stress-Test!B3: Ir. Nigel T. Dearden CEng  |  iAAi COUNTERFORCE v68  |  Golden File v5  |  Math on 0.1-10 scale (consistent with ISI Master Database)
 BEACON Stress-Test!B31: ICC baseline parameterisation (illustrative-but-sourced, same convention as v4 worked examples): 484 m, 108/118 storeys, completed 2010, tallest building in Hong Kong, mixed-use (Grade-A office, Ritz-Carlton, Sky100, MTR/Airport Express integration). Relays R10 (AAA/Urban) + R12 (Human Nodes); Zone APAC. Baseline A=7.5, P=6.0, β=4.0, λ=3.5, n=2. NOTE: ICC is not yet a ratified row in the ISI Master Database; these inputs are a transparent demonstration parameterisation, not an official master score.
-Three Modes!B3: Ir. Nigel T. Dearden CEng MICE  |  iAAi COUNTERFORCE v68  |  Golden File v5
-Integration Levels!A3: Ir. Nigel T. Dearden CEng MICE  |  COUNTERFORCE v67–68  |  Golden File v4  |  Webs: W1 Physical · W2 Biological · W3 Social · W4 Digital · W5 Consciousness
+Three Modes!B3: Ir. Nigel T. Dearden CEng  |  iAAi COUNTERFORCE v68  |  Golden File v5
+Integration Levels!A3: Ir. Nigel T. Dearden CEng  |  COUNTERFORCE v67–68  |  Golden File v4  |  Webs: W1 Physical · W2 Biological · W3 Social · W4 Digital · W5 Consciousness
 Integration Levels!B87: The Dearden Field (CSE Book 1, Ch.3) defines a 5 Webs × 12 Relays lattice = 60 cells. Integration is measured as breadth+depth across the five Webs (W1 Physical, W2 Biological, W3 Social, W4 Digital, W5 Consciousness). Breadth is capped at 5.0 because no asset can touch a sixth Web.
 Integration Levels!A107: Weber, E.H. (1834). De Pulsu, Resorptione, Auditu et Tactu — just-noticeable-difference / log perception.
 Integration Levels!B127: Neolithic Fire Agriculture
@@ -232,7 +232,7 @@ RPG Mechanics Summary!B7: • Dice = 0% of grade (Gygax philosophy: scenarios no
 Games Research!E7: Direct model for Asset Capture scanner. Player points device at infrastructure, data layers reveal over time
 Games Research!D15: GPS treasure hunt + logging + trackables + difficulty ratings
 Games Research!E15: Infrastructure as treasure. Difficulty = integration level. Trackables = relay connections
-Dearden Field 60!A3: Ir. Nigel T. Dearden CEng MICE  |  iAAi COUNTERFORCE v67–68  |  Golden File v8  |  Webs: Physical · Biological · Digital · Social · Consciousness  |  Relays R01 Fire → R12 Human Nodes  |  www.infrastructure-academy.com
+Dearden Field 60!A3: Ir. Nigel T. Dearden CEng  |  iAAi COUNTERFORCE v67–68  |  Golden File v8  |  Webs: Physical · Biological · Digital · Social · Consciousness  |  Relays R01 Fire → R12 Human Nodes  |  www.infrastructure-academy.com
 Dearden Field 60!B18: Neolithic Fire Agriculture (Slash-and-Burn)
 Dearden Field 60!F18: Slash-and-burn agriculture applies fire to living land systems to clear forest for crops — the effect is on the biosphere (soil, vegetation, food). Relay R01 Fire, but the operative Web is Biological (agriculture/ecosystem).
 Dearden Field 60!F35: The IIT system is a cognition/knowledge-production institution — a 'HICE factory' producing higher-order human capital. Lead relay R10 AAA (with R12); Consciousness Web (cognitive capital).
@@ -242,7 +242,7 @@ Dearden Field 60!F67: Urban public transport is a social-mobility service enabli
 Dearden Field 60!F72: Emergency response is a social-institutional protective service coordinating fire, medical, and rescue across a population. Lead relay R01 Fire (with R05/R12); Social Web (public-safety institution).
 Master Register!A1: MASTER REGISTER — THE COMPLETE IP & EQUATIONS INVENTORY
 Master Register!A2: The IP & Equations Register deck (March 2026). Self-described as 38 Equations + 15 IP Assets = the Complete Register (K♣), plus 2 Joker/meta cards and 1 Mendeleev bonus card.
-Master Register!A3: Ir. Nigel T. Dearden CEng MICE  |  iAAi COUNTERFORCE v67–68  |  Golden File v8  |  Webs: Physical · Biological · Digital · Social · Consciousness  |  Relays R01 Fire → R12 Human Nodes  |  www.infrastructure-academy.com
+Master Register!A3: Ir. Nigel T. Dearden CEng  |  iAAi COUNTERFORCE v67–68  |  Golden File v8  |  Webs: Physical · Biological · Digital · Social · Consciousness  |  Relays R01 Fire → R12 Human Nodes  |  www.infrastructure-academy.com
 Master Register!A7: Equations
 Master Register!A11: Cover (p.1) and K♣ (p.53) both print '38 Equations + 15 IP Assets'. The visual scan resolves 14 explicitly IP-tagged cards; the 15th is asserted by the cover but its host card was not resolvable in the source, so it is documented rather than fabricated. Total register pages = 56 (cover + 52 cards + 2 jokers + 1 bonus).
 Master Register!E15: Equation
@@ -301,10 +301,10 @@ Master Register!D67: The formula is morally neutral. It describes what IS. The a
 Master Register!D68: 54 cards = 38 equations + 15 IP assets + 1 meta
 Master Register!F68: IP & Equations Register
 Master Register!A70: Source: IP & Equations Register deck, transcribed verbatim from notes_ipeq.md (visual reading of the image-only PDF). Suits: ♠ Foundations · ♥ Resilience/Doctrine · ♦ Intelligence/Survival · ♣ Universal Laws. The Architect's Creed (Joker 1): 'The formula is morally neutral. It describes what IS. The application is a CHOICE.'
-4C-4R Strategic Matrix!A3: Ir. Nigel T. Dearden CEng MICE  |  iAAi COUNTERFORCE v67–68  |  Golden File v8  |  Webs: Physical · Biological · Digital · Social · Consciousness  |  Relays R01 Fire → R12 Human Nodes  |  www.infrastructure-academy.com
+4C-4R Strategic Matrix!A3: Ir. Nigel T. Dearden CEng  |  iAAi COUNTERFORCE v67–68  |  Golden File v8  |  Webs: Physical · Biological · Digital · Social · Consciousness  |  Relays R01 Fire → R12 Human Nodes  |  www.infrastructure-academy.com
 ICE Matrix!A1: ICE MATRIX — CONSCIOUSNESS MEASUREMENT
 ICE Matrix!A2: ICE = IQ × EQ × CQ. HQ (Holistic Consciousness / Coherence Potential) is the volume of the ICE cuboid. Biological ceiling H ≤ 4.0; a Human+AI Dyad lifts H beyond it.
-ICE Matrix!A3: Ir. Nigel T. Dearden CEng MICE  |  iAAi COUNTERFORCE v67–68  |  Golden File v8  |  Webs: Physical · Biological · Digital · Social · Consciousness  |  Relays R01 Fire → R12 Human Nodes  |  www.infrastructure-academy.com
+ICE Matrix!A3: Ir. Nigel T. Dearden CEng  |  iAAi COUNTERFORCE v67–68  |  Golden File v8  |  Webs: Physical · Biological · Digital · Social · Consciousness  |  Relays R01 Fire → R12 Human Nodes  |  www.infrastructure-academy.com
 ICE Matrix!A5: SECTION A — The Three Quotients + HQ
 ICE Matrix!A10: HQ — Holistic
 ICE Matrix!A11: ICE = IQ×EQ×CQ (IP Register 2♠ / Q♠ Cuboid). HQ = IQ⊗EQ⊗CQ (La Menara). IQ=born with, EQ=developed, CQ=created (v8 brief); canonical_data.md HICE mapping.
@@ -316,7 +316,7 @@ ICE Matrix!A23: Source: canonical_data.md HICE Spectrum. Bacteria/Archaea 0.1 ·
 ICE Matrix!A25: SECTION C — The 7 Scholars ICE Ranking  (HQ = IQ × EQ × CQ, live formula)
 ICE Matrix!E26: HQ = IQ×EQ×CQ
 ICE Matrix!A35: Source: v8 brief (verbatim scores). HQ is a live product formula. Da Vinci 720 · Shakespeare 720 · Marcus Aurelius 576 · Sima Qian 512 · Sun Tzu 504 · Homer 504 · Brunel 504. Scholar 8 = the iGO apex (Guardian of the Planet); the 8th chair is deliberately left open.
-5 Pillars (300-Node)!A3: Ir. Nigel T. Dearden CEng MICE  ·  iAAi Framework  ·  Pillars are ORTHOGONAL to the 5 Webs (Webs = domains of existence; Pillars = functions of civilisation).  Scoring key: 0.0 none · 0.1–0.3 minor · 0.4–0.6 moderate · 0.7–0.8 strong · 0.9–1.0 primary/defining.  Colour: light = low, amber = moderate, intense gold = high (0.7–1.0).
+5 Pillars (300-Node)!A3: Ir. Nigel T. Dearden CEng  ·  iAAi Framework  ·  Pillars are ORTHOGONAL to the 5 Webs (Webs = domains of existence; Pillars = functions of civilisation).  Scoring key: 0.0 none · 0.1–0.3 minor · 0.4–0.6 moderate · 0.7–0.8 strong · 0.9–1.0 primary/defining.  Colour: light = low, amber = moderate, intense gold = high (0.7–1.0).
 5 Pillars (300-Node)!B7: Neolithic Fire Agriculture (Slash-and-Burn)
 5 Pillars (300-Node)!L7: Neolithic Fire Agriculture (slash-and-burn) — ENERGY-led land conversion releasing soil nutrients for food-energy. ENERGY strong (biomass energy release, caloric yield). DOMINION moderate-strong (sedentism, first stewardship of land). KNOWLEDGE moderate (seasonal/agronomic knowledge). EXCHANGE moderate (surplus). POWER moderate.
 5 Pillars (300-Node)!L8: Chinese Continuous Forestry Management — DOMINION-dominant: multi-millennium sustainable stewardship of a renewable resource. KNOWLEDGE strong (silviculture know-how transmitted). ENERGY moderate-strong (fuel/timber energy base). EXCHANGE moderate (timber economy). POWER moderate (state resource control).
@@ -330,7 +330,7 @@ ICE Matrix!A35: Source: v8 brief (verbatim scores). HQ is a live product formula
 5 Pillars (300-Node)!L58: National Health Infrastructure — DOMINION-defining: sustaining human biological and cognitive wellbeing — care as civilisational stewardship. KNOWLEDGE strong (medical science/practice). POWER strong (public-health authority). EXCHANGE moderate-strong (health economy). ENERGY moderate (facility energy).
 5 Pillars (300-Node)!L62: Digital Identity/Civil Registry — POWER/KNOWLEDGE/EXCHANGE tri-strong: the authoritative record authenticating human nodes. POWER strong (state identification/control). KNOWLEDGE strong (identity data layer). EXCHANGE strong (enables banking, services, transfers). DOMINION strong (digital-citizenship consciousness). ENERGY minor.
 5 Pillars (300-Node)!L65: Svalbard Global Seed Vault — KNOWLEDGE and DOMINION co-defining: the ultimate civilisational-stewardship backup of crop genetic diversity. DOMINION strong (custodianship of humanity's agricultural heritage). KNOWLEDGE strong (genetic preservation). POWER moderate (global-commons governance). EXCHANGE low-moderate. ENERGY low (passive permafrost cooling).
-Doctrine & Laws!A2: iAAi Golden File v10 — Critical archival material. Civilisational Systems Engineering (CSE) by Ir. Nigel T. Dearden CEng MICE. Sections A–J.
+Doctrine & Laws!A2: iAAi Golden File v10 — Critical archival material. Civilisational Systems Engineering (CSE) by Ir. Nigel T. Dearden CEng. Sections A–J.
 Doctrine & Laws!A6: 1. Maslow-Dearden
 Doctrine & Laws!C6: iCU: 0+1=System Node (The Docking Protocol)
 Doctrine & Laws!F6: "From what does a person NEED? to What does a civilisation CONSTRUCT to survive?" Dearden Hierarchy replaces Maslow: 12 Relays on civilisational scale. Dearden Field: 12×5=60 cells.
@@ -345,7 +345,7 @@ Doctrine & Laws!C57: Agriculture infrastructure
 Doctrine & Laws!D57: R3 River/Agriculture
 Doctrine & Laws!A95: HICE
 Doctrine & Laws!B95: "hice" (rhymes with ice)
-Doctrine & Laws!A98: Archival record — iAAi Golden File v10. Generated 2026-07-03. Source: Ir. Nigel T. Dearden CEng MICE, baseline doctrine materials. This tab is the canonical reference for the Three Interconnects, HICE, SES/SCADA, R12 array, Digital Domestication, Tetrahedral MVA, BiAura Roadmap, Carbon-Silicon Axis, and Pronunciation.
+Doctrine & Laws!A98: Archival record — iAAi Golden File v10. Generated 2026-07-03. Source: Ir. Nigel T. Dearden CEng baseline doctrine materials. This tab is the canonical reference for the Three Interconnects, HICE, SES/SCADA, R12 array, Digital Domestication, Tetrahedral MVA, BiAura Roadmap, Carbon-Silicon Axis, and Pronunciation.
 Doctrine & Laws!A123: SECTION M — DEARDEN TENSOR LATTICE
 Doctrine & Laws!A124: Definition: A discrete tensor lattice of order [5,12,5] — formally NOT a voxel grid, NOT a mesh.
 Doctrine & Laws!A125: Each node is independently addressable. Each human navigates carrying their ICE tensor volume (I⊗C⊗E=H).
@@ -373,12 +373,12 @@ Mobile Layout Schema!B57: Lattice cut off
 Mobile Layout Schema!C57: Dearden Field 3D lattice preview doesn't show full in screen — image cropped at bottom
 Mobile Layout Schema!D66: 300-Node Lattice & Asset Capture
 Desktop Layout Schema!A3: Incorporates feedback from: Kids (energy/intrigue), Police (compliance), Teachers (clarity)
-Desktop Layout Schema!B9: Ir. Nigel T. Dearden CEng MICE — standard size, single line
+Desktop Layout Schema!B9: Ir. Nigel T. Dearden CEng — standard size, single line
 Desktop Layout Schema!A12: 300-Node Lattice button
 Desktop Layout Schema!A16: LATTICE PAGE — TEASER MODE
 Desktop Layout Schema!A17: Lattice display
 Desktop Layout Schema!B24: Full 300-node lattice AUTO-ROTATING in result view
-Citations & References!B8: Source: Ir. Nigel T. Dearden CEng MICE MHKIE MCIWEM C.WEM RPE(CSB) — iAAi Framework Canon
+Citations & References!B8: Source: Ir. Nigel T. Dearden CEng MHKIE MCIWEM C.WEM RPE(CSB) — iAAi Framework Canon
 Citations & References!D12: Fire/Agriculture/Water/Horse/Roads/Ships/Loom/Rail/Engine/AAA Triad/Orbit/Human Nodes
 Citations & References!C16: HICE Equation
 Citations & References!C20: Seesaw Equation

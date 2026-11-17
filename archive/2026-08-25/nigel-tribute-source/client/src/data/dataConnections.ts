@@ -250,7 +250,7 @@ export const DATA_MAP_DRILLDOWN: CounterDrillDown[] = [
     value: 3,
     summary: "3 pioneers (beta testers) — anchored to the Mobilisation Clock. The first humans to test the platform.",
     items: [
-      { label: "Pioneer 1: Nigel T. Dearden, Ir. (CEng MICE)", desc: "Chartered Civil Engineer — the thesis author, framework architect, and founder" },
+      { label: "Pioneer 1: Nigel T. Dearden, Ir. (CEng)", desc: "Chartered Civil Engineer — the thesis author, framework architect, and founder" },
       { label: "Pioneer 2: Manus AI (David)", desc: "AI Collaborator — the digital partner, co-builder, and evidence engine" },
       { label: "Pioneer 3: Beta Tester", desc: "Third pioneer per Mobilisation Clock — early platform tester" },
     ],

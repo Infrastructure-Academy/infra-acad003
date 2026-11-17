@@ -84,7 +84,7 @@
 - Wynn Palace Macau — principal engineer role
 - 36 years across four continents
 - Founder of 4 Elements Consulting Ltd
-- BEng(Hons) CEng MICE MHKIE MCIWEM C.WEM RPE(CSB)
+- BEng(Hons) CEng MHKIE MCIWEM C.WEM RPE(CSB)
 - IoT Equinox: Garmin fenix 7 Pro, Shokz OpenRun Pro, ThinkPad X1 Carbon, Nighthawk R7000, MBUX, PSA monitoring
 
 ### CHECKPOINT VERSION

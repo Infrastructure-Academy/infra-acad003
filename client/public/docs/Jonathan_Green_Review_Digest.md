@@ -3,7 +3,7 @@
 **Reviewer**: Jonathan Green | **Date**: 9 March 2026 | **Platform**: LinkedIn DM
 **Relationship**: Long-standing friend of Nigel's from Hong Kong (1990s), now UK-based
 **Background**: Career in QA/QC within construction industry; passionate Nikon DSLR photographer; has developed ~50 educational lessons of his own; father (son uses Seesaw interactive learning app)
-**LinkedIn**: linkedin.com/in/jongreenims | **Website**: greenims.com | **Email**: jongreenhk@gmail.com
+**LinkedIn**: linkedin.com/in/jongreenims | **Website**: greenims.com | **Email**: [removed — held privately]
 **Connected since**: 18 April 2011
 
 ---

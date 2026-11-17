@@ -205,8 +205,8 @@ window.IA_LANG_HI = {
     // ============================================
     "author.title": "लेखक के बारे में",
     "author.name": "Ir. Nigel T. Dearden",
-    "author.credentials": "चार्टर्ड इंजीनियर (CEng), इंस्टीट्यूशन ऑफ सिविल इंजीनियर्स के सदस्य (MICE), हांगकांग इंस्टीट्यूशन ऑफ इंजीनियर्स के सदस्य (MHKIE)",
-    "author.bio": "Ir. Nigel T Dearden (鄧禮祖) एक चार्टर्ड सिविल एवं स्ट्रक्चरल इंजीनियर तथा चार्टर्ड जल एवं पर्यावरण प्रबंधक हैं, जिनके पास हांगकांग बुनियादी ढांचे में 33+ वर्षों का अनुभव है। 4 Elements Consulting Ltd के संस्थापक (2006, www.4ecl.com)। BEng (Hon's), CEng, C.WEM, RPE (CSB), MICE, MHKIE, MCIWEM।",
+    "author.credentials": "चार्टर्ड इंजीनियर (CEng), हांगकांग इंस्टीट्यूशन ऑफ इंजीनियर्स के सदस्य (MHKIE)",
+    "author.bio": "Ir. Nigel T Dearden (鄧禮祖) एक चार्टर्ड सिविल एवं स्ट्रक्चरल इंजीनियर तथा चार्टर्ड जल एवं पर्यावरण प्रबंधक हैं, जिनके पास हांगकांग बुनियादी ढांचे में 33+ वर्षों का अनुभव है। 4 Elements Consulting Ltd के संस्थापक (2006, www.4ecl.com)। BEng (Hon's), CEng, C.WEM, RPE (CSB), MHKIE, MCIWEM।",
 
     // ============================================
     // LIBRARY / DOCUMENTS PAGE
@@ -851,7 +851,7 @@ window.IA_LANG_HI = {
     "tax.tier1.desc": "The singular origin point. Conceived the 12-relay framework, wrote the trilogy, designed the game, and built the platform. Like Domain in biology &mdash; the broadest, most fundamental classification from which everything else branches.",
     "tax.tier1.name": "संस्थापक",
     "tax.tier1.title": "वास्तुकार",
-    "tax.tier1.who": "Ir. Nigel T. Dearden &mdash; CEng MICE MHKIE",
+    "tax.tier1.who": "Ir. Nigel T. Dearden &mdash; CEng MHKIE",
     "tax.tier2.analogy": "Biology: Kingdom (Animalia) &bull; Military: General Staff &bull; Sun Tzu: The Five Essentials",
     "tax.tier2.desc": "The inner circle. Industry leaders, capital strategists, and institutional connectors who shape direction, open doors, and bridge the gap between vision and execution. By invitation or nomination only.",
     "tax.tier2.name": "सलाहकार",

@@ -40,7 +40,7 @@ Why &ldquo;Discontinuous&rdquo;?
 The relay model tracks the continuous handoff of infrastructure knowledge from one civilisation to the next. These branches rose independently, developed sophisticated infrastructure (proving universal human capacity), but declined without passing their innovations to the next link in the chain. The educational question: &ldquo;What conditions create continuity vs. discontinuity?&rdquo; &mdash; Geography, trade routes, and connectivity.
 Reference: The Byzantium Blogger (Powee Celdran) &mdash; byzantium-blogger.blog &bull; Governance Architecture
 &ldquo;Per Arya Ad Astra&rdquo; &mdash; Infrastructure Academy
-Ir. Nigel T. Dearden CEng MICE MHKIE &bull; The Civilizational Relay
+Ir. Nigel T. Dearden CEng MHKIE &bull; The Civilizational Relay
 Relay Certificate - ' + relay.title + '' +
 '' +
 '' +
@@ -63,7 +63,7 @@ Relay Certificate - ' + relay.title + '' +
 '' +
 '' +
 '' +
-'Ir. Nigel T. Dearden CEng MICE MHKIEAuthor &amp; Principal Investigator' +
+'Ir. Nigel T. Dearden CEng MHKIEAuthor &amp; Principal Investigator' +
 'Certificate ID: ' + certId + 'Date: ' + certDate + 'Infrastructure Academy \u2014 An Infrastructure Odyssey' +
 '' +
 'Per Arya Ad Astra' +

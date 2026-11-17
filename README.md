@@ -5,7 +5,7 @@
 **Repository:** `Infrastructure-Academy/infra-acad003`
 **Status:** LIVE — serves the production website
 **Discipline:** Civilisational Systems Engineering (CSE)
-**Founder:** Ir. Nigel T. Dearden CEng MICE
+**Founder:** Ir. Nigel T. Dearden CEng
 **Last Updated:** July 2026
 
 ---
@@ -237,7 +237,7 @@ This website represents the **Infrastructure Academy of Artificial Intelligence 
 |---------|-------|
 | Full Name | Infrastructure Academy of Artificial Intelligence (iAAi) |
 | Discipline | Civilisational Systems Engineering (CSE) |
-| Founder | Ir. Nigel T. Dearden CEng MICE |
+| Founder | Ir. Nigel T. Dearden CEng |
 | Core Equation | R(t) = R₀·e^(-t/S₀) + k·(A×P/β)·(1-e^(-n/N)) |
 | Simplified | S = A×P/β (Signal Formula) |
 | Index | Infrastructure Survival Index (ISI) — normalised 0–1.0 |
@@ -300,5 +300,5 @@ A content sync issue occurred where the live site showed old content because upd
 
 ---
 
-**iAAi — Principia Tectonica — Ir. Nigel T. Dearden CEng MICE**
+**iAAi — Principia Tectonica — Ir. Nigel T. Dearden CEng**
 **Per Arya Ad Astra**

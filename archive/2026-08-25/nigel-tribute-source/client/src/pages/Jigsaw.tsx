@@ -78,7 +78,7 @@ export default function Jigsaw() {
           className="text-sm font-light"
           style={{ color: sandFaint, fontFamily: "var(--font-display)" }}
         >
-          Ir. Nigel T. Dearden, CEng MICE — with DAVID
+          Ir. Nigel T. Dearden, CEng — with DAVID
         </p>
         <div className="w-20 h-px mx-auto mt-8" style={{ background: `linear-gradient(to right, transparent, ${gold}, transparent)` }} />
       </section>

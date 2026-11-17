@@ -48,7 +48,7 @@ PRINCIPIA TECTONICA
 
 The Living Experiment
 
-Ir. Nigel T. Dearden, MIStructE, MICE, RPE, CEng
+Ir. Nigel T. Dearden, MIStructE, RPE, CEng
 
 4ECL Limited, Hong Kong (BR 36480303) · 5 Nov 2025 — 13 Mar 2026 (128 days)
 

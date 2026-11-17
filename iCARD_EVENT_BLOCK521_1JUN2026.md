@@ -8,7 +8,7 @@
 | **block** | 521 |
 | **date** | 1 June 2026 |
 | **createdBy** | ISAAC |
-| **authority** | Nigel T. Dearden CEng MICE MHKIE RPE(CBS) |
+| **authority** | Nigel T. Dearden CEng MHKIE RPE(CBS) |
 | **status** | REGISTERED — PENDING POLICE REVIEW |
 
 ---

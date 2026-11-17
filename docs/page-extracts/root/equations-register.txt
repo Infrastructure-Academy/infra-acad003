@@ -225,7 +225,7 @@ IP-04: 12-Relay Framework
 EQ-025
 M2C1 / C1M2 = Dearden's Law
 The Matriarch Equation
-The family infrastructure formula. Named for Peggy Dearden. The relationship between the matriarch (M2) and the first child (C1), and its inverse.
+The family infrastructure formula. Named for my wife. The relationship between the matriarch (M2) and the first child (C1), and its inverse.
 IP-12: Dearden's Law
 EQ-026
 1 + 1 = &infin;

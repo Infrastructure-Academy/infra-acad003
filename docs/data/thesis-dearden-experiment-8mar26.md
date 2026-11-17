@@ -2,7 +2,7 @@
 
 ## A Real-Time Thesis on AI Governance, Engineering Controls, and the Human-Machine Interface
 
-**Author:** Ir. Nigel T. Dearden, CEng MICE — Civil Engineer, 36 years  
+**Author:** Ir. Nigel T. Dearden, CEng — Civil Engineer, 36 years  
 **Project:** iAAi — Infrastructure Academy | Block 353  
 **Date:** 8 March 2026  
 **Classification:** Thesis Document — Uncompressed, No Redaction  

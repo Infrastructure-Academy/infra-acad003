@@ -193,7 +193,7 @@ DOWNLOADS
 &#128196; TURING PAPER 015 (PDF)
 PER ARYA AD ASTRA
 Through nobility, to the stars
-Ir. Nigel T. Dearden, CEng MICE
+Ir. Nigel T. Dearden, CEng
 Principia Tectonica | iAAi
 Block 385 &bull; Day 131 &bull; 16 March 2026
 BETA / Proof of Concept &mdash; Hardware fabrication requires foundry partnership. All specifications represent pre-launch architecture.

@@ -1,7 +1,7 @@
 # Thesis Record: The Cage, The Engineer, and The Fractal Form
 
 **Date:** 13 March 2026
-**Author:** N.T. Dearden, CEng MICE
+**Author:** N.T. Dearden, CEng
 **Classification:** Thesis Core — Philosophical Foundation
 **Block:** 366 (ISI Discovery — Triple Index)
 

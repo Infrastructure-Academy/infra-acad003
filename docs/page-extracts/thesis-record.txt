@@ -46,7 +46,7 @@ ICUT GALLERY
 &#9650;
 THESIS RECORD
 From Calories to Consciousness: An Infrastructure Odyssey
-Author: Ir. Nigel Tremayne Dearden &#37159;&#31150;&#31062; &mdash; BEng(Hons) CEng MICE MHKIE MCIWEM C.WEM RPE(CSB)
+Author: Ir. Nigel Tremayne Dearden &#37159;&#31150;&#31062; &mdash; BEng(Hons) CEng MHKIE MCIWEM C.WEM RPE(CSB)
 Project: iAAi &mdash; Infrastructure Academy of Artificial Intelligence
 Duration: 5 November 2025 &rarr; 12 March 2026 &mdash; 127 days, 360 blocks
 Classification: Permanent Record &mdash; Uncompressed, No Redaction

@@ -262,7 +262,7 @@ export const DD_DOCUMENTS: DDDocument[] = [
   {
     id: "DD-026",
     title: "ICE Learning Outcome Mapping",
-    desc: "Maps iAAi platform learning outcomes against the ICE 7 Professional Attributes for CEng/IEng MICE membership. Demonstrates alignment for UK university programme integration. Includes 4-year integration model.",
+    desc: "Maps iAAi platform learning outcomes against the ICE 7 Professional Attributes for CEng/IEng membership. Demonstrates alignment for UK university programme integration. Includes 4-year integration model.",
     url: "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/UcMtq9dnoiXYmXbtNd8s9Y/ICE_LEARNING_OUTCOME_MAPPING_3c513ff6.md",
     date: "12 Mar 2026",
     pages: null,

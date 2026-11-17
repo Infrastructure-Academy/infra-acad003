@@ -46,7 +46,7 @@ Response
 Verified
 BREACH RECORD &mdash; TP-009: The Permanence Crisis â€” Block 380 produced Turing Paper 009 on AI agent data governance. SAP-001 audit marked it &ldquo;DONE&rdquo; but the artefact was never surfaced on the live site. Breach identified Block 393c (6-layer audit, 113+ pages scanned). Remediated Block 393d &mdash; iCard, gallery entry, and 7-point cross-linking now complete. The ACAD Agent Handshake (Block 380) independently confirmed the verification. View TP-009 iCard &rarr;
 "Security IS the infrastructure â€” not bolted on top"
-â€” Gridiron Security, iAAi Block 383 | Ir. Nigel T. Dearden CEng MICE
+â€” Gridiron Security, iAAi Block 383 | Ir. Nigel T. Dearden CEng
 Infrastructure Academy â€” An Infrastructure Odyssey
 A living archive and morally neutral beta test PoC
 Last sweep: 16 March 2026 05:30 UTC | Block 388: +38 Wikipedia links | Next: Manual

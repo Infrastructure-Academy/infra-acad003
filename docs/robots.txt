@@ -6,7 +6,7 @@ Allow: /
 # Silicon and Carbon. Together.
 # Per Arya Ad Astra
 
-Sitemap: https://www.infrastructure-academy.com/sitemap.xml
+Sitemap: https://infrastructure-academy.com/sitemap.xml
 
 # Disallow admin/internal pages
 Disallow: /finance-admin.html
@@ -24,10 +24,4 @@ User-agent: facebookexternalhit
 Allow: /
 
 User-agent: LinkedInBot
-Allow: /
-
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
 Allow: /

@@ -43,7 +43,7 @@ iAAi CSE Canon R12 (DOCX):
 https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/BMKqBeRirDjvMUDz.docx
 
 Origin Story C3 (DOCX):
-https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/bgozuoGdTicxUlxh.docx
+Withdrawn from the public site on 13 November 2026. See docs/resources/files/README-withdrawn.md.
 
 ---
 

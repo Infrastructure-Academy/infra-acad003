@@ -2,7 +2,7 @@
 
 **Date of Record:** 9 July 2026
 **Compiled by:** Alice (Manus AI)
-**Principal:** Ir. Nigel T. Dearden CEng MICE — Infrastructure Academy (iAAi)
+**Principal:** Ir. Nigel T. Dearden CEng — Infrastructure Academy (iAAi)
 **Framework Alignment:** Civilisational Systems Engineering (CSE)
 **Companion Document:** `iaai_materials_manifest.md` — Archive Manifest
 

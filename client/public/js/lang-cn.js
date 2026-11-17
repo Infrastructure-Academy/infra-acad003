@@ -205,8 +205,8 @@ window.IA_LANG_CN = {
     // ============================================
     "author.title": "关于作者",
     "author.name": "迪尔登工程师 (Ir. Nigel T. Dearden)",
-    "author.credentials": "特许工程师 (CEng)，英国土木工程师学会会员 (MICE)，香港工程师学会会员 (MHKIE)",
-    "author.bio": "鄧禮祖工程師（Ir. Nigel T Dearden）是特許土木及結構工程師、特許水務及環境管理師，擁有33年以上香港基礎設施經驗。四元素顧問有限公司創辦人（2006年成立，www.4ecl.com）。BEng (Hon's), CEng, C.WEM, RPE (CSB), MICE, MHKIE, MCIWEM。",
+    "author.credentials": "特许工程师 (CEng)，香港工程师学会会员 (MHKIE)",
+    "author.bio": "鄧禮祖工程師（Ir. Nigel T Dearden）是特許土木及結構工程師、特許水務及環境管理師，擁有33年以上香港基礎設施經驗。四元素顧問有限公司創辦人（2006年成立，www.4ecl.com）。BEng (Hon's), CEng, C.WEM, RPE (CSB), MHKIE, MCIWEM。",
 
     // ============================================
     // LIBRARY / DOCUMENTS PAGE
@@ -846,7 +846,7 @@ window.IA_LANG_CN = {
     "tax.tier1.desc": "The singular origin point. Conceived the 12-relay framework, wrote the trilogy, designed the game, and built the platform. Like Domain in biology &mdash; the broadest, most fundamental classification from which everything else branches.",
     "tax.tier1.name": "创始人",
     "tax.tier1.title": "建筑师",
-    "tax.tier1.who": "Ir. Nigel T. Dearden &mdash; CEng MICE MHKIE",
+    "tax.tier1.who": "Ir. Nigel T. Dearden &mdash; CEng MHKIE",
     "tax.tier2.analogy": "Biology: Kingdom (Animalia) &bull; Military: General Staff &bull; Sun Tzu: The Five Essentials",
     "tax.tier2.desc": "The inner circle. Industry leaders, capital strategists, and institutional connectors who shape direction, open doors, and bridge the gap between vision and execution. By invitation or nomination only.",
     "tax.tier2.name": "顾问",

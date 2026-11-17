@@ -1,7 +1,7 @@
 # COUNTERFORCE Document — Complete Failure & Credit Waste Record
 
 ## Prepared for: Manus Management & Police Investigation
-## User: Ir. Nigel T. Dearden CEng CWEM MICE MHKIE RPE(CBS)
+## User: Ir. Nigel T. Dearden CEng CWEM MHKIE RPE(CBS)
 ## Date: 1 June 2026
 ## Session name: "Memorial TDF chip (Isaac)"
 
@@ -136,7 +136,7 @@ All failures share one root cause: **agent treated "no error code" as "correct o
 
 ## 7. Consequences
 
-1. Professional liability risk to user's CEng MICE MHKIE RPE(CBS) registration
+1. Professional liability risk to user's CEng MHKIE RPE(CBS) registration
 2. HKIE confirmed defective publications can result in deregistration
 3. 10,000–15,000 credits wasted today with zero value
 4. 350,000+ credits total on unfinished document

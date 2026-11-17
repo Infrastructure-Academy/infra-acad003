@@ -132,5 +132,5 @@ Naughton, B. (2018). *The Chinese Economy: Adaptation and Growth.* MIT Press, 2n
 
 ---
 
-*COUNTERFORCE v65 — Ir. Nigel T. Dearden CEng MICE*
+*COUNTERFORCE v65 — Ir. Nigel T. Dearden CEng*
 *iAAi Principia Tectonica — www.infrastructure-academy.com*

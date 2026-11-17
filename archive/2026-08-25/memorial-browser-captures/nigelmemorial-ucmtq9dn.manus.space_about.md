@@ -83,7 +83,7 @@ The Convergence Crisis refers to the challenge of human systems adapting to rapi
 
 Who is Ir. Nigel T. Dearden?
 
-Ir. Nigel T. Dearden BEng(Hons) CEng MICE MHKIE MCIWEM C.WEM RPE(CSB) is the author of "An Infrastructure Odyssey" and the founder of The Infrastructure Academy. He is a civil engineer with extensive experience in infrastructure systems and civilisational thinking.
+Ir. Nigel T. Dearden BEng(Hons) CEng MHKIE MCIWEM C.WEM RPE(CSB) is the author of "An Infrastructure Odyssey" and the founder of The Infrastructure Academy. He is a civil engineer with extensive experience in infrastructure systems and civilisational thinking.
 
 What are the 12 Civilisational Relays?
 
