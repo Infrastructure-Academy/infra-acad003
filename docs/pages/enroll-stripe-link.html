@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>iAAi — Enrollment</title>
+<title>iAAi — Enrolment not yet open</title>
 <style>
 body {
   font-family: 'Cormorant Garamond', Georgia, serif;
@@ -43,6 +43,17 @@ h1 { font-size: 1.5rem; margin: 0 0 0.5rem 0; letter-spacing: 1px; }
   transition: background 0.2s;
 }
 .btn:hover { background: #FFD700; }
+button.btn {
+  border: none;
+  cursor: default;
+  font-family: inherit;
+}
+button.btn:disabled,
+button.btn:disabled:hover {
+  background: #444;
+  color: #aaa;
+  cursor: not-allowed;
+}
 .secure { font-size: 0.75rem; color: #555; margin-top: 1.5rem; }
 .footer { font-size: 0.65rem; color: #444; margin-top: 1.5rem; }
 </style>
@@ -54,7 +65,7 @@ h1 { font-size: 1.5rem; margin: 0 0 0.5rem 0; letter-spacing: 1px; }
   <div class="container">
     <div class="logo">🏗️</div>
     <h1>Infrastructure Academy</h1>
-    <p class="subtitle">iAAi Practitioner Course</p>
+    <p class="subtitle">Enrolment not yet open</p>
 
     <div class="price">HKD $1,950</div>
 
@@ -65,12 +76,9 @@ h1 { font-size: 1.5rem; margin: 0 0 0.5rem 0; letter-spacing: 1px; }
       <li>Community access — Human Nodes network</li>
     </ul>
 
-    <!-- STEP 1: Create a Payment Link in Stripe Dashboard (Live mode)
-         STEP 2: Paste the URL below, replacing PASTE_STRIPE_PAYMENT_LINK_HERE
-         STEP 3: Commit this file to GitHub — no backend needed -->
-    <a href="PASTE_STRIPE_PAYMENT_LINK_HERE" class="btn">Enroll Now</a>
+    <button class="btn" type="button" disabled>Enrolment not yet open</button>
 
-    <p class="secure">🔒 Payments secured by Stripe. iAAi never stores card details.</p>
+    <p class="secure">The practitioner course is not yet for sale. No payment can be started from this page.</p>
     <p class="footer">iAAi COUNTERFORCE v67 — © 2026</p>
   </div>
 </body>

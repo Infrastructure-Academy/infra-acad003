@@ -83,6 +83,13 @@
       background: transparent;
       color: var(--gold);
     }
+    .btn:disabled,
+    .btn:disabled:hover {
+      background: #3a4454;
+      color: #c5ccd6;
+      border-color: #3a4454;
+      cursor: not-allowed;
+    }
     .btn-outline {
       background: transparent;
       color: var(--gold);
@@ -211,7 +218,7 @@
     <p class="tagline">Physical Intellectual Currency. A unit of knowledge made tangible, tradeable, collectible. Not crypto. Not blockchain. A bit of point.</p>
     <div class="price">£29 <span>/ Series 1 Deck</span></div>
     <div>
-      <a href="#checkout" class="btn">Buy Now</a>
+      <button class="btn" type="button" disabled>Not yet for sale</button>
       <a href="#learn" class="btn btn-outline">Learn More</a>
     </div>
   </section>
@@ -276,10 +283,9 @@
   </section>
 
   <section class="cta" id="checkout">
-    <h2>Secure Your Deck</h2>
-    <p>Limited first print run. Ships with digital companion pack, iGO integration code, and exclusive Memorial access.</p>
-    <a href="#" class="btn" onclick="stripeCheckout()">Buy Now — £29</a>
-    <p style="margin-top: 1rem; font-size: 0.85rem; color: var(--gray);">Payment processed securely via Stripe. Digital delivery immediate. Physical deck ships within 5 business days.</p>
+    <h2>Not yet for sale</h2>
+    <p>Series 1 is not yet for sale. No payment can be started from this page.</p>
+    <button class="btn" type="button" disabled>Not yet for sale</button>
   </section>
 
   <footer>
@@ -287,12 +293,5 @@
     <p>Four Elements Consulting Limited · <a href="https://www.infrastructure-academy.com">infrastructure-academy.com</a></p>
   </footer>
 
-  <script>
-    function stripeCheckout() {
-      // Placeholder — Stripe integration will be configured with live publishable key
-      alert('Stripe checkout loading... (Integration pending live key configuration)');
-      // window.location.href = 'https://buy.stripe.com/YOUR_LIVE_LINK_HERE';
-    }
-  </script>
 </body>
 </html>
