@@ -570,7 +570,7 @@
             <a href="/pages/movies.html" data-i18n="nav.movies" style="color:#ffd700;">MOVIES</a>
             <a href="/videos" data-i18n="nav.videos" style="color:#ffd700;">VIDEO PLAYROOM</a>
             <a href="/icards" data-i18n="nav.icards" style="color:#ffd700;">iCARD REGISTER</a>
-            <a href="https://isicalcexp-bqjsukv3.manus.space" data-i18n="nav.igo" style="color:#ffd700; font-weight:bold;">iGO</a>
+            <a href="https://realityeng-epdhlkrn.manus.space/play/igo" data-i18n="nav.igo" style="color:#ffd700; font-weight:bold;">iGO</a>
             <a href="/pages/observer-register.html" data-i18n="nav.observers" style="color:#ffd700;">OBSERVER REGISTER</a>
             <a href="/pages/block-summary.html" data-i18n="nav.blocks" style="color:#22c55e;">BLOCK SUMMARY</a>
             <a href="/pages/water-power-nexus.html" data-i18n="nav.nexus" style="color:#26BDE2;">FEW NEXUS</a>
@@ -725,7 +725,7 @@
                     <p class="hero-video-label" data-i18n="home.hero.game">&#127918; Game</p>
                     <!-- Video title label -->
                     <p id="gameVideoLabel" data-i18n="home.media.label.igo" style="text-align:center;margin-top:0.15rem;font-size:0.55rem;color:rgba(255,215,0,0.6);font-family:'Cinzel',serif;letter-spacing:1px;min-height:1em;">iGO Trailer</p>
-                    <a href="https://isicalcexp-bqjsukv3.manus.space/" style="display:block;text-align:center;margin-top:0.4rem;padding:0.35rem 0.8rem;background:linear-gradient(135deg,#ffd700,#e6b800);color:#0a1628;font-family:'Cinzel',serif;font-size:0.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;border-radius:4px;transition:all 0.3s;" data-i18n="home.playigo">&#9654; Play iGO</a>
+                    <a href="https://realityeng-epdhlkrn.manus.space/play/igo" style="display:block;text-align:center;margin-top:0.4rem;padding:0.35rem 0.8rem;background:linear-gradient(135deg,#ffd700,#e6b800);color:#0a1628;font-family:'Cinzel',serif;font-size:0.7rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;border-radius:4px;transition:all 0.3s;" data-i18n="home.playigo">&#9654; Play iGO</a>
                 </div>
             </div>
             <p class="hero-caption" data-i18n="home.hero.caption">Edutainment: Book &middot; Movie &middot; Game &mdash; The Infrastructure Odyssey Trilogy</p>
@@ -737,9 +737,9 @@
             <div style="display:flex; align-items:center; justify-content:center; gap:1rem; flex-wrap:wrap;">
                 <div style="flex:1; min-width:200px;">
                     <div style="font-family:'Cinzel',serif; color:#2563EB; font-size:1.1rem; letter-spacing:2px; font-weight:700;" data-i18n="home.realityengine.title">&#127918; DAVID REALITY ENGINE</div>
-                    <div style="font-size:0.8rem; color:rgba(255,255,255,0.7); margin-top:0.3rem;" data-i18n="home.realityengine.subtitle">12 Relays &middot; 91+ Inventions &middot; 5 Great Webs &middot; Ages 8&ndash;65+</div>
+                    <div style="font-size:0.8rem; color:rgba(255,255,255,0.7); margin-top:0.3rem;" data-i18n="home.realityengine.subtitle">3D Observatory &middot; 300-node lattice &middot; Prototype</div>
                 </div>
-                <a href="https://cse-reality-nuohpkmp.manus.space" style="display:inline-block; padding:0.5rem 1.5rem; background:linear-gradient(135deg,#2563EB,#1d4ed8); color:#fff; font-family:'Cinzel',serif; font-size:0.85rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; text-decoration:none; border-radius:6px; white-space:nowrap; box-shadow:0 2px 12px rgba(37,99,235,0.4); transition:all 0.3s;" onmouseover="this.style.transform='translateY(-1px)';this.style.boxShadow='0 4px 16px rgba(37,99,235,0.6)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 2px 12px rgba(37,99,235,0.4)'" data-i18n="home.realityengine.btn">Enter the Game &rarr;</a>
+                <a href="https://cse-reality-nuohpkmp.manus.space" style="display:inline-block; padding:0.5rem 1.5rem; background:linear-gradient(135deg,#2563EB,#1d4ed8); color:#fff; font-family:'Cinzel',serif; font-size:0.85rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; text-decoration:none; border-radius:6px; white-space:nowrap; box-shadow:0 2px 12px rgba(37,99,235,0.4); transition:all 0.3s;" onmouseover="this.style.transform='translateY(-1px)';this.style.boxShadow='0 4px 16px rgba(37,99,235,0.6)'" onmouseout="this.style.transform='none';this.style.boxShadow='0 2px 12px rgba(37,99,235,0.4)'" data-i18n="home.realityengine.btn">Open the prototype &rarr;</a>
             </div>
         </div>
 
@@ -818,8 +818,9 @@
               </div>
               <div class="progress-stats">
                 <span id="dcStart">Day 1: 5 Nov 2025</span>
-                <span id="dcEnd">Day 365: 4 Nov 2026</span>
+                <span id="dcEnd">Year 1 ended 4 Nov 2026</span>
               </div>
+              <div id="dcCircuit" style="margin-top:4px;font-size:0.65rem;color:rgba(255,215,0,0.8);letter-spacing:0.03em;"></div>
             </div>
           </div>
           <div class="stats-row">
@@ -2449,25 +2450,87 @@
     <!-- Day Counter Widget Script -->
     <script>
     (function() {
-      // Immediate local calculation for instant display
-      const startDate = new Date('2025-11-05T00:00:00+08:00');
-      // Calculate in HK timezone (UTC+8) for consistency
-      const now = new Date();
-      const hkOffset = 8 * 60 * 60 * 1000;
-      const hkNow = new Date(now.getTime() + hkOffset + (now.getTimezoneOffset() * 60 * 1000));
-      const totalDays = 365;
-      const elapsed = Math.floor((hkNow - startDate) / (1000 * 60 * 60 * 24)) + 1;
-      const dayNum = Math.max(1, Math.min(elapsed, totalDays));
-      const pct = Math.min(100, Math.max(0, ((dayNum / totalDays) * 100))).toFixed(1);
+      // Held epochs, Hong Kong calendar dates. Not a frozen still.
+      // Day 1 = 5 Nov 2025. Day 365 = 4 Nov 2026.
+      // After Year 1, the work day is 365 plus Hong Kong midnights
+      // since 5 Nov 2026: 17 Nov 2026 is D377, twelve days into the
+      // next circuit, and each later Hong Kong date advances by one.
+      var MS = 24 * 60 * 60 * 1000;
+      var EPOCH = Date.UTC(2025, 10, 5);
+      var YEAR1_END = Date.UTC(2026, 10, 4);
+      var CIRCUIT2_OPEN = Date.UTC(2026, 10, 5);
+      var CIRCUIT_LEN = 365;
+      var MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
-      const dcDay = document.getElementById('dcDay');
-      const dcPct = document.getElementById('dcPct');
-      const dcFill = document.getElementById('dcFill');
+      function hkMidnight(date) {
+        var parts = new Intl.DateTimeFormat('en-GB', {
+          timeZone: 'Asia/Hong_Kong',
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit'
+        }).formatToParts(date);
+        var y, m, d;
+        for (var i = 0; i < parts.length; i++) {
+          if (parts[i].type === 'year') y = Number(parts[i].value);
+          if (parts[i].type === 'month') m = Number(parts[i].value);
+          if (parts[i].type === 'day') d = Number(parts[i].value);
+        }
+        return Date.UTC(y, m - 1, d);
+      }
 
-      if (dcDay) dcDay.textContent = dayNum;
+      function fmt(utc) {
+        var dt = new Date(utc);
+        return dt.getUTCDate() + ' ' + MONTHS[dt.getUTCMonth()] + ' ' + dt.getUTCFullYear();
+      }
+
+      var today = hkMidnight(new Date());
+      var ordinal = Math.floor((today - EPOCH) / MS) + 1;
+      if (ordinal < 1) ordinal = 1;
+
+      var dayNum, circuitNumber, daysInto, rangeStart, rangeEnd, pct;
+      if (today <= YEAR1_END) {
+        dayNum = ordinal;
+        circuitNumber = 1;
+        daysInto = ordinal;
+        rangeStart = EPOCH;
+        rangeEnd = YEAR1_END;
+        pct = Math.min(100, Math.max(0, (ordinal / CIRCUIT_LEN) * 100)).toFixed(1);
+      } else {
+        var sinceOpen = Math.floor((today - CIRCUIT2_OPEN) / MS);
+        if (sinceOpen < 0) sinceOpen = 0;
+        var lap = Math.floor(sinceOpen / CIRCUIT_LEN);
+        dayNum = CIRCUIT_LEN + sinceOpen;
+        circuitNumber = lap + 2;
+        daysInto = sinceOpen % CIRCUIT_LEN;
+        rangeStart = CIRCUIT2_OPEN + (lap * CIRCUIT_LEN * MS);
+        rangeEnd = rangeStart + ((CIRCUIT_LEN - 1) * MS);
+        pct = Math.min(100, Math.max(0, (daysInto / CIRCUIT_LEN) * 100)).toFixed(1);
+      }
+
+      var dcDay = document.getElementById('dcDay');
+      var dcPct = document.getElementById('dcPct');
+      var dcFill = document.getElementById('dcFill');
+      var dcStart = document.getElementById('dcStart');
+      var dcEnd = document.getElementById('dcEnd');
+      var dcCircuit = document.getElementById('dcCircuit');
+
+      if (dcDay) dcDay.textContent = String(dayNum);
       if (dcPct) dcPct.textContent = pct + '%';
       if (dcFill) {
         setTimeout(function() { dcFill.style.width = pct + '%'; }, 200);
+      }
+      if (circuitNumber === 1) {
+        if (dcStart) dcStart.textContent = 'Day 1: ' + fmt(rangeStart);
+        if (dcEnd) dcEnd.textContent = 'Day 365: ' + fmt(rangeEnd);
+        if (dcCircuit) dcCircuit.textContent = 'Year 1';
+      } else {
+        if (dcStart) dcStart.textContent = fmt(rangeStart);
+        if (dcEnd) dcEnd.textContent = fmt(rangeEnd);
+        if (dcCircuit) {
+          if (daysInto === 0) dcCircuit.textContent = 'Circuit ' + circuitNumber + ' begins';
+          else if (daysInto === 1) dcCircuit.textContent = '1 day into circuit ' + circuitNumber;
+          else dcCircuit.textContent = daysInto + ' days into circuit ' + circuitNumber;
+        }
       }
 
       // Fetch live stats from tRPC API
