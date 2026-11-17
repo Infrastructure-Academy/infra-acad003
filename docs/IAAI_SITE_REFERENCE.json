@@ -84,9 +84,9 @@
 
     "xchange": {
       "url": "https://xchangeapp-adbvx9fr.manus.space",
-      "status": "DEAD",
+      "status": "LIVE",
       "pages": 1,
-      "note": "Title page only 'THE XCHANGE — iAAi Merchandise Storefront'. Store not functional. Manus shutdown broke it."
+      "note": "Host answers and serves the Exchange merchandise storefront (checked 17 Nov 2026). Academy /shop, /xchange and /exchange are a catalogue only: Explorer, Apprentice, Navigator, Scholar, Master, plus the nine workshop singles. Not in stock, no prices, not yet for sale, no checkout. Supply, currency and a packed sample are still with Nigel."
     },
 
     "memorial": {
@@ -158,7 +158,8 @@
     { "time": "2026-08-24T02:59", "note": "ISI Calculator has 2 versions: prototype v68 (isicalc-uwdgcubw) AND explorer/iGO (isicalcexp-bqjsukv3). Both confirmed LIVE. User sees all 3 apps on mobile homepage." },
     { "time": "2026-08-24T02:58", "note": "No dropdown menus exist on Academy site. Navigation is flat 2-row layout. HTML verified: zero <div class=dropdown> elements." },
     { "time": "2026-08-24T03:30", "note": "Level 1 FEM node extraction complete. 134 HTML files catalogued with titles, headings (h1/h2/h3), section IDs, div IDs. Saved to iaai-catalogued/level1-nodes.json. Ready for Level 2 selective content reading." },
-    { "time": "2026-08-24T03:31", "note": "Level 2 COMPLETE: Extracted readable text content from 13 key pages (site, framework, olympiad, clocks, vault, institutions, library, masters, finance, equations, precis, schema). 38,606 chars of body text + full headings summary saved. Committed to GitHub. Ready for Level 3 deep refinement or specific user-directed tasks." }
+    { "time": "2026-08-24T03:31", "note": "Level 2 COMPLETE: Extracted readable text content from 13 key pages (site, framework, olympiad, clocks, vault, institutions, library, masters, finance, equations, precis, schema). 38,606 chars of body text + full headings summary saved. Committed to GitHub. Ready for Level 3 deep refinement or specific user-directed tasks." },
+    { "time": "2026-11-17T04:40", "note": "Exchange host is online. Academy shop page now lists the five kits and nine workshop singles as a catalogue only. Buttons stay Not yet for sale. No prices, no Stripe, no sixth network-bar door. Supply, fulfilment, ship-from, currency and a packed sample remain with Nigel." }
   ],
 
   "things_i_keep_rediscovering": {

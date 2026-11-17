@@ -84,9 +84,9 @@
 
     "xchange": {
       "url": "https://xchangeapp-adbvx9fr.manus.space",
-      "status": "DEAD",
+      "status": "LIVE",
       "pages": 1,
-      "note": "Title page only 'THE XCHANGE — iAAi Merchandise Storefront'. Store not functional. Manus shutdown broke it."
+      "note": "Host answers and serves the Exchange merchandise storefront (checked 17 Nov 2026). Academy /shop, /xchange and /exchange are a catalogue only: Explorer, Apprentice, Navigator, Scholar, Master, plus the nine workshop singles. Not in stock, no prices, not yet for sale, no checkout. Supply, currency and a packed sample are still with Nigel."
     },
 
     "memorial": {
@@ -154,7 +154,8 @@
     { "time": "2026-08-24T03:06", "note": "Cost shock: $11.47 today, $30.68 this week. 3h 57m session. Compaction is saving money but destroying accuracy." },
     { "time": "2026-08-24T03:00", "note": "User confirmed: Memorial has hundreds of papers. Web_fetch failing to show content. Need browser automation to verify. STOP claiming Memorial is dead without proper check." },
     { "time": "2026-08-24T02:59", "note": "ISI Calculator has 2 versions: prototype v68 (isicalc-uwdgcubw) AND explorer/iGO (isicalcexp-bqjsukv3). Both confirmed LIVE. User sees all 3 apps on mobile homepage." },
-    { "time": "2026-08-24T02:58", "note": "No dropdown menus exist on Academy site. Navigation is flat 2-row layout. HTML verified: zero <div class=dropdown> elements." }
+    { "time": "2026-08-24T02:58", "note": "No dropdown menus exist on Academy site. Navigation is flat 2-row layout. HTML verified: zero <div class=dropdown> elements." },
+    { "time": "2026-11-17T04:40", "note": "Exchange host is online. Academy shop page now lists the five kits and nine workshop singles as a catalogue only. Buttons stay Not yet for sale. No prices, no Stripe, no sixth network-bar door. Supply, fulfilment, ship-from, currency and a packed sample remain with Nigel." }
   ],
 
   "things_i_keep_rediscovering": {
