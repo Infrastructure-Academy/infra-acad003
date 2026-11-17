@@ -12,83 +12,268 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Shop — Infrastructure Academy</title>
-  <meta name="description" content="Wayfinding door from the Infrastructure Academy to the live Exchange storefront.">
+  <title>Shop — Exchange catalogue — Infrastructure Academy</title>
+  <meta name="description" content="Pre-order catalogue of the five Exchange kits and the workshop singles. Subject to demand. Fulfilment when the supply chain is reengaged. Not in stock. This page is not a checkout.">
   <style>
     body {
       background: #0a1628;
       color: #fff;
       font-family: Georgia, 'Times New Roman', serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      min-height: 100vh;
       margin: 0;
-      padding: 2rem;
-      text-align: center;
+      padding: 2rem 1.25rem 3rem;
+      line-height: 1.5;
+    }
+    main {
+      max-width: 960px;
+      margin: 0 auto;
     }
     h1 {
       color: #ffd700;
       font-size: 2rem;
-      margin-bottom: 0.5rem;
       letter-spacing: 0.08em;
+      margin: 0 0 0.4rem;
+      text-align: center;
     }
-    .subtitle {
-      color: rgba(255,255,255,0.75);
-      max-width: 36rem;
-      line-height: 1.5;
+    h2 {
+      color: #D4A843;
+      font-size: 1.25rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin: 2.2rem 0 0.4rem;
+    }
+    .lede, .section-note, .status {
+      color: rgba(255,255,255,0.78);
+      max-width: 42rem;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .lede { text-align: center; margin-bottom: 1.25rem; }
+    .status {
+      text-align: center;
+      border: 1px solid rgba(212,168,67,0.45);
+      border-radius: 8px;
+      padding: 0.9rem 1rem;
+      background: rgba(212,168,67,0.06);
       margin-bottom: 1.5rem;
     }
     .door {
-      display: inline-block;
+      display: block;
+      max-width: 36rem;
+      margin: 0 auto 0.6rem;
       border: 2px solid rgba(212,168,67,0.8);
       border-radius: 12px;
-      padding: 1.5rem 2rem;
-      max-width: 28rem;
+      padding: 1.15rem 1.3rem;
       text-decoration: none;
       color: #fff;
-      background: rgba(26,58,92,0.3);
+      background: rgba(26,58,92,0.35);
+      text-align: center;
     }
     .door:hover { border-color: #ffd700; }
     .door h2 {
+      margin: 0 0 0.35rem;
+      font-size: 1.05rem;
+    }
+    .door p { margin: 0; color: rgba(255,255,255,0.75); }
+    .host {
+      text-align: center;
+      color: rgba(255,255,255,0.55);
+      font-size: 0.85rem;
+      margin: 0 auto 0.4rem;
+      max-width: 40rem;
+      word-break: break-word;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    article {
+      border: 1px solid rgba(212,168,67,0.4);
+      border-radius: 10px;
+      padding: 1rem 1rem 0.9rem;
+      background: rgba(26,58,92,0.28);
+      display: flex;
+      flex-direction: column;
+    }
+    article h3 {
+      margin: 0.35rem 0 0.2rem;
+      color: #fff;
+      font-size: 1.15rem;
+    }
+    .meta, .tag {
       color: #D4A843;
-      margin: 0 0 0.5rem;
-      font-size: 1.3rem;
-      letter-spacing: 0.12em;
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
     }
-    .door p {
-      color: rgba(255,255,255,0.7);
-      font-size: 0.95rem;
-      line-height: 1.5;
-      margin: 0;
+    .tagline {
+      color: rgba(255,255,255,0.62);
+      font-style: italic;
+      margin: 0 0 0.45rem;
     }
-    .note {
-      color: rgba(255,255,255,0.45);
-      font-size: 0.8rem;
-      max-width: 32rem;
-      margin-top: 1.25rem;
-      line-height: 1.5;
+    .price {
+      color: #ffd700;
+      font-size: 1.05rem;
+      letter-spacing: 0.03em;
+      margin: 0 0 0.55rem;
+    }
+    .price small {
+      display: block;
+      margin-top: 0.15rem;
+      color: rgba(255,255,255,0.55);
+      font-size: 0.78rem;
+      letter-spacing: 0;
+    }
+    article p { margin: 0 0 0.7rem; color: rgba(255,255,255,0.82); flex: 1; }
+    button[disabled] {
+      font-family: Georgia, 'Times New Roman', serif;
+      background: transparent;
+      color: rgba(255,255,255,0.72);
+      border: 1px solid rgba(255,255,255,0.28);
+      border-radius: 6px;
+      padding: 0.45rem 0.7rem;
+      cursor: not-allowed;
     }
     .back {
+      display: inline-block;
       margin-top: 2rem;
       color: #ffd700;
       text-decoration: none;
     }
     .back:hover { text-decoration: underline; }
+    .blocked {
+      margin-top: 1.5rem;
+      color: rgba(255,255,255,0.62);
+      font-size: 0.92rem;
+    }
+    .blocked ul { margin: 0.4rem 0 0; padding-left: 1.2rem; }
   </style>
   <link rel="stylesheet" href="/css/sitewide-image-fit.css">
   <script src="/js/sitewide-uix.js?v=20260905d" defer></script>
   <link rel="canonical" href="https://infrastructure-academy.com/shop/">
 </head>
 <body>
-  <h1>Shop</h1>
-  <p class="subtitle">The Academy shop is the Exchange. This door leads to the live storefront.</p>
-  <a class="door" href="https://xchangeapp-adbvx9fr.manus.space/" target="_blank" rel="noopener">
-    <h2>EXCHANGE</h2>
-    <p>Open the Exchange</p>
-  </a>
-  <p class="note">Wayfinding only. This page is not a checkout, and it does not list a catalogue, products, or prices.</p>
-  <a href="/" class="back">&larr; Back to the Academy</a>
+  <main>
+    <h1>Shop</h1>
+    <p class="lede">The Academy shop is the Exchange catalogue. The five kits are pre-orders, subject to demand. The workshop singles take the same posture. Fulfilment when the supply chain is reengaged. Not in stock. This door is not a checkout.</p>
+    <p class="status">Pre-order, subject to demand. Fulfilment when the supply chain is reengaged. Not in stock. This door is not a checkout.</p>
+
+    <a class="door" href="https://xchangeapp-adbvx9fr.manus.space/" target="_blank" rel="noopener">
+      <h2>Live Exchange host</h2>
+      <p>Open the Exchange storefront. Leaving this page is not an order. This door is not a checkout, and it does not open a cart.</p>
+    </a>
+    <p class="host">Host: https://xchangeapp-adbvx9fr.manus.space/</p>
+
+    <h2>Catalogue kits</h2>
+    <p class="section-note">Pre-order, subject to demand. The amounts are the shelf prices already on the till. Those products are inactive and not shippable. Fulfilment when the supply chain is reengaged. Not in stock.</p>
+    <div class="grid">
+      <article>
+        <div class="meta">Level 1 · D4 · Ages 8–10 · Pre-order</div>
+        <h3>Explorer Kit</h3>
+        <p class="tagline">First foothold on the iAAi journey. Subject to demand.</p>
+        <p>Starter D4, foundational iCards, themed stickers, House D6, and the quick-start spinner.</p>
+        <p class="price">USD 39 <small>Shelf price on the till. Inactive. Not shippable.</small></p>
+        <button type="button" disabled aria-label="Explorer Kit, pre-order, not in stock">Pre-order — not in stock</button>
+      </article>
+      <article>
+        <div class="meta">Level 2 · D8 · Ages 10–14 · Pre-order</div>
+        <h3>Apprentice Kit</h3>
+        <p class="tagline">Polyhedral dice, regional maps, first campaign sheets. Subject to demand.</p>
+        <p>Carries the Explorer kit, and adds a polyhedral dice set, the regional map pack, and the first campaign sheets.</p>
+        <p class="price">USD 75 <small>Shelf price on the till. Inactive. Not shippable.</small></p>
+        <button type="button" disabled aria-label="Apprentice Kit, pre-order, not in stock">Pre-order — not in stock</button>
+      </article>
+      <article>
+        <div class="meta">Level 3 · D12 · Ages 14–18 · Pre-order</div>
+        <h3>Navigator Kit</h3>
+        <p class="tagline">Journals, campaign book, and the road ahead. Subject to demand.</p>
+        <p>Carries the Apprentice kit, and adds a field journal and the campaign book.</p>
+        <p class="price">USD 149 <small>Shelf price on the till. Inactive. Not shippable.</small></p>
+        <button type="button" disabled aria-label="Navigator Kit, pre-order, not in stock">Pre-order — not in stock</button>
+      </article>
+      <article>
+        <div class="meta">Level 4 · D16 · Ages 18–22 · Pre-order</div>
+        <h3>Scholar Kit</h3>
+        <p class="tagline">Thesis workbook and the advanced iCard set. Subject to demand.</p>
+        <p>Carries the Navigator kit, and adds a thesis workbook and the advanced iCard expansion.</p>
+        <p class="price">USD 215 <small>Shelf price on the till. Inactive. Not shippable.</small></p>
+        <button type="button" disabled aria-label="Scholar Kit, pre-order, not in stock">Pre-order — not in stock</button>
+      </article>
+      <article>
+        <div class="meta">Level 5 · D20 · Ages 22 and up · Pre-order</div>
+        <h3>Master Kit</h3>
+        <p class="tagline">The full Dearden Field Set — nothing held back. Subject to demand.</p>
+        <p>Carries the Scholar kit, and adds the Dearden Field Set in a case: master dice, an SAP-001 binder, and the five site iCards.</p>
+        <p class="price">USD 499 <small>Shelf price on the till. Inactive. Not shippable.</small></p>
+        <button type="button" disabled aria-label="Master Kit, pre-order, not in stock">Pre-order — not in stock</button>
+      </article>
+    </div>
+
+    <h2>Workshop singles</h2>
+    <p class="section-note">Pre-order, subject to demand. Fulfilment when the supply chain is reengaged. Not in stock. No price is shown: these singles are not on the till.</p>
+    <div class="grid">
+      <article>
+        <div class="meta">Digital</div>
+        <h3>Calories to Consciousness — Intro (PDF)</h3>
+        <p>Digital introduction, listed as a PDF.</p>
+        <button type="button" disabled aria-label="Calories to Consciousness intro PDF, pre-order, not in stock">Pre-order — not in stock</button>
+      </article>
+      <article>
+        <div class="meta">Physical</div>
+        <h3>Master D20 (single die)</h3>
+        <p>A single Master-grade D20 in navy and gold.</p>
+        <button type="button" disabled aria-label="Master D20 single die, pre-order, not in stock">Pre-order — not in stock</button>
+      </article>
+      <article>
+        <div class="meta">Physical</div>
+        <h3>World Map Poster (A2)</h3>
+        <p>Large-format printed world map of the iAAi universe.</p>
+        <button type="button" disabled aria-label="World Map Poster, pre-order, not in stock">Pre-order — not in stock</button>
+      </article>
+      <article>
+        <div class="meta">Physical</div>
+        <h3>Complete Sticker Set (15 designs)</h3>
+        <p>All fifteen iAAi stickers in one pack.</p>
+        <button type="button" disabled aria-label="Complete sticker set, pre-order, not in stock">Pre-order — not in stock</button>
+      </article>
+      <article>
+        <div class="meta">Physical · Play</div>
+        <h3>BitPoints Relay Starter (13 cards)</h3>
+        <p>13-card BitPoints relay starter.</p>
+        <button type="button" disabled aria-label="BitPoints Relay Starter, pre-order, not in stock">Pre-order — not in stock</button>
+      </article>
+      <article>
+        <div class="meta">Physical · Field</div>
+        <h3>BitPoints Series 1 Complete (60 cards)</h3>
+        <p>Full 60-card BitPoints Series 1 deck. Listed as a proof-of-concept beta.</p>
+        <button type="button" disabled aria-label="BitPoints Series 1 complete deck, pre-order, not in stock">Pre-order — not in stock</button>
+      </article>
+      <article>
+        <div class="meta">Physical · Play</div>
+        <h3>Equipment Suite (20 cards)</h3>
+        <p>20-card Equipment Suite, Chip Evolution Chain. Listed as a proof-of-concept beta.</p>
+        <button type="button" disabled aria-label="Equipment Suite Play, pre-order, not in stock">Pre-order — not in stock</button>
+      </article>
+      <article>
+        <div class="meta">Physical · Field</div>
+        <h3>Equipment Suite (20 cards), Field</h3>
+        <p>The Field listing: premium card stock, with a navy and compass-rose cover.</p>
+        <button type="button" disabled aria-label="Equipment Suite Field, pre-order, not in stock">Pre-order — not in stock</button>
+      </article>
+      <article>
+        <div class="meta">Digital · Play</div>
+        <h3>7-Phase Imagineering Worked Example (7 cards)</h3>
+        <p>A seven-card worked example of the Imagineering pattern on the iCard format.</p>
+        <button type="button" disabled aria-label="7-Phase Imagineering worked example, pre-order, not in stock">Pre-order — not in stock</button>
+      </article>
+    </div>
+
+    <div class="blocked">
+      <p>Pre-order, subject to demand. Fulfilment when the supply chain is reengaged. Not in stock. This door is not a checkout. The five kit amounts are the shelf prices already on the till, and those products are inactive and not shippable. The workshop singles have no price on the till, so none is shown.</p>
+    </div>
+
+    <a href="/" class="back">&larr; Back to the Academy</a>
+  </main>
 </body>
 </html>

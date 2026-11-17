@@ -27,7 +27,7 @@ Infrastructure Academy of Artificial Intelligence. Founded by Ir. Nigel T. Deard
 |------|-----|--------|-------|
 | Academy | infrastructure-academy.com | LIVE | 134 pages, static HTML, self-contained |
 | Quest | realityeng-epdhlkrn.manus.space | DEAD | Manus shutdown |
-| Xchange | xchangeapp-adbvx9fr.manus.space | DEAD | Manus shutdown |
+| Xchange | xchangeapp-adbvx9fr.manus.space | LIVE host | Storefront responds. Academy /shop is a pre-order catalogue: five kits at the till shelf prices (USD 39 / 75 / 149 / 215 / 499), inactive and not shippable. Workshop singles have no till price. Fulfilment when the supply chain is reengaged. Not in stock. Not a checkout. |
 | Memorial | nigelmemorial-ucmtq9dn.manus.space | LIVE | 80-100+ documents, JS-rendered, needs browser check |
 | News | xgrowthtrk-2a93yo5z.manus.space | DEAD | Manus shutdown |
 
@@ -107,4 +107,4 @@ Only `infra-acad003` feeds the live domain. Others are legacy or separate:
 | IMG_3566 (17s, 1.17MB) | In archive only | Unknown content, not Block 402 (duration mismatch) |
 
 ---
-_Last updated: 2026-08-24 04:20+08_
+_Last updated: 2026-11-17. Academy shop is a pre-order catalogue. Kit till prices shown. Not a checkout._
