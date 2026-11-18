@@ -1,0 +1,393 @@
+/* Dearden Praxis Method portal — beta test model.
+   Navy and gold, Cinzel headings, readable on a phone.
+   The Draft 39 plate is shown whole. It is not cropped. */
+
+:root {
+  --navy: #0a1628;
+  --navy-2: #14284b;
+  --gold: #d4a843;
+  --gold-2: #ffd700;
+  --ink: #f4f5f7;
+  --muted: rgba(244, 245, 247, 0.78);
+  --line: rgba(212, 168, 67, 0.4);
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  background: var(--navy);
+  color: var(--ink);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+a { color: var(--gold-2); }
+
+a:focus-visible,
+.proceed:focus-visible {
+  outline: 2px solid var(--gold-2);
+  outline-offset: 3px;
+}
+
+.ribbon {
+  background: #14284b;
+  color: var(--gold-2);
+  text-align: center;
+  padding: 0.55rem 0.9rem;
+  font-family: Cinzel, Georgia, "Times New Roman", serif;
+  font-size: 0.92rem;
+  letter-spacing: 0.04em;
+  border-bottom: 1px solid var(--line);
+}
+
+.ribbon strong { color: #fff; font-weight: 600; }
+
+header.brand {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  padding: 1.1rem 1.15rem 0.4rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  min-width: 0;
+}
+
+header.brand > div {
+  min-width: 0;
+  flex: 1 1 auto;
+  max-width: 100%;
+}
+
+.mark {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  border: 1px solid var(--gold);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Cinzel, Georgia, serif;
+  color: var(--gold-2);
+  font-size: 1rem;
+}
+
+.brand h1 {
+  font-family: Cinzel, Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  letter-spacing: 0.04em;
+  margin: 0;
+  font-weight: 600;
+  color: var(--gold-2);
+  text-transform: none;
+  line-height: 1.35;
+}
+
+.brand p {
+  margin: 0.35rem 0 0;
+  font-size: 0.95rem;
+  color: var(--muted);
+}
+
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+}
+
+h2 {
+  font-family: Cinzel, Georgia, "Times New Roman", serif;
+  font-size: 1.35rem;
+  letter-spacing: 0.04em;
+  color: var(--gold-2);
+  font-weight: 600;
+  margin: 1.7rem 0 0.4rem;
+  line-height: 1.3;
+  text-transform: none;
+}
+
+h2 .sub,
+.lede {
+  color: var(--muted);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-style: italic;
+  font-size: 1rem;
+  letter-spacing: 0;
+  font-weight: 400;
+}
+
+h1, h2, h3, p, li, .ribbon, .hud, .question, .level-act, .cap, .lede, footer {
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+h2 .sub { display: block; margin-top: 0.35rem; white-space: normal; }
+
+.lede { margin: 0 0 1rem; }
+
+.proceed {
+  display: inline-block;
+  margin: 0.3rem 0 0.6rem;
+  padding: 0.8rem 1.2rem;
+  min-height: 48px;
+  background: linear-gradient(135deg, rgba(26, 58, 92, 0.95), rgba(10, 22, 40, 0.98));
+  border: 2px solid var(--gold-2);
+  border-radius: 6px;
+  color: var(--gold-2);
+  font-family: Cinzel, Georgia, serif;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  text-align: center;
+}
+
+.proceed:hover { box-shadow: 0 0 18px rgba(255, 215, 0, 0.28); }
+
+.cover {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+
+.col {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0.9rem 0.85rem;
+  background: rgba(14, 28, 56, 0.55);
+}
+
+.col h3 {
+  font-family: Cinzel, Georgia, serif;
+  font-size: 1rem;
+  letter-spacing: 0.04em;
+  color: var(--gold-2);
+  margin: 0 0 0.2rem;
+  text-transform: none;
+}
+
+.col .tag {
+  font-size: 0.9rem;
+  color: var(--muted);
+  font-style: italic;
+  margin: 0 0 0.6rem;
+}
+
+.col ol,
+.col ul {
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+.col li { margin: 0.35rem 0; }
+
+.col li strong { color: var(--gold-2); font-weight: 600; }
+
+.cover, .col, .call, .eq, .scale, .scale .box { min-width: 0; max-width: 100%; }
+
+.plate {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  margin: 1rem 0 0.35rem;
+  display: block;
+  background: #fff;
+}
+
+.cap {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin: 0 0 1.2rem;
+}
+
+.eq {
+  background: #07101c;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 1rem 1rem 1.1rem;
+  margin: 1rem 0;
+  text-align: center;
+  overflow-wrap: anywhere;
+}
+
+.eq .main {
+  font-family: Cinzel, Georgia, serif;
+  font-size: 1.45rem;
+  color: var(--gold-2);
+  letter-spacing: 0.03em;
+  margin: 0.2rem 0;
+  line-height: 1.35;
+}
+
+.eq .full {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.2rem;
+  margin: 0.7rem 0 0.2rem;
+  line-height: 1.45;
+}
+
+.eq p {
+  margin: 0.45rem 0 0;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+.scale {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.7rem;
+  margin: 1rem 0;
+}
+
+.scale .box {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0.9rem;
+  background: rgba(14, 28, 56, 0.55);
+}
+
+.scale .box h3 {
+  font-family: Cinzel, Georgia, serif;
+  font-size: 1rem;
+  color: var(--gold-2);
+  margin: 0 0 0.35rem;
+  text-transform: none;
+}
+
+.scalar-scales {
+  margin: 0.2rem 0 0;
+  padding: 0.15rem 0.1rem 0.2rem;
+  max-width: 100%;
+}
+
+.call {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 1rem 1rem 1.1rem;
+  background: #07101c;
+  margin: 1rem 0 0;
+}
+
+.call h2 { margin-top: 0; }
+
+.hud {
+  font-family: Cinzel, Georgia, serif;
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  color: var(--gold-2);
+  text-transform: uppercase;
+  line-height: 1.45;
+  white-space: normal;
+}
+
+.bands {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8.6rem, 1fr));
+  gap: 0.45rem;
+  margin: 0.6rem 0 0.8rem;
+  max-width: 100%;
+}
+
+.bands span {
+  display: block;
+  min-width: 0;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  padding: 0.4rem 0.45rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  text-transform: uppercase;
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+.level-act {
+  font-family: Cinzel, Georgia, serif;
+  color: #fff;
+  font-size: 1.05rem;
+  line-height: 1.45;
+  letter-spacing: 0;
+  margin: 0 0 0.55rem;
+}
+
+.locked {
+  margin: 0.75rem 0 0.35rem;
+  padding: 0;
+  border: 0;
+  max-width: 100%;
+}
+
+.locked p {
+  font-family: Cinzel, Georgia, serif;
+  color: var(--gold-2);
+  font-size: 1.05rem;
+  line-height: 1.45;
+  letter-spacing: 0;
+  margin: 0 0 0.45rem;
+}
+
+.question {
+  font-family: Cinzel, Georgia, serif;
+  font-size: 1.35rem;
+  letter-spacing: 0.04em;
+  color: #fff;
+  margin: 0 0 0.6rem;
+  line-height: 1.3;
+}
+
+.sequence {
+  list-style: none;
+  margin: 0.6rem 0 0;
+  padding: 0;
+}
+
+.sequence li {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 0.75rem 0.85rem;
+  margin: 0.5rem 0;
+  background: rgba(14, 28, 56, 0.55);
+}
+
+.sequence strong {
+  font-family: Cinzel, Georgia, serif;
+  color: var(--gold-2);
+  font-weight: 600;
+}
+
+footer {
+  margin-top: 2rem;
+  padding: 1rem 0 2rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.95rem;
+  white-space: normal;
+}
+
+footer a { color: var(--gold-2); }
+
+@media (min-width: 800px) {
+  .cover { grid-template-columns: 1fr 1.15fr 1fr; }
+  .brand h1 { font-size: 1.35rem; }
+  .eq .main { font-size: 1.7rem; }
+}
+
+@media (max-width: 700px) {
+  html, body { font-size: 17px; }
+  .ribbon, h1, h2, h3, .question, .hud, .level-act { letter-spacing: 0; }
+  .brand h1, h2, h3, .question { line-height: 1.4; }
+  .brand h1 { font-size: 1.05rem; }
+  h2 { font-size: 1.2rem; }
+  .eq .main { font-size: 1.15rem; letter-spacing: 0; }
+  .eq .full { font-size: 1.02rem; letter-spacing: 0; }
+  .proceed { display: block; }
+  .wrap, header.brand { padding-left: 0.85rem; padding-right: 0.85rem; }
+  .col, .call, .eq, .scale .box { padding-left: 0.75rem; padding-right: 0.75rem; }
+  .bands { grid-template-columns: repeat(auto-fit, minmax(8.8rem, 1fr)); }
+}
