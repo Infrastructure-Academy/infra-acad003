@@ -1,0 +1,924 @@
+{
+  "source": "25 August 2026 Memorial tribute Home.tsx partner grid",
+  "authorisedBy": "Nigel Dearden",
+  "authorisedOn": "2026-11-18",
+  "status": "first draft, not issued",
+  "nameCount": 84,
+  "categoryCount": 12,
+  "manusAiRetained": true,
+  "vaultCategoryAdded": false,
+  "categories": [
+    {
+      "categoryKey": "home.gratefulCatForge",
+      "category": "THE FORGE — Personal Tools That Built iAAi",
+      "partners": [
+        {
+          "name": "Shokz",
+          "key": "home.gratefulShokz",
+          "url": "https://www.shokz.com",
+          "originalUrl": "https://www.shokz.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "Bone conduction headsets — 10,000+ hours of audio learning while walking, running, and thinking. The ears stayed open to the world while the mind absorbed civilisations."
+        },
+        {
+          "name": "HP",
+          "key": "home.gratefulHP",
+          "url": "https://www.hp.com",
+          "originalUrl": "https://www.hp.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "Beamer glasses and displays — the visual interface where every iCard, every thesis, every equation was composed and reviewed at arm’s length."
+        },
+        {
+          "name": "Garmin",
+          "key": "home.gratefulGarmin",
+          "url": "https://www.garmin.com",
+          "originalUrl": "https://www.garmin.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "Fenix Solar — the wrist-mounted command centre. GPS, heart rate, solar charging. Every walk, every field operation, every block logged and timestamped."
+        },
+        {
+          "name": "Apple",
+          "key": "home.gratefulApple",
+          "url": "https://www.apple.com",
+          "originalUrl": "https://www.apple.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "iPhone — the capture device. Every screenshot, every WhatsApp thread, every photograph of ashes cast into the ocean. The camera that never blinked."
+        },
+        {
+          "name": "Lenovo",
+          "key": "home.gratefulLenovo",
+          "url": "https://www.lenovo.com",
+          "originalUrl": "https://www.lenovo.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "ThinkPad × Intel — the workhorse. The machine that ran the simulations, compiled the documents, and never crashed when it mattered most."
+        },
+        {
+          "name": "Intel",
+          "key": "home.gratefulIntel",
+          "url": "https://www.intel.com",
+          "originalUrl": "https://www.intel.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "The processor inside the machine. Intel’s silicon foundation powered 40 years of computing — every simulation, every compile, every render."
+        },
+        {
+          "name": "Omega",
+          "key": "home.gratefulOmega",
+          "url": "https://www.omegawatches.com",
+          "originalUrl": "https://www.omegawatches.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "Speedmaster — the watch that went to the moon. Timekeeping as engineering discipline. Every second measured, every mission timed."
+        },
+        {
+          "name": "Seiko",
+          "key": "home.gratefulSeiko",
+          "url": "https://www.seikowatches.com",
+          "originalUrl": "https://www.seikowatches.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "Spring Drive — the movement that bridges mechanical and electronic. Japanese precision engineering at the wrist. Craftsmanship as philosophy."
+        },
+        {
+          "name": "Dyson",
+          "key": "home.gratefulDyson",
+          "url": "https://www.dyson.com",
+          "originalUrl": "https://www.dyson.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "Engineering without compromise. 5,127 prototypes before the first vacuum worked. That’s the iAAi method — iterate until it’s right."
+        },
+        {
+          "name": "Sony",
+          "key": "home.gratefulSony",
+          "url": "https://www.sony.com",
+          "originalUrl": "https://www.sony.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "Walkman to PlayStation. Sony invented personal audio and then personal gaming — two revolutions in consciousness delivery."
+        },
+        {
+          "name": "Samsung",
+          "key": "home.gratefulSamsung",
+          "url": "https://www.samsung.com",
+          "originalUrl": "https://www.samsung.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "Displays, chips, phones, appliances. The Korean conglomerate that builds everything from the screen you’re reading to the memory inside it."
+        }
+      ]
+    },
+    {
+      "categoryKey": "home.gratefulCatDigital",
+      "category": "THE DIGITAL ARCHITECTURE — AI, Cloud & Software",
+      "partners": [
+        {
+          "name": "Manus AI",
+          "key": "home.gratefulManus",
+          "url": "https://manus.im",
+          "originalUrl": "https://manus.im",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "The AI development infrastructure — the forge where DAVID was born, where 670+ iCards were generated, where the entire digital architecture of TRE was assembled."
+        },
+        {
+          "name": "Google",
+          "key": "home.gratefulGoogle",
+          "url": "https://www.google.com",
+          "originalUrl": "https://www.google.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "Search, Maps, Earth, Translate, Scholar. The index of human knowledge — and the engine that made 120,000 hours of research possible."
+        },
+        {
+          "name": "Microsoft",
+          "key": "home.gratefulMicrosoft",
+          "url": "https://www.microsoft.com",
+          "originalUrl": "https://www.microsoft.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "Windows, Office, Teams, Azure. The operating system of modern work — 40 years of infrastructure that every engineer depends on."
+        },
+        {
+          "name": "Meta",
+          "key": "home.gratefulMeta",
+          "url": "https://about.meta.com",
+          "originalUrl": "https://about.meta.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "The metaverse thesis. Whether you agree or not, Meta forced the conversation about digital presence, VR, and the next interface layer."
+        },
+        {
+          "name": "Adobe",
+          "key": "home.gratefulAdobe",
+          "url": "https://www.adobe.com",
+          "originalUrl": "https://www.adobe.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "Creative Suite — Photoshop, Illustrator, InDesign. Every visual asset, every layout, every design language refined through Adobe’s tools."
+        },
+        {
+          "name": "Amazon",
+          "key": "home.gratefulAmazon",
+          "url": "https://www.amazon.com",
+          "originalUrl": "https://www.amazon.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "From bookshop to everything store to AWS. Amazon built the cloud infrastructure that runs half the internet — including this."
+        },
+        {
+          "name": "Autodesk",
+          "key": "home.gratefulAutodesk",
+          "url": "https://www.autodesk.com",
+          "originalUrl": "https://www.autodesk.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "BIM 360 — Building Information Modelling. The digital twin of physical infrastructure. Every beam, every pipe, every connection modelled before it’s built."
+        },
+        {
+          "name": "Cisco",
+          "key": "home.gratefulCisco",
+          "url": "https://www.cisco.com",
+          "originalUrl": "https://www.cisco.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "The plumbing of the internet. Every router, every switch, every packet. Cisco built the network layer that connects 5 billion people."
+        },
+        {
+          "name": "Starlink",
+          "key": "home.gratefulStarlink",
+          "url": "https://www.starlink.com",
+          "originalUrl": "https://www.starlink.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "SpaceX satellite internet — connectivity from orbit. Starlink proved that infrastructure can be deployed from space to serve the unserved."
+        }
+      ]
+    },
+    {
+      "categoryKey": "home.gratefulCatStory",
+      "category": "THE STORYTELLERS — Media, Film & Entertainment",
+      "partners": [
+        {
+          "name": "Disney",
+          "key": "home.gratefulDisney",
+          "url": "https://www.disney.com",
+          "originalUrl": "https://www.disney.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "The multi-sensory experience blueprint. Theme parks as consciousness architecture — Disney proved that immersion teaches more than instruction."
+        },
+        {
+          "name": "Marvel",
+          "key": "home.gratefulMarvel",
+          "url": "https://www.marvel.com",
+          "originalUrl": "https://www.marvel.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "The cinematic universe model. Interconnected narratives, character arcs across decades, and the proof that a shared universe scales."
+        },
+        {
+          "name": "DreamWorks",
+          "key": "home.gratefulDreamWorks",
+          "url": "https://www.dreamworks.com",
+          "originalUrl": "https://www.dreamworks.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "Animation as engineering. DreamWorks showed that imagination rendered at scale becomes infrastructure for the mind."
+        },
+        {
+          "name": "MGM",
+          "key": "home.gratefulMGM",
+          "url": "https://www.mgm.com",
+          "originalUrl": "https://www.mgm.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "Metro-Goldwyn-Mayer — Ars Gratia Artis. The lion that roared for a century. MGM built the golden age of cinema and proved that storytelling is infrastructure."
+        },
+        {
+          "name": "HBO",
+          "key": "home.gratefulHBO",
+          "url": "https://www.hbo.com",
+          "originalUrl": "https://www.hbo.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "Home Box Office — It’s not TV, it’s HBO. The Sopranos, The Wire, Game of Thrones. HBO proved that long-form narrative is the highest art form."
+        },
+        {
+          "name": "Netflix",
+          "key": "home.gratefulNetflix",
+          "url": "https://www.netflix.com",
+          "originalUrl": "https://www.netflix.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "From DVD mailer to streaming empire. Netflix rewired how 230 million people consume stories — and proved that distribution is as important as creation."
+        },
+        {
+          "name": "BBC",
+          "key": "home.gratefulBBC",
+          "url": "https://www.bbc.com",
+          "originalUrl": "https://www.bbc.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "The world’s public broadcaster — 100 years of trusted information infrastructure. From radio to digital, the BBC set the standard."
+        },
+        {
+          "name": "ESPN",
+          "key": "home.gratefulESPN",
+          "url": "https://www.espn.com",
+          "originalUrl": "https://www.espn.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "Sports broadcasting infrastructure — live events at global scale. ESPN made sport a 24-hour information system."
+        }
+      ]
+    },
+    {
+      "categoryKey": "home.gratefulCatRecord",
+      "category": "THE RECORD KEEPERS — News, Publishing & Media",
+      "partners": [
+        {
+          "name": "Reuters",
+          "key": "home.gratefulReuters",
+          "url": "https://www.reuters.com",
+          "originalUrl": "https://www.reuters.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "The wire service — raw information at the speed of light since 1851. Reuters built the nervous system of global news."
+        },
+        {
+          "name": "AP",
+          "key": "home.gratefulAP",
+          "url": "https://www.ap.org",
+          "originalUrl": "https://www.ap.org",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "The Associated Press — the cooperative that feeds every newsroom on Earth. 175 years of factual infrastructure."
+        },
+        {
+          "name": "Bloomberg",
+          "key": "home.gratefulBloomberg",
+          "url": "https://www.bloomberg.com",
+          "originalUrl": "https://www.bloomberg.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "Financial data infrastructure — the terminal that runs Wall Street. Bloomberg turned information into the most valuable commodity."
+        },
+        {
+          "name": "Al Jazeera",
+          "key": "home.gratefulAlJazeera",
+          "url": "https://www.aljazeera.com",
+          "originalUrl": "https://www.aljazeera.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "The Eastern lens — news infrastructure from Doha to the world. Al Jazeera proved that perspective is infrastructure."
+        },
+        {
+          "name": "The Times",
+          "key": "home.gratefulTheTimes",
+          "url": "https://www.thetimes.co.uk",
+          "originalUrl": "https://www.thetimes.co.uk",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "The newspaper of record since 1785 — London’s voice for 240 years. The Times defined what ‘news’ means."
+        },
+        {
+          "name": "Wall Street Journal",
+          "key": "home.gratefulWSJ",
+          "url": "https://www.wsj.com",
+          "originalUrl": "https://www.wsj.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "The Wall Street Journal — the financial paper of record. Markets as infrastructure, reported daily since 1889."
+        },
+        {
+          "name": "Washington Post",
+          "key": "home.gratefulWashPost",
+          "url": "https://www.washingtonpost.com",
+          "originalUrl": "https://www.washingtonpost.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "Democracy dies in darkness — the Washington Post. Political infrastructure reporting that holds power accountable."
+        },
+        {
+          "name": "TIME",
+          "key": "home.gratefulTIME",
+          "url": "https://time.com",
+          "originalUrl": "https://time.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "TIME Magazine — the Person of the Year. 100 years of framing who matters and why."
+        },
+        {
+          "name": "National Geographic",
+          "key": "home.gratefulNatGeo",
+          "url": "https://www.nationalgeographic.com",
+          "originalUrl": "https://www.nationalgeographic.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "135 years of exploration documented. National Geographic proved that storytelling and science are the same discipline when done at the highest level."
+        }
+      ]
+    },
+    {
+      "categoryKey": "home.gratefulCatJournals",
+      "category": "THE JOURNALS — Scientific Publishing & Standards",
+      "partners": [
+        {
+          "name": "Nature",
+          "key": "home.gratefulNature",
+          "url": "https://www.nature.com",
+          "originalUrl": "https://www.nature.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "Nature — the world’s most cited scientific journal since 1869. Where breakthroughs are published, peer-reviewed, and made permanent."
+        },
+        {
+          "name": "Science",
+          "key": "home.gratefulScience",
+          "url": "https://www.science.org",
+          "originalUrl": "https://www.science.org",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "Science (AAAS) — the journal that published Watson & Crick, the Human Genome, and the first image of a black hole."
+        },
+        {
+          "name": "The Lancet",
+          "key": "home.gratefulLancet",
+          "url": "https://www.thelancet.com",
+          "originalUrl": "https://www.thelancet.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "The Lancet — medical science’s journal of record since 1823. 200 years of evidence-based infrastructure for human health."
+        },
+        {
+          "name": "IEEE",
+          "key": "home.gratefulIEEE",
+          "url": "https://www.ieee.org",
+          "originalUrl": "https://www.ieee.org",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "IEEE — the Institute of Electrical and Electronics Engineers. 400,000 members, the standards body that defines how technology communicates."
+        },
+        {
+          "name": "ASCE",
+          "key": "home.gratefulASCE",
+          "url": "https://www.asce.org",
+          "originalUrl": "https://www.asce.org",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "ASCE — the American Society of Civil Engineers. Founded 1852. The professional home of infrastructure engineering worldwide."
+        }
+      ]
+    },
+    {
+      "categoryKey": "home.gratefulCatMuseums",
+      "category": "THE MUSEUMS — Permanent Archives of Human Achievement",
+      "partners": [
+        {
+          "name": "Smithsonian",
+          "key": "home.gratefulSmithsonian",
+          "url": "https://www.si.edu",
+          "originalUrl": "https://www.si.edu",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "The world’s largest museum complex — 154 million artefacts. The Smithsonian is the permanent archive of human achievement. The Vault’s spiritual ancestor."
+        },
+        {
+          "name": "British Museum",
+          "key": "home.gratefulBritishMuseum",
+          "url": "https://www.britishmuseum.org",
+          "originalUrl": "https://www.britishmuseum.org",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "The British Museum — 8 million objects, the Rosetta Stone, the Parthenon Marbles. The world’s first public national museum, est. 1753."
+        },
+        {
+          "name": "The Louvre",
+          "key": "home.gratefulLouvre",
+          "url": "https://www.louvre.fr",
+          "originalUrl": "https://www.louvre.fr",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "The Louvre — the most visited museum on Earth. 380,000 objects, 35,000 on display. The Mona Lisa lives here, but so does civilisation’s memory."
+        },
+        {
+          "name": "The Met",
+          "key": "home.gratefulMet",
+          "url": "https://www.metmuseum.org",
+          "originalUrl": "https://www.metmuseum.org",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "The Metropolitan Museum of Art — 2 million works spanning 5,000 years. New York’s cultural infrastructure, open to the world."
+        },
+        {
+          "name": "Hermitage",
+          "key": "home.gratefulHermitage",
+          "url": "https://www.hermitagemuseum.org",
+          "originalUrl": "https://www.hermitagemuseum.org",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "The State Hermitage Museum — 3 million items across 6 buildings on the Neva. Russia’s cultural fortress, founded by Catherine the Great."
+        },
+        {
+          "name": "Guggenheim",
+          "key": "home.gratefulGuggenheim",
+          "url": "https://www.guggenheim.org",
+          "originalUrl": "https://www.guggenheim.org",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "The Guggenheim — Frank Lloyd Wright’s spiral in New York, Gehry’s titanium in Bilbao. Architecture as art, art as infrastructure."
+        },
+        {
+          "name": "M+ Museum HK",
+          "key": "home.gratefulMPlus",
+          "url": "https://www.mplus.org.hk",
+          "originalUrl": "https://www.mplus.org.hk",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "M+ Museum Hong Kong — Asia’s largest museum of visual culture. 65,000 sq m of consciousness architecture on the Victoria Harbour waterfront."
+        }
+      ]
+    },
+    {
+      "categoryKey": "home.gratefulCatLibraries",
+      "category": "THE NATIONAL LIBRARIES — Civilisation’s Memory",
+      "partners": [
+        {
+          "name": "British Library",
+          "key": "home.gratefulBritishLibrary",
+          "url": "https://www.bl.uk",
+          "originalUrl": "https://www.bl.uk",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "170 million items. The British National Library holds the Magna Carta, the Gutenberg Bible, and Leonardo’s notebooks. Knowledge preserved is civilisation preserved."
+        },
+        {
+          "name": "Library of Congress",
+          "key": "home.gratefulLOC",
+          "url": "https://www.loc.gov",
+          "originalUrl": "https://www.loc.gov",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "The Library of Congress — 170 million items, the largest library on Earth. America’s memory, and the world’s reference."
+        },
+        {
+          "name": "BnF (France)",
+          "key": "home.gratefulBNF",
+          "url": "https://www.bnf.fr",
+          "originalUrl": "https://www.bnf.fr",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "Bibliothèque nationale de France — 40 million documents. The French national library, guardian of European intellectual heritage since 1461."
+        },
+        {
+          "name": "NDL (Japan)",
+          "key": "home.gratefulNDL",
+          "url": "https://www.ndl.go.jp",
+          "originalUrl": "https://www.ndl.go.jp",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "National Diet Library of Japan — the legal deposit library of Japan. Eastern knowledge preserved with Japanese precision."
+        },
+        {
+          "name": "NLC (China)",
+          "key": "home.gratefulNLC",
+          "url": "https://www.nlc.cn",
+          "originalUrl": "https://www.nlc.cn",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "National Library of China — 37 million items. 5,000 years of continuous civilisation, archived and indexed."
+        },
+        {
+          "name": "Royal Society",
+          "key": "home.gratefulRoyalSociety",
+          "url": "https://royalsociety.org",
+          "originalUrl": "https://royalsociety.org",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "The Royal Society — est. 1660. Newton, Darwin, Hawking. The oldest scientific institution in continuous existence. Nullius in verba — take nobody’s word for it."
+        }
+      ]
+    },
+    {
+      "categoryKey": "home.gratefulCatScience",
+      "category": "THE FRONTIER — Space, Science & Humanitarian",
+      "partners": [
+        {
+          "name": "NASA",
+          "key": "home.gratefulNASA",
+          "url": "https://www.nasa.gov",
+          "originalUrl": "https://www.nasa.gov",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "The National Aeronautics and Space Administration — from Mercury to Mars. NASA proved that infrastructure extends beyond the atmosphere."
+        },
+        {
+          "name": "CERN",
+          "key": "home.gratefulCERN",
+          "url": "https://home.cern",
+          "originalUrl": "https://home.cern",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "The European Organization for Nuclear Research — the Large Hadron Collider. CERN built the machine that found the Higgs boson and invented the World Wide Web."
+        },
+        {
+          "name": "SETI",
+          "key": "home.gratefulSETI",
+          "url": "https://www.seti.org",
+          "originalUrl": "https://www.seti.org",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "The Search for Extraterrestrial Intelligence — listening to the cosmos. SETI is infrastructure for the question that defines us: are we alone?"
+        },
+        {
+          "name": "Red Cross",
+          "key": "home.gratefulRedCross",
+          "url": "https://www.ifrc.org",
+          "originalUrl": "https://www.icrc.org",
+          "urlTightened": true,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "The International Red Cross — humanitarian infrastructure since 1863. 192 national societies, 14 million volunteers. When civilisation breaks, the Red Cross holds."
+        }
+      ]
+    },
+    {
+      "categoryKey": "home.gratefulCatGlobal",
+      "category": "THE GLOBAL FRAMEWORKS — International Bodies",
+      "partners": [
+        {
+          "name": "United Nations",
+          "key": "home.gratefulUN",
+          "url": "https://www.un.org",
+          "originalUrl": "https://www.un.org",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "The United Nations — the global governance framework. 193 member states, one planetary infrastructure."
+        },
+        {
+          "name": "UN SDGs",
+          "key": "home.gratefulUNSDG",
+          "url": "https://sdgs.un.org",
+          "originalUrl": "https://sdgs.un.org",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "17 Sustainable Development Goals — the planetary checklist. ISI₁ maps directly to the UN SDG framework. The survival index starts here."
+        },
+        {
+          "name": "WHO",
+          "key": "home.gratefulWHO",
+          "url": "https://www.who.int",
+          "originalUrl": "https://www.who.int",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "World Health Organization — health infrastructure for 8 billion people. WHO coordinates the survival of the species."
+        },
+        {
+          "name": "WWF",
+          "key": "home.gratefulWWF",
+          "url": "https://www.wwf.org",
+          "originalUrl": "https://www.worldwildlife.org",
+          "urlTightened": true,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "World Wildlife Fund — conservation infrastructure, planetary stewardship. The panda that guards the biosphere."
+        },
+        {
+          "name": "World Bank",
+          "key": "home.gratefulWorldBank",
+          "url": "https://www.worldbank.org",
+          "originalUrl": "https://www.worldbank.org",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "The World Bank — development infrastructure for 189 member countries. $70 billion annually to build the foundations of emerging economies."
+        },
+        {
+          "name": "Nobel Prize",
+          "key": "home.gratefulNobel",
+          "url": "https://www.nobelprize.org",
+          "originalUrl": "https://www.nobelprize.org",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "The Nobel Prize — the highest recognition of human achievement since 1901. The gold standard of intellectual infrastructure."
+        },
+        {
+          "name": "Olympics",
+          "key": "home.gratefulOlympics",
+          "url": "https://www.olympics.com",
+          "originalUrl": "https://www.olympics.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "The Olympic Games — the oldest continuous human competition. 3,000 years of athletic infrastructure, from Olympia to Paris."
+        },
+        {
+          "name": "FIFA",
+          "key": "home.gratefulFIFA",
+          "url": "https://www.fifa.com",
+          "originalUrl": "https://www.fifa.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "5 billion viewers — the most-watched event in human history. FIFA proved that sport is the universal language of infrastructure."
+        }
+      ]
+    },
+    {
+      "categoryKey": "home.gratefulCatFinance",
+      "category": "THE FINANCIAL INFRASTRUCTURE — Banks & Capital",
+      "partners": [
+        {
+          "name": "JPMorgan Chase",
+          "key": "home.gratefulChase",
+          "url": "https://www.jpmorganchase.com",
+          "originalUrl": "https://www.chase.com",
+          "urlTightened": true,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "JPMorgan Chase — 225 years of financial infrastructure. The bank that survived every crisis and still moves $6 trillion daily."
+        },
+        {
+          "name": "HSBC",
+          "key": "home.gratefulHSBC",
+          "url": "https://www.hsbc.com",
+          "originalUrl": "https://www.hsbc.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "The Hongkong and Shanghai Banking Corporation — East meets West since 1865. The financial bridge between civilisations."
+        },
+        {
+          "name": "Wells Fargo",
+          "key": "home.gratefulWellsFargo",
+          "url": "https://www.wellsfargo.com",
+          "originalUrl": "https://www.wellsfargo.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "Stagecoach to digital banking. Wells Fargo moved gold across the frontier and now moves capital across the planet — 163 years of financial infrastructure."
+        }
+      ]
+    },
+    {
+      "categoryKey": "home.gratefulCatEngineer",
+      "category": "THE ENGINEERS — Automotive & Industrial",
+      "partners": [
+        {
+          "name": "Rolls-Royce",
+          "key": "home.gratefulRollsRoyce",
+          "url": "https://www.rolls-royce.com",
+          "originalUrl": "https://www.rolls-royce.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "Engineering excellence — aero engines that power half the world’s wide-body aircraft. The Spirit of Ecstasy is a thesis in metal."
+        },
+        {
+          "name": "Aston Martin",
+          "key": "home.gratefulAstonMartin",
+          "url": "https://www.astonmartin.com",
+          "originalUrl": "https://www.astonmartin.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "British engineering art — the DB5 is a thesis in aluminium. Aston Martin proved that beauty and engineering are the same discipline."
+        },
+        {
+          "name": "Lotus",
+          "key": "home.gratefulLotus",
+          "url": "https://www.lotuscars.com",
+          "originalUrl": "https://www.lotuscars.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "Colin Chapman’s philosophy — simplify, then add lightness. Lotus proved that less is more when the engineering is right."
+        },
+        {
+          "name": "Bentley",
+          "key": "home.gratefulBentley",
+          "url": "https://www.bentleymotors.com",
+          "originalUrl": "https://www.bentleymotors.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "Continental GT — luxury as engineering, not decoration. Bentley builds machines that cross continents in silence."
+        },
+        {
+          "name": "Maserati",
+          "key": "home.gratefulMaserati",
+          "url": "https://www.maserati.com",
+          "originalUrl": "https://www.maserati.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "The trident — Italian engineering passion. Neptune’s weapon forged in Modena. Maserati is sound as infrastructure."
+        },
+        {
+          "name": "Porsche",
+          "key": "home.gratefulPorsche",
+          "url": "https://www.porsche.com",
+          "originalUrl": "https://www.porsche.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "911 — 60 years of the same silhouette, perfected every generation. Porsche proved that evolution beats revolution."
+        },
+        {
+          "name": "BMW",
+          "key": "home.gratefulBMW",
+          "url": "https://www.bmw.com",
+          "originalUrl": "https://www.bmw.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "The Ultimate Driving Machine — Bayerische Motoren Werke. BMW engineered the connection between human and road."
+        },
+        {
+          "name": "Mercedes-Benz",
+          "key": "home.gratefulMercedes",
+          "url": "https://www.mercedes-benz.com",
+          "originalUrl": "https://www.mercedes-benz.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "The first automobile — Benz Patent-Motorwagen 1886. Mercedes-Benz invented the category and still defines it."
+        },
+        {
+          "name": "Tesla",
+          "key": "home.gratefulTesla",
+          "url": "https://www.tesla.com",
+          "originalUrl": "https://www.tesla.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "Electric revolution — Musk proved the incumbents wrong. Tesla made sustainable transport desirable, not dutiful."
+        },
+        {
+          "name": "GE",
+          "key": "home.gratefulGE",
+          "url": "https://www.ge.com",
+          "originalUrl": "https://www.ge.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "Edison’s company — power generation, aviation, healthcare. GE built the infrastructure that electrified the world."
+        }
+      ]
+    },
+    {
+      "categoryKey": "home.gratefulCatLifestyle",
+      "category": "THE LIFESTYLE ARCHITECTS — Luxury, Travel & Commerce",
+      "partners": [
+        {
+          "name": "Tiffany & Co.",
+          "key": "home.gratefulTiffany",
+          "url": "https://www.tiffany.com",
+          "originalUrl": "https://www.tiffany.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "The standard of craft. When you name something Tiffany-class, everyone knows what you mean — precision, permanence, and zero compromise."
+        },
+        {
+          "name": "Virgin",
+          "key": "home.gratefulVirgin",
+          "url": "https://www.virgin.com",
+          "originalUrl": "https://www.virgin.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "Branson’s empire — music, airlines, space. The proof that one brand can span every domain if the founder’s vision is strong enough."
+        },
+        {
+          "name": "Alibaba",
+          "key": "home.gratefulAlibaba",
+          "url": "https://www.alibaba.com",
+          "originalUrl": "https://www.alibaba.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "The Eastern bridge. Alibaba connected 10 million SMEs to global trade — infrastructure at civilisational scale, built from Hangzhou."
+        },
+        {
+          "name": "WeWork",
+          "key": "home.gratefulWeWork",
+          "url": "https://www.wework.com",
+          "originalUrl": "https://www.wework.com",
+          "urlTightened": false,
+          "target": "_blank",
+          "rel": "noopener noreferrer",
+          "text": "The shared workspace where ideas collided with strangers. Co-working as consciousness accelerator — proximity breeds innovation."
+        }
+      ]
+    }
+  ]
+}

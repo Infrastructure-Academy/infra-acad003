@@ -1,0 +1,50 @@
+{
+  "authorisedBy": "Nigel Dearden",
+  "authorisedOn": "2026-11-18",
+  "status": "first draft, not issued",
+  "liveMemorialHostNotChanged": "https://nigelmemorial-ucmtq9dn.manus.space/",
+  "liveAcademySiteNotChanged": "https://www.infrastructure-academy.com",
+  "stringCorrections": [
+    {
+      "key": "home.footer1",
+      "from": "MAN thru US — Manus AI × Nigel Dearden",
+      "to": "Join us for the Journey of your LIFE - the Journey is the WORK"
+    },
+    {
+      "key": "home.partnerStats",
+      "from": "80+ partners · 12 categories · Tier-One Mirror Class",
+      "to": "84 partners · 12 categories · Tier-One Mirror Class",
+      "reason": "The named list has 84 names in 12 categories. The previous tally said 80+ partners."
+    }
+  ],
+  "urlCorrections": [
+    {
+      "name": "Red Cross",
+      "from": "https://www.icrc.org",
+      "to": "https://www.ifrc.org",
+      "reason": "The tribute's volunteer figures are the Federation's. The live wall linked to the ICRC."
+    },
+    {
+      "name": "JPMorgan Chase",
+      "from": "https://www.chase.com",
+      "to": "https://www.jpmorganchase.com",
+      "reason": "The live wall linked to Chase US retail. The named institution is JPMorgan Chase."
+    },
+    {
+      "name": "WWF",
+      "from": "https://www.worldwildlife.org",
+      "to": "https://www.wwf.org",
+      "reason": "The live wall linked to the US site. The international destination is wwf.org."
+    }
+  ],
+  "leftUnchanged": [
+    "Manus AI remains in THE DIGITAL ARCHITECTURE at https://manus.im.",
+    "Hermitage remains https://www.hermitagemuseum.org.",
+    "Meta remains https://about.meta.com, as in the attached source.",
+    "Omega, Washington Post, Olympics, BMW, and every other address that was not an authorised correction remain as in the attached source.",
+    "The unused category key home.gratefulCatVault was not added to the wall.",
+    "The attached Home.tsx and en.json contain no JSON-LD WebSite node, so no WebSite URL was rewritten.",
+    "The attached Home.tsx and en.json contain no credentials citation that required correction in this folder."
+  ],
+  "linkBehaviour": "Every partner link opens in a new tab with rel=\"noopener noreferrer\"."
+}
