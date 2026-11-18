@@ -156,7 +156,8 @@
     { "time": "2026-08-24T02:59", "note": "ISI Calculator has 2 versions: prototype v68 (isicalc-uwdgcubw) AND explorer/iGO (isicalcexp-bqjsukv3). Both confirmed LIVE. User sees all 3 apps on mobile homepage." },
     { "time": "2026-08-24T02:58", "note": "No dropdown menus exist on Academy site. Navigation is flat 2-row layout. HTML verified: zero <div class=dropdown> elements." },
     { "time": "2026-11-17T04:40", "note": "Exchange host is online. Academy shop page now lists the five kits and nine workshop singles as a catalogue only. Buttons stay Not yet for sale. No prices, no Stripe, no sixth network-bar door. Supply, fulfilment, ship-from, currency and a packed sample remain with Nigel." },
-    { "time": "2026-11-17T05:40", "note": "Nigel authorised merch as pre-orders, subject to demand. Kit shelf prices shown as verified on the till: USD 39, 75, 149, 215, 499. Products inactive and not shippable. Singles have no till price. Controls stay disabled: Pre-order — not in stock. Fulfilment when the supply chain is reengaged. Not a checkout." }
+    { "time": "2026-11-17T05:40", "note": "Nigel authorised merch as pre-orders, subject to demand. Kit shelf prices shown as verified on the till: USD 39, 75, 149, 215, 499. Products inactive and not shippable. Singles have no till price. Controls stay disabled: Pre-order — not in stock. Fulfilment when the supply chain is reengaged. Not a checkout." },
+    { "time": "2026-11-18T02:20", "note": "Beta test model door on the Academy landing CTA row: Dearden Praxis Method (DPM) — Polytype model, Skunkworks Division of Dearden Dynamics. Same-domain portal at /dpm/, then /dpm/engine/. Not a finished issue. Accept is not required. Issued Figure A is not recut. Quest and the later Reality Engine prototype stay split. GitHub Pages publishes docs/ when the pull request is merged to main." }
   ],
 
   "things_i_keep_rediscovering": {
