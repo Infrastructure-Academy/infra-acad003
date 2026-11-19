@@ -479,7 +479,9 @@
     <meta name="twitter:creator" content="@dearden_ni37258">
 
     <link rel="stylesheet" href="/css/sitewide-image-fit.css?v=20260905d">
-  <script src="/js/sitewide-uix.js?v=20261119a" defer></script>
+    <link rel="stylesheet" href="/css/issued-film-rails.css?v=20261119c">
+  <script src="/js/sitewide-uix.js?v=20261119c" defer></script>
+  <script src="/js/issued-film-rails.js?v=20261119c" defer></script>
     <meta property="og:url" content="https://infrastructure-academy.com/">
 </head>
 <body>
@@ -487,7 +489,7 @@
     <div id="iaai-network-bar" style="display:flex;align-items:center;justify-content:space-around;width:100%;height:36px;background:#0a1628;position:sticky;top:0;z-index:200001;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">
       <a href="https://www.infrastructure-academy.com" style="text-decoration:none;color:#fff;font-weight:700;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid #DC2626;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#DC2626"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg> <span data-i18n="net.academy">ACADEMY</span></a>
       <a href="https://realityeng-epdhlkrn.manus.space/" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> <span data-i18n="net.quest">QUEST</span></a>
-      <a href="/shop/" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A843"><path d="M6 2v6l-2 2v4l2 2v6h4v-6l2-2v-4L10 8V2H6zm12 0v6l-2 2v4l2 2v6h-4v-6l-2-2v-4l2-2V2h4z"/></svg> <span data-i18n="net.xchange">XCHANGE</span></a>
+      <a href="/xchange/" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A843"><path d="M6 2v6l-2 2v4l2 2v6h4v-6l2-2v-4L10 8V2H6zm12 0v6l-2 2v4l2 2v6h-4v-6l-2-2v-4l2-2V2h4z"/></svg> <span data-i18n="net.xchange">XCHANGE</span></a>
       <a href="https://nigelmemorial-ucmtq9dn.manus.space/" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#16A34A"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg> <span data-i18n="net.memorial">MEMORIAL</span></a>
       <a href="/news.html" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#06B6D4"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/></svg> <span data-i18n="net.news">NEWS</span></a>
     </div><header role="banner">
@@ -764,6 +766,8 @@
             <p class="hero-caption" data-i18n="home.hero.caption">Edutainment: Book &middot; Movie &middot; Game &mdash; The Infrastructure Odyssey Trilogy</p>
         </div>
 
+        <section id="issued-film-rails" class="issued-film-rails" data-issued-rails="public" aria-label="Issued film rails"></section>
+
         <!-- ═══ TRE ELEVATED CTA — Primary Revenue Driver ═══ -->
         <div style="max-width:900px; margin:0.8rem auto 0.5rem; padding:0.7rem 1.2rem; background:linear-gradient(135deg, rgba(37,99,235,0.15), rgba(37,99,235,0.05)); border:2px solid rgba(37,99,235,0.5); border-radius:8px; text-align:center; position:relative; overflow:hidden;">
             <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#2563EB,transparent);"></div>
@@ -838,20 +842,20 @@
         <div class="day-counter" id="dayCounter">
           <div class="day-counter-inner">
             <div class="day-num">
-              <div class="big" id="dcDay">D377</div>
-              <div class="label">Confirmed</div>
+              <div class="big" id="dcDay">---</div>
+              <div class="label" data-i18n="home.odyssey.day">Day</div>
             </div>
             <div class="progress-area">
               <div class="progress-top">
-                <span class="progress-title">MEMORIAL CLOCK</span>
-                <span class="progress-pct" id="dcPct">BLOCK 1102</span>
+                <span class="progress-title" data-i18n="home.odyssey.title">THE ODYSSEY</span>
+                <span class="progress-pct" id="dcPct">--%</span>
               </div>
               <div class="progress-bar">
                 <div class="progress-fill" id="dcFill" style="width:0%"></div>
               </div>
               <div class="progress-stats">
-                <span id="dcStart">Year 1 ended 4 Nov 2026</span>
-                <span id="dcEnd">Confirmed set, not recalculated</span>
+                <span id="dcStart">Day 1: 5 Nov 2025</span>
+                <span id="dcEnd">Year 1 ended 4 Nov 2026</span>
               </div>
               <div id="dcCircuit" style="margin-top:4px;font-size:0.65rem;color:rgba(255,215,0,0.8);letter-spacing:0.03em;"></div>
             </div>
@@ -1231,186 +1235,9 @@
 
         <!-- VIDEOS -->
         <div id="section-media" class="container">
-            <h2 style="text-align:center;" data-i18n="home.media.title">MEDIA</h2>
-
-            <!-- PREMIERE: LA MENARA DOCUMENTARY -->
-            <div style="margin-bottom:2rem; border:3px solid var(--color-accent-gold); border-radius:8px; padding:1.5rem; background:linear-gradient(135deg, #0a1628 0%, #1a2a4a 100%); box-shadow:0 0 30px rgba(255,215,0,0.15);">
-                <h3 data-i18n="home.media.premiere" style="text-align:center; color:var(--color-accent-gold); font-family:Cinzel,serif; letter-spacing:3px; margin-bottom:0.5rem; font-size:1.4rem;">WORLD PREMIERE: LA MENARA DOCUMENTARY</h3>
-                <p style="text-align:center; font-size:1.05rem; margin-bottom:0.5rem; color:var(--color-accent-gold); font-style:italic;" data-i18n="media.lamenara.subtitle">An Infrastructure Odyssey &mdash; From Calories to Consciousness</p>
-                <p style="text-align:center; font-size:0.9rem; margin-bottom:1rem; color:var(--color-text-secondary);" data-i18n="media.lamenara.stats">12,000 years | 12 Relays | 120,000 hours | 3 Acts | 7 Scholars | 10 minutes (Day 153 &mdash; 5 April 2026)</p>
-                <div class="video-lazy" data-src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/wHlzVXzMODYYdntg.mp4" data-poster="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/la_menara_doc_poster_7851b3f9.jpg" style="position:relative; cursor:pointer; width:100%; border-radius:6px; overflow:hidden; max-height:540px; background:#000;">
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/la_menara_doc_poster_7851b3f9.jpg" alt="Play La Menara Documentary" style="width:100%; display:block; border-radius:6px;" loading="eager">
-                    <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.25);">
-                        <div style="width:64px; height:64px; background:rgba(255,215,0,0.9); border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 0 20px rgba(255,215,0,0.4);">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="#0a1628"><path d="M8 5v14l11-7z"/></svg>
-                        </div>
-                    </div>
-                </div>
-                <p data-i18n="home.media.author" style="text-align:center; margin-top:0.75rem; font-size:0.85rem; color:var(--color-text-secondary);">Ir. Nigel T. Dearden CEng CWEM &mdash; 4ECL | Per Arya Ad Astra</p>
-            </div>
-
-            <!-- LA MENARA TRAILER -->
-            <div style="margin-bottom:2rem; border:2px solid var(--color-accent-gold); border-radius:8px; padding:1.5rem; background:var(--color-bg-secondary);">
-                <h3 data-i18n="home.media.lamenara.trailer" style="text-align:center; color:var(--color-accent-gold); font-family:Cinzel,serif; letter-spacing:2px; margin-bottom:0.5rem;">LA MENARA &mdash; TRAILER</h3>
-                <p data-i18n="home.media.lamenara.desc" style="text-align:center; font-size:0.95rem; margin-bottom:1rem; color:var(--color-text-secondary);">Act I cinematic preview with narration and original artwork (2:11)</p>
-                <div class="video-lazy" data-src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/iqkMXujGPgKFLVkB.mp4" data-poster="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/la_menara_trailer_poster_2a54c010.jpg" style="position:relative; cursor:pointer; width:100%; border-radius:6px; overflow:hidden; max-height:540px; background:#000;">
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/la_menara_trailer_poster_2a54c010.jpg" alt="Play La Menara Trailer" style="width:100%; display:block; border-radius:6px;" loading="lazy">
-                    <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.25);">
-                        <div style="width:64px; height:64px; background:rgba(255,215,0,0.9); border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 0 20px rgba(255,215,0,0.4);">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="#0a1628"><path d="M8 5v14l11-7z"/></svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- FEATURED: Katana 13-Fold Documentary -->
-            <div style="margin-bottom:2rem; border:2px solid var(--color-accent-gold); border-radius:8px; padding:1.5rem; background:var(--color-bg-secondary);">
-                <h3 data-i18n="home.media.blade" style="text-align:center; color:var(--color-accent-gold); font-family:'Cinzel',serif; letter-spacing:2px; margin-bottom:0.5rem;">FEATURED: THE BLADE AND THE BRIDGE</h3>
-                <p style="text-align:center; font-size:0.95rem; margin-bottom:1rem; color:var(--color-text-secondary);" data-i18n="media.katana.desc">The Katana 13-Fold Documentary &mdash; How Japanese sword forging illuminates infrastructure governance (4:04)</p>
-                <div class="video-lazy" data-src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/katana_13fold_v2_155b15a1.mp4" data-poster="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/katana_poster_01e586bd.jpg" style="position:relative; cursor:pointer; width:100%; border-radius:6px; overflow:hidden; max-height:540px; background:#000;">
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/katana_poster_01e586bd.jpg" alt="Play The Blade and the Bridge" style="width:100%; display:block; border-radius:6px;" loading="lazy">
-                    <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.25);">
-                        <div style="width:64px; height:64px; background:rgba(255,215,0,0.9); border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 0 20px rgba(255,215,0,0.4);">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="#0a1628"><path d="M8 5v14l11-7z"/></svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- FLAGSHIP: PRINCIPIA TECTONICA -->
-            <div style="margin-bottom:2rem; border:2px solid var(--color-accent-gold); border-radius:8px; padding:1.5rem; background:var(--color-bg-secondary);">
-                <h3 data-i18n="home.media.principia" style="text-align:center; color:var(--color-accent-gold); font-family:'Cinzel',serif; letter-spacing:2px; margin-bottom:0.5rem;">PRINCIPIA TECTONICA</h3>
-                <p style="text-align:center; font-size:0.95rem; margin-bottom:1rem; color:var(--color-text-secondary);" data-i18n="media.principia.desc">The complete Infrastructure Odyssey in 10 minutes &mdash; 12 Civilizational Relays, the Dearden Field, BioAura suit, and the Flight Deck (10:33)</p>
-                <div class="video-lazy" data-src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/PRINCIPIA-TECTONICA-V5-MEGA-MOVIE(2)_f41e7154.mp4" data-poster="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/principia_poster_a3090690.jpg" style="position:relative; cursor:pointer; width:100%; border-radius:6px; overflow:hidden; max-height:540px; background:#000;">
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/principia_poster_a3090690.jpg" alt="Play Principia Tectonica" style="width:100%; display:block; border-radius:6px;" loading="lazy">
-                    <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.25);">
-                        <div style="width:64px; height:64px; background:rgba(255,215,0,0.9); border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 0 20px rgba(255,215,0,0.4);">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="#0a1628"><path d="M8 5v14l11-7z"/></svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- FLAGSHIP: DEARDEN DYNAMICS -->
-            <div style="margin-bottom:2rem; border:2px solid #00d4ff; border-radius:8px; padding:1.5rem; background:var(--color-bg-secondary);">
-                <h3 data-i18n="home.media.dearden" style="text-align:center; color:#00d4ff; font-family:'Cinzel',serif; letter-spacing:2px; margin-bottom:0.5rem;">DEARDEN DYNAMICS</h3>
-                <p style="text-align:center; font-size:0.95rem; margin-bottom:1rem; color:var(--color-text-secondary);" data-i18n="media.dearden.desc">The Flight Deck revealed &mdash; Dearden Field Matrix, Neural Diagnostics, Biometric panels, and the cockpit of civilizational navigation (2:40)</p>
-                <div class="video-lazy" data-src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/MASTER-VIDEO-DEARDEN-DYNAMICS(2)_fdde8442.mp4" data-poster="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/dearden_poster_e4495e95.jpg" style="position:relative; cursor:pointer; width:100%; border-radius:6px; overflow:hidden; max-height:540px; background:#000;">
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/dearden_poster_e4495e95.jpg" alt="Play Dearden Dynamics" style="width:100%; display:block; border-radius:6px;" loading="lazy">
-                    <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.25);">
-                        <div style="width:64px; height:64px; background:rgba(0,212,255,0.9); border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 0 20px rgba(0,212,255,0.4);">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="#0a1628"><path d="M8 5v14l11-7z"/></svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- iGO ARCHITECTURE MOVIE -->
-            <div style="margin-bottom:2rem; border:2px solid var(--color-accent-gold); border-radius:8px; padding:1.5rem; background:var(--color-bg-secondary);">
-                <h3 data-i18n="home.media.igo" style="text-align:center; color:var(--color-accent-gold); font-family:'Cinzel',serif; letter-spacing:2px; margin-bottom:0.5rem;">iGO ARCHITECTURE MOVIE</h3>
-                <p style="text-align:center; font-size:0.95rem; margin-bottom:1rem; color:var(--color-text-secondary);" data-i18n="media.igo.desc">The complete iGO framework &mdash; 12 Relays, 5 Great Webs, 60-Node Dearden Field, 12 Game Formats, DAVID AI, and the iCard system. Ages 8&ndash;65+ (1:40)</p>
-                <div class="video-lazy" data-src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iGO_Movie_SHARE_WITH_TEAM_16x9_7c72b3fe.mp4" data-poster="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/igo_architecture_poster_4d90f4a7.jpg" style="position:relative; cursor:pointer; width:100%; border-radius:6px; overflow:hidden; max-height:540px; background:#000;">
-                    <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/igo_architecture_poster_4d90f4a7.jpg" alt="Play iGO Architecture Movie" style="width:100%; display:block; border-radius:6px;" loading="lazy">
-                    <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.25);">
-                        <div style="width:64px; height:64px; background:rgba(255,215,0,0.9); border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 0 20px rgba(255,215,0,0.4);">
-                            <svg width="28" height="28" viewBox="0 0 24 24" fill="#0a1628"><path d="M8 5v14l11-7z"/></svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="video-grid">
-                <!-- TL: Calories to Consciousness — Main Pitch (4:22) -->
-                <div class="video-card">
-                    <h4 data-i18n="home.media.calories">Calories to Consciousness</h4>
-                    <div class="video-lazy" data-src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/BhohCnRNKxGTfvlS.mp4" data-poster="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/OcXXMLdnmQbhMWui.jpg" style="position:relative; cursor:pointer; width:100%; border-radius:6px; overflow:hidden; background:#000;">
-                        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/OcXXMLdnmQbhMWui.jpg" alt="Play Calories to Consciousness" style="width:100%; display:block; border-radius:6px;" loading="lazy">
-                        <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.25);">
-                            <div style="width:48px; height:48px; background:rgba(255,215,0,0.9); border-radius:50%; display:flex; align-items:center; justify-content:center;"><div style="width:0; height:0; border-style:solid; border-width:9px 0 9px 16px; border-color:transparent transparent transparent #0a1628; margin-left:3px;"></div></div>
-                        </div>
-                    </div>
-                </div>
-                <!-- TR: Snapshot Trailer (0:35) -->
-                <div class="video-card">
-                    <h4 data-i18n="home.media.trailer">Snapshot Trailer</h4>
-                    <div class="video-lazy" data-src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/lXPMPIyzekwVrToI.MP4" data-poster="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/rMRwaBvDONNyHqpS.jpg" style="position:relative; cursor:pointer; width:100%; border-radius:6px; overflow:hidden; background:#000;">
-                        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/rMRwaBvDONNyHqpS.jpg" alt="Play Snapshot Trailer" style="width:100%; display:block; border-radius:6px;" loading="lazy">
-                        <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.25);">
-                            <div style="width:48px; height:48px; background:rgba(255,215,0,0.9); border-radius:50%; display:flex; align-items:center; justify-content:center;"><div style="width:0; height:0; border-style:solid; border-width:9px 0 9px 16px; border-color:transparent transparent transparent #0a1628; margin-left:3px;"></div></div>
-                        </div>
-                    </div>
-                </div>
-                <!-- BL: The Reality Engine — GLP -->
-                <div class="video-card">
-                    <h4 data-i18n="home.media.engine">The Reality Engine &mdash; Guided Learning Platform</h4>
-                    <div class="video-lazy" data-src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/SUCmztGAqrmYcfei.MP4" data-poster="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/bEaYsUaynjYsiQIT.jpg" style="position:relative; cursor:pointer; width:100%; border-radius:6px; overflow:hidden; background:#000;">
-                        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/bEaYsUaynjYsiQIT.jpg" alt="Play The Reality Engine" style="width:100%; display:block; border-radius:6px;" loading="lazy">
-                        <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.25);">
-                            <div style="width:48px; height:48px; background:rgba(255,215,0,0.9); border-radius:50%; display:flex; align-items:center; justify-content:center;"><div style="width:0; height:0; border-style:solid; border-width:9px 0 9px 16px; border-color:transparent transparent transparent #0a1628; margin-left:3px;"></div></div>
-                        </div>
-                    </div>
-                </div>
-                <!-- BR: River Plain Cinematic (6-second clip) -->
-                <div class="video-card">
-                    <h4 data-i18n="home.media.river">River Valley Civilization</h4>
-                    <div class="video-lazy" data-src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/river_plain_perfect_e99879d1.mp4" data-poster="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/zWxgmErsajJzpeNj.jpg" style="position:relative; cursor:pointer; width:100%; border-radius:6px; overflow:hidden; background:#000;">
-                        <img src="https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/zWxgmErsajJzpeNj.jpg" alt="Play River Valley Civilization" style="width:100%; display:block; border-radius:6px;" loading="lazy">
-                        <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.25);">
-                            <div style="width:48px; height:48px; background:rgba(255,215,0,0.9); border-radius:50%; display:flex; align-items:center; justify-content:center;"><div style="width:0; height:0; border-style:solid; border-width:9px 0 9px 16px; border-color:transparent transparent transparent #0a1628; margin-left:3px;"></div></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- SOCIAL MEDIA CLIPS -->
-            <h3 data-i18n="home.media.social" style="text-align:center; margin-top:2rem; color:var(--color-accent-gold); font-family:'Cinzel',serif; letter-spacing:2px;">SOCIAL MEDIA CLIPS</h3>
-            <p data-i18n="home.media.social.desc" style="text-align:center; font-size:0.95rem; margin-bottom:1rem; color:var(--color-text-secondary);">Share the Odyssey &mdash; optimised for X, LinkedIn &amp; WhatsApp</p>
-            <div class="social-clips-layout">
-                <!-- LEFT: 3 horizontal videos stacked -->
-                <div class="social-clips-horiz">
-                    <!-- Twitter Teaser 16:9 -->
-                    <div class="video-card">
-                        <h4>X / Twitter Teaser (16:9)</h4>
-                        <div class="video-lazy" data-src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IAAI_Twitter_Teaser_16x9_9cddb68c.mp4" data-poster="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iaai_twitter_teaser_poster-5JFY2f5MNeJV9XUV3NVNz3.webp" style="position:relative; cursor:pointer; width:100%; border-radius:6px; overflow:hidden; background:#000;">
-                            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iaai_twitter_teaser_poster-5JFY2f5MNeJV9XUV3NVNz3.webp" alt="Play X/Twitter Teaser" style="width:100%; display:block; border-radius:6px;" loading="lazy">
-                            <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.25);">
-                                <div style="width:36px; height:36px; background:rgba(255,215,0,0.9); border-radius:50%; display:flex; align-items:center; justify-content:center;"><div style="width:0; height:0; border-style:solid; border-width:7px 0 7px 12px; border-color:transparent transparent transparent #0a1628; margin-left:2px;"></div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- LinkedIn Professional 16:9 -->
-                    <div class="video-card">
-                        <h4>LinkedIn Professional (16:9)</h4>
-                        <div class="video-lazy" data-src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IAAI_LinkedIn_Professional_16x9_fd21eefc.mp4" data-poster="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iaai_linkedin_pro_poster-huZHGojJEQdCzLuRsKmiBT.webp" style="position:relative; cursor:pointer; width:100%; border-radius:6px; overflow:hidden; background:#000;">
-                            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iaai_linkedin_pro_poster-huZHGojJEQdCzLuRsKmiBT.webp" alt="Play LinkedIn Professional" style="width:100%; display:block; border-radius:6px;" loading="lazy">
-                            <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.25);">
-                                <div style="width:36px; height:36px; background:rgba(255,215,0,0.9); border-radius:50%; display:flex; align-items:center; justify-content:center;"><div style="width:0; height:0; border-style:solid; border-width:7px 0 7px 12px; border-color:transparent transparent transparent #0a1628; margin-left:2px;"></div></div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- LinkedIn Professional v2 16:9 -->
-                    <div class="video-card">
-                        <h4>LinkedIn Professional v2 (16:9)</h4>
-                        <div class="video-lazy" data-src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IAAI_LinkedIn_Professional_16x9(1)_72fb0c21.mp4" data-poster="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iaai_linkedin_pro_v2_poster-g5B7CMVQWQKgqVs2EHeiTB.webp" style="position:relative; cursor:pointer; width:100%; border-radius:6px; overflow:hidden; background:#000;">
-                            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iaai_linkedin_pro_v2_poster-g5B7CMVQWQKgqVs2EHeiTB.webp" alt="Play LinkedIn Professional v2" style="width:100%; display:block; border-radius:6px;" loading="lazy">
-                            <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.25);">
-                                <div style="width:36px; height:36px; background:rgba(255,215,0,0.9); border-radius:50%; display:flex; align-items:center; justify-content:center;"><div style="width:0; height:0; border-style:solid; border-width:7px 0 7px 12px; border-color:transparent transparent transparent #0a1628; margin-left:2px;"></div></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- RIGHT: 1 vertical video -->
-                <div class="social-clips-vert">
-                    <div class="video-card">
-                        <h4>WhatsApp / Stories (9:16)</h4>
-                        <div class="video-lazy" data-src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IAAI_WhatsApp_Stories_9x16_8c7aca76.mp4" data-poster="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iaai_whatsapp_stories_poster-JM2VSRDHdWUe9G5jfXeTpk.webp" style="position:relative; cursor:pointer; width:100%; height:100%; border-radius:6px; overflow:hidden; background:#000;">
-                            <img src="https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iaai_whatsapp_stories_poster-JM2VSRDHdWUe9G5jfXeTpk.webp" alt="Play WhatsApp Stories" style="width:100%; height:100%; display:block; border-radius:6px; object-fit:cover;" loading="lazy">
-                            <div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.25);">
-                                <div style="width:48px; height:48px; background:rgba(255,215,0,0.9); border-radius:50%; display:flex; align-items:center; justify-content:center;"><div style="width:0; height:0; border-style:solid; border-width:9px 0 9px 16px; border-color:transparent transparent transparent #0a1628; margin-left:3px;"></div></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <h2 style="text-align:center;">ISSUED FILMS</h2>
+            <p style="text-align:center; max-width:40rem; margin:0.75rem auto 0.5rem;">The issued library is in the rails above, with the featured player. This lower block is no longer a second copy of the films.</p>
+            <p style="text-align:center;"><a href="#issued-film-rails" style="color:#ffd700;">Back to the film rails</a> · <a href="/pages/movies.html" style="color:#ffd700;">Full catalogue</a></p>
         </div>
 
         <div class="separator-thick"></div>
@@ -2479,18 +2306,110 @@
     <!-- Day Counter Widget Script -->
     <script>
     (function() {
+      // Held epochs, Hong Kong calendar dates. Not a frozen still.
+      // Day 1 = 5 Nov 2025. Day 365 = 4 Nov 2026.
+      // After Year 1, the work day is 365 plus Hong Kong midnights
+      // since 5 Nov 2026: 17 Nov 2026 is D377, twelve days into the
+      // next circuit, and each later Hong Kong date advances by one.
+      var MS = 24 * 60 * 60 * 1000;
+      var EPOCH = Date.UTC(2025, 10, 5);
+      var YEAR1_END = Date.UTC(2026, 10, 4);
+      var CIRCUIT2_OPEN = Date.UTC(2026, 10, 5);
+      var CIRCUIT_LEN = 365;
+      var MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+
+      function hkMidnight(date) {
+        var parts = new Intl.DateTimeFormat('en-GB', {
+          timeZone: 'Asia/Hong_Kong',
+          year: 'numeric',
+          month: '2-digit',
+          day: '2-digit'
+        }).formatToParts(date);
+        var y, m, d;
+        for (var i = 0; i < parts.length; i++) {
+          if (parts[i].type === 'year') y = Number(parts[i].value);
+          if (parts[i].type === 'month') m = Number(parts[i].value);
+          if (parts[i].type === 'day') d = Number(parts[i].value);
+        }
+        return Date.UTC(y, m - 1, d);
+      }
+
+      function fmt(utc) {
+        var dt = new Date(utc);
+        return dt.getUTCDate() + ' ' + MONTHS[dt.getUTCMonth()] + ' ' + dt.getUTCFullYear();
+      }
+
+      var today = hkMidnight(new Date());
+      var ordinal = Math.floor((today - EPOCH) / MS) + 1;
+      if (ordinal < 1) ordinal = 1;
+
+      var dayNum, circuitNumber, daysInto, rangeStart, rangeEnd, pct;
+      if (today <= YEAR1_END) {
+        dayNum = ordinal;
+        circuitNumber = 1;
+        daysInto = ordinal;
+        rangeStart = EPOCH;
+        rangeEnd = YEAR1_END;
+        pct = Math.min(100, Math.max(0, (ordinal / CIRCUIT_LEN) * 100)).toFixed(1);
+      } else {
+        var sinceOpen = Math.floor((today - CIRCUIT2_OPEN) / MS);
+        if (sinceOpen < 0) sinceOpen = 0;
+        var lap = Math.floor(sinceOpen / CIRCUIT_LEN);
+        dayNum = CIRCUIT_LEN + sinceOpen;
+        circuitNumber = lap + 2;
+        daysInto = sinceOpen % CIRCUIT_LEN;
+        rangeStart = CIRCUIT2_OPEN + (lap * CIRCUIT_LEN * MS);
+        rangeEnd = rangeStart + ((CIRCUIT_LEN - 1) * MS);
+        pct = Math.min(100, Math.max(0, (daysInto / CIRCUIT_LEN) * 100)).toFixed(1);
+      }
+
       var dcDay = document.getElementById('dcDay');
       var dcPct = document.getElementById('dcPct');
       var dcFill = document.getElementById('dcFill');
       var dcStart = document.getElementById('dcStart');
       var dcEnd = document.getElementById('dcEnd');
       var dcCircuit = document.getElementById('dcCircuit');
-      if (dcDay) dcDay.textContent = 'D377';
-      if (dcPct) dcPct.textContent = 'BLOCK 1102';
-      if (dcFill) dcFill.style.width = '0%';
-      if (dcStart) dcStart.textContent = 'Year 1 ended 4 Nov 2026';
-      if (dcEnd) dcEnd.textContent = 'Confirmed set, not recalculated';
-      if (dcCircuit) dcCircuit.textContent = 'LAUNCH COMPLETE · ELAPSED +249d 02h 33m 08s · D100 100/100 · SIGTEL ACTIVE · VENTRAL ORIGIN 260.01:02:08 DSC';
+
+      if (dcDay) dcDay.textContent = String(dayNum);
+      if (dcPct) dcPct.textContent = pct + '%';
+      if (dcFill) {
+        setTimeout(function() { dcFill.style.width = pct + '%'; }, 200);
+      }
+      if (circuitNumber === 1) {
+        if (dcStart) dcStart.textContent = 'Day 1: ' + fmt(rangeStart);
+        if (dcEnd) dcEnd.textContent = 'Day 365: ' + fmt(rangeEnd);
+        if (dcCircuit) dcCircuit.textContent = 'Year 1';
+      } else {
+        if (dcStart) dcStart.textContent = fmt(rangeStart);
+        if (dcEnd) dcEnd.textContent = fmt(rangeEnd);
+        if (dcCircuit) {
+          if (daysInto === 0) dcCircuit.textContent = 'Circuit ' + circuitNumber + ' begins';
+          else if (daysInto === 1) dcCircuit.textContent = '1 day into circuit ' + circuitNumber;
+          else dcCircuit.textContent = daysInto + ' days into circuit ' + circuitNumber;
+        }
+      }
+
+      // Fetch live stats from tRPC API
+      fetch('/api/trpc/odyssey.stats')
+        .then(function(r) { return r.json(); })
+        .then(function(data) {
+          // superjson wraps data in .json
+          var result = data && data.result && data.result.data;
+          if (result && result.json) result = result.json;
+          if (!result) return;
+          var el;
+          el = document.getElementById('dcBlocks');
+          if (el && result.blocksCompleted) el.textContent = result.blocksCompleted;
+          el = document.getElementById('dcCards');
+          if (el && result.iCardCount) el.textContent = result.iCardCount;
+          el = document.getElementById('dcObservers');
+          if (el && result.observerCount) el.textContent = result.observerCount;
+          el = document.getElementById('dcPages');
+          if (el && result.totalPages) el.textContent = result.totalPages + '+';
+          el = document.getElementById('dcSDGs');
+          if (el && result.sdgsAligned) el.textContent = result.sdgsAligned;
+        })
+        .catch(function() { /* fallback: keep hardcoded values */ });
     })();
     </script>
 

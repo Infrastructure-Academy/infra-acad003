@@ -82,43 +82,8 @@
     }).observe(lightbox, { attributes: true, attributeFilter: ['class'] });
   };
 
-  const mountMemorialClock = () => {
-    const path = window.location.pathname || '/';
-    if (path === '/play' || path === '/play/' || path.indexOf('/play/') === 0) return;
-    if (document.getElementById('iaai-memorial-clock')) return;
-    if (!document.getElementById('iaai-memorial-clock-css')) {
-      const link = document.createElement('link');
-      link.id = 'iaai-memorial-clock-css';
-      link.rel = 'stylesheet';
-      link.href = '/css/memorial-clock.css?v=20261119a';
-      document.head.appendChild(link);
-    }
-    const clock = document.createElement('div');
-    clock.id = 'iaai-memorial-clock';
-    clock.className = 'iaai-memorial-clock';
-    clock.setAttribute('role', 'region');
-    clock.setAttribute('aria-label', 'Confirmed Memorial clock');
-    clock.innerHTML = ''
-      + '<p class="iaai-memorial-clock__kicker">Confirmed Memorial clock</p>'
-      + '<p class="iaai-memorial-clock__reading">'
-      + '<span>HKT 02:33:08</span>'
-      + '<span>BLOCK 1102 D377</span>'
-      + '<span>LAUNCH COMPLETE</span>'
-      + '<span>ELAPSED +249d 02h 33m 08s</span>'
-      + '<span>D100 100/100</span>'
-      + '<span>SIGTEL ACTIVE</span>'
-      + '<span>VENTRAL ORIGIN 260.01:02:08 DSC</span>'
-      + '</p>'
-      + '<p class="iaai-memorial-clock__note">Issued set, 17 November 2026, 02:33:08 Hong Kong time. Not recalculated.</p>'
-      + '<p class="iaai-memorial-clock__home"><a href="https://www.infrastructure-academy.com">Academy home</a></p>';
-    const bar = document.getElementById('iaai-network-bar');
-    if (bar && bar.parentNode) bar.insertAdjacentElement('afterend', clock);
-    else document.body.insertBefore(clock, document.body.firstChild);
-  };
-
   const init = () => {
     ensureLightbox();
-    mountMemorialClock();
   };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
   else init();
