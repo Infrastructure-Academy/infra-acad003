@@ -191,6 +191,10 @@
     {
       "time": "2026-11-19T15:20+08:00",
       "note": "Memorial issued-set clock removed from Academy pages, including the sitewide injector. The Memorial Manus host is not overwritten. Issued film rails sit on the landing, the movies catalogue, and Visual Odyssey. /xchange/ reads as Xchange, /exchange/ as Exchange, /shop/ as Shop. Network Bar XCHANGE opens /xchange/. Pre-order and register-interest stay. No checkout."
+    },
+    {
+      "time": "2026-11-19T18:35+08:00",
+      "note": "Nigel t1243u: residual Live Exchange host sentence removed from docs/index.html, docs/site.html, /shop/, /exchange/ and /xchange/. Pre-order, Open the catalogue, and not-a-checkout copy stay. The xchangeapp Manus host itself is not overwritten. Quest, Memorial, News and game CTAs stay. PR #4 and PR #9 stay unmerged. No checkout. No Stripe secret."
     }
   ],
   "things_i_keep_rediscovering": {
