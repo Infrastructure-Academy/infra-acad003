@@ -206,7 +206,7 @@ window.IA_LANG_JA = {
     "nav.charter": "憲章",
     "nav.civclock": "文明時計",
     "nav.clock": "動員時計",
-    "nav.documents": "文献",
+    "nav.documents": "図書館",
     "nav.framework": "フレームワーク",
     "nav.home": "ホーム",
     "nav.institutions": "機関",

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Library | Infrastructure Academy</title>
+  <link rel="canonical" href="https://infrastructure-academy.com/library-landing.html">
+  <meta name="description" content="The Library — working catalogue of the Infrastructure Academy, with visible limits. Not a Documents shop.">
+  <style>
+:root {
+  --bg-primary: #0a1628;
+  --bg-secondary: #0f1f3a;
+  --bg-card: #111d35;
+  --gold: #ffd700;
+  --gold-dim: rgba(255,215,0,0.3);
+  --text-primary: #ffffff;
+  --text-secondary: #aaaaaa;
+  --text-muted: #666666;
+  --border: #1a3055;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { background: var(--bg-primary); color: var(--text-primary); font-family: Georgia, 'Times New Roman', serif; min-height: 100vh; line-height: 1.5; }
+a { color: var(--gold); }
+.page-header { text-align: center; padding: 36px 20px 20px; border-bottom: 2px solid var(--gold); }
+.page-header h1 { color: var(--gold); font-size: 1.8rem; letter-spacing: 2px; margin-bottom: 6px; }
+.page-header p { color: var(--text-secondary); font-size: 0.95rem; }
+.wrap { max-width: 960px; margin: 0 auto; padding: 20px; }
+.banner { background: rgba(255,215,0,0.08); border: 1px solid rgba(255,215,0,0.35); padding: 14px 16px; margin: 16px 0; font-size: 0.9rem; color: var(--text-secondary); }
+.banner strong { color: var(--gold); }
+.card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 6px; padding: 16px 18px; margin: 16px 0; }
+.card h2 { color: var(--gold); font-size: 1.15rem; margin-bottom: 8px; }
+.card .meta { color: var(--text-muted); font-size: 0.75rem; margin-bottom: 10px; letter-spacing: 0.5px; }
+.footer { text-align: center; padding: 28px 16px 40px; color: var(--text-muted); font-size: 0.8rem; border-top: 1px solid var(--border); margin-top: 32px; }
+.controls { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0; align-items: center; }
+.search-box { flex: 1; min-width: 200px; padding: 10px 14px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 6px; color: var(--text-primary); font-family: inherit; }
+.filter-btn { padding: 6px 12px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 4px; color: var(--text-secondary); cursor: pointer; font-family: inherit; font-size: 0.75rem; }
+.filter-btn.active { border-color: var(--gold); color: var(--gold); background: rgba(255,215,0,0.12); }
+table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
+th, td { border-bottom: 1px solid var(--border); padding: 8px 6px; text-align: left; vertical-align: top; }
+th { color: var(--gold); font-weight: normal; letter-spacing: 0.5px; }
+.reg-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+.reg-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
+.reg-card img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; background: var(--bg-secondary); }
+.reg-card .info { padding: 10px 12px 12px; }
+.reg-card .info h3 { color: var(--gold); font-size: 0.85rem; margin-bottom: 4px; }
+.reg-card .info .meta { font-size: 0.7rem; color: var(--text-muted); }
+.badge { display: inline-block; background: rgba(255,215,0,0.1); color: var(--gold); padding: 2px 8px; border-radius: 3px; font-size: 0.65rem; }
+
+  .links a { display:inline-block; margin:6px 10px 6px 0; padding:8px 14px; border:1px solid var(--gold-dim); border-radius:4px; text-decoration:none; }
+  .links a:hover { border-color: var(--gold); }
+  </style>
+</head>
+<body>
+
+<div id="iaai-network-bar" style="display:flex;align-items:center;justify-content:space-around;width:100%;height:36px;background:#0a1628;position:sticky;top:0;z-index:200001;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">
+  <a href="https://www.infrastructure-academy.com" style="text-decoration:none;color:#fff;font-weight:700;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid #DC2626;">ACADEMY</a>
+  <a href="https://realityeng-epdhlkrn.manus.space/" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;">QUEST</a>
+  <a href="/shop/" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;">XCHANGE</a>
+  <a href="https://nigelmemorial-ucmtq9dn.manus.space/" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;">MEMORIAL</a>
+  <a href="/news.html" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid #06B6D4;">NEWS</a>
+</div>
+
+<header class="page-header">
+  <h1>The Library</h1>
+  <p>The working catalogue of the Infrastructure Academy — what is actually in hand, with visible limits</p>
+  <p style="margin-top:8px;font-size:0.85rem;"><a href="https://www.infrastructure-academy.com">Home</a> · Named function on the Academy host (not a sixth Network Bar door)</p>
+</header>
+
+<div id="iaai-memorial-clock" class="iaai-memorial-clock" role="region" aria-label="Confirmed Memorial clock">
+  <p class="iaai-memorial-clock__kicker">Confirmed Memorial clock</p>
+  <p class="iaai-memorial-clock__reading">
+    <span>HKT 02:33:08</span>
+    <span>BLOCK 1102 D377</span>
+    <span>LAUNCH COMPLETE</span>
+    <span>ELAPSED +249d 02h 33m 08s</span>
+    <span>D100 100/100</span>
+    <span>SIGTEL ACTIVE</span>
+    <span>VENTRAL ORIGIN 260.01:02:08 DSC</span>
+  </p>
+  <p class="iaai-memorial-clock__note">Issued set, 17 November 2026, 02:33:08 Hong Kong time. Not recalculated.</p>
+  <p class="iaai-memorial-clock__home"><a href="https://www.infrastructure-academy.com">Academy home</a></p>
+</div>
+
+<main class="wrap">
+  <div class="banner">
+    <strong>Actionable (t1162u).</strong> Promoted from the 17 November draft library landing. This page is for Daystar’s Academy-host PR. It is not a silent overwrite of the live Documents shop until Daystar merges. No Stripe, no paywall, no merch checkout.
+  </div>
+
+  <article class="card">
+    <h2>Scope</h2>
+    <p>This is the public landing for <strong>The Library</strong> — not Documents, not a March 2026 shop, and not a complete issued archive already serving on this host. It points to the working catalogue view, movies, and public iCard doors, with an honesty layer on each.</p>
+  </article>
+
+  <article class="card">
+    <h2>Working catalogue</h2>
+    <p>Library v1 (held 17 November 2026, 01:06 HKT): <strong>1,700</strong> rows; provisional_class counts include 1,499 KIV, 130 Keeper, 37 conflict, 34 empty. All confirmation marks remain provisional until Nigel confirms.</p>
+    <p style="margin-top:10px;color:var(--text-secondary);">These figures are <strong>not</strong> a claim that 1,700 items are downloadable from GitHub Pages. The working catalogue is ahead of what is file-served on this website.</p>
+    <p class="links" style="margin-top:14px;"><a href="library-catalogue.html">Open working catalogue (static)</a></p>
+  </article>
+
+  <article class="card">
+    <h2>Related doors (with limits)</h2>
+    <ul style="margin-left:1.2rem;color:var(--text-secondary);">
+      <li><a href="library-catalogue.html">Working catalogue</a> — static JSON table; loads offline / on GitHub Pages.</li>
+      <li><a href="/pages/movies.html">Movies</a> — issued film list on the Academy host; residual session media may remain until replaced only where an issued CloudFront master is in hand.</li>
+      <li><a href="/icard-gallery.html">iCard Gallery</a> — published public subset.</li>
+      <li><a href="icard-register.html">iCard Register</a> — static load of the published gallery subset; not the 2,192 working-store records.</li>
+    </ul>
+  </article>
+
+  <article class="card">
+    <h2>Teaching materials — withheld</h2>
+    <p>Buttons that pointed at <code>/manus-storage/</code> paths returning 404 on this GitHub Pages host are <strong>not</strong> offered here. They are withheld until a durable copy is identified in the record and Nigel opens a later pass. No replacement address is guessed.</p>
+  </article>
+
+  <article class="card">
+    <h2>What is not on this landing</h2>
+    <p style="color:var(--text-secondary);font-size:0.95rem;">No Player or Scholar lock overlays; no BitPoints access-tier theatre copied from the 16 March 2026 shop as if current; no enterprise-licence mailto; no merch, Stripe, or payment rail; no sixth Network Bar door; no claim that library v1 or 2,192 iCards are already serving as downloads from this host.</p>
+  </article>
+</main>
+<footer class="footer">
+  <p>The Library — Actionable pack t1162u. Classifications provisional. Working catalogue ahead of file-served public assets.</p>
+  <p style="margin-top:8px;"><a href="news.html">Chart Room — News</a></p>
+</footer>
+</body>
+</html>

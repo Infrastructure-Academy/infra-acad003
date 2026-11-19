@@ -14,7 +14,7 @@ window.IA_LANG_CN = {
     "nav.precis": "执行摘要",
     "nav.framework": "框架",
     "nav.resources": "资源",
-    "nav.documents": "文献",
+    "nav.documents": "图书馆",
     "nav.author": "作者",
     "nav.ep1": "集一：视角",
     "nav.ep2": "集一：指南",

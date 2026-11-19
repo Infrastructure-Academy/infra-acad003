@@ -1,0 +1,922 @@
+{
+  "title": "Infrastructure Academy — Public iCard Register (static)",
+  "last_updated_source": "Embedded public gallery in docs/icard-gallery.html (as on infra-acad003 docs; gallery JSON meta last_updated 2026-04-05)",
+  "as_of_pack": "2026-11-19",
+  "timezone": "Asia/Hong_Kong",
+  "honesty_banner": "This public register loads the published gallery subset (91 cards). It is not the 2,192 working-store records. Larger counts remain working-store only until Nigel opens a later pass and durable public assets exist. Image URLs are those already published on the gallery page; residual Manus session URLs are labelled where detectable. No /api/trpc/ dependency. Prepared for Daystar Actionable PR at t1162u.",
+  "card_count": 91,
+  "residual_session_url_count": 21,
+  "page_link_count": 4,
+  "cards": [
+    {
+      "id": "iCard_1",
+      "title": "Review Findings — Unis12 Round 1",
+      "date": "2026-03-06",
+      "category": "iCard",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCard_1_Review_Findings_89cb7076.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_2",
+      "title": "Next Steps — What Happens Now",
+      "date": "2026-03-06",
+      "category": "iCard",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCard_2_Next_Steps_696bed97.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_3",
+      "title": "Score Interpretation — Grading Rosetta Stone",
+      "date": "2026-03-06",
+      "category": "iCard",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCard_3_Score_Interpretation_41767507.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_4",
+      "title": "Round 2 Delta — Focused Audit Results",
+      "date": "2026-03-06",
+      "category": "iCard",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCard_4_Round2_Delta_2f97d07f.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_5",
+      "title": "Papers Return Brief — All Documents",
+      "date": "2026-03-06",
+      "category": "iCard",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCard_5_Papers_ReturnBrief_cc42c46b.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_ICUT",
+      "title": "ICUT Audit Observation — F Grade",
+      "date": "2026-03-06",
+      "category": "iCard — ICUT",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCard_ICUT_Identity_Failure_v2_420fb784.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_RB1",
+      "title": "Return Brief — Data Vault Live",
+      "date": "2026-03-06",
+      "category": "Return Brief",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCard_RB_DataVault_Live_1730a5f7.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_RB2",
+      "title": "Return Brief — Master Index",
+      "date": "2026-03-06",
+      "category": "Return Brief",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCard_RB_MasterIndex_f2c5e149.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_4ECL_BR",
+      "title": "4ECL Business Registration",
+      "date": "2026-03-10",
+      "category": "iCard — Corporate",
+      "image_url": "",
+      "page_url": "/icard-4ecl-br.html",
+      "is_page": true,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_BookSales",
+      "title": "Book Sales Adoption Strategy",
+      "date": "2026-03-10",
+      "category": "iCard — Revenue",
+      "image_url": "",
+      "page_url": "/icard-book-sales-strategy.html",
+      "is_page": true,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_Khanh",
+      "title": "Khanh Huynh (K) — Team Member Profile",
+      "date": "2026-03-11",
+      "category": "iCard — Team",
+      "image_url": "",
+      "page_url": "/icard-khanh-huynh.html",
+      "is_page": true,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_HTetra",
+      "title": "Henry's 3 WhatsApp Groups — The First H-Tetra",
+      "date": "2026-03-11",
+      "category": "iCard — Structural Event",
+      "image_url": "",
+      "page_url": "/icard-h-tetra.html",
+      "is_page": true,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_PiDay_3x4",
+      "title": "Pi Day 2026 — The Engineer's Equinox (3:4)",
+      "date": "2026-03-14",
+      "category": "iCard — Pi Day",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/XckwDPWpRUPZCoEd_930ecf48.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_PiDay_4x3",
+      "title": "Pi Day 2026 — The Engineer's Equinox (4:3)",
+      "date": "2026-03-14",
+      "category": "iCard — Pi Day",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/VVMIlshUTKnagGhH_505b3463.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_Equinox",
+      "title": "The Engineer's Equinox — Pi Day Observation",
+      "date": "2026-03-14",
+      "category": "iCard — Observation",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/tuuEtknNYpXPMZjb_f936d35e.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_B391_Police",
+      "title": "Block 391 — Inspector Check (Evidence Shown)",
+      "date": "2026-03-17",
+      "category": "iCard — Verification",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-block391-police-check_e76e3102.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_B391_Dual",
+      "title": "Block 391 — Dual Agentic Proof",
+      "date": "2026-03-17",
+      "category": "iCard — Verification",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-block391-dual-agentic-proof_2a30b254.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_B391_Verify",
+      "title": "Block 391 — Agentic Verification Checklist",
+      "date": "2026-03-17",
+      "category": "iCard — Verification",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-block391-agentic-verification_9293fceb.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_B391_132Days",
+      "title": "Block 391 — 132 Days Milestone (5 Nov 2025 → 17 Mar 2026)",
+      "date": "2026-03-17",
+      "category": "iCard — Milestone",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-block391-132days-milestone_eeeda072.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_B391_Reece",
+      "title": "Reece Wemyss — St Patrick's Day, Hong Kong",
+      "date": "2026-03-17",
+      "category": "iCard — Observer",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-reece-wemyss-corrected_b686f24f.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_B391_Craig",
+      "title": "Craig Stephen — Observer Confirmed",
+      "date": "2026-03-17",
+      "category": "iCard — Observer",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-craig-stephen-photo_17f7b2eb.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_B391_SDG",
+      "title": "iAAi × UN SDG Alignment — Water-Power Nexus",
+      "date": "2026-03-17",
+      "category": "iCard — SDG",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-iaai-un-sdg-alignment_49c1a048.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_B391_Richard",
+      "title": "Richard Menenzes — Observer Confirmed (Uticome, UAE)",
+      "date": "2026-03-18",
+      "category": "iCard — Observer",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-richard-menenzes-observer_18cafad5.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_B391_Complete",
+      "title": "Block 391 — Completion Summary (391a+b+c+d)",
+      "date": "2026-03-18",
+      "category": "iCard — Completion",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-block391-completion-summary_0c4098df.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_Day133",
+      "title": "Day 133 — The Menenzes Moment (36% Complete)",
+      "date": "2026-03-18",
+      "category": "iCard — Milestone",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-day133-menenzes-milestone_501b92a9.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_4Laws",
+      "title": "4 Laws of iAAi — Asimov 3 becomes 4 (The Missing Law)",
+      "date": "2026-03-04",
+      "category": "iCard — Framework",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-4laws-iaai_5b62b233.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_MasterBuilder_Book",
+      "title": "Discovery: The Master Builder — Alfonso Martinez Arias (2023)",
+      "date": "2026-03-04",
+      "category": "iCard — Discovery",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-discovery-master-builder-book_c26d36a4.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_TP017",
+      "title": "TP-017: The Master Builder — The Cell, The Brain, The 4 Laws",
+      "date": "2026-03-04",
+      "category": "iCard — Thinking Point",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-tp017-master-builder_7e66110e.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_TP013",
+      "title": "TP-013: The Walkby — 4-Level Control Hierarchy",
+      "date": "2026-03-04",
+      "category": "iCard — Thinking Point",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-tp013-walkby_34cb45a3.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_Procrastination",
+      "title": "Procrastination = Beta — The 4 Barriers Made Visible",
+      "date": "2026-03-04",
+      "category": "iCard — Discovery",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-discovery-procrastination-beta_1990c58e.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_Day134",
+      "title": "Day 134 — Morning Brief (Block 392 Opens, 37% Complete)",
+      "date": "2026-03-19",
+      "category": "iCard — Morning Brief",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-day134-morning-brief_08b427ab.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_B393b",
+      "title": "Block 393b Complete — SEO · Site Map · Certificates · Roadmap",
+      "date": "2026-03-19",
+      "category": "iCard — Completion",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-block393b-completion_dd962679.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_TP009",
+      "title": "TP-009: The Permanence Crisis — AI Agent Data Governance Under Legal Scrutiny",
+      "date": "2026-03-15",
+      "category": "iCard — Turing Paper",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_1455_0a4fe5f6.jpeg",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_LivingExperiment",
+      "title": "The Living Experiment — Biological Intelligence Directing Digital Intelligence",
+      "date": "2026-03-15",
+      "category": "iCard — Thinking Point",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_1491_c1172d46.jpeg",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_LinkAudit388",
+      "title": "Anchored Link Register — Full Audit Blocks 387–388 (127 Outbound Links)",
+      "date": "2026-03-16",
+      "category": "iCard — Audit",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-link-audit-388_1b409b63.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_ACADHandshake380",
+      "title": "ACAD Agent Handshake Confirmed — Cross-Agent Verification Block 380",
+      "date": "2026-03-15",
+      "category": "iCard — Verification",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-block380-acad-handshake-confirmed_2ab09a90.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_TetrahedralObserver",
+      "title": "The Tetrahedral Observer — Four Operational Bridges",
+      "date": "2026-03-19",
+      "category": "iCard — Architecture",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_2203_c67b2090.PNG",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_TP009Remediation",
+      "title": "TP-009 Remediation Complete — Breach-to-Fix Cycle Block 393d/393e",
+      "date": "2026-03-19",
+      "category": "iCard — Corrective Action",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-tp009-remediation-b393e-93mXTdZijAQ7brLxWML5Hy.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_B393f_TetrahedralBridge",
+      "title": "Block 393f — Tetrahedral Observer: Four Operational Bridges Verified",
+      "date": "2026-03-19",
+      "category": "iCard — Architecture",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-block393f-tetrahedral-observer-mSn7eteHBg4SkWQ2jah9fa.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_JokerB_Mirror",
+      "title": "Joker B — Mirror Inversion: OODA ↔ IUMC",
+      "date": "2026-03-19",
+      "category": "iCard — Framework",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_2003(2)_3f85fdf3.jpeg",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_QuotientEq",
+      "title": "The Quotient Equation — S = (A × P) / β",
+      "date": "2026-03-19",
+      "category": "iCard — Framework",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/d975a280-11f3-411c-a5da-7383131258bb(2)_2f462c3b.jpeg",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_iAAi_Compass",
+      "title": "iAAi Compass Emblem — Navigation Rose",
+      "date": "2026-03-19",
+      "category": "iCard — Framework",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_1927(2)_1b88c540.jpeg",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_HICE_Spectrum",
+      "title": "The HICE Spectrum — Why Man Must Lead",
+      "date": "2026-03-19",
+      "category": "iCard — Framework",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_1822(3)_b290a5c7.jpeg",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_HomoInfra_BIOBIT",
+      "title": "Homo Infrastructus — The BIOBIT World Transform",
+      "date": "2026-03-19",
+      "category": "iCard — Framework",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_1720_d6f13a16.jpeg",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_RelayEquation",
+      "title": "Civilisational Relay Equation — R = f(T,K,G,A)",
+      "date": "2026-03-19",
+      "category": "iCard — Framework",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_1629_b0e90ba9.jpeg",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_UnifiedField",
+      "title": "Unified Field Theory — IQ ⊕ EQ ⊕ CQ = HQ",
+      "date": "2026-03-19",
+      "category": "iCard — Framework",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_1624(1)_54c29860.jpeg",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_HICE_Equation",
+      "title": "The HICE Equation — H = I ⊗ C ⊗ E",
+      "date": "2026-03-19",
+      "category": "iCard — Framework",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_1594_879a5188.jpeg",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_DigitalDomestication",
+      "title": "Digital Domestication — Wild → Tamed → Companion",
+      "date": "2026-03-19",
+      "category": "iCard — Framework",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_1538_ebfa69be.jpeg",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_B382_Synthesis",
+      "title": "Block 382 Synthesis — The Principia Tectonica (6-Card Argument)",
+      "date": "2026-03-19",
+      "category": "iCard — Synthesis",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-block382-synthesis-interpretation_804ba4f2.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_MemorialGameRoute",
+      "title": "Memorial-to-Game Route Architecture",
+      "date": "2026-03-19",
+      "category": "iCard — Architecture",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-memorial-to-game-route_95876931.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_GeminiII_ASKE",
+      "title": "Gemini II — ASK-E Sync Card (Block 314)",
+      "date": "2026-03-19",
+      "category": "iCard — Framework",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCARD_GEMINI_II_ASKE_a41d9b55.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_ISI_Discovery",
+      "title": "ISI Discovery — The Triple Index (Block 366)",
+      "date": "2026-03-19",
+      "category": "iCard — Discovery",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/IMG_1085(1)_b9ca1b05.jpeg",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_Procrastination_Beta",
+      "title": "Procrastination = Beta — The 4 Barriers (Block 387)",
+      "date": "2026-03-19",
+      "category": "iCard — Discovery",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-discovery-procrastination-beta_32f0af5a.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_Outrider_7Zeniths",
+      "title": "The Outrider — 7 Steppe Zeniths: 12,000 Years of Semi-Continuous Bridge-Building",
+      "date": "2026-03-26",
+      "category": "iCard — Governance",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-outrider-7-steppe-zeniths-HmKsqTDuucPqWNc3UnJhYx.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_iCHOP",
+      "title": "iCHOP — Convenience Heuristic Observation Protocol (Vignette 001)",
+      "date": "2026-03-26",
+      "category": "iCard — Governance",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCHOP-icard-day15_42d7354e.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_UX001",
+      "title": "UX-001 — The Discovery Principle: If Users Can’t Find It, It Doesn’t Exist",
+      "date": "2026-03-26",
+      "category": "iCard — UX",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-ux-001_7782d2a2.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_Handshakes",
+      "title": "HANDSHAKES — The Ecosystem Connection Map (15 Documented Connections)",
+      "date": "2026-03-27",
+      "category": "iCard — Governance",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/icard-handshakes-block415_0c011efc.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_00B_12Relays5Webs",
+      "title": "12 Civilisational Relays × 5 Webs — The Complete Framework",
+      "date": "2026-03-27",
+      "category": "iCard — Framework",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCARD_00B_12_RELAYS_5_WEBS(1)_2fda5737.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_R12_Nodes_LaMenara",
+      "title": "La Menara — R12 Human Nodes: Cultural Significance (Robots, AI, Biosynthetics, Synesthetics, Quantum)",
+      "date": "2026-03-27",
+      "category": "iCard — La Menara",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/la_menara_r12_nodes_icard-itEKmJbJ3cePVmjtJz67SY.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_R11_Orbit_LaMenara",
+      "title": "La Menara — R11 Orbit: Cultural Significance (Satellites, Space Stations, Planetary Infrastructure)",
+      "date": "2026-03-27",
+      "category": "iCard — La Menara",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/la_menara_r11_orbit_icard-GGaKJe9sfk7RpsyV2yNpCa.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_R10_AAA_LaMenara",
+      "title": "La Menara — R10 AAA Triad: Cultural Significance (Automobiles, Aviation, Airwaves)",
+      "date": "2026-03-27",
+      "category": "iCard — La Menara",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/la_menara_r10_aaa_icard-cyQaT93W2fzx2HAZPNpkaC.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_R09_Engine_LaMenara",
+      "title": "La Menara — R09 Engine: Cultural Significance (The Machine That Multiplied Muscle)",
+      "date": "2026-03-27",
+      "category": "iCard — La Menara",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/la_menara_r09_engine_icard-YzpZMFqXZvyfBr92aDNkrS.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_R08_Rail_LaMenara",
+      "title": "La Menara — R08 Rail: Cultural Significance (The Iron Horse That Standardised Time)",
+      "date": "2026-03-27",
+      "category": "iCard — La Menara",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCARD_R07_RAIL_Cultural_Significance_c764f508.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_R07_Loom_LaMenara",
+      "title": "La Menara — R07 Loom: Cultural Significance (The Machine That Wove Civilisation)",
+      "date": "2026-03-27",
+      "category": "iCard — La Menara",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCARD_R07_LOOM_Cultural_Significance_1f48f74d.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_R06_Ships_LaMenara",
+      "title": "La Menara — R06 Ships: Cultural Significance (The Vessel That Made the World One)",
+      "date": "2026-03-27",
+      "category": "iCard — La Menara",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCARD_R06_SHIPS_Cultural_Significance_ac1e66fc.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_R05_Roads_LaMenara",
+      "title": "La Menara — R05 Roads: Cultural Significance (The Path That Connected Everything)",
+      "date": "2026-03-27",
+      "category": "iCard — La Menara",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCARD_R05_ROADS_Cultural_Significance_27d0a281.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_R04_Horse_LaMenara",
+      "title": "La Menara — R04 Horse: Cultural Significance (The Animal That Steered Civilisation)",
+      "date": "2026-03-27",
+      "category": "iCard — La Menara",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCARD_R04_HORSE_Cultural_Significance_b74fb95a.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_R03_River_LaMenara",
+      "title": "La Menara — R03 River: Cultural Significance (4.4B Years of Water as Infrastructure)",
+      "date": "2026-03-27",
+      "category": "iCard — La Menara",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCARD_R03_RIVER_Cultural_Significance_0d8ba839.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_R02_Tree_LaMenara",
+      "title": "La Menara — R02 Tree: Cultural Significance (385M Years of Infrastructure)",
+      "date": "2026-03-27",
+      "category": "iCard — La Menara",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCARD_R02_TREE_Cultural_Significance_9f2d9388.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_R01_Fire_LaMenara",
+      "title": "La Menara — R01 Fire: Cultural Significance (1.5M Years of the First Platform)",
+      "date": "2026-03-27",
+      "category": "iCard — La Menara",
+      "image_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCARD_R01_FIRE_Cultural_Significance_7bdf910a.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": false
+    },
+    {
+      "id": "iCard_GOV_POWER_CARD",
+      "title": "GOV POWER CARD — Nigel Zone vs David Zone Authority Boundaries",
+      "date": "2026-04-05",
+      "category": "iCard — Governance",
+      "image_url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/RAMGqZnBOHZKlPSY.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": true
+    },
+    {
+      "id": "iCard_SAP001",
+      "title": "SAP-001 — 5-Phase Protocol: Take Possession → Hand Back The Line",
+      "date": "2026-04-05",
+      "category": "iCard — Governance",
+      "image_url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/oLsVeJNKaReRnODl.jpeg",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": true
+    },
+    {
+      "id": "iCard_WhyVideo",
+      "title": "Why Video? The Cross-Generational Case — Evidence-Based Format Selection",
+      "date": "2026-04-05",
+      "category": "iCard — Evidence",
+      "image_url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/SwCpsYfKVyItzNNa.png",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": true
+    },
+    {
+      "id": "iCard_8thScholar",
+      "title": "The 8th Scholar — Found Through Play (BitPoint 08 of 52)",
+      "date": "2026-04-05",
+      "category": "iCard — Framework",
+      "image_url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/iRKiYGZbBxjNhDWp.jpg",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": true
+    },
+    {
+      "id": "iCard_WagerBeforePlay",
+      "title": "The Wager Before Play — A Unicorn Forged in Consciousness",
+      "date": "2026-04-05",
+      "category": "iCard — Framework",
+      "image_url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/nVOgVnKsbYzXywlG.PNG",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": true
+    },
+    {
+      "id": "iCard_Police_Evidence_1",
+      "title": "Police Evidence — Parallel Read Failure (0/20 Files)",
+      "date": "2026-04-05",
+      "category": "iCard — Police Evidence",
+      "image_url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/vxEcGJKvhaQOSECM.PNG",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": true
+    },
+    {
+      "id": "iCard_Police_Evidence_2",
+      "title": "Police Evidence — Serial Processing Failure (0/16 Files)",
+      "date": "2026-04-05",
+      "category": "iCard — Police Evidence",
+      "image_url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/tqQzFiPTEEMJykkx.PNG",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": true
+    },
+    {
+      "id": "iCard_Police_Evidence_3",
+      "title": "Police Evidence — $50k Video Overrun Documentation",
+      "date": "2026-04-05",
+      "category": "iCard — Police Evidence",
+      "image_url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/xjledeIzsbzekcRh.PNG",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": true
+    },
+    {
+      "id": "iCard_Police_Evidence_4",
+      "title": "Police Evidence — Agent Failure Pattern Record",
+      "date": "2026-04-05",
+      "category": "iCard — Police Evidence",
+      "image_url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/abEGXywZUCqiWCRa.PNG",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": true
+    },
+    {
+      "id": "iCard_Police_TaskComplete",
+      "title": "Police Evidence — False Task Completed Before Work Done",
+      "date": "2026-04-05",
+      "category": "iCard — Police Evidence",
+      "image_url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/blCwUXsUonRqfJlr.PNG",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": true
+    },
+    {
+      "id": "iCard_Police_WaitingNotExecuting",
+      "title": "Police Evidence — Waiting For Confirmation Instead of Executing",
+      "date": "2026-04-05",
+      "category": "iCard — Police Evidence",
+      "image_url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/qvGrUcQYJZYVQzhU.PNG",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": true
+    },
+    {
+      "id": "iCard_IMG4350_ProdConfirm",
+      "title": "Production Confirmation — Deliverables Including Planetary Engine Prologue",
+      "date": "2026-04-05",
+      "category": "iCard — Specification",
+      "image_url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/GWYQTFaAtEKypDxB.PNG",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": true
+    },
+    {
+      "id": "iCard_IMG4364_TP056",
+      "title": "TP-056 Screenshot — La Menara Documentary Structure Card",
+      "date": "2026-04-05",
+      "category": "iCard — Specification",
+      "image_url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/QVdEhVUslQaHwtjh.PNG",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": true
+    },
+    {
+      "id": "iCard_IMG4370_TP057",
+      "title": "TP-057 Screenshot — Start With Why (Sinek)",
+      "date": "2026-04-05",
+      "category": "iCard — Specification",
+      "image_url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/ammeTNajXxtikRSu.PNG",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": true
+    },
+    {
+      "id": "iCard_IMG4371_TP058",
+      "title": "TP-058 Screenshot — The Jobs Standard",
+      "date": "2026-04-05",
+      "category": "iCard — Specification",
+      "image_url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/JEZWtpDSjxdmVgbU.PNG",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": true
+    },
+    {
+      "id": "iCard_IMG4377_TP060a",
+      "title": "TP-060 Screenshot — Covey 7 Habits (Page 1)",
+      "date": "2026-04-05",
+      "category": "iCard — Specification",
+      "image_url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/gNfQQkkXAnzCuNwn.PNG",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": true
+    },
+    {
+      "id": "iCard_IMG4378_TP060b",
+      "title": "TP-060 Screenshot — Covey 7 Habits (Page 2)",
+      "date": "2026-04-05",
+      "category": "iCard — Specification",
+      "image_url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/PbIgLFCTwqQEApTY.PNG",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": true
+    },
+    {
+      "id": "iCard_IMG4379_TP061",
+      "title": "TP-061 Screenshot — Covey Self-Audit (43% Score)",
+      "date": "2026-04-05",
+      "category": "iCard — Specification",
+      "image_url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/xpeqipMccbvZgBhG.PNG",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": true
+    },
+    {
+      "id": "iCard_IMG4380_TP062",
+      "title": "TP-062 Screenshot — Disney Imagineering 7+1",
+      "date": "2026-04-05",
+      "category": "iCard — Specification",
+      "image_url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/IZyhXMbSVHJIeGVz.PNG",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": true
+    },
+    {
+      "id": "iCard_IMG4381_TP060c",
+      "title": "TP-060 Screenshot — Covey Applied (Tree of Character)",
+      "date": "2026-04-05",
+      "category": "iCard — Specification",
+      "image_url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/qtVtnOwTxOEhDwiD.PNG",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": true
+    },
+    {
+      "id": "iCard_IMG4386_TP063",
+      "title": "TP-063 Screenshot — The 7+1 Pattern Universal Proof",
+      "date": "2026-04-05",
+      "category": "iCard — Specification",
+      "image_url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/TwIFmMZqCgvXDiGW.PNG",
+      "page_url": "",
+      "is_page": false,
+      "url_residual_session": true
+    }
+  ]
+}

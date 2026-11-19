@@ -206,7 +206,7 @@ window.IA_LANG_VI = {
     "nav.charter": "Hiến chương",
     "nav.civclock": "Đồng hồ văn minh",
     "nav.clock": "Đồng hồ động viên",
-    "nav.documents": "Tài liệu",
+    "nav.documents": "Thư viện",
     "nav.framework": "Khung chương trình",
     "nav.home": "Trang chủ",
     "nav.institutions": "cơ quan",

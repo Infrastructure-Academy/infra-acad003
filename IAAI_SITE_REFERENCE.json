@@ -3,7 +3,6 @@
   "_version": "2026-08-24T03:07+08:00",
   "_session_fix": "Read this file at the START of every turn. Update at END of every turn. Append to session_log.",
   "_author": "OpenClaw self-reference",
-
   "sites": {
     "academy": {
       "url": "https://infrastructure-academy.com",
@@ -72,7 +71,6 @@
         "cname": "infrastructure-academy.com"
       }
     },
-
     "quest": {
       "url": "https://realityeng-epdhlkrn.manus.space",
       "status": "DEAD",
@@ -81,23 +79,26 @@
       "repo": "the-reality-engine (React app, 413 files, 5.3MB, exists locally, may not build)",
       "github": "Infrastructure-Academy/the-reality-engine (main branch at c5d4184)"
     },
-
     "xchange": {
       "url": "https://xchangeapp-adbvx9fr.manus.space",
       "status": "LIVE",
       "pages": 1,
       "note": "Host answers and serves the Exchange merchandise storefront (checked 17 Nov 2026). Academy /shop, /xchange and /exchange are a pre-order catalogue, subject to demand. Kit shelf prices on the till, inactive and not shippable: Explorer USD 39, Apprentice USD 75, Navigator USD 149, Scholar USD 215, Master USD 499. Workshop singles have no till price. Fulfilment when the supply chain is reengaged. Not in stock. Not a checkout."
     },
-
     "memorial": {
       "url": "https://nigelmemorial-ucmtq9dn.manus.space",
       "status": "UNKNOWN",
       "pages": "???",
       "note": "User reports hundreds of papers and documents. Web fetch shows only title page 'The Infrastructure Academy (iAAi) — An Infrastructure Odyssey'. May be JS-rendered or behind auth. Requires browser automation to verify. STOP CLAIMING IT'S DEAD WITHOUT CHECKING PROPERLY.",
-      "paths_checked": ["/", "/archive", "/papers", "/documents", "/turing-papers"],
+      "paths_checked": [
+        "/",
+        "/archive",
+        "/papers",
+        "/documents",
+        "/turing-papers"
+      ],
       "all_returned": "Same title page only"
     },
-
     "news": {
       "url": "https://xgrowthtrk-2a93yo5z.manus.space",
       "status": "DEAD",
@@ -105,7 +106,6 @@
       "note": "Title page only 'IAAI X Growth Race Tracker'. Tracker not functional. Manus shutdown broke it."
     }
   },
-
   "repositories": {
     "infra-acad003": {
       "github": "Infrastructure-Academy/infra-acad003",
@@ -133,7 +133,6 @@
       "note": "Backed up inside infra-acad003/backups/iaai-media-archive/ and pushed to GitHub"
     }
   },
-
   "critical_facts": {
     "user": "Ir. Nigel T. Dearden CEng",
     "timezone": "Asia/Hong_Kong",
@@ -148,18 +147,44 @@
     "site_built_by": "Manus AI",
     "hosting": "GitHub Pages from infra-acad003/docs/"
   },
-
   "session_log": [
-    { "time": "2026-08-24T03:06", "note": "Context compaction failed. System message: increase agents.defaults.compaction.reserveTokensFloor to 50000. User has no money — cannot afford larger context window. Must use disk-based workaround instead." },
-    { "time": "2026-08-24T03:06", "note": "Cost shock: $11.47 today, $30.68 this week. 3h 57m session. Compaction is saving money but destroying accuracy." },
-    { "time": "2026-08-24T03:00", "note": "User confirmed: Memorial has hundreds of papers. Web_fetch failing to show content. Need browser automation to verify. STOP claiming Memorial is dead without proper check." },
-    { "time": "2026-08-24T02:59", "note": "ISI Calculator has 2 versions: prototype v68 (isicalc-uwdgcubw) AND explorer/iGO (isicalcexp-bqjsukv3). Both confirmed LIVE. User sees all 3 apps on mobile homepage." },
-    { "time": "2026-08-24T02:58", "note": "No dropdown menus exist on Academy site. Navigation is flat 2-row layout. HTML verified: zero <div class=dropdown> elements." },
-    { "time": "2026-11-17T04:40", "note": "Exchange host is online. Academy shop page now lists the five kits and nine workshop singles as a catalogue only. Buttons stay Not yet for sale. No prices, no Stripe, no sixth network-bar door. Supply, fulfilment, ship-from, currency and a packed sample remain with Nigel." },
-    { "time": "2026-11-17T05:40", "note": "Nigel authorised merch as pre-orders, subject to demand. Kit shelf prices shown as verified on the till: USD 39, 75, 149, 215, 499. Products inactive and not shippable. Singles have no till price. Controls stay disabled: Pre-order — not in stock. Fulfilment when the supply chain is reengaged. Not a checkout." },
-    { "time": "2026-11-18T02:20", "note": "Beta test model door on the Academy landing CTA row: Dearden Praxis Method (DPM) — Polytype model, Skunkworks Division of Dearden Dynamics. Same-domain portal at /dpm/, then /dpm/engine/. Not a finished issue. Accept is not required. Issued Figure A is not recut. Quest and the later Reality Engine prototype stay split. GitHub Pages publishes docs/ when the pull request is merged to main." }
+    {
+      "time": "2026-08-24T03:06",
+      "note": "Context compaction failed. System message: increase agents.defaults.compaction.reserveTokensFloor to 50000. User has no money — cannot afford larger context window. Must use disk-based workaround instead."
+    },
+    {
+      "time": "2026-08-24T03:06",
+      "note": "Cost shock: $11.47 today, $30.68 this week. 3h 57m session. Compaction is saving money but destroying accuracy."
+    },
+    {
+      "time": "2026-08-24T03:00",
+      "note": "User confirmed: Memorial has hundreds of papers. Web_fetch failing to show content. Need browser automation to verify. STOP claiming Memorial is dead without proper check."
+    },
+    {
+      "time": "2026-08-24T02:59",
+      "note": "ISI Calculator has 2 versions: prototype v68 (isicalc-uwdgcubw) AND explorer/iGO (isicalcexp-bqjsukv3). Both confirmed LIVE. User sees all 3 apps on mobile homepage."
+    },
+    {
+      "time": "2026-08-24T02:58",
+      "note": "No dropdown menus exist on Academy site. Navigation is flat 2-row layout. HTML verified: zero <div class=dropdown> elements."
+    },
+    {
+      "time": "2026-11-17T04:40",
+      "note": "Exchange host is online. Academy shop page now lists the five kits and nine workshop singles as a catalogue only. Buttons stay Not yet for sale. No prices, no Stripe, no sixth network-bar door. Supply, fulfilment, ship-from, currency and a packed sample remain with Nigel."
+    },
+    {
+      "time": "2026-11-17T05:40",
+      "note": "Nigel authorised merch as pre-orders, subject to demand. Kit shelf prices shown as verified on the till: USD 39, 75, 149, 215, 499. Products inactive and not shippable. Singles have no till price. Controls stay disabled: Pre-order — not in stock. Fulfilment when the supply chain is reengaged. Not a checkout."
+    },
+    {
+      "time": "2026-11-18T02:20",
+      "note": "Beta test model door on the Academy landing CTA row: Dearden Praxis Method (DPM) — Polytype model, Skunkworks Division of Dearden Dynamics. Same-domain portal at /dpm/, then /dpm/engine/. Not a finished issue. Accept is not required. Issued Figure A is not recut. Quest and the later Reality Engine prototype stay split. GitHub Pages publishes docs/ when the pull request is merged to main."
+    },
+    {
+      "time": "2026-11-19T12:10+08:00",
+      "note": "Academy doors PR prepared: Chart Room news.html, Library landing and static catalogue, static iCard register, confirmed Memorial clock BLOCK 1102 D377 not recalculated, Quest Play three-card cut kept, shop remains pre-order. Grateful Partners wall is not served under docs/. Residual Manus hosts not overwritten. PR #4 not merged."
+    }
   ],
-
   "things_i_keep_rediscovering": {
     "warning": "These facts have been 'discovered' 3-5 times due to context compaction. READ THIS FILE FIRST.",
     "facts": [

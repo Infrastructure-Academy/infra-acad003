@@ -206,7 +206,7 @@ window.IA_LANG_KO = {
     "nav.charter": "헌장",
     "nav.civclock": "문명 시계",
     "nav.clock": "동원 시계",
-    "nav.documents": "문서",
+    "nav.documents": "도서관",
     "nav.framework": "프레임워크",
     "nav.home": "홈",
     "nav.institutions": "기관",

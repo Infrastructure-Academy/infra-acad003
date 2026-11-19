@@ -206,7 +206,7 @@ window.IA_LANG_AR = {
     "nav.charter": "الميثاق",
     "nav.civclock": "ساعة الحضارة",
     "nav.clock": "ساعة التعبئة",
-    "nav.documents": "الوثائق",
+    "nav.documents": "المكتبة",
     "nav.framework": "الإطار",
     "nav.home": "الرئيسية",
     "nav.institutions": "المؤسسات",
