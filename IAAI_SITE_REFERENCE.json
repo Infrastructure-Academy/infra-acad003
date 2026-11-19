@@ -187,6 +187,10 @@
     {
       "time": "2026-11-19T13:40+08:00",
       "note": "Public doors PR prepared, not merged. Home first job is the DPM door, with Visual Odyssey as the second door. Movies is in the primary nav and footer. /videos and /videos.html redirect to /pages/movies.html. Issued films that answered on their existing file URLs have visible players, VideoObject, and a video sitemap. Held Draft 40.9 (LIB-1657 and LIB-1658) is off the public catalogue. Shop, exchange, and xchange register interest by email to the published Academy address. Interest is not an order, not a payment, and not income. No Stripe secret. Paid checkout is not open. PR #4 stays unmerged. PR #9 stays open."
+    },
+    {
+      "time": "2026-11-19T15:20+08:00",
+      "note": "Memorial issued-set clock removed from Academy pages, including the sitewide injector. The Memorial Manus host is not overwritten. Issued film rails sit on the landing, the movies catalogue, and Visual Odyssey. /xchange/ reads as Xchange, /exchange/ as Exchange, /shop/ as Shop. Network Bar XCHANGE opens /xchange/. Pre-order and register-interest stay. No checkout."
     }
   ],
   "things_i_keep_rediscovering": {

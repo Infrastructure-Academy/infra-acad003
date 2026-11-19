@@ -1,0 +1,165 @@
+/* Issued-film rails. Posters and sources stay the ones already on the movies catalogue. */
+.issued-film-rails {
+  --ifr-bg: #070f1e;
+  --ifr-gold: #ffd700;
+  --ifr-text: #f4efe2;
+  --ifr-muted: rgba(244, 239, 226, 0.72);
+  background: var(--ifr-bg);
+  color: var(--ifr-text);
+  border-top: 1px solid rgba(255, 215, 0, 0.35);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.35);
+  padding: 1.1rem 0 1.25rem;
+  margin: 0.75rem 0 1rem;
+  font-family: Georgia, "Times New Roman", serif;
+}
+.issued-film-rails h2 {
+  font-family: Cinzel, Georgia, serif;
+  font-weight: 600;
+  font-size: 1.15rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ifr-gold);
+  margin: 0 0 0.35rem;
+}
+.issued-film-rails .ifr-lead,
+.issued-film-rails .ifr-rail-note,
+.issued-film-rails .ifr-meta,
+.issued-film-rails .ifr-same {
+  color: var(--ifr-muted);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  margin: 0;
+}
+.issued-film-rails .ifr-wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.issued-film-rails .ifr-lead a,
+.issued-film-rails .ifr-rail-note a {
+  color: var(--ifr-gold);
+}
+.issued-film-rails .ifr-rail {
+  margin-top: 1.15rem;
+}
+.issued-film-rails .ifr-rail-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+.issued-film-rails h3 {
+  font-family: Cinzel, Georgia, serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.04em;
+  color: var(--ifr-text);
+  margin: 0;
+}
+.issued-film-rails .ifr-arrows {
+  display: flex;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+.issued-film-rails .ifr-arrows button {
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 215, 0, 0.55);
+  background: rgba(255, 215, 0, 0.08);
+  color: var(--ifr-gold);
+  font-size: 1.35rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.issued-film-rails .ifr-arrows button:hover,
+.issued-film-rails .ifr-arrows button:focus-visible {
+  background: rgba(255, 215, 0, 0.22);
+  outline: 2px solid var(--ifr-gold);
+  outline-offset: 2px;
+}
+.issued-film-rails .ifr-row {
+  display: flex;
+  gap: 0.75rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 0.55rem 0.15rem 0.75rem;
+  scrollbar-color: rgba(255, 215, 0, 0.45) transparent;
+}
+.issued-film-rails .ifr-card {
+  flex: 0 0 220px;
+  scroll-snap-align: start;
+  min-width: 0;
+}
+.issued-film-rails .ifr-card.is-portrait {
+  flex-basis: 148px;
+}
+.issued-film-rails .ifr-stage {
+  position: relative;
+  background: #000;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 215, 0, 0.28);
+  aspect-ratio: 16 / 9;
+}
+.issued-film-rails .ifr-card.is-portrait .ifr-stage {
+  aspect-ratio: 4 / 5;
+}
+.issued-film-rails .ifr-stage img,
+.issued-film-rails .ifr-stage video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  background: #000;
+}
+.issued-film-rails .ifr-play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.28);
+  border: 0;
+  cursor: pointer;
+  color: #0a1628;
+}
+.issued-film-rails .ifr-play span {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(255, 215, 0, 0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  padding-left: 3px;
+}
+.issued-film-rails .ifr-play:hover span,
+.issued-film-rails .ifr-play:focus-visible span {
+  background: #fff4b0;
+}
+.issued-film-rails .ifr-play:focus-visible {
+  outline: 2px solid var(--ifr-gold);
+  outline-offset: -4px;
+}
+.issued-film-rails .ifr-title {
+  margin: 0.4rem 0 0;
+  font-size: 0.92rem;
+  line-height: 1.3;
+  color: var(--ifr-text);
+}
+.issued-film-rails .ifr-meta,
+.issued-film-rails .ifr-same {
+  margin-top: 0.15rem;
+  font-size: 0.8rem;
+}
+@media (max-width: 640px) {
+  .issued-film-rails .ifr-card { flex-basis: 68vw; }
+  .issued-film-rails .ifr-card.is-portrait { flex-basis: 46vw; }
+  .issued-film-rails h2 { font-size: 1rem; letter-spacing: 0.08em; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .issued-film-rails .ifr-row { scroll-behavior: auto; }
+}
