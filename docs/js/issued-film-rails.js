@@ -10,7 +10,7 @@
       title: 'La Menara — An Infrastructure Odyssey',
       listed: '10:00',
       poster: CDN + 'la_menara_doc_poster_7851b3f9.jpg',
-      src: FILM_MEDIA + 'wHlzVXzMODYYdntg.mp4'
+      src: ''
     },
     'la-menara-trailer': {
       title: 'La Menara — Trailer',
@@ -172,11 +172,14 @@
     if (!film) return '';
     var portrait = film.portrait ? ' is-portrait' : '';
     var same = film.sameEncode ? '<p class="ifr-same">One encode, two titles.</p>' : '';
+    var play = film.src
+      ? '<button type="button" class="ifr-play" data-src="' + esc(film.src) + '" aria-label="Play ' + esc(film.title) + '"><span aria-hidden="true">&#9654;</span></button>'
+      : '';
     return ''
       + '<article class="ifr-card' + portrait + '" data-film="' + esc(id) + '">'
       + '<div class="ifr-stage">'
       + '<img src="' + esc(film.poster) + '" alt="" loading="lazy">'
-      + '<button type="button" class="ifr-play" data-src="' + esc(film.src) + '" aria-label="Play ' + esc(film.title) + '"><span aria-hidden="true">&#9654;</span></button>'
+      + play
       + '</div>'
       + '<p class="ifr-title">' + esc(film.title) + '</p>'
       + '<p class="ifr-meta">Listed ' + esc(film.listed) + '</p>'
@@ -210,6 +213,7 @@
   function playFromButton(root, button) {
     var stage = button.parentNode;
     var src = button.getAttribute('data-src');
+    if (!src) return;
     var label = button.getAttribute('aria-label') || 'Play film';
     var video = document.createElement('video');
     video.controls = true;
