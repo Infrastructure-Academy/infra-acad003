@@ -82,8 +82,19 @@
     }).observe(lightbox, { attributes: true, attributeFilter: ['class'] });
   };
 
+  const bootPressPlay = () => {
+    if (document.getElementById('iaai-press-play-banner')) return;
+    if (document.querySelector('script[src*="/js/press-play.js"]')) return;
+    const s = document.createElement('script');
+    s.src = '/js/press-play.js?v=20261120a';
+    s.async = false;
+    s.dataset.iaaiPressPlay = '1';
+    document.head.appendChild(s);
+  };
+
   const init = () => {
     ensureLightbox();
+    bootPressPlay();
   };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init, { once: true });
   else init();

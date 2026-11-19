@@ -195,6 +195,10 @@
     {
       "time": "2026-11-19T18:35+08:00",
       "note": "Nigel t1243u: residual Live Exchange host sentence removed from docs/index.html, docs/site.html, /shop/, /exchange/ and /xchange/. Pre-order, Open the catalogue, and not-a-checkout copy stay. The xchangeapp Manus host itself is not overwritten. Quest, Memorial, News and game CTAs stay. PR #4 and PR #9 stay unmerged. No checkout. No Stripe secret."
+    },
+    {
+      "time": "2026-11-20T07:20+08:00",
+      "note": "Quest crisis cut prepared, not merged, and not Stage 1. QUEST network-bar controls, Enter the Game, and leaderboard VIEW ALL / Volume 3 VIEW now point at https://app.infrastructure-academy.com/ only. Live /explore and /leaderboard on that host answered 404, so those paths were not appended. Press Play wording is exactly “Press Play to engage NOW”, banner min-height 44pt, mark file docs/press-play-gold-mark.png SHA256 cc7789d01d70cc420f0751c787679964b27e2ddf2a32647b659dd6e642a41d3b. Shared control rides sitewide-uix.js, including library.html and /pages/movies.html, plus Memorial. Chart Room files news.html, library-landing.html, library-catalogue.html, icard-register.html, and x-growth-race.html were not amended. Residual Manus hosts, CNAME, /play/igo/, and PR #4 were left alone."
     }
   ],
   "things_i_keep_rediscovering": {
