@@ -246,7 +246,7 @@ window.IA_LANG_ES = {
     "nav.charter": "Carta",
     "nav.civclock": "Reloj de civilización",
     "nav.clock": "Reloj de movilización",
-    "nav.documents": "Documentos",
+    "nav.documents": "Biblioteca",
     "nav.founders": "MURO DE FUNDADORES",
     "nav.framework": "Marco",
     "nav.home": "Inicio",

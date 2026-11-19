@@ -157,6 +157,8 @@
           { href: '/explore/narration', text: 'NARRATION', i18n: 'nav.narration' },
           { href: '/videos', text: 'VIDEO PLAYROOM', i18n: 'nav.videos' },
           { href: '/pages/movies.html', text: 'MOVIES', i18n: 'nav.movies' },
+          { href: '/visual-odyssey.html', text: 'VISUAL ODYSSEY', i18n: 'nav.visualodyssey' },
+          { href: '/news.html', text: 'CHART ROOM — NEWS', i18n: 'nav.chartroom' },
           { href: '/pages/behind-the-thesis.html', text: 'BEHIND THE THESIS', i18n: 'nav.behind' },
           { href: '/pages/civilisational-divide.html', text: 'THE CIVILISATIONAL DIVIDE', i18n: 'nav.divide' }
         ]
@@ -181,7 +183,7 @@
         columns: true,
         items: [
           { header: true, text: 'REFERENCE' },
-          { href: '/library.html', text: 'DOCUMENTS', i18n: 'nav.documents' },
+          { href: '/library-landing.html', text: 'LIBRARY', i18n: 'nav.documents' },
           { href: '/pages/resources.html', text: 'RESOURCES', i18n: 'nav.resources' },
           { href: '/pages/glossary.html', text: 'GLOSSARY', i18n: 'nav.glossary' },
           { href: '/vault.html', text: 'VAULT', i18n: 'nav.vault' },

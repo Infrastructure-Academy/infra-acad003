@@ -14,7 +14,7 @@ window.IA_LANG_HI = {
     "nav.precis": "कार्यकारी सारांश",
     "nav.framework": "ढांचा",
     "nav.resources": "संसाधन",
-    "nav.documents": "दस्तावेज़",
+    "nav.documents": "पुस्तकालय",
     "nav.author": "लेखक",
     "nav.ep1": "EP.1: परिप्रेक्ष्य",
     "nav.ep2": "EP.2: प्लेबुक",
