@@ -637,7 +637,7 @@ window.IA_LANG_VI = {
     "home.ppp.cta.sub": "Truy cập beta miễn phí — Kiểm tra, dịch thuật, xác nhận và giành vị trí của bạn trên Bức tường Sáng lập. Tham gia Odyssey.",
     "home.ppp.cta.title": "Trở thành Người tiên phong",
     "home.ppp.partners.h": "ĐỐI TÁC",
-    "home.ppp.partners.p": "Các trường đại học, nền tảng công nghệ và công ty cơ sở hạ tầng. MIT OCW, Khan Academy, Meta/VR, Manus/AI, AECOM, Arup, Bechtel. Công nghệ, xác nhận nội dung và tiếp cận thị trường.",
+    "home.ppp.partners.p": "Các trường đại học, nền tảng công nghệ và công ty cơ sở hạ tầng. MIT OCW, Khan Academy, Meta/VR, AECOM, Arup, Bechtel. Công nghệ, xác nhận nội dung và tiếp cận thị trường.",
     "home.ppp.partners.status": "Trạng thái: Mở thách thức — Được đề cử bởi Người chơi",
     "home.ppp.patrons.h": "NHÀ BẢO TRỢ",
     "home.ppp.patrons.p": "Các tổ chức có sứ mệnh phù hợp với giáo dục cơ sở hạ tầng toàn cầu. UNESCO, National Geographic, NASA, Hội Hoàng gia, Discovery, Smithsonian, NOAA, Ngân hàng Thế giới, ADB, Viện Hàn lâm Khoa học Trung Quốc.",

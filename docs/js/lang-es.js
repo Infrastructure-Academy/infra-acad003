@@ -181,7 +181,7 @@ window.IA_LANG_ES = {
     "home.ppp.cta.sub": "Acceso beta gratuito — Prueba, traduce, valida y gana tu lugar en el Muro de Fundadores. Únete a la Odisea.",
     "home.ppp.cta.title": "Conviértete en Pionero",
     "home.ppp.partners.h": "SOCIOS",
-    "home.ppp.partners.p": "Universidades, plataformas tecnológicas y empresas de infraestructura. MIT OCW, Khan Academy, Meta/VR, Manus/AI, AECOM, Arup, Bechtel. Tecnología, validación de contenido y acceso al mercado.",
+    "home.ppp.partners.p": "Universidades, plataformas tecnológicas y empresas de infraestructura. MIT OCW, Khan Academy, Meta/VR, AECOM, Arup, Bechtel. Tecnología, validación de contenido y acceso al mercado.",
     "home.ppp.partners.status": "Estado: Abierto al Desafío — Nominados por Jugadores",
     "home.ppp.patrons.h": "PATROCINADORES",
     "home.ppp.patrons.p": "Instituciones cuya misión se alinea con la educación universal en infraestructura. UNESCO, National Geographic, NASA, Royal Society, Discovery, Smithsonian, NOAA, Banco Mundial, BAsD, Academia China de Ciencias.",

@@ -3,8 +3,7 @@
 
 const CACHE_NAME = 'ia-cache-v1';
 const CDN_HOSTS = [
-  'd2xsxph8kpxj0f.cloudfront.net',
-  'files.manuscdn.com'
+  'd2xsxph8kpxj0f.cloudfront.net'
 ];
 
 // Pre-cache the main page shell

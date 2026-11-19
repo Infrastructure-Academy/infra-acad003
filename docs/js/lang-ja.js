@@ -652,7 +652,7 @@ window.IA_LANG_JA = {
     "home.ppp.cta.sub": "無料ベータアクセス — テスト、翻訳、検証し、創設者の壁であなたの場所を獲得してください。オデッセイに参加しましょう。",
     "home.ppp.cta.title": "パイオニアになる",
     "home.ppp.partners.h": "パートナー",
-    "home.ppp.partners.p": "大学、テクノロジープラットフォーム、インフラ企業。MIT OCW、カーンアカデミー、Meta/VR、Manus/AI、AECOM、Arup、Bechtel。技術、コンテンツ検証、市場アクセス。",
+    "home.ppp.partners.p": "大学、テクノロジープラットフォーム、インフラ企業。MIT OCW、カーンアカデミー、Meta/VR、AECOM、Arup、Bechtel。技術、コンテンツ検証、市場アクセス。",
     "home.ppp.partners.status": "ステータス：チャレンジ受付中 — プレイヤーが指名",
     "home.ppp.patrons.h": "パトロン",
     "home.ppp.patrons.p": "普遍的なインフラ教育とミッションが一致する機関。UNESCO、ナショナルジオグラフィック、NASA、王立協会、ディスカバリー、スミソニアン、NOAA、世界銀行、ADB、中国科学院。",
