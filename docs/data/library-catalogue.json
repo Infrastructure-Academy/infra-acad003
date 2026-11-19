@@ -5,13 +5,13 @@
   "source_sha256": "1012d879eed4fdb0a7439bfe23572a343ac701af02d897164b0da9c2894f2d31",
   "as_of": "2026-11-19",
   "timezone": "Asia/Hong_Kong",
-  "honesty_banner": "This is the working catalogue of record counts from library v1 (1,700 rows). It is ahead of what is file-served on the Academy website. Do not treat these rows as downloadable from GitHub Pages. Classifications remain provisional until Nigel confirms. Prepared for Daystar Actionable PR at t1162u; not a claim of live merge.",
-  "row_count": 1700,
+  "honesty_banner": "Public catalogue view. Source library v1 held 1,700 rows on 17 November 2026. This public view has 1,698 rows: Held Draft 40.9 (Word, LIB-1657, and PDF, LIB-1658) is omitted. Rows are ahead of what is file-served on the Academy website. Do not treat these rows as downloadable from GitHub Pages. Classifications remain provisional until Nigel confirms.",
+  "row_count": 1698,
   "provisional_class_counts": {
     "KIV": 1499,
     "Keeper": 130,
     "conflict — see source classes": 37,
-    "": 34
+    "": 32
   },
   "rows": [
     {
@@ -14918,24 +14918,8 @@
       "confirmation": "provisional — pending Nigel confirmation",
       "publication_honesty": "Working-catalogue row only. Classifications are provisional until Nigel confirms. This is not a claim that the file is downloadable from GitHub Pages."
     },
-    {
-      "id": "LIB-1657",
-      "title": "Held Draft 40.9 (Word)",
-      "finding_label": "Dearden_Paper_Draft40.9.docx",
-      "kind": "paper draft",
-      "provisional_class": "",
-      "confirmation": "provisional — pending Nigel confirmation",
-      "publication_honesty": "Working-catalogue row only. Classifications are provisional until Nigel confirms. This is not a claim that the file is downloadable from GitHub Pages."
-    },
-    {
-      "id": "LIB-1658",
-      "title": "Held Draft 40.9 (PDF)",
-      "finding_label": "Dearden_Paper_Draft40.9.pdf",
-      "kind": "paper draft",
-      "provisional_class": "",
-      "confirmation": "provisional — pending Nigel confirmation",
-      "publication_honesty": "Working-catalogue row only. Classifications are provisional until Nigel confirms. This is not a claim that the file is downloadable from GitHub Pages."
-    },
+
+
     {
       "id": "LIB-1659",
       "title": "Living-experiment protocol v1",
