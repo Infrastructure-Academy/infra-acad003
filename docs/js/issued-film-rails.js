@@ -3,26 +3,26 @@
    Sixteen slots, fifteen unique encodes. No hold, session, or unissued cut is listed. */
 (function () {
   var CDN = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/';
-  var MANUS = 'https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/';
+  var FILM_MEDIA = '/site-media/vendor/';
 
   var FILMS = {
     'la-menara': {
       title: 'La Menara — An Infrastructure Odyssey',
       listed: '10:00',
       poster: CDN + 'la_menara_doc_poster_7851b3f9.jpg',
-      src: MANUS + 'wHlzVXzMODYYdntg.mp4'
+      src: ''
     },
     'la-menara-trailer': {
       title: 'La Menara — Trailer',
       listed: '2:11',
       poster: CDN + 'la_menara_trailer_poster_2a54c010.jpg',
-      src: MANUS + 'iqkMXujGPgKFLVkB.mp4'
+      src: FILM_MEDIA + 'iqkMXujGPgKFLVkB.mp4'
     },
     calories: {
       title: 'Calories to Consciousness — Main Pitch',
       listed: '4:22',
-      poster: MANUS + 'OcXXMLdnmQbhMWui.jpg',
-      src: MANUS + 'BhohCnRNKxGTfvlS.mp4'
+      poster: FILM_MEDIA + 'OcXXMLdnmQbhMWui.jpg',
+      src: FILM_MEDIA + 'BhohCnRNKxGTfvlS.mp4'
     },
     principia: {
       title: 'Principia Tectonica',
@@ -52,13 +52,13 @@
     snapshot: {
       title: 'Snapshot Trailer',
       listed: '~0:35',
-      poster: MANUS + 'rMRwaBvDONNyHqpS.jpg',
-      src: MANUS + 'lXPMPIyzekwVrToI.MP4'
+      poster: FILM_MEDIA + 'rMRwaBvDONNyHqpS.jpg',
+      src: FILM_MEDIA + 'lXPMPIyzekwVrToI.MP4'
     },
     'river-valley': {
       title: 'River Valley Civilization',
       listed: '~0:06',
-      poster: MANUS + 'zWxgmErsajJzpeNj.jpg',
+      poster: FILM_MEDIA + 'zWxgmErsajJzpeNj.jpg',
       src: CDN + 'river_plain_perfect_e99879d1.mp4'
     },
     linkedin: {
@@ -172,11 +172,14 @@
     if (!film) return '';
     var portrait = film.portrait ? ' is-portrait' : '';
     var same = film.sameEncode ? '<p class="ifr-same">One encode, two titles.</p>' : '';
+    var play = film.src
+      ? '<button type="button" class="ifr-play" data-src="' + esc(film.src) + '" aria-label="Play ' + esc(film.title) + '"><span aria-hidden="true">&#9654;</span></button>'
+      : '';
     return ''
       + '<article class="ifr-card' + portrait + '" data-film="' + esc(id) + '">'
       + '<div class="ifr-stage">'
       + '<img src="' + esc(film.poster) + '" alt="" loading="lazy">'
-      + '<button type="button" class="ifr-play" data-src="' + esc(film.src) + '" aria-label="Play ' + esc(film.title) + '"><span aria-hidden="true">&#9654;</span></button>'
+      + play
       + '</div>'
       + '<p class="ifr-title">' + esc(film.title) + '</p>'
       + '<p class="ifr-meta">Listed ' + esc(film.listed) + '</p>'
@@ -210,6 +213,7 @@
   function playFromButton(root, button) {
     var stage = button.parentNode;
     var src = button.getAttribute('data-src');
+    if (!src) return;
     var label = button.getAttribute('aria-label') || 'Play film';
     var video = document.createElement('video');
     video.controls = true;

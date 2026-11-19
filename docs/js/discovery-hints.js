@@ -5,7 +5,6 @@
  * 4 Patterns: PULSE (hamburger), SWIPE (carousels), LABEL (scroll nav), GLOW (primary CTA)
  * 6 Rules: One-time only, Auto-dismiss, Mobile-only, No recurring CTAs, Subtle, Dismiss on interaction
  * 
- * Ref: uxdemo-6hdarodt.manus.space
  * Observed by: Ir. Nigel T. Dearden CEng
  * Block 415, 26 March 2026
  */

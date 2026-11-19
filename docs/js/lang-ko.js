@@ -702,7 +702,7 @@ window.IA_LANG_KO = {
     "home.ppp.cta.sub": "무료 베타 접근 — 테스트, 번역, 검증하고 창립자 벽에서 당신의 자리를 차지하세요. 오디세이에 참여하세요.",
     "home.ppp.cta.title": "파이오니어가 되세요",
     "home.ppp.partners.h": "파트너",
-    "home.ppp.partners.p": "대학, 기술 플랫폼, 인프라 기업. MIT OCW, Khan Academy, Meta/VR, Manus/AI, AECOM, Arup, Bechtel. 기술, 콘텐츠 검증, 시장 접근.",
+    "home.ppp.partners.p": "대학, 기술 플랫폼, 인프라 기업. MIT OCW, Khan Academy, Meta/VR, AECOM, Arup, Bechtel. 기술, 콘텐츠 검증, 시장 접근.",
     "home.ppp.partners.status": "상태: 도전 개방 — 플레이어가 지명",
     "home.ppp.patrons.h": "후원자",
     "home.ppp.patrons.p": "보편적 인프라 교육과 사명이 일치하는 기관. UNESCO, 내셔널 지오그래픽, NASA, 왕립학회, 디스커버리, 스미소니언, NOAA, 세계은행, ADB, 중국과학원.",

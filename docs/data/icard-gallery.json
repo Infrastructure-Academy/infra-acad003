@@ -1,47 +1,47 @@
 {
-  "title": "iCard Gallery \u2014 Infrastructure Academy",
+  "title": "iCard Gallery — Infrastructure Academy",
   "description": "All iCards generated during the iAAi Beta Test and review process",
   "domain": "www.infrastructure-academy.com",
   "last_updated": "2026-04-05",
   "cards": [
     {
       "id": "iCard_1",
-      "title": "Review Findings \u2014 Unis12 Round 1",
+      "title": "Review Findings — Unis12 Round 1",
       "date": "2026-03-06",
       "type": "iCard",
       "cdn_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCard_1_Review_Findings_89cb7076.png"
     },
     {
       "id": "iCard_2",
-      "title": "Next Steps \u2014 What Happens Now",
+      "title": "Next Steps — What Happens Now",
       "date": "2026-03-06",
       "type": "iCard",
       "cdn_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCard_2_Next_Steps_696bed97.png"
     },
     {
       "id": "iCard_3",
-      "title": "Score Interpretation \u2014 Grading Rosetta Stone",
+      "title": "Score Interpretation — Grading Rosetta Stone",
       "date": "2026-03-06",
       "type": "iCard",
       "cdn_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCard_3_Score_Interpretation_41767507.png"
     },
     {
       "id": "iCard_4",
-      "title": "Round 2 Delta \u2014 Focused Audit Results",
+      "title": "Round 2 Delta — Focused Audit Results",
       "date": "2026-03-06",
       "type": "iCard",
       "cdn_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCard_4_Round2_Delta_2f97d07f.png"
     },
     {
       "id": "iCard_5",
-      "title": "Papers Return Brief \u2014 All Documents",
+      "title": "Papers Return Brief — All Documents",
       "date": "2026-03-06",
       "type": "iCard",
       "cdn_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCard_5_Papers_ReturnBrief_cc42c46b.png"
     },
     {
       "id": "iCard_ICUT",
-      "title": "ICUT Audit Observation \u2014 DAVID Identity Failure (F Grade)",
+      "title": "ICUT Audit Observation — DAVID Identity Failure (F Grade)",
       "date": "2026-03-06",
       "type": "iCard",
       "block_ref": "Block 315 + 353",
@@ -49,92 +49,92 @@
     },
     {
       "id": "iCard_RB_DataVault",
-      "title": "Return Brief \u2014 Data Vault Confirmed Live",
+      "title": "Return Brief — Data Vault Confirmed Live",
       "date": "2026-03-06",
       "type": "iCard",
       "cdn_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCard_RB_DataVault_Live_1730a5f7.png"
     },
     {
       "id": "iCard_RB_MasterIndex",
-      "title": "Return Brief \u2014 Master Index of All Deliverables",
+      "title": "Return Brief — Master Index of All Deliverables",
       "date": "2026-03-06",
       "type": "iCard",
       "cdn_url": "https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/iCard_RB_MasterIndex_f2c5e149.png"
     },
     {
       "id": "TP-056",
-      "title": "La Menara Documentary \u2014 Production Card",
+      "title": "La Menara Documentary — Production Card",
       "date": "2026-04-05",
       "type": "iCard",
       "block_ref": "Day 153",
-      "cdn_url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/dcemdboBIVScTSWK.png"
+      "cdn_url": ""
     },
     {
       "id": "TP-057",
-      "title": "START WITH WHY \u2014 Sinek Framework Applied to La Menara",
+      "title": "START WITH WHY — Sinek Framework Applied to La Menara",
       "date": "2026-04-05",
       "type": "iCard",
       "block_ref": "Day 153",
-      "cdn_url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/vmaSnQKGbUXLwJrJ.png"
+      "cdn_url": ""
     },
     {
       "id": "TP-058",
-      "title": "THE JOBS STANDARD \u2014 Design Excellence Applied to La Menara",
+      "title": "THE JOBS STANDARD — Design Excellence Applied to La Menara",
       "date": "2026-04-05",
       "type": "iCard",
       "block_ref": "Day 153",
-      "cdn_url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/KbuWPJUViNCuVULR.png"
+      "cdn_url": ""
     },
     {
       "id": "TP-059",
-      "title": "THE ENGINEER \u2014 Understanding Ir. Nigel T. Dearden CEng CWEM",
+      "title": "THE ENGINEER — Understanding Ir. Nigel T. Dearden CEng CWEM",
       "date": "2026-04-05",
       "type": "iCard",
       "block_ref": "Day 153",
-      "cdn_url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/uFBaefusUrMLWFeJ.png"
+      "cdn_url": ""
     },
     {
       "id": "TP-060",
-      "title": "THE 7 HABITS \u2014 Covey Framework Applied to La Menara",
+      "title": "THE 7 HABITS — Covey Framework Applied to La Menara",
       "date": "2026-04-05",
       "type": "iCard",
       "block_ref": "Day 153",
-      "cdn_url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/UPXXSCmqNrsRFITH.png"
+      "cdn_url": ""
     },
     {
       "id": "TP-061",
-      "title": "COVEY SELF-AUDIT \u2014 Agent Compliance Score 43%",
+      "title": "COVEY SELF-AUDIT — Agent Compliance Score 43%",
       "date": "2026-04-05",
       "type": "iCard",
       "block_ref": "Day 153",
-      "cdn_url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/JNDOzzaWuigQHtWa.png"
+      "cdn_url": ""
     },
     {
       "id": "TP-062",
-      "title": "DISNEY IMAGINEERING 7+1 \u2014 Phase Framework Applied",
+      "title": "DISNEY IMAGINEERING 7+1 — Phase Framework Applied",
       "date": "2026-04-05",
       "type": "iCard",
       "block_ref": "Day 153",
-      "cdn_url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/tEsNltirtTXtIiLI.png"
+      "cdn_url": ""
     },
     {
       "id": "TP-063",
-      "title": "THE 7+1 PATTERN \u2014 Universal Architecture Proof",
+      "title": "THE 7+1 PATTERN — Universal Architecture Proof",
       "date": "2026-04-05",
       "type": "iCard",
       "block_ref": "Day 153",
-      "cdn_url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/DpNxNENSwJSMRJjr.png"
+      "cdn_url": ""
     }
   ],
   "media": [
     {
       "id": "V3_Documentary",
-      "title": "La Menara Documentary V3 \u2014 Full",
+      "title": "La Menara Documentary V3 — Full",
       "date": "2026-04-05",
       "type": "video",
       "duration": "10m02s",
       "size": "205MB",
-      "cdn_url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/fzRckZOTGODiwywU.mp4"
+      "cdn_url": ""
     },
     {
       "id": "V3_Trailer",
@@ -143,24 +143,24 @@
       "type": "video",
       "duration": "2m11s",
       "size": "37MB",
-      "cdn_url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/iqkMXujGPgKFLVkB.mp4"
+      "cdn_url": "/site-media/vendor/iqkMXujGPgKFLVkB.mp4"
     },
     {
       "id": "Audio_MP3",
-      "title": "La Menara Documentary \u2014 Audio Extract",
+      "title": "La Menara Documentary — Audio Extract",
       "date": "2026-04-05",
       "type": "audio",
       "size": "4.2MB",
-      "cdn_url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/thlnaTpTWcGNBUjI.mp3"
+      "cdn_url": ""
     }
   ],
   "documents": [
     {
       "id": "Excel_Register",
-      "title": "iAAi iCard Register \u2014 Day 153",
+      "title": "iAAi iCard Register — Day 153",
       "date": "2026-04-05",
       "type": "xlsx",
-      "cdn_url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/nMacYdtbkuGzRTWU.xlsx"
+      "cdn_url": ""
     }
   ],
   "documentary_versions": {
@@ -169,13 +169,13 @@
       "duration": "12:06 (725.8s)",
       "resolution": "1280x720 H.264",
       "file_size": "186MB",
-      "cdn_url": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/DeSMTYLtquJEaLla.mp4",
+      "cdn_url": "",
       "changes_from_v5": [
         "Added narration for scholars 4-7 (Aristotle, Sima Qian, Marco Polo, Ir. Nigel T. Dearden)",
         "Overture corrected: R7=Loom (1780 CE), R8=Rail (1830 CE)",
         "Duration increased from 710.7s to 725.8s (+15.1s for scholar narration)"
       ],
-      "overture_proof": "https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/wKOnvdnwjMYMwsoi.png"
+      "overture_proof": ""
     }
   }
 }

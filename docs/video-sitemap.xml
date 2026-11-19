@@ -4,14 +4,6 @@
   <url>
     <loc>https://infrastructure-academy.com/pages/movies.html</loc>
     <video:video>
-      <video:thumbnail_loc>https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/la_menara_doc_poster_7851b3f9.jpg</video:thumbnail_loc>
-      <video:title>La Menara — An Infrastructure Odyssey</video:title>
-      <video:description>From Calories to Consciousness — 12,000 years, 12 Relays, 120,000 hours, 3 Acts, 7 Scholars. The complete documentary narrated by DAVID AI with original artwork and the Enigma ambient score.</video:description>
-      <video:content_loc>https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/wHlzVXzMODYYdntg.mp4</video:content_loc>
-      <video:duration>711</video:duration>
-      <video:publication_date>2026-04-05T12:39:00+00:00</video:publication_date>
-    </video:video>
-    <video:video>
       <video:thumbnail_loc>https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/principia_poster_a3090690.jpg</video:thumbnail_loc>
       <video:title>Principia Tectonica</video:title>
       <video:description>The complete Infrastructure Odyssey in 10 minutes — 12 Civilizational Relays, the 60-Node Dearden Field, BioAura suit, and the Flight Deck. The definitive visual companion to the thesis.</video:description>
@@ -47,7 +39,7 @@
       <video:thumbnail_loc>https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/la_menara_trailer_poster_2a54c010.jpg</video:thumbnail_loc>
       <video:title>La Menara — Trailer</video:title>
       <video:description>Act I cinematic preview with narration and original artwork. The first glimpse of the Infrastructure Odyssey.</video:description>
-      <video:content_loc>https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/iqkMXujGPgKFLVkB.mp4</video:content_loc>
+      <video:content_loc>https://infrastructure-academy.com/site-media/vendor/iqkMXujGPgKFLVkB.mp4</video:content_loc>
       <video:duration>97</video:duration>
       <video:publication_date>2026-04-05T11:01:40+00:00</video:publication_date>
     </video:video>
@@ -76,23 +68,23 @@
       <video:publication_date>2026-04-07T23:43:42+00:00</video:publication_date>
     </video:video>
     <video:video>
-      <video:thumbnail_loc>https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/OcXXMLdnmQbhMWui.jpg</video:thumbnail_loc>
+      <video:thumbnail_loc>https://infrastructure-academy.com/site-media/vendor/OcXXMLdnmQbhMWui.jpg</video:thumbnail_loc>
       <video:title>Calories to Consciousness — Main Pitch</video:title>
       <video:description>The original pitch video — the full narrative arc from fire to consciousness, introducing the 12 Civilisational Relays and the Infrastructure Odyssey thesis.</video:description>
-      <video:content_loc>https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/BhohCnRNKxGTfvlS.mp4</video:content_loc>
+      <video:content_loc>https://infrastructure-academy.com/site-media/vendor/BhohCnRNKxGTfvlS.mp4</video:content_loc>
       <video:duration>262</video:duration>
       <video:publication_date>2026-02-21T06:20:42+00:00</video:publication_date>
     </video:video>
     <video:video>
-      <video:thumbnail_loc>https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/rMRwaBvDONNyHqpS.jpg</video:thumbnail_loc>
+      <video:thumbnail_loc>https://infrastructure-academy.com/site-media/vendor/rMRwaBvDONNyHqpS.jpg</video:thumbnail_loc>
       <video:title>Snapshot Trailer</video:title>
       <video:description>A rapid-fire snapshot of the Infrastructure Odyssey — key visuals and concepts compressed into 35 seconds of cinematic intensity.</video:description>
-      <video:content_loc>https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/lXPMPIyzekwVrToI.MP4</video:content_loc>
+      <video:content_loc>https://infrastructure-academy.com/site-media/vendor/lXPMPIyzekwVrToI.MP4</video:content_loc>
       <video:duration>35</video:duration>
       <video:publication_date>2026-02-21T06:20:16+00:00</video:publication_date>
     </video:video>
     <video:video>
-      <video:thumbnail_loc>https://files.manuscdn.com/user_upload_by_module/session_file/310419663030220481/zWxgmErsajJzpeNj.jpg</video:thumbnail_loc>
+      <video:thumbnail_loc>https://infrastructure-academy.com/site-media/vendor/zWxgmErsajJzpeNj.jpg</video:thumbnail_loc>
       <video:title>River Valley Civilization</video:title>
       <video:description>A six-second cinematic vignette — the river valley where civilisation began. Water, agriculture, and the first permanent settlements that launched the infrastructure story.</video:description>
       <video:content_loc>https://d2xsxph8kpxj0f.cloudfront.net/310419663030220481/kUQZAex2uPvgKcHnt7bmh3/river_plain_perfect_e99879d1.mp4</video:content_loc>
