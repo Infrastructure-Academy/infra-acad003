@@ -1,120 +1,91 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Chart Room — News | Infrastructure Academy</title>
   <link rel="canonical" href="https://infrastructure-academy.com/news.html">
-  <meta name="description" content="Dated briefings and service status for the Infrastructure Academy Chart Room — from the as-built record.">
+  <meta name="description" content="Public news and dated briefings a visitor can use — Infrastructure Academy Chart Room.">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="Chart Room — News | Infrastructure Academy">
+  <meta property="og:description" content="Public news and dated briefings a visitor can use. Which doors are open, and where to find the Library.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://infrastructure-academy.com/news.html">
   <style>
-:root {
-  --bg-primary: #0a1628;
-  --bg-secondary: #0f1f3a;
-  --bg-card: #111d35;
-  --gold: #ffd700;
-  --gold-dim: rgba(255,215,0,0.3);
-  --text-primary: #ffffff;
-  --text-secondary: #aaaaaa;
-  --text-muted: #666666;
-  --border: #1a3055;
-}
-* { margin: 0; padding: 0; box-sizing: border-box; }
-body { background: var(--bg-primary); color: var(--text-primary); font-family: Georgia, 'Times New Roman', serif; min-height: 100vh; line-height: 1.5; }
-a { color: var(--gold); }
-.page-header { text-align: center; padding: 36px 20px 20px; border-bottom: 2px solid var(--gold); }
-.page-header h1 { color: var(--gold); font-size: 1.8rem; letter-spacing: 2px; margin-bottom: 6px; }
-.page-header p { color: var(--text-secondary); font-size: 0.95rem; }
-.wrap { max-width: 960px; margin: 0 auto; padding: 20px; }
-.banner { background: rgba(255,215,0,0.08); border: 1px solid rgba(255,215,0,0.35); padding: 14px 16px; margin: 16px 0; font-size: 0.9rem; color: var(--text-secondary); }
-.banner strong { color: var(--gold); }
-.card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 6px; padding: 16px 18px; margin: 16px 0; }
-.card h2 { color: var(--gold); font-size: 1.15rem; margin-bottom: 8px; }
-.card .meta { color: var(--text-muted); font-size: 0.75rem; margin-bottom: 10px; letter-spacing: 0.5px; }
-.footer { text-align: center; padding: 28px 16px 40px; color: var(--text-muted); font-size: 0.8rem; border-top: 1px solid var(--border); margin-top: 32px; }
-.controls { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0; align-items: center; }
-.search-box { flex: 1; min-width: 200px; padding: 10px 14px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 6px; color: var(--text-primary); font-family: inherit; }
-.filter-btn { padding: 6px 12px; background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 4px; color: var(--text-secondary); cursor: pointer; font-family: inherit; font-size: 0.75rem; }
-.filter-btn.active { border-color: var(--gold); color: var(--gold); background: rgba(255,215,0,0.12); }
-table { width: 100%; border-collapse: collapse; font-size: 0.85rem; }
-th, td { border-bottom: 1px solid var(--border); padding: 8px 6px; text-align: left; vertical-align: top; }
-th { color: var(--gold); font-weight: normal; letter-spacing: 0.5px; }
-.reg-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
-.reg-card { background: var(--bg-card); border: 1px solid var(--border); border-radius: 6px; overflow: hidden; }
-.reg-card img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; background: var(--bg-secondary); }
-.reg-card .info { padding: 10px 12px 12px; }
-.reg-card .info h3 { color: var(--gold); font-size: 0.85rem; margin-bottom: 4px; }
-.reg-card .info .meta { font-size: 0.7rem; color: var(--text-muted); }
-.badge { display: inline-block; background: rgba(255,215,0,0.1); color: var(--gold); padding: 2px 8px; border-radius: 3px; font-size: 0.65rem; }
-</style>
+    :root { --bg:#0B1220; --panel:#111827; --text:#E5E7EB; --muted:#9CA3AF; --accent:#06B6D4; --border:#1F2937; }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; background:var(--bg); color:var(--text); line-height:1.55; font-size:1.05rem; }
+    a { color:var(--accent); }
+    header { border-bottom:1px solid var(--border); padding:16px 20px; }
+    .bar { display:flex; flex-wrap:wrap; gap:14px; align-items:center; font-size:1rem; }
+    .bar a { color:#fff; text-decoration:none; padding-bottom:3px; }
+    .bar a.active { border-bottom:3px solid var(--accent); }
+    main { max-width:42rem; margin:0 auto; padding:28px 20px 48px; }
+    h1 { font-size:1.85rem; font-weight:normal; margin:0 0 8px; line-height:1.25; }
+    .sub { color:var(--muted); margin:0 0 24px; font-size:1.05rem; }
+    .clock { background:var(--panel); border:1px solid var(--border); border-radius:10px; padding:12px 14px; margin-bottom:22px; color:var(--muted); font-size:1rem; line-height:1.45; }
+    article { background:var(--panel); border:1px solid var(--border); border-radius:12px; padding:18px 18px 16px; margin-bottom:16px; }
+    .meta { color:var(--muted); font-size:0.85rem; letter-spacing:0.04em; margin-bottom:8px; }
+    h2 { font-size:1.3rem; font-weight:normal; margin:0 0 10px; line-height:1.3; }
+    ul { margin:8px 0 0 1.2rem; padding:0; }
+    li { margin:0.35rem 0; }
+    footer { max-width:42rem; margin:0 auto; padding:0 20px 40px; color:var(--muted); font-size:0.95rem; }
+  </style>
 </head>
 <body>
+  <header>
+    <div class="bar">
+      <strong style="margin-right:8px;">iAAi</strong>
+      <a href="https://infrastructure-academy.com/">Academy</a>
+      <a href="https://realityeng-epdhlkrn.manus.space/">Quest</a>
+      <a href="/shop/">Xchange</a>
+      <a href="https://nigelmemorial-ucmtq9dn.manus.space/">Memorial</a>
+      <a class="active" href="news.html">News</a>
+    </div>
+  </header>
+  <main>
+    <h1>Chart Room — News</h1>
+    <p class="sub">Public news and dated briefings a visitor can use. Not an internal project board.</p>
 
-<div id="iaai-network-bar" style="display:flex;align-items:center;justify-content:space-around;width:100%;height:36px;background:#0a1628;position:sticky;top:0;z-index:200001;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">
-  <a href="https://www.infrastructure-academy.com" style="text-decoration:none;color:#fff;font-weight:700;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid #DC2626;">ACADEMY</a>
-  <a href="https://realityeng-epdhlkrn.manus.space/" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;">QUEST</a>
-  <a href="/shop/" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;">XCHANGE</a>
-  <a href="https://nigelmemorial-ucmtq9dn.manus.space/" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;">MEMORIAL</a>
-  <a href="/news.html" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid #06B6D4;">NEWS</a>
-</div>
+    <div class="clock"><strong>Confirmed Memorial clock.</strong> Issued set, 17 November 2026, 02:33:08 Hong Kong time. Not recalculated. HKT 02:33:08 · BLOCK 1102 D377 · LAUNCH COMPLETE · ELAPSED +249d 02h 33m 08s · D100 100/100 · SIGTEL ACTIVE · VENTRAL ORIGIN 260.01:02:08 DSC.</div>
 
-<header class="page-header">
-  <h1>Chart Room — News</h1>
-  <p>Dated briefings and service status, from the as-built record</p>
-  <p style="margin-top:8px;font-size:0.85rem;"><a href="https://www.infrastructure-academy.com">Home</a> · Library (named function, not a Network Bar door): <a href="library-landing.html">The Library</a></p>
-</header>
+    <article>
+      <div class="meta">BRIEFING · FOR VISITORS · INFRASTRUCTURE ACADEMY</div>
+      <h2>What this door is for</h2>
+      <p>This is the Academy’s public News door. It carries dated briefings a visitor can read and act on: what the Academy is, which doors are open, and where to find the Library, Memorial, Quest, and Xchange.</p>
+    </article>
 
-<div id="iaai-memorial-clock" class="iaai-memorial-clock" role="region" aria-label="Confirmed Memorial clock">
-  <p class="iaai-memorial-clock__kicker">Confirmed Memorial clock</p>
-  <p class="iaai-memorial-clock__reading">
-    <span>HKT 02:33:08</span>
-    <span>BLOCK 1102 D377</span>
-    <span>LAUNCH COMPLETE</span>
-    <span>ELAPSED +249d 02h 33m 08s</span>
-    <span>D100 100/100</span>
-    <span>SIGTEL ACTIVE</span>
-    <span>VENTRAL ORIGIN 260.01:02:08 DSC</span>
-  </p>
-  <p class="iaai-memorial-clock__note">Issued set, 17 November 2026, 02:33:08 Hong Kong time. Not recalculated.</p>
-  <p class="iaai-memorial-clock__home"><a href="https://www.infrastructure-academy.com">Academy home</a></p>
-</div>
+    <article>
+      <div class="meta">BRIEFING · HOW TO USE THE SITE</div>
+      <h2>Five Network Bar doors</h2>
+      <ul>
+        <li><strong><a href="https://infrastructure-academy.com/">Academy</a></strong> — home of the Infrastructure Academy of Artificial Intelligence (iAAi).</li>
+        <li><strong><a href="https://realityeng-epdhlkrn.manus.space/">Quest</a></strong> — the Play door (honestly labelled; later prototype stays split).</li>
+        <li><strong><a href="/shop/">Xchange</a></strong> — shop and exchange kits as pre-order / wayfinding, not a silent checkout claim.</li>
+        <li><strong><a href="https://nigelmemorial-ucmtq9dn.manus.space/">Memorial</a></strong> — remembrance and the issued Memorial record.</li>
+        <li><strong><a href="news.html">News</a></strong> — this page.</li>
+      </ul>
+      <p style="margin-top:10px;">The Library is a named Academy-host function. It is linked below. It is <strong>not</strong> a sixth Network Bar door.</p>
+    </article>
 
-<main class="wrap">
-  <div class="banner">
-    <strong>Honesty.</strong> This newsroom is prepared for Daystar’s Actionable pull request (t1162u, 19 November 2026, Hong Kong time). It is not a patch to the residual Manus News host. No follower-count dashboard belongs on this front. Classifications elsewhere remain provisional until Nigel confirms.
-  </div>
+    <article>
+      <div class="meta">BRIEFING · THE LIBRARY</div>
+      <h2>Working catalogue and iCard register</h2>
+      <p>Open <a href="library-landing.html">The Library</a> for the working catalogue and the iCard register that loads from static data on this host. Classifications elsewhere remain provisional until Nigel confirms them.</p>
+    </article>
 
-  <article class="card">
-    <div class="meta">BRIEFING · 19 NOVEMBER 2026 · HONG KONG TIME · ACTIONABLE OPENED</div>
-    <h2>Actionable opened — News will show news on the Academy host</h2>
-    <p>At t1162u on 19 November 2026 (Hong Kong time) Nigel opened Actionable. Chart Room / News / Library website actions that were held are now Actionable for amendment and push via Daystar’s pull request against <code>infra-acad003</code> main, so reviewers can see live state changes on www.infrastructure-academy.com.</p>
-    <p style="margin-top:10px;">News on this Academy host is to show <strong>news</strong>. If a race board is kept, it lives under its <strong>own name</strong> (see <a href="x-growth-race.html">X Growth Race</a> — not NEWS). The residual Manus News host is <strong>not</strong> overwritten by this pack. Pull request #4 stays unmerged until reviewed. Merch stays pre-order.</p>
-    <p style="margin-top:10px;color:var(--text-secondary);font-size:0.9rem;">This briefing does not claim Daystar has already merged these files, and it does not invent Memorial clock figures or follower counts.</p>
-  </article>
+    <article>
+      <div class="meta">BRIEFING · HONEST SITE STATE</div>
+      <h2>Proof-of-concept host</h2>
+      <p>www.infrastructure-academy.com is the Academy’s public GitHub Pages host. Residual Manus session hosts are not silently treated as the durable estate. Later corrections unwind from GitHub history.</p>
+      <p style="margin-top:10px;">A separate race board, if kept, lives under its <a href="x-growth-race.html">own name</a> — not on News.</p>
+    </article>
 
-  <article class="card">
-    <div class="meta">BRIEFING · 17 NOVEMBER 2026 · HONG KONG TIME · HELD LOOK (AS-BUILT)</div>
-    <h2>As-built state of the Chart Room and Library doors</h2>
-    <p>Drawn from the held look opened between 02:21 and 02:33 HKT and presented at 02:41 HKT. Nothing in that look was pushed live by Jenny.</p>
-    <ul style="margin:12px 0 0 1.2rem;color:var(--text-secondary);font-size:0.95rem;">
-      <li>The live NEWS Network Bar target still opened a residual Manus host headed THE CHART ROOM, but what it showed was an X-follower race board, not a newsroom. A day-count inconsistency on that board was held, not recut.</li>
-      <li>On that residual host, Academy pointed at a residual Manus academy URL; Xchange was a dead hash link.</li>
-      <li>The librarian door on the Academy host was labelled Documents (16 March 2026 shop). Teaching-material links under <code>/manus-storage/</code> returned 404 on GitHub Pages.</li>
-      <li>The public iCard register failed to load (<code>/api/trpc/icards.getAll</code> 404). The public gallery showed the published subset (91 cards in the embedded gallery). The observer register remained the March 2026 three-name plate.</li>
-      <li>Homepage What’s New / dated changelog last stopped at 22 April 2026. <code>/race</code> on the Academy host was 404.</li>
-    </ul>
-  </article>
-
-  <article class="card">
-    <div class="meta">CONTEXT · LIVE ACADEMY PUSHES (DOCUMENTARY — NOT JENNY MERGES)</div>
-    <h2>Already live on infra-acad003 main (as conveyed)</h2>
-    <p style="color:var(--text-secondary);font-size:0.95rem;">PR #1 and #2 (11 November); #3 (17 November 10:23 HKT); #6 (17 November 11:27 HKT); #5 (17 November 12:28 HKT); #7 (17 November 13:37 HKT); #8 (18 November 10:21 HKT). Jenny did not author those merges. They are cited only as as-built context.</p>
-  </article>
-
-  <p style="color:var(--text-muted);font-size:0.85rem;margin-top:20px;">No further news items are invented here. Later briefings will be dated, sourced from the as-built record, and published only when opened.</p>
-</main>
-<footer class="footer">
-  <p>Infrastructure Academy — Chart Room newsroom (Actionable pack t1162u). Proof-of-concept site. Residual Manus hosts are not silently treated as the durable estate.</p>
-  <p style="margin-top:8px;"><a href="https://www.infrastructure-academy.com">www.infrastructure-academy.com</a> · <a href="library-landing.html">The Library</a> · <a href="x-growth-race.html">X Growth Race (not NEWS)</a></p>
-</footer>
+    <p style="color:var(--muted);font-size:1rem;margin-top:18px;">No further public items are invented here. Later visitor briefings will be dated, sourced from the as-built public record, and published only when opened.</p>
+  </main>
+  <footer>
+    <p>Infrastructure Academy — Chart Room News. Visitor-facing cut, 19 November 2026, Hong Kong time.</p>
+    <p style="margin-top:8px;"><a href="https://infrastructure-academy.com/">www.infrastructure-academy.com</a> · <a href="library-landing.html">The Library</a> · <a href="/pages/movies.html">Movies</a> · <a href="x-growth-race.html">X Growth Race (not News)</a></p>
+  </footer>
 </body>
 </html>

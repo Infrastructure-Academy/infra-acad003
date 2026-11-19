@@ -424,9 +424,8 @@
         }
     </style>
 
-        <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+    <meta property="og:image:type" content="image/webp">
+    <meta property="og:image:alt" content="Hero panorama already used on the Academy home page.">
     <meta property="og:site_name" content="Infrastructure Academy">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Infrastructure Academy of Artificial Intelligence (iAAi) — Civilisational Systems Engineering">
@@ -548,6 +547,7 @@
             <a href="/volumes/volume2/index.html" data-i18n="nav.ep2">EP.2: GUIDE</a>
             <a href="/play" data-i18n="nav.ep3">EP.3: GAME</a>
             <a href="/pages/la-menara.html" data-i18n="nav.lamenara" style="color:#ffd700;">LA MENARA</a>
+            <a href="/pages/movies.html" data-i18n="nav.movies">MOVIES</a>
         </nav>
                 <nav id="nav-row2" role="navigation" aria-label="Secondary navigation" class="nav-row2">
             <a href="/pages/start-here.html" data-i18n="nav.starthere">START HERE</a>
@@ -569,7 +569,7 @@
             <a href="/press.html" data-i18n="nav.press">PRESS KIT</a>
             <a href="/pages/movies.html" data-i18n="nav.movies" style="color:#ffd700;">MOVIES</a>
             <a href="/visual-odyssey.html" style="color:#ffd700;">VISUAL ODYSSEY</a>
-            <a href="/videos" data-i18n="nav.videos" style="color:#ffd700;">VIDEO PLAYROOM</a>
+            <a href="/pages/movies.html" data-i18n="nav.videos" style="color:#ffd700;">FILM CATALOGUE</a>
             <a href="/icards" data-i18n="nav.icards" style="color:#ffd700;">iCARD REGISTER</a>
             <a href="https://realityeng-epdhlkrn.manus.space/play/igo" data-i18n="nav.igo" style="color:#ffd700; font-weight:bold;">iGO</a>
             <a href="/pages/observer-register.html" data-i18n="nav.observers" style="color:#ffd700;">OBSERVER REGISTER</a>
@@ -612,6 +612,21 @@
                 for scholars, engineers, and the next generation of civilisational builders.
             </p>
         </div>
+
+        <style>
+          #first-visit { max-width: 40rem; margin: 1.4rem auto 0.4rem; padding: 1.25rem 1.35rem 1.35rem; border: 2px solid #ffd700; border-radius: 10px; background: #0f1f3a; text-align: left; }
+          #first-visit h2 { font-family: Georgia, "Times New Roman", serif; font-size: 1.85rem; font-weight: normal; line-height: 1.25; color: #ffd700; margin: 0 0 0.55rem; letter-spacing: 0; }
+          #first-visit p { font-family: Georgia, "Times New Roman", serif; font-size: 1.15rem; line-height: 1.5; color: #f3f0e6; margin: 0 0 0.85rem; }
+          #first-visit a.door { display: inline-block; font-family: Georgia, "Times New Roman", serif; font-size: 1.15rem; line-height: 1.3; text-decoration: none; background: #ffd700; color: #0a1628; padding: 0.75rem 1.1rem; border-radius: 6px; font-weight: bold; }
+          #first-visit a.second { color: #ffd700; font-size: 1.15rem; }
+        </style>
+        <section id="first-visit" aria-label="First visit">
+          <h2>Enter here</h2>
+          <p>If this is your first visit, use one door: the Dearden Praxis Method, on this site.</p>
+          <p><a class="door" href="https://infrastructure-academy.com/dpm/">Enter the DPM door</a></p>
+          <p>When you want to stay, open Visual Odyssey. It is a reading of the issued films, and it leads to the catalogue you can watch.</p>
+          <p style="margin-bottom:0;"><a class="second" href="/visual-odyssey.html">Visual Odyssey</a></p>
+        </section>
 
         <!-- ISI CALCULATOR — Prototype + MVP, DAVID Reality Engine, and the DPM beta-test portal. The first three doors are unchanged. -->
         <div style="text-align:center; margin:1.5rem auto 1.5rem; padding:0 1rem; display:flex; justify-content:center; gap:1rem; flex-wrap:wrap; max-width:1480px;">
@@ -2037,6 +2052,9 @@
                     <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 002-2V4a2 2 0 00-2-2H8a2 2 0 00-2 2v16a2 2 0 01-2 2zm0 0a2 2 0 01-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8z"/></svg>
                     PRESS KIT
                 </a>
+                <a href="/pages/movies.html" style="display:inline-flex; align-items:center; gap:0.35rem; color:#ffd700; font-size:1rem; text-decoration:none; letter-spacing:0.5px;" title="Movies and films">
+                    MOVIES
+                </a>
             </div>
             <div style="margin-top:0.75rem; font-size:0.7rem; color:rgba(255,255,255,0.3); letter-spacing:0.05em;">
                 BETA &bull; Proof of Concept &bull; All content provided as-is for evaluation and educational purposes &bull; No warranties expressed or implied &bull; <a href="/press.html#disclaimer" style="color:rgba(255,215,0,0.4); text-decoration:underline;">Full Disclaimer</a>
@@ -2383,7 +2401,7 @@
     });
     </script>
 <script src="/js/site-search.js?v=20260603a"></script>
-    <script src="/js/nav-optimise.js?v=20260603a"></script>
+    <script src="/js/nav-optimise.js?v=20261119b"></script>
 
     <!-- WHAT'S NEW TOAST NOTIFICATION -->
     <div id="whats-new-toast" style="display:none; position:fixed; bottom:24px; left:24px; z-index:9999; max-width:360px; background:linear-gradient(135deg,#0f1f35,#0a1628); border:1px solid rgba(255,215,0,0.4); border-radius:12px; box-shadow:0 8px 32px rgba(0,0,0,0.6); overflow:hidden; animation:slideInToast 0.4s ease-out;">
@@ -2444,15 +2462,7 @@
         });
         document.getElementById('whats-new-items').innerHTML = html;
 
-        setTimeout(function() {
-            document.getElementById('whats-new-toast').style.display = 'block';
-        }, 2000);
-
-        // Auto-dismiss faster on mobile (8s), desktop stays 20s
-        var dismissDelay = window.innerWidth <= 600 ? 8000 : 20000;
-        setTimeout(function() {
-            dismissWhatsNew();
-        }, dismissDelay);
+        // The first-visit door stays clear. This record is not opened over it.
     })();
 
     function dismissWhatsNew() {

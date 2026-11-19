@@ -183,6 +183,10 @@
     {
       "time": "2026-11-19T12:10+08:00",
       "note": "Academy doors PR prepared: Chart Room news.html, Library landing and static catalogue, static iCard register, confirmed Memorial clock BLOCK 1102 D377 not recalculated, Quest Play three-card cut kept, shop remains pre-order. Grateful Partners wall is not served under docs/. Residual Manus hosts not overwritten. PR #4 not merged."
+    },
+    {
+      "time": "2026-11-19T13:40+08:00",
+      "note": "Public doors PR prepared, not merged. Home first job is the DPM door, with Visual Odyssey as the second door. Movies is in the primary nav and footer. /videos and /videos.html redirect to /pages/movies.html. Issued films that answered on their existing file URLs have visible players, VideoObject, and a video sitemap. Held Draft 40.9 (LIB-1657 and LIB-1658) is off the public catalogue. Shop, exchange, and xchange register interest by email to the published Academy address. Interest is not an order, not a payment, and not income. No Stripe secret. Paid checkout is not open. PR #4 stays unmerged. PR #9 stays open."
     }
   ],
   "things_i_keep_rediscovering": {

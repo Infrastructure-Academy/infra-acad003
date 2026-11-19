@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-GB">
 <head>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-2V0JTTFM97"></script>
@@ -148,6 +148,33 @@
       font-size: 0.92rem;
     }
     .blocked ul { margin: 0.4rem 0 0; padding-left: 1.2rem; }
+
+    button.interest-pick, #interest-form button[type="submit"] {
+      font-family: Georgia, 'Times New Roman', serif;
+      background: transparent;
+      color: #ffd700;
+      border: 1px solid rgba(255,215,0,0.75);
+      border-radius: 6px;
+      padding: 0.55rem 0.75rem;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .interest-note { color: rgba(255,255,255,0.78); font-size: 0.92rem; margin: 0.55rem 0 0; }
+    #register-interest { margin-top: 2rem; border-top: 1px solid rgba(212,168,67,0.35); padding-top: 1.2rem; }
+    #interest-form label { display: block; margin: 0.85rem 0; font-size: 1rem; }
+    #interest-form input, #interest-form select, #interest-form textarea {
+      display: block;
+      width: 100%;
+      max-width: 36rem;
+      margin-top: 0.35rem;
+      padding: 0.55rem 0.65rem;
+      background: #0a1628;
+      color: #fff;
+      border: 1px solid rgba(212,168,67,0.55);
+      border-radius: 6px;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 1rem;
+    }
   </style>
   <link rel="stylesheet" href="/css/sitewide-image-fit.css">
   <script src="/js/sitewide-uix.js?v=20261119a" defer></script>
@@ -174,7 +201,8 @@
         <p class="tagline">First foothold on the iAAi journey. Subject to demand.</p>
         <p>Starter D4, foundational iCards, themed stickers, House D6, and the quick-start spinner.</p>
         <p class="price">USD 39 <small>Shelf price on the till. Inactive. Not shippable.</small></p>
-        <button type="button" disabled aria-label="Explorer Kit, pre-order, not in stock">Pre-order — not in stock</button>
+        <button type="button" class="interest-pick" data-item="Explorer Kit">Register interest</button>
+        <p class="interest-note">This records genuine interest only. It is not an order, not a payment, and not income. Kits remain pre-order, subject to demand. Fulfilment when the supply chain is reengaged. Not in stock.</p>
       </article>
       <article>
         <div class="meta">Level 2 · D8 · Ages 10–14 · Pre-order</div>
@@ -182,7 +210,8 @@
         <p class="tagline">Polyhedral dice, regional maps, first campaign sheets. Subject to demand.</p>
         <p>Carries the Explorer kit, and adds a polyhedral dice set, the regional map pack, and the first campaign sheets.</p>
         <p class="price">USD 75 <small>Shelf price on the till. Inactive. Not shippable.</small></p>
-        <button type="button" disabled aria-label="Apprentice Kit, pre-order, not in stock">Pre-order — not in stock</button>
+        <button type="button" class="interest-pick" data-item="Apprentice Kit">Register interest</button>
+        <p class="interest-note">This records genuine interest only. It is not an order, not a payment, and not income. Kits remain pre-order, subject to demand. Fulfilment when the supply chain is reengaged. Not in stock.</p>
       </article>
       <article>
         <div class="meta">Level 3 · D12 · Ages 14–18 · Pre-order</div>
@@ -190,7 +219,8 @@
         <p class="tagline">Journals, campaign book, and the road ahead. Subject to demand.</p>
         <p>Carries the Apprentice kit, and adds a field journal and the campaign book.</p>
         <p class="price">USD 149 <small>Shelf price on the till. Inactive. Not shippable.</small></p>
-        <button type="button" disabled aria-label="Navigator Kit, pre-order, not in stock">Pre-order — not in stock</button>
+        <button type="button" class="interest-pick" data-item="Navigator Kit">Register interest</button>
+        <p class="interest-note">This records genuine interest only. It is not an order, not a payment, and not income. Kits remain pre-order, subject to demand. Fulfilment when the supply chain is reengaged. Not in stock.</p>
       </article>
       <article>
         <div class="meta">Level 4 · D16 · Ages 18–22 · Pre-order</div>
@@ -198,7 +228,8 @@
         <p class="tagline">Thesis workbook and the advanced iCard set. Subject to demand.</p>
         <p>Carries the Navigator kit, and adds a thesis workbook and the advanced iCard expansion.</p>
         <p class="price">USD 215 <small>Shelf price on the till. Inactive. Not shippable.</small></p>
-        <button type="button" disabled aria-label="Scholar Kit, pre-order, not in stock">Pre-order — not in stock</button>
+        <button type="button" class="interest-pick" data-item="Scholar Kit">Register interest</button>
+        <p class="interest-note">This records genuine interest only. It is not an order, not a payment, and not income. Kits remain pre-order, subject to demand. Fulfilment when the supply chain is reengaged. Not in stock.</p>
       </article>
       <article>
         <div class="meta">Level 5 · D20 · Ages 22 and up · Pre-order</div>
@@ -206,72 +237,153 @@
         <p class="tagline">The full Dearden Field Set — nothing held back. Subject to demand.</p>
         <p>Carries the Scholar kit, and adds the Dearden Field Set in a case: master dice, an SAP-001 binder, and the five site iCards.</p>
         <p class="price">USD 499 <small>Shelf price on the till. Inactive. Not shippable.</small></p>
-        <button type="button" disabled aria-label="Master Kit, pre-order, not in stock">Pre-order — not in stock</button>
+        <button type="button" class="interest-pick" data-item="Master Kit">Register interest</button>
+        <p class="interest-note">This records genuine interest only. It is not an order, not a payment, and not income. Kits remain pre-order, subject to demand. Fulfilment when the supply chain is reengaged. Not in stock.</p>
       </article>
     </div>
 
     <h2>Workshop singles</h2>
     <p class="section-note">Pre-order, subject to demand. Fulfilment when the supply chain is reengaged. Not in stock. No price is shown: these singles are not on the till.</p>
+    <p class="interest-note">This records genuine interest only. It is not an order, not a payment, and not income. Kits remain pre-order, subject to demand. Fulfilment when the supply chain is reengaged. Not in stock.</p>
     <div class="grid">
       <article>
         <div class="meta">Digital</div>
         <h3>Calories to Consciousness — Intro (PDF)</h3>
         <p>Digital introduction, listed as a PDF.</p>
-        <button type="button" disabled aria-label="Calories to Consciousness intro PDF, pre-order, not in stock">Pre-order — not in stock</button>
+        <button type="button" class="interest-pick" data-item="Calories to Consciousness — Intro (PDF)">Register interest</button>
       </article>
       <article>
         <div class="meta">Physical</div>
         <h3>Master D20 (single die)</h3>
         <p>A single Master-grade D20 in navy and gold.</p>
-        <button type="button" disabled aria-label="Master D20 single die, pre-order, not in stock">Pre-order — not in stock</button>
+        <button type="button" class="interest-pick" data-item="Master D20 (single die)">Register interest</button>
       </article>
       <article>
         <div class="meta">Physical</div>
         <h3>World Map Poster (A2)</h3>
         <p>Large-format printed world map of the iAAi universe.</p>
-        <button type="button" disabled aria-label="World Map Poster, pre-order, not in stock">Pre-order — not in stock</button>
+        <button type="button" class="interest-pick" data-item="World Map Poster (A2)">Register interest</button>
       </article>
       <article>
         <div class="meta">Physical</div>
         <h3>Complete Sticker Set (15 designs)</h3>
         <p>All fifteen iAAi stickers in one pack.</p>
-        <button type="button" disabled aria-label="Complete sticker set, pre-order, not in stock">Pre-order — not in stock</button>
+        <button type="button" class="interest-pick" data-item="Complete Sticker Set (15 designs)">Register interest</button>
       </article>
       <article>
         <div class="meta">Physical · Play</div>
         <h3>BitPoints Relay Starter (13 cards)</h3>
         <p>13-card BitPoints relay starter.</p>
-        <button type="button" disabled aria-label="BitPoints Relay Starter, pre-order, not in stock">Pre-order — not in stock</button>
+        <button type="button" class="interest-pick" data-item="BitPoints Relay Starter (13 cards)">Register interest</button>
       </article>
       <article>
         <div class="meta">Physical · Field</div>
         <h3>BitPoints Series 1 Complete (60 cards)</h3>
         <p>Full 60-card BitPoints Series 1 deck. Listed as a proof-of-concept beta.</p>
-        <button type="button" disabled aria-label="BitPoints Series 1 complete deck, pre-order, not in stock">Pre-order — not in stock</button>
+        <button type="button" class="interest-pick" data-item="BitPoints Series 1 Complete (60 cards)">Register interest</button>
       </article>
       <article>
         <div class="meta">Physical · Play</div>
         <h3>Equipment Suite (20 cards)</h3>
         <p>20-card Equipment Suite, Chip Evolution Chain. Listed as a proof-of-concept beta.</p>
-        <button type="button" disabled aria-label="Equipment Suite Play, pre-order, not in stock">Pre-order — not in stock</button>
+        <button type="button" class="interest-pick" data-item="Equipment Suite (20 cards)">Register interest</button>
       </article>
       <article>
         <div class="meta">Physical · Field</div>
         <h3>Equipment Suite (20 cards), Field</h3>
         <p>The Field listing: premium card stock, with a navy and compass-rose cover.</p>
-        <button type="button" disabled aria-label="Equipment Suite Field, pre-order, not in stock">Pre-order — not in stock</button>
+        <button type="button" class="interest-pick" data-item="Equipment Suite (20 cards), Field">Register interest</button>
       </article>
       <article>
         <div class="meta">Digital · Play</div>
         <h3>7-Phase Imagineering Worked Example (7 cards)</h3>
         <p>A seven-card worked example of the Imagineering pattern on the iCard format.</p>
-        <button type="button" disabled aria-label="7-Phase Imagineering worked example, pre-order, not in stock">Pre-order — not in stock</button>
+        <button type="button" class="interest-pick" data-item="7-Phase Imagineering Worked Example (7 cards)">Register interest</button>
       </article>
     </div>
 
     <div class="blocked">
       <p>Pre-order, subject to demand. Fulfilment when the supply chain is reengaged. Not in stock. This door is not a checkout. The five kit amounts are the shelf prices already on the till, and those products are inactive and not shippable. The workshop singles have no price on the till, so none is shown.</p>
     </div>
+
+    
+    <section id="register-interest" aria-labelledby="interest-heading">
+      <h2 id="interest-heading">Register interest</h2>
+      <p class="interest-note">This records genuine interest only. It is not an order, not a payment, and not income. Kits remain pre-order, subject to demand. Fulfilment when the supply chain is reengaged. Not in stock.</p>
+      <p>Paid checkout is not open on this page. Registering interest does not take payment and is not income.</p>
+      <p>Source door: <strong id="interest-source">/shop/</strong></p>
+      <form id="interest-form">
+        <label>Item of interest
+          <select name="item" required>
+            <option value="catalogue generally">Catalogue generally</option><option value="Explorer Kit">Explorer Kit</option><option value="Apprentice Kit">Apprentice Kit</option><option value="Navigator Kit">Navigator Kit</option><option value="Scholar Kit">Scholar Kit</option><option value="Master Kit">Master Kit</option><option value="Calories to Consciousness — Intro (PDF)">Calories to Consciousness — Intro (PDF)</option><option value="Master D20 (single die)">Master D20 (single die)</option><option value="World Map Poster (A2)">World Map Poster (A2)</option><option value="Complete Sticker Set (15 designs)">Complete Sticker Set (15 designs)</option><option value="BitPoints Relay Starter (13 cards)">BitPoints Relay Starter (13 cards)</option><option value="BitPoints Series 1 Complete (60 cards)">BitPoints Series 1 Complete (60 cards)</option><option value="Equipment Suite (20 cards)">Equipment Suite (20 cards)</option><option value="Equipment Suite (20 cards), Field">Equipment Suite (20 cards), Field</option><option value="7-Phase Imagineering Worked Example (7 cards)">7-Phase Imagineering Worked Example (7 cards)</option>
+          </select>
+        </label>
+        <label>Contact email
+          <input type="email" name="email" required autocomplete="email">
+        </label>
+        <label>Display name or handle (optional)
+          <input type="text" name="name" autocomplete="nickname" maxlength="120">
+        </label>
+        <label>Short note (optional)
+          <textarea name="note" rows="4" maxlength="500"></textarea>
+        </label>
+        <button type="submit">Register interest</button>
+      </form>
+      <p id="interest-status" class="interest-note" role="status"></p>
+      <noscript>
+        <p><a href="mailto:nigel@infrastructure-academy.com?subject=Academy%20shop%20%E2%80%94%20genuine%20interest%20%E2%80%94%20catalogue%20generally&amp;body=This%20records%20genuine%20interest%20only.%20It%20is%20not%20an%20order%2C%20not%20a%20payment%2C%20and%20not%20income.%0AItem%20of%20interest%3A%20catalogue%20generally">Register interest by email</a>. Sending that message is not an order, not a payment, and not income.</p>
+      </noscript>
+    </section>
+    <script>
+    (function () {
+      var form = document.getElementById('interest-form');
+      var path = window.location.pathname || '';
+      var source = '/shop/';
+      if (path.indexOf('/exchange') === 0) source = '/exchange/';
+      else if (path.indexOf('/xchange') === 0) source = '/xchange/';
+      var sourceNode = document.getElementById('interest-source');
+      if (sourceNode) sourceNode.textContent = source;
+      document.querySelectorAll('.interest-pick').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          form.elements.item.value = btn.getAttribute('data-item');
+          document.getElementById('register-interest').scrollIntoView({ behavior: 'smooth', block: 'start' });
+          form.elements.email.focus();
+        });
+      });
+      function hkStamp(d) {
+        var fmt = new Intl.DateTimeFormat('en-GB', {
+          timeZone: 'Asia/Hong_Kong',
+          year: 'numeric', month: '2-digit', day: '2-digit',
+          hour: '2-digit', minute: '2-digit', second: '2-digit',
+          hourCycle: 'h23'
+        });
+        var g = {};
+        fmt.formatToParts(d).forEach(function (p) { g[p.type] = p.value; });
+        return g.year + '-' + g.month + '-' + g.day + 'T' + g.hour + ':' + g.minute + ':' + g.second + '+08:00';
+      }
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        var item = form.elements.item.value;
+        var email = form.elements.email.value.trim();
+        var name = form.elements.name.value.trim();
+        var note = form.elements.note.value.trim();
+        var body = [
+          'This records genuine interest only. It is not an order, not a payment, and not income.',
+          'Timestamp (Asia/Hong_Kong): ' + hkStamp(new Date()),
+          'Item of interest: ' + item,
+          'Contact email: ' + email,
+          'Display name or handle: ' + (name || '(not given)'),
+          'Short note: ' + (note || '(none)'),
+          'Source door: ' + source
+        ].join('\n');
+        var href = 'mailto:nigel@infrastructure-academy.com?subject='
+          + encodeURIComponent('Academy shop — genuine interest — ' + item)
+          + '&body=' + encodeURIComponent(body);
+        window.location.href = href;
+        document.getElementById('interest-status').textContent = 'Your email programme should open with this interest. Sending that message records it. It is not an order, not a payment, and not income.';
+      });
+    })();
+    </script>
 
     <a href="https://www.infrastructure-academy.com" class="back">&larr; Back to the Academy</a>
   </main>

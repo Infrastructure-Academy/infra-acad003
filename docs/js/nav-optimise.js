@@ -155,7 +155,6 @@
           { href: '/explore/pillars', text: '4 PILLARS', i18n: 'nav.pillars' },
           { href: '/explore/mastery', text: 'MASTERY', i18n: 'nav.mastery' },
           { href: '/explore/narration', text: 'NARRATION', i18n: 'nav.narration' },
-          { href: '/videos', text: 'VIDEO PLAYROOM', i18n: 'nav.videos' },
           { href: '/pages/movies.html', text: 'MOVIES', i18n: 'nav.movies' },
           { href: '/visual-odyssey.html', text: 'VISUAL ODYSSEY', i18n: 'nav.visualodyssey' },
           { href: '/news.html', text: 'CHART ROOM — NEWS', i18n: 'nav.chartroom' },
@@ -206,8 +205,14 @@
           { href: '/4cs-decision.html', text: '4Cs DECISION', i18n: 'nav.4cs_decision' },
           { href: '/cashflow-y1.html', text: 'CASH FLOW Y1', i18n: 'nav.cashflow' },
           { href: '/site.html#charter', text: 'CHARTER', i18n: 'nav.charter' },
-          { href: '/site.html#section-media', text: 'VIDEO PLAYROOM', i18n: 'nav.video_playroom' }
+          { href: '/pages/movies.html', text: 'FILM CATALOGUE', i18n: 'nav.video_playroom' }
         ]
+      },
+      {
+        label: 'MOVIES',
+        direct: true,
+        href: '/pages/movies.html',
+        i18n: 'nav.movies'
       },
       {
         label: 'PLAY',
@@ -246,7 +251,7 @@
         if (group.i18n) a.setAttribute('data-i18n', group.i18n);
         
         // Check active state
-        if (group.href === currentHref || (group.href === 'site.html' && currentHref === 'site.html')) {
+        if (group.href === currentHref || group.href === currentPath || (group.href === '/site.html' && (currentHref === 'site.html' || currentPath === '/' || currentPath === ''))) {
           a.classList.add('active');
         }
         
