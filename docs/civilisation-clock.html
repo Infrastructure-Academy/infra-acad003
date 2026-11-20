@@ -31,7 +31,7 @@
 
     <meta http-equiv="Content-Security-Policy" content="default-src 'self' https: data:; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https:; img-src 'self' https: data:; font-src 'self' https: data:;">
     
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>The Elemental Clock — Three Nested Clocks</title>
     <link rel="stylesheet" href="/css/style.css">
     <style>
@@ -442,6 +442,13 @@
             color: var(--color-text-secondary);
             font-size: 1rem;
         }
+        .blip-formula {
+            margin: 0.35rem auto 0.85rem;
+            padding: 0 0.75rem;
+            line-height: 1.45;
+            overflow-wrap: anywhere;
+        }
+        .cb-slider-help { margin-bottom: 0.85rem; }
 
         /* CTA */
         .clock-cta {
@@ -476,32 +483,233 @@
             .clock-timeline th, .clock-timeline td { padding: 0.4rem 0.5rem; font-size: 0.75rem; }
         }
 
-        /* Mobile fix: stat boxes and Harrison 4-Grid table overflow */
+        /* One back-to-top control, clear of the home indicator. */
+        #back-to-top {
+            display: none !important;
+        }
+        body {
+            padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+        }
+
+        /* Sliders: 44px hit area, a visible track, immediate drag. */
+        #slider-a,
+        #slider-p {
+            -webkit-appearance: none;
+            appearance: none;
+            height: 44px;
+            margin: 0;
+            background: transparent;
+            touch-action: none;
+            cursor: pointer;
+        }
+        #slider-a::-webkit-slider-runnable-track,
+        #slider-p::-webkit-slider-runnable-track {
+            height: 8px;
+            background: linear-gradient(to right, #ff4444, #ffd700, #00ff88);
+            border-radius: 4px;
+        }
+        #slider-a::-webkit-slider-thumb,
+        #slider-p::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 28px;
+            height: 28px;
+            margin-top: -10px;
+            border-radius: 50%;
+            background: #ffd700;
+            border: 2px solid #0a1628;
+            box-shadow: 0 0 0 6px rgba(255, 215, 0, 0.2);
+        }
+        #slider-a::-moz-range-track,
+        #slider-p::-moz-range-track {
+            height: 8px;
+            background: linear-gradient(to right, #ff4444, #ffd700, #00ff88);
+            border-radius: 4px;
+            border: none;
+        }
+        #slider-a::-moz-range-thumb,
+        #slider-p::-moz-range-thumb {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #ffd700;
+            border: 2px solid #0a1628;
+        }
+
+        /* Human Blip: keep the formula and the two captions on separate lines. */
+        @media (max-width: 720px) {
+            .blip-bar {
+                display: flex;
+                flex-direction: column;
+                align-items: stretch;
+                height: auto;
+                gap: 0.45rem;
+                background: none;
+            }
+            .blip-bar::before {
+                content: "";
+                display: block;
+                order: 2;
+                height: 28px;
+                border-radius: 4px;
+                background: linear-gradient(to right,
+                    rgba(100,149,237,0.3) 0%,
+                    rgba(100,149,237,0.3) 99.99973%,
+                    rgba(255,0,0,0.8) 99.99973%,
+                    rgba(255,0,0,0.8) 100%);
+            }
+            .blip-bar-label-left,
+            .blip-bar-label-right {
+                position: static;
+                transform: none;
+                display: block;
+                width: auto;
+                max-width: 100%;
+                text-align: center;
+                line-height: 1.35;
+                white-space: normal;
+                padding: 0 0.5rem;
+            }
+            .blip-bar-label-left { order: 1; }
+            .blip-bar-label-right { order: 3; }
+        }
+
+        /* Mobile fix: stat boxes, Harrison cards, and a playable first screen. */
         @media (max-width: 600px) {
-            /* Force stat grid to single column on small screens */
             .mobile-stat-grid {
                 grid-template-columns: 1fr !important;
             }
-            /* Shrink large stat numbers */
             .mobile-stat-grid > div > div:first-child {
                 font-size: 1.5rem !important;
             }
-            /* Make Harrison table scrollable */
-            .mobile-scroll-table {
+            /* Stack Harrison's grid so scenario names never run into the figures. */
+            table.mobile-scroll-table,
+            table.mobile-scroll-table[style*="width:100%"] {
                 display: block !important;
-                overflow-x: auto !important;
-                -webkit-overflow-scrolling: touch;
+                width: 100% !important;
+                min-width: 0 !important;
+                max-width: 100% !important;
+                overflow: visible !important;
             }
-            .mobile-scroll-table th,
-            .mobile-scroll-table td {
-                padding: 0.4rem !important;
+            .table-scroll-wrapper:has(table.mobile-scroll-table) {
+                overflow: visible;
+            }
+            table.mobile-scroll-table thead {
+                display: none;
+            }
+            table.mobile-scroll-table tbody,
+            table.mobile-scroll-table tr,
+            table.mobile-scroll-table td {
+                display: block !important;
+                width: 100% !important;
+                max-width: none !important;
+                white-space: normal !important;
+                text-align: left !important;
+                overflow: visible !important;
+                box-sizing: border-box;
+            }
+            table.mobile-scroll-table tr {
+                margin: 0 0 0.7rem;
+                padding: 0.55rem 0.7rem 0.3rem;
+                border: 1px solid rgba(255,215,0,0.22) !important;
+                border-radius: 6px;
+                background: rgba(255,215,0,0.04);
+            }
+            table.mobile-scroll-table td {
+                padding: 0.35rem 0 !important;
+                font-size: 0.85rem !important;
+            }
+            table.mobile-scroll-table td[data-label] {
+                display: flex !important;
+                justify-content: space-between;
+                align-items: baseline;
+                gap: 0.75rem;
+                border-bottom: 1px solid rgba(255,215,0,0.08);
+            }
+            table.mobile-scroll-table td[data-label]::before {
+                content: attr(data-label);
+                color: #c9a84c;
+                font-size: 0.72rem;
+                letter-spacing: 0.02em;
+                flex: 0 0 auto;
+            }
+        }
+
+        /* iPhone-width: clock, both sliders, and the live readout in the first view. */
+        @media (max-width: 480px) {
+            #counterbalance {
+                display: flex;
+                flex-direction: column;
+                max-width: 100% !important;
+                margin: 0 auto 1.25rem !important;
+                padding: 0.2rem 0.35rem 0.6rem !important;
+            }
+            #counterbalance .cb-title { order: 1; font-size: 1.15rem !important; margin: 0 0 0.2rem !important; line-height: 1.15; }
+            #counterbalance .cb-clock { order: 2; max-width: 100% !important; margin: 0 auto 0.15rem !important; }
+            #counterbalance .cb-controls { order: 3; margin: 0 !important; padding: 0.45rem 0.65rem 0.55rem !important; }
+            #counterbalance .cb-epigraph { order: 4; margin: 0.7rem auto 0.35rem !important; font-size: 0.85rem !important; }
+            #counterbalance .cb-intro { order: 5; margin: 0 auto 0.8rem !important; font-size: 0.85rem !important; }
+            #counterbalance #seesaw-container { order: 6; }
+            #counterbalance .cb-nodes { order: 7; }
+            #counterbalance .cb-footnote { order: 8; }
+
+            #isi-clock {
+                width: 136px !important;
+                height: 136px !important;
+            }
+            #isi-clock-hand { height: 46px !important; }
+            #isi-clock-time {
+                bottom: 22px !important;
                 font-size: 0.75rem !important;
-                white-space: nowrap;
             }
-            /* Seesaw container fix */
+            #isi-clock-status {
+                margin-top: 0.2rem !important;
+                font-size: 0.75rem !important;
+            }
+            .cb-controls { display: flex; flex-direction: column; }
+            .cb-a.cb-slider-head { order: 1; margin-bottom: 0 !important; }
+            .cb-a.cb-slider-track { order: 2; }
+            .cb-p.cb-slider-head { order: 3; margin: 0.15rem 0 0 !important; }
+            .cb-p.cb-slider-track { order: 4; }
+            .cb-readout { order: 5; }
+            #readout-verdict { order: 6; }
+            .cb-slider-help {
+                order: 7;
+                font-size: 0.68rem !important;
+                line-height: 1.25;
+                margin: 0.35rem 0 0 !important;
+            }
+            .cb-readout {
+                padding-top: 0.4rem !important;
+                gap: 0.25rem !important;
+            }
+            .cb-readout .cb-figure {
+                font-size: 0.95rem !important;
+            }
+            #readout-verdict {
+                margin-top: 0.4rem !important;
+                padding: 0.4rem 0.45rem !important;
+                font-size: 0.78rem !important;
+                line-height: 1.3;
+            }
             #seesaw-container {
-                height: auto !important;
-                min-height: 200px;
+                width: 100% !important;
+                align-self: stretch !important;
+                height: 200px !important;
+                min-height: 200px !important;
+                margin: 0.4rem 0 0.6rem !important;
+            }
+            #seesaw-beam {
+                width: 100% !important;
+                max-width: 100% !important;
+                left: 50% !important;
+            }
+            #seesaw-beam .seesaw-end {
+                width: 46% !important;
+                top: -102px !important;
+            }
+            #seesaw-beam .seesaw-figure {
+                font-size: 1.05rem !important;
             }
         }
     </style>
@@ -598,8 +806,9 @@
 /* ===== BACK-TO-TOP FLOATING BUTTON ===== */
 #back-to-top-btn {
     position: fixed;
-    bottom: 20px;
-    left: 16px;
+    bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+    right: max(16px, env(safe-area-inset-right, 0px));
+    left: auto;
     z-index: 9999;
     width: 44px;
     height: 44px;
@@ -712,6 +921,104 @@
 
 
     <main role="main">
+        <!-- THE COUNTERBALANCE CLOCK — ISI CALCULATOR -->
+        <section id="counterbalance" style="max-width:1100px; margin:3rem auto; padding:2rem 1.5rem;">
+            <h3 class="cb-title" style="color:#ffd700; text-align:center; font-family:Georgia,serif; font-size:1.8rem; margin-bottom:0.5rem;">THE COUNTERBALANCE CLOCK</h3>
+            <p class="cb-epigraph" style="color:var(--color-text-secondary); text-align:center; max-width:800px; margin:0 auto 0.5rem; line-height:1.6; font-style:italic;">"Midnight can be moved." &mdash; RECALL Block 307, 1 March 2026</p>
+            <p class="cb-intro" style="color:var(--color-text-secondary); text-align:center; max-width:800px; margin:0 auto 2rem; line-height:1.6; font-size:0.95rem;">The Human Blip says we are 0.000267% of Earth's history &mdash; fragile, fleeting, almost invisible. But the Survival Index says we have a counterweight: <strong style="color:#ffd700;">collective accuracy and precision</strong>. Adjust the sliders. Watch midnight move.</p>
+
+            <!-- THE SEE-SAW -->
+            <div id="seesaw-container" style="position:relative; max-width:900px; margin:0 auto 2rem; height:280px;">
+                <div style="position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:0; height:0; border-left:30px solid transparent; border-right:30px solid transparent; border-bottom:40px solid rgba(255,215,0,0.4);"></div>
+                <div id="seesaw-beam" style="position:absolute; bottom:38px; left:50%; width:800px; max-width:90vw; height:4px; background:linear-gradient(to right, #ff4444, #ffd700, #00ff88); transform-origin:center center; transform:translateX(-50%) rotate(0deg); transition:transform 0.6s ease;">
+                    <div class="seesaw-end" style="position:absolute; left:0; top:-120px; width:180px; text-align:center;">
+                        <div style="font-size:0.75rem; color:#ff4444; text-transform:uppercase; letter-spacing:2px; margin-bottom:0.3rem;">The Human Blip</div>
+                        <div class="seesaw-figure" style="font-size:2rem; color:#ff4444; font-weight:bold; font-family:'Courier New',monospace;">0.000267%</div>
+                        <div style="font-size:0.7rem; color:var(--color-text-secondary); margin-top:0.3rem;">12,000 years of<br>4.5 billion</div>
+                        <div style="width:2px; height:30px; background:rgba(255,68,68,0.4); margin:0.5rem auto 0;"></div>
+                    </div>
+                    <div class="seesaw-end" style="position:absolute; right:0; top:-120px; width:180px; text-align:center;">
+                        <div style="font-size:0.75rem; color:#00ff88; text-transform:uppercase; letter-spacing:2px; margin-bottom:0.3rem;">Survival Index</div>
+                        <div id="seesaw-s-value" class="seesaw-figure" style="font-size:2rem; color:#00ff88; font-weight:bold; font-family:'Courier New',monospace;">0.00</div>
+                        <div id="seesaw-s-label" style="font-size:0.7rem; color:var(--color-text-secondary); margin-top:0.3rem;">S = (A x P) / B</div>
+                        <div style="width:2px; height:30px; background:rgba(0,255,136,0.4); margin:0.5rem auto 0;"></div>
+                    </div>
+                </div>
+                <div style="position:absolute; bottom:2px; left:50%; transform:translateX(-50%); font-size:0.65rem; color:rgba(255,215,0,0.5); letter-spacing:1px;">BALANCE POINT</div>
+            </div>
+
+            <!-- CLOCK FACE -->
+            <div class="cb-clock" style="max-width:300px; margin:0 auto 2rem; position:relative;">
+                <div id="isi-clock" style="width:250px; height:250px; border-radius:50%; border:3px solid rgba(255,215,0,0.3); margin:0 auto; position:relative; background:radial-gradient(circle, rgba(10,22,40,0.9), rgba(10,22,40,1));">
+                    <span style="position:absolute; top:8px; left:50%; transform:translateX(-50%); color:#ffd700; font-size:0.75rem; font-weight:bold;">12</span>
+                    <span style="position:absolute; top:50%; right:8px; transform:translateY(-50%); color:rgba(255,215,0,0.5); font-size:0.7rem;">3</span>
+                    <span style="position:absolute; bottom:8px; left:50%; transform:translateX(-50%); color:rgba(255,215,0,0.5); font-size:0.7rem;">6</span>
+                    <span style="position:absolute; top:50%; left:8px; transform:translateY(-50%); color:rgba(255,215,0,0.5); font-size:0.7rem;">9</span>
+                    <div id="isi-clock-hand" style="position:absolute; bottom:50%; left:50%; width:3px; height:90px; background:linear-gradient(to top, #ffd700, #ff4444); transform-origin:bottom center; transform:translateX(-50%) rotate(0deg); transition:transform 0.8s ease; border-radius:2px;"></div>
+                    <div style="position:absolute; top:50%; left:50%; width:12px; height:12px; background:#ffd700; border-radius:50%; transform:translate(-50%,-50%); z-index:2;"></div>
+                    <div id="isi-clock-time" style="position:absolute; bottom:35px; left:50%; transform:translateX(-50%); color:#ff4444; font-size:1rem; font-weight:bold; font-family:'Courier New',monospace; white-space:nowrap;">11:59:59 PM</div>
+                </div>
+                <div id="isi-clock-status" style="text-align:center; margin-top:0.8rem; font-size:0.85rem; color:#ff4444; font-weight:bold;">MIDNIGHT APPROACHES</div>
+            </div>
+
+            <!-- SLIDERS -->
+            <div class="cb-controls" style="max-width:600px; margin:0 auto; padding:1.5rem; border:1px solid rgba(255,215,0,0.15); background:rgba(10,22,40,0.6);">
+                    <div class="cb-slider-head cb-a" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+                        <label for="slider-a" style="color:#ffd700; font-size:0.9rem; font-weight:bold;">ACCURACY (A)</label>
+                        <span id="a-value" style="color:#e8e8e8; font-family:'Courier New',monospace; font-size:1rem;">0.50</span>
+                    </div>
+                    <div class="cb-slider-track cb-a" style="display:flex; align-items:center; gap:0.5rem;">
+                        <span style="color:var(--color-text-secondary); font-size:0.7rem;">0</span>
+                        <input type="range" id="slider-a" min="0" max="100" value="50" style="flex:1; accent-color:#ffd700; cursor:pointer;">
+                        <span style="color:var(--color-text-secondary); font-size:0.7rem;">1.0</span>
+                    </div>
+                    <div class="cb-slider-help cb-a" style="color:var(--color-text-secondary); font-size:0.75rem; margin-top:0.3rem;">Are we aimed at the right target? Right direction, right knowledge, right understanding.</div>
+                    <div class="cb-slider-head cb-p" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
+                        <label for="slider-p" style="color:#ffd700; font-size:0.9rem; font-weight:bold;">PRECISION (P)</label>
+                        <span id="p-value" style="color:#e8e8e8; font-family:'Courier New',monospace; font-size:1rem;">0.50</span>
+                    </div>
+                    <div class="cb-slider-track cb-p" style="display:flex; align-items:center; gap:0.5rem;">
+                        <span style="color:var(--color-text-secondary); font-size:0.7rem;">0</span>
+                        <input type="range" id="slider-p" min="0" max="100" value="50" style="flex:1; accent-color:#ffd700; cursor:pointer;">
+                        <span style="color:var(--color-text-secondary); font-size:0.7rem;">1.0</span>
+                    </div>
+                    <div class="cb-slider-help cb-p" style="color:var(--color-text-secondary); font-size:0.75rem; margin-top:0.3rem;">Are we consistently hitting it? Repeatable, reliable, transmissible across generations.</div>
+                <div class="cb-readout" style="border-top:1px solid rgba(255,215,0,0.2); padding-top:1rem; display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.5rem; text-align:center;">
+                    <div>
+                        <div style="font-size:0.7rem; color:#c9a84c; text-transform:uppercase; letter-spacing:1px;">A x P</div>
+                        <div id="readout-ap" class="cb-figure" style="font-size:1.3rem; color:#e8e8e8; font-family:'Courier New',monospace; font-weight:bold;">0.2500</div>
+                    </div>
+                    <div>
+                        <div style="font-size:0.7rem; color:#c9a84c; text-transform:uppercase; letter-spacing:1px;">S-INDEX</div>
+                        <div id="readout-s" class="cb-figure" style="font-size:1.3rem; color:#ff4444; font-family:'Courier New',monospace; font-weight:bold;">93,750</div>
+                    </div>
+                    <div>
+                        <div style="font-size:0.7rem; color:#c9a84c; text-transform:uppercase; letter-spacing:1px;">MIDNIGHT</div>
+                        <div id="readout-midnight" class="cb-figure" style="font-size:1.3rem; color:#ff4444; font-family:'Courier New',monospace; font-weight:bold;">11:59 PM</div>
+                    </div>
+                </div>
+                <div id="readout-verdict" style="text-align:center; margin-top:1rem; padding:0.8rem; font-size:0.95rem; font-weight:bold; color:#ff4444; background:rgba(255,68,68,0.1); border:1px solid rgba(255,68,68,0.2);">FRAGILITY DOMINATES &mdash; Midnight holds its ground</div>
+            </div>
+
+            <!-- NODES CALCULATOR -->
+            <div class="cb-nodes" style="max-width:600px; margin:1.5rem auto 0; padding:1rem 1.5rem; border:1px solid rgba(255,215,0,0.1); background:rgba(10,22,40,0.4);">
+                <div style="display:flex; justify-content:space-between; align-items:center;">
+                    <div>
+                        <div style="font-size:0.7rem; color:#c9a84c; text-transform:uppercase; letter-spacing:1px;">NODES NEEDED FOR S &gt; 1.0</div>
+                        <div id="readout-nodes" style="font-size:1.5rem; color:#ffd700; font-family:'Courier New',monospace; font-weight:bold;">22,456</div>
+                    </div>
+                    <div style="text-align:right;">
+                        <div style="font-size:0.7rem; color:#c9a84c; text-transform:uppercase; letter-spacing:1px;">SPIDER LEVEL REQUIRED</div>
+                        <div id="readout-level" style="font-size:1.5rem; color:#ffd700; font-family:'Courier New',monospace; font-weight:bold;">L5</div>
+                    </div>
+                </div>
+                <div style="margin-top:0.8rem; font-size:0.8rem; color:var(--color-text-secondary); text-align:center;">At current A x P, this many nodes in the Spider Network would push S above 1.0 &mdash; <strong style="color:#ffd700;">the point where midnight begins to move backward</strong>.</div>
+            </div>
+
+            <p class="cb-footnote" style="color:var(--color-text-secondary); text-align:center; font-size:0.8rem; margin-top:1.5rem; font-style:italic;">The Counterbalance Clock &mdash; IAAI Survival Index Calculator &mdash; RECALL Block 306<br>"Not everything that counts can be counted &mdash; but it can be accounted for." &mdash; The A&amp;Q Inversion, Block 308</p>
+        </section>
+
+
         <!-- HERO -->
         <section class="clock-hero">
             <h1 data-i18n="civ.title">THE ELEMENTAL CLOCK</h1>
@@ -1157,7 +1464,7 @@
             </p>
             <div class="blip-stat">0.000267%</div>
             <p class="blip-stat-label">of Earth's history is human civilisation</p>
-            <p class="blip-stat-label" style="font-size:0.85rem; opacity:0.7;">12,000 &divide; 4,500,000,000 = 2.667 &times; 10<sup>&minus;6</sup></p>
+            <p class="blip-stat-label blip-formula" style="font-size:0.85rem; opacity:0.7;">12,000 &divide; 4,500,000,000 = 2.667 &times; 10<sup>&minus;6</sup></p>
             <div class="blip-bar">
                 <span class="blip-bar-label-left">4.5 Billion Years of Planetary History</span>
                 <span class="blip-bar-label-right">&larr; 12,000 years (invisible at this scale)</span>
@@ -1226,27 +1533,27 @@
                 <tbody>
                     <tr style="border-bottom:1px solid rgba(255,215,0,0.1);">
                         <td style="padding:0.5rem; color:#e8e8e8;">HIGH Acc + HIGH Prec <strong style="color:#ffd700;">(BULLSEYE)</strong></td>
-                        <td style="text-align:center; padding:0.5rem; color:#e8e8e8;">0.9025</td>
-                        <td style="text-align:center; padding:0.5rem; color:#e8e8e8;">36,563&times;</td>
-                        <td style="text-align:center; padding:0.5rem; color:#00ff88; font-weight:bold;">90.25%</td>
+                        <td data-label="A×P" style="text-align:center; padding:0.5rem; color:#e8e8e8;">0.9025</td>
+                        <td data-label="Error × β⁻¹" style="text-align:center; padding:0.5rem; color:#e8e8e8;">36,563&times;</td>
+                        <td data-label="Survival" style="text-align:center; padding:0.5rem; color:#00ff88; font-weight:bold;">90.25%</td>
                     </tr>
                     <tr style="border-bottom:1px solid rgba(255,215,0,0.1);">
                         <td style="padding:0.5rem; color:#e8e8e8;">HIGH Acc + LOW Prec (scattered)</td>
-                        <td style="text-align:center; padding:0.5rem; color:#e8e8e8;">0.3800</td>
-                        <td style="text-align:center; padding:0.5rem; color:#e8e8e8;">232,500&times;</td>
-                        <td style="text-align:center; padding:0.5rem; color:#ffaa00;">38.00%</td>
+                        <td data-label="A×P" style="text-align:center; padding:0.5rem; color:#e8e8e8;">0.3800</td>
+                        <td data-label="Error × β⁻¹" style="text-align:center; padding:0.5rem; color:#e8e8e8;">232,500&times;</td>
+                        <td data-label="Survival" style="text-align:center; padding:0.5rem; color:#ffaa00;">38.00%</td>
                     </tr>
                     <tr style="border-bottom:1px solid rgba(255,215,0,0.1);">
                         <td style="padding:0.5rem; color:#e8e8e8;">LOW Acc + HIGH Prec (wrong aim)</td>
-                        <td style="text-align:center; padding:0.5rem; color:#e8e8e8;">0.2850</td>
-                        <td style="text-align:center; padding:0.5rem; color:#e8e8e8;">268,125&times;</td>
-                        <td style="text-align:center; padding:0.5rem; color:#ff6644;">28.50%</td>
+                        <td data-label="A×P" style="text-align:center; padding:0.5rem; color:#e8e8e8;">0.2850</td>
+                        <td data-label="Error × β⁻¹" style="text-align:center; padding:0.5rem; color:#e8e8e8;">268,125&times;</td>
+                        <td data-label="Survival" style="text-align:center; padding:0.5rem; color:#ff6644;">28.50%</td>
                     </tr>
                     <tr>
                         <td style="padding:0.5rem; color:#e8e8e8;">LOW Acc + LOW Prec <strong style="color:#ff4444;">(CHAOS)</strong></td>
-                        <td style="text-align:center; padding:0.5rem; color:#e8e8e8;">0.0400</td>
-                        <td style="text-align:center; padding:0.5rem; color:#e8e8e8;">360,000&times;</td>
-                        <td style="text-align:center; padding:0.5rem; color:#ff4444; font-weight:bold;">4.00%</td>
+                        <td data-label="A×P" style="text-align:center; padding:0.5rem; color:#e8e8e8;">0.0400</td>
+                        <td data-label="Error × β⁻¹" style="text-align:center; padding:0.5rem; color:#e8e8e8;">360,000&times;</td>
+                        <td data-label="Survival" style="text-align:center; padding:0.5rem; color:#ff4444; font-weight:bold;">4.00%</td>
                     </tr>
                 </tbody>
             </table>
@@ -1257,107 +1564,6 @@
             <p style="color:#c9a84c; text-align:center; margin-top:1rem; font-size:0.85rem;">
                 Source: IAAI Survival Index (ISI) &mdash; RECALL Block 306 &mdash; Nigel T. Dearden &amp; DAVID, 1 March 2026
             </p>
-        </section>
-
-        <!-- THE COUNTERBALANCE CLOCK — ISI CALCULATOR -->
-        <section id="counterbalance" style="max-width:1100px; margin:3rem auto; padding:2rem 1.5rem;">
-            <h3 style="color:#ffd700; text-align:center; font-family:Georgia,serif; font-size:1.8rem; margin-bottom:0.5rem;">THE COUNTERBALANCE CLOCK</h3>
-            <p style="color:var(--color-text-secondary); text-align:center; max-width:800px; margin:0 auto 0.5rem; line-height:1.6; font-style:italic;">"Midnight can be moved." &mdash; RECALL Block 307, 1 March 2026</p>
-            <p style="color:var(--color-text-secondary); text-align:center; max-width:800px; margin:0 auto 2rem; line-height:1.6; font-size:0.95rem;">The Human Blip says we are 0.000267% of Earth's history &mdash; fragile, fleeting, almost invisible. But the Survival Index says we have a counterweight: <strong style="color:#ffd700;">collective accuracy and precision</strong>. Adjust the sliders below. Watch midnight move.</p>
-
-            <!-- THE SEE-SAW -->
-            <div id="seesaw-container" style="position:relative; max-width:900px; margin:0 auto 2rem; height:280px;">
-                <div style="position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:0; height:0; border-left:30px solid transparent; border-right:30px solid transparent; border-bottom:40px solid rgba(255,215,0,0.4);"></div>
-                <div id="seesaw-beam" style="position:absolute; bottom:38px; left:50%; width:800px; max-width:90vw; height:4px; background:linear-gradient(to right, #ff4444, #ffd700, #00ff88); transform-origin:center center; transform:translateX(-50%) rotate(0deg); transition:transform 0.6s ease;">
-                    <div style="position:absolute; left:0; top:-120px; width:180px; text-align:center;">
-                        <div style="font-size:0.75rem; color:#ff4444; text-transform:uppercase; letter-spacing:2px; margin-bottom:0.3rem;">The Human Blip</div>
-                        <div style="font-size:2rem; color:#ff4444; font-weight:bold; font-family:'Courier New',monospace;">0.000267%</div>
-                        <div style="font-size:0.7rem; color:var(--color-text-secondary); margin-top:0.3rem;">12,000 years of<br>4.5 billion</div>
-                        <div style="width:2px; height:30px; background:rgba(255,68,68,0.4); margin:0.5rem auto 0;"></div>
-                    </div>
-                    <div style="position:absolute; right:0; top:-120px; width:180px; text-align:center;">
-                        <div style="font-size:0.75rem; color:#00ff88; text-transform:uppercase; letter-spacing:2px; margin-bottom:0.3rem;">Survival Index</div>
-                        <div id="seesaw-s-value" style="font-size:2rem; color:#00ff88; font-weight:bold; font-family:'Courier New',monospace;">0.00</div>
-                        <div id="seesaw-s-label" style="font-size:0.7rem; color:var(--color-text-secondary); margin-top:0.3rem;">S = (A x P) / B</div>
-                        <div style="width:2px; height:30px; background:rgba(0,255,136,0.4); margin:0.5rem auto 0;"></div>
-                    </div>
-                </div>
-                <div style="position:absolute; bottom:2px; left:50%; transform:translateX(-50%); font-size:0.65rem; color:rgba(255,215,0,0.5); letter-spacing:1px;">BALANCE POINT</div>
-            </div>
-
-            <!-- CLOCK FACE -->
-            <div style="max-width:300px; margin:0 auto 2rem; position:relative;">
-                <div id="isi-clock" style="width:250px; height:250px; border-radius:50%; border:3px solid rgba(255,215,0,0.3); margin:0 auto; position:relative; background:radial-gradient(circle, rgba(10,22,40,0.9), rgba(10,22,40,1));">
-                    <span style="position:absolute; top:8px; left:50%; transform:translateX(-50%); color:#ffd700; font-size:0.75rem; font-weight:bold;">12</span>
-                    <span style="position:absolute; top:50%; right:8px; transform:translateY(-50%); color:rgba(255,215,0,0.5); font-size:0.7rem;">3</span>
-                    <span style="position:absolute; bottom:8px; left:50%; transform:translateX(-50%); color:rgba(255,215,0,0.5); font-size:0.7rem;">6</span>
-                    <span style="position:absolute; top:50%; left:8px; transform:translateY(-50%); color:rgba(255,215,0,0.5); font-size:0.7rem;">9</span>
-                    <div id="isi-clock-hand" style="position:absolute; bottom:50%; left:50%; width:3px; height:90px; background:linear-gradient(to top, #ffd700, #ff4444); transform-origin:bottom center; transform:translateX(-50%) rotate(0deg); transition:transform 0.8s ease; border-radius:2px;"></div>
-                    <div style="position:absolute; top:50%; left:50%; width:12px; height:12px; background:#ffd700; border-radius:50%; transform:translate(-50%,-50%); z-index:2;"></div>
-                    <div id="isi-clock-time" style="position:absolute; bottom:35px; left:50%; transform:translateX(-50%); color:#ff4444; font-size:1rem; font-weight:bold; font-family:'Courier New',monospace; white-space:nowrap;">11:59:59 PM</div>
-                </div>
-                <div id="isi-clock-status" style="text-align:center; margin-top:0.8rem; font-size:0.85rem; color:#ff4444; font-weight:bold;">MIDNIGHT APPROACHES</div>
-            </div>
-
-            <!-- SLIDERS -->
-            <div style="max-width:600px; margin:0 auto; padding:1.5rem; border:1px solid rgba(255,215,0,0.15); background:rgba(10,22,40,0.6);">
-                <div style="margin-bottom:1.5rem;">
-                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
-                        <label style="color:#ffd700; font-size:0.9rem; font-weight:bold;">ACCURACY (A)</label>
-                        <span id="a-value" style="color:#e8e8e8; font-family:'Courier New',monospace; font-size:1rem;">0.50</span>
-                    </div>
-                    <div style="display:flex; align-items:center; gap:0.5rem;">
-                        <span style="color:var(--color-text-secondary); font-size:0.7rem;">0</span>
-                        <input type="range" id="slider-a" min="0" max="100" value="50" style="flex:1; accent-color:#ffd700; height:6px; cursor:pointer;">
-                        <span style="color:var(--color-text-secondary); font-size:0.7rem;">1.0</span>
-                    </div>
-                    <div style="color:var(--color-text-secondary); font-size:0.75rem; margin-top:0.3rem;">Are we aimed at the right target? Right direction, right knowledge, right understanding.</div>
-                </div>
-                <div style="margin-bottom:1.5rem;">
-                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.5rem;">
-                        <label style="color:#ffd700; font-size:0.9rem; font-weight:bold;">PRECISION (P)</label>
-                        <span id="p-value" style="color:#e8e8e8; font-family:'Courier New',monospace; font-size:1rem;">0.50</span>
-                    </div>
-                    <div style="display:flex; align-items:center; gap:0.5rem;">
-                        <span style="color:var(--color-text-secondary); font-size:0.7rem;">0</span>
-                        <input type="range" id="slider-p" min="0" max="100" value="50" style="flex:1; accent-color:#ffd700; height:6px; cursor:pointer;">
-                        <span style="color:var(--color-text-secondary); font-size:0.7rem;">1.0</span>
-                    </div>
-                    <div style="color:var(--color-text-secondary); font-size:0.75rem; margin-top:0.3rem;">Are we consistently hitting it? Repeatable, reliable, transmissible across generations.</div>
-                </div>
-                <div style="border-top:1px solid rgba(255,215,0,0.2); padding-top:1rem; display:grid; grid-template-columns:1fr 1fr 1fr; gap:0.5rem; text-align:center;">
-                    <div>
-                        <div style="font-size:0.7rem; color:#c9a84c; text-transform:uppercase; letter-spacing:1px;">A x P</div>
-                        <div id="readout-ap" style="font-size:1.3rem; color:#e8e8e8; font-family:'Courier New',monospace; font-weight:bold;">0.2500</div>
-                    </div>
-                    <div>
-                        <div style="font-size:0.7rem; color:#c9a84c; text-transform:uppercase; letter-spacing:1px;">S-INDEX</div>
-                        <div id="readout-s" style="font-size:1.3rem; color:#ff4444; font-family:'Courier New',monospace; font-weight:bold;">93,750</div>
-                    </div>
-                    <div>
-                        <div style="font-size:0.7rem; color:#c9a84c; text-transform:uppercase; letter-spacing:1px;">MIDNIGHT</div>
-                        <div id="readout-midnight" style="font-size:1.3rem; color:#ff4444; font-family:'Courier New',monospace; font-weight:bold;">11:59 PM</div>
-                    </div>
-                </div>
-                <div id="readout-verdict" style="text-align:center; margin-top:1rem; padding:0.8rem; font-size:0.95rem; font-weight:bold; color:#ff4444; background:rgba(255,68,68,0.1); border:1px solid rgba(255,68,68,0.2);">FRAGILITY DOMINATES &mdash; Midnight holds its ground</div>
-            </div>
-
-            <!-- NODES CALCULATOR -->
-            <div style="max-width:600px; margin:1.5rem auto 0; padding:1rem 1.5rem; border:1px solid rgba(255,215,0,0.1); background:rgba(10,22,40,0.4);">
-                <div style="display:flex; justify-content:space-between; align-items:center;">
-                    <div>
-                        <div style="font-size:0.7rem; color:#c9a84c; text-transform:uppercase; letter-spacing:1px;">NODES NEEDED FOR S &gt; 1.0</div>
-                        <div id="readout-nodes" style="font-size:1.5rem; color:#ffd700; font-family:'Courier New',monospace; font-weight:bold;">22,456</div>
-                    </div>
-                    <div style="text-align:right;">
-                        <div style="font-size:0.7rem; color:#c9a84c; text-transform:uppercase; letter-spacing:1px;">SPIDER LEVEL REQUIRED</div>
-                        <div id="readout-level" style="font-size:1.5rem; color:#ffd700; font-family:'Courier New',monospace; font-weight:bold;">L5</div>
-                    </div>
-                </div>
-                <div style="margin-top:0.8rem; font-size:0.8rem; color:var(--color-text-secondary); text-align:center;">At current A x P, this many nodes in the Spider Network would push S above 1.0 &mdash; <strong style="color:#ffd700;">the point where midnight begins to move backward</strong>.</div>
-            </div>
-
-            <p style="color:var(--color-text-secondary); text-align:center; font-size:0.8rem; margin-top:1.5rem; font-style:italic;">The Counterbalance Clock &mdash; IAAI Survival Index Calculator &mdash; RECALL Block 306<br>"Not everything that counts can be counted &mdash; but it can be accounted for." &mdash; The A&amp;Q Inversion, Block 308</p>
         </section>
 
         <!-- CTA -->
@@ -1395,23 +1601,6 @@
         }
     </script>
 
-    <!-- Back to Top Button -->
-    <button id="back-to-top" class="back-to-top" title="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
-        &#9650;
-    </button>
-    <script>
-        (function() {
-            var btn = document.getElementById('back-to-top');
-            if (!btn) return;
-            window.addEventListener('scroll', function() {
-                if (window.scrollY > 600) {
-                    btn.classList.add('visible');
-                } else {
-                    btn.classList.remove('visible');
-                }
-            });
-        })();
-    </script>
     <!-- ISI COUNTERBALANCE CLOCK CALCULATOR -->
     <script>
     (function() {
@@ -1651,16 +1840,26 @@
     (function() {
         var btn = document.getElementById('back-to-top-btn');
         if (!btn) return;
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 400) {
+        var controls = document.querySelector('#counterbalance .cb-controls');
+        var controlsInView = false;
+        function sync() {
+            if (window.scrollY > 480 && !controlsInView) {
                 btn.style.display = 'flex';
             } else {
                 btn.style.display = 'none';
             }
-        }, { passive: true });
+        }
+        if (controls && 'IntersectionObserver' in window) {
+            new IntersectionObserver(function(entries) {
+                controlsInView = entries[0].isIntersecting;
+                sync();
+            }, { threshold: 0.2 }).observe(controls);
+        }
+        window.addEventListener('scroll', sync, { passive: true });
         btn.addEventListener('click', function() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
+        sync();
     })();
     </script>
 
