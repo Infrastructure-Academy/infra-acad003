@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2V0JTTFM97"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-2V0JTTFM97');
+</script>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Exchange — Infrastructure Academy</title>
+  <meta name="description" content="Exchange. Five kits on one ladder: Explorer, Flight Deck, and Scholar. Beta pre-order.">
+  <style>
+
+    body {
+      background: #0a1628;
+      color: #fff;
+      font-family: Georgia, 'Times New Roman', serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.45;
+    }
+    main {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 1.25rem 1rem 3rem;
+    }
+    h1 {
+      color: #ffd700;
+      font-size: clamp(1.7rem, 6vw, 2.2rem);
+      letter-spacing: 0.06em;
+      margin: 0.2rem 0 0.35rem;
+      text-align: center;
+    }
+    .lede {
+      text-align: center;
+      font-size: 1.12rem;
+      margin: 0 auto 0.9rem;
+      max-width: 36rem;
+      text-wrap: balance;
+    }
+    .family { margin: 0 0 0.85rem; }
+    .family img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+    .family figcaption, .kit-visual figcaption {
+      margin: 0.35rem 0 0;
+      text-align: center;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.82rem;
+    }
+    .limit {
+      text-align: center;
+      border: 1px solid rgba(212,168,67,0.55);
+      border-radius: 8px;
+      padding: 0.75rem 0.9rem;
+      background: rgba(212,168,67,0.08);
+      margin: 0 0 1rem;
+    }
+    .limit strong { color: #ffd700; }
+    .ages {
+      display: grid;
+      gap: 0.5rem;
+      margin: 0 0 0.4rem;
+    }
+    .ages a {
+      display: grid;
+      grid-template-columns: 1.8rem minmax(0, 1fr) auto;
+      align-items: baseline;
+      gap: 0.45rem 0.6rem;
+      min-height: 3rem;
+      padding: 0.55rem 0.75rem;
+      text-decoration: none;
+      color: #fff;
+      background: rgba(212,168,67,0.07);
+      border: 1px solid rgba(212,168,67,0.45);
+      border-radius: 10px;
+    }
+    .ages .n {
+      color: #ffd700;
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+    .ages strong {
+      font-size: 1.15rem;
+      letter-spacing: 0.02em;
+    }
+    .ages em {
+      font-style: normal;
+      color: #ffd700;
+      font-size: 0.98rem;
+      white-space: nowrap;
+    }
+    .age-band { scroll-margin-top: 7.5rem; }
+    .age-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.75rem;
+      margin: 1.5rem 0 0.7rem;
+      padding-bottom: 0.3rem;
+      border-bottom: 2px solid #d4a843;
+    }
+    .age-head h2 {
+      margin: 0;
+      color: #fff;
+      font-size: clamp(1.35rem, 5.5vw, 1.85rem);
+      letter-spacing: 0.02em;
+      text-transform: none;
+    }
+    .age-head h2 span { color: #ffd700; margin-right: 0.35rem; }
+    .age-head p {
+      margin: 0;
+      color: #ffd700;
+      font-size: clamp(1rem, 3.6vw, 1.2rem);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .kits {
+      display: grid;
+      gap: 0.85rem;
+    }
+    article {
+      border: 1px solid rgba(212,168,67,0.4);
+      border-radius: 12px;
+      padding: 0.85rem 0.9rem 0.95rem;
+      background: rgba(16, 36, 64, 0.45);
+      display: flex;
+      flex-direction: column;
+    }
+    .kit-visual {
+      margin: 0 0 0.65rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .kit-visual img {
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      max-height: 280px;
+      border-radius: 8px;
+    }
+    .kit-copy { display: flex; flex-direction: column; flex: 1; }
+    .meta {
+      color: #f0d78c;
+      font-size: 0.78rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin: 0 0 0.2rem;
+    }
+    article h3 {
+      margin: 0 0 0.25rem;
+      font-size: 1.28rem;
+    }
+    .tagline {
+      color: rgba(255,255,255,0.78);
+      font-style: italic;
+      margin: 0 0 0.4rem;
+    }
+    .kit-copy p { margin: 0 0 0.55rem; }
+    .price {
+      color: #ffd700;
+      font-size: 1.35rem;
+      margin: 0.15rem 0 0.65rem;
+    }
+    .actions { margin-top: auto; }
+    a.prepay {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-sizing: border-box;
+      min-height: 48px;
+      margin: 0 0 0.15rem;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-weight: 700;
+      background: #ffd700;
+      color: #0a1628;
+      border-radius: 8px;
+      padding: 0.65rem 0.75rem;
+      font-size: 1.05rem;
+      text-decoration: none;
+    }
+    a.prepay:hover { background: #fff; }
+    a.prepay:focus-visible, button.interest-pick:focus-visible, .ages a:focus-visible, #interest-form button:focus-visible {
+      outline: 2px solid #fff;
+      outline-offset: 2px;
+    }
+    button.interest-pick, #interest-form button[type="submit"] {
+      font-family: Georgia, 'Times New Roman', serif;
+      background: transparent;
+      color: #f0d78c;
+      border: 0;
+      border-radius: 6px;
+      min-height: 44px;
+      padding: 0.35rem 0.2rem;
+      cursor: pointer;
+      font-size: 0.95rem;
+      text-decoration: underline;
+      text-underline-offset: 0.18em;
+    }
+    .quiet {
+      margin-top: 2.4rem;
+      color: rgba(255,255,255,0.66);
+      font-size: 0.92rem;
+    }
+    .quiet h2 {
+      color: rgba(240,215,140,0.85);
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin: 0 0 0.2rem;
+    }
+    .quiet > p { margin: 0 0 0.4rem; }
+    .singles { list-style: none; margin: 0; padding: 0; }
+    .singles li {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.15rem 0.75rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding: 0.1rem 0;
+    }
+    .terms {
+      margin-top: 1.5rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid rgba(212,168,67,0.28);
+      color: rgba(255,255,255,0.62);
+      font-size: 0.8rem;
+      line-height: 1.45;
+    }
+    .terms p { margin: 0; }
+    #register-interest {
+      margin-top: 1.6rem;
+      scroll-margin-top: 7.5rem;
+    }
+    #register-interest h2 {
+      color: #d4a843;
+      font-size: 1.05rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: 0 0 0.35rem;
+    }
+    #interest-form label { display: block; margin: 0.75rem 0; }
+    #interest-form input, #interest-form select, #interest-form textarea {
+      display: block;
+      width: 100%;
+      max-width: 36rem;
+      box-sizing: border-box;
+      margin-top: 0.3rem;
+      padding: 0.55rem 0.65rem;
+      background: #0a1628;
+      color: #fff;
+      border: 1px solid rgba(212,168,67,0.55);
+      border-radius: 6px;
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 1rem;
+    }
+    .back {
+      display: inline-block;
+      margin-top: 1.6rem;
+      color: #ffd700;
+      text-decoration: none;
+    }
+    .back:hover { text-decoration: underline; }
+    @media (min-width: 800px) {
+      .ages { grid-template-columns: repeat(3, 1fr); }
+      .band-explorer .kits, .band-scholar .kits { grid-template-columns: 1fr 1fr; }
+      .band-flight article {
+        display: grid;
+        grid-template-columns: 240px 1fr;
+        gap: 0.5rem 1.25rem;
+        align-items: center;
+      }
+      .band-flight .kit-visual { margin: 0; }
+    }
+
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Infrastructure-Academy/infra-acad003@376fdd5e783796201540c4313717aaeecfa1b67b/docs/css/sitewide-image-fit.css">
+  <script src="https://cdn.jsdelivr.net/gh/Infrastructure-Academy/infra-acad003@376fdd5e783796201540c4313717aaeecfa1b67b/docs/js/sitewide-uix.js?v=20261120a" defer></script>
+  <link rel="canonical" href="https://infrastructure-academy.com/exchange/">
+</head>
+<body>
+<div style="background:#7a1f1f;color:#fff;text-align:center;padding:0.55rem 0.8rem;font-family:Georgia,serif;font-size:0.95rem;">Branch preview of the shop recut — not the live host. Pull request 23 is unmerged.</div>
+
+    <div id="iaai-network-bar" style="display:flex;align-items:center;justify-content:space-around;width:100%;height:36px;background:#0a1628;position:sticky;top:0;z-index:200001;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:11px;letter-spacing:1px;text-transform:uppercase;">
+      <a href="https://www.infrastructure-academy.com" style="text-decoration:none;color:#fff;font-weight:700;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid #DC2626;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#DC2626"><path d="M12 3L1 9l4 2.18v6L12 21l7-3.82v-6l2-1.09V17h2V9L12 3zm6.82 6L12 12.72 5.18 9 12 5.28 18.82 9zM17 15.99l-5 2.73-5-2.73v-3.72L12 15l5-2.73v3.72z"/></svg> <span data-i18n="net.academy">ACADEMY</span></a>
+      <a href="https://app.infrastructure-academy.com/" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#2563EB"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 000-1.41l-2.34-2.34a1 1 0 00-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg> <span data-i18n="net.quest">QUEST</span></a>
+      <a href="xchange.html" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#D4A843"><path d="M6 2v6l-2 2v4l2 2v6h4v-6l2-2v-4L10 8V2H6zm12 0v6l-2 2v4l2 2v6h-4v-6l-2-2v-4l2-2V2h4z"/></svg> <span data-i18n="net.xchange">XCHANGE</span></a>
+      <a href="https://www.infrastructure-academy.com/memorial/" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#16A34A"><path d="M12 2L4.5 20.29l.71.71L12 18l6.79 3 .71-.71z"/></svg> <span data-i18n="net.memorial">MEMORIAL</span></a>
+      <a href="https://www.infrastructure-academy.com/news.html" style="text-decoration:none;color:#fff;display:flex;align-items:center;gap:4px;padding-bottom:4px;border-bottom:3px solid transparent;"><svg width="14" height="14" viewBox="0 0 24 24" fill="#06B6D4"><path d="M14.4 6L14 4H5v17h2v-7h5.6l.4 2h7V6h-5.6z"/></svg> <span data-i18n="net.news">NEWS</span></a>
+    </div>
+
+  <main>
+    <h1>Exchange</h1>
+    <p class="lede">One ladder, three ages. Buy a tier and keep everything below it.</p>
+    <figure class="family">
+      <img src="https://cdn.jsdelivr.net/gh/Infrastructure-Academy/infra-acad003@376fdd5e783796201540c4313717aaeecfa1b67b/docs/shop/art/igo-dice-family-gold.jpg" width="1168" height="500" alt="Gold spinner, D6, D8, D10, D12 and D20 on navy. Official family art. Each kit card names its own die." fetchpriority="high">
+    </figure>
+    <p class="limit"><strong>Beta pre-order.</strong> Prepay holds a place in the first batch. It is not same-day dispatch.</p>
+    <nav class="ages" aria-label="Teaching path">
+      <a href="#explorer"><span class="n">1</span><strong>Explorer</strong><em>Ages 8–14</em></a>
+      <a href="#flight-deck"><span class="n">2</span><strong>Flight Deck</strong><em>Ages 14–18</em></a>
+      <a href="#scholar"><span class="n">3</span><strong>Scholar</strong><em>Ages 18+</em></a>
+    </nav>
+
+    <section class="age-band band-explorer" id="explorer" aria-labelledby="explorer-heading">
+      <header class="age-head">
+        <h2 id="explorer-heading"><span>1</span>Explorer</h2>
+        <p>Ages 8–14</p>
+      </header>
+      <div class="kits">
+        <article>
+          <figure class="kit-visual">
+            <img src="https://cdn.jsdelivr.net/gh/Infrastructure-Academy/infra-acad003@376fdd5e783796201540c4313717aaeecfa1b67b/docs/shop/art/kit-explorer.jpg" width="360" height="312" alt="Gold quick-start spinner and House D6, from the official family art.">
+            <figcaption>Spinner and House D6</figcaption>
+          </figure>
+          <div class="kit-copy">
+            <p class="meta">Level 1 · D4 · Ages 8–10</p>
+            <h3>Explorer Kit</h3>
+            <p class="tagline">First foothold on the iAAi journey.</p>
+            <p>Starter D4, foundational iCards, themed stickers, House D6, and the quick-start spinner.</p>
+            <p class="price">USD 39</p>
+            <div class="actions">
+              <a class="prepay" href="https://buy.stripe.com/8x200j4VO5iP9xK9o7bZe04" target="_blank" rel="noopener noreferrer" aria-label="Prepay the Explorer Kit">Prepay</a>
+              <button type="button" class="interest-pick" data-item="Explorer Kit">Register interest</button>
+            </div>
+          </div>
+        </article>
+        <article>
+          <figure class="kit-visual">
+            <img src="https://cdn.jsdelivr.net/gh/Infrastructure-Academy/infra-acad003@376fdd5e783796201540c4313717aaeecfa1b67b/docs/shop/art/kit-apprentice.jpg" width="168" height="340" alt="Gold D8, signature die of the Apprentice Kit.">
+          </figure>
+          <div class="kit-copy">
+            <p class="meta">Level 2 · D8 · Ages 10–14</p>
+            <h3>Apprentice Kit</h3>
+            <p class="tagline">Polyhedral dice, regional maps, first campaign sheets.</p>
+            <p>Carries the Explorer kit, and adds a polyhedral dice set, the regional map pack, and the first campaign sheets.</p>
+            <p class="price">USD 75</p>
+            <div class="actions">
+              <a class="prepay" href="https://buy.stripe.com/9B6bJ13RKfXtfW8dEnbZe06" target="_blank" rel="noopener noreferrer" aria-label="Prepay the Apprentice Kit">Prepay</a>
+              <button type="button" class="interest-pick" data-item="Apprentice Kit">Register interest</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="age-band band-flight" id="flight-deck" aria-labelledby="flight-heading">
+      <header class="age-head">
+        <h2 id="flight-heading"><span>2</span>Flight Deck</h2>
+        <p>Ages 14–18</p>
+      </header>
+      <div class="kits">
+        <article>
+          <figure class="kit-visual">
+            <img src="https://cdn.jsdelivr.net/gh/Infrastructure-Academy/infra-acad003@376fdd5e783796201540c4313717aaeecfa1b67b/docs/shop/art/kit-navigator.jpg" width="184" height="378" alt="Gold D12, signature die of the Navigator Kit.">
+          </figure>
+          <div class="kit-copy">
+            <p class="meta">Level 3 · D12 · Ages 14–18</p>
+            <h3>Navigator Kit</h3>
+            <p class="tagline">Journals, campaign book, and the road ahead.</p>
+            <p>Carries the Apprentice kit, and adds a field journal and the campaign book.</p>
+            <p class="price">USD 149</p>
+            <div class="actions">
+              <a class="prepay" href="https://buy.stripe.com/aFa6oHfAscLh6ly2ZJbZe07" target="_blank" rel="noopener noreferrer" aria-label="Prepay the Navigator Kit">Prepay</a>
+              <button type="button" class="interest-pick" data-item="Navigator Kit">Register interest</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="age-band band-scholar" id="scholar" aria-labelledby="scholar-heading">
+      <header class="age-head">
+        <h2 id="scholar-heading"><span>3</span>Scholar</h2>
+        <p>Ages 18+</p>
+      </header>
+      <div class="kits">
+        <article>
+          <figure class="kit-visual">
+            <img src="https://cdn.jsdelivr.net/gh/Infrastructure-Academy/infra-acad003@376fdd5e783796201540c4313717aaeecfa1b67b/docs/shop/art/kit-scholar-d16.svg" width="360" height="520" alt="D16 level mark for the Scholar Kit. Drawn identity art, not a photograph.">
+          </figure>
+          <div class="kit-copy">
+            <p class="meta">Level 4 · D16 · Ages 18–22</p>
+            <h3>Scholar Kit</h3>
+            <p class="tagline">Thesis workbook and the advanced iCard set.</p>
+            <p>Carries the Navigator kit, and adds a thesis workbook and the advanced iCard expansion.</p>
+            <p class="price">USD 215</p>
+            <div class="actions">
+              <a class="prepay" href="https://buy.stripe.com/9B614n2NG12z8tG9o7bZe08" target="_blank" rel="noopener noreferrer" aria-label="Prepay the Scholar Kit">Prepay</a>
+              <button type="button" class="interest-pick" data-item="Scholar Kit">Register interest</button>
+            </div>
+          </div>
+        </article>
+        <article>
+          <figure class="kit-visual">
+            <img src="https://cdn.jsdelivr.net/gh/Infrastructure-Academy/infra-acad003@376fdd5e783796201540c4313717aaeecfa1b67b/docs/shop/art/kit-master.jpg" width="248" height="402" alt="Gold D20, signature die of the Master Kit.">
+          </figure>
+          <div class="kit-copy">
+            <p class="meta">Level 5 · D20 · Ages 22+</p>
+            <h3>Master Kit</h3>
+            <p class="tagline">The full Dearden Field Set — nothing held back.</p>
+            <p>Carries the Scholar kit, and adds the Dearden Field Set in a case: master dice, an SAP-001 binder, and the five site iCards.</p>
+            <p class="price">USD 499</p>
+            <div class="actions">
+              <a class="prepay" href="https://buy.stripe.com/5kQ5kDbkc8v18tG0RBbZe09" target="_blank" rel="noopener noreferrer" aria-label="Prepay the Master Kit">Prepay</a>
+              <button type="button" class="interest-pick" data-item="Master Kit">Register interest</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <p class="quiet">Workshop singles are interest only. No payment. Choose one in the form below.</p>
+    <footer class="terms">
+      <p>First batch. The 30-day window starts at 20:20:54 Hong Kong time on 19 November 2026 and ends at 20:20:54 Hong Kong time on 19 December 2026. Working goal USD 1,950 (50 Explorer-equivalents at the USD 39 shelf price). If the goal is not met by the end of the window, every prepayment is refunded in full.</p>
+    </footer>
+
+    <section id="register-interest" aria-labelledby="interest-heading">
+      <h2 id="interest-heading">Register interest</h2>
+      <p>This records genuine interest only.</p>
+      <p>Source door: <strong id="interest-source">/exchange/</strong></p>
+      <form id="interest-form">
+        <label>Item of interest
+          <select name="item" required>
+            <option value="Catalogue generally">Catalogue generally</option><option value="Explorer Kit">Explorer Kit</option><option value="Apprentice Kit">Apprentice Kit</option><option value="Navigator Kit">Navigator Kit</option><option value="Scholar Kit">Scholar Kit</option><option value="Master Kit">Master Kit</option><option value="Calories to Consciousness — Intro (PDF)">Calories to Consciousness — Intro (PDF)</option><option value="Master D20 (single die)">Master D20 (single die)</option><option value="World Map Poster (A2)">World Map Poster (A2)</option><option value="Complete Sticker Set (15 designs)">Complete Sticker Set (15 designs)</option><option value="BitPoints Relay Starter (13 cards)">BitPoints Relay Starter (13 cards)</option><option value="BitPoints Series 1 Complete (60 cards)">BitPoints Series 1 Complete (60 cards)</option><option value="Equipment Suite (20 cards)">Equipment Suite (20 cards)</option><option value="Equipment Suite (20 cards), Field">Equipment Suite (20 cards), Field</option><option value="7-Phase Imagineering Worked Example (7 cards)">7-Phase Imagineering Worked Example (7 cards)</option>
+          </select>
+        </label>
+        <label>Contact email
+          <input type="email" name="email" required autocomplete="email">
+        </label>
+        <label>Display name or handle (optional)
+          <input type="text" name="name" autocomplete="nickname" maxlength="120">
+        </label>
+        <label>Short note (optional)
+          <textarea name="note" rows="4" maxlength="500"></textarea>
+        </label>
+        <button type="submit">Register interest</button>
+      </form>
+      <p id="interest-status" role="status"></p>
+      <noscript>
+        <p><a href="mailto:nigel@infrastructure-academy.com?subject=Academy%20Exchange%20%E2%80%94%20genuine%20interest%20%E2%80%94%20catalogue%20generally&amp;body=This%20records%20genuine%20interest%20only.%20It%20is%20not%20an%20order%2C%20not%20a%20payment%2C%20and%20not%20income.%0AItem%20of%20interest%3A%20catalogue%20generally">Register interest by email</a>.</p>
+      </noscript>
+    </section>
+    <script>
+    (function () {
+      var form = document.getElementById('interest-form');
+      var path = window.location.pathname || '';
+      var source = '/exchange/';
+      var doorName = 'Academy Exchange';
+      if (path.indexOf('/exchange') === 0) { source = '/exchange/'; doorName = 'Academy Exchange'; }
+      else if (path.indexOf('/xchange') === 0) { source = '/xchange/'; doorName = 'Academy Xchange'; }
+      else if (path.indexOf('/shop') === 0) { source = '/shop/'; doorName = 'Academy shop'; }
+      var sourceNode = document.getElementById('interest-source');
+      if (sourceNode) sourceNode.textContent = source;
+      document.querySelectorAll('.interest-pick').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          form.elements.item.value = btn.getAttribute('data-item');
+          document.getElementById('register-interest').scrollIntoView({ behavior: 'smooth', block: 'start' });
+          form.elements.email.focus();
+        });
+      });
+      function hkStamp(d) {
+        var fmt = new Intl.DateTimeFormat('en-GB', {
+          timeZone: 'Asia/Hong_Kong',
+          year: 'numeric', month: '2-digit', day: '2-digit',
+          hour: '2-digit', minute: '2-digit', second: '2-digit',
+          hourCycle: 'h23'
+        });
+        var g = {};
+        fmt.formatToParts(d).forEach(function (p) { g[p.type] = p.value; });
+        return g.year + '-' + g.month + '-' + g.day + 'T' + g.hour + ':' + g.minute + ':' + g.second + '+08:00';
+      }
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        var item = form.elements.item.value;
+        var email = form.elements.email.value.trim();
+        var name = form.elements.name.value.trim();
+        var note = form.elements.note.value.trim();
+        var body = [
+          'This records genuine interest only. It is not an order, not a payment, and not income.',
+          'Timestamp (Asia/Hong_Kong): ' + hkStamp(new Date()),
+          'Item of interest: ' + item,
+          'Contact email: ' + email,
+          'Display name or handle: ' + (name || '(not given)'),
+          'Short note: ' + (note || '(none)'),
+          'Source door: ' + source
+        ].join('\n');
+        var href = 'mailto:nigel@infrastructure-academy.com?subject='
+          + encodeURIComponent(doorName + ' — genuine interest — ' + item)
+          + '&body=' + encodeURIComponent(body);
+        window.location.href = href;
+        document.getElementById('interest-status').textContent = 'Your email programme should open with this interest. Sending that message records it.';
+      });
+    })();
+    </script>
+
+    <a href="https://www.infrastructure-academy.com" class="back">&larr; Back to the Academy</a>
+  </main>
+</body>
+</html>
