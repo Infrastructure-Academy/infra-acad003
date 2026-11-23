@@ -207,6 +207,10 @@
     {
       "time": "2026-11-21T10:35+08:00",
       "note": "Branch-only visual recut of docs/shop, docs/xchange and docs/exchange prepared on cursor/shop-catalogue-visual-recut-f422. Not merged. Not deployed. Live host unchanged. Catalogue is the Explorer, Flight Deck, Scholar ladder. Nigel walks a preview before anything goes live."
+    },
+    {
+      "time": "2026-11-23T22:40+08:00",
+      "note": "River Valley Civilization poster swap prepared, not merged. Valley still docs/site-media/vendor/river_valley_civilization_poster_valley_23Nov26.jpg SHA256 4769ba0461643f42b14522f7532e4749071f81d2723d5c9100d281f2cca9a227 is the poster on the movies catalogue, issued film rails, and video sitemap. Meteor still docs/site-media/vendor/zWxgmErsajJzpeNj.jpg stays in the tree, byte-identical, SHA256 220d90c385e2c6bec2dde7a4227ae2678d53b3df9574c0df51dd422effb94c2e. Issued encode URL unchanged. Snapshot Trailer card unchanged. LinkedIn Professional and LinkedIn Professional v2 unchanged."
     }
   ],
   "things_i_keep_rediscovering": {
