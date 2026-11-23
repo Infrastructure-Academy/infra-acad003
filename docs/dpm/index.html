@@ -35,6 +35,22 @@
   <p class="lede">Beta test model, not a finished issue. Issued plates are not recut. Quest and the later Reality Engine prototype stay split. Accept is not required to enter, and it is not required to go on.</p>
   <p><a class="proceed" href="engine/">Proceed into the engine</a></p>
 
+  <div class="film-well" id="figure-a-film-well">
+    <video id="figure-a-film" class="film" width="1080" height="1350" preload="none" playsinline>
+      <source src="nigel_made_insert_2026-11-24_0293.mp4" type="video/mp4">
+    </video>
+    <button type="button" class="film-play" aria-controls="figure-a-film" aria-label="Play the Figure A film">
+      <svg class="film-play-glyph" viewBox="0 0 76 76" aria-hidden="true" focusable="false">
+        <circle cx="38" cy="38" r="35"></circle>
+        <path d="M33 23.5 L33 52.5 L56 38 Z"></path>
+      </svg>
+    </button>
+  </div>
+  <noscript>
+    <style>.film-play{display:none}</style>
+    <p class="film-fallback"><a href="nigel_made_insert_2026-11-24_0293.mp4">Play the Figure A film</a></p>
+  </noscript>
+
   <figure class="plate-figure" id="figure-a">
     <img class="plate" src="figure-a-revised-draft-40.10-20nov2026.jpg" width="2752" height="1536" alt="Revised Figure A for Draft 40.10, 20 November 2026, titled From Babel to Boundary Condition. Navigation of the paper: temporal alignment, structural alignment, and coupling.">
     <figcaption class="cap">Revised Figure A for Draft 40.10, 20 November 2026. From Babel to Boundary Condition.</figcaption>
@@ -79,5 +95,61 @@
     <p><a href="/">Return to the Academy landing page</a></p>
   </footer>
 </main>
+<script>
+(function () {
+  var well = document.getElementById("figure-a-film-well");
+  var video = document.getElementById("figure-a-film");
+  var play = well ? well.querySelector(".film-play") : null;
+  if (!well || !video || !play) return;
+
+  var started = false;
+  video.autoplay = false;
+  video.controls = false;
+  video.preload = "none";
+  video.playsInline = true;
+  video.muted = false;
+  video.setAttribute("aria-hidden", "true");
+
+  function disarm() {
+    started = false;
+    well.classList.remove("is-starting");
+    well.classList.remove("is-playing");
+    video.pause();
+    video.controls = false;
+    video.setAttribute("aria-hidden", "true");
+    play.hidden = false;
+    play.removeAttribute("aria-busy");
+  }
+
+  function reveal() {
+    if (video.muted) {
+      disarm();
+      return;
+    }
+    video.controls = true;
+    video.removeAttribute("aria-hidden");
+    well.classList.remove("is-starting");
+    well.classList.add("is-playing");
+    play.hidden = true;
+    play.removeAttribute("aria-busy");
+  }
+
+  play.addEventListener("click", function () {
+    if (started) return;
+    started = true;
+    video.muted = false;
+    video.removeAttribute("muted");
+    video.volume = 1;
+    well.classList.add("is-starting");
+    play.setAttribute("aria-busy", "true");
+    var pending = video.play();
+    if (pending && typeof pending.then === "function") {
+      pending.then(reveal).catch(disarm);
+    } else {
+      reveal();
+    }
+  });
+})();
+</script>
 </body>
 </html>
