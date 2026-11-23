@@ -191,7 +191,8 @@ h2 .sub { display: block; margin-top: 0.35rem; white-space: normal; }
   margin: 0.35rem 0 0;
 }
 
-/* Figure A film. Portrait well, sound only after a click. No opening-frame poster. */
+/* Figure A film. Portrait well. The 35s still stays visible at rest.
+   Sound only after a tap, click, or Enter. Nothing autoplays. */
 .film-well {
   position: relative;
   width: min(100%, 32rem);
@@ -213,10 +214,10 @@ h2 .sub { display: block; margin-top: 0.35rem; white-space: normal; }
   object-position: center;
   background: #07101c;
   display: block;
+  opacity: 1;
 }
 
 .film-well:not(.is-playing) .film {
-  opacity: 0;
   pointer-events: none;
 }
 
@@ -224,8 +225,7 @@ h2 .sub { display: block; margin-top: 0.35rem; white-space: normal; }
   position: absolute;
   inset: 0;
   z-index: 1;
-  display: grid;
-  place-items: center;
+  display: block;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -238,9 +238,34 @@ h2 .sub { display: block; margin-top: 0.35rem; white-space: normal; }
   touch-action: manipulation;
 }
 
+.film-play-label {
+  position: absolute;
+  left: 50%;
+  top: 68%;
+  transform: translate(-50%, -50%);
+  display: block;
+  width: max-content;
+  max-width: calc(100% - 1.5rem);
+  padding: 0.4rem 0.8rem;
+  border: 1px solid rgba(212, 168, 67, 0.55);
+  border-radius: 4px;
+  background: rgba(7, 16, 28, 0.82);
+  color: var(--gold-2);
+  font-family: Cinzel, Georgia, "Times New Roman", serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  line-height: 1.35;
+  text-align: center;
+}
+
 .film-play-glyph {
+  position: absolute;
+  left: 50%;
+  top: 50%;
   width: 5.5rem;
   height: 5.5rem;
+  transform: translate(-50%, -50%);
   display: block;
   filter: drop-shadow(0 0 14px rgba(255, 215, 0, 0.28));
 }
@@ -263,7 +288,10 @@ h2 .sub { display: block; margin-top: 0.35rem; white-space: normal; }
   fill: rgba(20, 40, 75, 0.88);
 }
 
-.film-well.is-starting .film-play-glyph { opacity: 0.55; }
+.film-well.is-starting .film-play-glyph,
+.film-well.is-starting .film-play-label { opacity: 0.55; }
+
+.film-well.is-playing .film-play { display: none; }
 
 .film-play:focus-visible {
   outline: 2px solid var(--gold-2);
@@ -484,4 +512,5 @@ footer a { color: var(--gold-2); }
   .wrap, header.brand { padding-left: 0.85rem; padding-right: 0.85rem; }
   .col, .call, .eq, .scale .box { padding-left: 0.75rem; padding-right: 0.75rem; }
   .bands { grid-template-columns: repeat(auto-fit, minmax(8.8rem, 1fr)); }
+  .film-play-label { font-size: 0.86rem; letter-spacing: 0.01em; max-width: calc(100% - 1rem); }
 }
