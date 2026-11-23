@@ -13,157 +13,249 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shop — Infrastructure Academy</title>
-  <meta name="description" content="Pre-order catalogue of the five Exchange kits and the workshop singles. The five kits are active on the till and still not shippable. Prepayment towards a first-batch working goal of USD 1,950 is open. Workshop singles stay interest-only. Subject to demand. Not in stock and not shippable today. This is not checkout for immediate dispatch.">
+  <meta name="description" content="Shop. Five kits on one ladder: Explorer, Flight Deck, and Scholar. Beta pre-order.">
   <style>
+
     body {
       background: #0a1628;
       color: #fff;
       font-family: Georgia, 'Times New Roman', serif;
       margin: 0;
       padding: 0;
-      line-height: 1.5;
+      line-height: 1.45;
     }
     main {
-      max-width: 960px;
+      max-width: 1040px;
       margin: 0 auto;
-      padding: 2rem 1.25rem 3rem;
+      padding: 1.25rem 1rem 3rem;
     }
     h1 {
       color: #ffd700;
-      font-size: 2rem;
-      letter-spacing: 0.08em;
-      margin: 0 0 0.4rem;
+      font-size: clamp(1.7rem, 6vw, 2.2rem);
+      letter-spacing: 0.06em;
+      margin: 0.2rem 0 0.35rem;
       text-align: center;
     }
-    h2 {
-      color: #D4A843;
-      font-size: 1.25rem;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      margin: 2.2rem 0 0.4rem;
-    }
-    .lede, .section-note, .status {
-      color: rgba(255,255,255,0.78);
-      max-width: 42rem;
-      margin-left: auto;
-      margin-right: auto;
-    }
-    .lede { text-align: center; margin-bottom: 1.25rem; }
-    .status {
+    .lede {
       text-align: center;
-      border: 1px solid rgba(212,168,67,0.45);
+      font-size: 1.12rem;
+      margin: 0 auto 0.9rem;
+      max-width: 36rem;
+      text-wrap: balance;
+    }
+    .family { margin: 0 0 0.85rem; }
+    .family img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 12px;
+    }
+    .family figcaption, .kit-visual figcaption {
+      margin: 0.35rem 0 0;
+      text-align: center;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.82rem;
+    }
+    .limit {
+      text-align: center;
+      border: 1px solid rgba(212,168,67,0.55);
       border-radius: 8px;
-      padding: 0.9rem 1rem;
-      background: rgba(212,168,67,0.06);
-      margin-bottom: 1.5rem;
+      padding: 0.75rem 0.9rem;
+      background: rgba(212,168,67,0.08);
+      margin: 0 0 1rem;
     }
-    .grid {
+    .limit strong { color: #ffd700; }
+    .ages {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1rem;
-      margin-top: 1rem;
+      gap: 0.5rem;
+      margin: 0 0 0.4rem;
+    }
+    .ages a {
+      display: grid;
+      grid-template-columns: 1.8rem minmax(0, 1fr) auto;
+      align-items: baseline;
+      gap: 0.45rem 0.6rem;
+      min-height: 3rem;
+      padding: 0.55rem 0.75rem;
+      text-decoration: none;
+      color: #fff;
+      background: rgba(212,168,67,0.07);
+      border: 1px solid rgba(212,168,67,0.45);
+      border-radius: 10px;
+    }
+    .ages .n {
+      color: #ffd700;
+      font-size: 1.25rem;
+      font-weight: 700;
+    }
+    .ages strong {
+      font-size: 1.15rem;
+      letter-spacing: 0.02em;
+    }
+    .ages em {
+      font-style: normal;
+      color: #ffd700;
+      font-size: 0.98rem;
+      white-space: nowrap;
+    }
+    .age-band { scroll-margin-top: 7.5rem; }
+    .age-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.75rem;
+      margin: 1.5rem 0 0.7rem;
+      padding-bottom: 0.3rem;
+      border-bottom: 2px solid #d4a843;
+    }
+    .age-head h2 {
+      margin: 0;
+      color: #fff;
+      font-size: clamp(1.35rem, 5.5vw, 1.85rem);
+      letter-spacing: 0.02em;
+      text-transform: none;
+    }
+    .age-head h2 span { color: #ffd700; margin-right: 0.35rem; }
+    .age-head p {
+      margin: 0;
+      color: #ffd700;
+      font-size: clamp(1rem, 3.6vw, 1.2rem);
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .kits {
+      display: grid;
+      gap: 0.85rem;
     }
     article {
       border: 1px solid rgba(212,168,67,0.4);
-      border-radius: 10px;
-      padding: 1rem 1rem 0.9rem;
-      background: rgba(26,58,92,0.28);
+      border-radius: 12px;
+      padding: 0.85rem 0.9rem 0.95rem;
+      background: rgba(16, 36, 64, 0.45);
       display: flex;
       flex-direction: column;
     }
-    article h3 {
-      margin: 0.35rem 0 0.2rem;
-      color: #fff;
-      font-size: 1.15rem;
+    .kit-visual {
+      margin: 0 0 0.65rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    .meta, .tag {
-      color: #D4A843;
+    .kit-visual img {
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      max-height: 280px;
+      border-radius: 8px;
+    }
+    .kit-copy { display: flex; flex-direction: column; flex: 1; }
+    .meta {
+      color: #f0d78c;
       font-size: 0.78rem;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.05em;
       text-transform: uppercase;
+      margin: 0 0 0.2rem;
+    }
+    article h3 {
+      margin: 0 0 0.25rem;
+      font-size: 1.28rem;
     }
     .tagline {
-      color: rgba(255,255,255,0.62);
+      color: rgba(255,255,255,0.78);
       font-style: italic;
-      margin: 0 0 0.45rem;
+      margin: 0 0 0.4rem;
     }
+    .kit-copy p { margin: 0 0 0.55rem; }
     .price {
       color: #ffd700;
-      font-size: 1.05rem;
-      letter-spacing: 0.03em;
-      margin: 0 0 0.55rem;
+      font-size: 1.35rem;
+      margin: 0.15rem 0 0.65rem;
     }
-    .price small {
-      display: block;
-      margin-top: 0.15rem;
-      color: rgba(255,255,255,0.55);
-      font-size: 0.78rem;
-      letter-spacing: 0;
-    }
-    article p { margin: 0 0 0.7rem; color: rgba(255,255,255,0.82); flex: 1; }
-    button[disabled] {
-      font-family: Georgia, 'Times New Roman', serif;
-      background: transparent;
-      color: rgba(255,255,255,0.72);
-      border: 1px solid rgba(255,255,255,0.28);
-      border-radius: 6px;
-      padding: 0.45rem 0.7rem;
-      cursor: not-allowed;
-    }
-    .back {
-      display: inline-block;
-      margin-top: 2rem;
-      color: #ffd700;
-      text-decoration: none;
-    }
-    .back:hover { text-decoration: underline; }
-    .blocked {
-      margin-top: 1.5rem;
-      color: rgba(255,255,255,0.62);
-      font-size: 0.92rem;
-    }
-    .blocked ul { margin: 0.4rem 0 0; padding-left: 1.2rem; }
-
-    button.interest-pick, #interest-form button[type="submit"] {
-      font-family: Georgia, 'Times New Roman', serif;
-      background: transparent;
-      color: #ffd700;
-      border: 1px solid rgba(255,215,0,0.75);
-      border-radius: 6px;
-      padding: 0.55rem 0.75rem;
-      cursor: pointer;
-      font-size: 1rem;
-    }
+    .actions { margin-top: auto; }
     a.prepay {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       box-sizing: border-box;
-      margin: 0 0 0.45rem;
+      min-height: 48px;
+      margin: 0 0 0.15rem;
       font-family: Georgia, 'Times New Roman', serif;
+      font-weight: 700;
       background: #ffd700;
       color: #0a1628;
-      border: 1px solid #ffd700;
-      border-radius: 6px;
-      padding: 0.55rem 0.75rem;
-      font-size: 1rem;
+      border-radius: 8px;
+      padding: 0.65rem 0.75rem;
+      font-size: 1.05rem;
       text-decoration: none;
-      text-align: center;
-      letter-spacing: 0.02em;
     }
-    a.prepay:hover,
-    a.prepay:focus {
-      background: #fff;
-      color: #0a1628;
+    a.prepay:hover { background: #fff; }
+    a.prepay:focus-visible, button.interest-pick:focus-visible, .ages a:focus-visible, #interest-form button:focus-visible {
       outline: 2px solid #fff;
       outline-offset: 2px;
     }
-    .interest-note { color: rgba(255,255,255,0.78); font-size: 0.92rem; margin: 0.55rem 0 0; }
-    #register-interest { margin-top: 2rem; border-top: 1px solid rgba(212,168,67,0.35); padding-top: 1.2rem; }
-    #interest-form label { display: block; margin: 0.85rem 0; font-size: 1rem; }
+    button.interest-pick, #interest-form button[type="submit"] {
+      font-family: Georgia, 'Times New Roman', serif;
+      background: transparent;
+      color: #f0d78c;
+      border: 0;
+      border-radius: 6px;
+      min-height: 44px;
+      padding: 0.35rem 0.2rem;
+      cursor: pointer;
+      font-size: 0.95rem;
+      text-decoration: underline;
+      text-underline-offset: 0.18em;
+    }
+    .quiet {
+      margin-top: 2.4rem;
+      color: rgba(255,255,255,0.66);
+      font-size: 0.92rem;
+    }
+    .quiet h2 {
+      color: rgba(240,215,140,0.85);
+      font-size: 0.82rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin: 0 0 0.2rem;
+    }
+    .quiet > p { margin: 0 0 0.4rem; }
+    .singles { list-style: none; margin: 0; padding: 0; }
+    .singles li {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.15rem 0.75rem;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      padding: 0.1rem 0;
+    }
+    .terms {
+      margin-top: 1.5rem;
+      padding-top: 0.8rem;
+      border-top: 1px solid rgba(212,168,67,0.28);
+      color: rgba(255,255,255,0.62);
+      font-size: 0.8rem;
+      line-height: 1.45;
+    }
+    .terms p { margin: 0; }
+    #register-interest {
+      margin-top: 1.6rem;
+      scroll-margin-top: 7.5rem;
+    }
+    #register-interest h2 {
+      color: #d4a843;
+      font-size: 1.05rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin: 0 0 0.35rem;
+    }
+    #interest-form label { display: block; margin: 0.75rem 0; }
     #interest-form input, #interest-form select, #interest-form textarea {
       display: block;
       width: 100%;
       max-width: 36rem;
-      margin-top: 0.35rem;
+      box-sizing: border-box;
+      margin-top: 0.3rem;
       padding: 0.55rem 0.65rem;
       background: #0a1628;
       color: #fff;
@@ -172,6 +264,25 @@
       font-family: Georgia, 'Times New Roman', serif;
       font-size: 1rem;
     }
+    .back {
+      display: inline-block;
+      margin-top: 1.6rem;
+      color: #ffd700;
+      text-decoration: none;
+    }
+    .back:hover { text-decoration: underline; }
+    @media (min-width: 800px) {
+      .ages { grid-template-columns: repeat(3, 1fr); }
+      .band-explorer .kits, .band-scholar .kits { grid-template-columns: 1fr 1fr; }
+      .band-flight article {
+        display: grid;
+        grid-template-columns: 240px 1fr;
+        gap: 0.5rem 1.25rem;
+        align-items: center;
+      }
+      .band-flight .kit-visual { margin: 0; }
+    }
+
   </style>
   <link rel="stylesheet" href="/css/sitewide-image-fit.css">
   <script src="/js/sitewide-uix.js?v=20261120a" defer></script>
@@ -188,147 +299,138 @@
 
   <main>
     <h1>Shop</h1>
-    <p class="lede">The Academy shop is the catalogue door. The five kits are pre-orders, subject to demand. Prepayment towards the first-batch goal is open. The workshop singles stay interest-only. Fulfilment when the supply chain is reengaged. Not in stock and not shippable today. This is not checkout for immediate dispatch.</p>
-    <p class="status">Pre-order, subject to demand. Fulfilment when the supply chain is reengaged. Not in stock and not shippable today. The five kits are active on the till and still not shippable. Prepayment towards the first-batch goal is open on the five kits. It is still not checkout for immediate dispatch.</p>
+    <p class="lede">One ladder, three ages. Buy a tier and keep everything below it.</p>
+    <figure class="family">
+      <img src="/shop/art/igo-dice-family-gold.jpg" width="1168" height="500" alt="Gold spinner, D6, D8, D10, D12 and D20 on navy. Official family art. Each kit card names its own die." fetchpriority="high">
+    </figure>
+    <p class="limit"><strong>Beta pre-order.</strong> Prepay holds a place in the first batch. It is not same-day dispatch.</p>
+    <nav class="ages" aria-label="Teaching path">
+      <a href="#explorer"><span class="n">1</span><strong>Explorer</strong><em>Ages 8–14</em></a>
+      <a href="#flight-deck"><span class="n">2</span><strong>Flight Deck</strong><em>Ages 14–18</em></a>
+      <a href="#scholar"><span class="n">3</span><strong>Scholar</strong><em>Ages 18+</em></a>
+    </nav>
 
-    <h2>First-batch prepayment</h2>
-    <p class="section-note">The five kits stay active on the till and still not shippable. Shelf prices are unchanged: Explorer USD 39, Apprentice USD 75, Navigator USD 149, Scholar USD 215, Master USD 499.</p>
-    <p class="section-note">This is prepayment towards a first-batch working goal of USD 1,950. That goal is 50 Explorer-equivalents at the USD 39 Explorer shelf price. It is not an in-stock sale, and it is not checkout for immediate dispatch.</p>
-    <p class="section-note">The window starts at 20:20:54 Hong Kong time, 19 November 2026, and ends at 20:20:54 Hong Kong time, 19 December 2026.</p>
-    <p class="section-note">If the goal is not met by the end of that window, every prepayment is refunded in full.</p>
-    <p class="section-note">If the goal is met, kits are packed and sent when the supply chain can. There is no promised ship date in this first window.</p>
-    <p class="section-note">People who do not prepay can still register interest. Interest is not an order, not a payment, and not income. Prepaid amounts are not earned income before the goal is met.</p>
-    <p class="section-note">Workshop singles stay interest-only. They are not on the till, and no price is shown as a payment.</p>
+    <section class="age-band band-explorer" id="explorer" aria-labelledby="explorer-heading">
+      <header class="age-head">
+        <h2 id="explorer-heading"><span>1</span>Explorer</h2>
+        <p>Ages 8–14</p>
+      </header>
+      <div class="kits">
+        <article>
+          <figure class="kit-visual">
+            <img src="/shop/art/kit-explorer.jpg" width="360" height="312" alt="Gold quick-start spinner and House D6, from the official family art.">
+            <figcaption>Spinner and House D6</figcaption>
+          </figure>
+          <div class="kit-copy">
+            <p class="meta">Level 1 · D4 · Ages 8–10</p>
+            <h3>Explorer Kit</h3>
+            <p class="tagline">First foothold on the iAAi journey.</p>
+            <p>Starter D4, foundational iCards, themed stickers, House D6, and the quick-start spinner.</p>
+            <p class="price">USD 39</p>
+            <div class="actions">
+              <a class="prepay" href="https://buy.stripe.com/8x200j4VO5iP9xK9o7bZe04" target="_blank" rel="noopener noreferrer" aria-label="Prepay the Explorer Kit">Prepay</a>
+              <button type="button" class="interest-pick" data-item="Explorer Kit">Register interest</button>
+            </div>
+          </div>
+        </article>
+        <article>
+          <figure class="kit-visual">
+            <img src="/shop/art/kit-apprentice.jpg" width="168" height="340" alt="Gold D8, signature die of the Apprentice Kit.">
+          </figure>
+          <div class="kit-copy">
+            <p class="meta">Level 2 · D8 · Ages 10–14</p>
+            <h3>Apprentice Kit</h3>
+            <p class="tagline">Polyhedral dice, regional maps, first campaign sheets.</p>
+            <p>Carries the Explorer kit, and adds a polyhedral dice set, the regional map pack, and the first campaign sheets.</p>
+            <p class="price">USD 75</p>
+            <div class="actions">
+              <a class="prepay" href="https://buy.stripe.com/9B6bJ13RKfXtfW8dEnbZe06" target="_blank" rel="noopener noreferrer" aria-label="Prepay the Apprentice Kit">Prepay</a>
+              <button type="button" class="interest-pick" data-item="Apprentice Kit">Register interest</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
 
-    <h2>Catalogue kits</h2>
-    <p class="section-note">Pre-order, subject to demand. The amounts are the shelf prices already on the till. Those products are active on the till and still not shippable. Each kit has a live Prepay path towards the first-batch goal. Fulfilment when the supply chain is reengaged. Not in stock. This is not checkout for immediate dispatch.</p>
-    <div class="grid">
-      <article>
-        <div class="meta">Level 1 · D4 · Ages 8–10 · Pre-order</div>
-        <h3>Explorer Kit</h3>
-        <p class="tagline">First foothold on the iAAi journey. Subject to demand.</p>
-        <p>Starter D4, foundational iCards, themed stickers, House D6, and the quick-start spinner.</p>
-        <p class="price">USD 39 <small>Shelf price on the till. Active on the till. Not shippable.</small></p>
-        <a class="prepay" href="https://buy.stripe.com/8x200j4VO5iP9xK9o7bZe04" target="_blank" rel="noopener noreferrer" aria-label="Prepay the Explorer Kit">Prepay</a>
-        <button type="button" class="interest-pick" data-item="Explorer Kit">Register interest</button>
-        <p class="interest-note">Prepay is prepayment towards the first-batch goal. It is not an in-stock sale and not checkout for immediate dispatch. Not in stock. Not shippable today. Registering interest records genuine interest only. It is not an order, not a payment, and not income. Kits remain pre-order, subject to demand. Fulfilment when the supply chain is reengaged.</p>
-      </article>
-      <article>
-        <div class="meta">Level 2 · D8 · Ages 10–14 · Pre-order</div>
-        <h3>Apprentice Kit</h3>
-        <p class="tagline">Polyhedral dice, regional maps, first campaign sheets. Subject to demand.</p>
-        <p>Carries the Explorer kit, and adds a polyhedral dice set, the regional map pack, and the first campaign sheets.</p>
-        <p class="price">USD 75 <small>Shelf price on the till. Active on the till. Not shippable.</small></p>
-        <a class="prepay" href="https://buy.stripe.com/9B6bJ13RKfXtfW8dEnbZe06" target="_blank" rel="noopener noreferrer" aria-label="Prepay the Apprentice Kit">Prepay</a>
-        <button type="button" class="interest-pick" data-item="Apprentice Kit">Register interest</button>
-        <p class="interest-note">Prepay is prepayment towards the first-batch goal. It is not an in-stock sale and not checkout for immediate dispatch. Not in stock. Not shippable today. Registering interest records genuine interest only. It is not an order, not a payment, and not income. Kits remain pre-order, subject to demand. Fulfilment when the supply chain is reengaged.</p>
-      </article>
-      <article>
-        <div class="meta">Level 3 · D12 · Ages 14–18 · Pre-order</div>
-        <h3>Navigator Kit</h3>
-        <p class="tagline">Journals, campaign book, and the road ahead. Subject to demand.</p>
-        <p>Carries the Apprentice kit, and adds a field journal and the campaign book.</p>
-        <p class="price">USD 149 <small>Shelf price on the till. Active on the till. Not shippable.</small></p>
-        <a class="prepay" href="https://buy.stripe.com/aFa6oHfAscLh6ly2ZJbZe07" target="_blank" rel="noopener noreferrer" aria-label="Prepay the Navigator Kit">Prepay</a>
-        <button type="button" class="interest-pick" data-item="Navigator Kit">Register interest</button>
-        <p class="interest-note">Prepay is prepayment towards the first-batch goal. It is not an in-stock sale and not checkout for immediate dispatch. Not in stock. Not shippable today. Registering interest records genuine interest only. It is not an order, not a payment, and not income. Kits remain pre-order, subject to demand. Fulfilment when the supply chain is reengaged.</p>
-      </article>
-      <article>
-        <div class="meta">Level 4 · D16 · Ages 18–22 · Pre-order</div>
-        <h3>Scholar Kit</h3>
-        <p class="tagline">Thesis workbook and the advanced iCard set. Subject to demand.</p>
-        <p>Carries the Navigator kit, and adds a thesis workbook and the advanced iCard expansion.</p>
-        <p class="price">USD 215 <small>Shelf price on the till. Active on the till. Not shippable.</small></p>
-        <a class="prepay" href="https://buy.stripe.com/9B614n2NG12z8tG9o7bZe08" target="_blank" rel="noopener noreferrer" aria-label="Prepay the Scholar Kit">Prepay</a>
-        <button type="button" class="interest-pick" data-item="Scholar Kit">Register interest</button>
-        <p class="interest-note">Prepay is prepayment towards the first-batch goal. It is not an in-stock sale and not checkout for immediate dispatch. Not in stock. Not shippable today. Registering interest records genuine interest only. It is not an order, not a payment, and not income. Kits remain pre-order, subject to demand. Fulfilment when the supply chain is reengaged.</p>
-      </article>
-      <article>
-        <div class="meta">Level 5 · D20 · Ages 22 and up · Pre-order</div>
-        <h3>Master Kit</h3>
-        <p class="tagline">The full Dearden Field Set — nothing held back. Subject to demand.</p>
-        <p>Carries the Scholar kit, and adds the Dearden Field Set in a case: master dice, an SAP-001 binder, and the five site iCards.</p>
-        <p class="price">USD 499 <small>Shelf price on the till. Active on the till. Not shippable.</small></p>
-        <a class="prepay" href="https://buy.stripe.com/5kQ5kDbkc8v18tG0RBbZe09" target="_blank" rel="noopener noreferrer" aria-label="Prepay the Master Kit">Prepay</a>
-        <button type="button" class="interest-pick" data-item="Master Kit">Register interest</button>
-        <p class="interest-note">Prepay is prepayment towards the first-batch goal. It is not an in-stock sale and not checkout for immediate dispatch. Not in stock. Not shippable today. Registering interest records genuine interest only. It is not an order, not a payment, and not income. Kits remain pre-order, subject to demand. Fulfilment when the supply chain is reengaged.</p>
-      </article>
-    </div>
+    <section class="age-band band-flight" id="flight-deck" aria-labelledby="flight-heading">
+      <header class="age-head">
+        <h2 id="flight-heading"><span>2</span>Flight Deck</h2>
+        <p>Ages 14–18</p>
+      </header>
+      <div class="kits">
+        <article>
+          <figure class="kit-visual">
+            <img src="/shop/art/kit-navigator.jpg" width="184" height="378" alt="Gold D12, signature die of the Navigator Kit.">
+          </figure>
+          <div class="kit-copy">
+            <p class="meta">Level 3 · D12 · Ages 14–18</p>
+            <h3>Navigator Kit</h3>
+            <p class="tagline">Journals, campaign book, and the road ahead.</p>
+            <p>Carries the Apprentice kit, and adds a field journal and the campaign book.</p>
+            <p class="price">USD 149</p>
+            <div class="actions">
+              <a class="prepay" href="https://buy.stripe.com/aFa6oHfAscLh6ly2ZJbZe07" target="_blank" rel="noopener noreferrer" aria-label="Prepay the Navigator Kit">Prepay</a>
+              <button type="button" class="interest-pick" data-item="Navigator Kit">Register interest</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
 
-    <h2>Workshop singles</h2>
-    <p class="section-note">Interest only. Pre-order, subject to demand. Fulfilment when the supply chain is reengaged. Not in stock. These singles are not on the till, and no price is shown as a payment.</p>
-    <p class="interest-note">This records genuine interest only. It is not an order, not a payment, and not income. Kits remain pre-order, subject to demand. Fulfilment when the supply chain is reengaged. Not in stock.</p>
-    <div class="grid">
-      <article>
-        <div class="meta">Digital</div>
-        <h3>Calories to Consciousness — Intro (PDF)</h3>
-        <p>Digital introduction, listed as a PDF.</p>
-        <button type="button" class="interest-pick" data-item="Calories to Consciousness — Intro (PDF)">Register interest</button>
-      </article>
-      <article>
-        <div class="meta">Physical</div>
-        <h3>Master D20 (single die)</h3>
-        <p>A single Master-grade D20 in navy and gold.</p>
-        <button type="button" class="interest-pick" data-item="Master D20 (single die)">Register interest</button>
-      </article>
-      <article>
-        <div class="meta">Physical</div>
-        <h3>World Map Poster (A2)</h3>
-        <p>Large-format printed world map of the iAAi universe.</p>
-        <button type="button" class="interest-pick" data-item="World Map Poster (A2)">Register interest</button>
-      </article>
-      <article>
-        <div class="meta">Physical</div>
-        <h3>Complete Sticker Set (15 designs)</h3>
-        <p>All fifteen iAAi stickers in one pack.</p>
-        <button type="button" class="interest-pick" data-item="Complete Sticker Set (15 designs)">Register interest</button>
-      </article>
-      <article>
-        <div class="meta">Physical · Play</div>
-        <h3>BitPoints Relay Starter (13 cards)</h3>
-        <p>13-card BitPoints relay starter.</p>
-        <button type="button" class="interest-pick" data-item="BitPoints Relay Starter (13 cards)">Register interest</button>
-      </article>
-      <article>
-        <div class="meta">Physical · Field</div>
-        <h3>BitPoints Series 1 Complete (60 cards)</h3>
-        <p>Full 60-card BitPoints Series 1 deck. Listed as a proof-of-concept beta.</p>
-        <button type="button" class="interest-pick" data-item="BitPoints Series 1 Complete (60 cards)">Register interest</button>
-      </article>
-      <article>
-        <div class="meta">Physical · Play</div>
-        <h3>Equipment Suite (20 cards)</h3>
-        <p>20-card Equipment Suite, Chip Evolution Chain. Listed as a proof-of-concept beta.</p>
-        <button type="button" class="interest-pick" data-item="Equipment Suite (20 cards)">Register interest</button>
-      </article>
-      <article>
-        <div class="meta">Physical · Field</div>
-        <h3>Equipment Suite (20 cards), Field</h3>
-        <p>The Field listing: premium card stock, with a navy and compass-rose cover.</p>
-        <button type="button" class="interest-pick" data-item="Equipment Suite (20 cards), Field">Register interest</button>
-      </article>
-      <article>
-        <div class="meta">Digital · Play</div>
-        <h3>7-Phase Imagineering Worked Example (7 cards)</h3>
-        <p>A seven-card worked example of the Imagineering pattern on the iCard format.</p>
-        <button type="button" class="interest-pick" data-item="7-Phase Imagineering Worked Example (7 cards)">Register interest</button>
-      </article>
-    </div>
+    <section class="age-band band-scholar" id="scholar" aria-labelledby="scholar-heading">
+      <header class="age-head">
+        <h2 id="scholar-heading"><span>3</span>Scholar</h2>
+        <p>Ages 18+</p>
+      </header>
+      <div class="kits">
+        <article>
+          <figure class="kit-visual">
+            <img src="/shop/art/kit-scholar-d16.svg" width="360" height="520" alt="D16 level mark for the Scholar Kit. Drawn identity art, not a photograph.">
+          </figure>
+          <div class="kit-copy">
+            <p class="meta">Level 4 · D16 · Ages 18–22</p>
+            <h3>Scholar Kit</h3>
+            <p class="tagline">Thesis workbook and the advanced iCard set.</p>
+            <p>Carries the Navigator kit, and adds a thesis workbook and the advanced iCard expansion.</p>
+            <p class="price">USD 215</p>
+            <div class="actions">
+              <a class="prepay" href="https://buy.stripe.com/9B614n2NG12z8tG9o7bZe08" target="_blank" rel="noopener noreferrer" aria-label="Prepay the Scholar Kit">Prepay</a>
+              <button type="button" class="interest-pick" data-item="Scholar Kit">Register interest</button>
+            </div>
+          </div>
+        </article>
+        <article>
+          <figure class="kit-visual">
+            <img src="/shop/art/kit-master.jpg" width="248" height="402" alt="Gold D20, signature die of the Master Kit.">
+          </figure>
+          <div class="kit-copy">
+            <p class="meta">Level 5 · D20 · Ages 22+</p>
+            <h3>Master Kit</h3>
+            <p class="tagline">The full Dearden Field Set — nothing held back.</p>
+            <p>Carries the Scholar kit, and adds the Dearden Field Set in a case: master dice, an SAP-001 binder, and the five site iCards.</p>
+            <p class="price">USD 499</p>
+            <div class="actions">
+              <a class="prepay" href="https://buy.stripe.com/5kQ5kDbkc8v18tG0RBbZe09" target="_blank" rel="noopener noreferrer" aria-label="Prepay the Master Kit">Prepay</a>
+              <button type="button" class="interest-pick" data-item="Master Kit">Register interest</button>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
 
-    <div class="blocked">
-      <p>Pre-order, subject to demand. Fulfilment when the supply chain is reengaged. Not in stock and not shippable today. The five kit amounts are the shelf prices already on the till, and those products are active on the till and still not shippable. Prepayment on the five kits is open and is towards the first-batch working goal of USD 1,950 above (50 Explorer-equivalents at the USD 39 Explorer shelf price). It is not an in-stock sale, and it is not checkout for immediate dispatch. If the goal is not met by 20:20:54 Hong Kong time, 19 December 2026, every prepayment is refunded in full. If the goal is met, fulfilment is when the supply chain can, with no promised ship date. Interest is not an order, not a payment, and not income. Prepaid amounts are not earned income before the goal is met. The workshop singles have no price on the till, so none is shown, and they stay interest-only.</p>
-    </div>
+    <p class="quiet">Workshop singles are interest only. No payment. Choose one in the form below.</p>
+    <footer class="terms">
+      <p>First batch. The 30-day window starts at 20:20:54 Hong Kong time on 19 November 2026 and ends at 20:20:54 Hong Kong time on 19 December 2026. Working goal USD 1,950 (50 Explorer-equivalents at the USD 39 shelf price). If the goal is not met by the end of the window, every prepayment is refunded in full.</p>
+    </footer>
 
-    
     <section id="register-interest" aria-labelledby="interest-heading">
       <h2 id="interest-heading">Register interest</h2>
-      <p class="interest-note">This records genuine interest only. It is not an order, not a payment, and not income. Kits remain pre-order, subject to demand. Fulfilment when the supply chain is reengaged. Not in stock.</p>
-      <p>Prepayment on the five kits is open on this page. It is prepayment towards the first-batch goal, not an in-stock sale and not checkout for immediate dispatch. The kits remain active on the till and are still not in stock and not shippable today. Registering interest does not take payment and is not income. Interest is not an order, not a payment, and not income. Prepaid amounts are not earned income before the goal is met. Workshop singles stay interest-only, with no payment link and no price shown as a payment.</p>
+      <p>This records genuine interest only.</p>
       <p>Source door: <strong id="interest-source">/shop/</strong></p>
       <form id="interest-form">
         <label>Item of interest
           <select name="item" required>
-            <option value="catalogue generally">Catalogue generally</option><option value="Explorer Kit">Explorer Kit</option><option value="Apprentice Kit">Apprentice Kit</option><option value="Navigator Kit">Navigator Kit</option><option value="Scholar Kit">Scholar Kit</option><option value="Master Kit">Master Kit</option><option value="Calories to Consciousness — Intro (PDF)">Calories to Consciousness — Intro (PDF)</option><option value="Master D20 (single die)">Master D20 (single die)</option><option value="World Map Poster (A2)">World Map Poster (A2)</option><option value="Complete Sticker Set (15 designs)">Complete Sticker Set (15 designs)</option><option value="BitPoints Relay Starter (13 cards)">BitPoints Relay Starter (13 cards)</option><option value="BitPoints Series 1 Complete (60 cards)">BitPoints Series 1 Complete (60 cards)</option><option value="Equipment Suite (20 cards)">Equipment Suite (20 cards)</option><option value="Equipment Suite (20 cards), Field">Equipment Suite (20 cards), Field</option><option value="7-Phase Imagineering Worked Example (7 cards)">7-Phase Imagineering Worked Example (7 cards)</option>
+            <option value="Catalogue generally">Catalogue generally</option><option value="Explorer Kit">Explorer Kit</option><option value="Apprentice Kit">Apprentice Kit</option><option value="Navigator Kit">Navigator Kit</option><option value="Scholar Kit">Scholar Kit</option><option value="Master Kit">Master Kit</option><option value="Calories to Consciousness — Intro (PDF)">Calories to Consciousness — Intro (PDF)</option><option value="Master D20 (single die)">Master D20 (single die)</option><option value="World Map Poster (A2)">World Map Poster (A2)</option><option value="Complete Sticker Set (15 designs)">Complete Sticker Set (15 designs)</option><option value="BitPoints Relay Starter (13 cards)">BitPoints Relay Starter (13 cards)</option><option value="BitPoints Series 1 Complete (60 cards)">BitPoints Series 1 Complete (60 cards)</option><option value="Equipment Suite (20 cards)">Equipment Suite (20 cards)</option><option value="Equipment Suite (20 cards), Field">Equipment Suite (20 cards), Field</option><option value="7-Phase Imagineering Worked Example (7 cards)">7-Phase Imagineering Worked Example (7 cards)</option>
           </select>
         </label>
         <label>Contact email
@@ -342,9 +444,9 @@
         </label>
         <button type="submit">Register interest</button>
       </form>
-      <p id="interest-status" class="interest-note" role="status"></p>
+      <p id="interest-status" role="status"></p>
       <noscript>
-        <p><a href="mailto:nigel@infrastructure-academy.com?subject=Academy%20shop%20%E2%80%94%20genuine%20interest%20%E2%80%94%20catalogue%20generally&amp;body=This%20records%20genuine%20interest%20only.%20It%20is%20not%20an%20order%2C%20not%20a%20payment%2C%20and%20not%20income.%0AItem%20of%20interest%3A%20catalogue%20generally">Register interest by email</a>. Sending that message is not an order, not a payment, and not income.</p>
+        <p><a href="mailto:nigel@infrastructure-academy.com?subject=Academy%20shop%20%E2%80%94%20genuine%20interest%20%E2%80%94%20catalogue%20generally&amp;body=This%20records%20genuine%20interest%20only.%20It%20is%20not%20an%20order%2C%20not%20a%20payment%2C%20and%20not%20income.%0AItem%20of%20interest%3A%20catalogue%20generally">Register interest by email</a>.</p>
       </noscript>
     </section>
     <script>
@@ -355,6 +457,7 @@
       var doorName = 'Academy shop';
       if (path.indexOf('/exchange') === 0) { source = '/exchange/'; doorName = 'Academy Exchange'; }
       else if (path.indexOf('/xchange') === 0) { source = '/xchange/'; doorName = 'Academy Xchange'; }
+      else if (path.indexOf('/shop') === 0) { source = '/shop/'; doorName = 'Academy shop'; }
       var sourceNode = document.getElementById('interest-source');
       if (sourceNode) sourceNode.textContent = source;
       document.querySelectorAll('.interest-pick').forEach(function (btn) {
@@ -394,7 +497,7 @@
           + encodeURIComponent(doorName + ' — genuine interest — ' + item)
           + '&body=' + encodeURIComponent(body);
         window.location.href = href;
-        document.getElementById('interest-status').textContent = 'Your email programme should open with this interest. Sending that message records it. It is not an order, not a payment, and not income.';
+        document.getElementById('interest-status').textContent = 'Your email programme should open with this interest. Sending that message records it.';
       });
     })();
     </script>
