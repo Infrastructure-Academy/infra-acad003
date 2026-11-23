@@ -58,7 +58,7 @@
     'river-valley': {
       title: 'River Valley Civilization',
       listed: '~0:06',
-      poster: FILM_MEDIA + 'zWxgmErsajJzpeNj.jpg',
+      poster: FILM_MEDIA + 'river_valley_civilization_poster_valley_23Nov26.jpg',
       src: CDN + 'river_plain_perfect_e99879d1.mp4'
     },
     linkedin: {
