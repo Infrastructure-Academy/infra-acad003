@@ -1,6 +1,6 @@
 /* Dearden Praxis Method portal — beta test model.
    Navy and gold, Cinzel headings, readable on a phone.
-   The Draft 39 plate is shown whole. It is not cropped. */
+   Revised Figure A is shown whole. It is not cropped. */
 
 :root {
   --navy: #0a1628;
@@ -187,13 +187,17 @@ h2 .sub { display: block; margin-top: 0.35rem; white-space: normal; }
 
 .cover, .col, .call, .eq, .scale, .scale .box { min-width: 0; max-width: 100%; }
 
+.plate-figure {
+  margin: 0.35rem 0 0;
+}
+
 .plate {
   width: 100%;
   max-width: 100%;
   height: auto;
   border-radius: 6px;
   border: 1px solid var(--line);
-  margin: 1rem 0 0.35rem;
+  margin: 0.35rem 0 0.35rem;
   display: block;
   background: #fff;
 }
