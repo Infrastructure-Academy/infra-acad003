@@ -27,7 +27,7 @@ Infrastructure Academy of Artificial Intelligence. Founded by Ir. Nigel T. Deard
 |------|-----|--------|-------|
 | Academy | infrastructure-academy.com | LIVE | 134 pages, static HTML, self-contained |
 | Quest | realityeng-epdhlkrn.manus.space | DEAD | Manus shutdown |
-| Xchange | xchangeapp-adbvx9fr.manus.space | LIVE host | Storefront responds. Academy /shop is a pre-order catalogue: five kits at the till shelf prices (USD 39 / 75 / 149 / 215 / 499), inactive and not shippable. Workshop singles have no till price. Fulfilment when the supply chain is reengaged. Not in stock. Not a checkout. |
+| Xchange | xchangeapp-adbvx9fr.manus.space | LIVE host | Storefront responds. Academy /shop, /xchange and /exchange share one five-kit face. The items shown are available as a beta pre-order, fulfilled once minimum interest or minimum orders are met. Not enough interest yet. Not same-day dispatch. Official Payment Links and shelf prices (USD 39 / 75 / 149 / 215 / 499) stay. Workshop singles are interest only, no payment. The 30-day first-batch window and full refund if the USD 1,950 goal is not met stay. |
 | Memorial | nigelmemorial-ucmtq9dn.manus.space | LIVE | 80-100+ documents, JS-rendered, needs browser check |
 | News | xgrowthtrk-2a93yo5z.manus.space | DEAD | Manus shutdown |
 
